@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "865ba721_a800fd3d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Hmm, I think this constraint is bit specific to chrome and I feel it is more easy to have this check in autoninja layer than reclient/siso.",
+      "parentUuid": "cce08b0b_f0eb9b68",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "3e3e8154_2a231f1b",
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4653a561_2c139726",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Thank you for the confirmation. Yeah, I think several handreds miliseconds difference is  ignorable here.",
+      "parentUuid": "87933196_5833117e",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4c67c695_1d74a43e",
         "filename": "autoninja.py",
         "patchSetId": 16
@@ -65,6 +101,24 @@
       "writtenOn": "2023-11-21T04:15:43Z",
       "side": 1,
       "message": "What if user doesn\u0027t have gcloud installed?",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4399dbf_04ed9912",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Added exception with instruction.",
+      "parentUuid": "4c67c695_1d74a43e",
       "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -86,6 +140,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e57907dd_c8f5d667",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "922414fa_30c57c96",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "370b3a0c_d2e3d7b2",
@@ -103,6 +175,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c4ef259_cfc6b186",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "370b3a0c_d2e3d7b2",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4a608e1_7d8a83fd",
@@ -116,6 +206,30 @@
       "writtenOn": "2023-11-21T04:15:33Z",
       "side": 1,
       "message": "I guess there is no better way, detecting the corp machine, but it makes me feel hesitant to see he gcert binary paths hard-coded in depot_tools, which is an open source tool. Would you be able to answer b/309720176#comment3 first? If requests from non-googler-accounts are automatically sent to rbe-chromium-untrusted, then this may not be necessary?\n\n+sokcevic@google.com for a second opinion.",
+      "range": {
+        "startLine": 89,
+        "startChar": 3,
+        "endLine": 91,
+        "endChar": 54
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b53b4cd0_bb7147a7",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Replied on the bug.\n\n\u003e If requests from non-googler-accounts are automatically sent to rbe-chromium-untrusted, then this may not be necessary?\n\nNo. That can cause accidental upload of src-internal to rbe-chromium-untrusted from corp machine if user uses non-googler-accounts there.",
+      "parentUuid": "c4a608e1_7d8a83fd",
       "range": {
         "startLine": 89,
         "startChar": 3,
@@ -149,6 +263,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e533a2af_cf748fa9",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45981ca4_c553a02a",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 43
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aba2e388_288249f3",
@@ -162,6 +300,30 @@
       "writtenOn": "2023-11-21T04:15:43Z",
       "side": 1,
       "message": "since we are returning early here, it should be `You can\u0027t use`\n```suggestion\n                \"You can\u0027t use a non-@google.com account (%s and/or %s) on\"\n```",
+      "range": {
+        "startLine": 275,
+        "startChar": 21,
+        "endLine": 275,
+        "endChar": 30
+      },
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2060f22_5e4d0f5a",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-27T08:30:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aba2e388_288249f3",
       "range": {
         "startLine": 275,
         "startChar": 21,

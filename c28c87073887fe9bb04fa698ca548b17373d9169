@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59392bb6_292af050",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-27T09:51:00Z",
+      "side": 1,
+      "message": "Not in this CL, but we should also clean-up this `IsGoogler` check to ensure it works correctly:\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:ninjalog_uploader.py;l\u003d51-67;drc\u003ddf3e5778557e37881e503ec0047bf64c826e5d93",
+      "revId": "c28c87073887fe9bb04fa698ca548b17373d9169",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

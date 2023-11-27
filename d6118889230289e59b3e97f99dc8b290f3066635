@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0b2b7e2f_5230909d",
+        "filename": "autoninja.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-27T09:51:00Z",
+      "side": 1,
+      "message": "I don\u0027t think a 0.2s slow-down for every build done by Googlers is great, but I also don\u0027t see a way to avoid it at the moment...\n\nMaybe we can find a way how to make `vpython3` faster later. :)",
+      "parentUuid": "4653a561_2c139726",
+      "revId": "d6118889230289e59b3e97f99dc8b290f3066635",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4c67c695_1d74a43e",
         "filename": "autoninja.py",
         "patchSetId": 16

@@ -22,6 +22,7 @@ import logging
 import multiprocessing
 import os
 import platform
+import shutil
 import subprocess
 import sys
 import time
@@ -49,22 +50,11 @@ ALLOWLISTED_CONFIGS = (
 
 
 def IsGoogler():
-    """Check whether this user is Googler or not."""
-    p = subprocess.run(
-        "goma_auth info",
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        universal_newlines=True,
-        shell=True,
-    )
-    if p.returncode != 0:
-        return False
-    lines = p.stdout.splitlines()
-    if len(lines) == 0:
-        return False
-    l = lines[0]
-    # |l| will be like 'Login as <user>@google.com' for googler using goma.
-    return l.startswith("Login as ") and l.endswith("@google.com")
+    """
+    This assumes that Googler using corp machine has gcert binary in known
+    location.
+    """
+    return shutil.which("gcert") is not None
 
 
 def ParseGNArgs(gn_args):

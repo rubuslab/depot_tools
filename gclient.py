@@ -93,6 +93,7 @@ import re
 import sys
 import time
 import urllib.parse
+from concurrent.futures import ThreadPoolExecutor
 
 from collections.abc import Collection, Mapping, Sequence
 
@@ -1115,7 +1116,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             options = copy.copy(options)
             options.revision = revision_override
             self._used_revision = options.revision
-            self._used_scm = self.CreateSCM(out_cb=work_queue.out_cb)
+            self._used_scm = self.CreateSCM(out_cb=True)
             if command != 'update' or self.GetScmName() != 'git':
                 self._got_revision = self._used_scm.RunCommand(
                     command, options, args, file_list)
@@ -1203,7 +1204,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             # Parse the dependencies of this dependency.
             for s in self.dependencies:
                 if s.should_process:
-                    work_queue.enqueue(s)
+                    work_queue.submit(s)
 
         if command == 'recurse':
             # Skip file only checkout.
@@ -2220,7 +2221,6 @@ it or fix the checkout.
     def RunOnDeps(self,
                   command,
                   args,
-                  ignore_requirements=False,
                   progress=True):
         """Runs a command on each dependency in a client and its dependencies.
 
@@ -2267,21 +2267,37 @@ it or fix the checkout.
                 pm = Progress('Syncing projects', 1)
             elif command in ('recurse', 'validate'):
                 pm = Progress(' '.join(args), 1)
-        work_queue = gclient_utils.ExecutionQueue(
-            self._options.jobs,
-            pm,
-            ignore_requirements=ignore_requirements,
-            verbose=self._options.verbose)
-        for s in self.dependencies:
-            if s.should_process:
-                work_queue.enqueue(s)
-        work_queue.flush(revision_overrides,
-                         command,
-                         args,
-                         options=self._options,
-                         patch_refs=patch_refs,
-                         target_branches=target_branches,
-                         skip_sync_revisions=skip_sync_revisions)
+
+
+        # TEST IMPLEMENTATION; DOESN'T RESPECT REQUIREMENTS. THIS IMPL DOESN'T
+        # SUPPORT PROGRESS BAR.
+        with ThreadPoolExecutor(max_workers=self._options.jobs) as executor:
+            for s in self.dependencies:
+                executor.submit(s.run,
+                                revision_overrides,
+                                command,
+                                args,
+                                work_queue=executor,
+                                options=self._options,
+                                patch_refs=patch_refs,
+                                target_branches=target_branches,
+                                skip_sync_revisions=skip_sync_revisions)
+
+        # work_queue = gclient_utils.ExecutionQueue(
+        #     self._options.jobs,
+        #     pm,
+        #     # ignore_requirements=ignore_requirements,
+        #     verbose=self._options.verbose)
+        # for s in self.dependencies:
+        #     if s.should_process:
+        #         work_queue.enqueue(s)
+        # work_queue.flush(revision_overrides,
+        #                  command,
+        #                  args,
+        #                  options=self._options,
+        #                  patch_refs=patch_refs,
+        #                  target_branches=target_branches,
+        #                  skip_sync_revisions=skip_sync_revisions)
 
         if revision_overrides:
             print(

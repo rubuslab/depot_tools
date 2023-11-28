@@ -14,11 +14,14 @@ import os
 import subprocess
 import sys
 import threading
+from collections import defaultdict
 
 # Constants forwarded from subprocess.
 PIPE = subprocess.PIPE
 STDOUT = subprocess.STDOUT
 DEVNULL = subprocess.DEVNULL
+
+CALLS = defaultdict(int)
 
 
 class CalledProcessError(subprocess.CalledProcessError):
@@ -170,6 +173,7 @@ def communicate(args, **kwargs):
     output, print a warning to stderr.
   - Automatically passes stdin content as input so do not specify stdin=PIPE.
   """
+    CALLS[" ".join(args)] += 1
     stdin = None
     # When stdin is passed as an argument, use it as the actual input data and
     # set the Popen() parameter accordingly.

@@ -3534,6 +3534,13 @@ def CMDsync(parser, args):
             }
         with open(options.output_json, 'w') as f:
             json.dump({'solutions': slns}, f)
+
+    print("========= Subprocess Calls ============")
+    print("Command                    | Call Count")
+    ordered = sorted(subprocess2.CALLS.items(), key=lambda kv: kv[1], reverse=True)
+    for command, count in ordered:
+        print(command, count)
+
     return ret
 
 

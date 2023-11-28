@@ -16,6 +16,24 @@
       "message": "non-corp machine may have gcert?\n\ne.g. https://pkg.go.dev/github.com/jmgilman/gcert",
       "revId": "7ac2eefb9554b281d9554322a187dfaecc1ded65",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "497fb637_3499f816",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-11-28T06:16:56Z",
+      "side": 1,
+      "message": "That command doesn\u0027t seem popular. So we can ignore the edge case, maybe.",
+      "parentUuid": "442d0139_91996732",
+      "revId": "7ac2eefb9554b281d9554322a187dfaecc1ded65",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

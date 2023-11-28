@@ -1,8 +1,8 @@
-# Ninja build log collection
+# Ninja build log collection actually add CC
 
 [TOC]
 
-## Overview
+## Overview!?
 
 When chromium developers use autoninja for their build,
 

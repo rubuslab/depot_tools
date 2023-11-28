@@ -2267,21 +2267,20 @@ it or fix the checkout.
                 pm = Progress('Syncing projects', 1)
             elif command in ('recurse', 'validate'):
                 pm = Progress(' '.join(args), 1)
-        work_queue = gclient_utils.ExecutionQueue(
+        work_queue = gclient_utils.TaskQueue(
             self._options.jobs,
-            pm,
-            ignore_requirements=ignore_requirements,
-            verbose=self._options.verbose)
+            revision_overrides,
+            command,
+            args,
+            options=self._options,
+            patch_refs=patch_refs,
+            target_branches=target_branches,
+            skip_sync_revisions=skip_sync_revisions
+        )
         for s in self.dependencies:
             if s.should_process:
                 work_queue.enqueue(s)
-        work_queue.flush(revision_overrides,
-                         command,
-                         args,
-                         options=self._options,
-                         patch_refs=patch_refs,
-                         target_branches=target_branches,
-                         skip_sync_revisions=skip_sync_revisions)
+        work_queue.flush()
 
         if revision_overrides:
             print(

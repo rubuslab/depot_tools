@@ -1103,9 +1103,16 @@ class GitWrapper(SCMWrapper):
             file_list.extend(
                 [os.path.join(self.checkout_path, f) for f in files])
 
+
+    REVINFO_CACHE = {}
+
     def revinfo(self, _options, _args, _file_list):
         """Returns revision"""
-        return self._Capture(['rev-parse', 'HEAD'])
+        key = os.getcwd()
+        if key not in self.REVINFO_CACHE:
+            self.REVINFO_CACHE[key] = self._Capture(['rev-parse', 'HEAD'])
+
+        return key
 
     def runhooks(self, options, args, file_list):
         self.status(options, args, file_list)

@@ -850,8 +850,55 @@ class WorkItem(object):
     def name(self):
         return self._name
 
+# TEST IMPLEMENTATION
+class TaskQueue:
+    def __init__(self, jobs, *args, **kwargs):
+        self.jobs = jobs
+        self.queued = queue.Queue()
+        self.completed = set()
+        self.lock = threading.Lock()
+
+        self.args = args
+        kwargs['work_queue'] = self
+        self.kwargs = kwargs
+
+        # The ideal implementation would behave similar to ThreadPoolExecutor.
+        # It should only spawn the required amount of threads, should refrain
+        # from spawning new threads if there are free threads, and should not
+        # use threading at all when jobs == 1.
+        for _ in range(jobs):
+            w = threading.Thread(target=self.worker)
+            w.setDaemon(True)
+            w.start()
+
+    def enqueue(self, d):
+        self.queued.put(d)
+
+    def flush(self):
+        self.queued.join()
+
+    def worker(self):
+        while True:
+            job = self.queued.get()
+
+            # Check requirements
+            if (set(job.requirements) - self.completed):
+                # job is not ready to be run.
+                self.queued.put(job)
+            else:
+                print("Starting ", job.name)
+                job.run(*self.args, **self.kwargs)
+
+                # Update completed set
+                with self.lock:
+                    self.completed.add(job.name)
+
+                print("Ending ", job.name)
+
+            self.queue.task_done()
 
 class ExecutionQueue(object):
+
     """Runs a set of WorkItem that have interdependencies and were WorkItem are
   added as they are processed.
 

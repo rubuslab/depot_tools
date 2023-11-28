@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47c8c814_ef575e83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-28T02:43:17Z",
+      "side": 1,
+      "message": "Could you update http://shortn/_soc7kAAT9Q and get approval for that?",
+      "revId": "98d058f26c76783f412721b7650d89609c434482",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

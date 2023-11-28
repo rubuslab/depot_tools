@@ -111,6 +111,8 @@ import setup_color
 import subcommand
 import subprocess2
 from third_party.repo.progress import Progress
+import atexit
+import cProfile
 
 # TODO: Should fix these warnings.
 # pylint: disable=line-too-long
@@ -4142,7 +4144,15 @@ def main(argv):
 
 
 if '__main__' == __name__:
+    profiler = cProfile.Profile()
+    atexit.register(profiler.dump_stats, './my_profile_file')
+
     with metrics.collector.print_notice_and_exit():
-        sys.exit(main(sys.argv[1:]))
+        # with cProfile.Profile() as pr:
+        #     main(sys.argv[1:])
+        #     pr.print_stats(sort='ncalls')
+
+        profiler.runcall(main, sys.argv[1:])
+        # sys.exit(main(sys.argv[1:]))
 
 # vim: ts=2:sw=2:tw=80:et:

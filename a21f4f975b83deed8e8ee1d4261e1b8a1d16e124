@@ -16,6 +16,63 @@
       "message": "OOO and in weird timezone",
       "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25521e71_a9ebe0ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-29T20:03:32Z",
+      "side": 1,
+      "message": "Based on https://crbug.com/1434450, I\u0027m not sure if adding a flag is better than just checking if there\u0027s a single commit. Sure, it\u0027s easier to implement. But if we know that squash will always fail with a single commit, then that\u0027s the right thing to do IMO.\n\nI suggest to add a flag as a follow up step after that, and only if there\u0027s need for that.",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cdf96e2_71a7c8b2",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-29T20:03:32Z",
+      "side": 1,
+      "message": "Please add tests in tests/git_rebase_update_test.py for this new flag.",
+      "range": {
+        "startLine": 143,
+        "startChar": 46,
+        "endLine": 143,
+        "endChar": 55
+      },
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "852a1448_a09e372f",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-11-29T20:03:32Z",
+      "side": 1,
+      "message": "text duplication - please extract to a variable and reuse",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

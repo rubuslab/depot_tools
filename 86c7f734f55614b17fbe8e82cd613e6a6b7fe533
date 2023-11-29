@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9463d05_ce614cc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1587402
+      },
+      "writtenOn": "2023-11-29T13:39:50Z",
+      "side": 1,
+      "message": "5030756: pylint: Add pylint 2.13 | https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5030756",
+      "revId": "86c7f734f55614b17fbe8e82cd613e6a6b7fe533",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

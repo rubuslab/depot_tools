@@ -4142,7 +4142,27 @@ def main(argv):
 
 
 if '__main__' == __name__:
-    with metrics.collector.print_notice_and_exit():
-        sys.exit(main(sys.argv[1:]))
+    import time
+
+    g = gclient_scm.GitWrapper()
+    g.checkout_path = os.getcwd()
+    t0 = time.time()
+    g._Capture(['rev-parse', 'HEAD'])
+    t1 = time.time()
+    tot1 = t1 - t0
+    cost1 = tot1 * 270
+
+    t0 = time.time()
+    g._Capture(['ls-files', '-s', '--recurse-submodules'])
+    t1 = time.time()
+    tot2 = t1 - t0
+
+    print("Time taken by rev-parse: ", tot1)
+    print("Time taken by ls-files: ", tot2)
+
+    print("Cost: ", cost1 - tot2)
+
+    # with metrics.collector.print_notice_and_exit():
+    #     sys.exit(main(sys.argv[1:]))
 
 # vim: ts=2:sw=2:tw=80:et:

@@ -31,7 +31,7 @@ $VerifiedPlatform linux-amd64 linux-arm64 mac-amd64 mac-arm64 windows-amd64
 # Platform with best-effort support: we have some binaries cross-compiled for
 # them, but we do not test they work. They also may not have all necessary
 # vpython packages.
-$VerifiedPlatform linux-386 linux-ppc64 linux-ppc64le linux-s390x
+$VerifiedPlatform linux-386 linux-ppc64 linux-ppc64le linux-riscv64 linux-s390x
 $VerifiedPlatform linux-armv6l linux-mips64 linux-mips64le linux-mipsle
 $VerifiedPlatform windows-arm64
 
@@ -48,16 +48,16 @@ infra/tools/luci/lucicfg/${platform} git_revision:5bb25ba486b534dd87a09773218dbf
 infra/tools/mac_toolchain/${os=mac}-${arch} git_revision:05fe195bf77656743f3daa99d463a794260b429b
 
 # LUCI rpc command line tool
-infra/tools/prpc/${platform} git_revision:6e9be28a4c4e3a804f400dc6c2ed08b866f0a38b
+infra/tools/prpc/${platform} git_revision:bd51a741c3a279b46d0cfd5b6642e6ffe8b770f7
 
 # LUCI authentication command line tool
-infra/tools/luci-auth/${platform} git_revision:6e9be28a4c4e3a804f400dc6c2ed08b866f0a38b
+infra/tools/luci-auth/${platform} git_revision:08199858fc99bbe3c676c313b9e4c1714a30e742
 
 # LUCI Buildbucket CLI
-infra/tools/bb/${platform} git_revision:b083b65e849f49f5792aae39e04ce12530b48ba3
+infra/tools/bb/${platform} git_revision:bd51a741c3a279b46d0cfd5b6642e6ffe8b770f7
 
 # LUCI ResultDB CLI
-infra/tools/rdb/${platform} git_revision:2ed07b3775e71f9a84743290144c52f43d0899ec
+infra/tools/rdb/${platform} git_revision:bd51a741c3a279b46d0cfd5b6642e6ffe8b770f7
 
 # CHROMEOS Buildjobs CLI
 chromiumos/infra/crosjobs/${platform=linux-amd64} git_revision:ed616d595eb7241d39d34907050d2949121d6ae8

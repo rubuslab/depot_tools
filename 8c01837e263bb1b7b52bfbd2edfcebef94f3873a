@@ -33,6 +33,24 @@
       "message": "need this check in L237?\nwhen use_siso, already run siso command and not reached here?\n\n(and use_siso\u003dtrue and use_remoteexec\u003dfalse will offline mode, so no need to check account?)",
       "revId": "8c01837e263bb1b7b52bfbd2edfcebef94f3873a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "982351cc_d4926838",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2023-11-30T03:07:43Z",
+      "side": 1,
+      "message": "Good catch!\n\nThinking about the logic, isn\u0027t it enough to just run this check if `use_remoteexec` is true? Why are we checking for `use_siso`, too?\n\nFor `autoninja`, we automatically disable Siso\u0027s native client by specifying `--offline` if `use_remoteexec` is false, so I think we don\u0027t need to worry about that.",
+      "parentUuid": "047c9706_ef9325a7",
+      "revId": "8c01837e263bb1b7b52bfbd2edfcebef94f3873a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

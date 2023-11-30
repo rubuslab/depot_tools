@@ -88,6 +88,24 @@
       "parentUuid": "d9eb63c0_2f800405",
       "revId": "7ac2eefb9554b281d9554322a187dfaecc1ded65",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98541498_59f97960",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-11-30T05:41:13Z",
+      "side": 1,
+      "message": "I changed to use `cipd auth-info` here.",
+      "parentUuid": "fe093027_f5de0a81",
+      "revId": "7ac2eefb9554b281d9554322a187dfaecc1ded65",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

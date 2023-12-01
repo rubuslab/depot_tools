@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "b6894b6e_2f3d9319",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2023-12-01T16:45:15Z",
+      "side": 1,
+      "message": "I should clarify the comment more.  This has been shown to be the case for builds on macs.  The defaults don\u0027t necessarily apply to other oses.",
+      "parentUuid": "5d3a85e1_9dd97b8c",
+      "revId": "77eb48a034cb45baed35959f8389dafe6f32dc38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "895e78b0_74657fc6",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2

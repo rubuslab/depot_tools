@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a9e9a9b_6c40cbd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2023-12-02T23:15:55Z",
+      "side": 1,
+      "message": "I just encountered this behaviour today and I\u0027m not sure how I feel about it.\n\nOften, I want to use git cl split to help split up CLs by directory. But it generates CLs like:\n\nhttps://chromium-review.googlesource.com/c/chromium/src/+/5081584\n\nWhich I don\u0027t feel like are great either: I want the //mojo and the //third_party/blink bits to be separate.",
+      "revId": "70d971a1359e7c596fa0aef0371ad76b89b36e4a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

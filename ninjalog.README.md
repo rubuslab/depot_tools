@@ -1,4 +1,4 @@
-# Ninja build log collection
+# Ninja build log collectiona
 
 [TOC]
 

@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ee190e2_f52d6e8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-12-05T05:09:35Z",
+      "side": 1,
+      "message": "I think reclient can still have different default per platform?",
+      "parentUuid": "b6894b6e_2f3d9319",
+      "revId": "77eb48a034cb45baed35959f8389dafe6f32dc38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "895e78b0_74657fc6",

@@ -87,6 +87,24 @@
       "parentUuid": "ddb027a8_e657b842",
       "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "953c6c1c_27fc83d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-06T18:38:27Z",
+      "side": 1,
+      "message": "In that case, I think it\u0027s probably better ot use `--filter\u003dblob:none`. that will receive history, but all files (blobs) will be fetch on demand.\n\nThis may result in slow operations in some cases, so we should use a flag to opt in.",
+      "parentUuid": "335fa3a9_405968d0",
+      "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

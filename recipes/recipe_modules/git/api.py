@@ -246,6 +246,7 @@ class GitApi(recipe_api.RecipeApi):
       if tags:
         fetch_args.append('--tags')
 
+      fetch_args.append('--depth 1')
       fetch_step_name = 'git fetch%s' % step_suffix
       if display_fetch_size:
         count_objects_before_fetch = self.count_objects(

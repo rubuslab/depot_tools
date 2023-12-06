@@ -69,6 +69,24 @@
       "parentUuid": "bf0f6675_1310af4c",
       "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "335fa3a9_405968d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-06T18:35:21Z",
+      "side": 1,
+      "message": "Looking at https://logs.chromium.org/logs/infra-internal/buildbucket/cr-buildbucket/8762435530190768481/+/u/post-train_diff_at_upstream_CL/stdout, I found that this will affect not only the codesearch builders, but also others, such as gce_provider, chrome/finch, etc.\n\nAlthough I believe that all the recipes would be fine and benefit from this patch, I\u0027m leaning towards making \"--depth\u003d1\" optional such that only codesearch builders would be affected. I will see if I can make the patch. Let me know what you think",
+      "parentUuid": "ddb027a8_e657b842",
+      "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

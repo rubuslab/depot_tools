@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "138f934b_d802d45a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-06T04:23:43Z",
+      "side": 1,
+      "message": "Hi Josip,\n\nThis is a very speculative patch. I assume that codesearch recipe doesn\u0027t need the entire commit history but only the last commit from ToT.\n\nHere is my experiment on my local workstation.\nhttps://paste.googleplex.com/4606327330963456\n\nWDYT of this patch?",
+      "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

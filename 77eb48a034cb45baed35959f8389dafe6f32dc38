@@ -72,6 +72,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cd173c6_dfa2525b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-12-06T06:26:58Z",
+      "side": 1,
+      "message": "Hmm, I want most of default parameters are optimal in general regardless of the project.\nAnd I\u0027m skeptical about many existing RBE_* override in depot_tools can only make chromium build better.",
+      "parentUuid": "2f6c63d6_9cad1d5e",
+      "revId": "77eb48a034cb45baed35959f8389dafe6f32dc38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "895e78b0_74657fc6",

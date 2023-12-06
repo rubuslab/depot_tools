@@ -123,6 +123,24 @@
       "parentUuid": "953c6c1c_27fc83d2",
       "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c55a1d1f_55dcaa7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-06T18:53:21Z",
+      "side": 1,
+      "message": "ack. let\u0027s use just `--depth\u003d1` in that case.",
+      "parentUuid": "818ef507_614aa62d",
+      "revId": "68193cb683e78fac0c243f5ae6e08124e2d0c231",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

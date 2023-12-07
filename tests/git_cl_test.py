@@ -1334,7 +1334,7 @@ class TestGitCl(unittest.TestCase):
             'desc ✔\n\nBUG=\n\nChange-Id: I123456789',
             squash=False,
             squash_mode='override_nosquash',
-            change_id='I123456789',
+            change_id='I123456asdf789',
             title='We\'ll escape ^_ ^ special chars...@{u}')
 
     def test_gerrit_reviewers_cmd_line(self):

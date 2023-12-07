@@ -51,6 +51,24 @@
       "message": "Is this too long name? Any suggestions for shortening it?",
       "revId": "ed2f00aedb723dfe0de8e9d76189d1de99733920",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bf71022_893d25b0",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2023-12-07T21:28:03Z",
+      "side": 1,
+      "message": "I feel if we end up setting this on builders exclusively ergonomics aren\u0027t going to matter much...\n\nEven otherwise it\u0027s quite descriptive and I think it\u0027s fine.",
+      "parentUuid": "1c3c0560_5db7e060",
+      "revId": "ed2f00aedb723dfe0de8e9d76189d1de99733920",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b3a9ae8_29a448f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-08T19:23:45Z",
+      "side": 1,
+      "message": "L4003 and L4004 in git_cl.py is just an inline-comment. I\u0027m curious how this is informed to the user.",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "b526c58d99bc48afaa3db8adf3006d3761db8a53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10a122da_4f0f2e07",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4069,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-08T19:23:45Z",
+      "side": 1,
+      "message": "if this is expected to happen in the case the parent branch diverge, could this print a statement to run git `rebase-update`?\n\ne.g.,\n```\nprintf(\"Unexpected exception happened; it\u0027s possible that the parent branch diverged. git gitrebase-update would fix it if so\")\n```",
+      "range": {
+        "startLine": 4069,
+        "startChar": 16,
+        "endLine": 4069,
+        "endChar": 51
+      },
+      "revId": "b526c58d99bc48afaa3db8adf3006d3761db8a53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

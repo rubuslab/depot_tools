@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac7072e4_32131cb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-08T21:47:29Z",
+      "side": 1,
+      "message": "Builds are failing now 😞 I think it\u0027s simpler to land this fix, but let me know if I should just revert the previous rollout.\n\nhttps://logs.chromium.org/logs/infra/buildbucket/cr-buildbucket/8762244916210233105/+/u/git_fetch__3_/stdout",
+      "revId": "db7e59f5d728ed4c5a11378e94462033733b78e4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

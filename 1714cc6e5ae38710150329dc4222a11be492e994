@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "562679dc_7ad82f28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1602117
+      },
+      "writtenOn": "2023-12-10T06:52:03Z",
+      "side": 1,
+      "message": "AndroidManifest.xml",
+      "revId": "1714cc6e5ae38710150329dc4222a11be492e994",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

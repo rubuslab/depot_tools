@@ -51,6 +51,23 @@
       "parentUuid": "4e38beab_a3856f37",
       "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56ec0268_796214d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2023-12-13T18:15:21Z",
+      "side": 1,
+      "message": "I\u0027m sorry for a super delayed response. Just found this CL accidentally.\n\n+sokcevic\nThe description in the bug sounds reasonable, but I\u0027d like to ask Josip\u0027s opinion. Josip, would you take a look at this CL?",
+      "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

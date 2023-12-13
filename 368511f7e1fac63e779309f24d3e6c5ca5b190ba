@@ -68,6 +68,69 @@
       "message": "I\u0027m sorry for a super delayed response. Just found this CL accidentally.\n\n+sokcevic\nThe description in the bug sounds reasonable, but I\u0027d like to ask Josip\u0027s opinion. Josip, would you take a look at this CL?",
       "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f204d05_489c9b00",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-13T18:24:15Z",
+      "side": 1,
+      "message": "to be consistent with other commands, we use -- to separate file paths with commit-ish/tree-ish.:\n\n```suggestion\n    return run(\u0027diff-index\u0027, \u0027--ignore-submodules\u0027, \u0027--name-status\u0027, \u0027HEAD\u0027, \u0027--\u0027)\n```",
+      "range": {
+        "startLine": 900,
+        "startChar": 69,
+        "endLine": 900,
+        "endChar": 79
+      },
+      "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ece554e7_176faea7",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-13T18:24:15Z",
+      "side": 1,
+      "message": "```suggestion\n    with run_stream(\u0027rev-list\u0027, \u0027HEAD\u0027, \u0027--\u0027) as stream:\n        for sha in stream:\n            sha \u003d sha.strip().decode(\u0027utf-8\u0027)\n            msg \u003d run(\u0027show\u0027, \u0027--format\u003d%f%b\u0027, \u0027-s\u0027, \u0027HEAD\u0027, \u0027--\u0027)\n```",
+      "range": {
+        "startLine": 1009,
+        "startChar": 0,
+        "endLine": 1012,
+        "endChar": 64
+      },
+      "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37d40b3a_444c77e3",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1213,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-13T18:24:15Z",
+      "side": 1,
+      "message": "This is not correct - this is an actual file in .git/ that we want to copy. Please revert to \u0027HEAD\u0027\n```suggestion\n                        [\u0027HEAD\u0027])\n```",
+      "revId": "368511f7e1fac63e779309f24d3e6c5ca5b190ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

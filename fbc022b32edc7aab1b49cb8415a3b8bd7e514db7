@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8d98b6c_888bfe88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2023-12-13T21:41:38Z",
+      "side": 1,
+      "message": "done, sorry for the commit-spam, needed to to add/rm HEAD 🙈",
+      "revId": "fbc022b32edc7aab1b49cb8415a3b8bd7e514db7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a39df920_fe2d5426",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-13T01:29:02Z",
+      "side": 1,
+      "message": "waiting on https://crrev.com/c/5118881 to land before cq+2 this. No changes to depot_tools",
+      "revId": "5fcf3d2568c7cf3bf57efbf4b4df6a48902ce79a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

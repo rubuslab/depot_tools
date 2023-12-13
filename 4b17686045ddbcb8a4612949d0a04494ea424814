@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b818f00_e0ce21d2",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-13T21:26:01Z",
+      "side": 1,
+      "message": "remove \u0027@\u0027",
+      "range": {
+        "startLine": 1009,
+        "startChar": 37,
+        "endLine": 1009,
+        "endChar": 38
+      },
+      "revId": "4b17686045ddbcb8a4612949d0a04494ea424814",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -7,6 +7,8 @@ third_party as part of gclient sync. It will automatically find the siso
 binary when run inside a gclient source tree, so users can just type
 "siso" on the command line."""
 
+# This is a test
+
 import os
 import signal
 import subprocess

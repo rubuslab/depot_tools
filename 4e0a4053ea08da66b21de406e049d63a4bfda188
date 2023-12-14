@@ -16,6 +16,23 @@
       "message": "Passing on to the current trooper.",
       "revId": "4e0a4053ea08da66b21de406e049d63a4bfda188",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b87f51d_d5465c72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2023-12-14T22:35:17Z",
+      "side": 1,
+      "message": "sorry for super belated stamp. I totally missed this and just discovered it as part of EoY cleanup.",
+      "revId": "4e0a4053ea08da66b21de406e049d63a4bfda188",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

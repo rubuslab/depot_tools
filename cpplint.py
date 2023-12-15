@@ -174,6 +174,7 @@ Syntax: cpplint.py [--verbose=#] [--output=vs7] [--filter=-x,+y,...]
 # We want an explicit list so we can list them all in cpplint --filter=.
 # If you add a new error message with a new category, add it to the list
 # here!  cpplint_unittest.py should tell you if you forget to do this.
+# go/keep-sorted start
 _ERROR_CATEGORIES = [
     'build/class',
     'build/c++11',
@@ -181,6 +182,7 @@ _ERROR_CATEGORIES = [
     'build/c++tr1',
     'build/deprecated',
     'build/endif_comment',
+    'runtime/operator',
     'build/explicit_make_pair',
     'build/forward_decl',
     'build/header_guard',
@@ -217,7 +219,6 @@ _ERROR_CATEGORIES = [
     'runtime/member_string_references',
     'runtime/memset',
     'runtime/indentation_namespace',
-    'runtime/operator',
     'runtime/printf',
     'runtime/printf_format',
     'runtime/references',
@@ -243,6 +244,7 @@ _ERROR_CATEGORIES = [
     'whitespace/tab',
     'whitespace/todo',
 ]
+# go/keep-sorted start
 
 # These error categories are no longer enforced by cpplint, but for backwards-
 # compatibility they may still appear in NOLINT comments.

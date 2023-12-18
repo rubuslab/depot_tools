@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a4bee2dc_30f2573a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-12-18T23:59:07Z",
+      "side": 1,
+      "message": "Sounds good. Do you know a convenient way for me to check if there is only a single commit? Is there something in git_common that already does that?",
+      "parentUuid": "25521e71_a9ebe0ea",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cdf96e2_71a7c8b2",
         "filename": "git_rebase_update.py",
         "patchSetId": 1

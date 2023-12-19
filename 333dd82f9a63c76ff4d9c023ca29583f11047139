@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ff7f1d6_8872498e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-19T00:57:01Z",
+      "side": 1,
+      "message": "bryner@, I reused your commit message, but the implementation had to be different.\n\nJust in case you are not aware, when setting old_env \u003d os.environ, old_env is a reference, and therefore any update to os.environ will be reflected in old_env.",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

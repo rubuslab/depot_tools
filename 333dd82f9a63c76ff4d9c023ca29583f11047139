@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9371353c_6d218d44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-19T02:17:33Z",
+      "side": 1,
+      "message": "It\u0027s a stab in the dark, but this code: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:testing_support/git_test_utils.py;l\u003d387;drc\u003d06c4261af7368fdf57e3b3dfdce2cfef6b659f29\n\nmight need to call os.set_inheritable (and/or os.set_handle_inheritable?) on `devnull`, per https://docs.python.org/3.8/library/os.html#fd-inheritance",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ff6b8155_97a2646f",
         "filename": "presubmit_support.py",
         "patchSetId": 1

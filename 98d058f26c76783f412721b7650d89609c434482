@@ -52,6 +52,24 @@
       "parentUuid": "bdb575f1_413e1f42",
       "revId": "98d058f26c76783f412721b7650d89609c434482",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f51b805_1eb20fc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2023-12-19T08:44:19Z",
+      "side": 1,
+      "message": "Thanks. I send an email to request a review...",
+      "parentUuid": "40075ace_19181f88",
+      "revId": "98d058f26c76783f412721b7650d89609c434482",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

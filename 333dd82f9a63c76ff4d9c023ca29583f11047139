@@ -16,6 +16,40 @@
       "message": "bryner@, I reused your commit message, but the implementation had to be different.\n\nJust in case you are not aware, when setting old_env \u003d os.environ, old_env is a reference, and therefore any update to os.environ will be reflected in old_env.",
       "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe9fd566_8f147f77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-19T01:49:43Z",
+      "side": 1,
+      "message": "Note sure what\u0027s going on with the presubmit failure -- I think part of it that it needs formatted, but it\u0027s also blowing up running some git commands.",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff6b8155_97a2646f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-19T01:49:43Z",
+      "side": 1,
+      "message": "Note this throws KeyError if the key doesn\u0027t exist. It\u0027s probably ok, given that all the keys from old_kv are set in os.environ at line 2029, however I suppose code that runs inside the context manager could then unset the variable, triggering an exception.\n\nYou could pass None as the second parameter to pop if you want to avoid this possibility.",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c0c4d62e_7d0c4f34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-12-19T19:03:30Z",
+      "side": 1,
+      "message": "Thanks, I extracted into its own function and manually tested that the new patchset works as expected - if there is only one commit squashing will not happen, but if there is two it does try squashing.",
+      "parentUuid": "a63ecc5b_4d1f9a15",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cdf96e2_71a7c8b2",
         "filename": "git_rebase_update.py",
         "patchSetId": 1
@@ -96,6 +114,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb9880e5_f18e708b",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-12-19T19:03:30Z",
+      "side": 1,
+      "message": "Do you still think I should add a test for this? I guess it would just assert that the message with \"squash\" doesn\u0027t appear in the output.",
+      "parentUuid": "2cdf96e2_71a7c8b2",
+      "range": {
+        "startLine": 143,
+        "startChar": 46,
+        "endLine": 143,
+        "endChar": 55
+      },
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "852a1448_a09e372f",
         "filename": "git_rebase_update.py",
         "patchSetId": 1
@@ -107,6 +149,24 @@
       "writtenOn": "2023-11-29T20:03:32Z",
       "side": 1,
       "message": "text duplication - please extract to a variable and reuse",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc62ed52_237b895e",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1303398
+      },
+      "writtenOn": "2023-12-19T19:03:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "852a1448_a09e372f",
       "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

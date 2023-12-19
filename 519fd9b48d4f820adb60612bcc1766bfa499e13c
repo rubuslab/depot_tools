@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebc64889_af1f2305",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-19T19:18:56Z",
+      "side": 1,
+      "message": "fyi - we can\u0027t submit it this year. We have a prod freeze until Jan 1st (inclusive).",
+      "revId": "519fd9b48d4f820adb60612bcc1766bfa499e13c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

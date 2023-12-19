@@ -22,6 +22,30 @@
       },
       "revId": "dd5f84bfe38594b61be84414ab2d2d6784fc7e99",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c4585b5_19f8805c",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-19T19:18:56Z",
+      "side": 1,
+      "message": "I\u0027m not sure what a smarter way would be so let\u0027s remove it.",
+      "parentUuid": "386d49a7_ba3540a5",
+      "range": {
+        "startLine": 181,
+        "startChar": 14,
+        "endLine": 181,
+        "endChar": 18
+      },
+      "revId": "dd5f84bfe38594b61be84414ab2d2d6784fc7e99",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

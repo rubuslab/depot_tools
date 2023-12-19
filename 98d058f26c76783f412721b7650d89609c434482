@@ -34,6 +34,24 @@
       "parentUuid": "47c8c814_ef575e83",
       "revId": "98d058f26c76783f412721b7650d89609c434482",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40075ace_19181f88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2023-12-19T05:15:15Z",
+      "side": 1,
+      "message": "Maybe you need to ask for review to http://shortn/_ITvFxKwl4E by sending mail explicitly.",
+      "parentUuid": "bdb575f1_413e1f42",
+      "revId": "98d058f26c76783f412721b7650d89609c434482",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

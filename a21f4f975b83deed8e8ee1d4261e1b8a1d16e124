@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a63ecc5b_4d1f9a15",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-19T00:09:25Z",
+      "side": 1,
+      "message": "Great. There is no function for that today. But, we have similar functionality in git map-branches.\n\nFrom  https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_common.py;l\u003d1159;drc\u003d6444de14d1af435a425d9c6306c620c77fff9191\n, the following can be extracted into its own function:\n \n```\n            base \u003d get_or_create_merge_base(branch)\n            if base:\n                commits_list \u003d run(\u0027rev-list\u0027, \u0027--count\u0027, branch, \u0027^%s\u0027 % base,\n                                   \u0027--\u0027)\n                commits \u003d int(commits_list) or None\n```",
+      "parentUuid": "a4bee2dc_30f2573a",
+      "revId": "a21f4f975b83deed8e8ee1d4261e1b8a1d16e124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cdf96e2_71a7c8b2",
         "filename": "git_rebase_update.py",
         "patchSetId": 1

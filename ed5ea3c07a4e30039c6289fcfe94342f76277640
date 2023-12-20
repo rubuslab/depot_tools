@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85eec35b_bde1b8ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-20T01:37:14Z",
+      "side": 1,
+      "message": "It looks like there are some other locations in depot_tools/tests/ where `os.environ` is replaced by a dict. This shouldn\u0027t affect code outside of those specific tests, but I\u0027d also recommend updating these to do something safer (in a separate CL if you\u0027d like).",
+      "revId": "ed5ea3c07a4e30039c6289fcfe94342f76277640",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

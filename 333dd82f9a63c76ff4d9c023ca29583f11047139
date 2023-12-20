@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "23f0bde5_c5120d31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-20T01:37:14Z",
+      "side": 1,
+      "message": "Indeed that does seem like the main problem here, though I still wonder if there is an issue with logging to stderr in the code I linked to. I will test separately from this CL.",
+      "parentUuid": "267943a9_df86a1fa",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff6b8155_97a2646f",

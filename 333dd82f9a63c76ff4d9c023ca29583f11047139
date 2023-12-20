@@ -88,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "52b68d97_7b78f461",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2023-12-20T01:51:55Z",
+      "side": 1,
+      "message": "I can\u0027t reproduce logging to stderr which was passed from a parent process as os.devnull causing this error on Windows.",
+      "parentUuid": "23f0bde5_c5120d31",
+      "revId": "333dd82f9a63c76ff4d9c023ca29583f11047139",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff6b8155_97a2646f",

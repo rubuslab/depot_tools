@@ -16,6 +16,24 @@
       "message": "It looks like there are some other locations in depot_tools/tests/ where `os.environ` is replaced by a dict. This shouldn\u0027t affect code outside of those specific tests, but I\u0027d also recommend updating these to do something safer (in a separate CL if you\u0027d like).",
       "revId": "ed5ea3c07a4e30039c6289fcfe94342f76277640",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b26f219b_45eb0781",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2023-12-20T18:24:04Z",
+      "side": 1,
+      "message": "Missed this comment. os.environ is mocked in `tests/gclient_paths_test.py` and `tests/auth_test.py` so it should be fine to keep as is.",
+      "parentUuid": "85eec35b_bde1b8ba",
+      "revId": "ed5ea3c07a4e30039c6289fcfe94342f76277640",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

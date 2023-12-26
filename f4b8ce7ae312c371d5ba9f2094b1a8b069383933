@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b67bb5e6_c4d1e1b5",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2023-12-26T19:04:28Z",
+      "side": 1,
+      "message": "```suggestion\n            if (val :\u003d GIT.rev_parse_cache.get(cache_key)):\n                return val\n```",
+      "range": {
+        "startLine": 472,
+        "startChar": 12,
+        "endLine": 474,
+        "endChar": 0
+      },
+      "revId": "f4b8ce7ae312c371d5ba9f2094b1a8b069383933",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

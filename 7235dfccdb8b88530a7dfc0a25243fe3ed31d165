@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4db30c72_f86f1567",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-02T22:08:54Z",
+      "side": 1,
+      "message": "I believe this greatly improved in py3, so maybe we should consider using datetime, e.g.\n\n```\n_FREEZE_START \u003d datetime.datetime(2023, 12, 15, 0, 0, tzinfo\u003ddatetime.timezone.utc)\n_FREEZE_END \u003d datetime.datetime(2024, 1, 2, 0, 0, tzinfo\u003ddatetime.timezone.utc)\n```\n\nand input_api.time.time() becomes datetime.datetime.now(datetime.timezone.utc) (we probably need to extend input_api to have datetime.now([tz]).\n\nwdyt?",
+      "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

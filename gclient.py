@@ -1321,10 +1321,27 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             # TODO(maruel): If the user is using git, then we don't know
             # what files have changed so we always run all hooks. It'd be nice
             # to fix that.
-            result.extend(self.deps_hooks)
+            result.extend(self.FilteredHooks(options))
         for s in self.dependencies:
             result.extend(s.GetHooks(options))
         return result
+
+    def FilteredHooks(self, options):
+        """Returns a list of hooks that should be run.
+        By default, all hooks are run. If --included-hooks is specified, only
+        hooks with names in that list are run. If --excluded-hooks is
+        specified, only hooks with names not in that list are run."""
+        assert not (options.included_hooks and options.excluded_hooks), ('Must'
+            ' specify either --included-hooks or --excluded-hooks, or none '
+            '(default), but never both.')
+        def _Filter(hook):
+            if options.included_hooks:
+                return hook.name in options.included_hooks
+            if options.excluded_hooks:
+                return hook.name not in options.excluded_hooks
+            return True
+
+        return [h for h in self.deps_hooks if _Filter(h)]
 
     def RunHooksRecursively(self, options, progress):
         assert self.hooks_ran == False
@@ -1333,6 +1350,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if progress:
             progress._total = len(hooks)
         for hook in hooks:
+            print('Running hook: %s' % hook.name)
             if progress:
                 progress.update(extra=hook.name or '')
             hook.run()
@@ -4031,6 +4049,12 @@ class OptionParser(optparse.OptionParser):
                         default=False,
                         action='store_true',
                         help='Ignored for backwards compatibility.')
+        self.add_option('--included-hooks',
+                        default=None,
+                        help='Comma separated list of hooks to run.')
+        self.add_option('--excluded-hooks',
+                        default=None,
+                        help='Comma separated list of hooks to skip.')
 
     def parse_args(self, args=None, _values=None):
         """Integrates standard options processing."""
@@ -4079,6 +4103,10 @@ class OptionParser(optparse.OptionParser):
             options.deps_os = None
         if not hasattr(options, 'force'):
             options.force = None
+        if hasattr(options, 'included_hooks') and options.included_hooks:
+            options.included_hooks = options.included_hooks.split(',')
+        if hasattr(options, 'excluded_hooks') and options.excluded_hooks:
+            options.excluded_hooks = options.excluded_hooks.split(',')
         return (options, args)
 
 

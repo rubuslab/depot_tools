@@ -16,6 +16,24 @@
       "message": "I believe this greatly improved in py3, so maybe we should consider using datetime, e.g.\n\n```\n_FREEZE_START \u003d datetime.datetime(2023, 12, 15, 0, 0, tzinfo\u003ddatetime.timezone.utc)\n_FREEZE_END \u003d datetime.datetime(2024, 1, 2, 0, 0, tzinfo\u003ddatetime.timezone.utc)\n```\n\nand input_api.time.time() becomes datetime.datetime.now(datetime.timezone.utc) (we probably need to extend input_api to have datetime.now([tz]).\n\nwdyt?",
       "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35117589_437e8680",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-01-02T22:32:08Z",
+      "side": 1,
+      "message": "Well, the times are supposed to be midnight in Pacific time, not in UTC. So they would need to be something like\n\n```\n_TZ \u003d zoneinfo.ZoneInfo(\"America/Los_Angeles\")\n_FREEZE_START \u003d datetime.datetime(2023, 12, 15, 0, 0, tzinfo\u003d_TZ)\n_FREEZE_END \u003d datetime.datetime(2024, 1, 2, 0, 0, tzinfo\u003d_TZ)\n```\n\nCurrently depot_tools uses python 3.8 for it\u0027s .vpython3 and zoneinfo wasn\u0027t added until 3.9, so that would require an update.",
+      "parentUuid": "4db30c72_f86f1567",
+      "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

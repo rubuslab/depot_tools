@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2feea2b_847a9ea6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1582526
+      },
+      "writtenOn": "2024-01-02T22:34:29Z",
+      "side": 1,
+      "message": "Update LGTM:\n\n```\n$ ./cipd --version\ncipd 2.6.16 (infra/tools/cipd/linux-amd64@PjmQ-niu5HymjDPWvIfQ2jtyIOSdHsIJ63PU7Gl4MLkC)\n\nCIPD package name: infra/tools/cipd/linux-amd64\nCIPD instance ID:  PjmQ-niu5HymjDPWvIfQ2jtyIOSdHsIJ63PU7Gl4MLkC\nCIPD URL: https://chrome-infra-packages.appspot.com/p/infra/tools/cipd/linux-amd64/+/PjmQ-niu5HymjDPWvIfQ2jtyIOSdHsIJ63PU7Gl4MLkC\n```",
+      "revId": "b8fedf39e6d7feaa542c6a85a8e61510f212c619",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

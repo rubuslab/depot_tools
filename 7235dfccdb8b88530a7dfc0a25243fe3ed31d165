@@ -52,6 +52,24 @@
       "parentUuid": "35117589_437e8680",
       "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7bbc79dd_bfc12781",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-01-02T23:57:06Z",
+      "side": 1,
+      "message": "Okay, I\u0027ll wait for depot_tools to get updated.",
+      "parentUuid": "a6277d56_46cb4542",
+      "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

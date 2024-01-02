@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6335a6aa_f3ae9e12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-02T18:54:51Z",
+      "side": 1,
+      "message": "Can\u0027t you run a hook directly instead? I don\u0027t think we want to encourage folks to run only selected hooks. Could you provide a bit more information where this would be useful, and we can explore other options how the experience can be improved.\n\nAlso, this is adding a fair amount of logic with no test coverage. And adds those options to all gclient commands, and I believe only gclient runhooks and gclient sync would need it.\n\nWith all that, let\u0027s not submit this.",
+      "revId": "649ae222b3408005f2ec8cc4f4a237dc40e9e25a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "549c3458_e67492d1",
@@ -83,6 +100,24 @@
       "writtenOn": "2024-01-02T18:24:58Z",
       "side": 1,
       "message": "would this be very spammy?",
+      "revId": "649ae222b3408005f2ec8cc4f4a237dc40e9e25a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ba93ff0_17c99998",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1353,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-02T18:54:51Z",
+      "side": 1,
+      "message": "+1, this would be very spammy as there are many hooks.",
+      "parentUuid": "4a5c3dcb_15871cfb",
       "revId": "649ae222b3408005f2ec8cc4f4a237dc40e9e25a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

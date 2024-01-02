@@ -34,6 +34,24 @@
       "parentUuid": "4db30c72_f86f1567",
       "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6277d56_46cb4542",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-02T23:22:02Z",
+      "side": 1,
+      "message": "Ah, right. We could default to UTC, but we can also wait for 3.11 upgrade which should happen in coming days / weeks (we attempted an upgrade in Dec but found a few bugs which have been patched).",
+      "parentUuid": "35117589_437e8680",
+      "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

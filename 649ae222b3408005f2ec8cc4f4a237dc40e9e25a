@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "549c3458_e67492d1",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-01-02T18:05:30Z",
+      "side": 1,
+      "message": "```suggestion\n        \"\"\"Returns a list of hooks that should be run.\n\n        By default, all hooks are run. If --included-hooks is specified, only\n        hooks with names in that list are run. If --excluded-hooks is\n```",
+      "range": {
+        "startLine": 1330,
+        "startChar": 8,
+        "endLine": 1332,
+        "endChar": 8
+      },
+      "revId": "649ae222b3408005f2ec8cc4f4a237dc40e9e25a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce3826fc_f0fe3363",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1353,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-01-02T18:05:30Z",
+      "side": 1,
+      "message": "Replace with f string",
+      "range": {
+        "startLine": 1353,
+        "startChar": 18,
+        "endLine": 1353,
+        "endChar": 48
+      },
+      "revId": "649ae222b3408005f2ec8cc4f4a237dc40e9e25a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

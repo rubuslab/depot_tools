@@ -16,6 +16,23 @@
       "message": "hey Yiwei, I just picked your name off of the OWNERS list since I recognized it. :) PTAL when you get the chance.",
       "revId": "20529b31f662be77085942431ce1d4f453c85b0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c975880d_cf5cdd96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-03T16:58:11Z",
+      "side": 1,
+      "message": "lgtm. You will also need to make a roll [like this](https://crrev.com/i/6727848) so that our bots will use the same version of lucicfg. Let me know if you don\u0027t have the permission to make that change.",
+      "revId": "20529b31f662be77085942431ce1d4f453c85b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

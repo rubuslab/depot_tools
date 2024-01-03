@@ -33,6 +33,24 @@
       "message": "lgtm. You will also need to make a roll [like this](https://crrev.com/i/6727848) so that our bots will use the same version of lucicfg. Let me know if you don\u0027t have the permission to make that change.",
       "revId": "20529b31f662be77085942431ce1d4f453c85b0b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3ff80d1_78944097",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1154295
+      },
+      "writtenOn": "2024-01-03T16:58:47Z",
+      "side": 1,
+      "message": "already on it. :) thanks.",
+      "parentUuid": "c975880d_cf5cdd96",
+      "revId": "20529b31f662be77085942431ce1d4f453c85b0b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

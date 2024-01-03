@@ -1321,10 +1321,28 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             # TODO(maruel): If the user is using git, then we don't know
             # what files have changed so we always run all hooks. It'd be nice
             # to fix that.
-            result.extend(self.deps_hooks)
+            result.extend(self.FilteredHooks(options))
         for s in self.dependencies:
             result.extend(s.GetHooks(options))
         return result
+
+    def FilteredHooks(self, options):
+        """Returns a list of hooks that should be run.
+
+        By default, all hooks are run. If --include-hooks is specified, we will
+        run only those hooks. If --exclude-hooks is specified, we will run all
+        hooks except those."""
+        assert not (options.include_hooks and options.exclude_hooks), ('Must'
+            ' specify either --include-hooks or --exclude-hooks, or none '
+            '(default), but never both.')
+        def _Filter(hook):
+            if options.include_hooks:
+                return hook.name in options.include_hooks
+            if options.exclude_hooks:
+                return hook.name not in options.exclude_hooks
+            return True
+
+        return [h for h in self.deps_hooks if _Filter(h)]
 
     def RunHooksRecursively(self, options, progress):
         assert self.hooks_ran == False
@@ -3495,6 +3513,14 @@ def CMDsync(parser, args):
                       dest='experiments',
                       default=[],
                       help='Which experiments should be enabled.')
+    parser.add_option('--include-hooks',
+                        default=None,
+                        action='append',
+                        help='Specify if you need to run only certain hooks.')
+    parser.add_option('--exclude-hook',
+                        default=None,
+                        action='append',
+                        help='Specify if you need to skip certain hooks.')
     (options, args) = parser.parse_args(args)
     client = GClient.LoadCurrentConfig(options)
 

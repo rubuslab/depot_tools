@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbb488e3_5051ddf9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2024-01-04T14:37:03Z",
+      "side": 1,
+      "message": "Tested locally, and git-cache fetch runs correctly with this fix, is broken without it.  Needed the GIT_CACHE_PATH environment variable to be set explicitly, just having a cache_dir property in the gclient solution wasn\u0027t enough.",
+      "revId": "982f835e4963ddf2aa86e0b062bfbcf3db29f8df",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

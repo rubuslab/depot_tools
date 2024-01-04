@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3900a361_76bb17bd",
+        "filename": "git_cache.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2024-01-04T11:01:20Z",
+      "side": 1,
+      "message": "I think this entire section should not have --git-dir added to the commands, because they operate on regular git repo checkouts in a gclient solution source tree, not on the bare repositories in the cache. It looks like the only command that operates on the cache is the call to mirror.populate.",
+      "range": {
+        "startLine": 810,
+        "startChar": 0,
+        "endLine": 810,
+        "endChar": 56
+      },
+      "revId": "259976c7483c321c122169d193e150310f4ea609",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dcc559c_8d38cc37",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-04T21:13:13Z",
+      "side": 1,
+      "message": "gclient sync worked fine on linux and win machine, unit tests pass, and a led test run was successful (https://ci.chromium.org/b/8759807732241260561).",
+      "revId": "c8ab80575d23e896b310bab4cfc194c00b961cfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

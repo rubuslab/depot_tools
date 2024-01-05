@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7439012_5bb5ffd1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-05T23:23:15Z",
+      "side": 1,
+      "message": "With the lastest change, looks like py3 is not placed in the depot_tools\u0027s root. Need to investigate why.",
+      "revId": "372e0a780317acd46a911995312cb6251aff7768",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

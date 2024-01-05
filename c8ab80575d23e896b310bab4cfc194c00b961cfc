@@ -33,6 +33,24 @@
       "message": "Consider also removing the python 2 stuff from win_tools.bat (and updating this comment). Can be a follow-up if you\u0027d like.",
       "revId": "c8ab80575d23e896b310bab4cfc194c00b961cfc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5eb2e605_8bcbdc95",
+        "filename": "bootstrap/manifest.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-05T23:51:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76263ee7_f507de5c",
+      "revId": "c8ab80575d23e896b310bab4cfc194c00b961cfc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -35,13 +35,7 @@ if not exist "%BOOTSTRAP_ROOT_DIR%\.bleeding_edge" (
 :: delayed expansion variables.
 for /F "usebackq tokens=*" %%A in ("%~dp0%CIPD_MANIFEST%") do (
   set LINE=%%A
-  if not "x!LINE:cpython/=!" == "x!LINE!" set PYTHON_VERSION=!LINE:*version:=!
   if not "x!LINE:cpython3/=!" == "x!LINE!" set PYTHON3_VERSION=!LINE:*version:=!
-)
-if "%PYTHON_VERSION%" == "" (
-  @echo Could not extract Python version from manifest.
-  set ERRORLEVEL=1
-  goto :END
 )
 if "%PYTHON3_VERSION%" == "" (
   @echo Could not extract Python version from manifest.

@@ -4,6 +4,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+
 # In git bash on Windows, invoke the batch file.
 if [ "$(expr "$(uname -s)" : "^MINGW64_NT")" == "10" ]; then
     autoninja.bat "$@"

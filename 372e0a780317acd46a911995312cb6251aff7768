@@ -33,6 +33,52 @@
       "message": "Ah, having `DEPOT_TOOLS_UPDATE\u003d0` results in bootstrap not working (regardless of this patch). Removing it solves the problem.",
       "revId": "372e0a780317acd46a911995312cb6251aff7768",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfb03138_d760e710",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-07T22:30:36Z",
+      "side": 1,
+      "message": "Update this comment too?",
+      "range": {
+        "startLine": 11,
+        "startChar": 16,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "372e0a780317acd46a911995312cb6251aff7768",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a3df633_5f2617df",
+        "filename": "bootstrap/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-07T22:30:36Z",
+      "side": 1,
+      "message": "Perhaps update this comment to \u0027cpython3\u0027 to match the code.",
+      "range": {
+        "startLine": 28,
+        "startChar": 49,
+        "endLine": 28,
+        "endChar": 50
+      },
+      "revId": "372e0a780317acd46a911995312cb6251aff7768",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

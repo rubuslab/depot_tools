@@ -58,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6413a2c9_6ddd1556",
+        "filename": "bootstrap/manifest_bleeding_edge.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-09T17:55:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfb03138_d760e710",
+      "range": {
+        "startLine": 11,
+        "startChar": 16,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "372e0a780317acd46a911995312cb6251aff7768",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a3df633_5f2617df",
@@ -71,6 +95,30 @@
       "writtenOn": "2024-01-07T22:30:36Z",
       "side": 1,
       "message": "Perhaps update this comment to \u0027cpython3\u0027 to match the code.",
+      "range": {
+        "startLine": 28,
+        "startChar": 49,
+        "endLine": 28,
+        "endChar": 50
+      },
+      "revId": "372e0a780317acd46a911995312cb6251aff7768",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d2dac7f_71daf48e",
+        "filename": "bootstrap/win_tools.bat",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-09T17:55:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a3df633_5f2617df",
       "range": {
         "startLine": 28,
         "startChar": 49,

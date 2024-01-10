@@ -16,6 +16,23 @@
       "message": "@danakj, can you PTAL and do the initial review?  (I\u0027ll loop in depot_tools/OWNERS once I get an LGTM from you)",
       "revId": "73f2d843f50a21b37abc1a6fd23d92100602a26f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d04575d_e0e9474f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-01-10T18:58:46Z",
+      "side": 1,
+      "message": "Thank you! LGTM",
+      "revId": "73f2d843f50a21b37abc1a6fd23d92100602a26f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

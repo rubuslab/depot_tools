@@ -33,6 +33,29 @@
       "message": "Thank you! LGTM",
       "revId": "73f2d843f50a21b37abc1a6fd23d92100602a26f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f3453d5_8a089baa",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6217,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-01-10T18:59:09Z",
+      "side": 1,
+      "message": "nit: most of this file (and other files) use `\u0027` not `\"` here",
+      "range": {
+        "startLine": 6217,
+        "startChar": 26,
+        "endLine": 6217,
+        "endChar": 27
+      },
+      "revId": "73f2d843f50a21b37abc1a6fd23d92100602a26f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

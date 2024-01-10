@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2013a0b0_3b0e6fe1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1130134
+      },
+      "writtenOn": "2024-01-10T20:10:09Z",
+      "side": 1,
+      "message": "@sokcevic, can you PTAL?  (I\u0027ve randomly picked you from depot_tools/OWNERS;  I am not sure why Gerrit doesn\u0027t expand your @google.com email address [which is what the OWNERS file uses] so let me use the @chromium.org email [which Gerrit recognizes])",
+      "revId": "884666f329aa6e3fe020b7ed7d49b66f8e4c917e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

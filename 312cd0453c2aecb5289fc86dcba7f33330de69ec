@@ -16,6 +16,24 @@
       "message": "Hello \nPython 3.11 warning \"module \u0027sre_compile\u0027 is deprecated\"\n\nhttps://logs.chromium.org/logs/v8/buildbucket/cr-buildbucket/8759124646677695153/+/u/presubmit/stdout?format\u003draw\n\n```\n[D2024-01-11 23:35:30,787 6103 139676020565888 subprocess2.py] git -C /b/s/w/ir/cache/builder/v8_presubmit/s cl format --dry-run --presubmit --upstream 0964a93608201f5b428ef6a8547981d9144ca082\n/b/s/w/ir/cache/builder/v8_presubmit/s/third_party/depot_tools/cpplint.py:51: DeprecationWarning: module \u0027sre_compile\u0027 is deprecated\nDone processing /b/s/w/ir/cache/builder/v8_presubmit/s/src/codegen/riscv/base-constants-riscv.cc\n/b/s/w/ir/cache/builder/v8_presubmit/s/third_party/depot_tools/cpplint.py:51: DeprecationWarning: module \u0027sre_compile\u0027 is deprecated\nDone processing /b/s/w/ir/cache/builder/v8_presubmit/s/src/codegen/riscv/assembler-riscv.h\n/b/s/w/ir/cache/builder/v8_presubmit/s/third_party/depot_tools/cpplint.py:51: DeprecationWarning: module \u0027sre_compile\u0027 is deprecated\nDone processing /b/s/w/ir/cache/builder/v8_presubmit/s/src/codegen/riscv/base-constants-riscv.h\nTotal C/C++ files found that require formatting: 3\n```",
       "revId": "312cd0453c2aecb5289fc86dcba7f33330de69ec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c865dbd0_373e6418",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-12T19:20:32Z",
+      "side": 1,
+      "message": "Thanks for the report. I see you created https://crrev.com/c/5189743, which should address it.",
+      "parentUuid": "4ba3be6e_efe0f604",
+      "revId": "312cd0453c2aecb5289fc86dcba7f33330de69ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -22,6 +22,53 @@
       },
       "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ccfca1d_0468d2ea",
+        "filename": "cpplint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-12T19:20:14Z",
+      "side": 1,
+      "message": "I don\u0027t think it does anything, needs to be removed.",
+      "parentUuid": "d4fa070c_cea0563b",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70463c76_f8fd57cf",
+        "filename": "cpplint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-12T19:20:14Z",
+      "side": 1,
+      "message": "```suggestion\n    import sre_compile\n```",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

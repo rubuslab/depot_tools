@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4fa070c_cea0563b",
+        "filename": "cpplint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-01-12T18:25:22Z",
+      "side": 1,
+      "message": "I\u0027m curious as to what this line does?",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

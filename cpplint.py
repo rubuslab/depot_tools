@@ -48,10 +48,15 @@ import getopt
 import math  # for log
 import os
 import re
-import sre_compile
 import string
 import sys
 import unicodedata
+
+try:
+    sre_compile = re._compiler
+except AttributeError:
+    import sre_compile
+    sre_compile = sre_compile
 
 _USAGE = r"""
 Syntax: cpplint.py [--verbose=#] [--output=vs7] [--filter=-x,+y,...]

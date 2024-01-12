@@ -34,6 +34,24 @@
       "parentUuid": "4ba3be6e_efe0f604",
       "revId": "312cd0453c2aecb5289fc86dcba7f33330de69ec",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3c49229_adfb820f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-12T19:24:14Z",
+      "side": 1,
+      "message": "there seems to be a separate fix on the same issue: https://crrev.com/c/5190610",
+      "parentUuid": "c865dbd0_373e6418",
+      "revId": "312cd0453c2aecb5289fc86dcba7f33330de69ec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

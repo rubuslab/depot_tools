@@ -48,7 +48,7 @@ import getopt
 import math  # for log
 import os
 import re
-import sre_compile
+import re._compiler as sre_compile
 import string
 import sys
 import unicodedata

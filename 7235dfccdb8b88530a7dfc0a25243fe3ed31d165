@@ -70,6 +70,24 @@
       "parentUuid": "a6277d56_46cb4542",
       "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6da2e236_23817c21",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-13T00:00:51Z",
+      "side": 1,
+      "message": "3.11 landed in https://crrev.com/c/5189582, so we should be good to update code. Maybe wait with submission until Tue, just in case we need to roll back the change again.",
+      "parentUuid": "7bbc79dd_bfc12781",
+      "revId": "7235dfccdb8b88530a7dfc0a25243fe3ed31d165",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -69,6 +69,54 @@
       },
       "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f49ddd1a_f30c5adf",
+        "filename": "cpplint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1464828
+      },
+      "writtenOn": "2024-01-15T01:22:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ccfca1d_0468d2ea",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "561776fd_e17e7b38",
+        "filename": "cpplint.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1464828
+      },
+      "writtenOn": "2024-01-15T01:22:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "70463c76_f8fd57cf",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 29
+      },
+      "revId": "8d668b38853f1eebda4daba0908d73be6b106827",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

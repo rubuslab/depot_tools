@@ -6075,6 +6075,28 @@ def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
     return diff_cmd
 
 
+def _FilterGitDiff(diff, clang_diff_files):
+    """Filters the output of git diff to contain only data of a list of files.
+
+    Args:
+      diff: The output (bytes) of "git diff"
+      clang_diff_files: A list of filenames
+
+    Returns:
+      The subset of "diff", which describes files listed in "clang_diff_files"
+    """
+    output = []
+    skipping_file = False
+    pattern = r'(?:^diff --git (?:.*) (.*))'
+    for line in diff.decode('utf-8').splitlines():
+        if match := re.match(pattern, line):
+            new_filename = match.group(1)
+            skipping_file = new_filename not in clang_diff_files
+        if not skipping_file:
+            output.append(line)
+    return '\n'.join(output).encode('utf-8')
+
+
 def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
     """Runs clang-format-diff and sets a return value if necessary."""
     # Set to 2 to signal to CheckPatchFormatted() that this patch isn't
@@ -6116,8 +6138,13 @@ def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
         if not opts.dry_run and not opts.diff:
             cmd.append('-i')
 
-        diff_cmd = BuildGitDiffCmd(['-U0'], upstream_commit, clang_diff_files)
+        # By not passing clang_diff_files as the last parameter, git diff is
+        # smart enough to only return changes lines of moved/copied files.
+        diff_cmd = BuildGitDiffCmd(['-U0'], upstream_commit, [])
         diff_output = RunGit(diff_cmd).encode('utf-8')
+        # Now prune the content of diff_output to only consider files listed in
+        # clang_diff_files.
+        diff_output = _FilterGitDiff(diff_output, clang_diff_files)
 
         env = os.environ.copy()
         env['PATH'] = (str(os.path.dirname(clang_format_tool)) + os.pathsep +
@@ -6492,7 +6519,31 @@ def CMDformat(parser, args):
         DieWithError('Could not find base commit for this branch. '
                      'Are you in detached state?')
 
-    # Filter out copied/renamed/deleted files
+    top_dir = settings.GetRoot()
+    return_value = 0
+
+    # The following treats _RunClangFormatDiff specially, because
+    # _RunClangFormatDiff can operate on the output of git diff, rather just
+    # than a list of files. That enables _RunClangFormatDiff to be smart about
+    # renamed and copied files (reformat only changed lines, not the entire
+    # file).
+    # Filter out deleted (d) files.
+    changed_files_cmd = BuildGitDiffCmd(['--name-only', '--diff-filter=d'],
+                                        upstream_commit, args)
+    diff_output = RunGit(changed_files_cmd)
+    diff_files = diff_output.splitlines()
+    if opts.clang_format:
+        paths = [p for p in diff_files if MatchingFileType(p, clang_exts)]
+        if paths:
+            ret = _RunClangFormatDiff(opts, paths, top_dir, upstream_commit)
+            return_value = return_value or ret
+
+    # Other formatters don't recognize copied and removed files but treat them
+    # as new files. This means that any copied and removed file would be
+    # formatted automatically. To prevent that, such files are removed from
+    # diff_files. This comes at the expense that renaming a class (which entails
+    # renaming a file) typically leads to incorrectly formatted files.
+    # Filter out copied/renamed/deleted (c, r, d) files.
     changed_files_cmd = BuildGitDiffCmd(['--name-only', '--diff-filter=crd'],
                                         upstream_commit, args)
     diff_output = RunGit(changed_files_cmd)
@@ -6507,8 +6558,6 @@ def CMDformat(parser, args):
     ]
     if not opts.no_java:
         formatters += [(['.java'], _RunGoogleJavaFormat)]
-    if opts.clang_format:
-        formatters += [(clang_exts, _RunClangFormatDiff)]
     if opts.use_rust_fmt:
         formatters += [(['.rs'], _RunRustFmt)]
     if opts.use_swift_format:

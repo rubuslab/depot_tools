@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4e84fbf_8f3fa24b",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1115956
+      },
+      "writtenOn": "2024-01-15T11:57:41Z",
+      "side": 0,
+      "message": "The latest version of this seems to have just called into `re` anyways.",
+      "range": {
+        "startLine": 59,
+        "startChar": 9,
+        "endLine": 59,
+        "endChar": 20
+      },
+      "revId": "9f668bbff99167ba797888c6d322dd309f338aee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

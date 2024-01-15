@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "bc8857cd791e843fda66e83656da2a587d3e254c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8cb659_8d9a8295",
+        "filename": "cpplint.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-15T23:05:42Z",
+      "side": 1,
+      "message": "Note that with this change, it will also automatically use the built-in cache in the \u0027re\u0027 module (capped at 512 regexps).\n\nI don\u0027t know how many regexps are expected in this script, but if it\u0027s less than this, you could consider getting rid of the explicit caching.",
+      "revId": "bc8857cd791e843fda66e83656da2a587d3e254c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -52,11 +52,10 @@ import string
 import sys
 import unicodedata
 
-# FIXME(https://crbug.com/1517826): Replace deprecated import of sre_compile.
-import warnings
-with warnings.catch_warnings():
-  warnings.filterwarnings("ignore", category=DeprecationWarning)
-  import sre_compile
+try:
+    sre_compile = re._compiler
+except AttributeError:
+    import sre_compile
 
 _USAGE = r"""
 Syntax: cpplint.py [--verbose=#] [--output=vs7] [--filter=-x,+y,...]

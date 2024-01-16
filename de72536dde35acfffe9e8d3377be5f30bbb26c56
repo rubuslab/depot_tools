@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "2fe8ba0c_4893f002",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-16T23:52:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7afc9d0a_e842a278",
+      "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "c0784985_61c86715",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "writtenOn": "2024-01-16T23:47:53Z",
       "side": 1,
       "message": "Any concerns from ChromeOS about dropping vpython from depot_tools? We need a PSA for this, there are other chromium related (and non-chromium) projects that may still need vpython.",
+      "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51ef6f7_9c8e1b00",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-16T23:52:04Z",
+      "side": 1,
+      "message": "Note that for ChromeOS specifically, we made the `cros` wrapper bootstrap a supported legacy version of vpython back in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/4015440 in anticipation of this.\n\nI am not aware at this point of other projects still using `vpython`, but happy to give a heads up if you can recommend a good place to announce it.",
+      "parentUuid": "fa0fde17_19a309b5",
       "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

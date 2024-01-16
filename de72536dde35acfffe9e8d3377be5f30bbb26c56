@@ -103,6 +103,24 @@
       "parentUuid": "fa0fde17_19a309b5",
       "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bc95a3f_4c80c107",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2024-01-16T23:53:46Z",
+      "side": 1,
+      "message": "Definitely! How was this tested on ChromeOS? We\u0027ll likely at least want to run it through our CQ?\n\nMaybe we could codesearch around for invocations? Perhaps a bad idea but would it be safer to symlink to vpython3? Maybe that violates the intent of the calling script...",
+      "parentUuid": "fa0fde17_19a309b5",
+      "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

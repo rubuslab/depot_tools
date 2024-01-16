@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd8818e8_dabff573",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-16T20:42:25Z",
+      "side": 1,
+      "message": "fixed in https://crrev.com/c/5197707, so we don\u0027t need this. Thanks for sending the patch, tho!",
+      "revId": "46fcf8bc845bd3040bfed3fabe5458da0f24000b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

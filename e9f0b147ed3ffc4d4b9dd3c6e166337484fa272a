@@ -16,6 +16,23 @@
       "message": "This worked for me, and fixed `git-cl format --no-clang-format`",
       "revId": "e9f0b147ed3ffc4d4b9dd3c6e166337484fa272a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bbf645d_91826383",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-16T18:17:22Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "e9f0b147ed3ffc4d4b9dd3c6e166337484fa272a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

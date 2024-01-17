@@ -139,6 +139,24 @@
       "parentUuid": "3bc95a3f_4c80c107",
       "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea62f596_078945df",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1355298
+      },
+      "writtenOn": "2024-01-17T00:10:02Z",
+      "side": 1,
+      "message": "There\u0027s the installed depot_tools outside the chroot and then there\u0027s a chroot version, which is in the manifest. Once this lands we could CQ an uprev of the latter (manifest specified one).\n\nThe depot tools folks install outside the chroot via the typical developer instructions... I\u0027m not sure exactly how we test that.",
+      "parentUuid": "d7bff181_dadb93cd",
+      "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

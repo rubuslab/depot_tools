@@ -157,6 +157,24 @@
       "parentUuid": "d7bff181_dadb93cd",
       "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb2a53ad_164ae6d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-17T19:41:04Z",
+      "side": 1,
+      "message": "@bryner@google.com infra-announce@chromium.org is a good place to announce those changes.\n\n@engeg@google.com I patched my depot_tools and ran `repo sync` and `cros build-package successfully`. So, I think basic cases should continue to work. We can always roll this back, and we can also have instructions how to pin a local depot_tools to particular version, and disable auto update if needed.",
+      "parentUuid": "ea62f596_078945df",
+      "revId": "de72536dde35acfffe9e8d3377be5f30bbb26c56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

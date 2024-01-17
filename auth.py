@@ -13,9 +13,6 @@ import os
 
 import subprocess2
 
-# TODO: Should fix these warnings.
-# pylint: disable=line-too-long
-
 # This is what most GAE apps require for authentication.
 OAUTH_SCOPE_EMAIL = 'https://www.googleapis.com/auth/userinfo.email'
 # Gerrit and Git on *.googlesource.com require this scope.
@@ -54,7 +51,8 @@ class LoginRequiredError(Exception):
 
 
 def has_luci_context_local_auth():
-    """Returns whether LUCI_CONTEXT should be used for ambient authentication."""
+    """Returns whether LUCI_CONTEXT should be used for ambient authentication.
+    """
     ctx_path = os.environ.get('LUCI_CONTEXT')
     if not ctx_path:
         return False
@@ -70,9 +68,10 @@ class Authenticator(object):
     """Object that knows how to refresh access tokens or id tokens when needed.
 
     Args:
-        scopes: space separated oauth scopes. It's used to generate access tokens.
-            Defaults to OAUTH_SCOPE_EMAIL.
-        audience: An audience in ID tokens to claim which clients should accept it.
+        scopes: space separated oauth scopes. It's used to generate access
+            tokens. Defaults to OAUTH_SCOPE_EMAIL.
+        audience: An audience in ID tokens to claim which clients should accept
+            it.
     """
     def __init__(self, scopes=OAUTH_SCOPE_EMAIL, audience=None):
         self._access_token = None
@@ -83,8 +82,8 @@ class Authenticator(object):
     def has_cached_credentials(self):
         """Returns True if credentials can be obtained.
 
-        If returns False, get_access_token() or get_id_token() later will probably
-        ask for interactive login by raising LoginRequiredError.
+        If returns False, get_access_token() or get_id_token() later will
+        probably ask for interactive login by raising LoginRequiredError.
 
         If returns True, get_access_token() or get_id_token() won't ask for
         interactive login.

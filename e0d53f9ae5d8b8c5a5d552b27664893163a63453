@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "746c0248_a252507a",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-01-19T23:23:11Z",
+      "side": 1,
+      "message": "I feel that it\u0027s safer to handle the creation and deletion of the sentinel file in the same place where the file is checked for execution of wipe.\n\ne.g.,\n```\ndef populate(...):\n   def bootstrap(...):\n      ...\n   \n   with lockfile.lock(...):\n      if os.path.isfile(self._init_sentinel_file):\n         wipe_cache()\n      else:\n          with open(self._init_sentient_file, \u0027w\u0027):\n             # Create sentient file\n             pass\n      try:   \n         bootstrap()\n      except ClobberNeeded:\n         wipe_cache()\n         bootstrap(force\u003dTrue)\n      except:\n         # shouldn\u0027t we still wipe_cache() in any exceptions?\n         wipe_cache()\n      finally:\n         # delete the sentinel file\n         os.remove(self._init_sentient_file)\n```",
+      "range": {
+        "startLine": 551,
+        "startChar": 12,
+        "endLine": 555,
+        "endChar": 74
+      },
+      "revId": "e0d53f9ae5d8b8c5a5d552b27664893163a63453",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

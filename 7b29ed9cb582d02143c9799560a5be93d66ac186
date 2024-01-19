@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61c8d4f5_97da5556",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-19T20:26:00Z",
+      "side": 1,
+      "message": "The change itself lgtm, but as we discussed, a PSA should be sent before it\u0027s submitted.",
+      "revId": "7b29ed9cb582d02143c9799560a5be93d66ac186",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

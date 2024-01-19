@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4db35dbf_f84d33b2",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-19T15:51:37Z",
+      "side": 1,
+      "message": "Move ListSubmodules to a variable and use it in the loop:\n\n```suggestion\n        submodule_list \u003d scm.GIT.ListSubmodules(self.RepositoryRoot())\n        files \u003d [\n            af for af in self._affected_files if af.LocalPath() not in\n            submodule_list\n        ]\n```",
+      "range": {
+        "startLine": 1314,
+        "startChar": 0,
+        "endLine": 1317,
+        "endChar": 9
+      },
+      "revId": "5fb42ec171daed4ae33ee05ac3aec7308b49ea6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c67ad148_3aa322a8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-19T15:51:37Z",
+      "side": 1,
+      "message": "```suggestion\n        submodule_list \u003d scm.GIT.ListSubmodules(self.RepositoryRoot())\n        return [\n            af for af in self._affected_files\n            if af.LocalPath() in submodule_list\n        ]\n```",
+      "range": {
+        "startLine": 1326,
+        "startChar": 0,
+        "endLine": 1329,
+        "endChar": 9
+      },
+      "revId": "5fb42ec171daed4ae33ee05ac3aec7308b49ea6b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

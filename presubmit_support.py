@@ -1147,9 +1147,12 @@ class Change(object):
                  issue,
                  patchset,
                  author,
-                 upstream=None):
+                 upstream=None,
+                 submodules=None):
         if files is None:
             files = []
+        if submodules is None:
+            submodules = []
         self._name = name
         # Convert root into an absolute path.
         self._local_root = os.path.abspath(local_root)
@@ -1170,6 +1173,10 @@ class Change(object):
         self._affected_files = [
             self._AFFECTED_FILES(path, action.strip(), self._local_root,
                                  diff_cache) for action, path in files
+        ]
+        self._affected_submodules = [
+            self._AFFECTED_FILES(path, action.strip(), self._local_root,
+                                 diff_cache) for action, path in submodules
         ]
 
     def UpstreamBranch(self):
@@ -1316,6 +1323,10 @@ class Change(object):
         if include_deletes:
             return affected
         return list(filter(lambda x: x.Action() != 'D', affected))
+
+    def AffectedSubmodules(self):
+        """Returns a list of AffectedFile instances for submodules in the change."""
+        return self._affected_submodules
 
     def AffectedTestableFiles(self, include_deletes=None, **kwargs):
         """Return a list of the existing text files in a change."""
@@ -1965,20 +1976,25 @@ def _parse_change(parser, options):
     elif options.all_files:
         change_files = [('M', f) for f in scm.GIT.GetAllFiles(options.root)]
     else:
-        change_files = scm.GIT.CaptureStatus(options.root, options.upstream
-                                             or None)
-
+        change_files = scm.GIT.CaptureStatus(options.root,
+                                             options.upstream or None,
+                                             ignore_submodules=False)
     logging.info('Found %d file(s).', len(change_files))
+
+    repo_submodules = scm.GIT.ListSubmodules(options.root)
+    files = [f for f in change_files if f[-1] not in repo_submodules]
+    submodules = [f for f in change_files if f[-1] in repo_submodules]
 
     change_class = GitChange if change_scm == 'git' else Change
     return change_class(options.name,
                         options.description,
                         options.root,
-                        change_files,
+                        files,
                         options.issue,
                         options.patchset,
                         options.author,
-                        upstream=options.upstream)
+                        upstream=options.upstream,
+                        submodules=submodules)
 
 
 def _parse_gerrit_options(parser, options):

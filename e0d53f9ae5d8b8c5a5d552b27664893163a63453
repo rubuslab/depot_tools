@@ -22,6 +22,30 @@
       },
       "revId": "e0d53f9ae5d8b8c5a5d552b27664893163a63453",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "638f533b_7ded6b34",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-19T23:55:20Z",
+      "side": 1,
+      "message": "I agree - in ideal scenario, creation and deletion would be in the same place.\n\nThe sentient file should live inside the mirror directory and that\u0027s created in _ensure_bootstrap. But the problem appears to happen when fetch operation fails / is interrupted. One option could be to move _fetch into _ensure_bootstrapped and pass those missing arguments, but it\u0027s already fairly bad structure I don\u0027t want to jam more code there.\n\n\"shouldn\u0027t we still wipe_cache() in any exceptions\" -\u003e probably we should, but I don\u0027t think we should have finally \"os.remove\" as wipe_cache will remove it.\n\nWith that, I suggest no changes to this code. If we want to invest in it, I think the first step would be to clean up the interface and pass config object as an argument.",
+      "parentUuid": "746c0248_a252507a",
+      "range": {
+        "startLine": 551,
+        "startChar": 12,
+        "endLine": 555,
+        "endChar": 74
+      },
+      "revId": "e0d53f9ae5d8b8c5a5d552b27664893163a63453",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

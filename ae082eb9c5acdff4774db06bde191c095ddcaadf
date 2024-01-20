@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f735408c_307b8c42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-01-20T01:19:50Z",
+      "side": 1,
+      "message": "Last piece.\n\nWant to keep LocalPaths helper functions for regular affected files and submodule affected files separate. Because other presubmits already call LocalPaths() and may not expect submodules.",
+      "revId": "ae082eb9c5acdff4774db06bde191c095ddcaadf",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

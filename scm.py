@@ -13,9 +13,6 @@ import sys
 import gclient_utils
 import subprocess2
 
-# TODO: Should fix these warnings.
-# pylint: disable=line-too-long
-
 # constants used to identify the tree state of a directory.
 VERSIONED_NO = 0
 VERSIONED_DIR = 1
@@ -294,8 +291,9 @@ class GIT(object):
         """Convert a checkout ref to the equivalent remote ref.
 
         Returns:
-            A tuple of the remote ref's (common prefix, unique suffix), or None if it
-            doesn't appear to refer to a remote ref (e.g. it's a commit hash).
+            A tuple of the remote ref's (common prefix, unique suffix), or None
+            if it doesn't appear to refer to a remote ref (e.g. it's a commit
+            hash).
         """
         # TODO(mmoss): This is just a brute-force mapping based of the expected
         # git config. It's a bit better than the even more brute-force
@@ -367,8 +365,9 @@ class GIT(object):
                      files=None):
         """Diffs against the upstream branch or optionally another branch.
 
-        full_move means that move or copy operations should completely recreate the
-        files, usually in the prospect to apply the patch for a try job."""
+        full_move means that move or copy operations should completely recreate
+        the files, usually in the prospect to apply the patch for a try job.
+        """
         if not branch:
             branch = GIT.GetUpstreamBranch(cwd)
         command = [
@@ -411,7 +410,8 @@ class GIT(object):
     @staticmethod
     def GetSubmoduleCommits(cwd, submodules):
         # type: (string, List[string]) => Mapping[string][string]
-        """Returns a mapping of staged or committed new commits for submodules."""
+        """Returns a mapping of staged or committed new commits for submodules.
+        """
         if not submodules:
             return {}
         result = subprocess2.check_output(['git', 'ls-files', '-s', '--'] +
@@ -433,7 +433,7 @@ class GIT(object):
 
     @staticmethod
     def GetCheckoutRoot(cwd):
-        """Returns the top level directory of a git checkout as an absolute path.
+        """Returns the top level directory of a checkout as an absolute path.
         """
         root = GIT.Capture(['rev-parse', '--show-cdup'], cwd=cwd)
         return os.path.abspath(os.path.join(cwd, root))

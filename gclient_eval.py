@@ -12,8 +12,6 @@ import tokenize
 import gclient_utils
 from third_party import schema
 
-# TODO: Should fix these warnings.
-# pylint: disable=line-too-long
 
 # git_dependencies migration states. Used within the DEPS file to indicate
 # the current migration state.
@@ -291,8 +289,8 @@ def _gclient_eval(node_or_string, filename='<unknown>', vars_dict=None):
                 return node.s.format(**vars_dict)
             except KeyError as e:
                 raise KeyError(
-                    '%s was used as a variable, but was not declared in the vars dict '
-                    '(file %r, line %s)' %
+                    '%s was used as a variable, but was not declared in the '
+                    'vars dict (file %r, line %s)' %
                     (e.args[0], filename, getattr(node, 'lineno', '<unknown>')))
         elif isinstance(node, ast.Num):
             return node.n
@@ -324,7 +322,8 @@ def _gclient_eval(node_or_string, filename='<unknown>', vars_dict=None):
             if (not isinstance(node.func, ast.Name)
                     or (node.func.id not in ('Str', 'Var'))):
                 raise ValueError(
-                    'Str and Var are the only allowed functions (file %r, line %s)'
+                    'Str and Var are the only allowed functions '
+                    '(file %r, line %s)'
                     % (filename, getattr(node, 'lineno', '<unknown>')))
             if node.keywords or getattr(node, 'starargs', None) or getattr(
                     node, 'kwargs', None) or len(node.args) != 1:
@@ -349,8 +348,8 @@ def _gclient_eval(node_or_string, filename='<unknown>', vars_dict=None):
                 return '{' + arg + '}'
             if arg not in vars_dict:
                 raise KeyError(
-                    '%s was used as a variable, but was not declared in the vars dict '
-                    '(file %r, line %s)' %
+                    '%s was used as a variable, but was not declared in the '
+                    'vars dict (file %r, line %s)' %
                     (arg, filename, getattr(node, 'lineno', '<unknown>')))
             val = vars_dict[arg]
             if isinstance(val, ConstantString):
@@ -460,10 +459,10 @@ def _StandardizeDeps(deps_dict, vars_dict):
 
 
 def _MergeDepsOs(deps_dict, os_deps_dict, os_name):
-    """Merges the deps in os_deps_dict into conditional dependencies in deps_dict.
+    """Merges the deps in os_deps_dict into conditional deps in deps_dict.
 
-    The dependencies in os_deps_dict are transformed into conditional dependencies
-    using |'checkout_' + os_name|.
+    The dependencies in os_deps_dict are transformed into conditional
+    dependencies using |'checkout_' + os_name|.
     If the dependency is already present, the URL and revision must coincide.
     """
     for dep_name, dep_info in os_deps_dict.items():
@@ -480,8 +479,8 @@ def _MergeDepsOs(deps_dict, os_deps_dict, os_name):
         if dep_name in deps_dict:
             if deps_dict[dep_name]['url'] != dep_info['url']:
                 raise gclient_utils.Error(
-                    'Value from deps_os (%r; %r: %r) conflicts with existing deps '
-                    'entry (%r).' %
+                    'Value from deps_os (%r; %r: %r) conflicts with existing '
+                    'deps entry (%r).' %
                     (os_name, dep_name, dep_info, deps_dict[dep_name]))
 
             UpdateCondition(dep_info, 'or',
@@ -517,16 +516,16 @@ def Parse(content, filename, vars_override=None, builtin_vars=None):
 
     Args:
         content: str. DEPS file stored as a string.
-        filename: str. The name of the DEPS file, or a string describing the source
-            of the content, e.g. '<string>', '<unknown>'.
-        vars_override: dict, optional. A dictionary with overrides for the variables
-            defined by the DEPS file.
-        builtin_vars: dict, optional. A dictionary with variables that are provided
-            by default.
+        filename: str. The name of the DEPS file, or a string describing the
+            source of the content, e.g. '<string>', '<unknown>'.
+        vars_override: dict, optional. A dictionary with overrides for the
+            variables defined by the DEPS file.
+        builtin_vars: dict, optional. A dictionary with variables that are
+            provided by default.
 
     Returns:
-        A Python dict with the parsed contents of the DEPS file, as specified by the
-        schema above.
+        A Python dict with the parsed contents of the DEPS file, as specified
+        by the schema above.
     """
     result = Exec(content, filename, vars_override, builtin_vars)
 
@@ -692,8 +691,8 @@ def AddVar(gclient_dict, var_name, value):
 
     if var_name in gclient_dict['vars']:
         raise ValueError(
-            "%s has already been declared in the vars dict. Consider using SetVar "
-            "instead." % var_name)
+            "%s has already been declared in the vars dict. Consider using "
+            "SetVar instead." % var_name)
 
     if not gclient_dict['vars']:
         raise ValueError('vars dict is empty. This is not yet supported.')
@@ -825,14 +824,14 @@ def SetRevision(gclient_dict, dep_name, new_revision):
             token = _gclient_eval(tokens[node.lineno, node.col_offset][1])
             if token != node.s:
                 raise ValueError(
-                    'Can\'t update value for %s. Multiline strings and implicitly '
-                    'concatenated strings are not supported.\n'
+                    'Can\'t update value for %s. Multiline strings and '
+                    'implicitly concatenated strings are not supported.\n'
                     'Consider reformatting the DEPS file.' % dep_key)
 
         if not isinstance(node, ast.Call) and not isinstance(node, ast.Str):
             raise ValueError(
-                "Unsupported dependency revision format. Please file a bug to the "
-                "Infra>SDK component in crbug.com")
+                "Unsupported dependency revision format. Please file a bug to "
+                "the Infra>SDK component in crbug.com")
 
         var_name = _GetVarName(node)
         if var_name is not None:

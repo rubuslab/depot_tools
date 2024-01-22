@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86bf2276_2b9b4a2b",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-01-22T03:34:11Z",
+      "side": 1,
+      "message": "I think it is better to show count down to notice this more easily.",
+      "range": {
+        "startLine": 377,
+        "startChar": 11,
+        "endLine": 377,
+        "endChar": 25
+      },
+      "revId": "5c55db05dd06d5079623d9c57f24e552ba73cd65",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

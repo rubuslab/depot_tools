@@ -52,6 +52,24 @@
       "parentUuid": "17f5e102_047b4d5f",
       "revId": "e5089a40d4dc560517efc8d049e64b1404727ccd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11a31e94_49596148",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-01-23T05:44:15Z",
+      "side": 1,
+      "message": "yeah, \n\ne,g, when AUTONINJA_SKIP_EXTERNAL_ACCOUNT_CHECK\u003dtrue,\nit is better to print warning since it won\u0027t skip different from user\u0027s intention?",
+      "parentUuid": "b4759579_3a5c7d66",
+      "revId": "e5089a40d4dc560517efc8d049e64b1404727ccd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

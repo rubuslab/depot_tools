@@ -102,6 +102,9 @@ def _is_google_corp_machine():
 
 
 def _is_google_corp_machine_using_external_account():
+    if os.environ.get("AUTONINJA_SKIP_EXTERNAL_ACCOUNT_CHECK") == "1":
+        return False
+
     if not _is_google_corp_machine():
         return False
 

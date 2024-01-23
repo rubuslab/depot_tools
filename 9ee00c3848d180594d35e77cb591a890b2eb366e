@@ -16,6 +16,23 @@
       "message": "With python3.11 sticking, I\u0027ve updated this and it\u0027s ready for another look.",
       "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96137fa8_8a00eb65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-23T21:37:16Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

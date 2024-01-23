@@ -33,6 +33,23 @@
       "message": "lgtm",
       "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bcf2a30_c959b3d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-01-23T21:49:59Z",
+      "side": 1,
+      "message": "Apparently, there\u0027s something need to be done to handle Windows, but I don\u0027t know what that would be.",
+      "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

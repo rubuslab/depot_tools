@@ -34,6 +34,24 @@
       "parentUuid": "3ce8d824_9034cda6",
       "revId": "e5089a40d4dc560517efc8d049e64b1404727ccd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4759579_3a5c7d66",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-01-23T05:42:04Z",
+      "side": 1,
+      "message": "warning added in #5 triggers only if set to 1 rather than \"other value\", intended?",
+      "parentUuid": "17f5e102_047b4d5f",
+      "revId": "e5089a40d4dc560517efc8d049e64b1404727ccd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

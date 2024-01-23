@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99e0535a_ecf5d347",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-01-23T05:16:33Z",
+      "side": 1,
+      "message": "deprecated soon?",
+      "revId": "1e1acc0926fb34918e6edb54751ffb127db5192d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3257e59a_050ad675",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-01-23T05:16:33Z",
+      "side": 1,
+      "message": "just check \u0027t\u0027, \u0027yes\u0027, t\u0027, \u0027true\u0027, \u0027on\u0027, \u00271\u0027?\nhttps://docs.python.org/3.9/distutils/apiref.html#distutils.util.strtobool",
+      "revId": "1e1acc0926fb34918e6edb54751ffb127db5192d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

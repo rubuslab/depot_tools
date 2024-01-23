@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ce8d824_9034cda6",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-01-23T05:24:29Z",
+      "side": 1,
+      "message": "better to warn if other value is set in AUTONINJA_SKIP_EXTERNAL_ACCOUNT_CHECK?",
+      "revId": "e5089a40d4dc560517efc8d049e64b1404727ccd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

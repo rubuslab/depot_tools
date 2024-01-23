@@ -14,6 +14,7 @@ does handle import statements, but it can't handle conditional setting of build
 settings.
 """
 
+import distutils.util
 import json
 import multiprocessing
 import os
@@ -102,6 +103,10 @@ def _is_google_corp_machine():
 
 
 def _is_google_corp_machine_using_external_account():
+    if distutils.util.strtobool(
+            os.environ.get("AUTONINJA_SKIP_EXTERNAL_ACCOUNT_CHECK", "false")):
+        return False
+
     if not _is_google_corp_machine():
         return False
 

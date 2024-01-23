@@ -68,6 +68,24 @@
       "parentUuid": "6bcf2a30_c959b3d4",
       "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ce48e39_aad6d00e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-23T23:07:55Z",
+      "side": 1,
+      "message": "We don\u0027t have tzinfo wheel, so we\u0027d need to set it up.\n\nfyi @bryner@google.com.\n\nSince it\u0027s not available now, I\u0027m okay if we just use precomputed unix timestamp, and we can revisit once the next freeze shows up. Sorry for the trouble...",
+      "parentUuid": "6bcf2a30_c959b3d4",
+      "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

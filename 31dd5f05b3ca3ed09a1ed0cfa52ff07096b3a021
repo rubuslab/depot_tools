@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abc52600_c366dd54",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-01-23T01:49:17Z",
+      "side": 1,
+      "message": "Why not use %d?",
+      "range": {
+        "startLine": 389,
+        "startChar": 49,
+        "endLine": 389,
+        "endChar": 55
+      },
+      "revId": "31dd5f05b3ca3ed09a1ed0cfa52ff07096b3a021",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

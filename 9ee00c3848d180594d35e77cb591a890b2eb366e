@@ -86,6 +86,24 @@
       "parentUuid": "6bcf2a30_c959b3d4",
       "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b86ab787_b7a22628",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-01-24T03:14:44Z",
+      "side": 1,
+      "message": "Agreed, it sounds like the correct approach is to add the tzdata wheel.",
+      "parentUuid": "9ce48e39_aad6d00e",
+      "revId": "9ee00c3848d180594d35e77cb591a890b2eb366e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

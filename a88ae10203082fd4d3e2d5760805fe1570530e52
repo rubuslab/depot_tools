@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14fd7582_9008b534",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1148810
+      },
+      "writtenOn": "2024-01-24T23:54:53Z",
+      "side": 1,
+      "message": "PTAL, these changes were driven by the split of crrev.com/c/5232783 which created many more CLs than expected and sent all of them to the CQ unexpectedly. IMHO, `git cl split` should be more user friendly by helper the user do the right thing and not default to using too many resources.",
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

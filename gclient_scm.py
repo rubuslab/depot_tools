@@ -592,11 +592,12 @@ class GitWrapper(SCMWrapper):
         def wrapper(*args):
             return_val = f(*args)
             if os.path.exists(os.path.join(args[0].checkout_path, '.git')):
-                # If diff.ignoreSubmodules is not already set, set it to `all`.
                 config = subprocess2.capture(['git', 'config', '-l'],
                                              cwd=args[0].checkout_path).decode(
                                                  'utf-8').strip().splitlines()
-                if 'diff.ignoresubmodules=dirty' not in config:
+                # If diff.ignoreSubmodules is not already set, set it to `dirty`.
+                if ('diff.ignoresubmodules=all' not in config
+                        and 'diff.ignoresubmodules=dirty' not in config):
                     subprocess2.capture(
                         ['git', 'config', 'diff.ignoreSubmodules', 'dirty'],
                         cwd=args[0].checkout_path)

@@ -51,6 +51,24 @@
       "parentUuid": "c17f2d79_fa950b19",
       "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91e16e38_1a8cbcaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-25T18:05:31Z",
+      "side": 1,
+      "message": "I get that, I\u0027m just wanted to highlight problems with this setting.  diff.ignoresubmodules\u003dall used to be default (prior to the submodule migration), and I found it to be more challenging to work with that.\n\ne.g. gitlinks not showing up at all in diff, so if you use git add ever, you won\u0027t know submodules have been committed. Sure, presubmit checks will detect, but the whole interaction with git becomes, imo, even more complicated. E.g. you run `git diff` and no gitlinks show up, yet presubmit says there is one. More context in: http://shortn/_F0OKXcdFSU.\n\nWith that, I would be extremely careful with allowing diff.ignoreSubmodule\u003dall. It would be a different story if we can limit this flag only to git status. \n\nhttps://chromium.googlesource.com/chromium/src/+/main/docs/git_submodules.md#submodules-during-git-status_git-commit_and-git-add offers an alternative - setting up an alias to ignore submodules on `git status`. Would this work well for you?",
+      "parentUuid": "51093944_b6a952af",
+      "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

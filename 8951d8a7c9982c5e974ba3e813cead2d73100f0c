@@ -16,6 +16,23 @@
       "message": "Is there a reason we don\u0027t allow this?",
       "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c17f2d79_fa950b19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-25T16:33:17Z",
+      "side": 1,
+      "message": "The problem is using `git add` with ignoreSubmodules \u003d all.\n\nFor example, let\u0027s assume submodules are not synced and the user has ignoreSubmodules\u003dall. The user runs `git status` and only files are shown (due to ignoreSubmodules). When user runs `git add .`, it will stage submodules that are not synced too, which is probably counter intuitive.",
+      "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

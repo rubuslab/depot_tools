@@ -87,6 +87,24 @@
       "parentUuid": "91e16e38_1a8cbcaf",
       "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25241234_7ecd410b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-25T23:53:47Z",
+      "side": 1,
+      "message": "I wrote my reasoning in the comment above. In addition to that, while you are aware of downsides and problems, others may not be. Potential bugs filed will be more complicated to triage and debug. It\u0027s the same reason why we set fetch.recursesubmodules\u003doff, push.recursesubmodules\u003doff, or don\u0027t allow diff.ignoreSubmodules\u003dnone\n\nAnother problem with is that `diff.ignoreSubmodules\u003dall` used to be the default (and was in the repo git config). If someone didn\u0027t run gclient sync in workspace since the submodules were added, and run if after this patch, they will still have `diff.ignoreSubmodules\u003dall` without knowing downsides.\n\nUnless this CL gets more support from the community and leads, I still believe this shouldn\u0027t be submitted.",
+      "parentUuid": "ede09e89_674acf0a",
+      "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

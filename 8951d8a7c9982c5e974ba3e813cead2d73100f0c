@@ -69,6 +69,24 @@
       "parentUuid": "51093944_b6a952af",
       "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ede09e89_674acf0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1286337
+      },
+      "writtenOn": "2024-01-25T19:23:14Z",
+      "side": 1,
+      "message": "Setting up aliases to make `git status` `git commit -a` and `git diff` feels unnecessary. gitconfig is made for this purpose - I always, without exception, want `git status`, `git commit -a`, and `git diff` to perform like this hypothetical alias. Why am I not allowed to set the config which enables this myself?",
+      "parentUuid": "91e16e38_1a8cbcaf",
+      "revId": "8951d8a7c9982c5e974ba3e813cead2d73100f0c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

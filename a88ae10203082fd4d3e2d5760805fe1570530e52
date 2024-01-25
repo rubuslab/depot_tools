@@ -3,6 +3,29 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d7132ffd_b19e5433",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-25T22:36:05Z",
+      "side": 1,
+      "message": "I agree this is a reasonable change. I\u0027m just curious because it\u0027s unclear to me why setting the default to false would prevent here. Is there any code explicitly check cq_dry_run is False instead of pythonic `if not cq_dry_run`?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "14fd7582_9008b534",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -14,6 +37,29 @@
       "writtenOn": "2024-01-24T23:54:53Z",
       "side": 1,
       "message": "PTAL, these changes were driven by the split of crrev.com/c/5232783 which created many more CLs than expected and sent all of them to the CQ unexpectedly. IMHO, `git cl split` should be more user friendly by helper the user do the right thing and not default to using too many resources.",
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b47e1cbf_bb6db18e",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-25T22:36:05Z",
+      "side": 1,
+      "message": "This to me seems to be the bug that cq_dry_run is misused here.",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 23
+      },
       "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

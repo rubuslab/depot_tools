@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eba8373b_8bb77a01",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-01-26T15:38:58Z",
+      "side": 1,
+      "message": "I think it makes sense to adjust for OS in the scm layer because other scm functions already return paths compatible with the OS. ListSubmodules was just unique because it\u0027s reading directly from the .gitmodules file.",
+      "revId": "f9f1620267e858c5177091b0991f433ff88333b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

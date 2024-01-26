@@ -132,9 +132,9 @@ class GitWrapperTestCase(unittest.TestCase):
         actual_state = scm.GIT.IsVersioned('cwd', 'dir')
         self.assertEqual(actual_state, scm.VERSIONED_DIR)
 
-    @mock.patch('scm.GIT.Capture')
     @mock.patch('os.path.exists', return_value=True)
-    def testListSubmodules(self, mockExists, mockCapture):
+    @mock.patch('scm.GIT.Capture')
+    def testListSubmodules(self, mockCapture, *_mock):
         mockCapture.return_value = (
             'submodule.submodulename.path foo/path/script'
             '\nsubmodule.submodule2name.path foo/path/script2')
@@ -143,6 +143,17 @@ class GitWrapperTestCase(unittest.TestCase):
 
     def testListSubmodules_missing(self):
         self.assertEqual(scm.GIT.ListSubmodules('root'), [])
+
+    @mock.patch('sys.platform', return_value='win32')
+    @mock.patch('os.path.exists', return_value=True)
+    @mock.patch('scm.GIT.Capture')
+    def testListSubmodules_win(self, mockCapture, *_mock):
+        mockCapture.return_value = (
+            'submodule.submodulename.path foo/path/script'
+            '\nsubmodule.submodule2name.path foo/path/script2')
+        actual_list = scm.GIT.ListSubmodules('root')
+        self.assertEqual(actual_list,
+                         ['foo\\path\\script', 'foo\\path\\script2'])
 
 
 class RealGitTest(fake_repos.FakeReposTestBase):

@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00a728fe_20e16dce",
+        "filename": "fetch_configs/node.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-26T02:17:37Z",
+      "side": 1,
+      "message": "Yes, I think `node` is a bit too generic, but it also pulls v8 node js. But, after your second comment, I see there\u0027s node-ci, so for consistency sake, let\u0027s just keep it as `node`.",
+      "parentUuid": "8d69f31c_4225435c",
+      "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e6ef879_dded749c",
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "Using GitHub urls has the benefit that maintainers of Node can immediately start working and pushing commits in the checked out directory, otherwise I will have to explain why there is a mirror and how to set the url to GitHub in Node\u0027s docs.\n\nThis config is not going to run in Chromium\u0027s infra (the `node-ci` config already does the testing), and the maintainers of Node are very unlikely to use the mirror url, so setting up a mirror would not be very useful.\n\nBut I\u0027m fine using the mirror url if it is a hard requirement. Where should I file the git admin bug?",
       "parentUuid": "2e6ef879_dded749c",
+      "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17e16778_4aa63e48",
+        "filename": "fetch_configs/node.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-26T02:17:37Z",
+      "side": 1,
+      "message": "Ack. Given that this wouldn\u0027t be a precedent (flutter.py references github), and this would make someone life easier, let\u0027s keep it.",
+      "parentUuid": "d97ebacf_24499ed9",
       "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

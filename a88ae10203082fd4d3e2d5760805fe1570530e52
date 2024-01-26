@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "1da3f724_f17f4a39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-26T17:32:47Z",
+      "side": 1,
+      "message": "I totally agree. I think this CL is still a good idea even though it\u0027s possible the bug is at somewhere else if any.",
+      "parentUuid": "34f5f9f1_a9bbcb03",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "14fd7582_9008b534",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -102,6 +126,30 @@
       "side": 1,
       "message": "I wasn\u0027t sure if the old logic was a bug or intentional but I think the new logic makes more sense. The old logic was \"Warn the user if they are going to create more than 10 CLs AND they are trying to send them all to the CQ at once.\" The new logic is \"Warn the user if more than 10 CLs will be created unless they are running a git cl split dry run in which case we can assume that they are interested in the output generally and we don\u0027t need to warn them about the large number of CLs.\"",
       "parentUuid": "b47e1cbf_bb6db18e",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 23
+      },
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "797d8259_0aea53b7",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-01-26T17:32:47Z",
+      "side": 1,
+      "message": "Got it. Makes sense to me",
+      "parentUuid": "5f25405d_6ab28924",
       "range": {
         "startLine": 274,
         "startChar": 0,

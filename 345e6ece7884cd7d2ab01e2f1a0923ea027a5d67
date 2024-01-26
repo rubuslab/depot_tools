@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50a2e7d4_429d392f",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-26T16:14:36Z",
+      "side": 1,
+      "message": "nit: replace with os.path.sep\n```suggestion\n            return [p.replace(\u0027/\u0027, os.path.sep) for p in paths]\n```",
+      "range": {
+        "startLine": 477,
+        "startChar": 35,
+        "endLine": 477,
+        "endChar": 39
+      },
+      "revId": "345e6ece7884cd7d2ab01e2f1a0923ea027a5d67",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

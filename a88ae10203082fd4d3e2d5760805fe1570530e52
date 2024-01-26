@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "34f5f9f1_a9bbcb03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1148810
+      },
+      "writtenOn": "2024-01-26T00:31:25Z",
+      "side": 1,
+      "message": "This is a great question. I took another dev\u0027s word for it that all their CLs were sent to the CQ when they did not use the \"cq-dry-run\" flag. I verified that their CLs were sent to the CQ, but I couldn\u0027t actually verify how this happened. Defaulting to False seemed like the right thing to do here, but I agree that I\u0027m not positive it was actually the cause of the problem. I just created a sample CL with the tool and wasn\u0027t able to reproduce the CL being sent to the CQ.\n\nWhile I still think that this CL is a good idea, I rephrased the commit message to make it more clear what is actually being changed here.",
+      "parentUuid": "d7132ffd_b19e5433",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "14fd7582_9008b534",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2024-01-25T22:36:05Z",
       "side": 1,
       "message": "This to me seems to be the bug that cq_dry_run is misused here.",
+      "range": {
+        "startLine": 274,
+        "startChar": 0,
+        "endLine": 274,
+        "endChar": 23
+      },
+      "revId": "a88ae10203082fd4d3e2d5760805fe1570530e52",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f25405d_6ab28924",
+        "filename": "split_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1148810
+      },
+      "writtenOn": "2024-01-26T00:31:25Z",
+      "side": 1,
+      "message": "I wasn\u0027t sure if the old logic was a bug or intentional but I think the new logic makes more sense. The old logic was \"Warn the user if they are going to create more than 10 CLs AND they are trying to send them all to the CQ at once.\" The new logic is \"Warn the user if more than 10 CLs will be created unless they are running a git cl split dry run in which case we can assume that they are interested in the output generally and we don\u0027t need to warn them about the large number of CLs.\"",
+      "parentUuid": "b47e1cbf_bb6db18e",
       "range": {
         "startLine": 274,
         "startChar": 0,

@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8d69f31c_4225435c",
+        "filename": "fetch_configs/node.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1255853
+      },
+      "writtenOn": "2024-01-26T00:43:22Z",
+      "side": 1,
+      "message": "Is this because `node` could mean too many things as a name? How about using `nodejs` as name?\n\nI\u0027m going to document the GN build steps in Node\u0027s docs, having a nice name like `fetch node` or `fetch nodejs` would make the build step not feel out of place.",
+      "parentUuid": "8ab741f4_4ead4310",
+      "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2e6ef879_dded749c",
         "filename": "fetch_configs/node.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2024-01-25T16:08:20Z",
       "side": 1,
       "message": "We should avoid using github, that is, mirror it to chromium.googlesource.com. Is that okay for this project? And if so, could you file a git admin bug to set it up?",
+      "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d97ebacf_24499ed9",
+        "filename": "fetch_configs/node.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1255853
+      },
+      "writtenOn": "2024-01-26T00:43:22Z",
+      "side": 1,
+      "message": "Using GitHub urls has the benefit that maintainers of Node can immediately start working and pushing commits in the checked out directory, otherwise I will have to explain why there is a mirror and how to set the url to GitHub in Node\u0027s docs.\n\nThis config is not going to run in Chromium\u0027s infra (the `node-ci` config already does the testing), and the maintainers of Node are very unlikely to use the mirror url, so setting up a mirror would not be very useful.\n\nBut I\u0027m fine using the mirror url if it is a hard requirement. Where should I file the git admin bug?",
+      "parentUuid": "2e6ef879_dded749c",
       "revId": "0438a3c5e535a859b8998b7091f7396e5ca199ee",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

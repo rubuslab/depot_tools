@@ -3,12 +3,15 @@
 # found in the LICENSE file.
 """SCM-specific utility classes."""
 
+from collections import defaultdict
+from functools import cache
 import glob
 import io
 import os
 import platform
 import re
 import sys
+from typing import Dict, List, Optional
 
 import gclient_utils
 import subprocess2
@@ -97,6 +100,36 @@ def only_int(val):
 class GIT(object):
     current_version = None
     rev_parse_cache = {}
+
+    @cache
+    @staticmethod
+    def _load_config(cwd: str) -> Dict[str, List[str]]:
+        """Loads git config for the given cwd.
+
+        The calls to this method are cached in-memory for performance. The
+        config is only reloaded on cache misses.
+
+        Args:
+            cwd: path to fetch `git config` for.
+
+        Returns:
+            A dict mapping git config keys to a list of its values.
+        """
+        try:
+            rawConfig = GIT.Capture(['config', '--list'],
+                                    cwd=cwd,
+                                    strip_out=False)
+        except subprocess2.CalledProcessError:
+            return {}
+
+        config = defaultdict(list)
+        for line in rawConfig.splitlines():
+            key, value = line.strip().split('=', 1)
+            config[key].append(value)
+            config.setdefault(key, []).append(value)
+
+        return config
+
 
     @staticmethod
     def ApplyEnvVars(kwargs):

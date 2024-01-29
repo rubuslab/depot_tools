@@ -53,6 +53,18 @@ wheel: <
 >
 
 # Used by:
+#    presubmit_canned_checks.py (via zoneinfo)
+# Only needed on Windows because windows doesn't contain a timezone database by
+# default
+wheel: <
+  name: "infra/python/wheels/tzdata-py2_py3"
+  version: "version:2023.4"
+  match_tag: <
+    platform: "win32"
+  >
+>
+
+# Used by:
 #   my_activity.py
 wheel: <
   name: "infra/python/wheels/python-dateutil-py2_py3"

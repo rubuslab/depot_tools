@@ -29,10 +29,11 @@ class GitWrapperTestCase(unittest.TestCase):
 
     @mock.patch('scm.GIT.Capture')
     def testGetEmail(self, mockCapture):
-        mockCapture.return_value = 'mini@me.com'
+        mockCapture.return_value = 'user.email = mini@me.com'
         self.assertEqual(scm.GIT.GetEmail(self.root_dir), 'mini@me.com')
-        mockCapture.assert_called_with(['config', 'user.email'],
-                                       cwd=self.root_dir)
+        mockCapture.assert_called_with(['config', '--list'],
+                                       cwd=self.root_dir,
+                                       strip_out=False)
 
     def testRefToRemoteRef(self):
         remote = 'origin'
@@ -210,6 +211,17 @@ class RealGitTest(fake_repos.FakeReposTestBase):
         self.assertIsNone(scm.GIT.GetConfig(self.cwd, key))
         self.assertEqual('default-value',
                          scm.GIT.GetConfig(self.cwd, key, 'default-value'))
+
+    def testGetSetConfigBool(self):
+        key = 'scm.test-key'
+        self.assertFalse(scm.GIT.GetConfigBool(self.cwd, key))
+
+        scm.GIT.SetConfig(self.cwd, key, 'true')
+        self.assertTrue(scm.GIT.GetConfigBool(self.cwd, key))
+
+        scm.GIT.SetConfig(self.cwd, key)
+        self.assertFalse(scm.GIT.GetConfigBool(self.cwd, key))
+
 
     def testGetSetBranchConfig(self):
         branch = scm.GIT.GetBranch(self.cwd)

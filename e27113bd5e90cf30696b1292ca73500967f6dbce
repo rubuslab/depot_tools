@@ -35,6 +35,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9d1f8ae_147c3df4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-01-30T23:06:11Z",
+      "side": 1,
+      "message": "I think this change will blow up:\n\n1. It adds a non-trivial amount of bloat to depot_tools (in particular in terms of number of small files, which is an issue for Windows). This bloat will end up in all places where depot_tools is DEPSed in, e.g. chromium/src. \n\n2. gcloud SDK is a modular SDK (it has its own little package manager built in). The CIPD package is built with a specific set of modules that are needed by infra things. By putting it in PATH, we are risking overriding existing working \"gcloud\" in PATH with the one lacking necessary modules.\n\n3. CIPD is not a security-approved way of installing gcloud on Google corp machines (go/gcloud-cli#getting-started). By putting it into depot_tools, we\u0027ll be violating this restriction. This CIPD package is primarily used to install gcloud on off-corp bots.",
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac9cdd15_ff0153e3",

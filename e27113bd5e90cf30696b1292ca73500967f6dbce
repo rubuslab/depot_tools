@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f6ce562_6606202a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-01-30T10:34:37Z",
+      "side": 1,
+      "message": "I defer to the owner of depot_tools for cipd_bin_setup.bat part.",
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac9cdd15_ff0153e3",
@@ -20,6 +37,46 @@
         "endLine": 13,
         "endChar": 1
       },
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48ef9f66_ec9854a5",
+        "filename": "cipd_manifest.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-01-30T10:34:37Z",
+      "side": 1,
+      "message": "I think it is fine to write like `${os\u003dlinux,mac,windows}-${arch\u003damd64,arm64}`.",
+      "range": {
+        "startLine": 76,
+        "startChar": 25,
+        "endLine": 76,
+        "endChar": 33
+      },
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d2451fc_60e8a5a3",
+        "filename": "gcloud",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-01-30T10:34:37Z",
+      "side": 1,
+      "message": "Update OWNERS for this?",
       "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -5,6 +5,30 @@ chromiumos/infra/crosjobs/linux-amd64
 	git_revision:ed616d595eb7241d39d34907050d2949121d6ae8
 	_vAeU0Q9lAxn933K8vDhwGK40zKVvV-yXGpIy43ATXAC
 
+infra/3pp/tools/gcloud/linux-amd64
+	version:2@461.0.0.chromium.4
+	WmfR6am9io4Ky7qXKUjEjjewZKrYSy6oIBjC7Zq8IFYC
+
+infra/3pp/tools/gcloud/linux-arm64
+	version:2@461.0.0.chromium.4
+	T6CFeYKoKEz8g1sNj_j-ubgXjMaM0qYizJ0D1icQG40C
+
+infra/3pp/tools/gcloud/mac-amd64
+	version:2@461.0.0.chromium.4
+	qIMGW7TmW0IX2FpIquJsirT-EXzNjl1F0UjHI9DudnMC
+
+infra/3pp/tools/gcloud/mac-arm64
+	version:2@461.0.0.chromium.4
+	NZslLtvLiX0pp0OT5SrNFQ-uBxn4az9Ru1pnKYGL-PIC
+
+infra/3pp/tools/gcloud/windows-amd64
+	version:2@461.0.0.chromium.4
+	4YDtQ3MDiZnMIWOTPhpxueRwCAgK9AWSnpBU4r4jIiMC
+
+infra/3pp/tools/gcloud/windows-arm64
+	version:2@461.0.0.chromium.4
+	7qw_a2R6-Iirrf-4xeUB2lTHYPYR87zQw8n-_D616w4C
+
 infra/chromeperf/pinpoint/linux-386
 	git_revision:bd3a982ae62b4820b71414b2340e86019a1fbd26
 	O6ChffXAafn2KNzLFlddCOEI-UPJ3Jg8BjNhoCcQRYUC

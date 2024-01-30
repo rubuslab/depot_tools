@@ -72,6 +72,14 @@ infra/tools/dirmd/${platform} git_revision:30d0d5f1f2f78aa7ed067542e73f260fdf349
 # Pinpoint CLI
 infra/chromeperf/pinpoint/${platform} git_revision:bd3a982ae62b4820b71414b2340e86019a1fbd26
 
+# Google Cloud SDK, required by reclient for authentication
+infra/3pp/tools/gcloud/${platform=linux-amd64} version:2@461.0.0.chromium.4
+infra/3pp/tools/gcloud/${platform=linux-arm64} version:2@461.0.0.chromium.4
+infra/3pp/tools/gcloud/${platform=mac-amd64} version:2@461.0.0.chromium.4
+infra/3pp/tools/gcloud/${platform=mac-arm64} version:2@461.0.0.chromium.4
+infra/3pp/tools/gcloud/${platform=windows-amd64} version:2@461.0.0.chromium.4
+infra/3pp/tools/gcloud/${platform=windows-arm64} version:2@461.0.0.chromium.4
+
 @Subdir reclient
 # reclient, currently this is only for ChromeOS build.
 # TODO(http://b/242680623): we may change how to distribute reclient.

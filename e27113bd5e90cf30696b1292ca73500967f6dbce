@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac9cdd15_ff0153e3",
+        "filename": "cipd_bin_setup.bat",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-01-30T09:21:15Z",
+      "side": 1,
+      "message": "I don\u0027t know if this is the best mechanism for this purpose.\n\nPersonally, I would prefer it if we just don\u0027t use \"-log-level warning\" in this script and show the output of CIPD if it has to install updates. I assume that the intent here was that we don\u0027t want the output of wrapper scripts (which also tend to call \"cipd_bin_setup\" before they execute their wrapped tool) to be contaminated with CIPD messages. Is that the case, and is it really important? I don\u0027t know.\n\nIf that\u0027s the reason behind the `-log-level warning` and we want to keep it, what about making a distinction:\n- If \"update_depot_tools\", which is what most users will use when they update depot_tools, runs, we run \"cipd ensure\" without \"-log-level warning\", so users get good progress updates about the running installations. This should be fine, because \"update_depot_tools\" already prints a message itself.\n- For cases where cipd_bin_setup gets called by wrapper scripts, we hide the output as we do now.\n\nWDYT?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 1
+      },
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

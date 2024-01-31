@@ -38,6 +38,7 @@ import signal
 import tempfile
 import textwrap
 
+import scm
 import subprocess2
 
 from io import BytesIO
@@ -349,8 +350,10 @@ def branch_config_map(option):
     """Return {branch: <|option| value>} for all branches."""
     try:
         reg = re.compile(r'^branch\.(.*)\.%s$' % option)
-        lines = get_config_regexp(reg.pattern)
-        return {reg.match(k).group(1): v for k, v in (l.split() for l in lines)}
+        return {
+            reg.match(k).group(1): v
+            for k, v in get_config_regexp(reg.pattern)
+        }
     except subprocess2.CalledProcessError:
         return {}
 
@@ -384,10 +387,11 @@ def branches(use_limit=True, *args):
 
 
 def get_config(option, default=None):
-    try:
-        return run('config', '--get', option) or default
-    except subprocess2.CalledProcessError:
+    config = scm.GIT.GetConfigList(os.getcwd(), option)
+    if not config:
         return default
+
+    return config[-1]
 
 
 def get_config_int(option, default=0):
@@ -399,10 +403,7 @@ def get_config_int(option, default=0):
 
 
 def get_config_list(option):
-    try:
-        return run('config', '--get-all', option).split()
-    except subprocess2.CalledProcessError:
-        return []
+    return scm.GIT.GetConfigList(os.getcwd(), option)
 
 
 def get_config_regexp(pattern):
@@ -411,7 +412,7 @@ def get_config_regexp(pattern):
         # calls bash.exe (or something to that effect). Each layer divides the
         # number of ^'s by 2.
         pattern = pattern.replace('^', '^' * 8)
-    return run('config', '--get-regexp', pattern).splitlines()
+    return scm.GIT.YieldConfigRegexp(os.getcwd(), pattern)
 
 
 def is_fsmonitor_enabled():
@@ -455,7 +456,7 @@ def del_branch_config(branch, option, scope='local'):
 
 def del_config(option, scope='local'):
     try:
-        run('config', '--' + scope, '--unset', option)
+        scm.GIT.SetConfig(os.getcwd(), option, scope=scope)
     except subprocess2.CalledProcessError:
         pass
 
@@ -1116,10 +1117,7 @@ def tree(treeref, recurse=False):
 
 
 def get_remote_url(remote='origin'):
-    try:
-        return run('config', 'remote.%s.url' % remote)
-    except subprocess2.CalledProcessError:
-        return None
+    return scm.GIT.GetConfig(os.getcwd(), 'remote.%s.url' % remote)
 
 
 def upstream(branch):

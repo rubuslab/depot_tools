@@ -1,0 +1,12 @@
+[1mdiff --git a/tests/git_common_test.py b/tests/git_common_test.py[m
+[1mindex 939071a1..b86cf3c6 100755[m
+[1m--- a/tests/git_common_test.py[m
+[1m+++ b/tests/git_common_test.py[m
+[36m@@ -634,6 +634,7 @@[m [mclass GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,[m
+ [m
+         _, rslt = self.repo.capture_stdio(list, self.gc.branches())[m
+         self.assertIn('too many branches (39/20)', rslt)[m
+[32m+[m[32m        self.gc.scm.GIT._clear_config(self.repo.repo_path)[m
+ [m
+         self.repo.git('config', 'depot-tools.branch-limit', '100')[m
+ [m

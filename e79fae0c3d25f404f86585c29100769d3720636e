@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c9acdb8_250165d2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-31T19:06:35Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "e79fae0c3d25f404f86585c29100769d3720636e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6eb6c8b_3b67887f",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-31T19:06:35Z",
+      "side": 1,
+      "message": "Since we are modifying this interface, what do you think of having SetConfig and UnsetConfig? This would be a breaking change, so we\u0027d need to do it in a follow up.",
+      "revId": "e79fae0c3d25f404f86585c29100769d3720636e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16fc3d9a_470919fe",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-01-31T19:06:35Z",
+      "side": 1,
+      "message": "nit: move args \u003d [\u0027config\u0027, f\u0027--scope{scope}\u0027] before if block, use extend in if/else.",
+      "range": {
+        "startLine": 266,
+        "startChar": 12,
+        "endLine": 266,
+        "endChar": 42
+      },
+      "revId": "e79fae0c3d25f404f86585c29100769d3720636e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

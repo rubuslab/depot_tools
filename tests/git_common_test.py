@@ -297,6 +297,7 @@ class GitReadOnlyFunctionsTest(git_test_utils.GitRepoReadOnlyTestBase,
     def testDormant(self):
         self.assertFalse(self.repo.run(self.gc.is_dormant, 'main'))
         self.repo.git('config', 'branch.main.dormant', 'true')
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertTrue(self.repo.run(self.gc.is_dormant, 'main'))
 
     def testBlame(self):
@@ -457,6 +458,7 @@ class GitMutableFunctionsTest(git_test_utils.GitRepoReadWriteTestBase,
                          [])
 
         self.repo.git('config', '--add', 'happy.derpies', 'cat')
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(
             self.repo.run(self.gc.get_config_list, 'happy.derpies'),
             ['food', 'cat'])
@@ -466,6 +468,7 @@ class GitMutableFunctionsTest(git_test_utils.GitRepoReadWriteTestBase,
 
         self.repo.run(self.gc.set_config, 'dude.bob', 'dog')
 
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual('dog',
                          self.repo.run(self.gc.get_config, 'dude.bob', 'cat'))
 
@@ -481,15 +484,19 @@ class GitMutableFunctionsTest(git_test_utils.GitRepoReadWriteTestBase,
 
         self.repo.git('config', 'depot-tools.upstream', 'catfood')
 
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual('catfood', self.repo.run(self.gc.root))
 
         self.repo.git('config', '--add', 'core.fsmonitor', 'true')
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(True, self.repo.run(self.gc.is_fsmonitor_enabled))
 
         self.repo.git('config', '--add', 'core.fsmonitor', 't')
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(False, self.repo.run(self.gc.is_fsmonitor_enabled))
 
         self.repo.git('config', '--add', 'core.fsmonitor', 'false')
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(False, self.repo.run(self.gc.is_fsmonitor_enabled))
 
     def testRoot(self):
@@ -634,6 +641,7 @@ class GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,
 
         _, rslt = self.repo.capture_stdio(list, self.gc.branches())
         self.assertIn('too many branches (39/20)', rslt)
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
 
         self.repo.git('config', 'depot-tools.branch-limit', '100')
 
@@ -654,6 +662,7 @@ class GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,
             self.repo.run(self.gc.get_or_create_merge_base, 'branch_L',
                           'branch_K'))
 
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(
             self.repo['B'],
             self.repo.run(self.gc.get_config, 'branch.branch_K.base'))
@@ -674,6 +683,7 @@ class GitMutableStructuredTest(git_test_utils.GitRepoReadWriteTestBase,
         self.repo.run(self.gc.manual_merge_base, 'branch_K', self.repo['I'],
                       'branch_G')
 
+        self.gc.scm.GIT._clear_config(self.repo.repo_path)
         self.assertEqual(
             self.repo['I'],
             self.repo.run(self.gc.get_or_create_merge_base, 'branch_K',

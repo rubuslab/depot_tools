@@ -21,8 +21,10 @@ import inspect
 import itertools
 import json  # Exposed through the API.
 import logging
+import mimetypes
 import multiprocessing
 import os  # Somewhat exposed through the API.
+import pathlib
 import random
 import re  # Exposed through the API.
 import signal
@@ -881,7 +883,7 @@ class InputApi(object):
 
     def ListSubmodules(self):
         """Returns submodule paths for current change's repo."""
-        return scm.GIT.ListSubmodules(self.change.RepositoryRoot())
+        return self.change._repo_submodules()
 
     @property
     def tbr(self):
@@ -913,59 +915,43 @@ class InputApi(object):
 
 class _DiffCache(object):
     """Caches diffs retrieved from a particular SCM."""
-    def __init__(self, upstream=None):
+
+    def __init__(self, upstream=None, diff=None):
         """Stores the upstream revision against which all diffs will be computed."""
         self._upstream = upstream
+        self._diff = diff
+        self._diffs_by_file = None
 
     def GetDiff(self, path, local_root):
         """Get the diff for a particular path."""
-        raise NotImplementedError()
+        if self._diffs_by_file == None:
+            self._diffs_by_file = _parse_unified_diff(self._diff)
+        return self._diffs_by_file[path]
 
     def GetOldContents(self, path, local_root):
         """Get the old version for a particular path."""
-        raise NotImplementedError()
+        # TODO(gavinmak): Implement with self._diff.
+        return ''
 
 
 class _GitDiffCache(_DiffCache):
     """DiffCache implementation for git; gets all file diffs at once."""
-    def __init__(self, upstream):
-        super(_GitDiffCache, self).__init__(upstream=upstream)
+
+    def __init__(self, upstream, diff):
+        super(_GitDiffCache, self).__init__(upstream=upstream, diff=diff)
         self._diffs_by_file = None
 
     def GetDiff(self, path, local_root):
         # Compare against None to distinguish between None and an initialized
         # but empty dictionary.
         if self._diffs_by_file == None:
-            # Compute a single diff for all files and parse the output; should
-            # with git this is much faster than computing one diff for each
-            # file.
-            diffs = {}
-
             # Don't specify any filenames below, because there are command line
             # length limits on some platforms and GenerateDiff would fail.
             unified_diff = scm.GIT.GenerateDiff(local_root,
                                                 files=[],
                                                 full_move=True,
                                                 branch=self._upstream)
-
-            # This regex matches the path twice, separated by a space. Note that
-            # filename itself may contain spaces.
-            file_marker = re.compile(
-                '^diff --git (?P<filename>.*) (?P=filename)$')
-            current_diff = []
-            keep_line_endings = True
-            for x in unified_diff.splitlines(keep_line_endings):
-                match = file_marker.match(x)
-                if match:
-                    # Marks the start of a new per-file section.
-                    diffs[match.group('filename')] = current_diff = [x]
-                elif x.startswith('diff --git'):
-                    raise PresubmitFailure('Unexpected diff line: %s' % x)
-                else:
-                    current_diff.append(x)
-
-            self._diffs_by_file = dict(
-                (normpath(path), ''.join(diff)) for path, diff in diffs.items())
+            self._diffs_by_file = _parse_unified_diff(unified_diff)
 
         if path not in self._diffs_by_file:
             # SCM didn't have any diff on this file. It could be that the file
@@ -995,6 +981,7 @@ class AffectedFile(object):
         self._cached_changed_contents = None
         self._cached_new_contents = None
         self._diff_cache = diff_cache
+        self._is_testable_file = None
         logging.debug('%s(%s)', self.__class__.__name__, self._path)
 
     def LocalPath(self):
@@ -1018,7 +1005,14 @@ class AffectedFile(object):
         """Returns True if the file is a text file and not a binary file.
 
         Deleted files are not text file."""
-        raise NotImplementedError()  # Implement when needed
+        if self._is_testable_file is None:
+            if self.Action() == 'D':
+                # A deleted file is not testable.
+                self._is_testable_file = False
+            else:
+                t, _ = mimetypes.guess_type(self.AbsoluteLocalPath())
+                self._is_testable_file = bool(t and t.startswith('text/'))
+        return self._is_testable_file
 
     def IsTextFile(self):
         """An alias to IsTestableFile for backwards compatibility."""
@@ -1147,7 +1141,8 @@ class Change(object):
                  issue,
                  patchset,
                  author,
-                 upstream=None):
+                 upstream=None,
+                 diff=None):
         if files is None:
             files = []
         self._name = name
@@ -1166,7 +1161,7 @@ class Change(object):
         assert all((isinstance(f, (list, tuple)) and len(f) == 2)
                    for f in files), files
 
-        diff_cache = self._AFFECTED_FILES.DIFF_CACHE(self._upstream)
+        diff_cache = self._AFFECTED_FILES.DIFF_CACHE(self._upstream, diff)
         self._affected_files = [
             self._AFFECTED_FILES(path, action.strip(), self._local_root,
                                  diff_cache) for action, path in files
@@ -1298,8 +1293,12 @@ class Change(object):
         return ','.join(self.TBRsFromDescription())
 
     def AllFiles(self, root=None):
-        """List all files under source control in the repo."""
-        raise NotImplementedError()
+        """List all files under source control in the repo.
+        
+        There is no SCM, so return all files under the repo root.
+        """
+        root = root or self.RepositoryRoot()
+        return [str(p) for p in pathlib.Path(root).rglob("*")]
 
     def AffectedFiles(self, include_deletes=True, file_filter=None):
         """Returns a list of AffectedFile instances for all files in the change.
@@ -1311,29 +1310,22 @@ class Change(object):
         Returns:
             [AffectedFile(path, action), AffectedFile(path, action)]
         """
-        submodule_list = scm.GIT.ListSubmodules(self.RepositoryRoot())
-        files = [
-            af for af in self._affected_files
-            if af.LocalPath() not in submodule_list
-        ]
-        affected = list(filter(file_filter, files))
-
+        affected = list(filter(file_filter, self._affected_files))
         if include_deletes:
             return affected
         return list(filter(lambda x: x.Action() != 'D', affected))
 
     def AffectedSubmodules(self):
-        """Returns a list of AffectedFile instances for submodules in the change."""
-        submodule_list = scm.GIT.ListSubmodules(self.RepositoryRoot())
-        return [
-            af for af in self._affected_files
-            if af.LocalPath() in submodule_list
-        ]
+        """Returns a list of AffectedFile instances for submodules in the change.
+
+        There is no SCM and no submodules, so return an empty list.
+        """
+        return []
 
     def AffectedTestableFiles(self, include_deletes=None, **kwargs):
         """Return a list of the existing text files in a change."""
         if include_deletes is not None:
-            warn('AffectedTeestableFiles(include_deletes=%s)'
+            warn('AffectedTestableFiles(include_deletes=%s)'
                  ' is deprecated and ignored' % str(include_deletes),
                  category=DeprecationWarning,
                  stacklevel=2)
@@ -1387,10 +1379,21 @@ class Change(object):
         files = self.AffectedFiles(file_filter=owners_file_filter)
         return {f.LocalPath(): f.OldContents() for f in files}
 
+    def _repo_submodules(self):
+        """Returns submodule paths for current change's repo.
+
+        There is no SCM, so return an empty list.
+        """
+        return []
+
 
 class GitChange(Change):
     _AFFECTED_FILES = GitAffectedFile
     scm = 'git'
+
+    def _repo_submodules(self):
+        """Returns submodule paths for current change's repo."""
+        return scm.GIT.ListSubmodules(self.RepositoryRoot())
 
     def AllFiles(self, root=None):
         """List all files under source control in the repo."""
@@ -1398,6 +1401,35 @@ class GitChange(Change):
         return subprocess.check_output(
             ['git', '-c', 'core.quotePath=false', 'ls-files', '--', '.'],
             cwd=root).decode('utf-8', 'ignore').splitlines()
+
+    def AffectedFiles(self, include_deletes=True, file_filter=None):
+        """Returns a list of AffectedFile instances for all files in the change.
+
+        Args:
+            include_deletes: If false, deleted files will be filtered out.
+            file_filter: An additional filter to apply.
+
+        Returns:
+            [AffectedFile(path, action), AffectedFile(path, action)]
+        """
+        submodule_list = scm.GIT.ListSubmodules(self.RepositoryRoot())
+        files = [
+            af for af in self._affected_files
+            if af.LocalPath() not in submodule_list
+        ]
+        affected = list(filter(file_filter, files))
+
+        if include_deletes:
+            return affected
+        return list(filter(lambda x: x.Action() != 'D', affected))
+
+    def AffectedSubmodules(self):
+        """Returns a list of AffectedFile instances for submodules in the change."""
+        submodule_list = scm.GIT.ListSubmodules(self.RepositoryRoot())
+        return [
+            af for af in self._affected_files
+            if af.LocalPath() in submodule_list
+        ]
 
 
 def ListRelevantPresubmitFiles(files, root):
@@ -1963,14 +1995,18 @@ def _parse_change(parser, options):
         parser: The parser used to parse the arguments from command line.
         options: The arguments parsed from command line.
     Returns:
-        A GitChange if the change root is a git repository, or a Change otherwise.
+        A GitChange if the change root is a git repository, StdinChange if the
+        change info is passed from stdin, or a Change otherwise.
     """
-    if options.files and options.all_files:
-        parser.error('<files> cannot be specified when --all-files is set.')
+    if options.all_files:
+        if options.files:
+            parser.error('<files> cannot be specified when --all-files is set.')
+        if options.diff:
+            parser.error('<diff> cannot be specified when --all-files is set.')
 
     change_scm = scm.determine_scm(options.root)
-    if change_scm != 'git' and not options.files:
-        parser.error('<files> is not optional for unversioned directories.')
+    if change_scm != 'git' and not options.files and not options.diff:
+        parser.error('unversioned directories must specify <files> or <diff>.')
 
     if options.files:
         if options.source_controlled_only:
@@ -1986,13 +2022,30 @@ def _parse_change(parser, options):
             change_files = _parse_files(options.files, options.recursive)
     elif options.all_files:
         change_files = [('M', f) for f in scm.GIT.GetAllFiles(options.root)]
+    elif options.diff:
+        # Map diffs to actions: A, M, D.
+        change_files = []
+        for f, diff in _parse_unified_diff(options.diff).items():
+            header_line = diff.splitlines()[1]
+            if header_line.startswith('new'):
+                action = 'A'
+            elif header_line.startswith('deleted'):
+                action = 'D'
+            else:
+                action = 'M'
+            change_files.append((action, f))
     else:
         change_files = scm.GIT.CaptureStatus(options.root,
                                              options.upstream or None,
                                              ignore_submodules=False)
     logging.info('Found %d file(s).', len(change_files))
 
-    change_class = GitChange if change_scm == 'git' else Change
+    if change_scm == 'git':
+        change_class = GitChange
+    elif options.diff:
+        change_class = StdinChange
+    else:
+        change_class = Change
     return change_class(options.name,
                         options.description,
                         options.root,
@@ -2000,7 +2053,8 @@ def _parse_change(parser, options):
                         options.issue,
                         options.patchset,
                         options.author,
-                        upstream=options.upstream)
+                        upstream=options.upstream,
+                        diff=options.diff)
 
 
 def _parse_gerrit_options(parser, options):
@@ -2036,6 +2090,32 @@ def _parse_gerrit_options(parser, options):
     logging.info('Got description: """\n%s\n"""', options.description)
 
     return gerrit_obj
+
+
+def _parse_unified_diff(diff):
+    """Parses a unified git diff and returns a list of (path, diff) tuples."""
+    # Compute a single diff for all files and parse the output; should
+    # with git this is much faster than computing one diff for each
+    # file.
+    diffs = {}
+
+    # This regex matches the path twice, separated by a space. Note that
+    # filename itself may contain spaces.
+    file_marker = re.compile(
+        '^diff --git (?:a/)?(?P<filename>.*) (?:b/)?(?P=filename)$')
+    current_diff = []
+    keep_line_endings = True
+    for x in diff.splitlines(keep_line_endings):
+        match = file_marker.match(x)
+        if match:
+            # Marks the start of a new per-file section.
+            diffs[match.group('filename')] = current_diff = [x]
+        elif x.startswith('diff --git'):
+            raise PresubmitFailure('Unexpected diff line: %s' % x)
+        else:
+            current_diff.append(x)
+
+    return dict((normpath(path), ''.join(diff)) for path, diff in diffs.items())
 
 
 @contextlib.contextmanager
@@ -2109,6 +2189,9 @@ def main(argv=None):
                       help='The change description.')
     desc.add_argument('--description_file',
                       help='File to read change description from.')
+    diff = parser.add_mutually_exclusive_group()
+    diff.add_argument('--diff', help='The change diff.')
+    diff.add_argument('--diff_file', help='File to read change diff from.')
     parser.add_argument('--issue', type=int, default=0)
     parser.add_argument('--patchset', type=int, default=0)
     parser.add_argument('--root',
@@ -2179,6 +2262,8 @@ def main(argv=None):
 
     if options.description_file:
         options.description = gclient_utils.FileRead(options.description_file)
+    if options.diff_file:
+        options.diff = gclient_utils.FileRead(options.diff_file)
     gerrit_obj = _parse_gerrit_options(parser, options)
     change = _parse_change(parser, options)
 

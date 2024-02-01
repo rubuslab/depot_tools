@@ -16,6 +16,24 @@
       "message": "By the way, are there issues on non-mac platform too?\nIf not, better to remove this conditional entirely?",
       "revId": "92b780b0bd13d0ed5f9aa821f0b91f989fb188de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4df2b3c3_3c3565ae",
+        "filename": "gclient.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4007,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-02-01T06:10:35Z",
+      "side": 1,
+      "message": "+1, I think this whole conditional can be removed.",
+      "parentUuid": "03c4719d_216f4dff",
+      "revId": "92b780b0bd13d0ed5f9aa821f0b91f989fb188de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

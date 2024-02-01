@@ -52,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "65df4af7_a8746de9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-02-01T03:11:38Z",
+      "side": 1,
+      "message": "Mhm, I see...\n\nWhat about:\n\n1. I create a \"gcloud-auth\" CIPD package that only contains the files required for the `gcloud auth` commands. I managed to get the SDK minified down to \u003c10% of its size (both in number of files as well as total size) just by deleting unneeded files.\n2. I change this CL so that we don\u0027t put a `gcloud` command on the PATH.\n3. The linked page actually says that this is the case only for gLinux: \"Within Google, the only security-approved way to install the public release **on gLinux**, [..]\". This does not apply to gMac and gWindows, where it directly above that says \"You can grab the latest public release at our external site for Mac and at our external site for Windows\". As we don\u0027t need the gcloud SDK on gLinux anyway (because we can use `gcert` instead), I could change this CL to only download it on Mac and Windows platforms.\n\nWould these steps address your concerns?",
+      "parentUuid": "f9d1f8ae_147c3df4",
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ac9cdd15_ff0153e3",

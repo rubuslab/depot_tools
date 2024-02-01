@@ -995,14 +995,16 @@ def CheckChangeOnCommit(input_api, output_api):
         self.assertEqual(
             sys.stderr.getvalue(),
             'usage: presubmit_unittest.py [options] <files...>\n'
-            'presubmit_unittest.py: error: <files> is not optional for unversioned '
-            'directories.\n')
+            'presubmit_unittest.py: error: unversioned directories must '
+            'specify <files> or <diff>.\n')
 
     @mock.patch('presubmit_support.Change', mock.Mock())
     def testParseChange_Files(self):
         presubmit._parse_files.return_value = [('M', 'random_file.txt')]
         scm.determine_scm.return_value = None
-        options = mock.Mock(all_files=False, source_controlled_only=False)
+        options = mock.Mock(diff=None,
+                            all_files=False,
+                            source_controlled_only=False)
 
         change = presubmit._parse_change(None, options)
         self.assertEqual(presubmit.Change.return_value, change)
@@ -1013,21 +1015,22 @@ def CheckChangeOnCommit(input_api, output_api):
                                                  options.issue,
                                                  options.patchset,
                                                  options.author,
-                                                 upstream=options.upstream)
+                                                 upstream=options.upstream,
+                                                 diff=options.diff)
         presubmit._parse_files.assert_called_once_with(options.files,
                                                        options.recursive)
 
-    def testParseChange_NoFilesAndNoScm(self):
+    def testParseChange_NoFilesNoDiffAndNoScm(self):
         presubmit._parse_files.return_value = []
         scm.determine_scm.return_value = None
         parser = mock.Mock()
         parser.error.side_effect = [SystemExit]
-        options = mock.Mock(files=[], all_files=False)
+        options = mock.Mock(files=[], diff=None, all_files=False)
 
         with self.assertRaises(SystemExit):
             presubmit._parse_change(parser, options)
         parser.error.assert_called_once_with(
-            '<files> is not optional for unversioned directories.')
+            'unversioned directories must specify <files> or <diff>.')
 
     def testParseChange_FilesAndAllFiles(self):
         parser = mock.Mock()
@@ -1038,6 +1041,16 @@ def CheckChangeOnCommit(input_api, output_api):
             presubmit._parse_change(parser, options)
         parser.error.assert_called_once_with(
             '<files> cannot be specified when --all-files is set.')
+
+    def testParseChange_DiffAndAllFiles(self):
+        parser = mock.Mock()
+        parser.error.side_effect = [SystemExit]
+        options = mock.Mock(files=[], all_files=True, diff='diff')
+
+        with self.assertRaises(SystemExit):
+            presubmit._parse_change(parser, options)
+        parser.error.assert_called_once_with(
+            '<diff> cannot be specified when --all-files is set.')
 
     @mock.patch('presubmit_support.GitChange', mock.Mock())
     def testParseChange_FilesAndGit(self):
@@ -1054,7 +1067,8 @@ def CheckChangeOnCommit(input_api, output_api):
                                                     options.issue,
                                                     options.patchset,
                                                     options.author,
-                                                    upstream=options.upstream)
+                                                    upstream=options.upstream,
+                                                    diff=options.diff)
         presubmit._parse_files.assert_called_once_with(options.files,
                                                        options.recursive)
 
@@ -1063,7 +1077,7 @@ def CheckChangeOnCommit(input_api, output_api):
     def testParseChange_NoFilesAndGit(self):
         scm.determine_scm.return_value = 'git'
         scm.GIT.CaptureStatus.return_value = [('A', 'added.txt')]
-        options = mock.Mock(all_files=False, files=[])
+        options = mock.Mock(diff=None, all_files=False, files=[])
 
         change = presubmit._parse_change(None, options)
         self.assertEqual(presubmit.GitChange.return_value, change)
@@ -1074,7 +1088,8 @@ def CheckChangeOnCommit(input_api, output_api):
                                                     options.issue,
                                                     options.patchset,
                                                     options.author,
-                                                    upstream=options.upstream)
+                                                    upstream=options.upstream,
+                                                    diff=options.diff)
         scm.GIT.CaptureStatus.assert_called_once_with(options.root,
                                                       options.upstream,
                                                       ignore_submodules=False)
@@ -1084,7 +1099,7 @@ def CheckChangeOnCommit(input_api, output_api):
     def testParseChange_AllFilesAndGit(self):
         scm.determine_scm.return_value = 'git'
         scm.GIT.GetAllFiles.return_value = ['foo.txt', 'bar.txt']
-        options = mock.Mock(all_files=True, files=[])
+        options = mock.Mock(diff=None, all_files=True, files=[])
 
         change = presubmit._parse_change(None, options)
         self.assertEqual(presubmit.GitChange.return_value, change)
@@ -1096,7 +1111,8 @@ def CheckChangeOnCommit(input_api, output_api):
                                                     options.issue,
                                                     options.patchset,
                                                     options.author,
-                                                    upstream=options.upstream)
+                                                    upstream=options.upstream,
+                                                    diff=options.diff)
         scm.GIT.GetAllFiles.assert_called_once_with(options.root)
 
     def testParseGerritOptions_NoGerritUrl(self):
@@ -1724,19 +1740,18 @@ class AffectedFileUnittest(PresubmitTestsBase):
 
 class ChangeUnittest(PresubmitTestsBase):
 
-    @mock.patch('scm.GIT.ListSubmodules', return_value=['BB'])
-    def testAffectedFiles(self, mockListSubmodules):
+    def testAffectedFiles(self):
         change = presubmit.Change('', '', self.fake_root_dir, [('Y', 'AA'),
                                                                ('A', 'BB')], 3,
                                   5, '')
-        self.assertEqual(1, len(change.AffectedFiles()))
+        self.assertEqual(2, len(change.AffectedFiles()))
         self.assertEqual('Y', change.AffectedFiles()[0].Action())
 
     @mock.patch('scm.GIT.ListSubmodules', return_value=['BB'])
     def testAffectedSubmodules(self, mockListSubmodules):
-        change = presubmit.Change('', '', self.fake_root_dir, [('Y', 'AA'),
-                                                               ('A', 'BB')], 3,
-                                  5, '')
+        change = presubmit.GitChange('', '', self.fake_root_dir, [('Y', 'AA'),
+                                                                  ('A', 'BB')],
+                                     3, 5, '')
         self.assertEqual(1, len(change.AffectedSubmodules()))
         self.assertEqual('A', change.AffectedSubmodules()[0].Action())
 

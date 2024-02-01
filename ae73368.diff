@@ -1,0 +1,161 @@
+From ae73368e5419ae04c236dfdc73a22215526c07d5 Mon Sep 17 00:00:00 2001
+From: Peter Kvitek <kvitekp@chromium.org>
+Date: Wed, 31 Jan 2024 14:00:52 -0800
+Subject: [PATCH] [CfT] Add ChromeForTestingAllowed policy
+
+Bug: 1523765
+Change-Id: I792d60d1f613e92d7c40468303937e60e7472a78
+---
+
+diff --git a/chrome/browser/chrome_browser_main.cc b/chrome/browser/chrome_browser_main.cc
+index 6e70564..56b7a56 100644
+--- a/chrome/browser/chrome_browser_main.cc
++++ b/chrome/browser/chrome_browser_main.cc
+@@ -1491,6 +1491,14 @@
+   }
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
+ 
++#if BUILDFLAG(CHROME_FOR_TESTING)
++  if (!g_browser_process->local_state()->GetBoolean(
++          prefs::kChromeForTestingAllowed)) {
++    LOG(ERROR) << "Chrome for Testing is disallowed by the system admin.";
++    return static_cast<int>(chrome::RESULT_CODE_ACTION_DISALLOWED_BY_POLICY);
++  }
++#endif  // BUILDFLAG(CHROME_FOR_TESTING)
++
+   if (base::CommandLine::ForCurrentProcess()->HasSwitch(
+           switches::kMakeDefaultBrowser)) {
+     bool is_managed = g_browser_process->local_state()->IsManagedPreference(
+diff --git a/chrome/browser/policy/configuration_policy_handler_list_factory.cc b/chrome/browser/policy/configuration_policy_handler_list_factory.cc
+index 50feefc..c7cee4f 100644
+--- a/chrome/browser/policy/configuration_policy_handler_list_factory.cc
++++ b/chrome/browser/policy/configuration_policy_handler_list_factory.cc
+@@ -2090,6 +2090,11 @@
+     optimization_guide::model_execution::prefs::kWallpaperSearchEnterprisePolicyAllowed,
+     base::Value::Type::INTEGER},
+ #endif
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++  { key::kChromeForTestingAllowed,
++    prefs::kChromeForTestingAllowed,
++    base::Value::Type::BOOLEAN },
++#endif
+ 
+ #if BUILDFLAG(CHROME_CERTIFICATE_POLICIES_SUPPORTED)
+   { key::kCACertificates,
+diff --git a/chrome/browser/prefs/browser_prefs.cc b/chrome/browser/prefs/browser_prefs.cc
+index ea2613a..dc0207e 100644
+--- a/chrome/browser/prefs/browser_prefs.cc
++++ b/chrome/browser/prefs/browser_prefs.cc
+@@ -1694,6 +1694,10 @@
+   registry->RegisterBooleanPref(prefs::kOopPrintDriversAllowedByPolicy, true);
+ #endif
+ 
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++  registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
++#endif
++
+   // This is intentionally last.
+   RegisterLocalStatePrefsForMigration(registry);
+ }
+diff --git a/chrome/common/pref_names.h b/chrome/common/pref_names.h
+index b7355fb..21c95f98a 100644
+--- a/chrome/common/pref_names.h
++++ b/chrome/common/pref_names.h
+@@ -3029,6 +3029,11 @@
+ 
+ #endif  // BUILDFLAG(IS_CHROMEOS)
+ 
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++// Defines administrator-set availability of Chrome for Testing.
++inline constexpr char kChromeForTestingAllowed[] = "chrome_for_testing.allowed";
++#endif
++
+ // *************** SERVICE PREFS ***************
+ // These are attached to the service process.
+ 
+diff --git a/components/policy/resources/templates/policies.yaml b/components/policy/resources/templates/policies.yaml
+index d765c3c2..d097361 100644
+--- a/components/policy/resources/templates/policies.yaml
++++ b/components/policy/resources/templates/policies.yaml
+@@ -1208,6 +1208,7 @@
+   1207: InsertKeyModifier
+   1208: ToolbarAvatarLabelSettings
+   1209: DeviceWeeklyScheduledSuspend
++  1210: ChromeForTestingAllowed
+ atomic_groups:
+   1: Homepage
+   2: RemoteAccess
+diff --git a/components/policy/resources/templates/policy_definitions/Miscellaneous/ChromeForTestingAllowed.yaml b/components/policy/resources/templates/policy_definitions/Miscellaneous/ChromeForTestingAllowed.yaml
+new file mode 100644
+index 0000000..769beba
+--- /dev/null
++++ b/components/policy/resources/templates/policy_definitions/Miscellaneous/ChromeForTestingAllowed.yaml
+@@ -0,0 +1,27 @@
++caption: Allow Chrome for Testing
++default: true
++desc: |-
++  Controls whether users may use Chrome for Testing.
++
++        If this policy is set to Enabled or not set, users may install and run Chrome for Testing.
++
++        If this policy is set to Disabled, users are not allowed to run Chrome for Testing. Users will still be able to install Chrome for Testing, however it will not run with the profiles where this policy is set to Disabled.
++example_value: true
++features:
++  dynamic_refresh: false
++  per_profile: false
++future_on:
++- chrome_os
++items:
++- caption: Allow use of the Chrome for Testing
++  value: true
++- caption: Do not allow use of the Chrome for Testing
++  value: false
++owners:
++- file://components/policy/OWNERS
++schema:
++  type: boolean
++supported_on:
++- chrome.*:123-
++tags: []
++type: main
+diff --git a/components/policy/test/data/pref_mapping/ChromeForTestingAllowed.json b/components/policy/test/data/pref_mapping/ChromeForTestingAllowed.json
+new file mode 100644
+index 0000000..97b18a5
+--- /dev/null
++++ b/components/policy/test/data/pref_mapping/ChromeForTestingAllowed.json
+@@ -0,0 +1,22 @@
++[
++  {
++    "os": [
++      "linux",
++      "mac",
++      "win"
++    ],
++    "policy_pref_mapping_tests": [
++      {
++        "policies": {
++          "ChromeForTestingAllowed": true
++        },
++        "prefs": {
++          "chrome_for_testing.allowed": {
++            "location": "local_state",
++            "value": true
++          }
++        }
++      }
++    ]
++  }
++]
+diff --git a/tools/metrics/histograms/metadata/enterprise/enums.xml b/tools/metrics/histograms/metadata/enterprise/enums.xml
+index 2e97ef2..6dc7f86 100644
+--- a/tools/metrics/histograms/metadata/enterprise/enums.xml
++++ b/tools/metrics/histograms/metadata/enterprise/enums.xml
+@@ -2027,6 +2027,7 @@
+   <int value="1207" label="InsertKeyModifier"/>
+   <int value="1208" label="ToolbarAvatarLabelSettings"/>
+   <int value="1209" label="DeviceWeeklyScheduledSuspend"/>
++  <int value="1210" label="ChromeForTestingAllowed"/>
+ </enum>
+ 
+ <enum name="EnterprisePoliciesSources">
+

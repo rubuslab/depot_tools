@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1f8c963_d9b1cafe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-01T17:21:35Z",
+      "side": 1,
+      "message": "fsmonitor issue is unrelated, but there\u0027s a possibility it did fix the issue. I\u0027ll monitor the queue and if we see reports of mac hanging, we can roll this back.\n\nI\u0027m hesitant to move forward with parallel sync on all arm devices without getting more data.",
+      "parentUuid": "6d070ec0_dbd3d16a",
+      "revId": "92b780b0bd13d0ed5f9aa821f0b91f989fb188de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03c4719d_216f4dff",

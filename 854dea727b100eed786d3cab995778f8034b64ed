@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c8ea4ef_08447e65",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-01T04:21:22Z",
+      "side": 1,
+      "message": "Instead of modifying _DiffCache (abstract class), let\u0027s create _ProvidedDiffCache or something along those lines and have that inherit _DiffCache",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea0f48fd_ab03ad25",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2006,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-01T04:21:22Z",
+      "side": 1,
+      "message": "I wonder if we should have a new scm for such changes, e.g. FileDiff. Then, FileDiff can read stdin / argument.",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5e6a954_58182c24",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2028,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-01T04:21:22Z",
+      "side": 1,
+      "message": "We are dealing with external input, so need a len check (assert / raise exception should be sufficient).",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa83cd15_7b15af8d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-01T04:21:22Z",
+      "side": 1,
+      "message": "Linux has ARG_MAX (I\u0027m not confident, but it looks like it defaults to 2MB), and Windows has 8KB limit. Given it\u0027s a bit limiting, I think we shouldn\u0027t accept it as an argument.\n\nInstead, it can be passed as a file, or perhaps stdin.",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

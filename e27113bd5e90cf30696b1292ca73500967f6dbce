@@ -90,6 +90,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "71dbf8c9_566549be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-02-01T06:47:10Z",
+      "side": 1,
+      "message": "\u003e where depot_tools is DEPSed in, e.g. chromium/src.\n\nHmm, I didn\u0027t know that chromium/src/third_party/depot_tools also sets up .cipd_bin. Is this intended? Should this be fixed to not install CIPD packages when DEPSed?  \nI think there are some code that assume third_party/depot_tools CIPD packages. So, there will be some work to do.",
+      "parentUuid": "f78b0346_bd063a71",
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ac9cdd15_ff0153e3",
         "filename": "cipd_bin_setup.bat",
         "patchSetId": 5

@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d136598e_a3a79b8e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-01T22:18:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c8ea4ef_08447e65",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea0f48fd_ab03ad25",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-02-01T04:21:22Z",
       "side": 1,
       "message": "I wonder if we should have a new scm for such changes, e.g. FileDiff. Then, FileDiff can read stdin / argument.",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e2cfb90_4174a8c9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2006,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-01T22:18:17Z",
+      "side": 1,
+      "message": "I think we could add it in a followup CL, added a TODO",
+      "parentUuid": "ea0f48fd_ab03ad25",
       "revId": "854dea727b100eed786d3cab995778f8034b64ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86359ca7_4d38a216",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2028,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-01T22:18:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5e6a954_58182c24",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa83cd15_7b15af8d",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-02-01T04:21:22Z",
       "side": 1,
       "message": "Linux has ARG_MAX (I\u0027m not confident, but it looks like it defaults to 2MB), and Windows has 8KB limit. Given it\u0027s a bit limiting, I think we shouldn\u0027t accept it as an argument.\n\nInstead, it can be passed as a file, or perhaps stdin.",
+      "revId": "854dea727b100eed786d3cab995778f8034b64ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e584140b_865bf393",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-01T22:18:17Z",
+      "side": 1,
+      "message": "Ack, sticking with `--diff_file` for now",
+      "parentUuid": "fa83cd15_7b15af8d",
       "revId": "854dea727b100eed786d3cab995778f8034b64ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

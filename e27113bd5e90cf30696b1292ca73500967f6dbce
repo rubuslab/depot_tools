@@ -108,6 +108,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f2f0044c_0db99689",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-02-01T22:53:24Z",
+      "side": 1,
+      "message": "\u003e Would these steps address your concerns?\n\nYeah, smaller \"gcloud-auth\" sounds like a good idea, assuming it is built automatically using 3pp infra, the same way existing gcloud package is built.\n\n\u003e This does not apply to gMac and gWindows,\n\nI was confused by cipd_manifest.txt entries that install this package for all platforms, including Linux. If it is just gcloud-auth, I\u0027m less concerned. If gcloud is the only way to do reauth, they leave us no choice and we have to come up with these hacks.",
+      "parentUuid": "71dbf8c9_566549be",
+      "revId": "e27113bd5e90cf30696b1292ca73500967f6dbce",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ac9cdd15_ff0153e3",
         "filename": "cipd_bin_setup.bat",
         "patchSetId": 5

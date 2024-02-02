@@ -118,6 +118,12 @@ def CheckUnitTestsOnCommit(input_api, output_api):
             r'.*recipes_test\.py$',
         ])
 
+    if not input_api.OnGit():
+        # This test requires git. Skip if not available in workspace.
+        tests_to_skip_list.extend([
+            r'.*recipes_test\.py$',
+        ])
+
     tests = input_api.canned_checks.GetUnitTestsInDirectory(
         input_api,
         output_api,

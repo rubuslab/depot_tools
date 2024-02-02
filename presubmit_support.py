@@ -888,6 +888,10 @@ class InputApi(object):
         """Returns if a change is TBR'ed."""
         return 'TBR' in self.change.tags or self.change.TBRsFromDescription()
 
+    def OnGit(self):
+        """Returns whether or not this is being run in a git workspace."""
+        return self.change.scm == 'git'
+
     def RunTests(self, tests_mix, parallel=True):
         tests = []
         msgs = []

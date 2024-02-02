@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1646206_844828fb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:35:08Z",
+      "side": 1,
+      "message": "nit - we can\u0027t have it default since there are other gclient checkouts that won\u0027t have mojom formatter. I also suppose chormium/src checkout won\u0027t be cherry-picked to release branches, so that\u0027s another reason.",
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66017fd5_c3c7da3a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:35:08Z",
+      "side": 1,
+      "message": "Nits, but otherwise lgtm.",
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84305657_4da49a54",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6344,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:35:08Z",
+      "side": 1,
+      "message": "gclient_paths.GetPrimarySolutionPath is not specific to chromium, so I suggest making it more generic.\n```suggestion\n    primary_solution_path \u003d gclient_paths.GetPrimarySolutionPath()\n    if not primary_solution_path:\n        DieWithError(\u0027Could not find the primary solution path (e.g. the chromium checkout)\u0027)\n```",
+      "range": {
+        "startLine": 6342,
+        "startChar": 0,
+        "endLine": 6344,
+        "endChar": 60
+      },
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61f3e1b4_2b06054d",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6348,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:35:08Z",
+      "side": 1,
+      "message": "```suggestion\n        DieWithError(f\u0027Could not find mojom formater at \"{mojom_format_path}\"\u0027)\n```",
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

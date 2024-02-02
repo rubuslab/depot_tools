@@ -58,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "431e2b74_d51112ca",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6344,
+      "author": {
+        "id": 1144624
+      },
+      "writtenOn": "2024-02-02T19:58:33Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "84305657_4da49a54",
+      "range": {
+        "startLine": 6342,
+        "startChar": 0,
+        "endLine": 6344,
+        "endChar": 60
+      },
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "61f3e1b4_2b06054d",
@@ -71,6 +95,24 @@
       "writtenOn": "2024-02-02T19:35:08Z",
       "side": 1,
       "message": "```suggestion\n        DieWithError(f\u0027Could not find mojom formater at \"{mojom_format_path}\"\u0027)\n```",
+      "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8e50dc4_bc3ca836",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6348,
+      "author": {
+        "id": 1144624
+      },
+      "writtenOn": "2024-02-02T19:58:33Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "61f3e1b4_2b06054d",
       "revId": "eb6033da1482b4cdd7890e751785311a9f5d9afc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95eef98a_d7f7a430",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T17:52:45Z",
+      "side": 1,
+      "message": "Sorry for the breakage. But, this is a first report that gclient sync doesn\u0027t work. I requested more information in crbug.com/1376538.\n\nI\u0027d prefer if we fix it forward, or understand what\u0027s causing it before revert takes place.",
+      "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

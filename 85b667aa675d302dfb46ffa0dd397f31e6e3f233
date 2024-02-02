@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "96cfa0d3_93c554db",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-02T23:09:14Z",
+      "side": 1,
+      "message": "refactored",
+      "parentUuid": "c98f5b02_3a91512b",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a0b877a_9cc49601",
@@ -52,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "158b8d5e_825ac273",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-02T23:09:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a0b877a_9cc49601",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "200610a9_84e04199",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-02-02T19:49:12Z",
       "side": 1,
       "message": "This is probably incorrect, there can be untracked and gitignored files which we don\u0027t want to include.",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "887677cc_45eb94e7",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-02T23:09:14Z",
+      "side": 1,
+      "message": "If there isn\u0027t git, will this method just reimplement gitignore? also how will this know if a file is tracked? happy to continue discussion on followup implementation change",
+      "parentUuid": "200610a9_84e04199",
       "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -92,6 +146,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7a4b367_703e3ce9",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-02T23:09:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34c6f4e5_7731092c",
+      "range": {
+        "startLine": 1436,
+        "startChar": 25,
+        "endLine": 1436,
+        "endChar": 70
+      },
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e7796d9a_2e2f69c6",
@@ -105,6 +183,30 @@
       "writtenOn": "2024-02-02T19:49:12Z",
       "side": 1,
       "message": "Same, replace with self._repo_submodules.",
+      "range": {
+        "startLine": 1449,
+        "startChar": 24,
+        "endLine": 1449,
+        "endChar": 70
+      },
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f07f62d_4edbfd5c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1449,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-02T23:09:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7796d9a_2e2f69c6",
       "range": {
         "startLine": 1449,
         "startChar": 24,

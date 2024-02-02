@@ -34,6 +34,24 @@
       "parentUuid": "95eef98a_d7f7a430",
       "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ab141f7_b97e2d89",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2024-02-02T19:30:35Z",
+      "side": 1,
+      "message": "let\u0027s keep the conversation in one place -- the open bug that Josip linked to",
+      "parentUuid": "ef5072b7_7e34d573",
+      "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c98f5b02_3a91512b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:12Z",
+      "side": 1,
+      "message": "The problem with this is that, afaict, the diff is completely ignored by GitDiffCache. And if change_scm \u003d \u0027git\u0027, that means that the diff passed with option flag is not going to be used.",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a0b877a_9cc49601",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:12Z",
+      "side": 1,
+      "message": "I don\u0027t like how we pass diff here and in other places. I think we should be able to make a nicer interface here.",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "200610a9_84e04199",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:12Z",
+      "side": 1,
+      "message": "This is probably incorrect, there can be untracked and gitignored files which we don\u0027t want to include.",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34c6f4e5_7731092c",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:12Z",
+      "side": 1,
+      "message": "replace with self._repo_submodules\n```suggestion\n        submodule_list \u003d self._repo_submodules()\n```",
+      "range": {
+        "startLine": 1436,
+        "startChar": 25,
+        "endLine": 1436,
+        "endChar": 70
+      },
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7796d9a_2e2f69c6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1449,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:12Z",
+      "side": 1,
+      "message": "Same, replace with self._repo_submodules.",
+      "range": {
+        "startLine": 1449,
+        "startChar": 24,
+        "endLine": 1449,
+        "endChar": 70
+      },
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05110051_898298d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-02T19:49:38Z",
+      "side": 1,
+      "message": "I would suggest to split this CL into two - refactoring needed to support change diff via stdin/file; and actual change to support it.",
+      "revId": "85b667aa675d302dfb46ffa0dd397f31e6e3f233",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c98f5b02_3a91512b",

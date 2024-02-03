@@ -16,6 +16,24 @@
       "message": "from what I can tell, the default encoding is not utf-8, and it will be in py 3.15: https://peps.python.org/pep-0686/.\n\nSo, I think we\u0027ll need to wait to remove this a little longer.",
       "revId": "371aa997c04791d21e222ed43a1a0d55b450dd53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb50daa8_2f17093d",
+        "filename": "fix_encoding.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-03T01:48:01Z",
+      "side": 0,
+      "message": "\u003e \"The default encoding for Python source code is UTF-8, so you can simply include a Unicode character in a string literal.\"[1]\n\n\u003e \"Most of the operating systems in common use today support filenames that contain arbitrary Unicode characters. Usually this is implemented by converting the Unicode string into some encoding that varies depending on the system. Today Python is converging on using UTF-8: Python on MacOS has used UTF-8 for several versions, and Python 3.6 switched to using UTF-8 on Windows as well. On Unix systems, there will only be a filesystem encoding if you’ve set the LANG or LC_CTYPE environment variables; if you haven’t, the default encoding is again UTF-8.\"\n\niiuc, unlike python2, python3\u0027s str container defaults to unicode. And based on the documentation, UTF-8 has been the default since 3.6 in most systems.\n\nAlso, the `reload()` doesn\u0027t work from python 3.9[2] and we prolly haven\u0027t seen an issue here because of the `if sys.getdefaultencoding() \u003d\u003d \u0027utf-8\u0027` guard statement. Also, this hack intriduces some weird cases[3].\n\nAfaiu, removing this should not introduce any bugs given depot_tools is now \u003e\u003d py3.8. Wdyt? If this is necessary, I could leave this method and just remove the rest.\n\n\n[1] https://docs.python.org/3.8/howto/unicode.html\n[2] https://stackoverflow.com/a/17628350\n[3] https://anonbadger.wordpress.com/2015/06/16/why-sys-setdefaultencoding-will-break-code/",
+      "parentUuid": "e7845563_197d6a7d",
+      "revId": "371aa997c04791d21e222ed43a1a0d55b450dd53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

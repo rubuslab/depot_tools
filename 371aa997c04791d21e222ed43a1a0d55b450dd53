@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7845563_197d6a7d",
+        "filename": "fix_encoding.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-03T00:50:57Z",
+      "side": 0,
+      "message": "from what I can tell, the default encoding is not utf-8, and it will be in py 3.15: https://peps.python.org/pep-0686/.\n\nSo, I think we\u0027ll need to wait to remove this a little longer.",
+      "revId": "371aa997c04791d21e222ed43a1a0d55b450dd53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

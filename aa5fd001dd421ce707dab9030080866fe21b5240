@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9edc854_8c3f5709",
+        "filename": "presubmit_support.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-03T00:36:00Z",
+      "side": 1,
+      "message": "This was recently added in https://crrev.com/c/5216005 so adding jojwang@ to confirm this is okay or not.",
+      "revId": "aa5fd001dd421ce707dab9030080866fe21b5240",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

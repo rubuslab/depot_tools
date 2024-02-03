@@ -34,6 +34,24 @@
       "parentUuid": "e7845563_197d6a7d",
       "revId": "371aa997c04791d21e222ed43a1a0d55b450dd53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "133b0c65_a74345c0",
+        "filename": "fix_encoding.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-03T02:35:04Z",
+      "side": 0,
+      "message": "My concern was that some systems, particularly older Windows versions, may not have default encoding set to utf-8. Given that reload() no longer works, and we haven\u0027t received any complaints, it\u0027s a great signal we don\u0027t need this.",
+      "parentUuid": "eb50daa8_2f17093d",
+      "revId": "371aa997c04791d21e222ed43a1a0d55b450dd53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

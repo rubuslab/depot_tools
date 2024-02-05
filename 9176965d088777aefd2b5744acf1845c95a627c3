@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54b39d22_646c277d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-05T21:00:31Z",
+      "side": 1,
+      "message": "Continuing thread from https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5254364/comment/200610a9_84e04199/:\n\n\u003e This is probably incorrect, there can be untracked and gitignored files which we don\u0027t want to include.\n\nIf there isn\u0027t git, will this method just reimplement gitignore? also how will this know if a file is tracked?",
+      "range": {
+        "startLine": 1304,
+        "startChar": 0,
+        "endLine": 1304,
+        "endChar": 65
+      },
+      "revId": "9176965d088777aefd2b5744acf1845c95a627c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

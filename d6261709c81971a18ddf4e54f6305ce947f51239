@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ab5ae53_922f096d",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2135,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-05T21:00:31Z",
+      "side": 1,
+      "message": "FYI this adds extra `(?:a/)?` and `(?:b/)?` non-capturing groups to handle diffs that have them",
+      "range": {
+        "startLine": 2135,
+        "startChar": 0,
+        "endLine": 2135,
+        "endChar": 68
+      },
+      "revId": "d6261709c81971a18ddf4e54f6305ce947f51239",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

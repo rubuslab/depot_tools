@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e88af9bc_c04f9357",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-05T19:18:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9bdc6ea_6809cc80",
+      "range": {
+        "startLine": 953,
+        "startChar": 56,
+        "endLine": 953,
+        "endChar": 72
+      },
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a895772e_601fcb9b",
@@ -41,6 +65,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fb2ced1_66748310",
+        "filename": "man/src/depot_tools_tutorial.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-05T19:18:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a895772e_601fcb9b",
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b6643e6a_53c59083",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-02-05T19:08:18Z",
       "side": 1,
       "message": "This seems to be a bug query instead of link to file a new bug?",
+      "range": {
+        "startLine": 199,
+        "startChar": 32,
+        "endLine": 200,
+        "endChar": 54
+      },
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c9ea820_56b592ca",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-05T19:18:44Z",
+      "side": 1,
+      "message": "yup, thanks. fixed link",
+      "parentUuid": "b6643e6a_53c59083",
       "range": {
         "startLine": 199,
         "startChar": 32,

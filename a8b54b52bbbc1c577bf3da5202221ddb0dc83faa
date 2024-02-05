@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a9bdc6ea_6809cc80",
+        "filename": "man/html/depot_tools_tutorial.html",
+        "patchSetId": 3
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-02-05T19:08:18Z",
+      "side": 1,
+      "message": "`crbug.com/41253477` seems to do the work fine.",
+      "range": {
+        "startLine": 953,
+        "startChar": 56,
+        "endLine": 953,
+        "endChar": 72
+      },
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a895772e_601fcb9b",
+        "filename": "man/src/depot_tools_tutorial.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-02-05T19:08:18Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6643e6a_53c59083",
+        "filename": "recipes/recipe_modules/presubmit/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-02-05T19:08:18Z",
+      "side": 1,
+      "message": "This seems to be a bug query instead of link to file a new bug?",
+      "range": {
+        "startLine": 199,
+        "startChar": 32,
+        "endLine": 200,
+        "endChar": 54
+      },
+      "revId": "a8b54b52bbbc1c577bf3da5202221ddb0dc83faa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

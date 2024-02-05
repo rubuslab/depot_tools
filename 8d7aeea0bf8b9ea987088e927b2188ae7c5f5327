@@ -70,6 +70,23 @@
       "parentUuid": "3ab141f7_b97e2d89",
       "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c6cb5c9_ecd836e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-02-05T03:16:08Z",
+      "side": 1,
+      "message": "Unfortunately I don\u0027t have OWNERS for all of the files here, so I\u0027ll need someone who does to approve the revert.",
+      "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

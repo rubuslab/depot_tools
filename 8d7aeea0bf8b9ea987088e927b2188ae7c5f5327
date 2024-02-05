@@ -52,6 +52,24 @@
       "parentUuid": "ef5072b7_7e34d573",
       "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05908fc9_479a2ae6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-02-05T02:49:46Z",
+      "side": 1,
+      "message": "I think we understand the situation now, where there is a project pinned to an older revision of chromium/src that still uses vpython.\n\nLet\u0027s revert to unblock until we figure out the best fix.",
+      "parentUuid": "3ab141f7_b97e2d89",
+      "revId": "8d7aeea0bf8b9ea987088e927b2188ae7c5f5327",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -22,6 +22,30 @@
       },
       "revId": "9176965d088777aefd2b5744acf1845c95a627c3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1dc19629_75affc41",
+        "filename": "presubmit_support.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-06T20:12:20Z",
+      "side": 1,
+      "message": "Can we keep `NotImplementedError`, and override it in ProvidedDiffChange (that would check diff passed by stdin/file arg)?",
+      "parentUuid": "54b39d22_646c277d",
+      "range": {
+        "startLine": 1304,
+        "startChar": 0,
+        "endLine": 1304,
+        "endChar": 65
+      },
+      "revId": "9176965d088777aefd2b5744acf1845c95a627c3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

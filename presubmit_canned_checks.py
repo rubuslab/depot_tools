@@ -1976,9 +1976,21 @@ def CheckForCommitObjects(input_api, output_api):
         if tree_entry[1] == 'commit':
             commit_tree_entries.append(tree_entry)
 
-    # No gitlinks found, return early.
+    # No gitlinks found.
     if len(commit_tree_entries) == 0:
-        return []
+        if deps['git_dependencies'] != 'SYNC':
+            return []
+
+        # DEPS should be in sync, so make sure DEPS wasn't updated.
+        affected_deps = input_api.AffectedFiles(
+            file_filter=lambda x: x.AbsoluteLocalPath() == deps_file)
+        if affected_deps:
+            return [
+                output_api.PresubmitError(
+                    'No change to submodules, but found change to DEPS.\n'
+                    'Make sure changes to DEPS correspond to a change in '
+                    'submodules.')
+            ]
 
     if deps['git_dependencies'] == 'DEPS':
         commit_tree_entries = [x[3] for x in commit_tree_entries]

@@ -3537,6 +3537,12 @@ def CMDsync(parser, args):
             }
         with open(options.output_json, 'w') as f:
             json.dump({'solutions': slns}, f)
+
+
+    callTable = sorted([(call, count) for call, count in scm_git.GIT.resetTable.items()])
+    print("git config calls: {} | cache hits: {} | resets: {}".format(
+        scm_git.GIT.calls, scm_git.GIT.cached_hits, scm_git.GIT.resets))
+    print(callTable)
     return ret
 
 

@@ -130,7 +130,7 @@ class GIT(object):
             GIT._CONFIG_CACHE[cwd] = defaultdict(list)
             for line in rawConfig.splitlines():
                 key, value = map(str.strip, line.split('=', 1))
-                GIT._CONFIG_CACHE[cwd][key].append(value)
+                GIT._CONFIG_CACHE[cwd][key.lower()].append(value)
 
         return GIT._CONFIG_CACHE[cwd]
 
@@ -208,7 +208,7 @@ class GIT(object):
 
     @staticmethod
     def GetConfig(cwd, key, default=None):
-        values = GIT._load_config(cwd).get(key, None)
+        values = GIT._load_config(cwd).get(key.lower(), None)
         if not values:
             return default
 

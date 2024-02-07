@@ -110,6 +110,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "496b7368_d8c6dffc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2024-02-07T22:53:06Z",
+      "side": 1,
+      "message": "Does a Eureka checkout have //build/find_depot_tools.py in it? If it does, you could just run that to find out which depot_tools you are getting and do your checking from there.",
+      "parentUuid": "a0bb4672_4162956a",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f7f00ad_3b47c2b0",
         "filename": "gclient.py",
         "patchSetId": 1

@@ -16,6 +16,24 @@
       "message": "Seems like this can be relanded? It was reverted due to crbug.com/40947102, but that seems to have been fixed in mid December.",
       "revId": "9e5fc28b6b27ad4ffb4c3ddc66388e53e4f0f5b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9b71ed4b_cb4e213d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-02-07T01:27:27Z",
+      "side": 1,
+      "message": "I think this has been landed in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5191526",
+      "parentUuid": "0fa5fd1d_a9d04b0d",
+      "revId": "9e5fc28b6b27ad4ffb4c3ddc66388e53e4f0f5b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a0bb4672_4162956a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T22:50:03Z",
+      "side": 1,
+      "message": "Okay, I believe I understand now what your plan is - I din\u0027t realize eureka has it\u0027s own version / fork. I suppose that GCLIENT envvar would be used to poke into depot_tools current state and determine if is eureka\u0027s or chromium\u0027s (e.g. checking git config).\n\nIt still might be good to check PATH (shutil.where(\u0027vpython\u0027) or shutil.where(\u0027gclient\u0027) will work) to see if user has the correct version, instead of relying GSUTIL envvar.\n\nFor example, let\u0027s assume a user has chromium\u0027s depot_tools in PATH. If the user invokes eureka_depot_tools/gclient.py sync, your new check might pass. But a hook that calls download_from_google_storage will invoke gsutil.py using vpython from PATH, and that will fail once vpython is gone from depot_tools. Wouldn\u0027t it?\n\nI don\u0027t have strong option tho - so if this works for your case, we can add an inline comment explaining why it\u0027s there.",
+      "parentUuid": "490d8351_63e780e0",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f7f00ad_3b47c2b0",
         "filename": "gclient.py",
         "patchSetId": 1

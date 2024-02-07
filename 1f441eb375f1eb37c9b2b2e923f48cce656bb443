@@ -117,6 +117,30 @@
       },
       "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a5d27ab_375686f4",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4851,
+      "author": {
+        "id": 1303432
+      },
+      "writtenOn": "2024-02-07T18:57:50Z",
+      "side": 0,
+      "message": "Yeah, I think we should do _something_ but I\u0027d be OK with a change for now that told people using this flag that it no longer does anything and is deprecated. And if we get significant feedback (more than one user) with a good justification we can add it back and have it modify commit message in a way that AyeAye respects (and not do anything locally either)",
+      "parentUuid": "dbbe8a32_9bb562fd",
+      "range": {
+        "startLine": 4851,
+        "startChar": 22,
+        "endLine": 4851,
+        "endChar": 42
+      },
+      "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

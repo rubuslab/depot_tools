@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32caa7b2_ae5db3da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-07T16:57:24Z",
+      "side": 1,
+      "message": "This is turning off use_goma for linux and mac devs",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

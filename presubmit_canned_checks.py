@@ -2019,7 +2019,34 @@ def CheckForCommitObjects(input_api, output_api):
             continue
 
         if commit_hash in git_submodules:
-            git_submodules.pop(commit_hash)
+            submodule_path = git_submodules.pop(commit_hash)
+            if not dep_path.endswith(submodule_path):
+                # DEPS entry path doesn't point to a gitlink.
+                return [
+                    output_api.PresubmitError(
+                        f'Unexpected DEPS entry {dep_path}.\n'
+                        f'Expected path to end with {submodule_path}.\n'
+                        'Make sure DEPS paths match those in .gitmodules \n'
+                        f'and a gitlink exists at {dep_path}.')
+                ]
+
+            retcode = input_api.subprocess.call(
+                [
+                    'git', 'config', '-f', '.gitmodules', '--get',
+                    f'submodule.{submodule_path}.path'
+                ],
+                cwd=input_api.PresubmitLocalPath(),
+                stdout=input_api.subprocess.PIPE,
+                stderr=input_api.subprocess.PIPE)
+            if retcode:
+                # Failed to find a submodule entry in .gitmodules.
+                return [
+                    output_api.PresubmitError(
+                        f'No {submodule_path} submodule in .gitmodules.\n'
+                        'Make sure entries in .gitmodules match gitlink '
+                        'locations in the tree.')
+                ]
+
         else:
             mismatch_entries.append(dep_path)
             deps_msg += f"\n [DEPS]      {dep_path} -> {commit_hash}"

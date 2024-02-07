@@ -34,6 +34,24 @@
       "parentUuid": "e9edc854_8c3f5709",
       "revId": "aa5fd001dd421ce707dab9030080866fe21b5240",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5c3dbe4_a6bb311f",
+        "filename": "presubmit_support.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1310,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-07T19:47:20Z",
+      "side": 1,
+      "message": "submodules just need to be returned here:\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:presubmit_support.py;l\u003d1823?q\u003d%22DoPresubmitChecks(%22\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools\n\nwhich i think this CL still does as long as the change is a GitChange, otherwise it returns empty list which is correct.\n\nso lgtm",
+      "parentUuid": "ae5d66a6_39d35dae",
+      "revId": "aa5fd001dd421ce707dab9030080866fe21b5240",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

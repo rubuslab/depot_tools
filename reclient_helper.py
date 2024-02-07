@@ -6,6 +6,7 @@ the reclient lifecycle safely. It will automatically start
 reproxy before running ninja and stop reproxy when build stops
 for any reason e.g. build completion, keyboard interrupt etc."""
 
+import atexit
 import contextlib
 import datetime
 import hashlib
@@ -194,14 +195,18 @@ def set_reproxy_path_flags(out_dir, make_dirs=True):
     Windows Only:
         RBE_server_address=pipe://md5(out_dir/.reproxy_tmp)/reproxy.pipe
     """
+
+    run_sub_dir = datetime_now().strftime(
+        '%Y%m%dT%H%M%S.%f') + "_" + os.environ["AUTONINJA_BUILD_ID"]
     os.environ.setdefault("AUTONINJA_BUILD_ID", str(uuid.uuid4()))
     tmp_dir = os.path.abspath(os.path.join(out_dir, '.reproxy_tmp'))
     log_dir = os.path.join(tmp_dir, 'logs')
-    run_log_dir = os.path.join(
-        log_dir,
-        datetime_now().strftime('%Y%m%dT%H%M%S.%f') + "_" +
-        os.environ["AUTONINJA_BUILD_ID"])
+    run_log_dir = os.path.join(log_dir, run_sub_dir)
     racing_dir = os.path.join(tmp_dir, 'racing')
+    run_racing_dir = os.path.join(racing_dir, run_sub_dir)
+
+    atexit.register(shutil.rmtree, run_racing_dir)
+
     cache_dir = find_cache_dir(tmp_dir)
     if make_dirs:
         if os.path.isfile(os.path.join(log_dir, "rbe_metrics.txt")):
@@ -219,6 +224,7 @@ def set_reproxy_path_flags(out_dir, make_dirs=True):
         os.makedirs(run_log_dir, exist_ok=True)
         os.makedirs(cache_dir, exist_ok=True)
         os.makedirs(racing_dir, exist_ok=True)
+        os.makedirs(run_racing_dir, exist_ok=True)
     old_log_dirs = [
         d for d in os.listdir(log_dir)
         if os.path.isdir(os.path.join(log_dir, d))
@@ -233,7 +239,7 @@ def set_reproxy_path_flags(out_dir, make_dirs=True):
     os.environ.setdefault("RBE_proxy_log_dir", run_log_dir)
     os.environ.setdefault("RBE_log_dir", run_log_dir)
     os.environ.setdefault("RBE_cache_dir", cache_dir)
-    os.environ.setdefault("RBE_racing_tmp_dir", racing_dir)
+    os.environ.setdefault("RBE_racing_tmp_dir", run_racing_dir)
     if sys.platform.startswith('win'):
         pipe_dir = hashlib.md5(tmp_dir.encode()).hexdigest()
         os.environ.setdefault("RBE_server_address",

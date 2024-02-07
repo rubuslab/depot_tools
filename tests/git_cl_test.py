@@ -113,15 +113,6 @@ class GitMocks(object):
         del self.config[key]
 
 
-class WatchlistsMock(object):
-    def __init__(self, _):
-        pass
-
-    @staticmethod
-    def GetWatchersForPaths(_):
-        return ['joe@example.com']
-
-
 class CodereviewSettingsFileMock(object):
     def __init__(self):
         pass
@@ -612,7 +603,6 @@ class TestGitCl(unittest.TestCase):
                    return_value={
                        'more_cc': ['test-more-cc@chromium.org']
                    }).start()
-        mock.patch('git_cl.watchlists.Watchlists', WatchlistsMock).start()
         mock.patch('git_cl.auth.Authenticator', AuthenticatorMock).start()
         mock.patch('gerrit_util.GetChangeDetail').start()
         mock.patch(

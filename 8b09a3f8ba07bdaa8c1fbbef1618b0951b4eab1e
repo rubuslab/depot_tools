@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e223e3f_5598f09b",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-02-07T17:53:11Z",
+      "side": 1,
+      "message": "Let\u0027s say that the footer has `Bypass-Watchlists: false`. Then, wouldn\u0027t this description contain both footers? I can see the unit tests added for dedup, but having both true and false in `bypass-watchlists` seems confusing. \n\n```\nBypass-Watchlists: false\nBypass-Watchlists: true\n```",
+      "range": {
+        "startLine": 1169,
+        "startChar": 8,
+        "endLine": 1169,
+        "endChar": 53
+      },
+      "revId": "8b09a3f8ba07bdaa8c1fbbef1618b0951b4eab1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

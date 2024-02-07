@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a8d9e73_49fedfcd",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4851,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-07T04:20:16Z",
+      "side": 0,
+      "message": "directly removing this flag since 0.051% of uploads used this flag last I checked",
+      "range": {
+        "startLine": 4851,
+        "startChar": 23,
+        "endLine": 4851,
+        "endChar": 39
+      },
+      "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

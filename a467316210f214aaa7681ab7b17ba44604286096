@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f53b51fc_7e590dc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2024-02-07T21:02:41Z",
+      "side": 1,
+      "message": "The change itself seems technically fine, but the reason for doing this is completely opaque (from inside the code). I also am nervous about the idea that you\u0027re going to try to do some version detection or feature detection with this.\n\nEither here, or in the bug, can you describe how you\u0027ll use this in more detail?\n\nIs there a more straightforward way we could solve the problem, e.g. by adding a version number or something?",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -2002,6 +2002,7 @@ def CheckForCommitObjects(input_api, output_api):
     mismatch_entries = []
     deps_msg = ""
     for dep_path, dep in deps['deps'].items():
+        # dep_path = path entry in DEPS
         if 'dep_type' in dep and dep['dep_type'] != 'git':
             continue
 
@@ -2019,7 +2020,15 @@ def CheckForCommitObjects(input_api, output_api):
             continue
 
         if commit_hash in git_submodules:
-            git_submodules.pop(commit_hash)
+            submodule_path = git_submodules.pop(commit_hash)
+            if not dep_path.endswith(submodule_path):
+                return [
+                    output_api.PresubmitError(
+                        f'Unexpected DEPS entry {dep_path}.\n'
+                        f'Expected path to end with {submodule_path}.\n'
+                        'Make sure DEPS paths match those in .gitmodules \n'
+                        f'and a gitlink exists at {dep_path}.')
+                ]
         else:
             mismatch_entries.append(dep_path)
             deps_msg += f"\n [DEPS]      {dep_path} -> {commit_hash}"

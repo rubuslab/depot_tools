@@ -69,6 +69,30 @@
       },
       "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dc038ac9_c96e3d49",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4851,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-07T17:28:52Z",
+      "side": 0,
+      "message": "yeah, looks like we\u0027ll need it after all. I\u0027ll make changes to this CL to support bypass watchlists, but hold off on submitting until the analyzer is updated",
+      "parentUuid": "3f78c3a2_7fda997c",
+      "range": {
+        "startLine": 4851,
+        "startChar": 22,
+        "endLine": 4851,
+        "endChar": 42
+      },
+      "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

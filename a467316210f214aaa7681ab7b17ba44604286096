@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "604dfcb3_b0c7a4a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T22:12:10Z",
+      "side": 1,
+      "message": "Thanks, b/319780376#comment32 provides good context. I think this actually won\u0027t address the problem. To step back, let\u0027s see what was our state a few days ago:\n\ndepot_tools (in PATH) had only vpython3. vpython was removed\n\nEureka has an old, pinned version of depot_tools. It invokes third_party/depot_tools/download_from_google_storage.py with python3. But, the old version of download_from_google_storage.py invokes `vpyhon` from PATH, instead of using it from the pinned version [0].\n\nSo, if depot_tools in PATH has no vpython, download_from_google_storage will fail.\n\nWhat matters is vpython in PATH. So, even if you detect that gclient was executed using third_party/depot_tools/gclient.py, it won\u0027t matter since it would behave the same as it was executed from PATH from download_from_google_storage.py perspective.\n\nA few solutions:\na) update depot_tools in DEPS so hooks use vpython3\nb) update download_from_google_storage and invoke it with sys.executable (I think we should do this regadlress). Then, somehow cherry-pick that \nc) have a hook that checks if `vpython` exists. If it doesn\u0027t, fail loudly and instructs user how to downgrade depot_tools so the hook works.\n\n[0] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:download_from_google_storage.py;l\u003d69;drc\u003dedba22d4eb12b5db5bdee7dc921da7857be1b687",
+      "parentUuid": "c48f3f5d_5db9a7e7",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f7f00ad_3b47c2b0",

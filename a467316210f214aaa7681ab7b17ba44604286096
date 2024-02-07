@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c48f3f5d_5db9a7e7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273334
+      },
+      "writtenOn": "2024-02-07T21:48:49Z",
+      "side": 1,
+      "message": "The problem I\u0027m looking to solve is this:\n\nEureka has a Chromium fork. It\u0027s no longer being updated. Up until recently, Eureka was using Chromium\u0027s depot_tools, and its built-in auto update. This is blocking Chromium infra from making changes they want to make because it breaks Eureka. Eureka manifest is now using Eureka\u0027s fork of depot tools (changed today), but it doesn\u0027t fix developer workstations that were previously set up with Chromium depot tools.\n\nI\u0027m planning to create a eureka-only gclient hook that detects when a developer is working on eureka and is in the unfortunate situation of having run Chromium\u0027s up-to-date gclient sync against eureka. This works today, but didn\u0027t work a few days ago. See b/319780376#comment32. In order to make this hook I needed a reliable way to find the gclient that ran the hook.\n\nThat\u0027s what this CL provides.",
+      "parentUuid": "abdb034d_d74256da",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f7f00ad_3b47c2b0",

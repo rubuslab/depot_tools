@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "490d8351_63e780e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273334
+      },
+      "writtenOn": "2024-02-07T22:18:25Z",
+      "side": 1,
+      "message": "I think either I failed to express myself, or I misunderstand what you\u0027re saying.\n\nThis CL is just to help me detect if a developer is working on Eureka and using Chromium\u0027s depot_tools rather than working on Eureka and using Eureka\u0027s depot_tools. It\u0027s not attempting to do anything about the vpython issue specifically.\n\nGetting back to your scenario:\n\n\u003e Eureka has an old, pinned version of depot_tools. It invokes third_party/depot_tools/download_from_google_storage.py with python3. But, the old version of download_from_google_storage.py invokes vpyhon from PATH, instead of using it from the pinned version [0].\n\nThis would be an error. Exactly the error I\u0027m trying to detect. Someone has Chromium depot_tools in their PATH and is working on Eureka. That\u0027s bad.",
+      "parentUuid": "604dfcb3_b0c7a4a6",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f7f00ad_3b47c2b0",
         "filename": "gclient.py",
         "patchSetId": 1

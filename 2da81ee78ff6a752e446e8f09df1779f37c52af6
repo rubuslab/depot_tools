@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ef95a35_3bd0f537",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T01:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4a6d624_ef3373d7",
+      "range": {
+        "startLine": 593,
+        "startChar": 0,
+        "endLine": 594,
+        "endChar": 82
+      },
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97d735e1_e01aac55",
@@ -71,6 +95,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "745c5093_734be85e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T01:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97d735e1_e01aac55",
+      "range": {
+        "startLine": 764,
+        "startChar": 20,
+        "endLine": 764,
+        "endChar": 66
+      },
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66dc639e_cb46b768",
@@ -84,6 +132,24 @@
       "writtenOn": "2024-02-07T00:47:59Z",
       "side": 1,
       "message": "same",
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b77c02f_d3ac6131",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T01:30:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66dc639e_cb46b768",
       "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

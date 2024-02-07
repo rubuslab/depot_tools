@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c90dcd99_9267efbe",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T19:18:37Z",
+      "side": 1,
+      "message": "the logic lgtm, but it should have unit tests.",
+      "revId": "b29d720166aea827a685b75672ffdad565a157f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b020f48a_135e5f36",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2075,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T19:18:37Z",
+      "side": 1,
+      "message": "this should also be tested, I suggest to move this to a function that will accept options.diff_file as input, and output to be change_files.",
+      "range": {
+        "startLine": 2064,
+        "startChar": 0,
+        "endLine": 2075,
+        "endChar": 47
+      },
+      "revId": "b29d720166aea827a685b75672ffdad565a157f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba6bc82a_f3fcba72",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T19:18:37Z",
+      "side": 1,
+      "message": "please add unit tests for this",
+      "revId": "b29d720166aea827a685b75672ffdad565a157f5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

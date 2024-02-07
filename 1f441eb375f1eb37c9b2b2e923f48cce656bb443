@@ -22,6 +22,29 @@
       },
       "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb4934e4_2ae0ef25",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4851,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-02-07T05:07:28Z",
+      "side": 0,
+      "message": "Just to be conservative, http://cs doesn\u0027t give me any config with this option, but just in case, could this be kept as a deprecated noop option for backward-compatibility? If there is no such a concern, like this option isn\u0027t really being used anywhere, it\u0027s ok to remove this option though.\n\nAlso, it\u0027d be great if you can remove the following line 😊\nhttps://source.chromium.org/chromium/infra/infra/+/main:go/src/infra/appengine/depot_tools_metrics/metrics/constants.go;l\u003d89?q\u003dbypass_watchlists%20-file:git_cl.py",
+      "range": {
+        "startLine": 4851,
+        "startChar": 22,
+        "endLine": 4851,
+        "endChar": 42
+      },
+      "revId": "1f441eb375f1eb37c9b2b2e923f48cce656bb443",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

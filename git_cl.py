@@ -59,7 +59,6 @@ import split_cl
 import subcommand
 import subprocess2
 import swift_format
-import watchlists
 
 
 __version__ = '2.0'
@@ -2013,9 +2012,6 @@ class Changelist(object):
         files = self.GetAffectedFiles(parent, end_commit=end_commit)
         change_desc = self._GetDescriptionForUpload(options,
                                                     [parent, end_commit], files)
-
-        watchlist = watchlists.Watchlists(settings.GetRoot())
-        self.ExtendCC(watchlist.GetWatchersForPaths(files))
         if not options.bypass_hooks:
             hook_results = self.RunHook(committing=False,
                                         may_prompt=not options.force,
@@ -2125,12 +2121,7 @@ class Changelist(object):
 
         print(f'Processing {_GetCommitCountSummary(*git_diff_args)}...')
 
-        # Apply watchlists on upload.
-        watchlist = watchlists.Watchlists(settings.GetRoot())
         files = self.GetAffectedFiles(base_branch)
-        if not options.bypass_watchlists:
-            self.ExtendCC(watchlist.GetWatchersForPaths(files))
-
         change_desc = self._GetDescriptionForUpload(options, git_diff_args,
                                                     files)
         if not options.bypass_hooks:
@@ -4848,10 +4839,6 @@ def CMDupload(parser, args):
                       action='store_true',
                       dest='bypass_hooks',
                       help='bypass upload presubmit hook')
-    parser.add_option('--bypass-watchlists',
-                      action='store_true',
-                      dest='bypass_watchlists',
-                      help='bypass watchlists auto CC-ing reviewers')
     parser.add_option('-f',
                       '--force',
                       action='store_true',

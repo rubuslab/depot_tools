@@ -16,6 +16,24 @@
       "message": "This is too slow for a presubmit check, we should be targeting less than a second on all platforms (Win is the slowest to start a process afaik).",
       "revId": "7b3d594739aaebb723405d177a58f78a3b183581",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f739e569_2c5ba589",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-07T19:16:43Z",
+      "side": 1,
+      "message": "Ack, changed to checking .gitmodules content. This works much faster and doesn\u0027t have any noticeable performance impact (still 0.7s on my machine)",
+      "parentUuid": "9f711a00_0700e66b",
+      "revId": "7b3d594739aaebb723405d177a58f78a3b183581",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

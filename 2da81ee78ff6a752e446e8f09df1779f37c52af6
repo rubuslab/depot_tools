@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2493434e_fe3aba36",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T00:47:59Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s obvious why you use those variables. I believe it\u0027s for optimization purpose.\n\nGiven that we are setting this only once per repository, I\u0027m okay if we don\u0027t have this optimization. Of you still want to keep it, let\u0027s use something like `update_configs \u003d []`, and also leave a comment why we are doing read first, and then sets.\n\ne.g.\n\n```\nupdate_configs \u003d []\nif dirty_not_set:\n  update_configs.append((\u0027diff.ignoresubmodules\u0027, \u0027dirty\u0027)\nif fetch.recurse:\n  update_config.append(\u0027....\u0027, \u0027...\u0027)\n  \nfor update_config in update_configs:\n  scm.GIT.SetConfig(args[0].checkout_path, update_config[0], update_config[1])\n```",
+      "range": {
+        "startLine": 593,
+        "startChar": 0,
+        "endLine": 594,
+        "endChar": 82
+      },
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97d735e1_e01aac55",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T00:47:59Z",
+      "side": 1,
+      "message": "replace with fstring\n```suggestion\n                    f\u0027remote.{self.remote}.gclient-auto-fix-url\u0027)):\n```",
+      "range": {
+        "startLine": 764,
+        "startChar": 20,
+        "endLine": 764,
+        "endChar": 66
+      },
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66dc639e_cb46b768",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1563,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T00:47:59Z",
+      "side": 1,
+      "message": "same",
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

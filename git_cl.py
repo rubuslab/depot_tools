@@ -59,7 +59,6 @@ import split_cl
 import subcommand
 import subprocess2
 import swift_format
-import watchlists
 
 
 __version__ = '2.0'
@@ -1161,6 +1160,14 @@ class ChangeDescription(object):
                 return
         self.append_footer('Cq-Do-Not-Cancel-Tryjobs: true')
 
+    def set_bypass_watchlists(self):
+        """Ensures description footer contains 'Bypass-Watchlists: true'."""
+        footers = git_footers.parse_footers(self.description)
+        for v in footers.get('Bypass-Watchlists', []):
+            if v.lower() == 'true':
+                return
+        self.append_footer('Bypass-Watchlists: true')
+
     def prompt(self):
         """Asks the user to update the description."""
         self.set_description([
@@ -2013,9 +2020,6 @@ class Changelist(object):
         files = self.GetAffectedFiles(parent, end_commit=end_commit)
         change_desc = self._GetDescriptionForUpload(options,
                                                     [parent, end_commit], files)
-
-        watchlist = watchlists.Watchlists(settings.GetRoot())
-        self.ExtendCC(watchlist.GetWatchersForPaths(files))
         if not options.bypass_hooks:
             hook_results = self.RunHook(committing=False,
                                         may_prompt=not options.force,
@@ -2049,6 +2053,8 @@ class Changelist(object):
 
         if options.preserve_tryjobs:
             change_desc.set_preserve_tryjobs()
+        if options.bypass_watchlists:
+            change_desc.set_bypass_watchlists()
 
         SaveDescriptionBackup(change_desc)
 
@@ -2125,12 +2131,7 @@ class Changelist(object):
 
         print(f'Processing {_GetCommitCountSummary(*git_diff_args)}...')
 
-        # Apply watchlists on upload.
-        watchlist = watchlists.Watchlists(settings.GetRoot())
         files = self.GetAffectedFiles(base_branch)
-        if not options.bypass_watchlists:
-            self.ExtendCC(watchlist.GetWatchersForPaths(files))
-
         change_desc = self._GetDescriptionForUpload(options, git_diff_args,
                                                     files)
         if not options.bypass_hooks:
@@ -3071,6 +3072,8 @@ class Changelist(object):
 
             if options.preserve_tryjobs:
                 change_desc.set_preserve_tryjobs()
+            if options.bypass_watchlists:
+                change_desc.set_bypass_watchlists()
 
             remote, upstream_branch = self.FetchUpstreamTuple(self.GetBranch())
             parent = external_parent or self._ComputeParent(

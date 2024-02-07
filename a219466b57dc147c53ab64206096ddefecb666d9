@@ -16,6 +16,23 @@
       "message": "Note, we are also starting canary of this on buildbucket and pushing to chromium-swarm-dev. We can wait for those before pushing to depot_tools, or do it now, your call.",
       "revId": "a219466b57dc147c53ab64206096ddefecb666d9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac284688_c2e7e813",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-07T16:00:25Z",
+      "side": 1,
+      "message": "tested several depot_tools command (gclient sync, gclient flatten, map-branches) and found no issues.",
+      "revId": "a219466b57dc147c53ab64206096ddefecb666d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

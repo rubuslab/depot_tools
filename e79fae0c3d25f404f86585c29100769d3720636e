@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88ba9fc6_c50eb6d7",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T00:04:51Z",
+      "side": 1,
+      "message": "I agree, having separate `SetConfig` and `UnsetConfig` would be better. I will make a follow-up CL for that.",
+      "parentUuid": "e6eb6c8b_3b67887f",
+      "revId": "e79fae0c3d25f404f86585c29100769d3720636e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "16fc3d9a_470919fe",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-01-31T19:06:35Z",
       "side": 1,
       "message": "nit: move args \u003d [\u0027config\u0027, f\u0027--scope{scope}\u0027] before if block, use extend in if/else.",
+      "range": {
+        "startLine": 266,
+        "startChar": 12,
+        "endLine": 266,
+        "endChar": 42
+      },
+      "revId": "e79fae0c3d25f404f86585c29100769d3720636e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79ac07cb_bd994cc0",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T00:04:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16fc3d9a_470919fe",
       "range": {
         "startLine": 266,
         "startChar": 12,

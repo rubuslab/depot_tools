@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d4a6d624_ef3373d7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-07T00:57:29Z",
+      "side": 1,
+      "message": "\u003e Given that we are setting this only once per repository, I\u0027m okay if we don\u0027t have this optimization.\n\nI do see why this implementation is confusing given it depends on the cache eviction strategy. Currently, when we update any config value within a git config file, it drop its whole cache. We do this because updating our cached entry might be complicated when things like value_patterns are involved and with this eviction strategy, we pretty much have 0 evictions on a no-op sync (benchmarked on windows).\n\nSay all these three values are not set, without using these flags, we would be dropping the cache reading and dropping the cache twice per repository. Say, for chromium/src, with about 158 projects, that would translate to at least 316 extra git config calls.\n\ntl;dr I prefer keeping this optimization given how many calls it would save on an update case.\n\n\u003e let\u0027s use something like update_configs \u003d [], and also leave a comment why we are doing read first, and then sets.\n\nGood point, I will update the code and add comments.",
+      "parentUuid": "2493434e_fe3aba36",
+      "range": {
+        "startLine": 593,
+        "startChar": 0,
+        "endLine": 594,
+        "endChar": 82
+      },
+      "revId": "2da81ee78ff6a752e446e8f09df1779f37c52af6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "97d735e1_e01aac55",
         "filename": "gclient_scm.py",
         "patchSetId": 12

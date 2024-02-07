@@ -247,11 +247,14 @@ class Hook(object):
         exit_code = 2
         try:
             start_time = time.time()
+            env = os.environ.copy()
+            env["GCLIENT"] = __file__
             gclient_utils.CheckCallAndFilter(cmd,
                                              cwd=self.effective_cwd,
                                              print_stdout=True,
                                              show_header=True,
-                                             always_show_header=self._verbose)
+                                             always_show_header=self._verbose,
+                                             env=env)
             exit_code = 0
         except (gclient_utils.Error, subprocess2.CalledProcessError) as e:
             # Use a discrete exit status code of 2 to indicate that a hook

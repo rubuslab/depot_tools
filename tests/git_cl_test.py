@@ -113,15 +113,6 @@ class GitMocks(object):
         del self.config[key]
 
 
-class WatchlistsMock(object):
-    def __init__(self, _):
-        pass
-
-    @staticmethod
-    def GetWatchersForPaths(_):
-        return ['joe@example.com']
-
-
 class CodereviewSettingsFileMock(object):
     def __init__(self):
         pass
@@ -306,6 +297,7 @@ class TestGitClBasic(unittest.TestCase):
         options.edit_description = False
         options.force = False
         options.preserve_tryjobs = False
+        options.bypass_watchlists = False
         options.message_file = "message.txt"
 
         with self.assertRaises(SystemExitMock):
@@ -383,6 +375,33 @@ class TestGitClBasic(unittest.TestCase):
             'Cq-Do-Not-Cancel-Tryjobs: dups not encouraged, but don\'t hurt',
             'Change-Id: Ideadbeef',
             'Cq-Do-Not-Cancel-Tryjobs: true',
+        ])
+
+    def test_set_bypass_watchlists(self):
+        d = git_cl.ChangeDescription('Simple.')
+        d.set_bypass_watchlists()
+        self.assertEqual(d.description.splitlines(), [
+            'Simple.',
+            '',
+            'Bypass-Watchlists: true',
+        ])
+        before = d.description
+        d.set_bypass_watchlists()
+        self.assertEqual(before, d.description)
+
+        d = git_cl.ChangeDescription('\n'.join([
+            'One is enough',
+            '',
+            'Bypass-Watchlists: dups not encouraged, but don\'t hurt',
+            'Change-Id: Ideadbeef',
+        ]))
+        d.set_bypass_watchlists()
+        self.assertEqual(d.description.splitlines(), [
+            'One is enough',
+            '',
+            'Bypass-Watchlists: dups not encouraged, but don\'t hurt',
+            'Change-Id: Ideadbeef',
+            'Bypass-Watchlists: true',
         ])
 
     def test_get_bug_line_values(self):
@@ -612,7 +631,6 @@ class TestGitCl(unittest.TestCase):
                    return_value={
                        'more_cc': ['test-more-cc@chromium.org']
                    }).start()
-        mock.patch('git_cl.watchlists.Watchlists', WatchlistsMock).start()
         mock.patch('git_cl.auth.Authenticator', AuthenticatorMock).start()
         mock.patch('gerrit_util.GetChangeDetail').start()
         mock.patch(
@@ -939,7 +957,7 @@ class TestGitCl(unittest.TestCase):
                 ref_suffix_list.append('r=%s' % r)
                 metrics_arguments.append('r')
             if issue is None:
-                cc += ['test-more-cc@chromium.org', 'joe@example.com']
+                cc += ['test-more-cc@chromium.org']
             for c in sorted(cc):
                 ref_suffix_list.append('cc=%s' % c)
                 metrics_arguments.append('cc')
@@ -948,21 +966,18 @@ class TestGitCl(unittest.TestCase):
             # TODO(crbug/877717): remove this case.
             calls += [(('ValidAccounts',
                         '%s-review.googlesource.com' % short_hostname,
-                        sorted(reviewers) +
-                        ['joe@example.com', 'test-more-cc@chromium.org'] + cc),
+                        sorted(reviewers) + ['test-more-cc@chromium.org'] + cc),
                        {
                            e: {
                                'email': e
                            }
-                           for e in (reviewers + ['joe@example.com'] + cc)
+                           for e in (reviewers + cc)
                        })]
             for r in sorted(reviewers):
                 if r != 'bad-account-or-email':
                     ref_suffix_list.append('r=%s' % r)
                     metrics_arguments.append('r')
                     reviewers.remove(r)
-            if issue is None:
-                cc += ['joe@example.com']
             for c in sorted(cc):
                 ref_suffix_list.append('cc=%s' % c)
                 metrics_arguments.append('cc')
@@ -4229,6 +4244,7 @@ class ChangelistTest(unittest.TestCase):
         options.verbose = False
         options.parallel = False
         options.preserve_tryjobs = False
+        options.bypass_watchlists = False
         options.private = False
         options.no_autocc = False
         options.message_file = None
@@ -4280,6 +4296,7 @@ class ChangelistTest(unittest.TestCase):
         options.parallel = False
         options.edit_description = False
         options.preserve_tryjobs = False
+        options.bypass_watchlists = False
         options.private = False
         options.no_autocc = False
         options.cc = ['chicken@bok.farm']
@@ -4316,6 +4333,8 @@ class ChangelistTest(unittest.TestCase):
 
         # Test preserve_tryjob
         options.preserve_tryjobs = True
+        # Test bypass_watchlists
+        options.bypass_watchlists = False
         # Test edit_description
         options.edit_description = True
         # Test private

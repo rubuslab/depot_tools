@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1542d035_d2389d88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-02-07T03:44:52Z",
+      "side": 1,
+      "message": "Note, we are also starting canary of this on buildbucket and pushing to chromium-swarm-dev. We can wait for those before pushing to depot_tools, or do it now, your call.",
+      "revId": "a219466b57dc147c53ab64206096ddefecb666d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

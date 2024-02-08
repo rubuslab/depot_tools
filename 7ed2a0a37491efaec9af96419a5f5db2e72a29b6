@@ -34,6 +34,23 @@
       "parentUuid": "dc1052d6_ac70a565",
       "revId": "7ed2a0a37491efaec9af96419a5f5db2e72a29b6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e467375_4c55f46e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1563797
+      },
+      "writtenOn": "2024-02-08T22:02:56Z",
+      "side": 1,
+      "message": "Or just use your CL, whichever is easiest!",
+      "revId": "7ed2a0a37491efaec9af96419a5f5db2e72a29b6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -29,9 +29,9 @@ class GitWrapperTestCase(unittest.TestCase):
 
     @mock.patch('scm.GIT.Capture')
     def testGetEmail(self, mockCapture):
-        mockCapture.return_value = 'user.email = mini@me.com'
+        mockCapture.return_value = 'user.email\nmini@me.com\x00'
         self.assertEqual(scm.GIT.GetEmail(self.root_dir), 'mini@me.com')
-        mockCapture.assert_called_with(['config', '--list'],
+        mockCapture.assert_called_with(['config', '--list', '-z'],
                                        cwd=self.root_dir,
                                        strip_out=False)
 
@@ -205,6 +205,12 @@ class RealGitTest(fake_repos.FakeReposTestBase):
         scm.GIT.SetConfig(self.cwd, key, 'set-value')
         self.assertEqual('set-value', scm.GIT.GetConfig(self.cwd, key))
         self.assertEqual('set-value',
+                         scm.GIT.GetConfig(self.cwd, key, 'default-value'))
+
+        multiline = os.linesep.join(['line 1', 'line 2', 'line 3'])
+        scm.GIT.SetConfig(self.cwd, key, multiline)
+        self.assertEqual(multiline, scm.GIT.GetConfig(self.cwd, key))
+        self.assertEqual(multiline,
                          scm.GIT.GetConfig(self.cwd, key, 'default-value'))
 
         scm.GIT.SetConfig(self.cwd, key)

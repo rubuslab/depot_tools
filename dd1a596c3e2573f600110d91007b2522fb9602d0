@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5485d067_cbbf01dd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 1228344
+      },
+      "writtenOn": "2024-02-08T13:17:07Z",
+      "side": 0,
+      "message": "Here is the issue. We probably want to reland with `_repo_submodules()` output cached.",
+      "range": {
+        "startLine": 1418,
+        "startChar": 12,
+        "endLine": 1418,
+        "endChar": 60
+      },
+      "revId": "dd1a596c3e2573f600110d91007b2522fb9602d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

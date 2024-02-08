@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cc9e84a_14b799c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T04:30:17Z",
+      "side": 1,
+      "message": "I thought you plan to disallow using use_goma in chromium\u0027s build config for mac/linux.\nWill you do that too?",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2efdc85d_7c54aa60",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T04:30:17Z",
+      "side": 1,
+      "message": "off?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 2
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "32caa7b2_ae5db3da",
@@ -14,6 +54,69 @@
       "writtenOn": "2024-02-07T16:57:24Z",
       "side": 1,
       "message": "This is turning off use_goma for linux and mac devs",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2278eb0c_d69ea26e",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T04:30:17Z",
+      "side": 1,
+      "message": "is?",
+      "range": {
+        "startLine": 340,
+        "startChar": 42,
+        "endLine": 340,
+        "endChar": 49
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf41d08a_31cc9466",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T04:30:17Z",
+      "side": 1,
+      "message": "Better to show different URL for mac build?",
+      "range": {
+        "startLine": 352,
+        "startChar": 17,
+        "endLine": 352,
+        "endChar": 22
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "021ed2b5_feb1a25c",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T04:30:17Z",
+      "side": 1,
+      "message": "This conditional never be true?",
       "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

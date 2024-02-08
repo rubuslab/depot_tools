@@ -29,9 +29,9 @@ class GitWrapperTestCase(unittest.TestCase):
 
     @mock.patch('scm.GIT.Capture')
     def testGetEmail(self, mockCapture):
-        mockCapture.return_value = 'user.email = mini@me.com'
+        mockCapture.return_value = 'user.email\nmini@me.com\0'
         self.assertEqual(scm.GIT.GetEmail(self.root_dir), 'mini@me.com')
-        mockCapture.assert_called_with(['config', '--list'],
+        mockCapture.assert_called_with(['config', '--list', '--null'],
                                        cwd=self.root_dir,
                                        strip_out=False)
 

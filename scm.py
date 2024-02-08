@@ -121,16 +121,17 @@ class GIT(object):
         """
         if cwd not in GIT._CONFIG_CACHE:
             try:
-                rawConfig = GIT.Capture(['config', '--list'],
+                rawConfig = GIT.Capture(['config', '--list', '--null'],
                                         cwd=cwd,
                                         strip_out=False)
             except subprocess2.CalledProcessError:
                 return {}
 
             cfg = defaultdict(list)
-            for line in rawConfig.splitlines():
-                key, value = map(str.strip, line.split('=', 1))
-                cfg[key].append(value)
+            for pair in rawConfig.split('\0'):
+                if pair != '':
+                    key, value = map(str.strip, pair.split('\n', 1))
+                    cfg[key].append(value)
 
             GIT._CONFIG_CACHE[cwd] = cfg
 

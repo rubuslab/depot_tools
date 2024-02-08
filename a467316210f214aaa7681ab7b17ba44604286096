@@ -126,6 +126,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c5a7aa7_0f07a0bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273334
+      },
+      "writtenOn": "2024-02-08T13:02:48Z",
+      "side": 1,
+      "message": "Yes, it does, and yes, looks like I can just run that.\n\nI\u0027ll use that, thank you very much.\n\nAbandoning this CL.",
+      "parentUuid": "496b7368_d8c6dffc",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4f7f00ad_3b47c2b0",
@@ -139,6 +157,24 @@
       "writtenOn": "2024-02-07T21:31:09Z",
       "side": 1,
       "message": "I\u0027m not sure how env var would be used and what it would solve. Is there a hook that needs to run gclient? Would it make more sense for hook to invoke DEPSed depot_tools gclient?",
+      "revId": "a467316210f214aaa7681ab7b17ba44604286096",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fedfa93_5d1df5f2",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1273334
+      },
+      "writtenOn": "2024-02-08T13:02:48Z",
+      "side": 1,
+      "message": "Answered in other thread.",
+      "parentUuid": "4f7f00ad_3b47c2b0",
       "revId": "a467316210f214aaa7681ab7b17ba44604286096",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

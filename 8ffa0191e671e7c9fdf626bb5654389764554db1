@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9026b422_8e13cd3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-08T21:45:58Z",
+      "side": 1,
+      "message": "I didn\u0027t see this fix, I created https://crrev.com/c/5279207 parallelly. The CL lgtm but it needs a test case to with multi-lines. I will copy it from the other CL.",
+      "revId": "8ffa0191e671e7c9fdf626bb5654389764554db1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

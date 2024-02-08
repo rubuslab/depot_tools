@@ -16,6 +16,24 @@
       "message": "Why not set appropriate default in reproxy for this?",
       "revId": "35ab564e9fc0f5b8d8d065eb954df6d00c2ff0dc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7bf5c5d3_a452b6ba",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T14:52:13Z",
+      "side": 0,
+      "message": "This is project-specific.  For example where chrome wants these temporary racing files and where android want them are different, so there isn\u0027t really an appropriate default.",
+      "parentUuid": "0ca1ffd1_ee199686",
+      "revId": "35ab564e9fc0f5b8d8d065eb954df6d00c2ff0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

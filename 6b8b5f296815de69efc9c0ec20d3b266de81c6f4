@@ -22,6 +22,30 @@
       },
       "revId": "6b8b5f296815de69efc9c0ec20d3b266de81c6f4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4684399c_4a5c0136",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T14:52:13Z",
+      "side": 1,
+      "message": "That is correct.  This script will also delete the per-run racing directory when it finishes via the atexit registration to prevent the build up of these temporary directories.",
+      "parentUuid": "de18d2be_a23e56f6",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 35
+      },
+      "revId": "6b8b5f296815de69efc9c0ec20d3b266de81c6f4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

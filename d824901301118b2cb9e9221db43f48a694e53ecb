@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "defc0914_daf0a93d",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-08T23:26:28Z",
+      "side": 1,
+      "message": "`subprocess2` has an interesting bug in windows. When trying to write a multi-line value with it, it only writes one line, hence failing the test.\n\nAs for a quick fix, I decided it\u0027s better to have a test with direct subprocess over waiting for subprocess2 to be fix (or even removed since we have successfully deprecated py2). Any concerns? @sokcevic@chromium.org",
+      "revId": "d824901301118b2cb9e9221db43f48a694e53ecb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

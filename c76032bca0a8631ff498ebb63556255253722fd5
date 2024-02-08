@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6a12aaf_8d73704a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T16:11:11Z",
+      "side": 1,
+      "message": "I\u0027ll do this when some other things that depend on use-goma in this build are migrated.",
+      "parentUuid": "7cc9e84a_14b799c6",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2efdc85d_7c54aa60",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-02-08T04:30:17Z",
       "side": 1,
       "message": "off?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 2
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc84ad7d_435a5174",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T16:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2efdc85d_7c54aa60",
       "range": {
         "startLine": 10,
         "startChar": 0,
@@ -81,6 +123,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35250667_9b1034ee",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T16:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2278eb0c_d69ea26e",
+      "range": {
+        "startLine": 340,
+        "startChar": 42,
+        "endLine": 340,
+        "endChar": 49
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf41d08a_31cc9466",
@@ -104,6 +170,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e862e910_1c7b4036",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T16:11:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf41d08a_31cc9466",
+      "range": {
+        "startLine": 352,
+        "startChar": 17,
+        "endLine": 352,
+        "endChar": 22
+      },
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "021ed2b5_feb1a25c",
@@ -117,6 +207,24 @@
       "writtenOn": "2024-02-08T04:30:17Z",
       "side": 1,
       "message": "This conditional never be true?",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d4521c1_34450598",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-08T16:11:11Z",
+      "side": 1,
+      "message": "Moved delay to windows block",
+      "parentUuid": "021ed2b5_feb1a25c",
       "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

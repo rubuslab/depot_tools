@@ -22,6 +22,30 @@
       },
       "revId": "8b09a3f8ba07bdaa8c1fbbef1618b0951b4eab1e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70562304_cd5b064c",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-08T00:16:02Z",
+      "side": 1,
+      "message": "skipping adding the footer entirely pending discussion on b/324248668",
+      "parentUuid": "3e223e3f_5598f09b",
+      "range": {
+        "startLine": 1169,
+        "startChar": 8,
+        "endLine": 1169,
+        "endChar": 53
+      },
+      "revId": "8b09a3f8ba07bdaa8c1fbbef1618b0951b4eab1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

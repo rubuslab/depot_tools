@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ca1ffd1_ee199686",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-08T02:52:58Z",
+      "side": 0,
+      "message": "Why not set appropriate default in reproxy for this?",
+      "revId": "35ab564e9fc0f5b8d8d065eb954df6d00c2ff0dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

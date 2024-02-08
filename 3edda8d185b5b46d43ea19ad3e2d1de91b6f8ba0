@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13925769_43af7f92",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-02-08T07:28:35Z",
+      "side": 1,
+      "message": "This CL broke `git rebase-update` for me: crbug.com/324358728",
+      "revId": "3edda8d185b5b46d43ea19ad3e2d1de91b6f8ba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

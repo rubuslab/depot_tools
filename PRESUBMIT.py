@@ -21,6 +21,7 @@ $VerifiedPlatform linux-amd64 mac-amd64 windows-amd64 windows-386
 $VerifiedPlatform linux-386 linux-ppc64 linux-ppc64le linux-s390x
 $VerifiedPlatform linux-arm64 linux-armv6l
 $VerifiedPlatform linux-mips64 linux-mips64le linux-mipsle
+$VerifiedPlatform zos-s390x
 
 %s %s
 '''

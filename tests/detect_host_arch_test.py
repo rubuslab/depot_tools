@@ -40,6 +40,7 @@ class DetectHostArchTest(unittest.TestCase):
             ('mips', '', [''], 'mips'),
             ('ppc', '', [''], 'ppc'),
             ('foo', 'powerpc', [''], 'ppc'),
+            ('s390x', 'zos', [''], 's390x'),
             ('s390', '', [''], 's390'),
         ]
 

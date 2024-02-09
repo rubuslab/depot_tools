@@ -139,6 +139,8 @@ def GetBuildtoolsPlatformBinaryPath():
         subdir = 'mac'
     elif sys.platform.startswith('linux'):
         subdir = 'linux64'
+    elif sys.platform == 'zos':
+        subdir = 'zos'
     else:
         raise gclient_utils.Error('Unknown platform: ' + sys.platform)
     return os.path.join(buildtools_path, subdir)

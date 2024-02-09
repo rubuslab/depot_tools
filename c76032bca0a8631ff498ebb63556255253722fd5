@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3f04b6d0_72c71137",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-02-09T03:55:48Z",
+      "side": 1,
+      "message": "I think you can still disallow that for specific target without waiting anything?",
+      "parentUuid": "d6a12aaf_8d73704a",
+      "revId": "c76032bca0a8631ff498ebb63556255253722fd5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2efdc85d_7c54aa60",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1

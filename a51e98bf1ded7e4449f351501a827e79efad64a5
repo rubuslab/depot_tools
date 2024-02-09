@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04b94da7_8f934f36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-09T08:49:12Z",
+      "side": 1,
+      "message": "Tested `gclient sync`, `gclient sync -v`, `git map-branches -vvvv`, `git cl upload`, and `git rebase-update` on gLinux and windows 10.",
+      "revId": "a51e98bf1ded7e4449f351501a827e79efad64a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

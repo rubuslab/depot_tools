@@ -34,6 +34,24 @@
       "parentUuid": "defc0914_daf0a93d",
       "revId": "d824901301118b2cb9e9221db43f48a694e53ecb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56d92ff4_882bdb09",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-09T04:54:20Z",
+      "side": 1,
+      "message": "Interesting. When I wrote the initial test case with subprocess2, writing `line 1\\nline 2\\nline 3` only wrote line 1. I initially thought maybe this was because of windows line separator differences but when I tested directly on powershell and with plain subprocess this doesn\u0027t occur.\n\nI will go ahead and submit this fix to unblock them and then look into the bug.",
+      "parentUuid": "fd6744df_2da12bc7",
+      "revId": "d824901301118b2cb9e9221db43f48a694e53ecb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

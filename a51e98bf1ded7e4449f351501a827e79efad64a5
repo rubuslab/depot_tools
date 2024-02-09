@@ -16,6 +16,23 @@
       "message": "Tested `gclient sync`, `gclient sync -v`, `git map-branches -vvvv`, `git cl upload`, and `git rebase-update` on gLinux and windows 10.",
       "revId": "a51e98bf1ded7e4449f351501a827e79efad64a5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "515440b3_17ece4c1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-09T18:51:44Z",
+      "side": 1,
+      "message": "lgtm",
+      "revId": "a51e98bf1ded7e4449f351501a827e79efad64a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

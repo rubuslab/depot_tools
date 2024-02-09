@@ -16,6 +16,24 @@
       "message": "`subprocess2` has an interesting bug in windows. When trying to write a multi-line value with it, it only writes one line, hence failing the test.\n\nAs for a quick fix, I decided it\u0027s better to have a test with direct subprocess over waiting for subprocess2 to be fix (or even removed since we have successfully deprecated py2). Any concerns? @sokcevic@chromium.org",
       "revId": "d824901301118b2cb9e9221db43f48a694e53ecb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd6744df_2da12bc7",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-09T02:38:32Z",
+      "side": 1,
+      "message": "Not sure if this still holds true: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:subprocess2.py;l\u003d129;drc\u003dedba22d4eb12b5db5bdee7dc921da7857be1b687\n\nGiven that unit tests pass on CI, I\u0027m okay with this fix.",
+      "parentUuid": "defc0914_daf0a93d",
+      "revId": "d824901301118b2cb9e9221db43f48a694e53ecb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

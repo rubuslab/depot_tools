@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9729884c_922fb465",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-02-13T20:15:35Z",
+      "side": 1,
+      "message": "Maybe include a link to the previous CL - crrev.com/c/5272474",
+      "revId": "97f42286de939a3cb831c6efa958a13ee382ffcd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "458062ab_2fea4955",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-02-13T20:15:35Z",
+      "side": 1,
+      "message": "I think you should link to the bug where the prints got added so that that bug has a full history of the relevant changes.\nBug: b/277197166",
+      "revId": "97f42286de939a3cb831c6efa958a13ee382ffcd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

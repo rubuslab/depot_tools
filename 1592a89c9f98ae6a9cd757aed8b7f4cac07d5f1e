@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd44f205_91a5ff61",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-02-13T20:15:35Z",
+      "side": 0,
+      "message": "Why was this line added in the first place and why is it being removed? It feels like this removal should also be acknowledged in the CL description.",
+      "revId": "1592a89c9f98ae6a9cd757aed8b7f4cac07d5f1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c097c60_c7250865",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2024-02-13T22:10:09Z",
+      "side": 1,
+      "message": "Can we make both of these the same hash function while we are at it",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 258,
+        "endChar": 0
+      },
+      "revId": "d9d033f9ed4cf8b197e1871ebe026bd2ff8abdfa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -158,30 +158,34 @@ def get_sha1(filename):
 # Download-specific code starts here
 
 
-def enumerate_input(input_filename, directory, recursive, ignore_errors, output,
-                    sha1_file, auto_platform):
+def enumerate_input(input_arg, directory, recursive, ignore_errors, output,
+                    sha1_file, sha1, auto_platform):
     if sha1_file:
-        if not os.path.exists(input_filename):
+        if not os.path.exists(input_arg):
             if not ignore_errors:
                 raise FileNotFoundError(
                     '{} not found when attempting enumerate files to download.'.
-                    format(input_filename))
-            print('%s not found.' % input_filename, file=sys.stderr)
-        with open(input_filename, 'rb') as f:
+                    format(input_arg))
+            print('%s not found.' % input_arg, file=sys.stderr)
+        with open(input_arg, 'rb') as f:
             sha1_match = re.match(b'^([A-Za-z0-9]{40})$', f.read(1024).rstrip())
             if sha1_match:
                 yield (sha1_match.groups(1)[0].decode('utf-8'), output)
                 return
         if not ignore_errors:
-            raise InvalidFileError('No sha1 sum found in %s.' % input_filename)
-        print('No sha1 sum found in %s.' % input_filename, file=sys.stderr)
+            raise InvalidFileError('No sha1 sum found in %s.' % input_arg)
+        print('No sha1 sum found in %s.' % input_arg, file=sys.stderr)
+        return
+
+    if sha1:
+        yield (input_arg, output)
         return
 
     if not directory:
-        yield (input_filename, output)
+        yield (input_arg, output)
         return
 
-    for root, dirs, files in os.walk(input_filename):
+    for root, dirs, files in os.walk(input_arg):
         if not recursive:
             for item in dirs[:]:
                 dirs.remove(item)
@@ -329,7 +333,7 @@ def _downloader_worker_thread(thread_num,
 
         if extract:
             if not tarfile.is_tarfile(output_filename):
-                out_q.put('%d> Error: %s is not a tar.gz archive.' %
+                out_q.put('%d>UhOH Error: %s is not a tar.gz archive.' %
                           (thread_num, output_filename))
                 ret_codes.put(
                     (1, '%s is not a tar.gz archive.' % (output_filename)))
@@ -428,15 +432,15 @@ def _data_exists(input_sha1_sum, output_filename, extract):
     return False
 
 
-def download_from_google_storage(input_filename, base_url, gsutil, num_threads,
+def download_from_google_storage(input_arg, base_url, gsutil, num_threads,
                                  directory, recursive, force, output,
-                                 ignore_errors, sha1_file, verbose,
+                                 ignore_errors, sha1_file, sha1, verbose,
                                  auto_platform, extract):
 
     # Tuples of sha1s and paths.
     input_data = list(
-        enumerate_input(input_filename, directory, recursive, ignore_errors,
-                        output, sha1_file, auto_platform))
+        enumerate_input(input_arg, directory, recursive, ignore_errors, output,
+                        sha1_file, sha1, auto_platform))
 
     # Sequentially check for the most common case and see if we can bail out
     # early before making any slow calls to gsutil.
@@ -504,6 +508,7 @@ def main(args):
              '  (default) a sha1 sum ([A-Za-z0-9]{40}).\n'
              '  (-s or --sha1_file) a .sha1 file, containing a sha1 sum on '
              'the first line.\n'
+             '  (-y or --sha1) a sha1 hash.\n'
              '  (-d or --directory) A directory to scan for .sha1 files.')
     parser = optparse.OptionParser(usage)
     parser.add_option('-o',
@@ -544,12 +549,17 @@ def main(args):
                       '--directory',
                       action='store_true',
                       help='The target is a directory.  '
-                      'Cannot be used with -s/--sha1_file.')
+                      'Cannot be used with -s/--sha1_file or -sh/--sha1.')
+    parser.add_option('-y',
+                      '--sha1',
+                      action='store_true',
+                      help='The target is a sha1 sum. '
+                      'Cannot be used with -d/--directory or -s/--sha1_file.')
     parser.add_option('-s',
                       '--sha1_file',
                       action='store_true',
                       help='The target is a file containing a sha1 sum.  '
-                      'Cannot be used with -d/--directory.')
+                      'Cannot be used with -d/--directory. or -sh/--sha1.')
     parser.add_option('-g',
                       '--config',
                       action='store_true',
@@ -649,18 +659,22 @@ def main(args):
         parser.error('Too many targets.')
     if not options.bucket:
         parser.error('Missing bucket.  Specify bucket with --bucket.')
-    if options.sha1_file and options.directory:
-        parser.error('Both --directory and --sha1_file are specified, '
-                     'can only specify one.')
+    stored_option_count = sum(
+        0 if o is None else 1
+        for o in [options.sha1_file, options.sha1, options.directory])
+    if stored_option_count > 1:
+        parser.error('Only one of --directory, --sha1_file, and --sha1 '
+                     'can be specified.')
     if options.recursive and not options.directory:
         parser.error('--recursive specified but --directory not specified.')
     if options.output and options.directory:
         parser.error('--directory is specified, so --output has no effect.')
-    if (not (options.sha1_file or options.directory) and options.auto_platform):
+    if (not (options.sha1_file or options.directory or options.sha1)
+            and options.auto_platform):
         parser.error('--auto_platform must be specified with either '
-                     '--sha1_file or --directory')
+                     '--sha1_file or --directory or --sha1')
 
-    input_filename = args[0]
+    input_arg = args[0]
     num_threads = options.num_threads
     if not num_threads:
         num_threads = max(
@@ -671,16 +685,16 @@ def main(args):
         if not options.sha1_file:
             # Target is a sha1 sum, so output filename would also be the sha1
             # sum.
-            options.output = input_filename
+            options.output = input_arg
         elif options.sha1_file:
             # Target is a .sha1 file.
-            if not input_filename.endswith('.sha1'):
+            if not input_arg.endswith('.sha1'):
                 parser.error(
                     '--sha1_file is specified, but the input filename '
                     'does not end with .sha1, and no --output is specified. '
                     'Either make sure the input filename has a .sha1 '
                     'extension, or specify --output.')
-            options.output = input_filename[:-5]
+            options.output = input_arg[:-5]
         else:
             parser.error('Unreachable state.')
 
@@ -688,10 +702,10 @@ def main(args):
 
     try:
         return download_from_google_storage(
-            input_filename, base_url, gsutil, num_threads, options.directory,
+            input_arg, base_url, gsutil, num_threads, options.directory,
             options.recursive, options.force, options.output,
-            options.ignore_errors, options.sha1_file, options.verbose,
-            options.auto_platform, options.extract)
+            options.ignore_errors, options.sha1_file, options.sha1,
+            options.verbose, options.auto_platform, options.extract)
     except FileNotFoundError as e:
         print("Fatal error: {}".format(e))
         return 1

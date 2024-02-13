@@ -748,6 +748,17 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        should_process=should_process,
                                        relative=use_relative_paths,
                                        condition=condition))
+            elif dep_type == 'gcs':
+                deps_to_add.append(
+                    GcsDependency(parent=self,
+                                  name=name,
+                                  bucket=dep_value['bucket'],
+                                  sha=dep_value['sha'],
+                                  output=dep_value['output'],
+                                  custom_vars=self.custom_vars,
+                                  should_process=should_process,
+                                  relative=use_relative_paths,
+                                  condition=condition))
             else:
                 url = dep_value.get('url')
                 deps_to_add.append(
@@ -2479,6 +2490,72 @@ it or fix the checkout.
     @property
     def target_cpu(self):
         return self._enforced_cpu
+
+
+class GcsDependency(Dependency):
+    """A Dependency object that represents a single GCS bucket and file"""
+
+    def __init__(self, parent, name, bucket, sha, output, custom_vars,
+                 should_process, relative, condition):
+        self.bucket = bucket
+        self.sha = sha
+        self.output = output
+        url = 'gs://{bucket}/{sha}'.format(
+            bucket=self.bucket,
+            sha=self.sha,
+        )
+        super(GcsDependency, self).__init__(parent=parent,
+                                            name=name,
+                                            url=url,
+                                            managed=None,
+                                            custom_deps=None,
+                                            custom_vars=custom_vars,
+                                            custom_hooks=None,
+                                            deps_file=None,
+                                            should_process=should_process,
+                                            should_recurse=False,
+                                            relative=relative,
+                                            condition=condition)
+
+    #override
+    def run(self, revision_overrides, command, args, work_queue, options,
+            patch_refs, target_branches, skip_sync_revisions):
+        """Downloads GCS package."""
+        logging.info('GcsDependency(%s).run()' % self.name)
+        if not self.should_process:
+            return
+        self.DownloadGoogleStorage()
+        super(GcsDependency,
+              self).run(revision_overrides, command, args, work_queue, options,
+                        patch_refs, target_branches, skip_sync_revisions)
+
+    def DownloadGoogleStorage(self):
+        """Calls download_google_storage.py script."""
+        cmd = [
+            'vpython3',
+            '../../cr/depot_tools/download_from_google_storage.py',
+            '--no_resume',
+            '--extract',
+            '--no_auth',
+            '--bucket',
+            self.bucket,
+            '--output',
+            self.output,
+            '--sha1',
+            self.sha,
+        ]
+        subprocess2.call(cmd)
+
+    #override
+    def GetScmName(self):
+        """Always 'gcs'."""
+        return 'gcs'
+
+    #override
+    def CreateSCM(self, out_cb=None):
+        """Create a Wrapper instance suitable for handling this GCS dependency."""
+        return gclient_scm.GcsWrapper(self.url, self.root.root_dir, self.name,
+                                      self.outbuf, out_cb)
 
 
 class CipdDependency(Dependency):

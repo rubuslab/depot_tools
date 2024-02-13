@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3efea17c_1352980a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-13T23:06:33Z",
+      "side": 1,
+      "message": "I believe the prerequisite for this is to have cipd package",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57c1b9cd_188059d7",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-13T23:06:33Z",
+      "side": 1,
+      "message": "I believe the prerequisite for this is to have cipd package available. We can\u0027t accept external binaries so we should have discussion in the ticket how we can support this (ie can we cross compile and add it to the existing CI builder).",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "261a0fac_32b5a7ff",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-13T23:06:33Z",
+      "side": 1,
+      "message": "python may be missing packages that we expect vpython to have, so we can\u0027t do this.\n\nif [[ $VPYTHON_BYPASS \u003d\u003d \"manually managed python not supported by chrome operations\" ]]\n\noffers a way to test bypassing vpython.",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

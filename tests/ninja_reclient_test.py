@@ -84,14 +84,16 @@ class NinjaReclientTest(trial_dir.TestCase):
             os.path.join(
                 self.root_dir, ".reproxy_cache",
                 hashlib.md5(
-                    os.path.join(self.root_dir, "out", "a",
-                                 ".reproxy_tmp").encode()).hexdigest()))
+                    os.path.join(self.root_dir, "out", "a", ".reproxy_tmp",
+                                 "20170316T200041.000000_SOME_RANDOM_ID").
+                    encode()).hexdigest()))
         if sys.platform.startswith('win'):
             self.assertEqual(
                 os.environ.get('RBE_server_address'),
                 "pipe://%s/reproxy.pipe" % hashlib.md5(
-                    os.path.join(self.root_dir, "out", "a",
-                                 ".reproxy_tmp").encode()).hexdigest())
+                    os.path.join(self.root_dir, "out", "a", ".reproxy_tmp",
+                                 "20170316T200041.000000_SOME_RANDOM_ID").
+                    encode()).hexdigest())
         else:
             self.assertEqual(
                 os.environ.get('RBE_server_address'),

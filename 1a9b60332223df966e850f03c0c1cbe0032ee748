@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "307c5342_2ce94c2e",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-13T15:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0d0f2d9_e7dd0d1e",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 35
+      },
+      "revId": "1a9b60332223df966e850f03c0c1cbe0032ee748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a6d4ed9e_29b18584",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd7f30ef_075967a4",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-13T15:10:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a6d4ed9e_29b18584",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 35
+      },
+      "revId": "1a9b60332223df966e850f03c0c1cbe0032ee748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15bead4e_a15f10c6",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-02-13T02:02:02Z",
       "side": 1,
       "message": "Revert this diff?",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 64
+      },
+      "revId": "1a9b60332223df966e850f03c0c1cbe0032ee748",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3c812273_983336f9",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-02-13T15:10:34Z",
+      "side": 1,
+      "message": "This test is specific to windows now, where goma still is usable, at least for another week and a bit.",
+      "parentUuid": "15bead4e_a15f10c6",
       "range": {
         "startLine": 132,
         "startChar": 0,

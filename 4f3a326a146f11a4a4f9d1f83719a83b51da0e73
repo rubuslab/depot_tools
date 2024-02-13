@@ -16,6 +16,23 @@
       "message": "lgtm",
       "revId": "4f3a326a146f11a4a4f9d1f83719a83b51da0e73",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "461ad98d_0d454278",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-13T23:02:21Z",
+      "side": 1,
+      "message": "`modify_all` simply adds `--replace-all` flag: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:scm.py;l\u003d218;drc\u003d6c92a665e180982ca3ed0ad4a9f0738b119e49a9",
+      "revId": "4f3a326a146f11a4a4f9d1f83719a83b51da0e73",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

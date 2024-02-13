@@ -1911,6 +1911,66 @@ class CipdWrapper(SCMWrapper):
     """
 
 
+class GcsWrapper(SCMWrapper):
+    """Wrapper for GCS.
+
+  Currently only supports content from Google Cloud Storage.
+  """
+    name = 'cipd'
+
+    def __init__(self,
+                 url=None,
+                 root_dir=None,
+                 relpath=None,
+                 out_fh=None,
+                 out_cb=None):
+        super(GcsWrapper, self).__init__(url=url,
+                                         root_dir=root_dir,
+                                         relpath=relpath,
+                                         out_fh=out_fh,
+                                         out_cb=out_cb)
+
+    #override
+    def GetCacheMirror(self):
+        return None
+
+    #override
+    def GetActualRemoteURL(self, options):
+        return self._root.service_url
+
+    #override
+    def DoesRemoteURLMatch(self, options):
+        del options
+        return True
+
+    def revert(self, options, args, file_list):
+        """Does nothing.
+
+    CIPD packages should be reverted at the root by running
+    `CipdRoot.run('revert')`.
+    """
+
+    def diff(self, options, args, file_list):
+        """CIPD has no notion of diffing."""
+
+    def pack(self, options, args, file_list):
+        """CIPD has no notion of diffing."""
+
+    def revinfo(self, options, args, file_list):
+        """Grab the instance ID."""
+        pass
+
+    def status(self, options, args, file_list):
+        pass
+
+    def update(self, options, args, file_list):
+        """Does nothing.
+
+    CIPD packages should be updated at the root by running
+    `CipdRoot.run('update')`.
+    """
+
+
 class CogWrapper(SCMWrapper):
     """Wrapper for Cog, all no-op."""
     name = 'cog'

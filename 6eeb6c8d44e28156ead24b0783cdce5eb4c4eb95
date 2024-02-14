@@ -16,6 +16,24 @@
       "message": "LGTM, note I have not rolled `rdb` in depot_tools yet. Will create the CL shortly...",
       "revId": "6eeb6c8d44e28156ead24b0783cdce5eb4c4eb95",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f84cddd6_69db194c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1386944
+      },
+      "writtenOn": "2024-02-14T23:00:51Z",
+      "side": 1,
+      "message": "Here we go: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5298434",
+      "parentUuid": "3c42f74f_8f08550b",
+      "revId": "6eeb6c8d44e28156ead24b0783cdce5eb4c4eb95",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

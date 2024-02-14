@@ -270,6 +270,21 @@ def CheckCorpLinksInFiles(input_api, output_api, source_file_filter=None):
     return []
 
 
+def CheckLargeScaleChange(input_api, output_api, source_file_filter=None):
+    """Checks if the change should go through the LSC process."""
+    affected = input_api.AffectedFiles(file_filter=source_file_filter)
+    size = len(affected)
+    if size <= 100:
+        return []
+    return [
+        output_api.PresubmitPromptWarning(
+            f'This change contains {size} files.\n'
+            'Consider using the LSC (large scale change) process.\n'
+            'See https://chromium.googlesource.com/chromium/src/+/HEAD/docs/process/lsc/lsc_workflow.md.'  # pylint: disable=line-too-long
+        )
+    ]
+
+
 def GetCppLintFilters(lint_filters=None):
     filters = OFF_UNLESS_MANUALLY_ENABLED_LINT_FILTERS[:]
     if lint_filters is None:
@@ -1708,6 +1723,10 @@ def PanProjectChecks(input_api,
     snapshot("checking corp links in files")
     results.extend(
         input_api.canned_checks.CheckCorpLinksInFiles(
+            input_api, output_api, source_file_filter=sources))
+    snapshot("checking large scale change")
+    results.extend(
+        input_api.canned_checks.CheckLargeScaleChange(
             input_api, output_api, source_file_filter=sources))
 
     if input_api.is_committing:

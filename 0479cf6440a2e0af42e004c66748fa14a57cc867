@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e092352b_09b30a02",
+        "filename": "presubmit_support.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2109,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-15T21:33:25Z",
+      "side": 1,
+      "message": "don\u0027t understand",
+      "range": {
+        "startLine": 2108,
+        "startChar": 64,
+        "endLine": 2109,
+        "endChar": 19
+      },
+      "revId": "0479cf6440a2e0af42e004c66748fa14a57cc867",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

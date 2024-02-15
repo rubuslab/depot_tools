@@ -91,6 +91,7 @@ import posixpath
 import pprint
 import re
 import sys
+import shutil
 import time
 import urllib.parse
 
@@ -109,6 +110,7 @@ import scm as scm_git
 import setup_color
 import subcommand
 import subprocess2
+import tarfile
 from third_party.repo.progress import Progress
 
 # TODO: Should fix these warnings.
@@ -748,6 +750,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        should_process=should_process,
                                        relative=use_relative_paths,
                                        condition=condition))
+            elif dep_type == 'gcs':
+                deps_to_add.append(
+                    GcsDependency(parent=self,
+                                  name=name,
+                                  bucket=dep_value['bucket'],
+                                  path=dep_value['path'],
+                                  custom_vars=self.custom_vars,
+                                  should_process=should_process,
+                                  relative=use_relative_paths,
+                                  condition=condition))
             else:
                 url = dep_value.get('url')
                 deps_to_add.append(
@@ -2479,6 +2491,168 @@ it or fix the checkout.
     @property
     def target_cpu(self):
         return self._enforced_cpu
+
+
+class GcsDependency(Dependency):
+    """A Dependency object that represents a single GCS bucket and file"""
+
+    def __init__(self, parent, name, bucket, path, custom_vars, should_process,
+                 relative, condition):
+        self.bucket = bucket
+        self.path = path
+        url = 'gs://{bucket}/{path}'.format(
+            bucket=self.bucket,
+            path=self.path,
+        )
+        super(GcsDependency, self).__init__(parent=parent,
+                                            name=name,
+                                            url=url,
+                                            managed=None,
+                                            custom_deps=None,
+                                            custom_vars=custom_vars,
+                                            custom_hooks=None,
+                                            deps_file=None,
+                                            should_process=should_process,
+                                            should_recurse=False,
+                                            relative=relative,
+                                            condition=condition)
+
+    #override
+    def run(self, revision_overrides, command, args, work_queue, options,
+            patch_refs, target_branches, skip_sync_revisions):
+        """Downloads GCS package."""
+        logging.info('GcsDependency(%s).run()' % self.name)
+        if not self.should_process:
+            return
+        self.DownloadGoogleStorage()
+        super(GcsDependency,
+              self).run(revision_overrides, command, args, work_queue, options,
+                        patch_refs, target_branches, skip_sync_revisions)
+
+    def CheckForHexPath(self):
+        try:
+            int(self.path, 16)
+        except ValueError:
+            return False
+        return len(self.path) == 40
+
+    def DownloadGoogleStorage(self):
+        """Calls call_google_storage.py script."""
+        chromium_dir = os.path.dirname(os.getcwd())
+
+        gcs_file_name = self.path.split('/')[-1]
+        # Directory of the extracted tarfile contents
+        output_dir = None
+
+        # This logic for sha paths matches the behavior of
+        # download_google_storage.
+        # Ex: if name is `src/third_party/node/linux/node-linux-x64`,
+        # output_dir will be `src/third_party/node/linux/`. The extracted
+        # tar content will be a `node-linux-x64` directory, constructing
+        # the `src/third_party/node/linux/node-linux-x64` path.
+        gcs_file_name = self.path.split('/')[-1]
+        path_is_sha = False
+        if self.CheckForHexPath():
+            path_is_sha = True
+            output_dir = os.path.dirname(os.path.join(chromium_dir, self.name))
+        else:
+            # Ex: if name is `src/third_party/llvm-build/Release+Asserts`,
+            # output_dir will be `src/third_party/llvm-build/Release+Asserts`.
+            output_dir = os.path.join(chromium_dir, self.name)
+        output_file = os.path.join(output_dir, gcs_file_name)
+        print('output_file is ', output_file)
+
+        # Check if extract is needed
+        skip = True
+        # .tmp file is created just before extraction and removed just
+        # after extraction. If such file exists, it means the process
+        # was terminated mid-extraction and therefore needs to be
+        # extracted again.
+        if os.path.exists(output_dir + '.tmp'):
+            skip = False
+        if not os.path.exists(output_dir):
+            skip = False
+
+        # This matches the behavior from src/tools/scripts/update.py
+        stamp_file_name = ''
+        if not path_is_sha and 'llvm' in self.path:
+            # Check stamp_file
+            # cr_build_revision is the tail of self.path
+            # Ex: path = `Linux_x64/clang-llvmorg-18-init-17730-gf670112a-2`
+            # then the revision is llvmorg-18-init-17730-gf670112a-2
+            clang_index = self.path.index('clang-')
+            start_index = clang_index + len('clang-')
+            tar_index = self.path.index('.tar.xz')
+            expected_cr_build_revision = self.path[start_index:tar_index]
+            stamp_file_name = os.path.join(output_dir, 'cr_build_revision')
+            print('stamp_file_name ', stamp_file_name)
+            if os.path.exists(stamp_file_name):
+                with open(stamp_file_name, 'r') as f:
+                    revision = f.read().rstrip()
+                if revision != expected_cr_build_revision:
+                    skip = False
+                print('revision ', revision)
+                print('expected ', expected_cr_build_revision)
+            else:
+                skip = False
+                print('not skipping')
+
+        if skip:
+            print('skipping downloading ', self.name)
+            return
+
+        # Remove tarfile and extract_dir
+        try:
+            os.remove(output_file)
+        except OSError:
+            print('Nevermind, cant delete ', output_file)
+        if os.path.exists(output_dir):
+            try:
+                shutil.rmtree(output_dir)
+                print('Removing extract_dir: ', output_dir)
+            except OSError:
+                print('Nevermind, cant delete ', output_dir)
+
+        print('calling gcs for ', self.name)
+        cmd = [
+            'vpython3',
+            '../../cr/depot_tools/call_google_storage.py',
+            '--bucket',
+            self.bucket,
+            '--path',
+            self.path,
+            '--output',
+            output_file,
+        ]
+        subprocess2.call(cmd)
+
+        print(path_is_sha)
+        read_mode = ''
+        if path_is_sha:
+            read_mode = 'r:gz'
+        elif output_file.endswith('tar.xz'):
+            read_mode = 'r:xz'
+        with tarfile.open(output_file, read_mode) as tar:
+            with open(output_dir + '.tmp', 'a'):
+                tar.extractall(path=output_dir)
+            os.remove(output_dir + '.tmp')
+
+        # This matches the behavior from src/tools/scripts/update.py
+        if not path_is_sha and 'llvm' in self.path:
+            with open(stamp_file_name, 'w') as f:
+                f.write(expected_cr_build_revision)
+                f.write('\n')
+
+    #override
+    def GetScmName(self):
+        """Always 'gcs'."""
+        return 'gcs'
+
+    #override
+    def CreateSCM(self, out_cb=None):
+        """Create a Wrapper instance suitable for handling this GCS dependency."""
+        return gclient_scm.GcsWrapper(self.url, self.root.root_dir, self.name,
+                                      self.outbuf, out_cb)
 
 
 class CipdDependency(Dependency):

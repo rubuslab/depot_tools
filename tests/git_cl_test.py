@@ -4263,7 +4263,13 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
                    return_value='fetch description').start()
         mock.patch('git_cl._create_description_from_log',
                    return_value='get description').start()
-        mock.patch('git_cl.Changelist.RunHook').start()
+        self.run_hook_mock = mock.patch('git_cl.Changelist.RunHook',
+                                        return_value={
+                                            'errors': [],
+                                            'more_cc': [],
+                                            'notifications': [],
+                                            'warnings': []
+                                        }).start()
 
     def testDefaultCase(self):
         self.assertEqual(0, git_cl.main(['presubmit']))
@@ -4327,6 +4333,23 @@ class CMDPresubmitTestCase(CMDTestCaseBase):
             resultdb=True,
             realm='chromium:public')
 
+    def testReturns2OnWarning(self):
+        self.run_hook_mock.return_value = {
+            'errors': [],
+            'more_cc': [],
+            'notifications': [],
+            'warnings': ['Goat teleporter may be in a superposition']
+        }
+        self.assertEqual(2, git_cl.main(['presubmit']))
+
+    def testReturns1OnError(self):
+        self.run_hook_mock.return_value = {
+            'errors': ['Goat teleporter is down'],
+            'more_cc': [],
+            'notifications': [],
+            'warnings': []
+        }
+        self.assertEqual(1, git_cl.main(['presubmit']))
 
 class CMDTryResultsTestCase(CMDTestCaseBase):
     _DEFAULT_REQUEST = {

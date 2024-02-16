@@ -4631,7 +4631,9 @@ def CMDlint(parser, args):
 @metrics.collector.collect_metrics('git cl presubmit')
 @subcommand.usage('[base branch]')
 def CMDpresubmit(parser, args):
-    """Runs presubmit tests on the current changelist."""
+    """Runs presubmit tests on the current changelist.
+
+    Returns 1 on errors and 2 on warnings."""
     parser.add_option('-u',
                       '--upload',
                       action='store_true',
@@ -4691,16 +4693,20 @@ def CMDpresubmit(parser, args):
             return 1
         base_branch = 'HEAD'
 
-    cl.RunHook(committing=not options.upload,
-               may_prompt=False,
-               verbose=options.verbose,
-               parallel=options.parallel,
-               upstream=base_branch,
-               description=description,
-               all_files=options.all,
-               files=options.files,
-               resultdb=options.resultdb,
-               realm=options.realm)
+    results = cl.RunHook(committing=not options.upload,
+                         may_prompt=False,
+                         verbose=options.verbose,
+                         parallel=options.parallel,
+                         upstream=base_branch,
+                         description=description,
+                         all_files=options.all,
+                         files=options.files,
+                         resultdb=options.resultdb,
+                         realm=options.realm)
+    if results['errors']:
+        return 1
+    if results['warnings']:
+        return 2
     return 0
 
 

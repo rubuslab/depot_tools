@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b78090c_24935055",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-20T23:59:42Z",
+      "side": 1,
+      "message": "Ideally it returns a unique exit code if `git cl presubmit` itself fails vs. a check that it\u0027s running fails, and right now retcode 1 can mean both. WDYT about keeping 1 as \"git cl presubmit itself failed\" and adding 2 as \"git cl presubmit ran fine, but got some presubmit errors\" and 3 as \"git cl presubmit ran fine, but got some presubmit warnings\"?\n\nIf we decide to change the exit codes, we\u0027ll also need to check/update the presubmit recipe module section here: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/presubmit/api.py;l\u003d178-192;drc\u003d0696c428b04513254d3b3e0b1fba5e5afdb11cf4",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce19494d_60b356da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000169
+      },
+      "writtenOn": "2024-02-20T00:30:51Z",
+      "side": 1,
+      "message": "ChromeOS builders haven\u0027t finished migrating to reclient and this CL caused failures on many of them (b/325856422).\n\nDoes it make sense to revert this CL?",
+      "revId": "1592a89c9f98ae6a9cd757aed8b7f4cac07d5f1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

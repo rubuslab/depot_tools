@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "463ec7bc_b35f00c0",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-20T23:30:44Z",
+      "side": 1,
+      "message": "In https://issues.chromium.org/issues/323790693#comment11, you mentioned that `.cipd_client` was placed by hand and that got it working. So, this code may misled users to believe that zos is actually supported. Instead, they need to compile cipd_client and place it inside depot_tools root.\n\nWhy don\u0027t we use the same approach we have for vpython: require an env variable that forces custom version of cipd_client. e.g. CUSTOM_CIPD_CLIENT\u003d\"/path/to/cipd_client\". If that envvar is set, we just invoke it  at the top of this file (ie before line 9)",
+      "parentUuid": "57c1b9cd_188059d7",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "261a0fac_32b5a7ff",
         "filename": "vpython3",
         "patchSetId": 1

@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30b8e87a_776df4ed",
+        "filename": "PRESUBMIT.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-20T23:30:44Z",
+      "side": 1,
+      "message": "This is not supported platform by cipd so it shouldn\u0027t be here",
+      "revId": "3a8193a24dae5886dba1d6a1867790749db022d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "317d11df_28f8a497",
+        "filename": "gclient_paths.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-20T23:30:44Z",
+      "side": 1,
+      "message": "afaict, this is used in gn and clang formatter. Is this needed for fetching source?",
+      "revId": "3a8193a24dae5886dba1d6a1867790749db022d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d7f3b0e_fc11209d",
+        "filename": "gclient_utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-20T23:30:44Z",
+      "side": 1,
+      "message": "this will be captured by line 803 (in except block), so not needed?",
+      "revId": "3a8193a24dae5886dba1d6a1867790749db022d8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

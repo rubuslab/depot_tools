@@ -977,7 +977,37 @@ class _ProvidedDiffCache(_DiffCache):
 
     def GetOldContents(self, path, local_root):
         """Get the old version for a particular path."""
-        # TODO(gavinmak): Implement with self._diff.
+        diff = self.GetDiff(path, local_root)
+        if not diff:
+            return ''
+
+        diff_lines = diff.splitlines()
+        header_line = diff_lines[1]
+        action = _get_diff_action(header_line)
+
+        if action == 'A':
+            # The file was newly added, there were no old contents.
+            return ''
+
+        if action == 'D':
+            # The file was deleted, return the entire old file from the diff.
+            old_content_lines = []
+            after_chunk_header = False
+            for line in diff_lines:
+                # Skip the chunk header. The number of @ is (# of parents + 1),
+                # so there should always be at least two on each end.
+                if line.startswith('@@') and line.endswith('@@'):
+                    after_chunk_header = True
+                    continue
+                if not after_chunk_header:
+                    continue
+
+                # The lines after the chunk header are the content diff.
+                assert line.startswith('-')
+                old_content_lines.append(line[1:])
+            return '\n'.join(old_content_lines)
+
+        # TODO(gavinmak): Implement with 'M' action.
         return ''
 
 
@@ -2132,10 +2162,7 @@ def _parse_unified_diff(diff):
 def _process_diff_file(diff_file):
     """Validates a git diff file and processes it into a list of change files.
 
-    Each change file is a tuple of (action, path) where action is one of:
-        * A: newly added file
-        * M: modified file
-        * D: deleted file
+    Each change file is a tuple of (action, path).
 
     Args:
         diff_file: Path to file containing unified git diff.
@@ -2155,14 +2182,29 @@ def _process_diff_file(diff_file):
         header_line = file_diff.splitlines()[1]
         if not header_line:
             raise PresubmitFailure('diff header is empty')
-        if header_line.startswith('new'):
-            action = 'A'
-        elif header_line.startswith('deleted'):
-            action = 'D'
-        else:
-            action = 'M'
-        change_files.append((action, file))
+        change_files.append((_get_diff_action(header_line), file))
     return diff, change_files
+
+
+def _get_diff_action(diff_line):
+    """Maps a git diff header line to a change action.
+
+    An action is one of:
+        * A: newly added file
+        * M: modified file
+        * D: deleted file
+
+    Args:
+        diff_line: git diff header line.
+
+    Returns:
+        One of 'A', 'M', 'D'.
+    """
+    if diff_line.startswith('new'):
+        return 'A'
+    if diff_line.startswith('deleted'):
+        return 'D'
+    return 'M'
 
 @contextlib.contextmanager
 def setup_environ(kv: Mapping[str, str]):

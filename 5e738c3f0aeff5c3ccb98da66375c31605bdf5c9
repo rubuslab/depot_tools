@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2eb25c0c_44ff4311",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1474888
+      },
+      "writtenOn": "2024-02-20T23:11:54Z",
+      "side": 1,
+      "message": "feels like there should be a better way to detect citc folder",
+      "revId": "5e738c3f0aeff5c3ccb98da66375c31605bdf5c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

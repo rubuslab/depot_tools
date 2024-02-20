@@ -125,8 +125,8 @@ class AutoninjaTest(trial_dir.TestCase):
         """
         goma_dir = os.path.join(self.root_dir, 'goma_dir')
         with mock.patch('subprocess.call', return_value=0), \
-            mock.patch('ninja.main', return_value=0) as ninja_main, \
-            mock.patch.dict(os.environ, {"GOMA_DIR": goma_dir}):
+             mock.patch('ninja.main', return_value=0) as ninja_main, \
+             mock.patch.dict(os.environ, {"GOMA_DIR": goma_dir}):
             out_dir = os.path.join('out', 'dir')
             write(os.path.join(out_dir, 'args.gn'), 'use_goma=true')
             write(

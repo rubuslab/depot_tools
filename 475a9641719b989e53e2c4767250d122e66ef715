@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0165bb6_a24d7e6b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-20T23:01:49Z",
+      "side": 1,
+      "message": "I might be wrong, but I don\u0027t think GetOldContents is actually used. It was introduced for OWNERS before gerrit owners plugin, and that\u0027s no longer required.\n\nSo, there\u0027s some dead code in depot_tools that can be cleaned up, and this should go away with that too.",
+      "revId": "475a9641719b989e53e2c4767250d122e66ef715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

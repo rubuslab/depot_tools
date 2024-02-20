@@ -16,8 +16,8 @@ import tarfile
 import threading
 import time
 
+from call_google_storage import Gsutil
 from download_from_google_storage import get_sha1
-from download_from_google_storage import Gsutil
 from download_from_google_storage import PrinterThread
 from download_from_google_storage import GSUTIL_DEFAULT_PATH
 

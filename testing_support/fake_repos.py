@@ -881,6 +881,27 @@ deps = {
             },
         )
 
+        self._commit_git(
+            'repo_22', {
+                'DEPS':
+                textwrap.dedent("""\
+        vars = {}
+        deps = {
+          'src/third_party/gcs_dep': {
+            'bucket': 'bucket1',
+            'file: 'hash123',
+            'dep_type': 'gcs',
+          },
+          'src/third_party/another_gcs_dep': {
+            'bucket': 'bucket100',
+            'file: 'Linux64/foo.tar.gz',
+            'dep_type': 'gcs',
+          }
+        },"""),
+                'origin':
+                'git/repo_22@2\n',
+            })
+
 
 class FakeRepoSkiaDEPS(FakeReposBase):
     """Simulates the Skia DEPS transition in Chrome."""

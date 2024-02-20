@@ -7,6 +7,7 @@ import os.path
 import sys
 import tempfile
 import unittest
+from unittest import mock
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)
@@ -23,6 +24,65 @@ class PresubmitSupportTest(unittest.TestCase):
             self.assertEqual(os.environ.get('PRESUBMIT_FOO_ENV', None),
                              'FOOBAR')
         self.assertIsNone(os.environ.get('PRESUBMIT_FOO_ENV', None))
+
+
+class ProvidedDiffChangeTest(unittest.TestCase):
+
+    def _create_change(self, diff):
+        with gclient_utils.temporary_directory() as tmpdir:
+            with gclient_utils.temporary_file() as tmp:
+                gclient_utils.FileWrite(tmp, diff, mode='w+')
+                options = mock.Mock(root=tmpdir,
+                                    all_files=False,
+                                    description="description",
+                                    files=None,
+                                    diff_file=tmp)
+                change = presubmit_support._parse_change(None, options)
+                assert isinstance(change, presubmit_support.ProvidedDiffChange)
+                return change
+
+    def test_old_contents_of_new_added_file_returns_empty(self):
+        diff = """
+diff --git a/bar b/bar
+new file mode 100644
+index 0000000..9daeafb
+--- /dev/null
++++ b/bar
+@@ -0,0 +2 @@
++added
++lines
+"""
+        change = self._create_change(diff)
+        self.assertEqual(change._affected_files[0].OldContents(), [])
+
+    def test_old_contents_of_deleted_file_returns_whole_file(self):
+        diff = """
+diff --git a/bar b/bar
+deleted file mode 100644
+index 3163ac1..0000000
+--- a/bar
++++ /dev/null
+@@ -2 +0,0 @@
+-deleted
+-lines
+"""
+        change = self._create_change(diff)
+        self.assertEqual(change._affected_files[0].OldContents(),
+                         ['deleted', 'lines'])
+
+    def test_old_contents_of_deleted_file_without_newline(self):
+        diff = """
+diff --git a/bar b/bar
+deleted file mode 100644
+index 3163ac1..0000000
+--- a/bar
++++ /dev/null
+@@ -1 +0,0 @@
+-deleted
+\ No newline at end of file
+"""
+        change = self._create_change(diff)
+        self.assertEqual(change._affected_files[0].OldContents(), ['deleted'])
 
 
 class TestParseDiff(unittest.TestCase):

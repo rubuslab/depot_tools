@@ -210,7 +210,7 @@ class FakeReposBase(object):
 
 class FakeRepos(FakeReposBase):
     """Implements populateGit()."""
-    NB_GIT_REPOS = 21
+    NB_GIT_REPOS = 22
 
     def populateGit(self):
         # Testing:
@@ -880,6 +880,25 @@ deps = {
 	url = invalid/repo_url.git"""
             },
         )
+
+        self._commit_git(
+            'repo_22', {
+                'DEPS': """
+vars = {}
+deps = {
+  'src/third_party/gcs_dep': {
+    'bucket': 'bucket1',
+    'file': 'hash123',
+    'dep_type': 'gcs',
+  },
+  'src/third_party/another_gcs_dep': {
+    'bucket': 'bucket100',
+    'file': 'Linux64/foo.tar.gz',
+    'dep_type': 'gcs',
+  }
+}""",
+                'origin': 'git/repo_22@2\n',
+            })
 
 
 class FakeRepoSkiaDEPS(FakeReposBase):

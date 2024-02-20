@@ -31,6 +31,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
         if not cwd:
             cwd = self.root_dir
         cmd = [GCLIENT_PATH] + cmd
+        import pdb;pdb.set_trace()
         process = subprocess2.Popen(cmd,
                                     cwd=cwd,
                                     env=self.env,
@@ -41,6 +42,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
         logging.debug("XXX: %s\n%s\nXXX" % (' '.join(cmd), stdout))
         logging.debug("YYY: %s\n%s\nYYY" % (' '.join(cmd), stderr))
 
+        logging.debug('cmd is ', cmd)
         if not error_ok:
             self.assertEqual(0, process.returncode, stderr)
 

@@ -34,6 +34,24 @@
       "parentUuid": "f08c7a9a_19a2ec63",
       "revId": "9b2b02bce43c2bdb02d7e104d567c513e4a78f2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "467a3bee_fcb954d8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-21T20:46:01Z",
+      "side": 1,
+      "message": "IMO, we should avoid checking change.scm \u003d\u003d \u0027git\u0027. But, I\u0027m not sure how feasible that is, and I think it\u0027s worth understanding that first.",
+      "parentUuid": "dfadfe59_27dabbbd",
+      "revId": "9b2b02bce43c2bdb02d7e104d567c513e4a78f2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

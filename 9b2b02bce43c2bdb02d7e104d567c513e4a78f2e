@@ -16,6 +16,24 @@
       "message": "I\u0027m a bit concerned if we do this - it can easily be abused, and we may end up not running many presubmits. And if our CI fleet gets to a point where .git is not materialized, we may have a ton more work due to this.\n\nAs for the dependent change, perhaps the fix could be so that recipe.py test run can work without .git.",
       "revId": "9b2b02bce43c2bdb02d7e104d567c513e4a78f2e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfadfe59_27dabbbd",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 892,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-21T19:56:21Z",
+      "side": 1,
+      "message": "Would there be a case that something like this is necessary, i.e. checks that cannot be reworked without .git and must be skipped? In those cases should people rely on plain `if change.scm \u003d\u003d \u0027git\u0027`?\n\n(also i\u0027ll rework the test so they work)",
+      "parentUuid": "f08c7a9a_19a2ec63",
+      "revId": "9b2b02bce43c2bdb02d7e104d567c513e4a78f2e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

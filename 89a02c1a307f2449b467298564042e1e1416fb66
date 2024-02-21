@@ -46,6 +46,30 @@
       },
       "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca3bdf73_70f09eb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-21T00:56:01Z",
+      "side": 1,
+      "message": "Yeah, we\u0027d need to make sure the retcode gets classified correctly as success/failure/infra_failure, so also something like changing https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:recipes/recipe_modules/presubmit/api.py;l\u003d187;drc\u003d0696c428b04513254d3b3e0b1fba5e5afdb11cf4 to fail on 2.\n\nAlso something that @ddoman@chromium.org had brought up was in the case this returns non-0, some Swarming tasks could be marked as infra failure instead of non-infra failure, but I\u0027m not confident how that would impact things down the line, especially with changes in the paragraph above",
+      "parentUuid": "11958b05_aaa79e8d",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

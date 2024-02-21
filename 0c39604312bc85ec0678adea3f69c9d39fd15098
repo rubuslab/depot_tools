@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b38c4d9a_e618add1",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1524627
+      },
+      "writtenOn": "2024-02-21T17:51:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "463ec7bc_b35f00c0",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "261a0fac_32b5a7ff",
@@ -66,6 +84,24 @@
       "writtenOn": "2024-02-13T23:06:33Z",
       "side": 1,
       "message": "python may be missing packages that we expect vpython to have, so we can\u0027t do this.\n\nif [[ $VPYTHON_BYPASS \u003d\u003d \"manually managed python not supported by chrome operations\" ]]\n\noffers a way to test bypassing vpython.",
+      "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17e72052_d83416c7",
+        "filename": "vpython3",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1524627
+      },
+      "writtenOn": "2024-02-21T17:51:20Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "261a0fac_32b5a7ff",
       "revId": "0c39604312bc85ec0678adea3f69c9d39fd15098",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -22,6 +22,30 @@
       },
       "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11958b05_aaa79e8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2024-02-21T00:24:19Z",
+      "side": 1,
+      "message": "That generally sounds good. For the recipe modifications, would that just be changing `if retcode \u003d\u003d 0:` to be `if retcode in (0, 2, 3):` instead, or are there other changes that need to be made?",
+      "parentUuid": "5b78090c_24935055",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,29 @@
       "message": "Hello, I believe all review comments have been addressed. Thank you.",
       "revId": "a30bff46df5105681cc63104dd2b0ebc65b12369",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d21f2025_61cb566b",
+        "filename": "cipd",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-21T18:24:19Z",
+      "side": 1,
+      "message": "nit: this comment is misleading - if envvar is set, then it\u0027s always executed.\n\n```suggestion\n# Run custom-built cipd client. This is useful when cipd is not available upstream\n# (i.e. unsupported platform).\n```",
+      "range": {
+        "startLine": 9,
+        "startChar": 30,
+        "endLine": 9,
+        "endChar": 56
+      },
+      "revId": "a30bff46df5105681cc63104dd2b0ebc65b12369",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

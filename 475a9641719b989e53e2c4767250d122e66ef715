@@ -34,6 +34,24 @@
       "parentUuid": "f0165bb6_a24d7e6b",
       "revId": "475a9641719b989e53e2c4767250d122e66ef715",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c7e5832_e0a2981e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-21T19:16:32Z",
+      "side": 1,
+      "message": "Ah, thanks - for some reason my search query didn\u0027t capture that. I\u0027m concerned we will end up implementing entire diffing logic, which may be very tricky.\n\nHave you looked into difflib, and is it applicable here?\n\nOther options could include requiring additional data to be provided, e.g. original file contents as well as the latest.",
+      "parentUuid": "eaa9f698_6a2474f8",
+      "revId": "475a9641719b989e53e2c4767250d122e66ef715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

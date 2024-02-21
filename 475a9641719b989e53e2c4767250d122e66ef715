@@ -52,6 +52,24 @@
       "parentUuid": "eaa9f698_6a2474f8",
       "revId": "475a9641719b989e53e2c4767250d122e66ef715",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab1eb102_dbaae62e",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-21T20:54:25Z",
+      "side": 1,
+      "message": "difflib doesn\u0027t seem to have a `patch` method, only `restore` which needs a diff produced by difflib to get the original contents. Also I somehow didn\u0027t realize git apply works without git workspace. Could we assume git binary is available even in non-git ws and rely on that instead?",
+      "parentUuid": "0c7e5832_e0a2981e",
+      "revId": "475a9641719b989e53e2c4767250d122e66ef715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

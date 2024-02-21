@@ -41,6 +41,7 @@ class GClientSmokeBase(fake_repos.FakeReposTestBase):
         logging.debug("XXX: %s\n%s\nXXX" % (' '.join(cmd), stdout))
         logging.debug("YYY: %s\n%s\nYYY" % (' '.join(cmd), stderr))
 
+        logging.debug('cmd is ', cmd)
         if not error_ok:
             self.assertEqual(0, process.returncode, stderr)
 

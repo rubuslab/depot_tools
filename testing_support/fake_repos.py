@@ -16,6 +16,7 @@ import random
 import re
 import socket
 import sys
+import tarfile
 import tempfile
 import textwrap
 import time
@@ -47,6 +48,9 @@ def read_tree(tree_root):
         for f in [join(root, f) for f in files if not f.startswith('.')]:
             filepath = f[len(tree_root) + 1:].replace(os.sep, '/')
             assert len(filepath) > 0, f
+            if tarfile.is_tarfile(join(root, f)):
+                tree[filepath] = 'tarfile'
+                continue
             with io.open(join(root, f), encoding='utf-8') as f:
                 tree[filepath] = f.read()
     return tree
@@ -210,7 +214,7 @@ class FakeReposBase(object):
 
 class FakeRepos(FakeReposBase):
     """Implements populateGit()."""
-    NB_GIT_REPOS = 21
+    NB_GIT_REPOS = 22
 
     def populateGit(self):
         # Testing:
@@ -880,6 +884,27 @@ deps = {
 	url = invalid/repo_url.git"""
             },
         )
+
+        self._commit_git(
+            'repo_22', {
+                'DEPS':
+                textwrap.dedent("""\
+        vars = {}
+        deps = {
+          'src/gcs_dep': {
+            'bucket': '123bucket',
+            'file': 'deadbeef',
+            'dep_type': 'gcs',
+          },
+          'src/another_gcs_dep': {
+            'bucket': '456bucket',
+            'file': 'Linux/llvmfile.tar.gz',
+            'dep_type': 'gcs',
+          },
+        }"""),
+                'origin':
+                'git/repo_22@1\n'
+            })
 
 
 class FakeRepoSkiaDEPS(FakeReposBase):

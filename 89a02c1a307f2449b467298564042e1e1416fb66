@@ -70,6 +70,53 @@
       },
       "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bd2912f_bb1363eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-02-21T05:41:55Z",
+      "side": 1,
+      "message": "First of all, the status of a Swarming task is marked as failed, if the given command process exits with a non-0 code. It\u0027s totally up to the executable\u0027s decision to return 0 (success) or non-0 (failure).\n\nSecondly, `git cl presubmit` also honors the exit code returned by the actual test executable. If the presubmit executable exists with 0, it exists with 0. If not, `git cl presubmit` exists with the non-0 exit code that the presubmit executable returned.\n\nTo me that, the test executable actually doesn\u0027t consider a unit test failure as a command failure, so that it returns 0, and this CL tries to change the executable\u0027s decision by changing the logic in `git cl presubmit`.\n\nIf possible, my first pick would be to update the presubmit test binaries such that it would actually return a non-0 exit code, when any of the tests failed. Returning a non-0 exit code (failure) for any warnings should also be an option passed to the presubmit executable. It\u0027d just be similar to `-Werr\u003dall` of gcc. I don\u0027t think `git cl presubmit` is the best place to add such an option.\n\nIf the above option is not available, I\u0027d consider creating a personal shell function. For example, you could run `git test` as follows.\n\n`git test run -x \"run_and_check_presubmit.sh\"`\n\n```\n#/bin/bash\n# run_and_check_presubmit.sh\ngit cl presubmit\nif ! [ $? -eq 0 ]; then\n  # something failed hard\n  exit $?\nfi\n\n# check if the output.json contains any failure or warning\n# if so, exit with 1 or 2.\n....\n```\n\nIf it\u0027s difficult to update the presubmit binaries to exit with a non-0 code in failures/warnings, and using run_and_check_presubmit.sh is not desirable, then please let us know. Then, this CL would be reasonable to roll out. (we still need to update the recipes with a stamp from browser infra teams, though)",
+      "parentUuid": "ca3bdf73_70f09eb9",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d73119ce_f0609d35",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4696,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-02-21T05:41:55Z",
+      "side": 1,
+      "message": "This calls sys.Exit() with the exit code of the presubmit hook, if exist_code \u003e 0. In other words, `git cl presubmit` exists with the same code that the presubmit command/hook exited with.\n\nIf the presubmit command exited with 0, but the json output, which `results` is generated from, contains errors/warnings, then I\u0027d claim that `git cl format` should consider that execution of the git cl presubmit command succeeded.\n\nThat said, I\u0027m still on the fence. Would you be able to use another command like\n\n\nThus, I\u0027d claim that the presubmit command should \nThe `results` is from the json_output of the presubmit command. If the command exited with 0, then I think this CL \n\n I\u0027d claim that git cl presubmit exists with the same exit code that the presubmit command/hooks exited with.",
+      "range": {
+        "startLine": 4696,
+        "startChar": 17,
+        "endLine": 4696,
+        "endChar": 24
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

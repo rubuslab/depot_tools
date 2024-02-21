@@ -98,6 +98,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a3cb4bd_ad846917",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2024-02-21T06:28:39Z",
+      "side": 1,
+      "message": "Thank you for the input! It seems like this CL has much more wider reaching implications than I expected.\n\nThe bash script to check output.json sounds reasonable. I was also possibly thinking of a flag which enables this behaviour, but considering that such functionality is possible through a bash script, I would personally prefer that we _didn\u0027t_ have this built-in.\n\nI\u0027ll probably abandon this CL, then. Thank you for taking a look!",
+      "parentUuid": "2bd2912f_bb1363eb",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "89a02c1a307f2449b467298564042e1e1416fb66",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d73119ce_f0609d35",
         "filename": "git_cl.py",
         "patchSetId": 2

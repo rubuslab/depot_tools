@@ -16,6 +16,24 @@
       "message": "Can we patch a file using temporary_file instead of in-place? That way, we don\u0027t need to worry about reversing the patch.",
       "revId": "f04e238ff79b7efdd44c81dd14060722a1a9e0cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "855845ce_92f1f617",
+        "filename": "presubmit_support.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 980,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-22T19:09:19Z",
+      "side": 1,
+      "message": "That should work for modified files, but I don\u0027t think that approach will work for deleted or added",
+      "parentUuid": "3e53432a_4d9b7fa1",
+      "revId": "f04e238ff79b7efdd44c81dd14060722a1a9e0cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

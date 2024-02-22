@@ -82,6 +82,7 @@
 __version__ = '0.7'
 
 import copy
+import hashlib
 import json
 import logging
 import optparse
@@ -91,6 +92,9 @@ import posixpath
 import pprint
 import re
 import sys
+import shutil
+import tarfile
+import tempfile
 import time
 import urllib.parse
 
@@ -748,6 +752,16 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        should_process=should_process,
                                        relative=use_relative_paths,
                                        condition=condition))
+            elif dep_type == 'gcs':
+                deps_to_add.append(
+                    GcsDependency(parent=self,
+                                  name=name,
+                                  bucket=dep_value['bucket'],
+                                  file=dep_value['file'],
+                                  custom_vars=self.custom_vars,
+                                  should_process=should_process,
+                                  relative=use_relative_paths,
+                                  condition=condition))
             else:
                 url = dep_value.get('url')
                 deps_to_add.append(
@@ -2479,6 +2493,146 @@ it or fix the checkout.
     @property
     def target_cpu(self):
         return self._enforced_cpu
+
+
+class GcsDependency(Dependency):
+    """A Dependency object that represents a single GCS bucket and file"""
+
+    def __init__(self, parent, name, bucket, file, custom_vars, should_process,
+                 relative, condition):
+        self.bucket = bucket
+        self.file = file
+        url = 'gs://{bucket}/{file}'.format(
+            bucket=self.bucket,
+            file=self.file,
+        )
+        super(GcsDependency, self).__init__(parent=parent,
+                                            name=name,
+                                            url=url,
+                                            managed=None,
+                                            custom_deps=None,
+                                            custom_vars=custom_vars,
+                                            custom_hooks=None,
+                                            deps_file=None,
+                                            should_process=should_process,
+                                            should_recurse=False,
+                                            relative=relative,
+                                            condition=condition)
+
+    #override
+    def run(self, revision_overrides, command, args, work_queue, options,
+            patch_refs, target_branches, skip_sync_revisions):
+        """Downloads GCS package."""
+        logging.info('GcsDependency(%s).run()' % self.name)
+        if not self.should_process:
+            return
+        self.DownloadGoogleStorage()
+        super(GcsDependency,
+              self).run(revision_overrides, command, args, work_queue, options,
+                        patch_refs, target_branches, skip_sync_revisions)
+
+    def GetSha1(self, filename):
+        return hashlib.sha1(filename.encode('utf-8')).hexdigest()
+
+    def WriteFilenameHash(self, sha1, hash_file):
+        with open(hash_file, 'w') as f:
+            f.write(sha1)
+            f.write('\n')
+
+    def DownloadGoogleStorage(self):
+        """Calls call_google_storage.py script."""
+        gcs_file_name = self.file.split('/')[-1]
+        root_dir = self.root.root_dir
+
+        # Directory of the extracted tarfile contents
+        output_dir = os.path.join(root_dir, self.name)
+        output_file = os.path.join(output_dir, gcs_file_name)
+
+        # Check if download and extract is needed
+        skip = True
+        # .tmp file is created just before extraction and removed just
+        # after extraction. If such file exists, it means the process
+        # was terminated mid-extraction and therefore needs to be
+        # extracted again.
+        if os.path.exists(output_dir + '.tmp'):
+            skip = False
+        if not os.path.exists(output_file):
+            skip = False
+
+        new_file_hash = self.GetSha1(self.file)
+        hash_file = os.path.join(output_dir, 'hash')
+        existing_hash = None
+        if os.path.exists(hash_file):
+            try:
+                with open(hash_file, 'r') as f:
+                    existing_hash = f.read().rstrip()
+            except IOError:
+                skip = False
+        else:
+            skip = False
+
+        if existing_hash != new_file_hash:
+            skip = False
+
+        if skip:
+            return
+
+        # Remove tarfile
+        if os.path.exists(output_file):
+            try:
+                os.remove(output_file)
+            except OSError:
+                print('Nevermind, cant delete ', output_file)
+
+        # Remove extracted contents
+        if os.path.exists(output_dir):
+            try:
+                shutil.rmtree(output_dir)
+            except OSError:
+                print('Nevermind, cant delete ', output_dir)
+        os.makedirs(output_dir)
+
+        print('calling gcs for ', self.name)
+        cmd = [
+            'vpython3',
+            '../../cr/depot_tools/call_google_storage.py',
+            '--bucket',
+            self.bucket,
+            '--file',
+            self.file,
+            '--output',
+            output_file,
+        ]
+        if os.getenv('GCLIENT_TEST') == '0':
+            subprocess2.call(cmd)
+        else:
+            # Create fake tar file and extracted tar contents
+            tmpdir = tempfile.mkdtemp()
+            copy_dir = os.path.join(tmpdir, self.name, 'extracted_dir')
+            if os.path.exists(copy_dir):
+                shutil.rmtree(copy_dir)
+            os.makedirs(copy_dir)
+            with open(os.path.join(copy_dir, 'extracted_file'), 'w+') as f:
+                f.write('extracted text')
+            with tarfile.open(output_file, "w:gz") as tar:
+                tar.add(copy_dir, arcname=os.path.basename(copy_dir))
+
+        with tarfile.open(output_file, 'r:*') as tar:
+            with open(output_dir + '.tmp', 'a'):
+                tar.extractall(path=output_dir)
+            os.remove(output_dir + '.tmp')
+        self.WriteFilenameHash(new_file_hash, hash_file)
+
+    #override
+    def GetScmName(self):
+        """Always 'gcs'."""
+        return 'gcs'
+
+    #override
+    def CreateSCM(self, out_cb=None):
+        """Create a Wrapper instance suitable for handling this GCS dependency."""
+        return gclient_scm.GcsWrapper(self.url, self.root.root_dir, self.name,
+                                      self.outbuf, out_cb)
 
 
 class CipdDependency(Dependency):

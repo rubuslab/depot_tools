@@ -31,6 +31,8 @@ import urllib.request
 ALLOWLISTED_CONFIGS = (
     "symbol_level",
     "use_goma",
+    "use_remoteexec",
+    "use_siso",
     "is_debug",
     "is_component_build",
     "enable_nacl",

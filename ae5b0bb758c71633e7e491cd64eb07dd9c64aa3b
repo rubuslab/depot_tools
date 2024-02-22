@@ -16,6 +16,42 @@
       "message": "Could you leave link to PDD around here?",
       "revId": "ae5b0bb758c71633e7e491cd64eb07dd9c64aa3b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e957c69a_6ad1aa2a",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-02-22T02:18:10Z",
+      "side": 1,
+      "message": "The PDD includes more relevant info than just GN args. So I added it in the doc at the top.",
+      "parentUuid": "8d1c0cf6_954a9b4e",
+      "revId": "ae5b0bb758c71633e7e491cd64eb07dd9c64aa3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cfcb3a7_69c2ee62",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-02-22T02:18:10Z",
+      "side": 1,
+      "message": "The PDD includes more relethan GN args",
+      "parentUuid": "8d1c0cf6_954a9b4e",
+      "revId": "ae5b0bb758c71633e7e491cd64eb07dd9c64aa3b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -5,14 +5,16 @@
 
 import os.path
 import sys
-import tempfile
 import unittest
+from unittest import mock
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)
 
 import gclient_utils
 import presubmit_support
+import subprocess2
+from testing_support import fake_repos
 
 
 class PresubmitSupportTest(unittest.TestCase):
@@ -23,6 +25,85 @@ class PresubmitSupportTest(unittest.TestCase):
             self.assertEqual(os.environ.get('PRESUBMIT_FOO_ENV', None),
                              'FOOBAR')
         self.assertIsNone(os.environ.get('PRESUBMIT_FOO_ENV', None))
+
+
+class ProvidedDiffChangeFakeRepo(fake_repos.FakeReposBase):
+
+    NB_GIT_REPOS = 1
+
+    def populateGit(self):
+        self._commit_git(
+            'repo_1', {
+                'to_be_modified': 'please change me\n',
+                'to_be_deleted': 'delete\nme\n',
+            })
+        self._commit_git(
+            'repo_1', {
+                'to_be_modified': 'changed me!\n',
+                'added': 'a new file\n',
+                'to_be_deleted': None,
+            })
+
+
+class ProvidedDiffChangeTest(fake_repos.FakeReposTestBase):
+
+    FAKE_REPOS_CLASS = ProvidedDiffChangeFakeRepo
+
+    def setUp(self):
+        super(ProvidedDiffChangeTest, self).setUp()
+        self.enabled = self.FAKE_REPOS.set_up_git()
+        if not self.enabled:
+            self.skipTest('git fake repos not available')
+        self.repo = os.path.join(self.FAKE_REPOS.git_base, 'repo_1')
+        diff = subprocess2.check_output(['git', 'diff', 'HEAD^'],
+                                        cwd=self.repo).decode('utf-8')
+        self.change = self._create_change(diff)
+
+    def _create_change(self, diff):
+        with gclient_utils.temporary_file() as tmp:
+            gclient_utils.FileWrite(tmp, diff, mode='w+')
+            options = mock.Mock(root=self.repo,
+                                all_files=False,
+                                description='description',
+                                files=None,
+                                diff_file=tmp)
+            change = presubmit_support._parse_change(None, options)
+            assert isinstance(change, presubmit_support.ProvidedDiffChange)
+            return change
+
+    def _get_affected_file_from_name(self, change, name):
+        for file in change._affected_files:
+            if file.LocalPath() == name:
+                return file
+        self.fail(f'No file named {name}')
+
+    def test_old_contents_of_added_file_returns_empty(self):
+        affected_file = self._get_affected_file_from_name(self.change, 'added')
+        self.assertEqual(affected_file.OldContents(), [])
+
+    def test_old_contents_of_deleted_file_returns_whole_file(self):
+        affected_file = self._get_affected_file_from_name(
+            self.change, 'to_be_deleted')
+        self.assertEqual(affected_file.OldContents(), ['delete', 'me'])
+
+    def test_old_contents_of_modified_file(self):
+        affected_file = self._get_affected_file_from_name(
+            self.change, 'to_be_modified')
+        self.assertEqual(affected_file.OldContents(), ['please change me'])
+
+    def test_old_contents_of_bad_diff_raises_runtimeerror(self):
+        diff = """
+diff --git a/foo b/foo
+new file mode 100644
+index 0000000..9daeafb
+--- /dev/null
++++ b/foo
+@@ -0,0 +1 @@
++add
+"""
+        change = self._create_change(diff)
+        with self.assertRaises(RuntimeError):
+            change._affected_files[0].OldContents()
 
 
 class TestParseDiff(unittest.TestCase):

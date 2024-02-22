@@ -743,20 +743,53 @@ def repo_root():
 
 
 def upstream_default():
-    """Returns the default branch name of the origin repository."""
+    """
+    Returns the default branch name of the origin repository.
+    1. Check if this is being run in a "large" repo that has many branches/tags.
+    If so, return the default upstream branch.
+     - This special-handling is done for repos like Chromium, because
+     `git remote show` can take a long time (>20 seconds) due to the large
+     number of branches/tags.
+     - NOTE: The URLs in this list are assumed to have the default branch name.
+    2. Use `git remote` to determine the upstream repository name.
+    3. Use `git remote show [remote name]` to determine the default branch name.
+
+    If the above steps fail to build a good upstream default name, return a
+    sensible default.
+    """
+    # Repos in this list are assumed to have the default upstream branch name.
+    LARGE_REPO_URLS = [
+        'https://chromium.googlesource.com/chromium/src.git',  # Chromium
+    ]
+    DEFAULT_UPSTREAM_BRANCH = 'origin/main'
+
+    # Special handling for repos with many branches/tags due to
+    # `git remote show` being very slow.
     try:
-        ret = run('rev-parse', '--abbrev-ref', 'origin/HEAD')
-        # Detect if the repository migrated to main branch
-        if ret == 'origin/master':
-            try:
-                ret = run('rev-parse', '--abbrev-ref', 'origin/main')
-                run('remote', 'set-head', '-a', 'origin')
-                ret = run('rev-parse', '--abbrev-ref', 'origin/HEAD')
-            except subprocess2.CalledProcessError:
-                pass
-        return ret
+        remote_url = run('config', '--get', 'remote.origin.url')
+        if remote_url in LARGE_REPO_URLS:
+            return DEFAULT_UPSTREAM_BRANCH
     except subprocess2.CalledProcessError:
-        return 'origin/main'
+        # Missing remote.origin.url is not an error.
+        pass
+
+    # For all other repos, find the upstream branch name.
+    remotes = run('remote').split('\n')
+    remote = 'origin' if 'origin' in remotes else remotes[0]
+    if len(remote) == 0:
+        # Failed to get the head branch, so return a sensible default.
+        return DEFAULT_UPSTREAM_BRANCH
+
+    remote_branches = run('remote', 'show', remote).split('\n')
+    head_branch = ''
+    for line in remote_branches:
+        if 'HEAD branch:' in line:
+            head_branch = line.split()[-1]
+    if len(head_branch) == 0:
+        # Failed to get the head branch, so return a sensible default.
+        return DEFAULT_UPSTREAM_BRANCH
+
+    return remote + '/' + head_branch
 
 
 def root():

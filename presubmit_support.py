@@ -977,8 +977,28 @@ class _ProvidedDiffCache(_DiffCache):
 
     def GetOldContents(self, path, local_root):
         """Get the old version for a particular path."""
-        # TODO(gavinmak): Implement with self._diff.
-        return ''
+        full_path = os.path.join(local_root, path)
+        diff = self.GetDiff(path, local_root)
+        if not diff:
+            if os.path.isfile(full_path):
+                return gclient_utils.FileRead(full_path)
+            return ''
+
+        old_contents = ''
+        with gclient_utils.temporary_file() as diff_file:
+            gclient_utils.FileWrite(diff_file, diff)
+            try:
+                scm.GIT.Capture(['apply', '--reverse', '--check', diff_file],
+                                cwd=local_root)
+            except subprocess.CalledProcessError:
+                raise RuntimeError('Provided diff does not apply cleanly.')
+
+            scm.GIT.Capture(['apply', '--reverse', diff_file], cwd=local_root)
+            if os.path.isfile(full_path):
+                old_contents = gclient_utils.FileRead(full_path)
+            scm.GIT.Capture(['apply', diff_file], cwd=local_root)
+
+        return old_contents
 
 
 class AffectedFile(object):
@@ -2064,10 +2084,10 @@ def _parse_change(parser, options):
         options.name, options.description, options.root, change_files,
         options.issue, options.patchset, options.author
     ]
-    if change_scm == 'git':
-        return GitChange(*change_args, upstream=options.upstream)
     if diff:
         return ProvidedDiffChange(*change_args, diff=diff)
+    if change_scm == 'git':
+        return GitChange(*change_args, upstream=options.upstream)
     return Change(*change_args)
 
 
@@ -2163,6 +2183,7 @@ def _process_diff_file(diff_file):
             action = 'M'
         change_files.append((action, file))
     return diff, change_files
+
 
 @contextlib.contextmanager
 def setup_environ(kv: Mapping[str, str]):

@@ -52,6 +52,24 @@
       "parentUuid": "08a05f0d_e0d761db",
       "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7c49d08f_571b835f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-23T00:45:57Z",
+      "side": 1,
+      "message": "Yeah, you\u0027ll at least need to specify Gerrit info to get owners presubmit checks to pass. I think it\u0027s worth it to have this flag if you\u0027ll use the json output in something like `run_and_check_presubmit.sh`.",
+      "parentUuid": "db0967c8_0e182a31",
+      "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

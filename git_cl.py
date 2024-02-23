@@ -2210,7 +2210,10 @@ class Changelist(object):
         remote_url = self.GetRemoteUrl()
         if not remote_url:
             return None
-        return urllib.parse.urlparse(remote_url).netloc
+        parsed = urllib.parse.urlparse(remote_url)
+        if parsed.scheme == 'sso':
+            return parsed.netloc + '.googlesource.com'
+        return parsed.netloc
 
     def GetCodereviewServer(self):
         if not self._gerrit_server:

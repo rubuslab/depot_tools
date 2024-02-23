@@ -34,6 +34,24 @@
       "parentUuid": "9c088e40_2b551451",
       "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0967c8_0e182a31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2024-02-23T00:35:32Z",
+      "side": 1,
+      "message": "Ah, `git cl upload` does have some nicities like getting the Gerrit project / branch / URL, author and CL description to pass it into presubmit_support.py\n\nDo you think it is worth the maintenance cost of including this flag in `git cl upload`?",
+      "parentUuid": "08a05f0d_e0d761db",
+      "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

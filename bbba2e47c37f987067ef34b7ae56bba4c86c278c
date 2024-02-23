@@ -16,6 +16,24 @@
       "message": "FYI `git cl presubmit` runs presubmit_support.py which actually handles running presubmit checks. It has a --json_output flag that you could use directly if you don\u0027t need the extra functionality git cl provides: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:presubmit_support.py;l\u003d2273;drc\u003d62dc9f462e4465acf1bef9b95c285a179f75ce47\n\ngit cl presubmit uses that flag to output to a temp file:https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d1741;drc\u003db1b1a43f071dc4888070cae0c983c9bd333c5db6",
       "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08a05f0d_e0d761db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2024-02-23T00:31:22Z",
+      "side": 1,
+      "message": "Yep, I saw that, but thought that it wasn\u0027t an \"official\" way of running presubmit hooks from the command line. Thanks - will abandon this CL too :P",
+      "parentUuid": "9c088e40_2b551451",
+      "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -70,6 +70,24 @@
       "parentUuid": "db0967c8_0e182a31",
       "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd313426_ea5dedad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1394418
+      },
+      "writtenOn": "2024-02-23T00:47:30Z",
+      "side": 1,
+      "message": "Thanks! Will un-abandon this CL.",
+      "parentUuid": "7c49d08f_571b835f",
+      "revId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

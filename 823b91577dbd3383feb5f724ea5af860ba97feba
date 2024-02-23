@@ -3,6 +3,86 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "80c85c1a_351b1145",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-23T17:40:02Z",
+      "side": 1,
+      "message": "If we support arbitrary filenames, we should also require sha1 or sha256 checksum so we can validate the content on remote wasn\u0027t tampered with.",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95da54be_d69045de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-23T17:40:02Z",
+      "side": 1,
+      "message": "nit: replace `file` with `path`.",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40e23656_792796f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-23T17:40:02Z",
+      "side": 1,
+      "message": "Where is node_linux_x64 coming from? Is that a directory inside tar_file.gz? If so, this should be updated to just say its extracted in the path.",
+      "range": {
+        "startLine": 29,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 59
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3a90d40_a2f8aa01",
+        "filename": "call_google_storage.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-23T17:40:02Z",
+      "side": 1,
+      "message": "This can be removed, since 3.8+ is required (soon 3.11)",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 64
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e5b8ba45_60d551f4",
         "filename": "gclient.py",
         "patchSetId": 21
@@ -89,6 +169,23 @@
         "endLine": 2597,
         "endChar": 58
       },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8fc531f_2d24a08a",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-23T17:40:02Z",
+      "side": 1,
+      "message": "This should be avoided as it adds business logic for tests into the production code. Perhaps we just mock subprocess2.call, or have a helper function _call_google_storage that can be easily mocked (ie content of this if block would go into the mock).",
       "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

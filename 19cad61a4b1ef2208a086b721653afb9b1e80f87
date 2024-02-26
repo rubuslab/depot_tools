@@ -34,6 +34,24 @@
       "parentUuid": "97245b7e_e2c0a14c",
       "revId": "19cad61a4b1ef2208a086b721653afb9b1e80f87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca5a062d_80b964e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-26T20:52:42Z",
+      "side": 1,
+      "message": "Can you try adding `gerrit.skipEnsureAuthenticated` to your git config?\n\n```\n.git/config\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\n\n[gerrit]\n    skip-ensure-authenticated \u003d True\n```\n\nThis should fix your issue.",
+      "parentUuid": "0133cf8c_18224025",
+      "revId": "19cad61a4b1ef2208a086b721653afb9b1e80f87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

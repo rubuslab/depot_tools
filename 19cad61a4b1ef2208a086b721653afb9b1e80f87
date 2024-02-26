@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97245b7e_e2c0a14c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-26T18:37:30Z",
+      "side": 1,
+      "message": "Can you add more context on which issue this fixes or link a bug? Technically https://crrev.com/c/4404933 should do this when skip-ensure-authenticated is set, curious which case it misses.",
+      "revId": "19cad61a4b1ef2208a086b721653afb9b1e80f87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

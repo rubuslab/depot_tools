@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "493e148b_edd09c1f",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-26T22:23:15Z",
+      "side": 1,
+      "message": "What does this fix? afaik, `ensureAuthenticated` fn doesn\u0027t work for sso:// URLs (unless we have the .gitcookies too). Is there a reason for running this check for sso instead of not just not logging for it?",
+      "revId": "46ffd1bca1d07cd455ebfb78d14243273b2a8ad9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -70,6 +70,24 @@
       "parentUuid": "ca5a062d_80b964e2",
       "revId": "19cad61a4b1ef2208a086b721653afb9b1e80f87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58110a37_9e1d3234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-26T21:23:24Z",
+      "side": 1,
+      "message": "\u003e  Do you think this could be made the default for sso:// URLs?\n\nGood point, I agree making this default for sso:// is a good idea given this is required for sso:// anyway. I will send out a CL for this.",
+      "parentUuid": "82f14e35_dd8977c1",
+      "revId": "19cad61a4b1ef2208a086b721653afb9b1e80f87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

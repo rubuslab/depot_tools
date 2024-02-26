@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "93b3d90e_b6fad5ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "This was previously discussed with Joanna. Would it be wrong to expect that filenames should be changed by the user upon updating the contents? This would also reduce the toil from requiring a hash and expecting the hash to be produced from the correct hash constructor.",
+      "parentUuid": "80c85c1a_351b1145",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21
@@ -81,6 +99,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb5765c1_8dab7939",
+        "filename": "call_google_storage.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3a90d40_a2f8aa01",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 64
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e5b8ba45_60d551f4",
@@ -104,6 +146,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bed6815_4d99370a",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2558,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Yes, good point. Removed .tmp for hashfile",
+      "parentUuid": "e5b8ba45_60d551f4",
+      "range": {
+        "startLine": 2553,
+        "startChar": 9,
+        "endLine": 2558,
+        "endChar": 24
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "be356d66_7bb17558",
@@ -117,6 +183,30 @@
       "writtenOn": "2024-02-22T22:24:27Z",
       "side": 1,
       "message": "I think it would make sense for this logic to be pulled into a separate function, for readability but also it would let us return `return False` early and skip evaluating other conditions.",
+      "range": {
+        "startLine": 2551,
+        "startChar": 8,
+        "endLine": 2578,
+        "endChar": 18
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14db9fa6_9b65918c",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2578,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be356d66_7bb17558",
       "range": {
         "startLine": 2551,
         "startChar": 8,
@@ -152,6 +242,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4a48bc10_575ee499",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2593,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Hmm looks like it would raise a FileExistsError in that case. If it\u0027s okay with you, we can just remove the try/except around rmtree and let any OSErrors raise.",
+      "parentUuid": "0b8260cc_05e8455f",
+      "range": {
+        "startLine": 2591,
+        "startChar": 0,
+        "endLine": 2593,
+        "endChar": 31
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "48ea7e8e_2990aa3e",
         "filename": "gclient.py",
         "patchSetId": 21
@@ -163,6 +277,30 @@
       "writtenOn": "2024-02-22T22:24:27Z",
       "side": 1,
       "message": "this should be replaced by something like:\nos.path.join(DEPOT_TOOLS, \u0027call_google_storage.py\u0027)\n\ne.g.\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d74?q\u003d%22%27vpython3%27%22\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools",
+      "range": {
+        "startLine": 2597,
+        "startChar": 12,
+        "endLine": 2597,
+        "endChar": 58
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4752547a_8f099dfb",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2597,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48ea7e8e_2990aa3e",
       "range": {
         "startLine": 2597,
         "startChar": 12,
@@ -192,6 +330,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c9c85e4_9689f927",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Mocking this out gets complex as we\u0027d also have to mock out the tarfile and the extracted contents. With the current state, we\u0027re able to assert that the tarfile contents are extracted in the proper place. If everything were mocked, the test wouldn\u0027t be able to check its local dir to assert that.\n\nTo make this more readable though, I can move these lines into a separate helper function. What do you think?",
+      "parentUuid": "f8fc531f_2d24a08a",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6762730f_8447e937",
         "filename": "gclient.py",
         "patchSetId": 21
@@ -203,6 +359,30 @@
       "writtenOn": "2024-02-22T22:24:27Z",
       "side": 1,
       "message": "i\u0027m can\u0027t figure out what this is for. can you explain/add a comment in the code?",
+      "range": {
+        "startLine": 2620,
+        "startChar": 11,
+        "endLine": 2620,
+        "endChar": 48
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "546faa1b_80998eb2",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2620,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-26T18:25:15Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "6762730f_8447e937",
       "range": {
         "startLine": 2620,
         "startChar": 11,

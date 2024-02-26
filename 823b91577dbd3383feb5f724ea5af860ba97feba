@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca1533ef_e1781e10",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-26T23:31:36Z",
+      "side": 1,
+      "message": "Having a checksum has other benefits, e.g. from a security perspective it ensures that the content wasn\u0027t tampered with.\n\n\u003e Would it be wrong to expect that filenames should be changed by the user upon updating the contents?\n\nIf there\u0027s no enforcement on this, based on Murphy\u0027s law, someone will make a mistake and override a file.",
+      "parentUuid": "93b3d90e_b6fad5ab",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21
@@ -342,6 +360,24 @@
       "side": 1,
       "message": "Mocking this out gets complex as we\u0027d also have to mock out the tarfile and the extracted contents. With the current state, we\u0027re able to assert that the tarfile contents are extracted in the proper place. If everything were mocked, the test wouldn\u0027t be able to check its local dir to assert that.\n\nTo make this more readable though, I can move these lines into a separate helper function. What do you think?",
       "parentUuid": "f8fc531f_2d24a08a",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "896bd9c3_23f22d38",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-26T23:31:36Z",
+      "side": 1,
+      "message": "Then, a fake is better option. E.g. make subprocess2.call to place a tar file in output_file. So, something like:\n\n```\ndef test():\n   subprocess2.call \u003d lambda *args, **xargs: _create_test_tar()\n```\n\nIf there are other subprocess2.call calls, we can always extract that into its own method.",
+      "parentUuid": "1c9c85e4_9689f927",
       "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

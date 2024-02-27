@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60c58313_b1fd042c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-27T20:31:51Z",
+      "side": 1,
+      "message": "is there a reason we don\u0027t want to warn about not checking sso urls?",
+      "range": {
+        "startLine": 2290,
+        "startChar": 7,
+        "endLine": 2293,
+        "endChar": 18
+      },
+      "revId": "b69ff64ddff624b55d908129817371a225ec6322",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

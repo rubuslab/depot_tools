@@ -16,6 +16,24 @@
       "message": "nit: If is not file, we can just return an empty string, can\u0027t we? That way, we don\u0027t need to have two if blocks in `with gclient_utils.temporary_directory() as tmp_dir`",
       "revId": "0f9f61b289512c2ab1a4e8c42196c7209a4da3a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d5bb7db_c92dcca6",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-02-27T20:53:41Z",
+      "side": 1,
+      "message": "Do you mean returning `if not is_file` on L988? Doesn\u0027t it still need to get the contents of the file from the diff before the file was deleted?",
+      "parentUuid": "3449d73a_55897e6b",
+      "revId": "0f9f61b289512c2ab1a4e8c42196c7209a4da3a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

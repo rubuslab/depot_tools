@@ -33,6 +33,23 @@
       "message": "I removed the reordering of the messages.\nI still believe it would be better to list branches before stating that we’ll apply some command to them. However, I also believe that the things you can type (enter or n) should be the last element of the messages, so reordering was not improving this.",
       "revId": "747f42dd3c158cf98fca33acc3a2ada631af1794",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c7e55f7_0890f521",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-27T00:53:23Z",
+      "side": 1,
+      "message": "Removing myself since this change has been unsubmitted for well over 9 months.",
+      "revId": "747f42dd3c158cf98fca33acc3a2ada631af1794",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

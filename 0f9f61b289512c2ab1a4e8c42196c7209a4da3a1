@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3449d73a_55897e6b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 989,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-27T01:12:24Z",
+      "side": 1,
+      "message": "nit: If is not file, we can just return an empty string, can\u0027t we? That way, we don\u0027t need to have two if blocks in `with gclient_utils.temporary_directory() as tmp_dir`",
+      "revId": "0f9f61b289512c2ab1a4e8c42196c7209a4da3a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

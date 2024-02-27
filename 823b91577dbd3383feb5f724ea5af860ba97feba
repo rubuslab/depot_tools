@@ -400,6 +400,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45e1a69a_0063bd8b",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-27T22:00:18Z",
+      "side": 1,
+      "message": "Ah, sorry - I didn\u0027t realize we invoke gclient.py from gclient smoketest. That will be very difficult to override, so I think we can keep this.",
+      "parentUuid": "0c72ceaf_404c0887",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6762730f_8447e937",

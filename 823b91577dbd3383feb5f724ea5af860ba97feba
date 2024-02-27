@@ -384,6 +384,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0c72ceaf_404c0887",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2605,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-27T17:44:48Z",
+      "side": 1,
+      "message": "I\u0027m having trouble with reassigning the subprocess2.call from within the test file. I believe it\u0027s because gclient sync is called by a subprocess2.Popen call (https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:tests/gclient_smoketest_base.py;l\u003d34?q\u003dgclient_smoke\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools) instead of the `gclient` module being imported into the test file and called.\nDo you have a workaround?",
+      "parentUuid": "896bd9c3_23f22d38",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6762730f_8447e937",
         "filename": "gclient.py",
         "patchSetId": 21

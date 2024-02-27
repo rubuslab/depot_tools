@@ -22,6 +22,30 @@
       },
       "revId": "b69ff64ddff624b55d908129817371a225ec6322",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0f6e1b1_93de6c7b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-02-27T21:50:41Z",
+      "side": 1,
+      "message": "The `EnsureAuthenticated` fn fails for sso URLs in our current implementation. This means users using sso:// either have to push manually or set `gerrit.skip-ensure-authenticated \u003d True` and this change just reduces that burden. Given the AI here is for us to update depot_tools to check for sso:// certs too along with cookies and nothing for the user to do, I feel a warning might be noisy.",
+      "parentUuid": "60c58313_b1fd042c",
+      "range": {
+        "startLine": 2290,
+        "startChar": 7,
+        "endLine": 2293,
+        "endChar": 18
+      },
+      "revId": "b69ff64ddff624b55d908129817371a225ec6322",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

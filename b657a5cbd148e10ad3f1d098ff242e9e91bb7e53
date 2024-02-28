@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a5841b9_d72bdd45",
+        "filename": "gclient.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2623,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-28T22:40:04Z",
+      "side": 1,
+      "message": "Make this compatible for win",
+      "range": {
+        "startLine": 2620,
+        "startChar": 12,
+        "endLine": 2623,
+        "endChar": 13
+      },
+      "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -145,6 +145,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b136c418_239534b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-28T18:57:48Z",
+      "side": 1,
+      "message": "+1 on having algorithm in the name.\n\nAs we are doing this, I suggest we use sha256 as it\u0027s more secure, so `sha256sum`?",
+      "parentUuid": "29291be8_face2964",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

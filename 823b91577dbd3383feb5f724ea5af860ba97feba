@@ -127,6 +127,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "29291be8_face2964",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-28T18:44:34Z",
+      "side": 1,
+      "message": "actually sorry, \nwe should support arbitrary filenames and add a new field for the checksum since the GCS stuff downloaded from non downalod_from_google_storage may not be following this (filename \u003d checksum)\n\ni don\u0027t have strong feelings about the name. though seems useful to have sha1 in the name so it\u0027s clear which algorithm we expect?",
+      "parentUuid": "2c2cd7a2_9cd164c6",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

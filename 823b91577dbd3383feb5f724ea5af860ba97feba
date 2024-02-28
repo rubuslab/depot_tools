@@ -235,6 +235,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "563b08ff_c08ac24e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-28T19:28:23Z",
+      "side": 1,
+      "message": "so archive owners can use it to get sha256 when they roll a new versions of a GCS archive to DEPS?\n\nif it\u0027s used by gclient.py and it only takes in the filename, is the whole \"call_google_storage\" process gonna download an archive file from GCS twice? once for getting contents and again for getting contents to do sha256 verification?",
+      "parentUuid": "aadb2b4c_17bc5b35",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

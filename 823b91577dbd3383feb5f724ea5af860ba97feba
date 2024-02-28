@@ -181,6 +181,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "921281aa_9095ada2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-02-28T19:06:04Z",
+      "side": 1,
+      "message": "Technically, file names can be whatever (including sha1), but the sha256 sum should be computed based on the file content (and not filename), and it should match sha256 field in DEPS. So, it should work with existing archives. e.g.\n\ndownload gs://foo/bar/maybe_sha1.tar.gz -\u003e sha256sum maybe_sha1.tar.gz -\u003e compare its result with entry in DEPS.\n\nThis also means that we\u0027d need to compute sha256s for packages that are being moved to DEPS, but that can be automated.",
+      "parentUuid": "ea1806d7_707c2bdf",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

@@ -199,6 +199,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02fb156c_6950d0b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-28T19:11:56Z",
+      "side": 1,
+      "message": "oh right, i was thinking that this would have to work with archives from old DEPS but that makes no sense. ok sha256",
+      "parentUuid": "921281aa_9095ada2",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

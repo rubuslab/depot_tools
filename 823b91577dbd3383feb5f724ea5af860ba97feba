@@ -163,6 +163,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea1806d7_707c2bdf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-28T18:59:47Z",
+      "side": 1,
+      "message": "wouldn\u0027t moving to sha256 make this not work with existing GCS archives? which are named based on their sha1 ?",
+      "parentUuid": "b136c418_239534b7",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21

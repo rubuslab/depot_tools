@@ -22,6 +22,29 @@
       },
       "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "12524712_bee85c2f",
+        "filename": "gclient_eval.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-28T23:02:31Z",
+      "side": 1,
+      "message": "nit: I prefer something like \"object_name\" \n\nthat seems to be what it\u0027s actually called in GCS. https://cloud.google.com/storage/docs/json_api/v1/objects\n\nbut i mostly just think \"path\" is confusing. \nfolders don\u0027t officially seem to be a thing. GCS just allows \"/\u0027 to give the illusion of folders. https://cloud.google.com/storage/docs/objects#namespace",
+      "range": {
+        "startLine": 137,
+        "startChar": 13,
+        "endLine": 137,
+        "endChar": 17
+      },
+      "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

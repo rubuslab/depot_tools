@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "13f00640_8f0c6f69",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-28T18:11:13Z",
+      "side": 1,
+      "message": "Okay, I\u0027ll add in a check for this. Regarding naming, how should this content hash be called? Some options `content_hash`, `checksum_hash`",
+      "parentUuid": "ca1533ef_e1781e10",
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "40e23656_792796f1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 21
@@ -296,6 +314,30 @@
       "side": 1,
       "message": "i\u0027m fine with this",
       "parentUuid": "4a48bc10_575ee499",
+      "range": {
+        "startLine": 2591,
+        "startChar": 0,
+        "endLine": 2593,
+        "endChar": 31
+      },
+      "revId": "823b91577dbd3383feb5f724ea5af860ba97feba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cde33da7_87d07fb5",
+        "filename": "gclient.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2593,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-28T18:11:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0d2dadb_bb85865e",
       "range": {
         "startLine": 2591,
         "startChar": 0,

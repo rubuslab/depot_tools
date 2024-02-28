@@ -16,6 +16,24 @@
       "message": "hi this CL has broken my workflow\n\n`use_goma can only be used for ChromeOS builds now. Use use_remoteexec\u003dtrue instead for other builds. ` error this morning\n\nI believed that b/316921158 was blocking the rollout of reclient, can this CL be reverted until this is fixed?\n\nIn the meantime I have done a local revert of this in my workspace but I don\u0027t think that\u0027s a sustainable solution.\n\nThanks!",
       "revId": "6b84fbfb201f8fd99c3d049328615943a7df3593",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "679ca4ed_b935c0da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1160859
+      },
+      "writtenOn": "2024-02-28T17:47:32Z",
+      "side": 1,
+      "message": "I think https://chromium-review.googlesource.com/c/chromium/src/+/5329027 needs to be reverted too.",
+      "parentUuid": "2341f3de_e2fc34a2",
+      "revId": "6b84fbfb201f8fd99c3d049328615943a7df3593",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

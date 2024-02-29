@@ -117,6 +117,30 @@
       },
       "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce1fcbc1_8008a03b",
+        "filename": "gclient_eval.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-29T18:31:59Z",
+      "side": 1,
+      "message": "Ohh I see. Okay if it\u0027s not a real dir in GCS then yes `object_name` would make more sense. I can change it to that.",
+      "parentUuid": "4a53efa8_5e06fe0e",
+      "range": {
+        "startLine": 137,
+        "startChar": 13,
+        "endLine": 137,
+        "endChar": 17
+      },
+      "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

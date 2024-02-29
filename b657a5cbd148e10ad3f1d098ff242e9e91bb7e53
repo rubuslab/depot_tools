@@ -69,6 +69,30 @@
       },
       "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c53cc4a3_c09d8590",
+        "filename": "gclient_eval.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-02-29T18:12:36Z",
+      "side": 1,
+      "message": "What about `object_path`? For some deps, the object is in the first layer so it\u0027s just the object name, but for others it is an actual path like `\u003cbucket\u003e/Linux64/\u003cobjectname\u003e`.",
+      "parentUuid": "12524712_bee85c2f",
+      "range": {
+        "startLine": 137,
+        "startChar": 13,
+        "endLine": 137,
+        "endChar": 17
+      },
+      "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

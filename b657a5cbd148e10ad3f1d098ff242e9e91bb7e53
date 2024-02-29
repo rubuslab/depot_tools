@@ -93,6 +93,30 @@
       },
       "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a53efa8_5e06fe0e",
+        "filename": "gclient_eval.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-02-29T18:24:50Z",
+      "side": 1,
+      "message": "in the example you gave, the GCS object name would be \"Linux64/foo\". \n\"Linux64/\" is not a real directory. GCS just allows \"/\" in their object names to give the illusion of directories.\n\nBut I don\u0027t feel strongly and the code is already splitting by \"/\" to name the output_file, treating \"Linux64\" as a dir. \n\nI do prefer \"object_path\" over just \"path\" though.",
+      "parentUuid": "c53cc4a3_c09d8590",
+      "range": {
+        "startLine": 137,
+        "startChar": 13,
+        "endLine": 137,
+        "endChar": 17
+      },
+      "revId": "b657a5cbd148e10ad3f1d098ff242e9e91bb7e53",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

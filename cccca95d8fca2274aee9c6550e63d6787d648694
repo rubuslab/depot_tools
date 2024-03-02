@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29e6d18f_23b49c04",
+        "filename": "autoninja.bat",
+        "patchSetId": 6
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-03-02T17:29:37Z",
+      "side": 1,
+      "message": "Why is vpython being used here? Note the comment on line 28. I think that the comment is correct. I filed crbug.com/327625559 to track this.",
+      "revId": "cccca95d8fca2274aee9c6550e63d6787d648694",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

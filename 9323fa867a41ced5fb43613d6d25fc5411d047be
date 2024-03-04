@@ -52,6 +52,24 @@
       "parentUuid": "a7ed1148_41023b15",
       "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65a1be0b_7ad60e36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-04T22:48:50Z",
+      "side": 1,
+      "message": "Just saw this thread. With source team\u0027s effort on [improving gclient sync no-op time](go/gclient-sync-no-ops), we implemented this caching and started using it within gclient sync. So I guess just rebasing isn\u0027t going fix this CL. On the positive side, most of the git config caching logic (with tests) are already in depot_tools and the only update that needs to be landed is using the cache within git_map_branches.",
+      "parentUuid": "288b05cd_ee87cae6",
+      "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

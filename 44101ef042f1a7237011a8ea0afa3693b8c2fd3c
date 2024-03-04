@@ -22,6 +22,30 @@
       },
       "revId": "44101ef042f1a7237011a8ea0afa3693b8c2fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb8d9c9b_0151fa70",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 1369666
+      },
+      "writtenOn": "2024-03-04T13:20:18Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "d67bfe11_cabd4705",
+      "range": {
+        "startLine": 1314,
+        "startChar": 20,
+        "endLine": 1314,
+        "endChar": 55
+      },
+      "revId": "44101ef042f1a7237011a8ea0afa3693b8c2fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

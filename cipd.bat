@@ -16,6 +16,10 @@ set PLATFORM_OVERRIDE_FILE=%~dp0.cipd_client_platform
 ::   set CIPD_PLATFORM=windows-arm64
 :: )
 
+if %PROCESSOR_ARCHITECTURE%==x86 (
+  set CIPD_PLATFORM=windows-386
+)
+
 :: A value in .cipd_client_platform overrides the "guessed" platform.
 if exist "%PLATFORM_OVERRIDE_FILE%" (
   for /F usebackq %%l in ("%PLATFORM_OVERRIDE_FILE%") do (

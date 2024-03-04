@@ -16,6 +16,23 @@
       "message": "WDYT, given Aleksandr\u0027s measurements, is this a reasonable thing to do?",
       "revId": "0aa28bbd6f92480a304241ef597dd4b1d6fb74a1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b5965f3_1f0c62f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-03-04T16:15:35Z",
+      "side": 1,
+      "message": "My main worry is how much startup overhead does this cause?",
+      "revId": "0aa28bbd6f92480a304241ef597dd4b1d6fb74a1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

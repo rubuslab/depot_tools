@@ -34,6 +34,24 @@
       "parentUuid": "f2ff73a8_b9a76bfa",
       "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "288b05cd_ee87cae6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-03-04T21:43:15Z",
+      "side": 1,
+      "message": "Hi!\n\nI did get back from leave... I\u0027m trying to rebase the CL now. I don\u0027t recall what the blockers were (probably just unittests?).\n\nIt may resolve -vv being slow with a lot of local branches though.\n\nI\u0027ll see if I can get this back to a mergeable state.",
+      "parentUuid": "a7ed1148_41023b15",
+      "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

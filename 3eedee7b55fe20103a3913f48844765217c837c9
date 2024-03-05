@@ -16,6 +16,24 @@
       "message": "This change also seems to be causing a failure on Windows, in our builders https://ci.chromium.org/ui/p/dart-internal/builders/ci/dart-sdk-win-dev/2465/overview",
       "revId": "3eedee7b55fe20103a3913f48844765217c837c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26198ac8_3a800e0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 31
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-05T20:49:47Z",
+      "side": 1,
+      "message": "The revert has landed so whichever autoroller is used for that builder should pick it up soon.",
+      "parentUuid": "1a985beb_fdfb31ac",
+      "revId": "3eedee7b55fe20103a3913f48844765217c837c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

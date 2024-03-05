@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b24307a_a8fce652",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1163549
+      },
+      "writtenOn": "2024-03-05T18:42:06Z",
+      "side": 1,
+      "message": "I believe this is causing syncing issues, at least for me:\n\n```\nTraceback (most recent call last):\n  File \"/usr/local/google/home/bsheedy/lib/depot_tools/download_from_google_storage.py\", line 600, in \u003cmodule\u003e\n    sys.exit(main(sys.argv))\n             ^^^^^^^^^^^^^^\n  File \"/usr/local/google/home/bsheedy/lib/depot_tools/download_from_google_storage.py\", line 589, in main\n    return download_from_google_storage(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/google/home/bsheedy/lib/depot_tools/download_from_google_storage.py\", line 335, in download_from_google_storage\n    input_data \u003d list(\n                 ^^^^^\n  File \"/usr/local/google/home/bsheedy/lib/depot_tools/download_from_google_storage.py\", line 103, in enumerate_input\n    current_platform \u003d PLATFORM_MAPPING[sys.platform]\n                       ^^^^^^^^^^^^^^^^\nNameError: name \u0027PLATFORM_MAPPING\u0027 is not defined\n```",
+      "revId": "d94a03f21ef0b520b02ebac9881bd8d2074722dc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

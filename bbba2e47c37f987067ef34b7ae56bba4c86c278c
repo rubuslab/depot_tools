@@ -151,7 +151,7 @@
         "value": {"expression":{"expressionString":"has:enabled_code-owners"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["has:enabled_code-owners"],"failingAtoms":[]}
       },
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"has:approval_code-owners"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["has:approval_code-owners"]}
+        "value": {"expression":{"expressionString":"has:approval_code-owners"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["has:approval_code-owners"],"failingAtoms":[]}
       },
       "overrideExpressionResult": {
         "value": {"expression":{"expressionString":"label:Owners-Override=+1"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Owners-Override=+1"]}
@@ -182,10 +182,47 @@
       },
       "applicabilityExpressionResult": {},
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"label:Code-Review=MAX,user=non_uploader -label:Code-Review=MIN"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Code-Review=MAX,user=non_uploader","label:Code-Review=MIN"]}
+        "value": {"expression":{"expressionString":"label:Code-Review=MAX,user=non_uploader -label:Code-Review=MIN"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Code-Review=MAX,user=non_uploader"],"failingAtoms":["label:Code-Review=MIN"]}
       },
       "overrideExpressionResult": {
         "value": {"expression":{"expressionString":"label:Bot-Commit=+1 AND -label:Code-Review=MIN"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["label:Bot-Commit=+1","label:Code-Review=MIN"]}
+      },
+      "patchSetCommitId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
+      "legacy": {
+        "value": false
+      },
+      "forced": {},
+      "hidden": {}
+    },
+    {
+      "submitRequirement": {
+        "name": "No-Unresolved-Comments",
+        "description": {
+          "value": "Changes that have unresolved comments are not submittable. Unless overridden with Unresolved-Comment-Reason: \u003creason\u003e line in change message."
+        },
+        "applicabilityExpression": {
+          "value": {
+            "expressionString": "has:unresolved"
+          }
+        },
+        "submittabilityExpression": {
+          "expressionString": "-has:unresolved"
+        },
+        "overrideExpression": {
+          "value": {
+            "expressionString": "message:\"^.*Unresolved-Comment-Reason:.*\""
+          }
+        },
+        "allowOverrideInChildProjects": false
+      },
+      "applicabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"has:unresolved"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["has:unresolved"]}
+      },
+      "submittabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"-has:unresolved"},"status":"NOT_EVALUATED","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":[]}
+      },
+      "overrideExpressionResult": {
+        "value": {"expression":{"expressionString":"message:\"^.*Unresolved-Comment-Reason:.*\""},"status":"NOT_EVALUATED","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":[]}
       },
       "patchSetCommitId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
       "legacy": {
@@ -212,10 +249,10 @@
         "allowOverrideInChildProjects": false
       },
       "applicabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"is:review-enforced_gerrit"},"status":"FAIL","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:review-enforced_gerrit"]}
+        "value": {"expression":{"expressionString":"is:review-enforced_gerrit"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["is:review-enforced_gerrit"],"failingAtoms":[]}
       },
       "submittabilityExpressionResult": {
-        "value": {"expression":{"expressionString":"is:review-enforcement-satisfied_gerrit"},"status":"NOT_EVALUATED","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":[]}
+        "value": {"expression":{"expressionString":"is:review-enforced_gerrit"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":[],"failingAtoms":["is:review-enforcement-satisfied_gerrit"]}
       },
       "overrideExpressionResult": {},
       "patchSetCommitId": "bbba2e47c37f987067ef34b7ae56bba4c86c278c",
@@ -223,7 +260,9 @@
         "value": false
       },
       "forced": {},
-      "hidden": {}
+      "hidden": {
+        "value": true
+      }
     },
     {
       "submitRequirement": {

@@ -16,6 +16,23 @@
       "message": "lgtm",
       "revId": "5baf1a8e4354ebaf250ac34c87003c68ab5719bd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21c1c2f2_ef53a9b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1273334
+      },
+      "writtenOn": "2024-03-05T15:45:32Z",
+      "side": 1,
+      "message": "Thanks for the CC, lgtm.",
+      "revId": "5baf1a8e4354ebaf250ac34c87003c68ab5719bd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

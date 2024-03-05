@@ -56,15 +56,19 @@ def FindClangFormatScriptInChromiumTree(script_name):
         if os.path.exists(script_path):
             return script_path
 
-    tools_path = gclient_paths.GetBuildtoolsPath()
-    if not tools_path:
-        raise NotFoundError(
-            'Could not find checkout in any parent of the current path.\n',
-            'Set CHROMIUM_BUILDTOOLS_PATH to use outside of a chromium '
-            'checkout.')
+    if 'CHROMIUM_CLANG_FORMAT_SCRIPT_PATH' in os.environ:
+        script_path = os.path.join(
+            os.environ['CHROMIUM_CLANG_FORMAT_SCRIPT_PATH'], script_name)
+    else:
+        tools_path = gclient_paths.GetBuildtoolsPath()
+        if not tools_path:
+            raise NotFoundError(
+                'Could not find checkout in any parent of the current path.\n',
+                'Set CHROMIUM_CLANG_FORMAT_SCRIPT_PATH to use outside of a chromium '
+                'checkout.')
+        script_path = os.path.join(tools_path, 'clang_format', 'script',
+                                   script_name)
 
-    script_path = os.path.join(tools_path, 'clang_format', 'script',
-                               script_name)
     if not os.path.exists(script_path):
         raise NotFoundError('File does not exist: %s' % script_path)
     return script_path

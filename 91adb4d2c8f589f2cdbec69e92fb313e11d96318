@@ -51,6 +51,24 @@
       "parentUuid": "0086e8d4_5a24877f",
       "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30cf734d_405089d1",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1545243
+      },
+      "writtenOn": "2024-03-06T00:09:47Z",
+      "side": 1,
+      "message": "Got it, that makes sense. Thanks for adding this additional context!",
+      "parentUuid": "caa2e2c1_7fd8b6dd",
+      "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

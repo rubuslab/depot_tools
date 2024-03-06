@@ -33,6 +33,24 @@
       "message": "drive-by comment: Would it make sense to do something like this?\n\n```\noptions \u003d \"-PY\" if platform.release().split(\u0027.\u0027)[0]) \u003e\u003d 23 else \"-P\"\ndf \u003d subprocess.run([\"df\", options, path], ...\n```",
       "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "caa2e2c1_7fd8b6dd",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-03-06T00:00:13Z",
+      "side": 1,
+      "message": "Thanks! The problem is that the part that `-Y` adds to the output (the file system type) is the information we\u0027re actually interested in. 😊\n\nIt might be possible to use a different solution that works on older macOS versions, too: `df -P` to get the device in the first column, then parse the output of `mount` to get the file system type, but I think running builds on macOS where the workspace is on a network filesystem is already so unusual, adding that complexity isn\u0027t worth it.",
+      "parentUuid": "0086e8d4_5a24877f",
+      "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

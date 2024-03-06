@@ -87,6 +87,24 @@
       "parentUuid": "30cf734d_405089d1",
       "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d48ebe5_9d5a3feb",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-03-06T15:08:48Z",
+      "side": 1,
+      "message": "OK, that\u0027s also fine for me. Indeed I\u0027m not aware of any users that would benefit from this at the moment, so it\u0027s maybe a YAGNI. Let me submit this CL just to fix the error message that users currently might see, then I\u0027ll send a follow-up to remove the Mac code path. If we ever need it again, we can then also easily revert it to this good version.",
+      "parentUuid": "ba292f3b_6f706b60",
+      "revId": "91adb4d2c8f589f2cdbec69e92fb313e11d96318",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

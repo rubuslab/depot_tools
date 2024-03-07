@@ -16,6 +16,24 @@
       "message": "Have you done any other measurements of the cost of vpython? It seems worth measuring on various development platforms to make sure that the cost is actually reasonable. That comment was put there for a reason so I think a more detailed explanation of why it is okay to remove it (i.e.; why it is _okay_ to use vpython now) is needed.",
       "revId": "f3686ba0da379c65db69be4e042b8c6a8645c273",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e4bde19_48932ec5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-03-07T07:40:27Z",
+      "side": 1,
+      "message": "Added stats from Linux, macOS and Windows.",
+      "parentUuid": "4780495e_e6e79e0e",
+      "revId": "f3686ba0da379c65db69be4e042b8c6a8645c273",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

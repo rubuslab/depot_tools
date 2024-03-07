@@ -467,7 +467,8 @@ class GIT(object):
 
         Path separators will be adjusted for the current OS.
         """
-        if not os.path.exists(os.path.join(repo_root, '.gitmodules')):
+        gitmodules = os.path.join(repo_root, '.gitmodules')
+        if (not os.path.exists(gitmodules) or os.stat(gitmodules).st_size == 0):
             return []
         config_output = GIT.Capture(
             ['config', '--file', '.gitmodules', '--get-regexp', 'path'],

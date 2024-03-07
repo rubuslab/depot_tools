@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b25613f6_347601f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-03-07T22:51:17Z",
+      "side": 1,
+      "message": "Thanks for running the tests. I think that the full hyperfine output is a bit much - it makes it hard to see what is actually going on. A summary of the times with/without vpython for each platform would be more valuable. But, lgtm.",
+      "revId": "0db772365da9a3ed42c512c07986b1c2af77aa5c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

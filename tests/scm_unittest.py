@@ -146,6 +146,12 @@ class GitWrapperTestCase(unittest.TestCase):
             self.assertEqual(actual_list,
                              ['foo/path/script', 'foo/path/script2'])
 
+    @mock.patch('os.path.exists', return_value=True)
+    @mock.patch('os.stat')
+    def testListSubmodules_empty(self, os_stat, *_mock):
+        os_stat.return_value.st_size = 0
+        self.assertEqual(scm.GIT.ListSubmodules('root'), [])
+
     def testListSubmodules_missing(self):
         self.assertEqual(scm.GIT.ListSubmodules('root'), [])
 

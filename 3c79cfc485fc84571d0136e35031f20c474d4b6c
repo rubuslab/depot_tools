@@ -16,6 +16,24 @@
       "message": "Thanks for reverting, will reland with a fix.",
       "revId": "3c79cfc485fc84571d0136e35031f20c474d4b6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "934f7346_ca61e581",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161299
+      },
+      "writtenOn": "2024-03-08T13:17:29Z",
+      "side": 1,
+      "message": "FYI, I fixed this in V8: http://chromium-review.googlesource.com/c/v8/v8/+/5352286\n\nThis should help reland this change without this failure. It will block the roll of depot_tools in Chromium though, the V8 PGO profile download scripts will have to be updated.",
+      "parentUuid": "d2e742bd_06fa21c8",
+      "revId": "3c79cfc485fc84571d0136e35031f20c474d4b6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

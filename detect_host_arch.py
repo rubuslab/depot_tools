@@ -36,6 +36,8 @@ def HostArch():
         host_arch = 'riscv64'
     elif platform.system() == 'OS/390':
         host_arch = 's390x'
+    elif host_arch.startswith('loongarch64'):
+        host_arch = 'loongarch64'
 
     if host_arch == 'arm64':
         host_platform = platform.architecture()

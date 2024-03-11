@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b062cde9_9bf96b94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-03-11T11:04:14Z",
+      "side": 1,
+      "message": "Thanks for the followup. I don\u0027t think other format tool runners other than `_RunClangFormatDiff ` support both `--diff` and `--dry-run`.",
+      "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c23945e_414a02cc",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6172,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-03-11T11:04:14Z",
+      "side": 1,
+      "message": "To be similar to `_RunClangFormatDiff` this should be:\n\n```\nif opts.diff:\n    sys.stdout.write(\u0027Requires formatting: \u0027 + stdout)\nif opts.dry_run:\n    return_value \u003d 2\n```\n\n`_RunYapf` also has the same issue.",
+      "range": {
+        "startLine": 6171,
+        "startChar": 16,
+        "endLine": 6172,
+        "endChar": 36
+      },
+      "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

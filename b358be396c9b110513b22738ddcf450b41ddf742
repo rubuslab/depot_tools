@@ -81,6 +81,30 @@
       },
       "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9eb7a5a5_4e899055",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6172,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-03-11T13:58:20Z",
+      "side": 1,
+      "message": "I\u0027m okay with keeping this without changes to not accidentally break other edge cases :). Other formatters are all over the place, some prioritize `--dry-run`, some `--diff`.\n\nWe just need to be sure to not check the exit code when running with both flags as in many cases `--diff` will return 0 even if a format is required.",
+      "parentUuid": "08c3173e_ff69465f",
+      "range": {
+        "startLine": 6171,
+        "startChar": 16,
+        "endLine": 6172,
+        "endChar": 36
+      },
+      "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

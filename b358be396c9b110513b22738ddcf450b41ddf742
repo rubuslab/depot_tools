@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af3f6172_90f4ff0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1581717
+      },
+      "writtenOn": "2024-03-11T13:06:15Z",
+      "side": 1,
+      "message": "Likely true. I don\u0027t have a strong opinion about whether that combination should be quiet like `--dry-run` or emit the diff like `--diff` alone would. The help for `gn format` to me implies `--diff --dry-run` is `--diff`, so I did that. Mainly want to make sure it doesn\u0027t incorrectly claim everything\u0027s bad :)",
+      "parentUuid": "b062cde9_9bf96b94",
+      "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c23945e_414a02cc",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-03-11T11:04:14Z",
       "side": 1,
       "message": "To be similar to `_RunClangFormatDiff` this should be:\n\n```\nif opts.diff:\n    sys.stdout.write(\u0027Requires formatting: \u0027 + stdout)\nif opts.dry_run:\n    return_value \u003d 2\n```\n\n`_RunYapf` also has the same issue.",
+      "range": {
+        "startLine": 6171,
+        "startChar": 16,
+        "endLine": 6172,
+        "endChar": 36
+      },
+      "revId": "b358be396c9b110513b22738ddcf450b41ddf742",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08c3173e_ff69465f",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6172,
+      "author": {
+        "id": 1581717
+      },
+      "writtenOn": "2024-03-11T13:06:15Z",
+      "side": 1,
+      "message": "Thanks for noticing. TBH I\u0027m not 100% I get the idea behind only reporting the error code sometimes in this. Do you think I should change that? I\u0027m a bit hesitant, esp. about chainging an separate formatter.\n\nNote that _RunGnFormat is still different, and suppresses \"diff\" output in this case...",
+      "parentUuid": "4c23945e_414a02cc",
       "range": {
         "startLine": 6171,
         "startChar": 16,

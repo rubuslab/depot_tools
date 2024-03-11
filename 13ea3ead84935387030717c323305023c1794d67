@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02b3c10a_85da2516",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-03-11T01:10:03Z",
+      "side": 1,
+      "message": "Can this function be called workspace_is_cog now?\n\n```suggestion\ndef workspace_is_cog():\n```",
+      "range": {
+        "startLine": 285,
+        "startChar": 4,
+        "endLine": 285,
+        "endChar": 35
+      },
+      "revId": "13ea3ead84935387030717c323305023c1794d67",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f58304c_ba6b0ac4",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-03-11T01:10:03Z",
+      "side": 1,
+      "message": "Please update the comment if you decided to rename the function.",
+      "range": {
+        "startLine": 335,
+        "startChar": 0,
+        "endLine": 339,
+        "endChar": 0
+      },
+      "revId": "13ea3ead84935387030717c323305023c1794d67",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

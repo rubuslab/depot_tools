@@ -16,6 +16,24 @@
       "message": "I\u0027m not sure if we even have builders for this architecture. @iannucci@google.com Do we support this?",
       "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de080ce6_e7416a7e",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1585327
+      },
+      "writtenOn": "2024-03-12T03:37:12Z",
+      "side": 1,
+      "message": "Maybe you can refer here: https://chromium-review.googlesource.com/c/infra/luci/luci-py/+/5334945",
+      "parentUuid": "933b7604_b0319516",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

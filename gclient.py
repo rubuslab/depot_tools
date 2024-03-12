@@ -760,6 +760,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                   bucket=dep_value['bucket'],
                                   object_name=dep_value['object_name'],
                                   sha256sum=dep_value['sha256sum'],
+                                  size_bytes=dep_value['size_bytes'],
                                   custom_vars=self.custom_vars,
                                   should_process=should_process,
                                   relative=use_relative_paths,
@@ -2502,11 +2503,12 @@ it or fix the checkout.
 class GcsDependency(Dependency):
     """A Dependency object that represents a single GCS bucket and object"""
 
-    def __init__(self, parent, name, bucket, object_name, sha256sum,
+    def __init__(self, parent, name, bucket, object_name, sha256sum, size_bytes,
                  custom_vars, should_process, relative, condition):
         self.bucket = bucket
         self.object_name = object_name
         self.sha256sum = sha256sum
+        self.size_bytes = size_bytes
         url = 'gs://{bucket}/{object_name}'.format(
             bucket=self.bucket,
             object_name=self.object_name,
@@ -2618,16 +2620,26 @@ class GcsDependency(Dependency):
             gsutil.check_call('cp', gcs_url, output_file)
 
         calculated_sha256sum = ''
+        calculated_size_bytes = None
         if os.getenv('GCLIENT_TEST') == '1':
             calculated_sha256sum = 'abcd123'
+            calculated_size_bytes = 10000
         else:
             calculated_sha256sum = self.GetSha256Sum(output_file)
+            calculated_size_bytes = os.path.getsize(output_file)
 
         if calculated_sha256sum != self.sha256sum:
             raise Exception('sha256sum does not match calculated hash. '
                             '{original} vs {calculated}'.format(
                                 original=self.sha256sum,
                                 calculated=calculated_sha256sum,
+                            ))
+
+        if calculated_size_bytes != self.size_bytes:
+            raise Exception('size_bytes does not match calculated size bytes. '
+                            '{original} vs {calculated}'.format(
+                                original=self.size_bytes,
+                                calculated=calculated_size_bytes,
                             ))
 
         if tarfile.is_tarfile(output_file):

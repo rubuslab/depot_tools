@@ -896,12 +896,14 @@ deps = {
             'object_name': 'deadbeef',
             'dep_type': 'gcs',
             'sha256sum': 'abcd123',
+            'size_bytes': 10000,
           },
           'src/another_gcs_dep': {
             'bucket': '456bucket',
             'object_name': 'Linux/llvmfile.tar.gz',
             'dep_type': 'gcs',
             'sha256sum': 'abcd123',
+            'size_bytes': 10000,
           },
         }"""),
                 'origin':
@@ -936,6 +938,7 @@ deps = {
     'object_name': 'path_to_file.tar.gz',
     'dep_type': 'gcs',
     'sha256sum': 'abcd123',
+    'size_bytes': 10000,
   },
 }
 """,

@@ -759,6 +759,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                   bucket=dep_value['bucket'],
                                   object_name=dep_value['object_name'],
                                   sha256sum=dep_value['sha256sum'],
+                                  output_file=dep_value.get('output_file'),
                                   custom_vars=self.custom_vars,
                                   should_process=should_process,
                                   relative=use_relative_paths,
@@ -2502,10 +2503,11 @@ class GcsDependency(Dependency):
     """A Dependency object that represents a single GCS bucket and object"""
 
     def __init__(self, parent, name, bucket, object_name, sha256sum,
-                 custom_vars, should_process, relative, condition):
+                 output_file, custom_vars, should_process, relative, condition):
         self.bucket = bucket
         self.object_name = object_name
         self.sha256sum = sha256sum
+        self.output_file = output_file
         url = 'gs://{bucket}/{object_name}'.format(
             bucket=self.bucket,
             object_name=self.object_name,
@@ -2580,7 +2582,11 @@ class GcsDependency(Dependency):
 
         # Directory of the extracted tarfile contents
         output_dir = os.path.join(root_dir, self.name)
-        output_file = os.path.join(output_dir, gcs_file_name)
+        output_file = ''
+        if self.output_file:
+            output_file = os.path.join(root_dir, self.output_file)
+        else:
+            output_file = os.path.join(output_dir, gcs_file_name)
 
         if not self.IsDownloadNeeded(output_dir, output_file):
             return
@@ -2612,16 +2618,20 @@ class GcsDependency(Dependency):
             output_file,
         ]
         if os.getenv('GCLIENT_TEST') == '1':
-            # Create fake tar file and extracted tar contents
-            tmpdir = tempfile.mkdtemp()
-            copy_dir = os.path.join(tmpdir, self.name, 'extracted_dir')
-            if os.path.exists(copy_dir):
-                shutil.rmtree(copy_dir)
-            os.makedirs(copy_dir)
-            with open(os.path.join(copy_dir, 'extracted_file'), 'w+') as f:
-                f.write('extracted text')
-            with tarfile.open(output_file, "w:gz") as tar:
-                tar.add(copy_dir, arcname=os.path.basename(copy_dir))
+            if 'no-extract' in output_file:
+                with open(output_file, 'w+') as f:
+                    f.write('non-extractable file')
+            else:
+                # Create fake tar file and extracted tar contents
+                tmpdir = tempfile.mkdtemp()
+                copy_dir = os.path.join(tmpdir, self.name, 'extracted_dir')
+                if os.path.exists(copy_dir):
+                    shutil.rmtree(copy_dir)
+                os.makedirs(copy_dir)
+                with open(os.path.join(copy_dir, 'extracted_file'), 'w+') as f:
+                    f.write('extracted text')
+                with tarfile.open(output_file, "w:gz") as tar:
+                    tar.add(copy_dir, arcname=os.path.basename(copy_dir))
         else:
             subprocess2.call(cmd)
 

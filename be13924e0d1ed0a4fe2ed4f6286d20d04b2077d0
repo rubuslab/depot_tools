@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "933b7604_b0319516",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-12T00:59:11Z",
+      "side": 1,
+      "message": "I\u0027m not sure if we even have builders for this architecture. @iannucci@google.com Do we support this?",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

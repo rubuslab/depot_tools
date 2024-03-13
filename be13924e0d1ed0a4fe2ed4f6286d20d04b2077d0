@@ -34,6 +34,41 @@
       "parentUuid": "933b7604_b0319516",
       "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c81f85b3_663d04cf",
+        "filename": "cipd",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-13T01:53:58Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "de080ce6_e7416a7e",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e33a8fe9_e4bcebc5",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-13T01:53:58Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I understand this part. From the linked bug, iiuc, `host_arch \u003d\u003d \u0027loongarch64\u0027`. Can it have any suffix?",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

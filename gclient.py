@@ -2558,6 +2558,16 @@ class GcsDependency(Dependency):
         else:
             download_needed = True
 
+        # (b/328065301): Remove is_first_class_gcs_file logic when all GCS
+        # hooks are migrated to first class deps
+        is_first_class_gcs_file = os.path.join(
+            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
+        is_first_class_gcs = (
+            download_from_google_storage.read_is_first_class_gcs_file(
+                is_first_class_gcs_file))
+        if not is_first_class_gcs:
+            download_needed = True
+
         if existing_hash != self.sha256sum:
             download_needed = True
         return download_needed
@@ -2634,6 +2644,10 @@ class GcsDependency(Dependency):
             with tarfile.open(output_file, 'r:*') as tar:
                 tar.extractall(path=output_dir)
         self.WriteFilenameHash(calculated_sha256sum, hash_file)
+        migration_toggle_file = os.path.join(
+            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
+        download_from_google_storage.write_is_first_class_gcs_file(
+            1, migration_toggle_file)
 
     #override
     def GetScmName(self):

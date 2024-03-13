@@ -39,12 +39,16 @@ class GClientSmokeGcs(gclient_smoketest_base.GClientSmokeBase):
             'abcd123\n',
             'src/another_gcs_dep/llvmfile.tar.gz':
             'tarfile',
+            'src/another_gcs_dep/is_first_class_gcs':
+            '1\n',
             'src/another_gcs_dep/extracted_dir/extracted_file':
             'extracted text',
             'src/gcs_dep/deadbeef':
             'tarfile',
             'src/gcs_dep/hash':
             'abcd123\n',
+            'src/gcs_dep/is_first_class_gcs':
+            '1\n',
             'src/gcs_dep/extracted_dir/extracted_file':
             'extracted text',
         })
@@ -73,6 +77,7 @@ class GClientSmokeGcs(gclient_smoketest_base.GClientSmokeBase):
         tree.update({
             'src/repo12/extracted_dir/extracted_file': 'extracted text',
             'src/repo12/hash': 'abcd123\n',
+            'src/repo12/is_first_class_gcs': '1\n',
             'src/repo12/path_to_file.tar.gz': 'tarfile',
         })
         self.assertTree(tree)
@@ -90,6 +95,7 @@ class GClientSmokeGcs(gclient_smoketest_base.GClientSmokeBase):
         tree.update({
             'src/repo12/extracted_dir/extracted_file': 'extracted text',
             'src/repo12/hash': 'abcd123\n',
+            'src/repo12/is_first_class_gcs': '1\n',
             'src/repo12/path_to_file.tar.gz': 'tarfile',
         })
         self.assertTree(tree)
@@ -105,6 +111,7 @@ class GClientSmokeGcs(gclient_smoketest_base.GClientSmokeBase):
         tree.update({
             'src/repo12/extracted_dir/extracted_file': 'extracted text',
             'src/repo12/hash': 'abcd123\n',
+            'src/repo12/is_first_class_gcs': '1\n',
             'src/repo12/path_to_file.tar.gz': 'tarfile',
         })
         self.assertTree(tree)

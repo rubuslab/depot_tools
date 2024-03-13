@@ -22,6 +22,30 @@
       },
       "revId": "c98b477fb04aa69c7df86f74cc6b7dd2f1f208e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb376833_a3c34e3d",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2624,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-13T20:00:38Z",
+      "side": 1,
+      "message": "https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5299722/comment/f8fc531f_2d24a08a/",
+      "parentUuid": "18e35d35_2e6084f3",
+      "range": {
+        "startLine": 2624,
+        "startChar": 22,
+        "endLine": 2624,
+        "endChar": 34
+      },
+      "revId": "c98b477fb04aa69c7df86f74cc6b7dd2f1f208e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

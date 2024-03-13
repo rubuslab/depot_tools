@@ -38,6 +38,9 @@ PLATFORM_MAPPING = {
     'zos': 'zos',
 }
 
+# (b/328065301): Remove when all GCS hooks are migrated to first class deps
+MIGRATION_TOGGLE_FILE_NAME = 'is_first_class_gcs'
+
 
 class InvalidFileError(IOError):
     pass
@@ -156,6 +159,23 @@ def get_sha1(filename):
     return sha1.hexdigest()
 
 
+# (b/328065301): Remove when all GCS hooks are migrated to first class deps
+def write_is_first_class_gcs_file(value, file_name):
+    with open(file_name, 'w') as f:
+        f.write(str(value))
+        f.write('\n')
+
+
+# (b/328065301): Remove when all GCS hooks are migrated to first class deps
+def read_is_first_class_gcs_file(file_name):
+    if os.path.exists(file_name):
+        try:
+            with open(file_name, 'r') as f:
+                return bool(int((f.read().rstrip())))
+        except IOError:
+            return False
+    return False
+
 # Download-specific code starts here
 
 
@@ -248,6 +268,9 @@ def _downloader_worker_thread(thread_num,
         input_sha1_sum, output_filename = q.get()
         if input_sha1_sum is None:
             return
+        directory = os.path.dirname(output_filename)
+        migration_file_name = os.path.join(directory,
+                                           MIGRATION_TOGGLE_FILE_NAME)
         extract_dir = None
         if extract:
             if not output_filename.endswith('.tar.gz'):
@@ -277,6 +300,10 @@ def _downloader_worker_thread(thread_num,
                               're-downloading...' %
                               (thread_num, output_filename))
                     skip = False
+            is_first_class_gcs = read_is_first_class_gcs_file(
+                migration_file_name)
+            if is_first_class_gcs:
+                skip = False
             if skip:
                 continue
 
@@ -364,6 +391,7 @@ def _downloader_worker_thread(thread_num,
                 with open(extract_dir + '.tmp', 'a'):
                     tar.extractall(path=dirname)
                 os.remove(extract_dir + '.tmp')
+        write_is_first_class_gcs_file(0, migration_file_name)
         # Set executable bit.
         if sys.platform == 'cygwin':
             # Under cygwin, mark all files as executable. The executable flag in
@@ -441,7 +469,12 @@ def download_from_google_storage(input_filename, base_url, gsutil, num_threads,
 
     # Sequentially check for the most common case and see if we can bail out
     # early before making any slow calls to gsutil.
-    if not force and all(
+    migration_file = MIGRATION_TOGGLE_FILE_NAME
+    working_dir = directory or os.path.dirname(output)
+    if working_dir:
+        migration_file = os.path.join(working_dir, MIGRATION_TOGGLE_FILE_NAME)
+    is_first_class_gcs = read_is_first_class_gcs_file(migration_file)
+    if not force and not is_first_class_gcs and all(
             _data_exists(sha1, path, extract) for sha1, path in input_data):
         return 0
 

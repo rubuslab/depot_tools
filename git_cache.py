@@ -162,28 +162,49 @@ class Mirror(object):
 
     @staticmethod
     def UrlToCacheDir(url):
-        """Convert a git url to a normalized form for the cache dir path."""
+        """Convert a git url to a normalized form for the cache dir path.
+
+        Replace rules:
+        1. If the url is in ssh form like "git@...", it will add '_' at the 
+           beginning;
+        2. '/' will be replaced by "[-]", ':' will be replaced by "[--]";
+        3. "https" and "git@" will be removed;
+        4. The trailing ".git" will also be removed.
+        For example:
+        https://google.com/username/repository.git -> 
+        google.com[-]username[-]repository
+        
+        git@google.com:username/repository.git -> 
+        _google.com[--]username[-]repository
+        """
         if os.path.isdir(url):
             # Ignore the drive letter in Windows
             url = os.path.splitdrive(url)[1]
-            return url.replace('-', '--').replace(os.sep, '-')
+            return url.replace(os.sep, '[-]')
 
-        parsed = urllib.parse.urlparse(url)
-        norm_url = parsed.netloc + parsed.path
+        if url.startswith('git@'):
+            norm_url = '_' + url[len('git@'):]
+        else:
+            parsed = urllib.parse.urlparse(url)
+            norm_url = parsed.netloc + parsed.path
+
         if norm_url.endswith('.git'):
             norm_url = norm_url[:-len('.git')]
 
         # Use the same dir for authenticated URLs and unauthenticated URLs.
         norm_url = norm_url.replace('googlesource.com/a/', 'googlesource.com/')
 
-        return norm_url.replace('-', '--').replace('/', '-').lower()
+        return norm_url.replace('/', '[-]').replace(':', '[--]').lower()
 
     @staticmethod
     def CacheDirToUrl(path):
         """Convert a cache dir path to its corresponding url."""
-        netpath = re.sub(r'\b-\b', '/',
-                         os.path.basename(path)).replace('--', '-')
-        return 'https://%s' % netpath
+        netpath = path.replace('[-]', '/').replace('[--]', ':')
+
+        if netpath.startswith('_'):
+            return 'git@%s.git' % netpath[1:]
+
+        return 'https://%s.git' % netpath
 
     @classmethod
     def SetCachePath(cls, cachepath):

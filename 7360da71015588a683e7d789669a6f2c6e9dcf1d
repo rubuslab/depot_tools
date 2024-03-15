@@ -46,6 +46,30 @@
       },
       "revId": "7360da71015588a683e7d789669a6f2c6e9dcf1d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d534181a_174be0b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-03-15T06:09:31Z",
+      "side": 1,
+      "message": "I\u0027ll keep it like this, I think it\u0027s clear what this CL does.",
+      "parentUuid": "87e56667_384c2b89",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "7360da71015588a683e7d789669a6f2c6e9dcf1d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

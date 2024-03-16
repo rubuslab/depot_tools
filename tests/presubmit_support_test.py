@@ -66,7 +66,9 @@ class ProvidedDiffChangeTest(fake_repos.FakeReposTestBase):
             gclient_utils.FileWrite(tmp, diff)
             options = mock.Mock(root=self.repo,
                                 all_files=False,
+                                generate_diff=False,
                                 description='description',
+                                files=None,
                                 files=None,
                                 diff_file=tmp)
             change = presubmit_support._parse_change(None, options)

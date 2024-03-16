@@ -1009,6 +1009,16 @@ def CheckChangeOnCommit(input_api, output_api):
         parser.error.assert_called_once_with(
             '<diff_file> cannot be specified when --all-files is set.')
 
+    def testParseChange_DiffAndGenerateDiff(self):
+        parser = mock.Mock()
+        parser.error.side_effect = [SystemExit]
+        options = mock.Mock(files=[], generate_diff=True, diff_file='foo.diff')
+
+        with self.assertRaises(SystemExit):
+            presubmit._parse_change(parser, options)
+        parser.error.assert_called_once_with(
+            '<diff_file> cannot be specified when <generate_diff> is set.')
+
     @mock.patch('presubmit_support.GitChange', mock.Mock())
     def testParseChange_FilesAndGit(self):
         scm.determine_scm.return_value = 'git'

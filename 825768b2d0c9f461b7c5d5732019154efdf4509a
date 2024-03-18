@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fc94efe_85a9c7b1",
+        "filename": "presubmit_support.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2299,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-03-18T17:08:51Z",
+      "side": 1,
+      "message": "Could you improve help message? Something like create a diff using upstream server as base.\n```suggestion\n                        help\u003d\u0027Create a diff using upstream server as base.\u0027)\n```",
+      "range": {
+        "startLine": 2299,
+        "startChar": 30,
+        "endLine": 2299,
+        "endChar": 49
+      },
+      "revId": "825768b2d0c9f461b7c5d5732019154efdf4509a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

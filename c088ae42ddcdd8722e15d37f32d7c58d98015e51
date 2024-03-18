@@ -16,6 +16,24 @@
       "message": "I think Windows should produce the same diff as Linux (i.e. use forward slashes). But, also, it should never use absolute path, but relative path.\n\nCould you double check is this expected?",
       "revId": "c088ae42ddcdd8722e15d37f32d7c58d98015e51",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fb53962_26c2644a",
+        "filename": "tests/presubmit_diff_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-03-18T17:35:56Z",
+      "side": 1,
+      "message": "It will only produce the same diff if relative paths are passed to git diff. If absolute paths are used, the output here is expected, with src/dst path like `\"a/C:\\\\absolute\\\\path\\\\here.txt\"`. (the diff on L154 is what you\u0027d get if you ran the same git diff command on linux).\n\nThis test (and _process_diff) use absolute paths since AFAIK there isn\u0027t a way to specify two different `--relative` directories (one for non-git ws and another for download dir)",
+      "parentUuid": "558fcca7_5c913152",
+      "revId": "c088ae42ddcdd8722e15d37f32d7c58d98015e51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

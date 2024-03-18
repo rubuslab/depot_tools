@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7231d708_e1297969",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-18T22:23:16Z",
+      "side": 1,
+      "message": "\u003e If this lives next to a gitignored GCS dir, rather than inside it\n\nI don\u0027t think this should happen but am in favor of adding it to the .gitignore to be safe.",
+      "parentUuid": "a1444127_1ea64ea6",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "13701c49_971e93a6",
         "filename": "download_from_google_storage.py",
         "patchSetId": 8
@@ -37,6 +61,24 @@
       "writtenOn": "2024-03-18T18:24:31Z",
       "side": 1,
       "message": "Could you add a comment here about why we do not skip, if this was a first class?\n\n\"If directory was from a First Class GCS deps, we should delete it and re-download using the latest hooks.\"",
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fdb5945_ebf723ec",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-18T22:23:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13701c49_971e93a6",
       "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -64,6 +106,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f524d241_6d444a27",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-18T22:23:16Z",
+      "side": 1,
+      "message": "Updated to just check for existence and remove file.",
+      "parentUuid": "266ddbc3_93e2d629",
+      "range": {
+        "startLine": 397,
+        "startChar": 8,
+        "endLine": 397,
+        "endChar": 61
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1b680ea5_505d4e95",
@@ -81,6 +147,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6053d16_cb983c12",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-18T22:23:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b680ea5_505d4e95",
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "390a6910_bad84efd",
@@ -94,6 +178,30 @@
       "writtenOn": "2024-03-18T18:24:31Z",
       "side": 1,
       "message": "can we just return early at these `download_needed \u003d True` instead?\nand then don\u0027t even need `download_needed`, could just return \u0027False\u0027 at the end",
+      "range": {
+        "startLine": 2548,
+        "startChar": 12,
+        "endLine": 2548,
+        "endChar": 34
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "952bb1a1_840dd9eb",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2548,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-18T22:23:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390a6910_bad84efd",
       "range": {
         "startLine": 2548,
         "startChar": 12,

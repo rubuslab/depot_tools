@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "765c2ced_28fe7793",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T22:35:32Z",
+      "side": 1,
+      "message": "ok +1 to adding to .gitignore to be safe.\n\nPlease make sure to add context on it in the .gitignore file. we are copying some .gitignore content elsewhere and `is_first_class_gcs` is not something that matters outside of git checkouts. So the comment should let people know it\u0027s not something that needs to be copied.",
+      "parentUuid": "7231d708_e1297969",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "13701c49_971e93a6",
         "filename": "download_from_google_storage.py",
         "patchSetId": 8

@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1444127_1ea64ea6",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T18:24:31Z",
+      "side": 1,
+      "message": "If this lives next to a gitignored GCS dir, rather than inside it, we might need to add a pattern to .gitignore to ignore these types of files created during `gclient sync`.",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13701c49_971e93a6",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T18:24:31Z",
+      "side": 1,
+      "message": "Could you add a comment here about why we do not skip, if this was a first class?\n\n\"If directory was from a First Class GCS deps, we should delete it and re-download using the latest hooks.\"",
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "266ddbc3_93e2d629",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T18:24:31Z",
+      "side": 1,
+      "message": "does hooks need to specifically write \"0\" to this file?\n\nmy impression is it should just delete the file?",
+      "range": {
+        "startLine": 397,
+        "startChar": 8,
+        "endLine": 397,
+        "endChar": 61
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b680ea5_505d4e95",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T18:24:31Z",
+      "side": 1,
+      "message": "Same here, some comment to help reader understand how is_first_class_gcs is relevant.",
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "390a6910_bad84efd",
+        "filename": "gclient.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2548,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-18T18:24:31Z",
+      "side": 1,
+      "message": "can we just return early at these `download_needed \u003d True` instead?\nand then don\u0027t even need `download_needed`, could just return \u0027False\u0027 at the end",
+      "range": {
+        "startLine": 2548,
+        "startChar": 12,
+        "endLine": 2548,
+        "endChar": 34
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

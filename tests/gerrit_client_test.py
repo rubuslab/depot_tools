@@ -17,7 +17,7 @@ import gerrit_client
 
 
 class TestGerritClient(unittest.TestCase):
-    @mock.patch('gerrit_util.GetGerritBranch', return_value='')
+    @mock.patch('gerrit_util.GetGerritBranch', return_value='chicken')
     def test_branch_info(self, util_mock):
         gerrit_client.main([
             'branchinfo', '--host', 'https://example.org/foo', '--project',

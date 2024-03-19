@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f534a9fd_1270b4f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1185750
+      },
+      "writtenOn": "2024-03-19T20:03:26Z",
+      "side": 1,
+      "message": "Hi Brian,\n\nI encountered an error while attempting to sync the existing source code:\n\n\nfailed to load storage: initialize local storage failed: /home/aorus/.cache/.vpython-root/store: mkdir /home/aorus/.cache/.vpython-root: permission denied\n\nCould you suggest a workaround? I\u0027m hoping to avoid setting up the source code from scratch again, as it would require a significant amount of time (approximately 2 hours for syncing and building).\n\nThanks in advance for your help.",
+      "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

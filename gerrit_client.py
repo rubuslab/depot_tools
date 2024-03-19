@@ -126,6 +126,8 @@ def CMDbranch(parser, args):
     host = urllib.parse.urlparse(opt.host).netloc
     branch = urllib.parse.quote_plus(opt.branch)
     result = gerrit_util.GetGerritBranch(host, project, branch)
+    logging.warning("BOOOO")
+    raise gerrit_util.GerritError(200, result)
     if result:
         if not opt.allow_existent_branch:
             raise gerrit_util.GerritError(200, 'Branch already exists')

@@ -16,6 +16,23 @@
       "message": "I got a bunch of these warnings on a different CL. Figured I\u0027d go ahead and fix them :)\n\nhttps://logs.chromium.org/logs/infra/buildbucket/cr-buildbucket/8753021124879064193/+/u/presubmit/stdout",
       "revId": "0d657feab43029b667e1eb93ddd36d6bbdedd0b3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c38a1d5_d563a869",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-19T17:56:20Z",
+      "side": 1,
+      "message": "Seems like the presubmit failure is unrelated (b/330347045).",
+      "revId": "0d657feab43029b667e1eb93ddd36d6bbdedd0b3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

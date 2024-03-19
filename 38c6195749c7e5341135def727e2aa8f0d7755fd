@@ -72,6 +72,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fab9736e_e19b7b64",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-19T15:48:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "765c2ced_28fe7793",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "38c6195749c7e5341135def727e2aa8f0d7755fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "13701c49_971e93a6",

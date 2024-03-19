@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bd248b1_996809bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-19T18:20:22Z",
+      "side": 1,
+      "message": "git cache is mainly used within our builders and this change would force all of them to re-fetch their cached repository again, which isn\u0027t ideal.\n\nCan you elaborate more on how exactly you\u0027re using this? Even if this is a bug, the migration should be done carefully to not affect the existing builders.",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

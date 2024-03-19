@@ -33,6 +33,23 @@
       "message": "Adding a second reviewer. Since I\u0027m not a committer, I need two approvals 🙃",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b189fbbe_359bac97",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528063
+      },
+      "writtenOn": "2024-03-19T16:45:26Z",
+      "side": 1,
+      "message": "Looks like an unrelated 500 error in gerrit? Trying again?",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

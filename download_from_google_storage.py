@@ -221,7 +221,8 @@ def enumerate_input(input_filename, directory, recursive, ignore_errors, output,
                           file=sys.stderr)
 
 
-def _validate_tar_file(tar, prefix):
+def validate_tar_file(tar, prefix):
+
     def _validate(tarinfo):
         """Returns false if the tarinfo is something we explicitly forbid."""
         if tarinfo.issym() or tarinfo.islnk():
@@ -349,7 +350,7 @@ def _downloader_worker_thread(thread_num,
                 # (this includes pwd). Use the extended path syntax.
                 if sys.platform == 'win32':
                     dirname = '\\\\?\\%s' % dirname
-                if not _validate_tar_file(tar, os.path.basename(extract_dir)):
+                if not validate_tar_file(tar, os.path.basename(extract_dir)):
                     out_q.put('%d> Error: %s contains files outside %s.' %
                               (thread_num, output_filename, extract_dir))
                     ret_codes.put(

@@ -104,7 +104,7 @@ class GstoolsUnitTests(unittest.TestCase):
             with tarfile.open(tar, 'w:gz') as tar:
                 tar.add(lorem_ipsum_copy)
                 self.assertTrue(
-                    download_from_google_storage._validate_tar_file(
+                    download_from_google_storage.validate_tar_file(
                         tar, tar_dir))
 
             # os.symlink doesn't exist on Windows.
@@ -118,7 +118,7 @@ class GstoolsUnitTests(unittest.TestCase):
                 with tarfile.open(tar_with_links, 'w:gz') as tar:
                     tar.add(link)
                     self.assertFalse(
-                        download_from_google_storage._validate_tar_file(
+                        download_from_google_storage.validate_tar_file(
                             tar, tar_dir_link))
 
             # Test not outside.
@@ -128,7 +128,7 @@ class GstoolsUnitTests(unittest.TestCase):
             with tarfile.open(tar_with_outside, 'w:gz') as tar:
                 tar.add(lorem_ipsum)
                 self.assertFalse(
-                    download_from_google_storage._validate_tar_file(
+                    download_from_google_storage.validate_tar_file(
                         tar, tar_dir_outside))
             # Test no ../
             tar_with_dotdot = 'with_dotdot.tar.gz'
@@ -137,7 +137,7 @@ class GstoolsUnitTests(unittest.TestCase):
             with tarfile.open(tar_with_dotdot, 'w:gz') as tar:
                 tar.add(dotdot_file)
                 self.assertFalse(
-                    download_from_google_storage._validate_tar_file(
+                    download_from_google_storage.validate_tar_file(
                         tar, tar_dir))
             # Test normal file with .. in name okay
             tar_with_hidden = 'with_normal_dotdot.tar.gz'
@@ -146,7 +146,7 @@ class GstoolsUnitTests(unittest.TestCase):
             with tarfile.open(tar_with_hidden, 'w:gz') as tar:
                 tar.add(hidden_file)
                 self.assertTrue(
-                    download_from_google_storage._validate_tar_file(
+                    download_from_google_storage.validate_tar_file(
                         tar, tar_dir))
 
     def test_gsutil(self):

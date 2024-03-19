@@ -2649,8 +2649,9 @@ class GcsDependency(Dependency):
                                 original=self.size_bytes,
                                 calculated=calculated_size_bytes,
                             ))
-
-        if tarfile.is_tarfile(output_file):
+        is_valid_tar_file = download_from_google_storage.validate_tar_file(
+            output_file, output_dir)
+        if tarfile.is_tarfile(output_file) and is_valid_tar_file:
             with tarfile.open(output_file, 'r:*') as tar:
                 tar.extractall(path=output_dir)
         self.WriteFilenameHash(calculated_sha256sum, hash_file)

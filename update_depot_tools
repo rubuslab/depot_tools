@@ -122,6 +122,12 @@ function update_git_repo {
 if [ "X$DEPOT_TOOLS_UPDATE" != "X0" ]; then
   if [ -e "$base_dir/.git" ]; then
     cd "$base_dir"
+
+    # Respect --reset from gclient sync --reset
+    if [[ "$*" == *"--reset"* ]]; then
+      git reset --hard HEAD
+    fi
+
     update_git_repo
     UPDATE_RESULT=$?
     cd - > /dev/null

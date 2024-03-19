@@ -50,6 +50,24 @@
       "message": "Looks like an unrelated 500 error in gerrit? Trying again?",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1e3ec2e_39bb76b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-03-19T17:15:39Z",
+      "side": 1,
+      "message": "Yeah, I ran into this too with my CL. Filed b/330347045 to track that.",
+      "parentUuid": "b189fbbe_359bac97",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

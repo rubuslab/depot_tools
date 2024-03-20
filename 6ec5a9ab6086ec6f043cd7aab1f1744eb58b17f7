@@ -34,6 +34,24 @@
       "parentUuid": "f534a9fd_1270b4f8",
       "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "905c5624_2081b0c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1185750
+      },
+      "writtenOn": "2024-03-20T04:26:38Z",
+      "side": 1,
+      "message": "Hello Chenlin, No, that directory doesn\u0027t exists:\n\n(cr) aorus@aorus /mnt/host/source/src/scripts $ ls -l /home/aorus/.cache/.vpython-rootls: cannot access \u0027/home/aorus/.cache/.vpython-root\u0027: No such file or directory\n(cr) aorus@aorus /mnt/host/source/src/scripts $ ls -l /home/aorus/.cache/\ntotal 4\ndrwxr-xr-x 3 root root 4096 Feb  1 14:13 cros\n(cr) aorus@aorus /mnt/host/source/src/scripts $",
+      "parentUuid": "8a9008d4_b5df1786",
+      "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

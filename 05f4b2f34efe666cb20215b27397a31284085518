@@ -34,6 +34,24 @@
       "parentUuid": "1e395308_b91804c9",
       "revId": "05f4b2f34efe666cb20215b27397a31284085518",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e40e1b3f_e0526b91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-20T23:02:11Z",
+      "side": 1,
+      "message": "gerrit wasn\u0027t support to notify you yet.\nBut i\u0027ve just updated a new patchset with my fix PTAL",
+      "parentUuid": "41dcddf3_ee25264c",
+      "revId": "05f4b2f34efe666cb20215b27397a31284085518",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

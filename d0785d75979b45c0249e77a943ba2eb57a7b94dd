@@ -121,6 +121,24 @@
       "message": "Can you elaborate on what this change fixes?",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d030e64_956e7a5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528063
+      },
+      "writtenOn": "2024-03-20T04:52:18Z",
+      "side": 1,
+      "message": "For sure! When you have changes in depot_tools and run `gclient sync --reset`, it won\u0027t discard local changes like it does for the gclient code and will cause `gclient sync --reset` to fail.\n\nThis change makes `gclient sync` respect --reset by also resetting the `depot_tools` repo before attempting to update it.",
+      "parentUuid": "c524e565_b2d81ecc",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -139,6 +139,24 @@
       "parentUuid": "c524e565_b2d81ecc",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c397d9f4_112c78f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-20T21:33:45Z",
+      "side": 1,
+      "message": "Ideally, you should have a separate copy of depot_tools apart from the one in your path if you are making changes to it. My concern with this change is that any command that has a `--reset` flag and uses update_depot_tools would also unintentionally reset depot_tools. Maybe this is a no-op in most cases but it doesn\u0027t seem intuitive to me. Wdyt?",
+      "parentUuid": "9d030e64_956e7a5a",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

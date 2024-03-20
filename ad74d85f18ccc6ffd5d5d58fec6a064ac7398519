@@ -52,6 +52,24 @@
       "parentUuid": "b25c72f1_a9013d7f",
       "revId": "ad74d85f18ccc6ffd5d5d58fec6a064ac7398519",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "418130e7_a313f384",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-03-20T20:06:40Z",
+      "side": 1,
+      "message": "Yup, the internal docs were updated earlier today.  I should double-check the external docs though...",
+      "parentUuid": "b25c72f1_a9013d7f",
+      "revId": "ad74d85f18ccc6ffd5d5d58fec6a064ac7398519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

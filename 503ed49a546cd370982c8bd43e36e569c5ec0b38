@@ -34,6 +34,24 @@
       "parentUuid": "8bd248b1_996809bc",
       "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e252d4bc_e0544cf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-20T21:06:47Z",
+      "side": 1,
+      "message": "\u003e I only set a GIT_CACHE_PATH environment variable to enable it in Win OS.\n\niiuc, when you run git cache populate, it creates a bare repository from which you can clone your worktree. I\u0027m not sure if that\u0027s what you\u0027re doing. Can you add some replication steps?\n\n\u003e Why does the return value of \"CacheDirToUrl\" discard \".git\"?\n\nI\u0027m not exactly sure why this design choice was made. Looking at git blame, it seems to be present from the original implementation of git cache[1].\n\n@jojwang@chromium.org cc-ing as the current trooper.\n\n[1] https://codereview.chromium.org/164823002",
+      "parentUuid": "d8c4e492_08b2c3f5",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

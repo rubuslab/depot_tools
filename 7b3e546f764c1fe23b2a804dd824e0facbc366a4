@@ -22,6 +22,30 @@
       },
       "revId": "7b3e546f764c1fe23b2a804dd824e0facbc366a4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "866d7bad_f82a10a9",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-03-20T23:07:35Z",
+      "side": 1,
+      "message": "ah, nvm. it\u0027d cause undefined symbol error, if `if input_api.gerrit` is not met.",
+      "parentUuid": "1c0fc3bd_bd9a8178",
+      "range": {
+        "startLine": 1551,
+        "startChar": 0,
+        "endLine": 1555,
+        "endChar": 42
+      },
+      "revId": "7b3e546f764c1fe23b2a804dd824e0facbc366a4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

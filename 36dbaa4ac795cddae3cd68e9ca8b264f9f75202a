@@ -16,6 +16,23 @@
       "message": "ptal and let me know what you think",
       "revId": "36dbaa4ac795cddae3cd68e9ca8b264f9f75202a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a454110_9b8cbac8",
+        "filename": "metadata/parse.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-03-20T07:08:12Z",
+      "side": 1,
+      "message": "I think this would limit the unknown field names to title case, e.g.\n```\nMy Useful Field: detected\nAnd another: undetected\n```\n\nJust checking that\u0027s the intent.",
+      "revId": "36dbaa4ac795cddae3cd68e9ca8b264f9f75202a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

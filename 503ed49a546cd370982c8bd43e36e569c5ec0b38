@@ -16,6 +16,24 @@
       "message": "git cache is mainly used within our builders and this change would force all of them to re-fetch their cached repository again, which isn\u0027t ideal.\n\nCan you elaborate more on how exactly you\u0027re using this? Even if this is a bug, the migration should be done carefully to not affect the existing builders.",
       "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8c4e492_08b2c3f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1588026
+      },
+      "writtenOn": "2024-03-20T05:55:16Z",
+      "side": 1,
+      "message": "1、How exactly you\u0027re using this?\nLike issue 329781388 says, I only set a GIT_CACHE_PATH environment variable to enable it in Win OS.\n2、About \"the migration should be done carefully to not affect the existing builders\":\nI will provide a minimal implementation to support ssh_url later. But I have a doubt: Why does the return value of \"CacheDirToUrl\" discard \".git\"? For example, the cache folder name is: chromium.googlesource.com-chromium-src, and its return value is https://chromium.googlesource.com/chromium/src, is obviously not a legal git_url. The reason may be that other code only uses part of the return value to determine, such as the only place where it is used (gclient_scm.py:773):\n```\ngit_cache.Mirror.CacheDirToUrl(current_url.rstrip(\u0027/\u0027)) \u003d\u003d git_cache.Mirror.CacheDirToUrl(url.rstrip(\u0027/\u0027))\n```\n\nSo, we will submit two parts of the changes, is this OK?\n1) Provide a minimal implementation to support ssh_url. Obviously at this stage, even internal builders use git_url in https form, so the https part will not be affected.\n2) Correct CacheDirToUrl to return a legal Git_URL, like: https://google.com/username/repository.git or git@google.com:username/repository.git\n\nLooking forward to your reply, thank you.",
+      "parentUuid": "8bd248b1_996809bc",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

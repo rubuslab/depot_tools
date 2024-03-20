@@ -16,6 +16,24 @@
       "message": "I tried running `luci-auth info -scopes-context` locally after running `luci-auth login` and got \u0027Not logged in.\u0027\n\nSo maybe this doesn\u0027t work?",
       "revId": "ad74d85f18ccc6ffd5d5d58fec6a064ac7398519",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b25c72f1_a9013d7f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-03-20T19:31:46Z",
+      "side": 1,
+      "message": "You need to run `luci-auth login -scopes-context`",
+      "parentUuid": "20477189_3fa9dada",
+      "revId": "ad74d85f18ccc6ffd5d5d58fec6a064ac7398519",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -70,6 +70,24 @@
       "parentUuid": "905c5624_2081b0c5",
       "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e09d0c75_f72f48e2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1185750
+      },
+      "writtenOn": "2024-03-20T18:21:02Z",
+      "side": 1,
+      "message": "Hmm.. I am not sure. I am just syncing my existing codebase and then I run into this issue. If you sync code from scratch, I dont see this issue. \n\nsudo chown -R aorus /home/aorus/.cache/\n\nAfter permission change, I run into different error:\n\n11:19:41: ERROR: cros build-packages failed before completing.\n11:19:41: ERROR: return code: 1; command: cros_list_modified_packages --sysroot /build/arkham\ncros_list_modified_packages: Unhandled exception:\nTraceback (most recent call last):\n  File \"/mnt/host/source/chromite/bin/cros_list_modified_packages\", line 213, in \u003cmodule\u003e\n    DoMain()\n  File \"/mnt/host/source/chromite/bin/cros_list_modified_packages\", line 209, in DoMain\n    commandline.ScriptWrapperMain(FindTarget)\n  File \"/mnt/host/source/chromite/lib/commandline.py\", line 1571, in ScriptWrapperMain\n    ret \u003d target(argv[1:])\n  File \"/mnt/host/source/chromite/scripts/cros_list_modified_packages.py\", line 245, in main\n    print(\" \".join(sorted(modified)))\n  File \"/mnt/host/source/chromite/scripts/cros_list_modified_packages.py\", line 196, in ListModifiedWorkonPackages\n    packages \u003d ListWorkonPackagesInfo(sysroot)\n  File \"/mnt/host/source/chromite/scripts/cros_list_modified_packages.py\", line 137, in ListWorkonPackagesInfo\n    for filename, projects in portage_util.GetWorkonProjectMap(\n  File \"/mnt/host/source/chromite/lib/portage_util.py\", line 2144, in GetWorkonProjectMap\n    yield relpath, workon_vars.project\nAttributeError: \u0027NoneType\u0027 object has no attribute \u0027project\u0027\n\ncmd\u003d[\u0027cros_list_modified_packages\u0027, \u0027--sysroot\u0027, PosixPath(\u0027/build/arkham\u0027)]\n11:19:41: ERROR: (Re-run with --debug for more details.)",
+      "parentUuid": "84bd1f7e_0d03ffbd",
+      "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

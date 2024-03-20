@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1161c0ab_4f3a298f",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2679,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-20T23:32:14Z",
+      "side": 1,
+      "message": "What is \"possible_dirs\" exactly?\nwhy does \"/\" exempt something from being a possible directory?\ncouldn\u0027t  \"foo/bar\" be a dir?",
+      "range": {
+        "startLine": 2677,
+        "startChar": 16,
+        "endLine": 2679,
+        "endChar": 17
+      },
+      "revId": "66ab122eac68c1ac5836ec604d1a02a866b83676",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -52,6 +52,24 @@
       "parentUuid": "8a9008d4_b5df1786",
       "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84bd1f7e_0d03ffbd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-03-20T05:20:06Z",
+      "side": 1,
+      "message": "I think the .cache directory under your home shouldn\u0027t be owned by root, right? Do you mind try chown /home/aorus/.cache/ to your user?",
+      "parentUuid": "905c5624_2081b0c5",
+      "revId": "6ec5a9ab6086ec6f043cd7aab1f1744eb58b17f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

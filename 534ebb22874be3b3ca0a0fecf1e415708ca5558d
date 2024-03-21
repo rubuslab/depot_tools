@@ -1,0 +1,291 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1f9b08d_b4fc64dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "thanks for doing this!",
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0b38f7a_6a495489",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "this seems to diverge from upload_to_google_storage.py\nwhich takes several files and compresses them separately.\nwas there a specific reason we\u0027re doing things differently?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 5
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d03b069a_82080cd2",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "I haven\u0027t mentioned this before in new code added previously, but since this is new new code, could type hints be added to functions in the file.\n\nhttps://docs.python.org/3/library/typing.html#module-typing\n\n(Including gerrit AI generated suggestion below for convenience, but I\u0027m not checking closely if it\u0027s actually correct. also gonna add comments to all functions to get generated type hints, not to be pedantic.)\n\n\n```suggestion\ndef get_targets(args: list[str], parser: optparse.OptionParser,\n                use_null_terminator: bool) -\u003e list[str]:\n```",
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f00d86e_d5a00601",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "Also could you add function one line docstrings",
+      "range": {
+        "startLine": 29,
+        "startChar": 50,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "80c951a6_fc4f19fa",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "could type hints be added for this function\n```suggestion\ndef create_archive(object_name: str, dirs: list[str]) -\u003e str:\n```",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c8d9a49_1960cc53",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "please add type hints for this function\n\n```suggestion\ndef validate_archive_dirs(dirs: list[str]) -\u003e bool:\n```",
+      "range": {
+        "startLine": 53,
+        "startChar": 26,
+        "endLine": 53,
+        "endChar": 30
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78aa5b08_7c7db22b",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "please add type hints for this function\n\n```suggestion\ndef get_sha256sum(filename: str) -\u003e str:\n```",
+      "range": {
+        "startLine": 74,
+        "startChar": 18,
+        "endLine": 74,
+        "endChar": 26
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce28bf01_9a90f4a1",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "can we have a common function instead called here and in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient.py;l\u003d2577;bpv\u003d1?q\u003dGetSha256Sum\u0026sq\u003d\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2626ccf_6a409ac9",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "please add type hints for this function\n\n```suggestion\ndef upload_to_google_storage(file: str, base_url: str, object_name: str,\n                             gsutil: Gsutil, force: bool, gzip: str,\n                             dry_run: bool):\n```",
+      "range": {
+        "startLine": 87,
+        "startChar": 29,
+        "endLine": 88,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f738fec_9e37d4ba",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "nit for debugging:\n```suggestion\n    print(\"Uploading %s as %s\" % (file, file_url))\n```",
+      "range": {
+        "startLine": 98,
+        "startChar": 4,
+        "endLine": 98,
+        "endChar": 32
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b774f315_ce098063",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "please add type hints for this function\n\n```suggestion\ndef construct_deps_blob(bucket: str, object_name: str, file: str) -\u003e dict:\n```",
+      "range": {
+        "startLine": 110,
+        "startChar": 24,
+        "endLine": 110,
+        "endChar": 49
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "107ac102_f1139441",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "either here or in a follow-up CL, but i don\u0027t think we should burden users with providing an object-name if we don\u0027t have to. So would prefer object-name to be an optional arg.\n\nThe name of the local tar file that gets created could be some randomly name tempfile (unless there\u0027s a requirement to keep the local compressed file around? which i don\u0027t think is the case). \nand then the GCS object name can be the sha256 if the user does not provide object-name.",
+      "range": {
+        "startLine": 130,
+        "startChar": 25,
+        "endLine": 130,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b161990c_b0628a2e",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T00:53:41Z",
+      "side": 1,
+      "message": "don\u0027t like that old code was vague on what this actually is. \ncould this be more clear on what using this option actually does",
+      "range": {
+        "startLine": 162,
+        "startChar": 28,
+        "endLine": 162,
+        "endChar": 55
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

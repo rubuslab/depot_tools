@@ -22,6 +22,30 @@
       },
       "revId": "66ab122eac68c1ac5836ec604d1a02a866b83676",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a0ba1ef_d2c8b7f0",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2679,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-21T16:24:19Z",
+      "side": 1,
+      "message": "I mean possible top-level directories",
+      "parentUuid": "1161c0ab_4f3a298f",
+      "range": {
+        "startLine": 2677,
+        "startChar": 16,
+        "endLine": 2679,
+        "endChar": 17
+      },
+      "revId": "66ab122eac68c1ac5836ec604d1a02a866b83676",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -175,6 +175,24 @@
       "parentUuid": "c397d9f4_112c78f5",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "696cc79b_3daeff5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T19:31:05Z",
+      "side": 1,
+      "message": "Agree with Aravind. I don\u0027t think the impact of xyz in `gclient xyz` should \"leak\" into changing how `update_depot_tools` behaves.\n\nIncongruence here comes from the fact that the depot_tools you develop and the depot_tools you use are the same. As Aravind pointed out, that\u0027s not how we\u0027ve seen/expected depot_tools to be used.\n\nFrom your context, I can\u0027t tell if this lack of separation is a hard requirement for your project.\n\n```\nI\u0027m open to adding a new flag that does this and modifying gclient sync --reset (either in the chromium project or downstream)\n```\nWhether this is added to the chromium project directly: we want to avoid adding new flags and more code to support (what we currently think is) a bespoke use case.\n\nlmk what you think.",
+      "parentUuid": "c03a512d_212a6559",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

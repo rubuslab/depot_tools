@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c62ef77b_106abbaf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-03-21T03:49:11Z",
+      "side": 1,
+      "message": "LGTM. Note that the unknown fields will be excluded from the dependency metadata (see [1]), but I would say that\u0027s fine. This should address the overextraction outlined in the link bug.\n\n[1] https://source.corp.google.com/h/eureka-internal/superproject/+/master:chromium/tools/depot_tools/metadata/dependency_metadata.py;l\u003d63",
+      "revId": "23d010f12b048f0f33e604420cd9a07c850a07ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

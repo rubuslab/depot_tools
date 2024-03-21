@@ -33,6 +33,24 @@
       "message": "I think this would limit the unknown field names to title case, e.g.\n```\nMy Useful Field: detected\nAnd another: undetected\n```\n\nJust checking that\u0027s the intent.",
       "revId": "36dbaa4ac795cddae3cd68e9ca8b264f9f75202a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71614163_ec05dfb3",
+        "filename": "metadata/parse.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-03-21T03:33:51Z",
+      "side": 1,
+      "message": "Yes. That\u0027s my intention (based on what I\u0027ve seen in the template and existing READMEs).\n\nCapitalization seems to be an important distinction between a field that could be extracted vs descriptive message (e.g. \"What\u0027s new\", \"What\u0027s the rolling process\").\n\nI tweaked the RegEx a bit, the one in PS1 is a bit too strict, thus will not recognize `InfoURL`. PS2 RegEx relaxed the word pattern to just \"string begin with a capitalized letter\".",
+      "parentUuid": "9a454110_9b8cbac8",
+      "revId": "36dbaa4ac795cddae3cd68e9ca8b264f9f75202a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

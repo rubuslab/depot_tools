@@ -157,6 +157,24 @@
       "parentUuid": "9d030e64_956e7a5a",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c03a512d_212a6559",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528063
+      },
+      "writtenOn": "2024-03-21T14:37:52Z",
+      "side": 1,
+      "message": "To give some context, we have some downstream patches (mainly for reclient) that we apply through the DEPS file to depot_tools. When we tell our engineers to run `gclient sync --reset`, they hit conflicts because we\u0027ve patched depot_tools this way.\n\nIt seems intuitive that any process that is updating depot tools with a `--reset` flag (even if it\u0027s a different command) would update depot tools regardless of open changes. If you\u0027re worried about other implementers, I\u0027m open to adding a new flag that does this and modifying `gclient sync --reset` (either in the chromium project or downstream) so that we call it and intentionally make this for `gclient sync`",
+      "parentUuid": "c397d9f4_112c78f5",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

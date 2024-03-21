@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf51bf4b_48fb34d4",
+        "filename": "presubmit_diff.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-03-21T01:13:04Z",
+      "side": 1,
+      "message": "https://docs.python.org/3/library/concurrent.futures.html\n\n\u003e Changed in version 3.5: If max_workers is None or not given, it will default to the number of processors on the machine, multiplied by 5, assuming that ThreadPoolExecutor is often used to overlap I/O instead of CPU work and the number of workers should be higher than the number of workers for ProcessPoolExecutor.\n\n\nThis may be problematic for high-performance workstations, this can easily create hundreds of concurrent connections, and get throttled by Gitiles.\n\n```suggestion\n    with concurrent.futures.ThreadPoolExecutor(\n        max_workers\u003dgerrit_util.MAX_CONCURRENT_CONNECTION) as executor:\n```\n\nimport will need to be updated too.",
+      "range": {
+        "startLine": 133,
+        "startChar": 28,
+        "endLine": 133,
+        "endChar": 46
+      },
+      "revId": "f6368e1fc7a3cbfea6d4855772bb58f63713e23e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

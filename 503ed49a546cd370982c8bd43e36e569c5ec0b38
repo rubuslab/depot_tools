@@ -88,6 +88,24 @@
       "parentUuid": "c13c5b70_5f0f2107",
       "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "643b004f_bb7d46af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1588026
+      },
+      "writtenOn": "2024-03-21T08:16:42Z",
+      "side": 1,
+      "message": "replication steps:\nIn Win CMD:\n```\ncd F:\\test\nset GIT_CACHE_PATH\u003df:\\test\\git_cache\ngclient config --name \"src\" --unmanaged git@github.com:chromium/chromium.git\ngclient sync\n```\nThe error will be found:\nOSError: [Errno 22] Invalid argument: \u0027f:\\\\test\\\\git_cache\\\\git@github.com:chromium-chromium\\\\HEAD\u0027",
+      "parentUuid": "3f262072_6d8ffc89",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

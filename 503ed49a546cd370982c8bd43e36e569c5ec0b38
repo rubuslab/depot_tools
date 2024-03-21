@@ -106,6 +106,24 @@
       "parentUuid": "3f262072_6d8ffc89",
       "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a169497f_05e3253d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-21T17:50:24Z",
+      "side": 1,
+      "message": "sorry, for the delay, I was catching up. The latest patchset LGTM in my opinion.\n\nBut I want to make sure I\u0027m not missing anything, so I want to as a few questions about your older comments that might be outdated at this point.\n\n```\n1) Provide a minimal implementation to support ssh_url. Obviously at this stage, even internal builders use git_url in https form, so the https part will not be affected.\n2) Correct CacheDirToUrl to return a legal Git_URL, like: https://google.com/username/repository.git or git@google.com:username/repository.git\n```\n(1) has been implemented in the latest patchset. \n\nis it still the plan to implement (2)? I am missing why the lack of \".git\" matters at all. How did this come up? how is this related? can you provide conntext?",
+      "parentUuid": "643b004f_bb7d46af",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

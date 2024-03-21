@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e981df53_394fbad6",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-21T20:21:42Z",
+      "side": 1,
+      "message": "```suggestion\n        if norm_url.startswith(\u0027git@\u0027):\n```",
+      "revId": "d3d2b88bfc1c8494c2ac29946ccc94df5140b720",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56fdc0be_e196ccf0",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-21T20:21:42Z",
+      "side": 1,
+      "message": "```suggestion\n            norm_url \u003d norm_url.replace(\u0027:\u0027, \u0027__\u0027)\n```\n\nThis duplicates in the replaces from the below statement.",
+      "revId": "d3d2b88bfc1c8494c2ac29946ccc94df5140b720",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "322e9354_f26191dc",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-21T20:21:42Z",
+      "side": 1,
+      "message": "\u003e To minimize the impact\n\nNit: I don\u0027t think part of the comment is necessary. We are not \"minimizing impact\" but simply adding to how the current conversion works.",
+      "revId": "d3d2b88bfc1c8494c2ac29946ccc94df5140b720",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "083a355f_3dcbcd86",
+        "filename": "git_cache.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-21T20:21:42Z",
+      "side": 1,
+      "message": "Also, I\u0027m not 100% sure if all SSH URLs start with `git@` (maybe they do). But I guess a simpler change would be just replace `:` in URLs without checking if SSH.\n\nFor example,\n\n```\nnetpath \u003d netpath.replace(\u0027:\u0027, \u0027__\u0027)\n```",
+      "revId": "d3d2b88bfc1c8494c2ac29946ccc94df5140b720",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

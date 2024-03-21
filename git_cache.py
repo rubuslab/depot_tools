@@ -176,6 +176,12 @@ class Mirror(object):
         # Use the same dir for authenticated URLs and unauthenticated URLs.
         norm_url = norm_url.replace('googlesource.com/a/', 'googlesource.com/')
 
+        # To minimize the impact, only the ':' character of the ssh form of
+        # git_url is processed
+        if (norm_url.startswith('git@')):
+            return norm_url.replace('-', '--').replace('/', '-').replace(
+                '_', '__').replace(':', '_').lower()
+
         return norm_url.replace('-', '--').replace('/', '-').lower()
 
     @staticmethod
@@ -183,6 +189,11 @@ class Mirror(object):
         """Convert a cache dir path to its corresponding url."""
         netpath = re.sub(r'\b-\b', '/',
                          os.path.basename(path)).replace('--', '-')
+        # To minimize the impact, only the ':' character of the ssh form of
+        # git_url is processed
+        if (netpath.startswith('git@')):
+            netpath = netpath.replace('_', ':').replace('__', '_')
+            return netpath
         return 'https://%s' % netpath
 
     @classmethod

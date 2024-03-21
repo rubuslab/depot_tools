@@ -193,6 +193,24 @@
       "parentUuid": "c03a512d_212a6559",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98da36ad_9cb4e85e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528063
+      },
+      "writtenOn": "2024-03-21T21:07:01Z",
+      "side": 1,
+      "message": "Yeah, the lack of separation isn\u0027t a hard requirement. Any way to reset depot tools when we `gclient sync --reset` would be great for us :)\n\nDefinitely understand not wanting to support new flags for a bespoke use case. Is there a better way for downstream implementers to modify `depot_tools` than `.patch` files in `DEPS`? The only other way I can think of is doing a soft fork of the repo, pointing DEPS towards the soft fork, and doing costly integration steps in that repo to maintain it.\n\nAlso, this discussion is escaping the simple and getting more complicated. Could we have a quick discussion on VC? Trying to follow this principle https://chromium.googlesource.com/chromium/src/+/HEAD/docs/cl_respect.md#remember-communication-can-be-hard",
+      "parentUuid": "696cc79b_3daeff5f",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

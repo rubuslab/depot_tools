@@ -124,6 +124,24 @@
       "parentUuid": "643b004f_bb7d46af",
       "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44e91802_7393baa3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1588026
+      },
+      "writtenOn": "2024-03-22T05:03:38Z",
+      "side": 1,
+      "message": "thank you for your reply. Part (2) is not currently planned to be implemented, because the place where the CacheDirToUrl function is actually used (in gclient_scm.py) only part of the return value, and it does not matter whether to add \u0027.git\u0027 or not, for example:\n```\n# return_value is \u0027https://chromium.googlesource.com/chromium/src\u0027\nreturn_value \u003d CacheDirToUrl(‘chromium.googlesource.com-chromium-src’)\n\n# used_value is \u0027https://chromium.googlesource.com/chromium\u0027\nused_value \u003d return_value.rstrip(\u0027/\u0027)\n\n# compare used_value with other_value\nif used_value !\u003d other_value:\n    # do something\nelse:\n    # do something\n```",
+      "parentUuid": "a169497f_05e3253d",
+      "revId": "503ed49a546cd370982c8bd43e36e569c5ec0b38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

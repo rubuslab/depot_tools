@@ -211,6 +211,24 @@
       "parentUuid": "696cc79b_3daeff5f",
       "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87b12310_b254945a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-22T00:22:19Z",
+      "side": 1,
+      "message": "I\u0027m also not aware of another way beyond forking. \n\nAnother fix might be to disable the depot_tools auto-updating, either by removing it via another patch or setting envar DEPOT_TOOLS_UPDATE\u003d0. Previously, the problem was that depot_tools was \"managed\" via both DEPS and its own auto-update. With `DEPOT_TOOLS_UPDATE\u003d0` it should only be managed via DEPS.\n\n\nAlso saw the VC invite, happy to clarify or discuss more there, thanks!",
+      "parentUuid": "98da36ad_9cb4e85e",
+      "revId": "d0785d75979b45c0249e77a943ba2eb57a7b94dd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

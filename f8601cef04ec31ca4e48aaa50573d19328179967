@@ -34,6 +34,23 @@
       "parentUuid": "5618147d_21975c35",
       "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efffe3ab_d3123c28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-03-25T18:47:33Z",
+      "side": 1,
+      "message": "What is the reason for this check being added? The build seemed to work fine without it so what is the value being added?\n\nWhat is the cost of this check? In my crude testing I see that it costs about 0.22 s. This is a small cost, but given that it is added to every single build that developers do it still matters. I worry that autoninja is accumulating too much functionality and cost (vpython, luci-auth check, etc.)",
+      "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbabd85c_6993d9b5",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:26:48Z",
+      "side": 1,
+      "message": "Since this iteration was requiring an object name, I thought it would be too much to get passed in a list of object names if it takes in several files and compresses separately. But your other comment about not requiring object name makes that no longer a concern so I\u0027ll update it to be like the other script and compress several files separately.",
+      "parentUuid": "b0b38f7a_6a495489",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 5
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d03b069a_82080cd2",

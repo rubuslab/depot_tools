@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "84ca3153_bfccedec",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Actually just remembered why upload multiple directories as one tar may be needed. For the llvm-build hook, the extracted tar file produces two directories: bin/ and lib/. If that hook had used upload_to_google_storage, it would have been a single directory instead. So compressing multiple directories together would be supportive of the llvm dep if they need to update it in the future.",
+      "parentUuid": "dbabd85c_6993d9b5",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 5
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d03b069a_82080cd2",
         "filename": "upload_to_google_storage_first_class.py",
         "patchSetId": 8
@@ -105,6 +129,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a6f8d93_e2b4cdd4",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "d03b069a_82080cd2",
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80c951a6_fc4f19fa",
@@ -118,6 +160,30 @@
       "writtenOn": "2024-03-21T00:53:41Z",
       "side": 1,
       "message": "could type hints be added for this function\n```suggestion\ndef create_archive(object_name: str, dirs: list[str]) -\u003e str:\n```",
+      "range": {
+        "startLine": 43,
+        "startChar": 19,
+        "endLine": 43,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44c76c8f_9b6d3b91",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "80c951a6_fc4f19fa",
       "range": {
         "startLine": 43,
         "startChar": 19,
@@ -151,6 +217,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba7ca22e_1ebc4353",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "2c8d9a49_1960cc53",
+      "range": {
+        "startLine": 53,
+        "startChar": 26,
+        "endLine": 53,
+        "endChar": 30
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78aa5b08_7c7db22b",
@@ -164,6 +254,30 @@
       "writtenOn": "2024-03-21T00:53:41Z",
       "side": 1,
       "message": "please add type hints for this function\n\n```suggestion\ndef get_sha256sum(filename: str) -\u003e str:\n```",
+      "range": {
+        "startLine": 74,
+        "startChar": 18,
+        "endLine": 74,
+        "endChar": 26
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5063d289_59577ac3",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "78aa5b08_7c7db22b",
       "range": {
         "startLine": 74,
         "startChar": 18,
@@ -220,6 +334,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "777ce92c_4b3800cc",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "b2626ccf_6a409ac9",
+      "range": {
+        "startLine": 87,
+        "startChar": 29,
+        "endLine": 88,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f738fec_9e37d4ba",
@@ -243,6 +381,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31b07c5a_12226b21",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3f738fec_9e37d4ba",
+      "range": {
+        "startLine": 98,
+        "startChar": 4,
+        "endLine": 98,
+        "endChar": 32
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b774f315_ce098063",
@@ -256,6 +418,30 @@
       "writtenOn": "2024-03-21T00:53:41Z",
       "side": 1,
       "message": "please add type hints for this function\n\n```suggestion\ndef construct_deps_blob(bucket: str, object_name: str, file: str) -\u003e dict:\n```",
+      "range": {
+        "startLine": 110,
+        "startChar": 24,
+        "endLine": 110,
+        "endChar": 49
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db4c68ff_dc23e6d7",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T16:41:35Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "b774f315_ce098063",
       "range": {
         "startLine": 110,
         "startChar": 24,

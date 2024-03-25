@@ -171,6 +171,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "57aa7914_5f441160",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T18:38:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f00d86e_d5a00601",
+      "range": {
+        "startLine": 29,
+        "startChar": 50,
+        "endLine": 29,
+        "endChar": 51
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "80c951a6_fc4f19fa",
@@ -325,6 +349,30 @@
       "writtenOn": "2024-03-21T00:53:41Z",
       "side": 1,
       "message": "can we have a common function instead called here and in https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient.py;l\u003d2577;bpv\u003d1?q\u003dGetSha256Sum\u0026sq\u003d\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools",
+      "range": {
+        "startLine": 75,
+        "startChar": 1,
+        "endLine": 84,
+        "endChar": 26
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "590659e7_71e2eb0d",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T18:38:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce28bf01_9a90f4a1",
       "range": {
         "startLine": 75,
         "startChar": 1,
@@ -499,6 +547,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66aa81d4_ceb1a03e",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T18:38:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "107ac102_f1139441",
+      "range": {
+        "startLine": 130,
+        "startChar": 25,
+        "endLine": 130,
+        "endChar": 36
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b161990c_b0628a2e",
@@ -512,6 +584,30 @@
       "writtenOn": "2024-03-21T00:53:41Z",
       "side": 1,
       "message": "don\u0027t like that old code was vague on what this actually is. \ncould this be more clear on what using this option actually does",
+      "range": {
+        "startLine": 162,
+        "startChar": 28,
+        "endLine": 162,
+        "endChar": 55
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba5b8c95_04cb6e9e",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T18:38:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b161990c_b0628a2e",
       "range": {
         "startLine": 162,
         "startChar": 28,

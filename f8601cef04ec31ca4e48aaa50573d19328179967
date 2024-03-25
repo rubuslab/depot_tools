@@ -16,6 +16,24 @@
       "message": "Adding Bruce as Takuto doesn\u0027t own the test file.",
       "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "caf8166d_18e4b217",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-03-25T18:13:52Z",
+      "side": 1,
+      "message": "I mean Dirk doesn\u0027t own the test file.",
+      "parentUuid": "5618147d_21975c35",
+      "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfcf6e9d_5980bc93",
+        "filename": "tests/gerrit_client_test.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-03-25T23:07:48Z",
+      "side": 1,
+      "message": "this is what git cl format likes",
+      "revId": "736ecf92773362a391e080ace2b8e5f422edc55b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

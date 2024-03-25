@@ -91,6 +91,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0dd2493f_ee88d5c5",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-03-25T18:02:37Z",
+      "side": 1,
+      "message": "Correction: the llvm-build hook produces one directory with bin/ and lib/ as sub directories. So disregard my most recent comment above.\n\nI think the main difference with compressing separately or together is how a user would specify the optional object-name. If they wanted to upload multiple directories separately, I guess a user can pass in a list of object-names? Seems messy so just compressing all the directories together and limiting to one object-name would be better.",
+      "parentUuid": "84ca3153_bfccedec",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 5
+      },
+      "revId": "534ebb22874be3b3ca0a0fecf1e415708ca5558d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d03b069a_82080cd2",
         "filename": "upload_to_google_storage_first_class.py",
         "patchSetId": 8

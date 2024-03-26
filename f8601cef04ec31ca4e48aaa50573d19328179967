@@ -69,6 +69,24 @@
       "parentUuid": "efffe3ab_d3123c28",
       "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7a068a8_89f21271",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-03-26T18:29:54Z",
+      "side": 1,
+      "message": "Gotcha. Can you add this extra information to the commit message?",
+      "parentUuid": "522443c2_eeb436b9",
+      "revId": "f8601cef04ec31ca4e48aaa50573d19328179967",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

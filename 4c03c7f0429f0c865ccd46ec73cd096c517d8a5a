@@ -16,6 +16,57 @@
       "message": "ptal",
       "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54e5967b_0d1050f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-03-26T06:06:56Z",
+      "side": 1,
+      "message": "LGTM % comment. In future, it would have been nice if the refactor for single line fields and type hint changes were separate CLs (http://go/gerrit-chain-cl).",
+      "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d876d86_bcdd1434",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-03-26T06:06:56Z",
+      "side": 1,
+      "message": "LGTM % comment. In future, the refactor for single line fields and type",
+      "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31efc285_eb6dceb6",
+        "filename": "metadata/fields/field_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-03-26T06:06:56Z",
+      "side": 1,
+      "message": "You could use `os.linesep` instead:\n```suggestion\n        return field_value.endswith(os.linesep)\n```",
+      "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

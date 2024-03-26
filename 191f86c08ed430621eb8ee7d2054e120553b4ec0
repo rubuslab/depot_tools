@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07392dc2_036bc119",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-26T04:58:05Z",
+      "side": 1,
+      "message": "LGTM otherwise.",
+      "revId": "191f86c08ed430621eb8ee7d2054e120553b4ec0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fae3dfe4_2b1642e0",
+        "filename": "tests/git_cache_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1529602
+      },
+      "writtenOn": "2024-03-26T04:58:05Z",
+      "side": 1,
+      "message": "Nit:\n\n```suggestion\n    def test_ssh_url_in_UrlToCacheDir_and_CacheDirToUrl(self):\n```",
+      "revId": "191f86c08ed430621eb8ee7d2054e120553b4ec0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

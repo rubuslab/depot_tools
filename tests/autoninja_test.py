@@ -75,30 +75,23 @@ class AutoninjaTest(trial_dir.TestCase):
 
     def test_autoninja_goma(self):
         """
-        Test that when specifying use_goma=true, autoninja verifies that Goma
-        is running and then delegates to ninja.
+        Test that when specifying use_goma=true and on windows, the
+        message that goma is not supported is displayed.
         """
         goma_dir = os.path.join(self.root_dir, 'goma_dir')
-        with mock.patch('subprocess.call', return_value=0), \
-             mock.patch('ninja.main', return_value=0) as ninja_main, \
-             mock.patch.dict(os.environ, {"GOMA_DIR": goma_dir}):
+        with mock.patch.dict(os.environ, {"GOMA_DIR": goma_dir}):
             out_dir = os.path.join('out', 'dir')
             write(os.path.join(out_dir, 'args.gn'), 'use_goma=true')
             write(
                 os.path.join(
                     'goma_dir', 'gomacc.exe'
                     if sys.platform.startswith('win') else 'gomacc'), 'content')
-            autoninja.main(['autoninja.py', '-C', out_dir])
-            ninja_main.assert_called_once()
-            args = ninja_main.call_args.args[0]
-        self.assertIn('-C', args)
-        self.assertEqual(args[args.index('-C') + 1], out_dir)
-        # Check that autoninja correctly calculated the number of jobs to use
-        # as required for remote execution, instead of using the value for
-        # local execution.
-        self.assertIn('-j', args)
-        parallel_j = int(args[args.index('-j') + 1])
-        self.assertGreater(parallel_j, multiprocessing.cpu_count() * 2)
+            with contextlib.redirect_stderr(io.StringIO()) as f:
+                with self.assertRaises(SystemExit):
+                    self.assertEqual(
+                        autoninja.main(['autoninja.py', '-C', out_dir]), 1)
+                self.assertIn("The gn arg use_goma=true is no longer supported",
+                              f.getvalue())
 
     def test_autoninja_reclient(self):
         """

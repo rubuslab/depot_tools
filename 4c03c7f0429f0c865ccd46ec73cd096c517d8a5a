@@ -52,6 +52,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2742e0f_7e75dee1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-03-26T06:35:22Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "54e5967b_0d1050f9",
+      "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31efc285_eb6dceb6",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-03-26T06:06:56Z",
       "side": 1,
       "message": "You could use `os.linesep` instead:\n```suggestion\n        return field_value.endswith(os.linesep)\n```",
+      "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eca5de22_c1ec0426",
+        "filename": "metadata/fields/field_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-03-26T06:35:22Z",
+      "side": 1,
+      "message": "I don\u0027t think `os.linesep` is the right pick here.\n\nChromium sets git checkout EOL to LF on all platforms: https://source.chromium.org/chromium/chromium/src/+/main:.gitattributes;l\u003d51-52?q\u003d-f:weblayer%2F%20-f:aosp%2F%20-f:%5C.*.java%20%20%20%20.gitattributes\u0026ss\u003dchromium\n\nIf we use `os.linesep` here, the presubmit won\u0027t work as intended on Windows hosts.\n\nI\u0027ve added a comment about the usage of \\n.",
+      "parentUuid": "31efc285_eb6dceb6",
       "revId": "4c03c7f0429f0c865ccd46ec73cd096c517d8a5a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95df859c_ad70898c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1588026
+      },
+      "writtenOn": "2024-03-26T05:58:50Z",
+      "side": 1,
+      "message": "It seems to be ready for submission, but I don\u0027t have permission. Can anyone help me submit it? @aravindvasudev@google.com @jojwang@chromium.org",
+      "revId": "06f432435652fa021236c67b7e2c9ecad4dfb62b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

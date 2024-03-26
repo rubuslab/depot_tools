@@ -332,42 +332,15 @@ def main(args):
         use_goma = False
 
     if use_goma:
-        gomacc_file = ("gomacc.exe"
-                       if sys.platform.startswith("win") else "gomacc")
-        goma_dir = os.environ.get("GOMA_DIR",
-                                  os.path.join(SCRIPT_DIR, ".cipd_bin"))
-        gomacc_path = os.path.join(goma_dir, gomacc_file)
-        # Don't invoke gomacc if it doesn't exist.
-        if os.path.exists(gomacc_path):
-            # Check to make sure that goma is running. If not, don't start the
-            # build.
-            status = subprocess.call(
-                [gomacc_path, "port"],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                shell=False,
-            )
-            if status == 1:
-                print(
-                    'Goma is not running. Use "goma_ctl ensure_start" to start '
-                    "it.",
-                    file=sys.stderr,
-                )
-                if sys.platform.startswith("win"):
-                    # Set an exit code of 1 in the batch file.
-                    print('cmd "/c exit 1"')
-                else:
-                    # Set an exit code of 1 by executing 'false' in the bash
-                    # script.
-                    print("false")
-                sys.exit(1)
-        # Display a warning that goma is being deprecated, every time a build
-        # is executed with 'use_goma.
-        # Further changes to encourage switching may follow.
+        # Display a warning that goma has being deprecated, every time a build
+        # is executed with 'use_goma'.
+        print(
+            "The gn arg use_goma=true is no longer supported, please use "
+            "`use_remoteexec=true` instead.",
+            file=sys.stderr)
         if sys.platform.startswith("win"):
             print(
-                "The gn arg use_goma=true will be deprecated by EOY 2023. "
-                "Please use `use_remoteexec=true` instead. See "
+                "See "
                 "https://chromium.googlesource.com/chromium/src/+/main/docs/"
                 "windows_build_instructions.md#use-reclient "
                 "for setup instructions.",
@@ -375,31 +348,18 @@ def main(args):
             )
         elif sys.platform == "darwin":
             print(
-                "The gn arg use_goma=true will be removed on Feb 7th 2024. "
-                "Please use `use_remoteexec=true` instead. "
                 "If you are a googler see http://go/building-chrome-mac"
                 "#using-remote-execution for setup instructions. ",
                 file=sys.stderr,
             )
         else:
             print(
-                "The gn arg use_goma=true will be removed on Feb 7th 2024. "
-                "Please use `use_remoteexec=true` instead. See "
+                "See "
                 "https://chromium.googlesource.com/chromium/src/+/main/docs/"
                 "linux/build_instructions.md#use-reclient for setup instructions.",
                 file=sys.stderr,
             )
-        if not sys.platform.startswith("win"):
-            # Artificial build delay is for linux/mac for now.
-            t = 5
-            while t > 0:
-                print(
-                    f"The build will start in {t} seconds.",
-                    file=sys.stderr,
-                )
-                time.sleep(1)
-                t = t - 1
-
+        sys.exit(1)
 
     # A large build (with or without goma) tends to hog all system resources.
     # Depending on the operating system, we might have mechanisms available

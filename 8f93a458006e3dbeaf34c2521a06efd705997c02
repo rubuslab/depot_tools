@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6583ad93_6d253dd4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-03-27T20:11:33Z",
+      "side": 1,
+      "message": "This is noisy to print every time. But needed to debug a builder issue where allowing led is not immediately available.\nSo this should be temporary until bug is resolved.",
+      "revId": "8f93a458006e3dbeaf34c2521a06efd705997c02",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

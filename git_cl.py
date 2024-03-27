@@ -1751,6 +1751,7 @@ class Changelist(object):
                 args.extend(['--description_file', description_file])
                 start = time_time()
                 cmd = ['vpython3', PRESUBMIT_SUPPORT] + args
+                print(f'Running {cmd}')
                 if resultdb and realm:
                     cmd = ['rdb', 'stream', '-new', '-realm', realm, '--'] + cmd
 

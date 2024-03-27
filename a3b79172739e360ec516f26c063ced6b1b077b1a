@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e7045d3_4d8ce42b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-03-27T14:21:59Z",
+      "side": 1,
+      "message": "Stopping submit due to https://chromium-review.googlesource.com/c/chromium/src/+/5399666",
+      "revId": "a3b79172739e360ec516f26c063ced6b1b077b1a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

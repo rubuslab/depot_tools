@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba3ef8f7_48a6e19f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-04-01T17:26:19Z",
+      "side": 1,
+      "message": "I think we decided not to do this? Should this be abandoned?",
+      "revId": "33eb5db9c2046f54dca7d6fb26e3dffc453c6417",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -755,18 +755,21 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        relative=use_relative_paths,
                                        condition=condition))
             elif dep_type == 'gcs':
-                deps_to_add.append(
-                    GcsDependency(parent=self,
-                                  name=name,
-                                  bucket=dep_value['bucket'],
-                                  object_name=dep_value['object_name'],
-                                  sha256sum=dep_value['sha256sum'],
-                                  output_file=dep_value.get('output_file'),
-                                  size_bytes=dep_value['size_bytes'],
-                                  custom_vars=self.custom_vars,
-                                  should_process=should_process,
-                                  relative=use_relative_paths,
-                                  condition=condition))
+                gcs_root = self.GetGcsRoot()
+                for obj in dep_value['objects']:
+                    deps_to_add.append(
+                        GcsDependency(parent=self,
+                                      name=name,
+                                      bucket=dep_value['bucket'],
+                                      object_name=obj['object_name'],
+                                      sha256sum=obj['sha256sum'],
+                                      output_file=obj.get('output_file'),
+                                      size_bytes=obj['size_bytes'],
+                                      gcs_root=gcs_root,
+                                      custom_vars=self.custom_vars,
+                                      should_process=should_process,
+                                      relative=use_relative_paths,
+                                      condition=condition))
             else:
                 url = dep_value.get('url')
                 deps_to_add.append(
@@ -792,7 +795,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         deps_to_add.sort(key=lambda x: x.name)
         return deps_to_add
 
-    def ParseDepsFile(self):
+    def ParseDepsFile(self, command):
         # type: () -> None
         """Parses the DEPS file for this dependency."""
         assert not self.deps_parsed
@@ -1211,7 +1214,14 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                               (self.name, skip_sync_rev))
 
         if self.should_recurse:
-            self.ParseDepsFile()
+            self.ParseDepsFile(command)
+            gcs_root = self.GetGcsRoot()
+            if gcs_root:
+              if command == 'revert':
+                  gcs_root.clobber()
+              elif command == 'update':
+                gcs_root.clobber_deps_with_updated_objects(self.name)
+                gcs_root.resolve_objects(self.name)
 
         self._run_is_done(file_list or [])
 
@@ -1377,6 +1387,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             # instance of GClient, do nothing.
             return None
         return self.root.GetCipdRoot()
+
+    def GetGcsRoot(self):
+        if self.root is self:
+            # Let's not infinitely recurse. If this is root and isn't an
+            # instance of GClient, do nothing.
+            return None
+        return self.root.GetGcsRoot()
 
     def subtree(self, include_all):
         """Breadth first recursion excluding root node."""
@@ -1698,6 +1715,7 @@ solutions = %(solution_list)s
         self._enforced_cpu = (detect_host_arch.HostArch(), )
         self._root_dir = root_dir
         self._cipd_root = None
+        self._gcs_root = None
         self.config_content = None
 
     def _CheckConfig(self):
@@ -2483,6 +2501,11 @@ it or fix the checkout.
                 log_level='info' if self._options.verbose else None)
         return self._cipd_root
 
+    def GetGcsRoot(self):
+        if not self._gcs_root:
+            self._gcs_root = gclient_scm.GcsRoot(self.root_dir)
+        return self._gcs_root
+
     @property
     def root_dir(self):
         """Root directory of gclient checkout."""
@@ -2506,19 +2529,21 @@ class GcsDependency(Dependency):
     """A Dependency object that represents a single GCS bucket and object"""
 
     def __init__(self, parent, name, bucket, object_name, sha256sum,
-                 output_file, size_bytes, custom_vars, should_process, relative,
-                 condition):
+                 output_file, size_bytes, gcs_root, custom_vars, should_process,
+                 relative, condition):
         self.bucket = bucket
         self.object_name = object_name
         self.sha256sum = sha256sum
         self.output_file = output_file
         self.size_bytes = size_bytes
+        self._gcs_root = gcs_root
         url = 'gs://{bucket}/{object_name}'.format(
             bucket=self.bucket,
             object_name=self.object_name,
         )
+        self._gcs_root.add_object(parent.name, name, object_name)
         super(GcsDependency, self).__init__(parent=parent,
-                                            name=name,
+                                            name=name + ':' + object_name,
                                             url=url,
                                             managed=None,
                                             custom_deps=None,
@@ -2529,6 +2554,12 @@ class GcsDependency(Dependency):
                                             should_recurse=False,
                                             relative=relative,
                                             condition=condition)
+
+    #override
+    def verify_validity(self):
+        """GCS dependencies allow duplicate name for objects in same directory."""
+        logging.info('Dependency(%s).verify_validity()' % self.name)
+        return True
 
     #override
     def run(self, revision_overrides, command, args, work_queue, options,
@@ -2547,12 +2578,12 @@ class GcsDependency(Dependency):
             f.write(sha1)
             f.write('\n')
 
-    def IsDownloadNeeded(self, output_dir, output_file):
+    def IsDownloadNeeded(self, output_dir, output_file, hash_file,
+                         migration_toggle_file):
         """Check if download and extract is needed."""
         if not os.path.exists(output_file):
             return True
 
-        hash_file = os.path.join(output_dir, 'hash')
         existing_hash = None
         if os.path.exists(hash_file):
             try:
@@ -2565,9 +2596,7 @@ class GcsDependency(Dependency):
 
         # (b/328065301): Remove is_first_class_gcs_file logic when all GCS
         # hooks are migrated to first class deps
-        is_first_class_gcs_file = os.path.join(
-            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
-        is_first_class_gcs = os.path.exists(is_first_class_gcs_file)
+        is_first_class_gcs = os.path.exists(migration_toggle_file)
         if not is_first_class_gcs:
             return True
 
@@ -2603,15 +2632,20 @@ class GcsDependency(Dependency):
         root_dir = self.root.root_dir
 
         # Directory of the extracted tarfile contents
-        output_dir = os.path.join(root_dir, self.name)
+        output_dir = os.path.join(root_dir, self.name.split(':')[0])
         output_file = os.path.join(output_dir, self.output_file
                                    or gcs_file_name)
 
-        if not self.IsDownloadNeeded(output_dir, output_file):
+        hash_file = os.path.join(output_dir, gcs_file_name + '_hash')
+        migration_toggle_file = os.path.join(
+            output_dir,
+            download_from_google_storage.construct_migration_file_name(
+                gcs_file_name))
+        if not self.IsDownloadNeeded(output_dir, output_file, hash_file,
+                                     migration_toggle_file):
             return
 
         # Remove hashfile
-        hash_file = os.path.join(output_dir, 'hash')
         if os.path.exists(hash_file):
             os.remove(hash_file)
 
@@ -2619,10 +2653,10 @@ class GcsDependency(Dependency):
         if os.path.exists(output_file):
             os.remove(output_file)
 
-        # Remove extracted contents
-        if os.path.exists(output_dir):
-            shutil.rmtree(output_dir)
-        os.makedirs(output_dir)
+        # Another GCS dep could be using the same output_dir, so don't remove
+        # it
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
         if os.getenv('GCLIENT_TEST') == '1':
             if 'no-extract' in output_file:
@@ -2680,8 +2714,6 @@ class GcsDependency(Dependency):
                     raise Exception('tarfile contains invalid entries')
                 tar.extractall(path=output_dir)
         self.WriteFilenameHash(calculated_sha256sum, hash_file)
-        migration_toggle_file = os.path.join(
-            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
         with open(migration_toggle_file, 'w') as f:
             f.write(str(1))
             f.write('\n')

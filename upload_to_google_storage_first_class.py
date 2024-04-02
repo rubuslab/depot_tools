@@ -108,7 +108,7 @@ def get_sha256sum(filename: str) -> str:
 
 def upload_to_google_storage(file: str, base_url: str, object_name: str,
                              gsutil: Gsutil, force: bool, gzip: str,
-                             dry_run: bool):
+                             dry_run: bool) -> str:
     """Upload file to GCS"""
     file_url = '%s/%s' % (base_url, object_name)
     if gsutil.check_call('ls', file_url)[0] == 0 and not force:
@@ -120,7 +120,7 @@ def upload_to_google_storage(file: str, base_url: str, object_name: str,
     if dry_run:
         return
     print("Uploading %s as %s" % (file, file_url))
-    gsutil_args = ['-h', 'Cache-Control:public, max-age=31536000', 'cp']
+    gsutil_args = ['-h', 'Cache-Control:public, max-age=31536000', 'cp', '-v']
     if gzip:
         gsutil_args.extend(['-z', gzip])
     gsutil_args.extend([file, file_url])
@@ -129,9 +129,25 @@ def upload_to_google_storage(file: str, base_url: str, object_name: str,
         raise Exception(
             code, 'Encountered error on uploading %s to %s\n%s' %
             (file, file_url, err))
+    pattern = re.escape(file_url) + '#(?P<generation>\d+)'
+    # The geneartion number is printed as part of the progress / status info
+    # which gsutil outputs to stderr to keep separated from any final output
+    # data.
+    for line in err.strip().splitlines():
+        import pdb
+        pdb.set_trace()
+
+        m = re.search(pattern, line)
+        if m:
+            return m.group('generation')
+    print('Warning: generation number could not be parsed from status'
+          f'info: {err}')
+    return ('missing generation number, please retrieve from Cloud Storage'
+            'before saving to DEPS')
 
 
-def construct_deps_blob(bucket: str, object_name: str, file: str) -> dict:
+def construct_deps_blob(bucket: str, object_name: str, file: str,
+                        generation: str) -> dict:
     """Output a blob hint that would need be added to a DEPS file"""
     sha256sum = get_sha256sum(file)
     size_bytes = os.path.getsize(file)
@@ -142,6 +158,7 @@ def construct_deps_blob(bucket: str, object_name: str, file: str) -> dict:
             'object_name': object_name,
             'sha256sum': sha256sum,
             'size_bytes': size_bytes,
+            'generation': generation,
         }
     }
 
@@ -233,10 +250,12 @@ def main():
 
     base_url = 'gs://%s' % options.bucket
 
-    upload_to_google_storage(file, base_url, object_name, gsutil, options.force,
-                             options.gzip, options.dry_run)
+    generation = upload_to_google_storage(file, base_url, object_name, gsutil,
+                                          options.force, options.gzip,
+                                          options.dry_run)
     print(
-        json.dumps(construct_deps_blob(options.bucket, object_name, file),
+        json.dumps(construct_deps_blob(options.bucket, object_name, file,
+                                       generation),
                    indent=2))
 
 

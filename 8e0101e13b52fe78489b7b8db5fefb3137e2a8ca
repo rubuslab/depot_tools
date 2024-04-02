@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca54a5d5_3255a134",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-02T00:57:11Z",
+      "side": 1,
+      "message": "Hi Eric, any idea if this will break things down the line?\n\nExample commit msg with `--no-log` before the change:\n```\n    Roll src/third_party/cros_system_api/ 5f0d776d0..d19e03cad (1 commit)\n    \n    https://chromium.googlesource.com/chromiumos/platform2/system_api.git/+log/5f0d776d011b..d19e03cadd39\n    \n    $ git log 5f0d776d0..d19e03cad --date\u003dshort --no-merges --format\u003d\u0027%ad %ae %s\u0027\n    \n    Created with:\n      roll-dep src/third_party/cros_system_api\n\n```\n\nand after this CL\n```\n    Roll src/third_party/cros_system_api/ 5f0d776d0..d19e03cad (1 commit)\n    \n    https://chromium.googlesource.com/chromiumos/platform2/system_api.git/+log/5f0d776d011b..d19e03cadd39\n    \n    Created with:\n      roll-dep src/third_party/cros_system_api\n\n```",
+      "revId": "8e0101e13b52fe78489b7b8db5fefb3137e2a8ca",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

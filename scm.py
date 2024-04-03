@@ -5,6 +5,7 @@
 
 from collections import defaultdict
 import os
+import pathlib
 import platform
 import re
 from typing import Mapping, List
@@ -528,3 +529,12 @@ class GIT(object):
         if sha_only:
             return sha == rev.lower()
         return True
+
+class DIFF(object):
+    @staticmethod
+    def GetAllFiles(cwd):
+        """Returns the list of all files under revision control."""
+        return [
+            str(os.path.relpath(p, cwd)) for p in pathlib.Path(cwd).rglob("*")
+            if os.path.isfile(p)
+        ]

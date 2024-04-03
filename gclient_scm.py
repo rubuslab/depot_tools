@@ -1913,6 +1913,105 @@ class CipdWrapper(SCMWrapper):
     """
 
 
+class GcsRoot(object):
+    """Root to keep track of all GCS objects"""
+
+    def __init__(self, root_dir):
+        self._mutator_lock = threading.Lock()
+        self._root_dir = root_dir
+        # Populated when the DEPS file is parsed
+        # The objects here have not yet been downloaded and written into
+        # the .gcs_entries file
+        self._parsed_objects = {}
+        # .gcs_entries keeps track of which GCS deps have already been installed
+        # This file is in the same directory as .gclient
+        self._gcs_entries_file = os.path.join(self._root_dir, '.gcs_entries')
+        # Contents of the .gcs_entries file
+        self._gcs_entries = self.read_gcs_entries()
+
+    @property
+    def root_dir(self):
+        return self._root_dir
+
+    def add_object(self, checkout_name, dep_path, object_name):
+        with self._mutator_lock:
+            if checkout_name not in self._parsed_objects:
+                self._parsed_objects[checkout_name] = {}
+            if dep_path not in self._parsed_objects[checkout_name]:
+                self._parsed_objects[checkout_name][dep_path] = set(
+                    [object_name])
+            else:
+                self._parsed_objects[checkout_name][dep_path].add(object_name)
+
+    def read_gcs_entries(self):
+        if not os.path.exists(self._gcs_entries_file):
+            return {}
+
+        with open(self._gcs_entries_file, 'r') as f:
+            content = f.read().rstrip()
+            if content:
+                return json.loads(content)
+
+    def resolve_objects(self, checkout_name):
+        with self._mutator_lock:
+            object_dict = self._parsed_objects.get(checkout_name)
+            if not object_dict:
+                return
+            to_list = {p: list(objects) for p, objects in object_dict.items()}
+            if not to_list:
+                return
+            self._gcs_entries[checkout_name] = to_list
+            with open(self._gcs_entries_file, 'w') as f:
+                f.write(json.dumps(self._gcs_entries))
+            self._parsed_objects = {}
+
+    def clobber_deps_with_updated_objects(self, checkout_name):
+        """Clobber the path if an object is removed or added"""
+        with self._mutator_lock:
+            parsed_object_dict = self._parsed_objects.get(checkout_name)
+            if not parsed_object_dict:
+                parsed_paths = set([])
+            else:
+                parsed_paths = set(parsed_object_dict.keys())
+
+            resolved_object_dict = self._gcs_entries.get(checkout_name)
+            if not resolved_object_dict:
+                resolved_paths = set([])
+            else:
+                resolved_paths = set(resolved_object_dict.keys())
+
+            # If any paths are added or removed entirely, clobber that path
+            intersected_paths = parsed_paths.intersection(resolved_paths)
+            # Added paths
+            for path in parsed_paths - intersected_paths:
+                full_path = os.path.join(self.root_dir, path)
+                gclient_utils.rmtree(full_path)
+            # Removed paths
+            for path in resolved_paths - intersected_paths:
+                full_path = os.path.join(self.root_dir, path)
+                gclient_utils.rmtree(full_path)
+
+            # If any objects are added or removed within a path, clobber that
+            # entire path
+            for path in intersected_paths:
+                resolved_objects = resolved_object_dict[path]
+                parsed_objects = parsed_object_dict[path]
+
+                full_path = os.path.join(self.root_dir, path)
+                if (len(resolved_objects) != len(parsed_objects)
+                        and os.path.exists(full_path)):
+                    gclient_utils.rmtree(full_path)
+
+    def clobber(self):
+        for _, objects_dict in self._gcs_entries.items():
+            for dep_path, _ in objects_dict.items():
+                gclient_utils.rmtree(os.path.join(self.root_dir, dep_path))
+        if os.path.exists(self._gcs_entries_file):
+            os.remove(self._gcs_entries_file)
+        with self._mutator_lock:
+            self._gcs_entries = {}
+
+
 class GcsWrapper(SCMWrapper):
     """Wrapper for GCS.
 

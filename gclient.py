@@ -755,6 +755,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        relative=use_relative_paths,
                                        condition=condition))
             elif dep_type == 'gcs':
+                gcs_root = self.GetGcsRoot()
                 for obj in dep_value['objects']:
                     deps_to_add.append(
                         GcsDependency(parent=self,
@@ -764,6 +765,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                       sha256sum=obj['sha256sum'],
                                       output_file=obj.get('output_file'),
                                       size_bytes=obj['size_bytes'],
+                                      gcs_root=gcs_root,
                                       custom_vars=self.custom_vars,
                                       should_process=should_process,
                                       relative=use_relative_paths,
@@ -1213,6 +1215,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
 
         if self.should_recurse:
             self.ParseDepsFile()
+            gcs_root = self.GetGcsRoot()
+            if gcs_root:
+                if command == 'revert':
+                    gcs_root.clobber()
+                elif command == 'update':
+                    gcs_root.clobber_deps_with_updated_objects(self.name)
 
         self._run_is_done(file_list or [])
 
@@ -1226,6 +1234,9 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             for s in self.dependencies:
                 if s.should_process:
                     work_queue.enqueue(s)
+            gcs_root = self.GetGcsRoot()
+            if gcs_root and command == 'update':
+                gcs_root.resolve_objects(self.name)
 
         if command == 'recurse':
             # Skip file only checkout.
@@ -1378,6 +1389,13 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             # instance of GClient, do nothing.
             return None
         return self.root.GetCipdRoot()
+
+    def GetGcsRoot(self):
+        if self.root is self:
+            # Let's not infinitely recurse. If this is root and isn't an
+            # instance of GClient, do nothing.
+            return None
+        return self.root.GetGcsRoot()
 
     def subtree(self, include_all):
         """Breadth first recursion excluding root node."""
@@ -1699,6 +1717,7 @@ solutions = %(solution_list)s
         self._enforced_cpu = (detect_host_arch.HostArch(), )
         self._root_dir = root_dir
         self._cipd_root = None
+        self._gcs_root = None
         self.config_content = None
 
     def _CheckConfig(self):
@@ -2484,6 +2503,11 @@ it or fix the checkout.
                 log_level='info' if self._options.verbose else None)
         return self._cipd_root
 
+    def GetGcsRoot(self):
+        if not self._gcs_root:
+            self._gcs_root = gclient_scm.GcsRoot(self.root_dir)
+        return self._gcs_root
+
     @property
     def root_dir(self):
         """Root directory of gclient checkout."""
@@ -2507,17 +2531,19 @@ class GcsDependency(Dependency):
     """A Dependency object that represents a single GCS bucket and object"""
 
     def __init__(self, parent, name, bucket, object_name, sha256sum,
-                 output_file, size_bytes, custom_vars, should_process, relative,
-                 condition):
+                 output_file, size_bytes, gcs_root, custom_vars, should_process,
+                 relative, condition):
         self.bucket = bucket
         self.object_name = object_name
         self.sha256sum = sha256sum
         self.output_file = output_file
         self.size_bytes = size_bytes
+        self._gcs_root = gcs_root
         url = 'gs://{bucket}/{object_name}'.format(
             bucket=self.bucket,
             object_name=self.object_name,
         )
+        self._gcs_root.add_object(parent.name, name, object_name)
         super(GcsDependency, self).__init__(parent=parent,
                                             name=name + ':' + object_name,
                                             url=url,

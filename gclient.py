@@ -563,6 +563,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             package = self.GetExpandedPackageName()
             url = '%s/p/%s/+/%s' % (scm.GetActualRemoteURL(None), package,
                                     revision)
+        if scm.name == 'gcs':
+            url = self.url
 
         if os.path.isdir(scm.checkout_path):
             revision = scm.revinfo(None, None, None)
@@ -755,18 +757,25 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                                        relative=use_relative_paths,
                                        condition=condition))
             elif dep_type == 'gcs':
-                deps_to_add.append(
-                    GcsDependency(parent=self,
-                                  name=name,
-                                  bucket=dep_value['bucket'],
-                                  object_name=dep_value['object_name'],
-                                  sha256sum=dep_value['sha256sum'],
-                                  output_file=dep_value.get('output_file'),
-                                  size_bytes=dep_value['size_bytes'],
-                                  custom_vars=self.custom_vars,
-                                  should_process=should_process,
-                                  relative=use_relative_paths,
-                                  condition=condition))
+                # Validate that all objects are unique
+                object_name_set = set(o['object_name']
+                                      for o in dep_value['objects'])
+                if len(object_name_set) != len(dep_value['objects']):
+                    raise Exception('Duplicate object names detected in {} GCS '
+                                    'dependency.'.format(name))
+                for obj in dep_value['objects']:
+                    deps_to_add.append(
+                        GcsDependency(parent=self,
+                                      name=name,
+                                      bucket=dep_value['bucket'],
+                                      object_name=obj['object_name'],
+                                      sha256sum=obj['sha256sum'],
+                                      output_file=obj.get('output_file'),
+                                      size_bytes=obj['size_bytes'],
+                                      custom_vars=self.custom_vars,
+                                      should_process=should_process,
+                                      relative=use_relative_paths,
+                                      condition=condition))
             else:
                 url = dep_value.get('url')
                 deps_to_add.append(
@@ -2518,7 +2527,7 @@ class GcsDependency(Dependency):
             object_name=self.object_name,
         )
         super(GcsDependency, self).__init__(parent=parent,
-                                            name=name,
+                                            name=name + ':' + object_name,
                                             url=url,
                                             managed=None,
                                             custom_deps=None,
@@ -2529,6 +2538,12 @@ class GcsDependency(Dependency):
                                             should_recurse=False,
                                             relative=relative,
                                             condition=condition)
+
+    #override
+    def verify_validity(self):
+        """GCS dependencies allow duplicate name for objects in same directory."""
+        logging.info('Dependency(%s).verify_validity()' % self.name)
+        return True
 
     #override
     def run(self, revision_overrides, command, args, work_queue, options,
@@ -2547,12 +2562,12 @@ class GcsDependency(Dependency):
             f.write(sha1)
             f.write('\n')
 
-    def IsDownloadNeeded(self, output_dir, output_file):
+    def IsDownloadNeeded(self, output_dir, output_file, hash_file,
+                         migration_toggle_file):
         """Check if download and extract is needed."""
         if not os.path.exists(output_file):
             return True
 
-        hash_file = os.path.join(output_dir, 'hash')
         existing_hash = None
         if os.path.exists(hash_file):
             try:
@@ -2565,9 +2580,7 @@ class GcsDependency(Dependency):
 
         # (b/328065301): Remove is_first_class_gcs_file logic when all GCS
         # hooks are migrated to first class deps
-        is_first_class_gcs_file = os.path.join(
-            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
-        is_first_class_gcs = os.path.exists(is_first_class_gcs_file)
+        is_first_class_gcs = os.path.exists(migration_toggle_file)
         if not is_first_class_gcs:
             return True
 
@@ -2603,15 +2616,22 @@ class GcsDependency(Dependency):
         root_dir = self.root.root_dir
 
         # Directory of the extracted tarfile contents
-        output_dir = os.path.join(root_dir, self.name)
+        output_dir = os.path.join(root_dir, self.name.split(':')[0])
         output_file = os.path.join(output_dir, self.output_file
                                    or gcs_file_name)
 
-        if not self.IsDownloadNeeded(output_dir, output_file):
+        # Remove any forward slashes and drop any extensions
+        hash_name = self.object_name.replace('/', '_').split('.')[0]
+        hash_file = os.path.join(output_dir, hash_name + '_hash')
+        migration_toggle_file = os.path.join(
+            output_dir,
+            download_from_google_storage.construct_migration_file_name(
+                self.object_name))
+        if not self.IsDownloadNeeded(output_dir, output_file, hash_file,
+                                     migration_toggle_file):
             return
 
         # Remove hashfile
-        hash_file = os.path.join(output_dir, 'hash')
         if os.path.exists(hash_file):
             os.remove(hash_file)
 
@@ -2619,10 +2639,10 @@ class GcsDependency(Dependency):
         if os.path.exists(output_file):
             os.remove(output_file)
 
-        # Remove extracted contents
-        if os.path.exists(output_dir):
-            shutil.rmtree(output_dir)
-        os.makedirs(output_dir)
+        # Another GCS dep could be using the same output_dir, so don't remove
+        # it
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
 
         if os.getenv('GCLIENT_TEST') == '1':
             if 'no-extract' in output_file:
@@ -2631,7 +2651,7 @@ class GcsDependency(Dependency):
             else:
                 # Create fake tar file and extracted tar contents
                 tmpdir = tempfile.mkdtemp()
-                copy_dir = os.path.join(tmpdir, self.name, 'extracted_dir')
+                copy_dir = os.path.join(tmpdir, gcs_file_name, 'extracted_dir')
                 if os.path.exists(copy_dir):
                     shutil.rmtree(copy_dir)
                 os.makedirs(copy_dir)
@@ -2680,8 +2700,6 @@ class GcsDependency(Dependency):
                     raise Exception('tarfile contains invalid entries')
                 tar.extractall(path=output_dir)
         self.WriteFilenameHash(calculated_sha256sum, hash_file)
-        migration_toggle_file = os.path.join(
-            output_dir, download_from_google_storage.MIGRATION_TOGGLE_FILE_NAME)
         with open(migration_toggle_file, 'w') as f:
             f.write(str(1))
             f.write('\n')

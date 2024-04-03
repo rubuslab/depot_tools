@@ -971,9 +971,7 @@ class _ProvidedDiffCache(_DiffCache):
 
     def GetDiff(self, path, local_root):
         """Get the diff for a particular path."""
-        if self._diffs_by_file == None:
-            self._diffs_by_file = _parse_unified_diff(self._diff)
-        return self._diffs_by_file.get(path, '')
+        return ''
 
     def GetOldContents(self, path, local_root):
         """Get the old version for a particular path."""
@@ -1760,11 +1758,6 @@ class PresubmitExecuter(object):
                     for function_name in list(context.keys()):
                         if not function_name.startswith('Check'):
                             continue
-                        if function_name.endswith(
-                                'Commit') and not self.committing:
-                            continue
-                        if function_name.endswith('Upload') and self.committing:
-                            continue
                         logging.debug('Running %s in %s', function_name,
                                       presubmit_path)
                         results.extend(
@@ -1777,21 +1770,18 @@ class PresubmitExecuter(object):
                         output_api.more_cc = []
 
                 else:  # Old format
-                    if self.committing:
-                        function_name = 'CheckChangeOnCommit'
-                    else:
-                        function_name = 'CheckChangeOnUpload'
-                    if function_name in list(context.keys()):
-                        logging.debug('Running %s in %s', function_name,
-                                      presubmit_path)
-                        results.extend(
-                            self._run_check_function(function_name, context,
-                                                     sink, presubmit_path))
-                        logging.debug('Running %s done.', function_name)
-                        self.more_cc.extend(output_api.more_cc)
-                        # Clear the CC list between running each presubmit check
-                        # to prevent CCs from being repeatedly appended.
-                        output_api.more_cc = []
+                    for function_name in ('CheckChangeOnCommit', 'CheckChangeOnUpload'):
+                        if function_name in list(context.keys()):
+                            logging.debug('Running %s in %s', function_name,
+                                        presubmit_path)
+                            results.extend(
+                                self._run_check_function(function_name, context,
+                                                        sink, presubmit_path))
+                            logging.debug('Running %s done.', function_name)
+                            self.more_cc.extend(output_api.more_cc)
+                            # Clear the CC list between running each presubmit check
+                            # to prevent CCs from being repeatedly appended.
+                            output_api.more_cc = []
 
         finally:
             for f in input_api._named_temporary_files:
@@ -1827,13 +1817,14 @@ class PresubmitExecuter(object):
             ]
 
         elapsed_time = time_time() - start_time
-        if elapsed_time > 10.0:
-            sys.stdout.write('%6.1fs to run %s from %s.\n' %
-                             (elapsed_time, function_name, presubmit_path))
-        if sink:
-            status, failure_reason = RDBStatusFrom(result)
-            sink.report(function_name, status, elapsed_time, failure_reason)
+        sys.stdout.write('\nXXX: %s %s %6.1f\n' %
+                            (function_name, presubmit_path, elapsed_time))
 
+        # Print results early.
+        for res in result:
+            res.handle()
+            sys.stdout.write('\n')
+        sys.stdout.write('\n\n\n')
         return result
 
     def _check_result_type(self, result):
@@ -2057,10 +2048,16 @@ def _parse_change(parser, options):
             '<diff_file> cannot be specified when <generate_diff> is set.')
 
     change_scm = scm.determine_scm(options.root)
+<<<<<<< PATCH SET (4133f0 all modified no diff)
+    if change_scm != 'git' and not options.files and not options.diff_file and not options.all_files:
+        parser.error(
+            'unversioned directories must specify <files>, <diff_file>, or <all_files>.')
+=======
     if change_scm == 'diff' and not (options.files or options.all_files
                                      or options.diff_file):
         parser.error('unversioned directories must specify '
                      '<files>, <all_files>, or <diff_file>.')
+>>>>>>> BASE      (f1c7c9 Add crossbench fetch config)
 
     diff = None
     if options.files:
@@ -2087,11 +2084,15 @@ def _parse_change(parser, options):
             # Get the filtered set of files from a directory scan.
             change_files = _parse_files(options.files, options.recursive)
     elif options.all_files:
+<<<<<<< PATCH SET (4133f0 all modified no diff)
+        change_files = [('M', f) for f in scm.DIFF.GetAllFiles(options.root)]
+=======
         if change_scm == 'git':
             all_files = scm.GIT.GetAllFiles(options.root)
         else:
             all_files = scm.DIFF.GetAllFiles(options.root)
         change_files = [('M', f) for f in all_files]
+>>>>>>> BASE      (f1c7c9 Add crossbench fetch config)
     elif options.diff_file:
         diff, change_files = _process_diff_file(options.diff_file)
     else:
@@ -2104,11 +2105,7 @@ def _parse_change(parser, options):
         options.name, options.description, options.root, change_files,
         options.issue, options.patchset, options.author
     ]
-    if diff:
-        return ProvidedDiffChange(*change_args, diff=diff)
-    if change_scm == 'git':
-        return GitChange(*change_args, upstream=options.upstream)
-    return Change(*change_args)
+    return ProvidedDiffChange(*change_args, diff=diff)
 
 
 def _parse_gerrit_options(parser, options):

@@ -541,6 +541,16 @@ class GIT(object):
             return sha == rev.lower()
         return True
 
+<<<<<<< PATCH SET (4133f0 all modified no diff)
+class DIFF(object):
+    @staticmethod
+    def GetAllFiles(cwd):
+        """Returns the list of all files under revision control."""
+        return [
+            str(os.path.relpath(p, cwd)) for p in pathlib.Path(cwd).rglob("*")
+            if os.path.isfile(p)
+        ]
+=======
 
 class DIFF(object):
 
@@ -571,3 +581,4 @@ class DIFF(object):
             dirnames[:] = [d for d in dirnames if should_recurse(dirpath, d)]
 
         return [os.path.relpath(p, cwd) for p in paths]
+>>>>>>> BASE      (f1c7c9 Add crossbench fetch config)

@@ -1,0 +1,137 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "500f6ac1_0eb632f5",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T19:45:03Z",
+      "side": 1,
+      "message": "can use {} for sets\n\n```suggestion\n                object_name_set \u003d {o[\u0027object_name\u0027]\n                                      for o in dep_value[\u0027objects\u0027]}\n```",
+      "range": {
+        "startLine": 761,
+        "startChar": 16,
+        "endLine": 762,
+        "endChar": 68
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b0b3573_8d2379c7",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2528,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T19:45:03Z",
+      "side": 1,
+      "message": "with python3 we should shorten these:",
+      "range": {
+        "startLine": 2525,
+        "startChar": 8,
+        "endLine": 2528,
+        "endChar": 9
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "91e41d1f_d6c5aeda",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gclient.py",
+              "range": {
+                "startLine": 2525,
+                "startChar": 0,
+                "endLine": 2529,
+                "endChar": 0
+              },
+              "replacement": "        url \u003d f\u0027gs://{self.bucket}/{self.object_name}\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3820cfa5_9ebb1814",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T19:45:03Z",
+      "side": 1,
+      "message": "shorten with\n\n\n```suggestion\n                                            f\u0027{name}:{object_name}\n```",
+      "range": {
+        "startLine": 2530,
+        "startChar": 49,
+        "endLine": 2530,
+        "endChar": 73
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c872148b_0c67169c",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2619,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T19:45:03Z",
+      "side": 1,
+      "message": "should entry name (or dirname) and object name be saved separately as fields in the GcsDependency class?\notherwise having \":\" as a boundary we need always deal with or think about might be a hassle",
+      "range": {
+        "startLine": 2619,
+        "startChar": 53,
+        "endLine": 2619,
+        "endChar": 68
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40421adf_132e9387",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2666,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T19:45:03Z",
+      "side": 1,
+      "message": "replace with self.url ?",
+      "range": {
+        "startLine": 2666,
+        "startChar": 36,
+        "endLine": 2666,
+        "endChar": 43
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

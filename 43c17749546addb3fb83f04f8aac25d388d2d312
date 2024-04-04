@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46d10ab6_302b44c9",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-04T14:29:33Z",
+      "side": 1,
+      "message": "These are added to keep `git cl format` from smooshing them all onto a few lines",
+      "range": {
+        "startLine": 27,
+        "startChar": 25,
+        "endLine": 27,
+        "endChar": 28
+      },
+      "revId": "43c17749546addb3fb83f04f8aac25d388d2d312",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

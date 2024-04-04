@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a81b88e7_1272e253",
+        "filename": "upload_to_google_storage_first_class.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-04-04T23:06:52Z",
+      "side": 1,
+      "message": "for the record, I dislike parsing the output like this, but I don\u0027t have a ready alternative - I would consider hitting the google storage API directly, but also maybe we should just use CIPD for this stuff instead of GCS anyway?",
+      "revId": "a85436a790264ee15cd6f7cf388435f3d25471cb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

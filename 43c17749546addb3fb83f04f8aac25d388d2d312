@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d2769563_bf9246b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-04T15:32:27Z",
+      "side": 1,
+      "message": "Nobody knows what 15C500b means without pulling up https://xcodereleases.com/. I suggest saying 15.2 (15C500b). People know 15.2.",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "43c17749546addb3fb83f04f8aac25d388d2d312",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9813ed73_fc683bf2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-04T15:32:27Z",
+      "side": 1,
+      "message": "Apple capitalization nits: `macOS` and `Xcode` (you don’t have to fix if you really don’t want to, I’m only mentioning for future reference and knowledge).",
+      "range": {
+        "startLine": 7,
+        "startChar": 22,
+        "endLine": 9,
+        "endChar": 17
+      },
+      "revId": "43c17749546addb3fb83f04f8aac25d388d2d312",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "46d10ab6_302b44c9",

@@ -33,6 +33,24 @@
       "message": "I think if you put a trailing comma on this, you can get yapf to format it well without needing the `#` workaround.",
       "revId": "7be8310365f64177a5f31ebdcfd6877f589154b0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "328815fc_053cbaba",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-04T16:23:03Z",
+      "side": 1,
+      "message": "Yeah, that worked, thanks.",
+      "parentUuid": "11ecf3b2_79f4d4a7",
+      "revId": "7be8310365f64177a5f31ebdcfd6877f589154b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

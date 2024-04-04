@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d800a894_95b10dd7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T22:28:46Z",
+      "side": 1,
+      "message": "here and below: just `set()` is enough for the empty ones",
+      "range": {
+        "startLine": 1983,
+        "startChar": 31,
+        "endLine": 1983,
+        "endChar": 38
+      },
+      "revId": "9f04d0ff44add9713bf0051828d7ab77a007938e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "357552f5_afff5037",
+        "filename": "gclient_scm.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 1985,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T22:28:46Z",
+      "side": 1,
+      "message": "here and below can be shortened to\n```suggestion\n            parsed_object_dict \u003d self._parsed_objects.get(checkout_name, {})\n            parsed_paths \u003d set(parsed_object_dict.keys())\n```\n\nor shortened further to a single line.",
+      "range": {
+        "startLine": 1981,
+        "startChar": 12,
+        "endLine": 1985,
+        "endChar": 61
+      },
+      "revId": "9f04d0ff44add9713bf0051828d7ab77a007938e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

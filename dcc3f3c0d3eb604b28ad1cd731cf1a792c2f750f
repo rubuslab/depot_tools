@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f45452c_d31fe431",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-04T20:54:51Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "500f6ac1_0eb632f5",
+      "range": {
+        "startLine": 761,
+        "startChar": 16,
+        "endLine": 762,
+        "endChar": 68
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6b0b3573_8d2379c7",
@@ -65,6 +89,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f8421e4_af460e31",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2528,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-04T20:54:51Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "6b0b3573_8d2379c7",
+      "range": {
+        "startLine": 2525,
+        "startChar": 8,
+        "endLine": 2528,
+        "endChar": 9
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3820cfa5_9ebb1814",
@@ -88,6 +136,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc8d60bb_a3077cc4",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2530,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-04T20:54:51Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3820cfa5_9ebb1814",
+      "range": {
+        "startLine": 2530,
+        "startChar": 49,
+        "endLine": 2530,
+        "endChar": 73
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c872148b_0c67169c",
@@ -101,6 +173,30 @@
       "writtenOn": "2024-04-04T19:45:03Z",
       "side": 1,
       "message": "should entry name (or dirname) and object name be saved separately as fields in the GcsDependency class?\notherwise having \":\" as a boundary we need always deal with or think about might be a hassle",
+      "range": {
+        "startLine": 2619,
+        "startChar": 53,
+        "endLine": 2619,
+        "endChar": 68
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e3fb5895_66623af8",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2619,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-04T20:54:51Z",
+      "side": 1,
+      "message": "This is copying the pattern that cipd dependency uses since they support multiple packages per entry name, so I think it\u0027s okay to keep as is. The name field is also being used in the .gclient_entries file as well so it needs both values in the name field.",
+      "parentUuid": "c872148b_0c67169c",
       "range": {
         "startLine": 2619,
         "startChar": 53,

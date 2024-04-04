@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "675a7351_4a417547",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-04T15:47:12Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "7be8310365f64177a5f31ebdcfd6877f589154b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ecf3b2_79f4d4a7",
+        "filename": "recipes/recipe_modules/osx_sdk/api.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-04T15:47:12Z",
+      "side": 1,
+      "message": "I think if you put a trailing comma on this, you can get yapf to format it well without needing the `#` workaround.",
+      "revId": "7be8310365f64177a5f31ebdcfd6877f589154b0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -893,25 +893,31 @@ deps = {
         deps = {
           'src/gcs_dep': {
             'bucket': '123bucket',
-            'object_name': 'deadbeef',
             'dep_type': 'gcs',
-            'sha256sum': 'abcd123',
-            'size_bytes': 10000,
+            'objects': [{
+                'object_name': 'deadbeef',
+                'sha256sum': 'abcd123',
+                'size_bytes': 10000,
+            }]
           },
           'src/another_gcs_dep': {
             'bucket': '456bucket',
-            'object_name': 'Linux/llvmfile.tar.gz',
             'dep_type': 'gcs',
-            'sha256sum': 'abcd123',
-            'size_bytes': 10000,
+            'objects': [{
+                'object_name': 'Linux/llvmfile.tar.gz',
+                'sha256sum': 'abcd123',
+                'size_bytes': 10000,
+            }]
           },
           'src/gcs_dep_with_output_file': {
             'bucket': '789bucket',
-            'object_name': 'clang-format-version123',
             'dep_type': 'gcs',
-            'sha256sum': 'abcd123',
-            'output_file': 'clang-format-no-extract',
-            'size_bytes': 10000,
+            'objects': [{
+                'object_name': 'clang-format-version123',
+                'sha256sum': 'abcd123',
+                'output_file': 'clang-format-no-extract',
+                'size_bytes': 10000,
+            }]
           },
         }"""),
                 'origin':
@@ -943,10 +949,12 @@ deps = {
 deps = {
   'src/repo12': {
     'bucket': 'bucket123',
-    'object_name': 'path_to_file.tar.gz',
     'dep_type': 'gcs',
-    'sha256sum': 'abcd123',
-    'size_bytes': 10000,
+    'objects': [{
+        'object_name': 'path_to_file.tar.gz',
+        'sha256sum': 'abcd123',
+        'size_bytes': 10000,
+    }]
   },
 }
 """,

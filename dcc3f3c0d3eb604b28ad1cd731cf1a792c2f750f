@@ -207,6 +207,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69be00b1_e285153e",
+        "filename": "gclient.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 2619,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-04T21:04:45Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "e3fb5895_66623af8",
+      "range": {
+        "startLine": 2619,
+        "startChar": 53,
+        "endLine": 2619,
+        "endChar": 68
+      },
+      "revId": "dcc3f3c0d3eb604b28ad1cd731cf1a792c2f750f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40421adf_132e9387",

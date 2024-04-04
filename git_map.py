@@ -20,6 +20,7 @@ import os
 import sys
 
 import git_common
+import scm
 import setup_color
 import subprocess2
 
@@ -99,7 +100,7 @@ def main(argv, outbuf):
         _print_help(outbuf)
         return 0
 
-    map_extra = git_common.get_config_list('depot_tools.map_extra')
+    map_extra = scm.GIT.GetConfigList(os.getcwd(), 'depot_tools.map_extra')
     cmd = [
         git_common.GIT_EXE, 'log',
         git_common.root(), '--graph', '--branches', '--tags', '--color=always',

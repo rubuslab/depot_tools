@@ -4,15 +4,18 @@
 # found in the LICENSE file.
 
 import argparse
+import os
 import sys
 
+import scm
 import subprocess2
 
 import git_common as git
 
 
 def main(args):
-    default_args = git.get_config_list('depot-tools.upstream-diff.default-args')
+    default_args = scm.GIT.GetConfigList(
+        os.getcwd(), 'depot-tools.upstream-diff.default-args')
     args = default_args + args
 
     current_branch = git.current_branch()

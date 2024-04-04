@@ -17,6 +17,7 @@ from fnmatch import fnmatch
 from pprint import pformat
 
 import git_common as git
+import scm
 
 STARTING_BRANCH_KEY = 'depot-tools.rebase-update.starting-branch'
 STARTING_WORKDIR_KEY = 'depot-tools.rebase-update.starting-workdir'
@@ -29,8 +30,8 @@ def find_return_branch_workdir():
     These values may persist across multiple invocations of rebase-update, if
     rebase-update runs into a conflict mid-way.
     """
-    return_branch = git.get_config(STARTING_BRANCH_KEY)
-    workdir = git.get_config(STARTING_WORKDIR_KEY)
+    return_branch = scm.GIT.GetConfig(os.getcwd(), STARTING_BRANCH_KEY)
+    workdir = scm.GIT.GetConfig(os.getcwd(), STARTING_WORKDIR_KEY)
     if not return_branch:
         workdir = os.getcwd()
         git.set_config(STARTING_WORKDIR_KEY, workdir)
@@ -47,7 +48,8 @@ def fetch_remotes(branch_tree):
     remotes = set()
     tag_set = git.tags()
     fetchspec_map = {}
-    all_fetchspec_configs = git.get_config_regexp(r'^remote\..*\.fetch')
+    all_fetchspec_configs = scm.GIT.YieldConfigRegexp(os.getcwd(),
+                                                      r'^remote\..*\.fetch')
     for key, fetchspec in all_fetchspec_configs:
         dest_spec = fetchspec.partition(':')[2]
         remote_name = key.split('.')[1]

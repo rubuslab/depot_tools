@@ -343,7 +343,8 @@ def blame(filename, revision=None, porcelain=False, abbrev=None, *_args):
 
 
 def branch_config(branch, option, default=None):
-    return get_config('branch.%s.%s' % (branch, option), default=default)
+    return scm.GIT.GetConfig(os.getcwd(), 'branch.%s.%s' % (branch, option),
+                             default)
 
 
 def branch_config_map(option):
@@ -352,7 +353,7 @@ def branch_config_map(option):
         reg = re.compile(r'^branch\.(.*)\.%s$' % option)
         return {
             reg.match(k).group(1): v
-            for k, v in get_config_regexp(reg.pattern)
+            for k, v in scm.GIT.YieldConfigRegexp(os.getcwd(), reg.pattern)
         }
     except subprocess2.CalledProcessError:
         return {}
@@ -362,7 +363,7 @@ def branches(use_limit=True, *args):
     NO_BRANCH = ('* (no branch', '* (detached', '* (HEAD detached')
 
     key = 'depot-tools.branch-limit'
-    limit = get_config_int(key, 20)
+    limit = scm.GIT.GetConfigInt(os.getcwd(), key, 20)
 
     raw_branches = run('branch', *args).splitlines()
 
@@ -386,28 +387,9 @@ def branches(use_limit=True, *args):
         yield line.split()[-1]
 
 
-def get_config(option, default=None):
-    return scm.GIT.GetConfig(os.getcwd(), option, default)
-
-def get_config_int(option, default=0):
-    assert isinstance(default, int)
-    try:
-        return int(get_config(option, default))
-    except ValueError:
-        return default
-
-
-def get_config_list(option):
-    return scm.GIT.GetConfigList(os.getcwd(), option)
-
-
-def get_config_regexp(pattern):
-    return scm.GIT.YieldConfigRegexp(os.getcwd(), pattern)
-
-
 def is_fsmonitor_enabled():
     """Returns true if core.fsmonitor is enabled in git config."""
-    fsmonitor = get_config('core.fsmonitor', 'False')
+    fsmonitor = scm.GIT.GetConfig(os.getcwd(), 'core.fsmonitor', 'False')
     return fsmonitor.strip().lower() == 'true'
 
 
@@ -459,7 +441,7 @@ def freeze():
     took_action = False
     key = 'depot-tools.freeze-size-limit'
     MB = 2**20
-    limit_mb = get_config_int(key, 100)
+    limit_mb = scm.GIT.GetConfigInt(os.getcwd(), key, 100)
     untracked_bytes = 0
 
     root_path = repo_root()
@@ -760,7 +742,8 @@ def upstream_default():
 
 
 def root():
-    return get_config('depot-tools.upstream', upstream_default())
+    return scm.GIT.GetConfig(os.getcwd(), 'depot-tools.upstream',
+                             upstream_default())
 
 
 @contextlib.contextmanager

@@ -162,6 +162,14 @@ class GIT(object):
         return values[-1]
 
     @staticmethod
+    def GetConfigInt(cwd, key, default=0):
+        assert isinstance(default, int)
+        try:
+            return int(GIT.GetConfig(cwd, key, default))
+        except ValueError:
+            return default
+
+    @staticmethod
     def GetConfigBool(cwd, key):
         return GIT.GetConfig(cwd, key) == 'true'
 

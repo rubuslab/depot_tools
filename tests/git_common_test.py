@@ -463,20 +463,10 @@ class GitMutableFunctionsTest(git_test_utils.GitRepoReadWriteTestBase,
             self.repo.run(self.gc.get_config_list, 'happy.derpies'),
             ['food', 'cat'])
 
-        self.assertEqual('cat',
-                         self.repo.run(self.gc.get_config, 'dude.bob', 'cat'))
-
-        self.gc.scm.GIT.SetConfig(self.repo.repo_path, 'dude.bob', 'dog')
-        self.assertEqual('dog',
-                         self.repo.run(self.gc.get_config, 'dude.bob', 'cat'))
-
         self.repo.run(self.gc.del_config, 'dude.bob')
 
         # This should work without raising an exception
         self.repo.run(self.gc.del_config, 'dude.bob')
-
-        self.assertEqual('cat',
-                         self.repo.run(self.gc.get_config, 'dude.bob', 'cat'))
 
         self.assertEqual('origin/main', self.repo.run(self.gc.root))
 

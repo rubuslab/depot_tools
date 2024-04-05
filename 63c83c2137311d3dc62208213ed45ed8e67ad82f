@@ -52,6 +52,24 @@
       "parentUuid": "4fdcdb5f_eaa303d2",
       "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4afad19_cdf00cde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-05T14:05:39Z",
+      "side": 1,
+      "message": "This was the dart error, which I am struggling to understand how it would be caused by changing the Xcode version or fixed by changing the toolchain, but I am not familiar really:\n```\n [P96179 16:50:17.598 client.go:1834 I] [fetch] Fetched infra_internal/ios/xcode/mac:1sLDWKwDHozXEx-K3okUY-5IR-JMwKRwlnnsgPsISc4C in 29.4s\n [P96179 16:50:17.728 deployer.go:303 I] [unzip] Deploying infra_internal/ios/xcode/mac:1sLDWKwDHozXEx-K3okUY-5IR-JMwKRwlnnsgPsISc4C into /Volumes/Work/s/w/ir/cache/osx_sdk/XCode.app(/)\n [P96179 16:50:17.745 client.go:1915 E] [unzip] Failed to install infra_internal/ios/xcode/mac: creating packages directory: mkdir /Volumes/Work/s/w/ir/cache/osx_sdk/XCode.app/.cipd: operation not permitted\n Errors:\n   failed to install infra_internal/ios/xcode/mac: creating packages directory: mkdir /Volumes/Work/s/w/ir/cache/osx_sdk/XCode.app/.cipd: operation not permitted\n [E 2024-04-04 16:50:17] original error: exit status 1\n```\n\nThe error is: `mkdir /Volumes/Work/s/w/ir/cache/osx_sdk/XCode.app/.cipd: operation not permitted`",
+      "parentUuid": "1717cabd_eef5861e",
+      "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

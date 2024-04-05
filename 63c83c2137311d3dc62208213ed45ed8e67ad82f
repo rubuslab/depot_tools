@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b223feed_1ed93cda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2024-04-05T14:00:39Z",
+      "side": 1,
+      "message": "It may help fix the breakage if the pin for mac_toolchain is updated to the most recent version. Some stability fixes for XCode installs have been added since the current, 9-month old version.\n\nThe log of mac_toolchain changes is at https://chromium.googlesource.com/infra/infra/+log/refs/heads/main/go/src/infra/cmd/mac_toolchain",
+      "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

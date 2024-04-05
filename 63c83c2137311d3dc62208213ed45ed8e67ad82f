@@ -70,6 +70,24 @@
       "parentUuid": "1717cabd_eef5861e",
       "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cb3ff8_eddf641b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116069
+      },
+      "writtenOn": "2024-04-05T14:08:07Z",
+      "side": 1,
+      "message": "Yes, exactly.\n\nWe did just change our Intel Macs to new ones, and we will try clobbering these caches on them. It looks like both the existing package and the new package we are trying to install are correct and don\u0027t have problems with file permissions, so clobbering the caches should reinstall the old versions, but in clean, safe installs that can be upgraded.\n\nGive me a change to run the cache clobbering instructions.",
+      "parentUuid": "d4afad19_cdf00cde",
+      "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

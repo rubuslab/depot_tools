@@ -35,13 +35,23 @@ def GenTests(api):
   yield api.test(
       'automatic_version',
       api.platform.name('mac'),
-      api.step_data('find macOS version',
-                    stdout=api.raw_io.output_text('10.15.6')),
+      api.osx_sdk.osx_version('10.15.6'),
   )
 
   yield api.test(
       'ancient_version',
       api.platform.name('mac'),
-      api.step_data('find macOS version',
-                    stdout=api.raw_io.output_text('10.1.0')),
+      api.osx_sdk.osx_version('10.1'),
   )
+
+  bad_versions = [
+    'meep.morp',
+    '1.2.3.4',
+    '10',
+  ]
+  for version in bad_versions:
+    try:
+      api.osx_sdk.osx_version(version)
+      assert False, f'osx_version regex failur, allowed {version=}'  # pragma: no cover
+    except ValueError:
+      pass

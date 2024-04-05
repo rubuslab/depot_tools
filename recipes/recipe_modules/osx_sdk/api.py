@@ -130,7 +130,8 @@ class OSXSDKApi(recipe_api.RecipeApi):
           'find macOS version', ['sw_vers', '-productVersion'],
           stdout=self.m.raw_io.output_text(),
           step_test_data=(
-              lambda: self.m.raw_io.test_api.stream_output_text('14.4')))
+              lambda: self.m.raw_io.test_api.stream_output_text(
+                  self.test_api.DEFAULT_MACOS_VERSION)))
       cur_os = self.m.version.parse(find_os.stdout.strip())
       find_os.presentation.step_text = f'Running on {str(cur_os)!r}.'
       for target_os, xcode in reversed(_DEFAULT_VERSION_MAP):

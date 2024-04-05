@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bc56685_52a1d2dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-05T19:06:50Z",
+      "side": 1,
+      "message": "Another obsolete comment in autoninja.bat. python3.bat has been used for a long time now (python3.bat and vpython3.bat). PTAL.",
+      "revId": "e0289e1118cdc6db0e35d14296ed3c7985fd8880",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

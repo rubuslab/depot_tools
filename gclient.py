@@ -283,9 +283,9 @@ class Hook(object):
                     'exit_code':
                     exit_code,
                 })
-            if elapsed_time > 10:
-                print("Hook '%s' took %.2f secs" %
-                      (gclient_utils.CommandToStr(cmd), elapsed_time))
+            if elapsed_time > .2:
+                print("%.2f secs for hook '%s'" %
+                      (elapsed_time, gclient_utils.CommandToStr(cmd)))
 
 
 class DependencySettings(object):
@@ -2281,6 +2281,7 @@ it or fix the checkout.
             command: The command to use (e.g., 'status' or 'diff')
             args: list of str - extra arguments to add to the command line.
         """
+        start_time = time.time()
         if not self.dependencies:
             raise gclient_utils.Error('No solution specified')
 
@@ -2396,14 +2397,19 @@ it or fix the checkout.
                             # repo of the deleted cipd may also have been deleted.
                             pass
 
+        elapsed_time = time.time() - start_time
+        print('%1.1f s to run "%s" command' % (elapsed_time, command))
+
         if not self._options.nohooks:
+            start_time = time.time()
             if should_show_progress:
                 pm = Progress('Running hooks', 1)
             self.RunHooksRecursively(self._options, pm)
+            elapsed_time = time.time() - start_time
+            print('%1.1f s to run hooks' % elapsed_time)
 
         self._WriteFileContents(PREVIOUS_SYNC_COMMITS_FILE,
                                 os.environ.get(PREVIOUS_SYNC_COMMITS, '{}'))
-
         return 0
 
     def PrintRevInfo(self):

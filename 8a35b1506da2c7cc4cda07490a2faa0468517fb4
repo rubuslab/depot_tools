@@ -16,6 +16,24 @@
       "message": "I verified that amd64 and arm64 CIPD packages with this tag exist, at https://chrome-infra-packages.appspot.com/p/infra/tools/mac_toolchain",
       "revId": "8a35b1506da2c7cc4cda07490a2faa0468517fb4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "503af64d_62061ca1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-05T14:38:16Z",
+      "side": 1,
+      "message": "Ah, thanks :)",
+      "parentUuid": "d7b75c6e_9b14a3c9",
+      "revId": "8a35b1506da2c7cc4cda07490a2faa0468517fb4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

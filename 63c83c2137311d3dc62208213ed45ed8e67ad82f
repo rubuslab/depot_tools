@@ -88,6 +88,24 @@
       "parentUuid": "d4afad19_cdf00cde",
       "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c3b4eec_44b66b84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-05T14:12:52Z",
+      "side": 1,
+      "message": "Ah I see in the mac_toolchain commits that talk about the process of installing Xcode, so maybe it can fix things.",
+      "parentUuid": "d4afad19_cdf00cde",
+      "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

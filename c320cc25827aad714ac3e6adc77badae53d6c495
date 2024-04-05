@@ -22,6 +22,30 @@
       },
       "revId": "c320cc25827aad714ac3e6adc77badae53d6c495",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f19c034d_fb27af95",
+        "filename": "recipes/recipe_modules/osx_sdk/test_api.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-04-05T19:35:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b417444_6fd3f8b6",
+      "range": {
+        "startLine": 27,
+        "startChar": 21,
+        "endLine": 27,
+        "endChar": 32
+      },
+      "revId": "c320cc25827aad714ac3e6adc77badae53d6c495",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -159,6 +159,23 @@
       "parentUuid": "1f44cb3f_f41a2b79",
       "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7690cc0_d6a47f2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001982
+      },
+      "writtenOn": "2024-04-08T19:56:39Z",
+      "side": 1,
+      "message": "Is there an update on the fix-forward?  I suspect it is also responsible for breaking open screen builds.\n\nhttps://ci.chromium.org/ui/p/openscreen/builders/try/mac_x64/b8751354983381765825/overview",
+      "revId": "63c83c2137311d3dc62208213ed45ed8e67ad82f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

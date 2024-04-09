@@ -1,0 +1,86 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "415d1737_79347085",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-09T22:17:26Z",
+      "side": 1,
+      "message": "python3 f\u0027 thing",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 61
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "375d0b9e_343e20c9",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "download_from_google_storage.py",
+              "range": {
+                "startLine": 51,
+                "startChar": 0,
+                "endLine": 52,
+                "endChar": 0
+              },
+              "replacement": "    return f\u0027.{gcs_file_name}{MIGRATION_TOGGLE_FILE_SUFFIX}\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "d4b0deaf2b7547b3ef370545b98cd1263936d906",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "702a8452_96ac012e",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2650,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-04-09T22:17:26Z",
+      "side": 1,
+      "message": "python3 f\u0027 thing\n\n\n```suggestion\n        hash_file \u003d os.path.join(output_dir, f\u0027.{hash_name}_hash\u0027)\n```",
+      "range": {
+        "startLine": 2650,
+        "startChar": 45,
+        "endLine": 2650,
+        "endChar": 71
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "3d750fcb_fa7486c6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gclient.py",
+              "range": {
+                "startLine": 2651,
+                "startChar": 0,
+                "endLine": 2651,
+                "endChar": 0
+              },
+              "replacement": "        hash_file \u003d os.path.join(output_dir, f\u0027.{hash_name}_hash\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "d4b0deaf2b7547b3ef370545b98cd1263936d906",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

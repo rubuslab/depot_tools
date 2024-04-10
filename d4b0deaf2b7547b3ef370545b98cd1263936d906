@@ -42,6 +42,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "83c43f2f_c03fcf1a",
+        "filename": "download_from_google_storage.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-10T20:49:28Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "415d1737_79347085",
+      "range": {
+        "startLine": 51,
+        "startChar": 11,
+        "endLine": 51,
+        "endChar": 61
+      },
+      "revId": "d4b0deaf2b7547b3ef370545b98cd1263936d906",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "702a8452_96ac012e",
@@ -79,6 +103,30 @@
           ]
         }
       ],
+      "revId": "d4b0deaf2b7547b3ef370545b98cd1263936d906",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de116f89_15b18cd3",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2650,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-10T20:49:28Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "702a8452_96ac012e",
+      "range": {
+        "startLine": 2650,
+        "startChar": 45,
+        "endLine": 2650,
+        "endChar": 71
+      },
       "revId": "d4b0deaf2b7547b3ef370545b98cd1263936d906",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

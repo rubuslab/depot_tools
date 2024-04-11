@@ -2101,6 +2101,7 @@ class Changelist(object):
 
     def CMDUpload(self, options, git_diff_args, orig_args):
         """Uploads a change to codereview."""
+        raise Exception(files)
         custom_cl_base = None
         if git_diff_args:
             custom_cl_base = base_branch = git_diff_args[0]
@@ -2124,6 +2125,10 @@ class Changelist(object):
         # Apply watchlists on upload.
         watchlist = watchlists.Watchlists(settings.GetRoot())
         files = self.GetAffectedFiles(base_branch)
+        raise Exception(files)
+        invalidFilenames = [file for file in files if ":" in file]
+
+
         if not options.bypass_watchlists:
             self.ExtendCC(watchlist.GetWatchersForPaths(files))
 
@@ -2929,6 +2934,8 @@ class Changelist(object):
         push_returncode = 0
         before_push = time_time()
         try:
+            import pudb
+            pu.db
             remote_url = self.GetRemoteUrl()
             push_cmd = ['git', 'push', remote_url, refspec]
             if git_push_options:
@@ -2945,6 +2952,8 @@ class Changelist(object):
             push_stdout = push_stdout.decode('utf-8', 'replace')
         except subprocess2.CalledProcessError as e:
             push_returncode = e.returncode
+            import pudb
+            pu.db
             if 'blocked keyword' in str(e.stdout) or 'banned word' in str(
                     e.stdout):
                 raise GitPushError(
@@ -5037,7 +5046,6 @@ def CMDupload(parser, args):
          ].count(True) > 1):
         parser.error('Only one of --use-commit-queue, --cq-dry-run or '
                      '--retry-failed is allowed.')
-
     if options.skip_title and options.title:
         parser.error('Only one of --title and --skip-title allowed.')
 

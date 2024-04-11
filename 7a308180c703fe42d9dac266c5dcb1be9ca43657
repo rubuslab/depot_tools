@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c41a3912_74974a04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-04-11T20:41:45Z",
+      "side": 1,
+      "message": "I\u0027m assuming we will postpone the review as we\u0027ve discussed in our team meeting that maybe the better long term approach is to ask GoB to surface it in the error message instead of hidding inside trace?",
+      "revId": "7a308180c703fe42d9dac266c5dcb1be9ca43657",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

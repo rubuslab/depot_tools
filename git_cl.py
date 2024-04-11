@@ -2124,6 +2124,10 @@ class Changelist(object):
         # Apply watchlists on upload.
         watchlist = watchlists.Watchlists(settings.GetRoot())
         files = self.GetAffectedFiles(base_branch)
+        raise Exception(files)
+        invalidFilenames = [file for file in files if ":" in file]
+
+
         if not options.bypass_watchlists:
             self.ExtendCC(watchlist.GetWatchersForPaths(files))
 

@@ -1,14 +1,9 @@
-#!/usr/bin/env bash
+@echo off
+:: Copyright 2019 The Chromium Authors. All rights reserved.
+:: Use of this source code is governed by a BSD-style license that can be
+:: found in the LICENSE file.
 
-# Copyright 2019 The Chromium Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file.
+:: See revert instructions in cipd_manifest.txt
 
-# See revert instructions in cipd_manifest.txt
-
-MYPATH=$(dirname "${BASH_SOURCE[0]}")
-
-source "$MYPATH/cipd_bin_setup.sh"
-cipd_bin_setup &> /dev/null
-
-exec "$MYPATH/.cipd_bin/bb" "$@"
+call "%~dp0\cipd_bin_setup.bat" > nul 2>&1
+"%~dp0\.cipd_bin\bb.exe" %*

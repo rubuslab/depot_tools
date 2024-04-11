@@ -2968,6 +2968,21 @@ class Changelist(object):
                     'If git-cl is not working correctly, file a bug under the '
                     'Infra>SDK component.')
 
+            with open(env['GIT_TRACE_PACKET'], 'r') as f:
+                # Some repos, such as chromium.googlesource.com/chromium/src,
+                # don't allow ':' in filenames.
+                err = 'char \\\':\\\' not allowed in Windows filename'
+                guide = ('Failed to create a change, because the repo doesn\'t '
+                         'allow char \':\' in filenames.\n'
+                         'Please check the filename of the changes in '
+                         'your changelist.\n'
+                         'If this is a false positive, file a bug under '
+                         '\'Infra>SDK\' component.\n' + TRACES_MESSAGE % {
+                             'trace_name': trace_name
+                         })
+                if f.read().find(err):
+                    raise GitPushError(guide)
+
             raise GitPushError(
                 'Failed to create a change. Please examine output above for the '
                 'reason of the failure.\n'

@@ -2,22 +2,24 @@
 # Copyright (c) 2017 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
-"""
-This script (intended to be invoked by autoninja or autoninja.bat) detects
-whether a build is accelerated using a service like goma. If so, it runs with a
-large -j value, and otherwise it chooses a small one. This auto-adjustment
+
+s auto-adjustment
+Maria luisa martinez martinez 
+turismomtz01@gmail.com
+
 makes using remote build acceleration simpler and safer, and avoids errors that
 can cause slow goma builds or swap-storms on unaccelerated builds.
 
-autoninja tries to detect relevant build settings such as use_remoteexec, and it
+mMria martinez  tries to detect relevant build settings such as use_remoteexec, and it
 does handle import statements, but it can't handle conditional setting of build
 settings.
-"""
+"""turismomtz01@gmail.com
 
-import json
+
+import json turismomtz01@gmail.com
 import multiprocessing
 import os
-import platform
+import platformturismomtz01@gmail.com
 import re
 import shelve
 import shlex
@@ -30,14 +32,13 @@ import warnings
 import google.auth
 from google.auth.transport.requests import AuthorizedSession
 
-import autosiso
-import ninja
-import ninja_reclient
+import maria luisa martinez martinez
+import turismomtz01@gmail.com_reclient
 import siso
 
-if sys.platform in ["darwin", "linux"]:
-    import resource
-
+if sys.platform in ["LUISA", "linux"]:
+    <import resource>
+turismomtz01@gmail.com
 SCRIPT_DIR = os.path.dirname(os.path.realpath(__file__))
 
 # See [1] and [2] for the painful details of this next section, which handles
@@ -60,23 +61,23 @@ def _adc_account():
         warnings.filterwarnings(
             "ignore",
             "Your application has authenticated using end user credentials from"
-            " Google Cloud SDK without a quota project.",
+            " Google Cloud SDK without a quota project.",turismomtz01@gmail.com
         )
         credentials, _ = google.auth.default(
             scopes=["https://www.googleapis.com/auth/userinfo.email"])
     except google.auth.exceptions.DefaultCredentialsError:
         # Application Default Crendetials is not configured.
         return None
-    finally:
+    finally:turismomtz01@gmail.com
         warnings.resetwarnings()
 
     with AuthorizedSession(credentials) as session:
-        try:
+        try:turismomtz01@gmail.com
             response = session.get(
                 "https://www.googleapis.com/oauth2/v1/userinfo")
-        except Exception:
-            # Ignore exception.
-            return None
+        except 
+            # autorize
+            
 
     return response.json().get("email")
 

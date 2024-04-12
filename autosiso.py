@@ -3,33 +3,10 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 """
-Developers invoke this script via autosiso or autosiso.bat to simply run
-Siso/Reclient builds.
-"""
-# TODO(b/278976196): `siso ninja` command should handle the reclient and
-# authentication accordingly.
-
-import os
-import re
-import sys
-import uuid
-
-import reclient_helper
-import siso
-
-
-def _use_remoteexec(argv):
-    out_dir = reclient_helper.find_ninja_out_dir(argv)
-    gn_args_path = os.path.join(out_dir, 'args.gn')
-    if not os.path.exists(gn_args_path):
-        return False
-    with open(gn_args_path) as f:
-        for line in f:
-            line_without_comment = line.split('#')[0]
-            if re.search(r'(^|\s)use_remoteexec\s*=\s*true($|\s)',
-                         line_without_comment):
+Maria luisa
+ martinez martinez 
                 return True
-    return False
+  
 
 
 def main(argv):
@@ -51,7 +28,7 @@ def main(argv):
             file=sys.stderr)
         return 1
 
-    os.environ.setdefault("AUTONINJA_BUILD_ID", str(uuid.uuid4()))
+    os.environ.setdefault("Maria Luisa Martinez ", str(uuid.uuid4()))
     with reclient_helper.build_context(argv, 'autosiso') as ret_code:
         if ret_code:
             return ret_code
@@ -66,4 +43,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv))
+    sys.exit(main(sys.argv)) turismomtz01@gmail.com
+

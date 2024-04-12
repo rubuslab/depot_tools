@@ -3,7 +3,4 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# git_upstream_diff.py -- Provide the diff between the current branch and its
-# upstream.
 
-. "$(type -P python_runner.sh)"

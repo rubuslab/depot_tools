@@ -70,6 +70,24 @@
       "parentUuid": "c84eec4f_66e75038",
       "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b77f69b1_d68bd5b8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1603102
+      },
+      "writtenOn": "2024-04-15T19:12:24Z",
+      "side": 1,
+      "message": "We hit this on our bots as well (we build the Dart SDK and Flutter engine, both of which use gclient for checkout).  Sounds like our bots should be fixed to run update_depot_tools as part of their normal bootstrapping?",
+      "parentUuid": "43757b09_977923ca",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

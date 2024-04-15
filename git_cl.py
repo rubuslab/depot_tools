@@ -8,6 +8,7 @@
 
 import base64
 import collections
+import contextlib
 import datetime
 import fnmatch
 import httplib2
@@ -4580,21 +4581,70 @@ def CMDdescription(parser, args):
     return 0
 
 
+def FindFilesForLint(options, args):
+    """Returns the base folder and a list of files to lint."""
+    files = []
+    cwd = '.'
+    if len(args) > 0:
+        # If file paths are given in positional args, run the lint tools
+        # against them without using git commands. This allows git_cl.py
+        # runnable against any files even out of git checkouts.
+        for fn in args:
+            if os.path.isfile(fn):
+                files.append(fn)
+            else:
+                print('%s is not a file' % fn)
+                return None, None
+    else:
+        # If file names are omitted, use the git APIs to find the files to lint.
+        include_regex = re.compile(settings.GetLintRegex())
+        ignore_regex = re.compile(settings.GetLintIgnoreRegex())
+        cl = Changelist()
+        for fn in cl.GetAffectedFiles(cl.GetCommonAncestorWithUpstream()):
+            if not include_regex.match(fn):
+                print('Skipping file %s' % fn)
+            elif ignore_regex.match(fn):
+                print('Ignoring file %s' % fn)
+            else:
+                files.append(fn)
+
+        if not files:
+            print('Cannot lint an empty CL')
+            return None, None
+
+    return cwd, files
+
+
+@subcommand.usage('[files ...]')
 @metrics.collector.collect_metrics('git cl lint')
 def CMDlint(parser, args):
-    """Runs cpplint on the current changelist."""
+    """Runs cpplint on the current changelist or given files.
+
+    positional arguments:
+      files           Files to lint. If omitted, it will run cpplint against
+                      all the affected files in the current git checkout.
+    """
     parser.add_option(
         '--filter',
         action='append',
         metavar='-x,+y',
         help='Comma-separated list of cpplint\'s category-filters')
     options, args = parser.parse_args(args)
+    root_path, files = FindFilesForLint(options, args)
+    if files is None:
+        return 1
 
     # Access to a protected member _XX of a client class
     # pylint: disable=protected-access
     try:
         import cpplint
         import cpplint_chromium
+
+        # Process cpplint arguments, if any.
+        filters = presubmit_canned_checks.GetCppLintFilters(options.filter)
+        command = ['--filter=' + ','.join(filters)]
+        command.extend(files)
+        files_to_lint = cpplint.ParseArguments(command)
     except ImportError:
         print(
             'Your depot_tools is missing cpplint.py and/or cpplint_chromium.py.'
@@ -4603,40 +4653,14 @@ def CMDlint(parser, args):
 
     # Change the current working directory before calling lint so that it
     # shows the correct base.
-    previous_cwd = os.getcwd()
-    os.chdir(settings.GetRoot())
-    try:
-        cl = Changelist()
-        files = cl.GetAffectedFiles(cl.GetCommonAncestorWithUpstream())
-        if not files:
-            print('Cannot lint an empty CL')
-            return 1
-
-        # Process cpplint arguments, if any.
-        filters = presubmit_canned_checks.GetCppLintFilters(options.filter)
-        command = ['--filter=' + ','.join(filters)]
-        command.extend(args)
-        command.extend(files)
-        filenames = cpplint.ParseArguments(command)
-
-        include_regex = re.compile(settings.GetLintRegex())
-        ignore_regex = re.compile(settings.GetLintIgnoreRegex())
+    with contextlib.chdir(root_path):
         extra_check_functions = [
             cpplint_chromium.CheckPointerDeclarationWhitespace
         ]
-        for filename in filenames:
-            if not include_regex.match(filename):
-                print('Skipping file %s' % filename)
-                continue
-
-            if ignore_regex.match(filename):
-                print('Ignoring file %s' % filename)
-                continue
-
-            cpplint.ProcessFile(filename, cpplint._cpplint_state.verbose_level,
+        for file in files_to_lint:
+            cpplint.ProcessFile(file, cpplint._cpplint_state.verbose_level,
                                 extra_check_functions)
-    finally:
-        os.chdir(previous_cwd)
+
     print('Total errors found: %d\n' % cpplint._cpplint_state.error_count)
     if cpplint._cpplint_state.error_count != 0:
         return 1

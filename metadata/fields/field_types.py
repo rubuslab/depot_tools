@@ -7,6 +7,7 @@ import os
 import re
 import sys
 from typing import Optional
+from enum import Enum
 
 _THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 # The repo's root directory.
@@ -25,7 +26,6 @@ _PATTERN_YES_OR_NO = re.compile(r"^(yes|no)$", re.IGNORECASE)
 # Pattern used to check if the string starts with "yes" or "no",
 # case-insensitive. e.g. "No (test only)", "Yes?"
 _PATTERN_STARTS_WITH_YES_OR_NO = re.compile(r"^(yes|no)", re.IGNORECASE)
-
 
 class MetadataField:
     """Base class for all metadata fields."""
@@ -73,6 +73,14 @@ class MetadataField:
         """
         raise NotImplementedError(f"{self._name} field validation not defined.")
 
+    def narrow_type(self, value):
+        """Returns a narrowly typed (e.g. bool) value for this field for
+           downstream consumption.
+
+           The alternative being the downstream parses the string again.
+        """
+        return value
+
 
 class FreeformTextField(MetadataField):
     """Field where the value is freeform text."""
@@ -86,6 +94,9 @@ class FreeformTextField(MetadataField):
 
         return None
 
+    def narrow_type(self, value) -> str:
+        assert value is not None
+        return value
 
 class SingleLineTextField(FreeformTextField):
     """Field where the field as a whole is a single line of text."""
@@ -126,3 +137,17 @@ class YesNoField(SingleLineTextField):
                 f"This field must be {util.YES} or {util.NO}.",
                 f"Current value is '{value}'.",
             ])
+
+    def narrow_type(self, value) -> Optional[bool]:
+        text = super().narrow_type(value)
+
+        if not util.matches(_PATTERN_YES_OR_NO, value):
+            return None
+
+        if value.lower() == "yes":
+            return True
+
+        if value.lower() == "no":
+            return False
+
+        assert False, "Not reached."

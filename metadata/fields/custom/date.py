@@ -110,3 +110,13 @@ class DateField(field_types.SingleLineTextField):
         return vr.ValidationError(
             reason=f"{self._name} is invalid.",
             additional=["Use YYYY-MM-DD.", f"Current value is '{value}'."])
+
+    def value(self, value: str) -> Optional[str]:
+        """Returns ISO 8601 date string, guarantees to be YYYY-MM-DD or None.
+        """
+        parts = value.split()
+        if format_matches(parts[0], _PREFERRED_PREFIX_FORMAT):
+            dt = datetime.datetime.strpptime(parts[0])
+            return datetime.datetime.strftime(dt, _PREFERRED_PREFIX_FORMAT)
+
+        return None

@@ -6,7 +6,7 @@
 from collections import defaultdict
 import os
 import sys
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Set, Tuple, Union, Optional, Literal, Any
 
 _THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 # The repo's root directory.
@@ -15,6 +15,7 @@ _ROOT_DIR = os.path.abspath(os.path.join(_THIS_DIR, ".."))
 # Add the repo's root directory for clearer imports.
 sys.path.insert(0, _ROOT_DIR)
 
+from metadata.fields.custom import cpe_prefix, license_file
 import metadata.fields.field_types as field_types
 import metadata.fields.custom.license as license_util
 import metadata.fields.custom.version as version_util
@@ -24,7 +25,19 @@ import metadata.validation_result as vr
 
 
 class DependencyMetadata:
-    """The metadata for a single dependency."""
+    """The metadata for a single dependency.
+
+       See @property declarations below to retrieve validated fields for
+       downstream consumption.
+
+       The property returns `None` if the provided value (e.g. in
+       README.chromium file) is clearly invalid.
+
+       Otherwise, it returns a suitably typed value (see comments on each
+       property).
+
+       To retrieve unvalidated (i.e. raw values) fields, use get_entries().
+    """
 
     # Fields that are always required.
     _MANDATORY_FIELDS = {
@@ -199,3 +212,92 @@ class DependencyMetadata:
                 results.append(result)
 
         return results
+
+    def _return_as_property(self, field: field_types.MetadataField) -> Any:
+        """Helper function to create a property for DependencyMetadata.
+
+        The property accessor will validate and return sanitized field value.
+        """
+        assert field in known_fields.ALL_FIELDS
+
+        raw_value = self._metadata.get(field, None)
+        if raw_value is None:
+            # Field is not set.
+            return None
+
+        vr = field.validate(raw_value)
+        if vr and vr.is_fatal():
+            # Drop clearly invalid values.
+            return None
+
+        return field.narrow_type(raw_value)
+
+    @property
+    def name(self) -> Optional[str]:
+        return self._return_as_property(known_fields.NAME)
+
+    @property
+    def short_name(self) -> Optional[str]:
+        return self._return_as_property(known_fields.SHORT_NAME)
+
+    @property
+    def url(self) -> Optional[List[str]]:
+        """
+        Returns a list of URLs.
+        The URLs are guaranteed to `urllib.parse` without errors.
+        """
+        return self._return_as_property(known_fields.URL)
+
+    @property
+    def version(self) -> Optional[str]:
+        return self._return_as_property(known_fields.VERSION)
+
+    @property
+    def date(self) -> Optional[str]:
+        """Returns in "YYYY-MM-DD" format."""
+        return self._return_as_property(known_fields.DATE)
+
+    @property
+    def revision(self) -> Optional[str]:
+        return self._return_as_property(known_fields.REVISION)
+
+    @property
+    def license(self) -> Optional[str]:
+        """ TODO: Should this be a list of strings? """
+        return self._return_as_property(known_fields.LICENSE)
+
+    @property
+    def license_file(self) -> Optional[str]:
+        """ TODO: Should this be a list of strings that represent a file path from src/ root ?"""
+        return self._return_as_property(known_fields.LICENSE_FILE)
+
+    @property
+    def security_critical(self) -> Optional[bool]:
+        return self._return_as_property(known_fields.SECURITY_CRITICAL)
+
+    @property
+    def shipped(self) -> Optional[bool]:
+        return self._return_as_property(known_fields.SHIPPED)
+
+    @property
+    def shipped_in_chromium(self) -> Optional[bool]:
+        return self._return_as_property(known_fields.SHIPPED_IN_CHROMIUM)
+
+    @property
+    def license_android_compatible(self) -> Optional[bool]:
+        return self._return_as_property(known_fields.LICENSE_ANDROID_COMPATIBLE)
+
+    @property
+    def cpe_prefix(self) -> Optional[str]:
+        return self._return_as_property(known_fields.CPE_PREFIX)
+
+    @property
+    def description(self) -> Optional[str]:
+        return self._return_as_property(known_fields.DESCRIPTION)
+
+    @property
+    def local_modifications(self) -> Optional[Union[Literal[False], str]]:
+        """Returns `False` if there's no local modifications.
+           Otherwise the text content extracted from the metadata.
+        """
+        return self._return_as_property(known_fields.LOCAL_MODIFICATIONS)

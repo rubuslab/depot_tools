@@ -52,6 +52,24 @@
       "parentUuid": "12727692_7be7f81f",
       "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "43757b09_977923ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-15T10:20:06Z",
+      "side": 1,
+      "message": "Then, I think you download somewhat older revision of depot_tools instead of the latest?",
+      "parentUuid": "c84eec4f_66e75038",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

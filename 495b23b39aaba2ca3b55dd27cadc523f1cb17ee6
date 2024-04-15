@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12727692_7be7f81f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3395657
+      },
+      "writtenOn": "2024-04-15T10:07:01Z",
+      "side": 1,
+      "message": "Hey !\n\nI just ran into an issue linked to this change !\n\nThis is my last lines logs related:\n\n```bash\n16.34 gclient config --unmanaged --spec \u0027solutions\u003d[{\"name\":\"src\",\"url\":\"https://webrtc.googlesource.com/src.git\"}]\u0027\n16.34 Updating depot_tools...\n16.34 /home/app/build-linux-arm64/external/depot_tools/src/update_depot_tools: line 154: goma_ctl: command not found\n```",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

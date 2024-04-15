@@ -34,6 +34,24 @@
       "parentUuid": "12727692_7be7f81f",
       "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c84eec4f_66e75038",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3395657
+      },
+      "writtenOn": "2024-04-15T10:16:05Z",
+      "side": 1,
+      "message": "And those are the commands launched\n\n```bash\ngclient config --unmanaged --spec \u0027solutions\u003d[{\"name\":\"src\",\"url\":\"https://webrtc.googlesource.com/src.git\"}]\u0027\n\ngclient sync --shallow --no-history --nohooks --with_branch_heads -r ${WEBRTC_REVISION} -R\n\npython src/tools/clang/scripts/update.py\n```\n\nI saw the message to run `update_depot_tools` but this issue happen with fresh download of `depot_tools` (in a docker)\nSo regarding my commands what should I adapt ? I am really unsure, thanks!",
+      "parentUuid": "12727692_7be7f81f",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

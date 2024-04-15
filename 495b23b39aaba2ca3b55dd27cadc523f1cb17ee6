@@ -16,6 +16,24 @@
       "message": "Hey !\n\nI just ran into an issue linked to this change !\n\nThis is my last lines logs related:\n\n```bash\n16.34 gclient config --unmanaged --spec \u0027solutions\u003d[{\"name\":\"src\",\"url\":\"https://webrtc.googlesource.com/src.git\"}]\u0027\n16.34 Updating depot_tools...\n16.34 /home/app/build-linux-arm64/external/depot_tools/src/update_depot_tools: line 154: goma_ctl: command not found\n```",
       "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70bee710_bd3c6d1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-15T10:08:46Z",
+      "side": 1,
+      "message": "Sorry for the error.\nSee https://groups.google.com/a/chromium.org/g/chromium-dev/c/sGpnY3cY5-w",
+      "parentUuid": "12727692_7be7f81f",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

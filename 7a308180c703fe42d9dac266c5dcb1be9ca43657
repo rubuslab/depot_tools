@@ -16,6 +16,23 @@
       "message": "I\u0027m assuming we will postpone the review as we\u0027ve discussed in our team meeting that maybe the better long term approach is to ask GoB to surface it in the error message instead of hidding inside trace?",
       "revId": "7a308180c703fe42d9dac266c5dcb1be9ca43657",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5685b466_3504a234",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-04-15T21:30:51Z",
+      "side": 1,
+      "message": "I will remove the reviewers and CC-ers.\n\nI filed b/334948678, and if it gets fixed, then we don\u0027t need this patch. I am removing the reviwers and CC-ers, expecting that b/334948678 will be done soon. If I find that it\u0027s still worth landing this patch, then I will add back reviewers.",
+      "revId": "7a308180c703fe42d9dac266c5dcb1be9ca43657",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

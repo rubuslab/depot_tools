@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b783eca0_d057d1e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-15T22:56:41Z",
+      "side": 1,
+      "message": "This looks pretty good in terms of a potential interface.\n\nI guess my only questions are around the format of the key, value pairs from both the properties and `get_entries()`, for extracting in partybot, it doesn\u0027t really matter either way, but do we plan to keep the data lookup keys as they come out of the README file?\n\neg. This is what the data from `get_entries` looks like now, with the spaces between the names, capitalisation etc - it\u0027s not consistent between extractions which is why we do the lower-caseification of it in partybot. \n\nWe should pick some kind of field normalisation which is predictable on the depot_tools side and also the same between properties and raw data in get_entries.\n\n```\n{\n    \"Name\": \"BoringSSL\",\n    \"URL\": \"https://boringssl.googlesource.com/boringssl\",\n    \"Version\": \"git\",\n    \"License\": \"BSDish\",\n    \"License File\": \"src/LICENSE\",\n    \"License Android Compatible\": \"yes\",\n    \"Security Critical\": \"yes\",\n    \"Shipped\": \"yes\",\n    \"Description\": \"This is BoringSSL, a fork of OpenSSL. See\\nhttps://www.imperialviolet.org/2014/06/20/boringssl.html\"\n}\n```\n\nIn this one, `License File` is called `LICENSE File`.\n```\n{\n    \"Name\": \"An Afrikaans spellchecking dictionary\",\n    \"URL\": \"http://zaf.svn.sourceforge.net/viewvc/zaf/trunk/dict/\",\n    \"Version\": \"1.0\",\n    \"LICENSE File\": \"README-af-ZA.txt\",\n    \"Security Critical\": \"no\",\n    \"Description\": \"This folder contains a partial copy of the Afrikaans dictionary for hunspell. It consists of a dictionary file, an affix file, and a license file. (It does not include installation scripts used by Firefox.)\"\n}\n```",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "596be391_29827abb",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-15T22:56:41Z",
+      "side": 1,
+      "message": "Yes, this would be ideal for this - the valid paths which actually exist. In partybot we include the src/ for clarity but we don\u0027t necessarily have to do the same here as long as we know.",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5215a97_2725b05a",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-15T22:56:41Z",
+      "side": 1,
+      "message": "No super strong feelings but why `False` instead of `None` type.",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

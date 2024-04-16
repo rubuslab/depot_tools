@@ -473,6 +473,13 @@ def main(args):
         if not offline and (use_goma or use_remoteexec):
             args.append("-j")
             default_core_multiplier = 80
+
+            if platform.machine().startswith(
+                    "x86") and sys.platform == "darwin":
+                # Reduce the core multipler for intel macs to avoid performance
+                # issues that can come up with too many threads/processes.
+                default_core_multiplier = 20
+
             if platform.machine() in ("x86_64", "AMD64"):
                 # Assume simultaneous multithreading and therefore half as many
                 # cores as logical processors.

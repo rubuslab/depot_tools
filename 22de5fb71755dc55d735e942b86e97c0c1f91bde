@@ -98,6 +98,30 @@
       },
       "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfe13fa6_90ab924a",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1002927
+      },
+      "writtenOn": "2024-04-16T08:15:29Z",
+      "side": 0,
+      "message": "Thanks for checking! I removed the use of Goma on the build timing bot a while ago (it was never used for build timing, but for include analysis). I need to check in the updated script.",
+      "parentUuid": "1fcfed3e_961f9da5",
+      "range": {
+        "startLine": 330,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 0
+      },
+      "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

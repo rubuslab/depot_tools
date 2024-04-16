@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "036e14c5_d177216a",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-04-16T01:47:12Z",
+      "side": 0,
+      "message": "Do we need reclient version of this logic?",
+      "range": {
+        "startLine": 330,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 0
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "94445655_1bfc3696",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 330,
+                "startChar": 0,
+                "endLine": 334,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 359,
+                "startChar": 0,
+                "endLine": 359,
+                "endChar": 0
+              },
+              "replacement": "        # Tell reclient to do local compiles.\n        if offline:\n            os.environ[\"RBE_remote_disabled\"] \u003d \"1\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

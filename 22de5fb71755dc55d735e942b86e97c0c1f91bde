@@ -50,6 +50,30 @@
       ],
       "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c6aca25_c8c18e0b",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-16T04:49:47Z",
+      "side": 0,
+      "message": "I\u0027d like to remove this and see what happens. At least, goma is not usable anymore and no one complains about reclient usage in cmake so far.",
+      "parentUuid": "036e14c5_d177216a",
+      "range": {
+        "startLine": 330,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 0
+      },
+      "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

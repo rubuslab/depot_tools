@@ -74,6 +74,30 @@
       },
       "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fcfed3e_961f9da5",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-04-16T05:14:38Z",
+      "side": 0,
+      "message": "I suspect this is used for LLVM build. http://shortn/_OdkGQV7GoX\nI\u0027m not sure how go/chrome-build-time is measured now...\n\n@hans@chromium.org @thakis@chromium.org?\n\n\u003e At least, goma is not usable anymore and no one complains about reclient usage in cmake so far.\n\nYeah, that\u0027s true. Let\u0027s remove it.",
+      "parentUuid": "7c6aca25_c8c18e0b",
+      "range": {
+        "startLine": 330,
+        "startChar": 0,
+        "endLine": 341,
+        "endChar": 0
+      },
+      "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

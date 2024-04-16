@@ -88,6 +88,24 @@
       "parentUuid": "43757b09_977923ca",
       "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16893799_887bff84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-16T01:18:49Z",
+      "side": 1,
+      "message": "I don\u0027t think so if you download the latest depot_tools. How do you configure depot_tools?",
+      "parentUuid": "b77f69b1_d68bd5b8",
+      "revId": "495b23b39aaba2ca3b55dd27cadc523f1cb17ee6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

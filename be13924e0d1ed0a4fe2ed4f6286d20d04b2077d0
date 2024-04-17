@@ -104,6 +104,24 @@
       "parentUuid": "e33a8fe9_e4bcebc5",
       "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15dcf3ab_306308aa",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-17T15:54:34Z",
+      "side": 1,
+      "message": "use equal instead of startswith then\n```suggestion\n    elif host_arch \u003d\u003d \u0027loongarch64\u0027:\n```",
+      "parentUuid": "f1daab1f_24a9c7a1",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

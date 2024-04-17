@@ -384,12 +384,12 @@ def main(args):
                     # script.
                     print("false")
                 sys.exit(1)
-        # Display a warning that goma is being deprecated, every time a build
-        # is executed with 'use_goma.
+        # Display a warning that goma is deprecated every time a build
+        # is executed with 'use_goma'.
         # Further changes to encourage switching may follow.
         if sys.platform.startswith("win"):
             print(
-                "The gn arg use_goma=true will be deprecated by EOY 2023. "
+                "The gn arg use_goma=true has been removed. "
                 "Please use `use_remoteexec=true` instead. See "
                 "https://chromium.googlesource.com/chromium/src/+/main/docs/"
                 "windows_build_instructions.md#use-reclient "
@@ -398,7 +398,7 @@ def main(args):
             )
         elif sys.platform == "darwin":
             print(
-                "The gn arg use_goma=true will be removed on Feb 7th 2024. "
+                "The gn arg use_goma=true has been removed. "
                 "Please use `use_remoteexec=true` instead. "
                 "If you are a googler see http://go/building-chrome-mac"
                 "#using-remote-execution for setup instructions. ",
@@ -406,7 +406,7 @@ def main(args):
             )
         else:
             print(
-                "The gn arg use_goma=true will be removed on Feb 7th 2024. "
+                "The gn arg use_goma=true has been removed. "
                 "Please use `use_remoteexec=true` instead. See "
                 "https://chromium.googlesource.com/chromium/src/+/main/docs/"
                 "linux/build_instructions.md#use-reclient for setup instructions.",

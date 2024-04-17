@@ -6,7 +6,9 @@
 import os
 import re
 import sys
-from typing import Optional
+from typing import Optional, List
+from urllib.parse import urlparse, urlunparse
+from itertools import filterfalse
 
 _THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 # The repo's root directory.
@@ -19,9 +21,55 @@ import metadata.fields.field_types as field_types
 import metadata.fields.util as util
 import metadata.validation_result as vr
 
-_PATTERN_URL_ALLOWED = re.compile(r"^(https?|ftp|git):\/\/\S+$")
 _PATTERN_URL_CANONICAL_REPO = re.compile(
     r"^This is the canonical (public )?repo(sitory)?\.?$", re.IGNORECASE)
+
+_SUPPORTED_SCHEMES = {
+    'http',
+    'https',
+    'git',
+    'ftp',
+}
+
+# URLs can't contain whitespaces. Treat them as delimiters so we can handle cases where URL field contains one URL per line (without comma delimiter).
+_PATTERN_URL_DELIMITER = re.compile("{}|{}".format(
+    r'\s+', field_types.MetadataField.VALUE_DELIMITER))
+
+
+def _split_urls(value: str) -> List[str]:
+    """Split url field value into individual URLs."""
+    urls = _PATTERN_URL_DELIMITER.split(value)
+    return list(filter(lambda x: len(x) > 0, map(str.strip, urls)))
+
+
+def _url_canonicalize(url: str) -> str:
+    """Return the canonicalized URL (e.g. make scheme lower case)."""
+    return urlunparse(urlparse(url))
+
+
+def _url_is_canonical(url: str) -> bool:
+    return url == _url_canonicalize(url)
+
+
+def _url_is_valid(url: str) -> bool:
+    """Checks whether the given `url` is acceptable:
+    * url is can be parsed without an error.
+    * url uses a supported scheme / protocol.
+    """
+    try:
+        u = urlparse(url)
+    except:
+        return False
+
+    if u.scheme not in _SUPPORTED_SCHEMES:
+        return False
+
+    return True
+
+
+def _repo_is_canonical(value) -> bool:
+    """Returns if `raw_value` indicates this repository is the canonical repository."""
+    return util.matches(_PATTERN_URL_CANONICAL_REPO, value)
 
 
 class URLField(field_types.MetadataField):
@@ -34,14 +82,14 @@ class URLField(field_types.MetadataField):
 
         Note: this field supports multiple values.
         """
-        if util.matches(_PATTERN_URL_CANONICAL_REPO, value):
+        if _repo_is_canonical(value):
             return None
 
-        invalid_values = []
-        for url in value.split(self.VALUE_DELIMITER):
-            url = url.strip()
-            if not util.matches(_PATTERN_URL_ALLOWED, url):
-                invalid_values.append(url)
+        urls = _split_urls(value)
+        if not urls:
+            return vr.ValidationError(reason=f"{self._name} must be provided.")
+
+        invalid_values = list(filterfalse(_url_is_valid, urls))
 
         if invalid_values:
             return vr.ValidationError(
@@ -53,4 +101,23 @@ class URLField(field_types.MetadataField):
                     f"Invalid values: {util.quoted(invalid_values)}.",
                 ])
 
+        non_canon_values = list(filterfalse(_url_is_canonical, urls))
+        if non_canon_values:
+            canon_values = list(map(_url_canonicalize, non_canon_values))
+            return vr.ValidationWarning(
+                reason=f"{self._name} is contains non-canonical URLs.",
+                additional=[
+                    "URLs should be canonical and well-formed."
+                    f"Non canonical values: {util.quoted(non_canon_values)}.",
+                    f"Canonicalized URLs should be: {util.quoted(canon_values)}."
+                ])
+
         return None
+
+    def narrow_type(self, value) -> Optional[List[str]]:
+        if not value:
+            return None
+
+        # Filter out invalid URLs, and canonicalize the URLs.
+        return list(
+            map(_url_canonicalize, filter(_url_is_valid, _split_urls(value))))

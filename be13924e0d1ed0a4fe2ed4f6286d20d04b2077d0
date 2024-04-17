@@ -86,6 +86,24 @@
       "message": "I\u0027m not sure if I understand this part. From the linked bug, iiuc, `host_arch \u003d\u003d \u0027loongarch64\u0027`. Can it have any suffix?",
       "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1daab1f_24a9c7a1",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1585327
+      },
+      "writtenOn": "2024-04-17T11:22:21Z",
+      "side": 1,
+      "message": "without any suffix.\nThanks.",
+      "parentUuid": "e33a8fe9_e4bcebc5",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

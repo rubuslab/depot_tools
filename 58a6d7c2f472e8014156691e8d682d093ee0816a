@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "05d09616_c882e25e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-17T08:24:20Z",
+      "side": 1,
+      "message": "My hope is partybot uses declared @property as much as possible.\n\nI think get_entries() should be contained / discouraged: Use it only for quick and dirty experiments, (e.g. data mining on a new field?). \n\nIf partybot needs to rely on a field, we should just declare the field in depot_tools and expose it properly.\n\nMy quick scan through partybot code is that, with the interface definition refactor, partybot won\u0027t be using get_entires().\n\n---\n\nOr maybe we can remove get_entires()? Returning the raw file content seems more useful for experiments.",
+      "parentUuid": "b783eca0_d057d1e0",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "596be391_29827abb",
@@ -35,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "133a21a3_c6379cd9",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-17T08:24:20Z",
+      "side": 1,
+      "message": "Ack. I can try to tackle this as a followup (it needs more plumbing to validate() than what we have.",
+      "parentUuid": "596be391_29827abb",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f5215a97_2725b05a",
@@ -48,6 +84,24 @@
       "writtenOn": "2024-04-15T22:56:41Z",
       "side": 1,
       "message": "No super strong feelings but why `False` instead of `None` type.",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "819cad78_d481c5fd",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-17T08:24:20Z",
+      "side": 1,
+      "message": "I was thinking about distinguishing these two:\n\n1. Local Modification wasn\u0027t declared -\u003e None (the same convention as other fields)\n2. \"Local Modification: None\" (explicitly declared) -\u003e  False\n\nI think in the ideal case, partybot would diff local vs. upstream to guess and/or cross-check declared local modification field (so the value declared here won\u0027t matter).",
+      "parentUuid": "f5215a97_2725b05a",
       "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

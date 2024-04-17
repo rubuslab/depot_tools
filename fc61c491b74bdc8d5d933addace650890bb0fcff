@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed01993c_194274c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-17T15:49:51Z",
+      "side": 1,
+      "message": "lgtm with one more comment nit.",
+      "revId": "fc61c491b74bdc8d5d933addace650890bb0fcff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14840487_8e4ded5b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-17T15:49:51Z",
+      "side": 1,
+      "message": "This seems odd - autoninja isn\u0027t using this environment variable to tell itself what to do. I\u0027m not sure what this sentence should be - maybe delete it?",
+      "revId": "fc61c491b74bdc8d5d933addace650890bb0fcff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

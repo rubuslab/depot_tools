@@ -139,6 +139,24 @@
       "message": "This comment applies both to GOMA_DISABLED\u003d0 and to offline. Can we add the still relevant portions of this comment to the comment block around line 330?",
       "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bd3a014_f6f86365",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-17T04:02:40Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "0b7eb78c_e3447a9b",
+      "revId": "22de5fb71755dc55d735e942b86e97c0c1f91bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43bf19d7_d10c66f3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-17T21:38:36Z",
+      "side": 1,
+      "message": "I definitely think keep `get_entries()`. I don\u0027t think re-parsing the data from a raw file read, even for experiments is worthwhile for any other application using this data. If they were doing that, they might as well skip using depot_tools metadata all together and read the files themselves. \n\nThey only care about the potential contents of the field, not how to extract it. This tool has by far the best data extraction we have so I think we should keep it available. \n\nIt was just more a comment on standardising the keys between the properties and get_entries, not doing anything with the values. So whether you want the raw value from `get_entries()` or the property, you\u0027re using `license_file` as the lookup key.",
+      "parentUuid": "05d09616_c882e25e",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "596be391_29827abb",
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "I was thinking about distinguishing these two:\n\n1. Local Modification wasn\u0027t declared -\u003e None (the same convention as other fields)\n2. \"Local Modification: None\" (explicitly declared) -\u003e  False\n\nI think in the ideal case, partybot would diff local vs. upstream to guess and/or cross-check declared local modification field (so the value declared here won\u0027t matter).",
       "parentUuid": "f5215a97_2725b05a",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a6a2e20_e309e8cd",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-17T21:38:36Z",
+      "side": 1,
+      "message": "SGTM",
+      "parentUuid": "819cad78_d481c5fd",
       "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

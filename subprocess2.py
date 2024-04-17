@@ -125,13 +125,27 @@ class Popen(subprocess.Popen):
                 ensure_str(k): ensure_str(v)
                 for k, v in kwargs['env'].items()
             }
-        if kwargs.get('shell') is None:
-            # *Sigh*:  Windows needs shell=True, or else it won't search %PATH%
-            # for the executable, but shell=True makes subprocess on Linux fail
-            # when it's called with a list because it only tries to execute the
-            # first item in the list.
-            kwargs['shell'] = bool(sys.platform == 'win32')
 
+        if args[0] == 'git' and sys.platform == 'win32':
+            # shell=True causes Windows to invoke cmd.exe to do the
+            # resolution of git.bat. The extra processes add significant
+            # overhead (most visible in the "update" stage of gclient sync) so
+            # we want to avoid it whenever possible, by extracting the path to
+            # git.exe from git.bat in depot_tools.
+            depot_tools = os.path.dirname(__file__)
+            git_bat = open(os.path.join(depot_tools, 'git.bat')).readlines()
+            assert git_bat[-1].startswith('"%~dp0')
+            assert git_bat[-1].endswith('" %*\n')
+            git_path = os.path.join(depot_tools, git_bat[-1][6:-5])
+            args[0] = git_path
+        else:
+            if kwargs.get('shell') is None:
+                # *Sigh*:  Windows needs shell=True, or else it won't resolve
+                # batchfiles like git.bat and cipd.bat to the executable, but
+                # shell=True makes subprocess on Linux fail when it's called
+                # with a list because it only tries to execute the first item in
+                # the list.
+                kwargs['shell'] = bool(sys.platform == 'win32')
         if isinstance(args, (str, bytes)):
             tmp_str = args
         elif isinstance(args, (list, tuple)):

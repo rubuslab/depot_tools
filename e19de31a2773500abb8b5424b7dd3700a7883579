@@ -16,6 +16,23 @@
       "message": "See crrev.com/c/5456272 which is about to be landed and already does this sort of update.",
       "revId": "e19de31a2773500abb8b5424b7dd3700a7883579",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f2304992_66c9bd50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528063
+      },
+      "writtenOn": "2024-04-17T17:09:59Z",
+      "side": 1,
+      "message": "Ah, thanks Bruce! I\u0027ll abandon this one 😊",
+      "revId": "e19de31a2773500abb8b5424b7dd3700a7883579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17b168cd_230ef0b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-17T16:33:21Z",
+      "side": 1,
+      "message": "See crrev.com/c/5456272 which is about to be landed and already does this sort of update.",
+      "revId": "e19de31a2773500abb8b5424b7dd3700a7883579",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

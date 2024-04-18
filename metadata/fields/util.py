@@ -26,6 +26,17 @@ _PATTERN_STARTS_WITH_YES = re.compile(r"^yes", re.IGNORECASE)
 # case-insensitive.
 _PATTERN_STARTS_WITH_NO = re.compile(r"^no", re.IGNORECASE)
 
+# A collection of values that provides little information.
+# Use lower-case for easier comparison.
+_KNOWN_INVALID_VALUES = {
+    "0",
+    "varies",
+    "-",
+    "unknown",
+    "head",
+    "see deps",
+}
+
 
 def matches(pattern: re.Pattern, value: str) -> bool:
     """Returns whether the value matches the pattern."""
@@ -61,3 +72,16 @@ def infer_as_boolean(value: str, default: bool = True) -> bool:
         return False
     else:
         return default
+
+
+def is_known_invalid_value(value: str):
+    """Returns whether `value` is among the known bad values that provides
+       little machine readable information.
+    """
+    if not value:
+        return False
+
+    if value.lower() in _KNOWN_INVALID_VALUES:
+        return True
+
+    return False

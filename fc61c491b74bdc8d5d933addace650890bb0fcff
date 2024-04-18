@@ -33,6 +33,24 @@
       "message": "This seems odd - autoninja isn\u0027t using this environment variable to tell itself what to do. I\u0027m not sure what this sentence should be - maybe delete it?",
       "revId": "fc61c491b74bdc8d5d933addace650890bb0fcff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "629ce04c_0877f620",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-04-18T02:43:45Z",
+      "side": 1,
+      "message": "Yeah, I think so. Deleted.",
+      "parentUuid": "14840487_8e4ded5b",
+      "revId": "fc61c491b74bdc8d5d933addace650890bb0fcff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

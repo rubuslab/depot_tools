@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac730f39_a597f248",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-18T18:53:37Z",
+      "side": 1,
+      "message": "sorry to get back to this, but after reviewing this - it makes no sense to have this block. Please remove it.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "9ed18a7a_e77ddf7b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "detect_host_arch.py",
+              "range": {
+                "startLine": 39,
+                "startChar": 0,
+                "endLine": 41,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "29002b99dbca8c2f0aed31e3dfbea2121d8b0628",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cbd0e2d_f24596b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-18T08:09:43Z",
+      "side": 1,
+      "message": "I see, I can implement a key normalization step :)\n\nRolling out wise, I think we\u0027ll need to:\n1. Roll out properties\n2. Change partybot to use properties (i.e. partybot stop using get_entries until 3 is done)\n3. Implement normalization in get_entires(), because this effectively changes the key names (i.e. a breaking change)\n4. partybot can start using get_entires(), we define get_entires() as the way to retrieve unvalidated raw values.",
+      "parentUuid": "43bf19d7_d10c66f3",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "596be391_29827abb",
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "SGTM",
       "parentUuid": "819cad78_d481c5fd",
+      "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70a180b8_42532dc3",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-18T08:09:43Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8a6a2e20_e309e8cd",
       "revId": "58a6d7c2f472e8014156691e8d682d093ee0816a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

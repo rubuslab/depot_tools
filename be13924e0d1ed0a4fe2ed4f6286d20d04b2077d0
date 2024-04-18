@@ -122,6 +122,24 @@
       "parentUuid": "f1daab1f_24a9c7a1",
       "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1032bee9_31a5949f",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1585327
+      },
+      "writtenOn": "2024-04-18T01:29:16Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "15dcf3ab_306308aa",
+      "revId": "be13924e0d1ed0a4fe2ed4f6286d20d04b2077d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -322,4 +322,5 @@ def main():
 
 
 if __name__ == '__main__':
+    sys.exit(0) # Make it noop
     sys.exit(main())

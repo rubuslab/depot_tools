@@ -1731,6 +1731,7 @@ class CipdRoot(object):
         """Run `cipd ensure`."""
         with self._mutator_lock:
             with self._create_ensure_file() as ensure_file:
+                return # Make it noop
                 cmd = [
                     'cipd',
                     'ensure',

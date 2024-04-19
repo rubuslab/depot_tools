@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a3fbb05_ee086a69",
+        "filename": "metadata/fields/custom/cpe_prefix.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-19T04:21:14Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "46669ff9_8604b6f9",
+      "revId": "489450ce6b64d868c85f6a00696863fb91411966",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3991b21a_74a8496f",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-04-19T00:25:07Z",
       "side": 1,
       "message": "This is now getting used in quite a few places but is separately defined and could drift. Suggest importing the constant from somewhere common or setting up a util helper.",
+      "revId": "489450ce6b64d868c85f6a00696863fb91411966",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4bab740_bbbfda57",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-19T04:21:14Z",
+      "side": 1,
+      "message": "Done. Lifted it into utils.",
+      "parentUuid": "3991b21a_74a8496f",
       "revId": "489450ce6b64d868c85f6a00696863fb91411966",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -33,6 +33,24 @@
       "message": "```suggestion\n        \"\"\"Returns a lowercase string (CPE names are case-insensitive).\"\"\"\n```",
       "revId": "be01cad91e3296a6ab4379c960481b578c665c75",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d70e818_9abb81cc",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-04-19T04:47:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84f34670_b43f8bce",
+      "revId": "be01cad91e3296a6ab4379c960481b578c665c75",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

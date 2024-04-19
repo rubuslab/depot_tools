@@ -40,6 +40,30 @@
       ],
       "revId": "29002b99dbca8c2f0aed31e3dfbea2121d8b0628",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "addcc83b_66e68d45",
+        "filename": "detect_host_arch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-19T15:31:23Z",
+      "side": 1,
+      "message": "looks like there\u0027s another CL that addresses the same problem: https://crrev.com/c/5465007, I suggest this CL to be abandoned.",
+      "parentUuid": "ac730f39_a597f248",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "29002b99dbca8c2f0aed31e3dfbea2121d8b0628",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

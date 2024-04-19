@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30a4d3c9_a9a1b100",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-19T00:25:07Z",
+      "side": 1,
+      "message": "nit: I know that you really only changed where this data comes from, but this is a little hard to decipher easily.",
+      "revId": "cb52aa0fc7f4d276e9b7bc1b7ddda6bdeab9ac74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb42016d_2c5a5c01",
+        "filename": "metadata/fields/util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-19T00:25:07Z",
+      "side": 1,
+      "message": "I saw this fly by yesterday. I think `Revision: DEPS` is another one we might have to set a recommended standard for. This would indicate to us that we should use the version from the DEPS file as the canon_version for this library. Which we already try to figure out in partybot the long way around.\n\nhttps://chromium-review.googlesource.com/c/chromium/src/+/5458147",
+      "revId": "cb52aa0fc7f4d276e9b7bc1b7ddda6bdeab9ac74",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

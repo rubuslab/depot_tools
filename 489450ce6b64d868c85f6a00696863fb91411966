@@ -16,6 +16,40 @@
       "message": "Rachael: ptal",
       "revId": "489450ce6b64d868c85f6a00696863fb91411966",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46669ff9_8604b6f9",
+        "filename": "metadata/fields/custom/cpe_prefix.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-19T00:25:07Z",
+      "side": 1,
+      "message": "The CPE should also be lower case if possible.\n\nFrom the spec:\n```\nCPE names are case-insensitive. The components “WebLogic” and “weblogic” are equivalent.\nTo reduce potential for confusion, all CPE Names should be written in lowercase.\n```\n\nhttps://cpe.mitre.org/specification/1.1/cpe-specification_1.1.pdf",
+      "revId": "489450ce6b64d868c85f6a00696863fb91411966",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3991b21a_74a8496f",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-04-19T00:25:07Z",
+      "side": 1,
+      "message": "This is now getting used in quite a few places but is separately defined and could drift. Suggest importing the constant from somewhere common or setting up a util helper.",
+      "revId": "489450ce6b64d868c85f6a00696863fb91411966",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

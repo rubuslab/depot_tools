@@ -5428,16 +5428,6 @@ def CMDsplit(parser, args):
                             settings.GetRoot())
 
 
-@subcommand.usage('DEPRECATED')
-@metrics.collector.collect_metrics('git cl commit')
-def CMDdcommit(parser, args):
-    """DEPRECATED: Used to commit the current changelist via git-svn."""
-    message = ('git-cl no longer supports committing to SVN repositories via '
-               'git-svn. You probably want to use `git cl land` instead.')
-    print(message)
-    return 1
-
-
 @subcommand.usage('[upstream branch to apply against]')
 @metrics.collector.collect_metrics('git cl land')
 def CMDland(parser, args):

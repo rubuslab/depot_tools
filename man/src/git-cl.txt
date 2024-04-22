@@ -37,9 +37,6 @@ comments::
 config::
   edits configuration for this tree
 
-dcommit::
-  DEPRECATED: Used to commit the current changelist via git-svn
-
 description::
   brings up the editor for the current CL's description
 

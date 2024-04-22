@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6a1510e_eb19c690",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-04-22T12:43:59Z",
+      "side": 1,
+      "message": "Gavin, could you have a look at this? I am wondering if the meta/config branch is intended to be not supported, but haven\u0027t found anything in the history of this method.",
+      "revId": "072e42d1f3d353c89eb1b9c7a3edbd757ec8e526",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2adfa636_606865f1",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2024-04-22T16:47:01Z",
+      "side": 1,
+      "message": "If we go for this in the long term we should set this as part of the auth flags in reproxy.cfg",
+      "range": {
+        "startLine": 289,
+        "startChar": 31,
+        "endLine": 289,
+        "endChar": 49
+      },
+      "revId": "ab7596d050aef1c6623a74f93db2ca3757f9adf9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

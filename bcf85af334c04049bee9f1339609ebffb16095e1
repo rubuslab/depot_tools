@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85c77237_43dd572f",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3184,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-22T22:40:39Z",
+      "side": 0,
+      "message": "perhaps use !\u003d \u0027git\u0027?\n```suggestion\n            if dep.get(\u0027dep_type\u0027) !\u003d \u0027git\u0027:\n```",
+      "revId": "bcf85af334c04049bee9f1339609ebffb16095e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

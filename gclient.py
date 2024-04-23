@@ -3173,7 +3173,7 @@ def CMDgitmodules(parser, args):
     # This check makes the transition easier.
     strip_git_suffix = True
     if os.path.exists(options.output_gitmodules):
-        dot_git_pattern = re.compile('^(\s*)url(\s*)=.*\.git$')
+        dot_git_pattern = re.compile(r'^(\s*)url(\s*)=.*\.git$')
         with open(options.output_gitmodules) as f:
             strip_git_suffix = not any(dot_git_pattern.match(l) for l in f)
 

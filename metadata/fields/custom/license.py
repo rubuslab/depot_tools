@@ -22,35 +22,35 @@ import metadata.validation_result as vr
 # Copied from ANDROID_ALLOWED_LICENSES in
 # https://chromium.googlesource.com/chromium/src/+/refs/heads/main/third_party/PRESUBMIT.py
 _ANDROID_ALLOWED_LICENSES = [
-    "A(pple )?PSL 2(\.0)?",
-    "Android Software Development Kit License",
-    "Apache( License)?,?( Version)? 2(\.0)?",
-    "(New )?([23]-Clause )?BSD( [23]-Clause)?( with advertising clause)?",
-    "GNU Lesser Public License",
-    "L?GPL ?v?2(\.[01])?( or later)?( with the classpath exception)?",
-    "(The )?MIT(/X11)?(-like)?( License)?",
-    "MPL 1\.1 ?/ ?GPL 2(\.0)? ?/ ?LGPL 2\.1",
-    "MPL 2(\.0)?",
-    "Microsoft Limited Public License",
-    "Microsoft Permissive License",
-    "Public Domain",
-    "Python",
-    "SIL Open Font License, Version 1.1",
-    "SGI Free Software License B",
-    "Unicode, Inc. License",
-    "University of Illinois\/NCSA Open Source",
-    "X11",
-    "Zlib",
+    r"A(pple )?PSL 2(\.0)?",
+    r"Android Software Development Kit License",
+    r"Apache( License)?,?( Version)? 2(\.0)?",
+    r"(New )?([23]-Clause )?BSD( [23]-Clause)?( with advertising clause)?",
+    r"GNU Lesser Public License",
+    r"L?GPL ?v?2(\.[01])?( or later)?( with the classpath exception)?",
+    r"(The )?MIT(/X11)?(-like)?( License)?",
+    r"MPL 1\.1 ?/ ?GPL 2(\.0)? ?/ ?LGPL 2\.1",
+    r"MPL 2(\.0)?",
+    r"Microsoft Limited Public License",
+    r"Microsoft Permissive License",
+    r"Public Domain",
+    r"Python",
+    r"SIL Open Font License, Version 1.1",
+    r"SGI Free Software License B",
+    r"Unicode, Inc. License",
+    r"University of Illinois\/NCSA Open Source",
+    r"X11",
+    r"Zlib",
 ]
 _PATTERN_LICENSE_ALLOWED = re.compile(
-    "^({})$".format("|".join(_ANDROID_ALLOWED_LICENSES)),
+    r"^({})$".format("|".join(_ANDROID_ALLOWED_LICENSES)),
     re.IGNORECASE,
 )
 
 _PATTERN_VERBOSE_DELIMITER = re.compile(r" and | or | / ")
 
 # Split on the canonical delimiter, or any of the non-canonical delimiters.
-_PATTERN_SPLIT_LICENSE = re.compile("{}|{}".format(
+_PATTERN_SPLIT_LICENSE = re.compile(r"{}|{}".format(
     _PATTERN_VERBOSE_DELIMITER.pattern,
     field_types.MetadataField.VALUE_DELIMITER))
 

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ff3456b_963e1505",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-23T21:15:13Z",
+      "side": 1,
+      "message": "This change currently fails the presubmit because some of the test mocks need updating for using git_common.py and I\u0027m not sure how to do this. A simple way to locally reproduce some of the failures is this command, run from the depot_tools directory:\n\n    vpython3 tests/gclient_scm_test.py --verbose -k\u003d*testUpdateConflict\n\nThe relevant part of the first failure from this is shown here:\n  File \"c:\\src\\depot_tools\\git_common.py\", line 869, in run_with_stderr\n    ret, err \u003d proc.communicate(indata)\n               ^^^^^^^^^^^^^^^^\n\nIt\u0027s not clear to me how to effectively mock proc.communicate (and the proc.wait that follows?) in order to get this and other tests to pass. Any ideas?\n\nThe potential win after this is landed is a 45% speedup in the update phase of \"gclient sync\"",
+      "revId": "e220f8a8fedc71bdb0075d0da52d5caf4ebd3489",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

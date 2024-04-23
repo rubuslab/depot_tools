@@ -21,6 +21,7 @@ import traceback
 import gclient_utils
 import gerrit_util
 import git_cache
+import git_common
 import scm
 import subprocess2
 
@@ -1487,8 +1488,8 @@ class GitWrapper(SCMWrapper):
             env.setdefault(
                 'GIT_DIR',
                 os.path.abspath(os.path.join(self.checkout_path, '.git')))
-        ret = subprocess2.check_output(['git'] + args, env=env,
-                                       **kwargs).decode('utf-8')
+        kwargs.setdefault('env', env)
+        ret = git_common.run(*args, **kwargs)
         if strip:
             ret = ret.strip()
         self.Print('Finished running: %s %s' % ('git', ' '.join(args)))

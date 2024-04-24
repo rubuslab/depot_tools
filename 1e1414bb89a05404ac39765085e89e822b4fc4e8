@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff6b60d4_668d0a06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1103379
+      },
+      "writtenOn": "2024-04-24T14:35:24Z",
+      "side": 1,
+      "message": "Please continue the conversation on crbug.com/40238115 - currently that says that a Chrome eng-review decision on 2022-11-21 was this didn\u0027t meet the requirements described in comment#16 there, whereas the commit message here says that that decision was made based on incomplete facts. I wouldn\u0027t be comfortable with this change landing while the bug says it shouldn\u0027t be.",
+      "revId": "1e1414bb89a05404ac39765085e89e822b4fc4e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {

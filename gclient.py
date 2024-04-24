@@ -2746,6 +2746,10 @@ class GcsDependency(Dependency):
                 self.WriteToFile(json.dumps(tar.getnames()), tar_content_file)
 
                 tar.extractall(path=output_dir)
+
+        download_from_google_storage.set_executable_bit(output_file, self.url,
+                                                        gsutil)
+
         self.WriteToFile(calculated_sha256sum, hash_file)
         self.WriteToFile(str(1), migration_toggle_file)
 

@@ -25,6 +25,10 @@ import git_cache
 import scm
 import subprocess2
 
+# A special constant that indicates no submodule changes were detected by its
+# parent project.
+UNCHANGED_REVISION = object()
+
 # TODO: Should fix these warnings.
 # pylint: disable=line-too-long
 
@@ -229,6 +233,7 @@ class GitWrapper(SCMWrapper):
             filter_kwargs['predicate'] = self.out_cb
         self.filter = gclient_utils.GitFilter(**filter_kwargs)
         self._running_under_rosetta = None
+        self.current_revision = None
 
     def GetCheckoutRoot(self):
         return scm.GIT.GetCheckoutRoot(self.checkout_path)
@@ -249,6 +254,35 @@ class GitWrapper(SCMWrapper):
                     bool,
                     ['-c', 'core.quotePath=false', 'diff', '--name-only', base])
             )).split()
+
+    def GetSubmoduleDiff(self):
+        out = self._Capture([
+            'diff', '--no-prefix', '--no-ext-diff', '--no-color',
+            '--ignore-submodules=dirty'
+        ])
+        NO_COMMIT = 40 * '0'
+        desired_submodule = None
+        new_submodule = None
+        filepath = None
+        state = 0
+        diff = {}
+        for l in out.split('\n'):
+            if l.startswith('diff --git'):
+                state = 1
+            elif state == 1 and l.startswith('index') and l.endswith('160000'):
+                state = 2
+            elif state == 2 and l.startswith('+++ '):
+                filepath = l[4:]
+                state = 3
+            elif state == 3 and l.startswith('-Subproject commit '):
+                desired_submodule = l.split(' ')[-1]
+                state = 4
+            elif state == 4 and l.startswith('+Subproject commit '):
+                new_submodule = l.split(' ')[-1]
+                if not NO_COMMIT in (desired_submodule, new_submodule):
+                    diff[filepath] = (desired_submodule, new_submodule)
+                state = 0
+        return diff
 
     def diff(self, options, _args, _file_list):
         _, revision = gclient_utils.SplitUrlRevision(self.url)
@@ -638,7 +672,6 @@ class GitWrapper(SCMWrapper):
             raise gclient_utils.Error("Unsupported argument(s): %s" %
                                       ",".join(args))
 
-        current_revision = None
         url, deps_revision = gclient_utils.SplitUrlRevision(self.url)
         revision = deps_revision
         managed = True
@@ -714,11 +747,11 @@ class GitWrapper(SCMWrapper):
                 self._UpdateMirrorIfNotContains(mirror, options, rev_type,
                                                 revision)
             try:
-                current_revision = self._Clone(revision, url, options)
+                self.current_revision = self._Clone(revision, url, options)
             except subprocess2.CalledProcessError as e:
                 logging.warning('Clone failed due to: %s', e)
                 self._DeleteOrMove(options.force)
-                current_revision = self._Clone(revision, url, options)
+                self.current_revision = self._Clone(revision, url, options)
             if file_list is not None:
                 files = self._Capture(
                     ['-c', 'core.quotePath=false', 'ls-files']).splitlines()
@@ -741,6 +774,13 @@ class GitWrapper(SCMWrapper):
             self.Print('________ unmanaged solution; skipping %s' %
                        self.relpath)
             return self._Capture(['rev-parse', '--verify', 'HEAD'])
+
+        # Special case for rev_type = hash. If we use submodules, we can check
+        # information already.
+        if rev_type == 'hash':
+            if self.current_revision == revision or \
+                self.current_revision == UNCHANGED_REVISION:
+                return revision
 
         self._maybe_break_locks(options)
 

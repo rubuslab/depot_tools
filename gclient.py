@@ -295,7 +295,22 @@ class DependencySettings(object):
         # These are not mutable:
         self._parent = parent
         self._deps_file = deps_file
-        self._url = url
+
+        # Post process the url to remove trailing slashes.
+        if isinstance(url, str):
+            # urls are sometime incorrectly written as proto://host/path/@rev.
+            # Replace it to proto://host/path@rev.
+            self._url = url.replace('/@', '@')
+        elif isinstance(url, (None.__class__)):
+            self._url = url
+        else:
+            raise gclient_utils.Error(
+                ('dependency url must be either string or None, '
+                 'instead of %s') % url.__class__.__name__)
+
+        # Track if URL has been modified from the original setting.
+        self._url_unmodified = True
+
         # The condition as string (or None). Useful to keep e.g. for flatten.
         self._condition = condition
         # 'managed' determines whether or not this dependency is synced/updated
@@ -320,16 +335,6 @@ class DependencySettings(object):
         self._custom_vars = custom_vars or {}
         self._custom_deps = custom_deps or {}
         self._custom_hooks = custom_hooks or []
-
-        # Post process the url to remove trailing slashes.
-        if isinstance(self.url, str):
-            # urls are sometime incorrectly written as proto://host/path/@rev.
-            # Replace it to proto://host/path@rev.
-            self.set_url(self.url.replace('/@', '@'))
-        elif not isinstance(self.url, (None.__class__)):
-            raise gclient_utils.Error(
-                ('dependency url must be either string or None, '
-                 'instead of %s') % self.url.__class__.__name__)
 
         # Make any deps_file path platform-appropriate.
         if self._deps_file:
@@ -374,6 +379,11 @@ class DependencySettings(object):
         return self._custom_hooks[:]
 
     @property
+    def url_unmodified(self):
+        """URL not updated by custom settings."""
+        return self._url_unmodified
+
+    @property
     def url(self):
         """URL after variable expansion."""
         return self._url
@@ -394,6 +404,9 @@ class DependencySettings(object):
         return self.parent.target_cpu
 
     def set_url(self, url):
+        if self.url == url:
+            return
+        self._url_unmodified = False
         self._url = url
 
     def get_custom_deps(self, name, url):
@@ -484,6 +497,8 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         # If this is False, we will still run custom_hooks and process
         # custom_deps, if any.
         self._should_sync = True
+
+        self._known_dependency_state = None
 
         self._OverrideUrl()
         # This is inherited from WorkItem.  We want the URL to be a resource.
@@ -587,6 +602,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             '',
         ])
         return s
+
+    @property
+    def known_dependency_state(self):
+        return self._known_dependency_state
 
     @property
     def requirements(self):
@@ -929,6 +948,10 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         if self.git_dependencies_state == gclient_eval.SUBMODULES:
             deps.update(self.ParseGitSubmodules())
 
+        if self.git_dependencies_state != gclient_eval.DEPS:
+            # Get submodule state
+            self._known_dependency_state = self.CreateSCM().GetSubmoduleDiff()
+
         deps_to_add = self._deps_to_objects(
             self._postprocess_deps(deps, rel_prefix), self._use_relative_paths)
 
@@ -1156,6 +1179,18 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
                 try:
                     start = time.time()
                     sync_status = metrics_utils.SYNC_STATUS_FAILURE
+                    if self.parent and self.parent.known_dependency_state is not None:
+                        current_revision = gclient_scm.UNCHANGED_REVISION \
+                            if self.url_unmodified else None
+                        if self._use_relative_paths:
+                            path = self.name
+                        else:
+                            path = self.name[len(self.parent.name) + 1:]
+                        if path in self.parent.known_dependency_state:
+                            current_revision = self.parent.known_dependency_state[
+                                path][1]
+                        self._used_scm.current_revision = current_revision
+
                     self._got_revision = self._used_scm.RunCommand(
                         command, options, args, file_list)
                     latest_commit = self._got_revision
@@ -2120,6 +2155,21 @@ it or fix the checkout.
 
         removed_cipd_entries = []
         read_entries = self._ReadEntries()
+        # Add known dependnecy state
+        queue = list(self.dependencies)
+        while len(queue) > 0:
+            dep = queue.pop()
+            queue.extend(dep.dependencies)
+            if not dep._known_dependency_state:
+                continue
+
+            for k, v in dep._known_dependency_state.items():
+                path = f'{dep.name}/{k}'
+                if path in read_entries:
+                    continue
+                read_entries[path] = f'https://unknown@{v[1]}'
+
+
         # We process entries sorted in reverse to ensure a child dir is
         # always deleted before its parent dir.
         # This is especially important for submodules with pinned revisions

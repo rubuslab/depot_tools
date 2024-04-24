@@ -34,6 +34,24 @@
       "parentUuid": "de67a394_44ca58ba",
       "revId": "1c4abc0dd504351ea94e20c5bd1207af07ea1848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d7f6676_b9420bba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-24T18:50:48Z",
+      "side": 1,
+      "message": "Great! The conflict has been resolved by rebasing, you should be able to test. I suspect tests will fail, and I need to document how this works.\n\nThis change also solves problem of tracking previously untracked gclient git dependencies, e.g. https://crbug.com/335426684",
+      "parentUuid": "0f5a81c4_4d3c9bcc",
+      "revId": "1c4abc0dd504351ea94e20c5bd1207af07ea1848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

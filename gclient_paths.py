@@ -13,6 +13,7 @@ import logging
 import os
 import sys
 
+import detect_host_arch
 import gclient_utils
 import subprocess2
 
@@ -127,7 +128,7 @@ def GetBuildtoolsPath():
     return _GetBuildtoolsPathInternal(os.getcwd(), override)
 
 
-def GetBuildtoolsPlatformBinaryPath():
+def GetBuildtoolsPlatformBinaryPath(check_arch_for_mac=False):
     """Returns the full path to the binary directory for the current platform."""
     buildtools_path = GetBuildtoolsPath()
     if not buildtools_path:
@@ -137,6 +138,10 @@ def GetBuildtoolsPlatformBinaryPath():
         subdir = 'win'
     elif sys.platform == 'darwin':
         subdir = 'mac'
+        if check_arch_for_mac:
+            arch = detect_host_arch.HostArch()
+            if arch == 'arm64':
+                subdir = 'mac_arm64'
     elif sys.platform.startswith('linux'):
         subdir = 'linux64'
     else:

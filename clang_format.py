@@ -40,11 +40,17 @@ def FindClangFormatToolInChromiumTree():
             'Set CHROMIUM_BUILDTOOLS_PATH to use outside of a chromium '
             'checkout.')
 
-    tool_path = os.path.join(bin_path,
-                             'clang-format' + gclient_paths.GetExeSuffix())
-    if not os.path.exists(tool_path):
-        raise NotFoundError('File does not exist: %s' % tool_path)
-    return tool_path
+    # TODO(b/336843583): Remove old_tool_path when migrated over
+    old_tool_path = os.path.join(bin_path,
+                                 'clang-format' + gclient_paths.GetExeSuffix())
+    new_tool_path = os.path.join(bin_path, 'format',
+                                 'clang-format' + gclient_paths.GetExeSuffix())
+    possible_paths = [new_tool_path, old_tool_path]
+    for path in possible_paths:
+        if os.path.exists(path):
+            return path
+    raise NotFoundError('File does not exist in either path: %s' %
+                        possible_paths)
 
 
 def FindClangFormatScriptInChromiumTree(script_name):

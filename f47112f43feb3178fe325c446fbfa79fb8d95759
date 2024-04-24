@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c67cb4e_d629babb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-24T20:05:22Z",
+      "side": 1,
+      "message": "You could also mention that this cuts down the number of git invocations by about a factor of eight (from my crude ETW measurements on Windows) in the NOP gclient sync case.",
+      "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "37c2fa98_0a5a4aa5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2

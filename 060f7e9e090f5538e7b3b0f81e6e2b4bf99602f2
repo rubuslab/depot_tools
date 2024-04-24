@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3b6e813_d6b1f92f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-24T18:19:16Z",
+      "side": 1,
+      "message": "does `or` work?",
+      "range": {
+        "startLine": 804,
+        "startChar": 36,
+        "endLine": 804,
+        "endChar": 60
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "d41394ed_db26fa01",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gclient_scm.py",
+              "range": {
+                "startLine": 804,
+                "startChar": 0,
+                "endLine": 805,
+                "endChar": 0
+              },
+              "replacement": "            return current_revision or self._Capture(\n"
+            }
+          ]
+        }
+      ],
+      "revId": "060f7e9e090f5538e7b3b0f81e6e2b4bf99602f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

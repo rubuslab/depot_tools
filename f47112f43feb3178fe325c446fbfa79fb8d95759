@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37c2fa98_0a5a4aa5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-24T19:14:13Z",
+      "side": 1,
+      "message": "add \"on Linux\".\n\nAlso, I think it\u0027s not 1.16 times \"faster\", it\u0027s 1.16 times as fast. Subtle distinction. If it\u0027s actually 1.16 times faster then you should say \"2.16 times as fast\" to make that clear.\nhttps://randomascii.wordpress.com/2018/02/04/what-we-talk-about-when-we-talk-about-performance/\n\nYou should also say something about \"Testing on Windows shows that this makes a NOP \"gclient sync --nohooks\" run roughly three times as fast.\"\n\nIt went from around 11.3 s to around 3.7 s. Wow. Amazing.",
+      "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

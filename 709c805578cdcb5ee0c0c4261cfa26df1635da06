@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "811c787f_2ed896ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-24T21:15:03Z",
+      "side": 1,
+      "message": "probably? It would be great to have better science here and more certainty that we are actually making things reliably better.\n\nDo you have any measurements to share about what sorts of effects this change typically has on build performance on Windows?",
+      "revId": "709c805578cdcb5ee0c0c4261cfa26df1635da06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

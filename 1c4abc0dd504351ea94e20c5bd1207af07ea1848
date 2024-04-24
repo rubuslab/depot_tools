@@ -16,6 +16,24 @@
       "message": "@brucedawson@chromium.org if you have cycle, I\u0027d appreciate if you could see if this brings improvements in gclient noop sync time (gclient sync  -D --nohooks) on Windows. It shows ~16% reduction on Linux (from 3.880s to 3.233s).\n\nI plan to provision a machine later this week so I can validate it too.",
       "revId": "1c4abc0dd504351ea94e20c5bd1207af07ea1848",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f5a81c4_4d3c9bcc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-24T18:47:06Z",
+      "side": 1,
+      "message": "I\u0027d be happy to test this once the merge conflict is resolved. I also have a pending change that will reduce the cost of git operations on Windows by almost one third.",
+      "parentUuid": "de67a394_44ca58ba",
+      "revId": "1c4abc0dd504351ea94e20c5bd1207af07ea1848",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

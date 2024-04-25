@@ -2693,7 +2693,8 @@ class GcsDependency(Dependency):
                     tar.add(copy_dir, arcname=os.path.basename(copy_dir))
         else:
             gsutil = download_from_google_storage.Gsutil(
-                download_from_google_storage.GSUTIL_DEFAULT_PATH)
+                download_from_google_storage.GSUTIL_DEFAULT_PATH,
+                boto_path=os.devnull)
             code, _, err = gsutil.check_call('cp', self.url, output_file)
             if code and err:
                 raise Exception(f'{code}: {err}')

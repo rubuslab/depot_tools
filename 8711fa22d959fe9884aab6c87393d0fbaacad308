@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eec385a9_f1c81c80",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-04-25T15:02:42Z",
+      "side": 1,
+      "message": "@jojwang@chromium.org right?",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "8711fa22d959fe9884aab6c87393d0fbaacad308",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

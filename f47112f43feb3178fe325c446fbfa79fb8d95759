@@ -69,6 +69,24 @@
       "parentUuid": "37c2fa98_0a5a4aa5",
       "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ef6ad62_c600d204",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-25T04:58:29Z",
+      "side": 1,
+      "message": "With the latest patch I\u0027m seeing times of around 4.2 s. Slightly slower than the original version, but still much faster than without the change (best time I saw was 10.3 s)",
+      "parentUuid": "8b1d0efd_8c637dc1",
+      "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "58743ad8_00c906bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-25T00:07:05Z",
+      "side": 1,
+      "message": "ack, will update it once I\u0027m closer to submitting this patch.",
+      "parentUuid": "1c67cb4e_d629babb",
+      "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "37c2fa98_0a5a4aa5",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-04-24T19:14:13Z",
       "side": 1,
       "message": "add \"on Linux\".\n\nAlso, I think it\u0027s not 1.16 times \"faster\", it\u0027s 1.16 times as fast. Subtle distinction. If it\u0027s actually 1.16 times faster then you should say \"2.16 times as fast\" to make that clear.\nhttps://randomascii.wordpress.com/2018/02/04/what-we-talk-about-when-we-talk-about-performance/\n\nYou should also say something about \"Testing on Windows shows that this makes a NOP \"gclient sync --nohooks\" run roughly three times as fast.\"\n\nIt went from around 11.3 s to around 3.7 s. Wow. Amazing.",
+      "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b1d0efd_8c637dc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-04-25T00:07:05Z",
+      "side": 1,
+      "message": "\u003e It went from around 11.3 s to around 3.7 s. Wow. Amazing.\n\nThat\u0027s awesome, thanks for testing it. \n\nI did notice correctness problem, and I\u0027m forced to utilize ls-files which is a fairly slow op (~500ms to read and process). I would expect this patch to still be a win for Win. gLinux is slightly worse (200ms) but it fixes submodule tracking bug so it should be acceptable. Still waiting on Win machine before I can confirm Win gains...",
+      "parentUuid": "37c2fa98_0a5a4aa5",
       "revId": "f47112f43feb3178fe325c446fbfa79fb8d95759",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

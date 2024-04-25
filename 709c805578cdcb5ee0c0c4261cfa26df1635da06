@@ -52,6 +52,40 @@
       "parentUuid": "63a1bed2_ff8ae6ae",
       "revId": "709c805578cdcb5ee0c0c4261cfa26df1635da06",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e29b203_c47abc7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-25T15:01:52Z",
+      "side": 1,
+      "message": "Can you get the developers who are having problems to try with --remote_jobs\u003d1000 to see if that solves their problems?\n\nIf this has been done already then that should probably be mentioned in the commit message to better explain why this change is believed to be a good idea.",
+      "revId": "709c805578cdcb5ee0c0c4261cfa26df1635da06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca33cbcd_c9951d7c",
+        "filename": "autosiso.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-04-25T15:01:52Z",
+      "side": 1,
+      "message": "Why are you supporting both --remote_jobs and -remote_jobs?",
+      "revId": "709c805578cdcb5ee0c0c4261cfa26df1635da06",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

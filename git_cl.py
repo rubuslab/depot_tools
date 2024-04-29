@@ -192,6 +192,7 @@ def GetNoGitPagerEnv():
 
 def RunCommand(args, error_ok=False, error_message=None, shell=False, **kwargs):
     try:
+        print(f"RunCommand({repr(args)})")
         stdout = subprocess2.check_output(args, shell=shell, **kwargs)
         return stdout.decode('utf-8', 'replace')
     except subprocess2.CalledProcessError as e:

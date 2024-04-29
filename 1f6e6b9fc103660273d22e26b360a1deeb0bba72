@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aea0aae4_1d172eb3",
+        "filename": "gclient.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1179,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-29T17:57:07Z",
+      "side": 1,
+      "message": "delete?",
+      "range": {
+        "startLine": 1179,
+        "startChar": 0,
+        "endLine": 1179,
+        "endChar": 30
+      },
+      "revId": "1f6e6b9fc103660273d22e26b360a1deeb0bba72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60293af1_457a1e15",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-29T17:57:07Z",
+      "side": 1,
+      "message": "add docstrings here and to GetSubmoduleDiff",
+      "range": {
+        "startLine": 254,
+        "startChar": 8,
+        "endLine": 254,
+        "endChar": 34
+      },
+      "revId": "1f6e6b9fc103660273d22e26b360a1deeb0bba72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c1285bf_25004288",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-29T17:57:07Z",
+      "side": 1,
+      "message": "is it possible for filepath to be `/dev/null`?",
+      "range": {
+        "startLine": 294,
+        "startChar": 16,
+        "endLine": 295,
+        "endChar": 32
+      },
+      "revId": "1f6e6b9fc103660273d22e26b360a1deeb0bba72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a10cf5a5_a7810d60",
+        "filename": "gclient_scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-29T17:57:07Z",
+      "side": 1,
+      "message": "nit: `NO_COMMIT not in` is slightly more readable IMO",
+      "range": {
+        "startLine": 305,
+        "startChar": 19,
+        "endLine": 305,
+        "endChar": 36
+      },
+      "revId": "1f6e6b9fc103660273d22e26b360a1deeb0bba72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

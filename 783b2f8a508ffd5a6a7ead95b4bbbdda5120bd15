@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f57ba99_67c7de2a",
+        "filename": "git_map_branches.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-29T21:36:02Z",
+      "side": 1,
+      "message": "Prefer `f\u0027branch.{branch}.dormant\u0027` instead",
+      "range": {
+        "startLine": 223,
+        "startChar": 26,
+        "endLine": 223,
+        "endChar": 60
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "cb415ef6_a7b10875",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_map_branches.py",
+              "range": {
+                "startLine": 223,
+                "startChar": 0,
+                "endLine": 224,
+                "endChar": 0
+              },
+              "replacement": "        return get_config(f\u0027branch.{branch}.dormant\u0027) \u003d\u003d \u0027true\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "783b2f8a508ffd5a6a7ead95b4bbbdda5120bd15",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -855,6 +855,7 @@ def run_with_stderr(*cmd, **kwargs):
         autostrip (bool) - Strip the output. Defaults to True.
         indata (str) - Specifies stdin data for the process.
     """
+    print(f"Running {repr(cmd)}")
     kwargs.setdefault('stdin', subprocess2.PIPE)
     kwargs.setdefault('stdout', subprocess2.PIPE)
     kwargs.setdefault('stderr', subprocess2.PIPE)

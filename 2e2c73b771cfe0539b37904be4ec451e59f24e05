@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a57bac3a_a17a97a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-04-30T22:20:05Z",
+      "side": 1,
+      "message": "This seems like a check that we can\u0027t support for non-git ws. `ls -R` won\u0027t work as a substitute since it\u0027s missing the commit info the check needs.",
+      "revId": "2e2c73b771cfe0539b37904be4ec451e59f24e05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

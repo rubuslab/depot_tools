@@ -82,12 +82,12 @@ def _lock(path, timeout=0):
 
     _lock also implements simple retry logic."""
     elapsed = 0
+    sleep_time = 0.1
     while True:
         try:
             return _try_lock(path + '.locked')
         except (OSError, IOError) as e:
             if elapsed < timeout:
-                sleep_time = min(10, timeout - elapsed)
                 logging.info(
                     'Could not create git cache lockfile; '
                     'will retry after sleep(%d).', sleep_time)

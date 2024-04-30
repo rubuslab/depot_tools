@@ -117,13 +117,7 @@ def ensure_gsutil(version, target, clean):
 
     with temporary_directory(target) as instance_dir:
         # Clean up if we're redownloading a corrupted gsutil.
-        cleanup_path = os.path.join(instance_dir, 'clean')
-        try:
-            os.rename(bin_dir, cleanup_path)
-        except (OSError, IOError):
-            cleanup_path = None
-        if cleanup_path:
-            shutil.rmtree(cleanup_path)
+        shutil.rmtree(bin_dir)
 
         download_dir = os.path.join(instance_dir, 'd')
         target_zip_filename = download_gsutil(version, instance_dir)

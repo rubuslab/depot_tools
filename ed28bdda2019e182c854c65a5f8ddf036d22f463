@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ba6248d_ecb77db1",
+        "filename": "gsutil.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-01T03:06:56Z",
+      "side": 1,
+      "message": "nit: maybe set exist_ok\u003dTrue instead of catch FileExistsError?",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 16
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "bbcd27c6_219a4bc6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gsutil.py",
+              "range": {
+                "startLine": 102,
+                "startChar": 0,
+                "endLine": 106,
+                "endChar": 0
+              },
+              "replacement": "        os.makedirs(target, exist_ok\u003dTrue)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "ed28bdda2019e182c854c65a5f8ddf036d22f463",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

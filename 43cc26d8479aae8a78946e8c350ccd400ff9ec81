@@ -1,0 +1,114 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92746817_666e8ae5",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4182,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-05-01T18:36:51Z",
+      "side": 1,
+      "message": "object_names could contain \"/\", i think we need some other structure format\n\nalso w/e we decide on i think it would be good to have some regex to validate against",
+      "range": {
+        "startLine": 4182,
+        "startChar": 26,
+        "endLine": 4182,
+        "endChar": 42
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21b275e9_ef4b5238",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4184,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-05-01T18:36:51Z",
+      "side": 1,
+      "message": "we should validate object_info len is expected. worst-case could get an index error below",
+      "range": {
+        "startLine": 4184,
+        "startChar": 16,
+        "endLine": 4184,
+        "endChar": 42
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63211241_04de6708",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-05-01T18:36:51Z",
+      "side": 1,
+      "message": "i think it\u0027s worth calling this requirement out in the parser add_option.help",
+      "range": {
+        "startLine": 802,
+        "startChar": 4,
+        "endLine": 804,
+        "endChar": 46
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "cb1af637_f2af8ed5",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gclient_eval.py",
+              "range": {
+                "startLine": 803,
+                "startChar": 0,
+                "endLine": 805,
+                "endChar": 0
+              },
+              "replacement": "        raise ValueError(\n            \"Number of revision objects must match the current number of \"\n            \"objects. If you are adding a new object, please use the \"\n            \"add_object command instead.\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d64961c_170192dc",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-05-01T18:36:51Z",
+      "side": 1,
+      "message": "```suggestion\n    for index, object_node in enumerate(objects_node.elts):\n      for key, value ...\n        ..\n```",
+      "range": {
+        "startLine": 806,
+        "startChar": 4,
+        "endLine": 807,
+        "endChar": 46
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

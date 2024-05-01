@@ -827,10 +827,12 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
             logging.info('ParseDepsFile(%s): No %s file found at %s', self.name,
                          deps_file, filepath)
 
-        if os.path.isfile(filepath):
-            deps_content = gclient_utils.FileRead(filepath)
-            logging.debug('ParseDepsFile(%s) read:\n%s', self.name,
-                          deps_content)
+        if not os.path.isfile(filepath):
+            logging.warning('ParseDepsFile(%s): No DEPS file found', self.name)
+            return
+
+        deps_content = gclient_utils.FileRead(filepath)
+        logging.debug('ParseDepsFile(%s) read:\n%s', self.name, deps_content)
 
         local_scope = {}
         if deps_content:

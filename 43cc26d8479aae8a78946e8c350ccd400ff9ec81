@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "70e91837_e9c2a8e1",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4182,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-05-01T20:49:07Z",
+      "side": 1,
+      "message": "Changed to `?`\n\nWhat kind of regex did you have in mind?",
+      "parentUuid": "92746817_666e8ae5",
+      "range": {
+        "startLine": 4182,
+        "startChar": 26,
+        "endLine": 4182,
+        "endChar": 42
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "21b275e9_ef4b5238",
         "filename": "gclient.py",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-01T18:36:51Z",
       "side": 1,
       "message": "we should validate object_info len is expected. worst-case could get an index error below",
+      "range": {
+        "startLine": 4184,
+        "startChar": 16,
+        "endLine": 4184,
+        "endChar": 42
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1c98d89_f44b5a4b",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4184,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-05-01T20:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21b275e9_ef4b5238",
       "range": {
         "startLine": 4184,
         "startChar": 16,
@@ -88,6 +136,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6bd5730_cb5978e1",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-05-01T20:49:07Z",
+      "side": 1,
+      "message": "Already mentioned the same number requirement in the help description for --revision.\n\nAlso ignoring the AI-suggested fix because I don\u0027t think \u0027add_object\u0027 exists.",
+      "parentUuid": "63211241_04de6708",
+      "range": {
+        "startLine": 802,
+        "startChar": 4,
+        "endLine": 804,
+        "endChar": 46
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8d64961c_170192dc",
@@ -101,6 +173,30 @@
       "writtenOn": "2024-05-01T18:36:51Z",
       "side": 1,
       "message": "```suggestion\n    for index, object_node in enumerate(objects_node.elts):\n      for key, value ...\n        ..\n```",
+      "range": {
+        "startLine": 806,
+        "startChar": 4,
+        "endLine": 807,
+        "endChar": 46
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50c2b3ac_92807347",
+        "filename": "gclient_eval.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 1398317
+      },
+      "writtenOn": "2024-05-01T20:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8d64961c_170192dc",
       "range": {
         "startLine": 806,
         "startChar": 4,

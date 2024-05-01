@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "072bfef1_9dfda276",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-01T20:08:54Z",
+      "side": 1,
+      "message": "https://crrev.com/c/5506655 and https://crrev.com/c/5506836 will solve the underlying problem, and we can land this afterwards.",
+      "revId": "04d7a76d464efba65165c894e40bded69628318a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b16c014_249aa092",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4182,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-05-01T21:12:01Z",
+      "side": 1,
+      "message": "eh i guess the other checks and DEPS field types will handle this.",
+      "parentUuid": "70e91837_e9c2a8e1",
+      "range": {
+        "startLine": 4182,
+        "startChar": 26,
+        "endLine": 4182,
+        "endChar": 42
+      },
+      "revId": "43cc26d8479aae8a78946e8c350ccd400ff9ec81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "21b275e9_ef4b5238",

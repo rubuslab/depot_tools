@@ -16,6 +16,23 @@
       "message": "https://crrev.com/c/5506655 and https://crrev.com/c/5506836 will solve the underlying problem, and we can land this afterwards.",
       "revId": "04d7a76d464efba65165c894e40bded69628318a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47739b51_a398c710",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-01T21:35:35Z",
+      "side": 1,
+      "message": "lgtm once dependent changes are submitted",
+      "revId": "04d7a76d464efba65165c894e40bded69628318a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

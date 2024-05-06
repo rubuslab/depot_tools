@@ -350,12 +350,15 @@ class BotUpdateApi(recipe_api.RecipeApi):
 
     # Inject Json output for testing.
     first_sln = cfg.solutions[0].name
-    step_test_data = step_test_data or (
-        lambda: self.test_api.output_json(first_sln,
-                                          reverse_rev_map,
-                                          patch_root=patch_root,
-                                          fail_patch=self._fail_patch,
-                                          fixed_revisions=fixed_revisions))
+    step_test_data = step_test_data or (lambda: self.test_api.output_json(
+        first_sln,
+        reverse_rev_map,
+        patch_root=patch_root,
+        fixed_revisions=fixed_revisions,
+        fail_checkout=self._test_data.get('fail_checkout', False),
+        fail_patch=self._test_data.get('fail_patch', self._fail_patch),
+        commit_positions=self._test_data.get('commit_positions', True),
+    ))
 
     name = 'bot_update'
     if not patch:

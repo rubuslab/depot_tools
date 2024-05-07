@@ -34,6 +34,24 @@
       "parentUuid": "a10cf69d_f314a0ff",
       "revId": "6ed0d7b86cb1a256b43744a6de9b9ac2218b3419",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c482785_b063e487",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-07T23:55:09Z",
+      "side": 1,
+      "message": "yeah.\n\nalso, I will add same feature in `siso query`.\nwant to get commandline and inputs of the target?",
+      "parentUuid": "a2cefc39_39b5aab2",
+      "revId": "6ed0d7b86cb1a256b43744a6de9b9ac2218b3419",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

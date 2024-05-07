@@ -4,9 +4,82 @@
 
 """Recipe module to ensure a checkout is consistent on a bot."""
 
+import dataclasses
+import typing
+
 from recipe_engine import recipe_api
+from recipe_engine.config_types import Path
+from recipe_engine.engine_types import StepPresentation
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class RelativeRoot:
+  """A root that is relative to the checkout root.
+
+  Attributes:
+    name: The name of the root/the checkout root-relative path to the root.
+    path: The absolute path to the root.
+  """
+  name: str
+  path: Path
+
+  @classmethod
+  def create(cls, checkout_dir: Path, name: str) -> typing.Self:
+    return cls(name=name, path=checkout_dir / name)
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Json:
+  output: dict[str, typing.Any]
+
+
+class ManifestRepo(typing.TypedDict):
+  repository: str
+  revision: str
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Result:
+  """The noteworthy paths for a source checkout.
+
+  Attributes:
+    checkout_dir: The directory where the checkout was performed.
+    repo_root: The directory containing the repo identified by the first gclient
+      solution.
+    patch_root: The directory containing the repo that was patched, if a patch
+      was applied. Otherwise, None.
+    presentation: DEPRECATED. The presentation of the bot_update step. This is
+      used by some code to get the properties. This is provided for backwards
+      compatibility, code should access the properties attribute instead.
+    json: DEPRECATED. The result of json outputs for the bot_update step. This
+      is provided for backwards compatibility, attributes on this object are
+      provided for accessing the contents of json.output.
+    properties: The properties set by the bot_update execution.
+    manifest: The manifest mapping the checkout_dir-relative path to the
+      repository and revision that was checked out.
+    fixed_revisions: The explicitly requested revisions; a mapping from the
+      checkout_dir-relative path to the requested revision.
+  """
+  checkout_dir: Path
+  repo_root: RelativeRoot
+  patch_root: RelativeRoot | None = None
+
+  presentation: StepPresentation
+  json: Json
+
+  @property
+  def properties(self):
+    return self.json.output.get('properties', {})
+
+  @property
+  def manifest(self):
+    return self.json.output.get('manifest', {})
+
+  @property
+  def fixed_revisions(self):
+    return self.json.output.get('fixed_revisions', {})
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -148,6 +221,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
                       enforce_fetch=False,
                       download_topics=False,
                       recipe_revision_overrides=None,
+                      set_checkout_dir=True,
+                      return_custom_result=False,
                       **kwargs):
     """
     Args:
@@ -183,6 +258,11 @@ class BotUpdateApi(recipe_api.RecipeApi):
         to each particular build/recipe run. e.g. the recipe might parse a gerrit
         change's commit message to get this revision override requested by the
         author.
+      * set_checkout_dir: If True, after performing the checkout if
+        api.path.checkout_dir isn't already set, it will be set to the path to
+        the root of the first solution's checked out repo.
+      * return_custom_result: If True, instead of returning the step result, an
+        instance of the Result type will be returned.
     """
     assert not (ignore_input_commit and set_output_commit)
     if assert_one_gerrit_change:
@@ -488,12 +568,23 @@ class BotUpdateApi(recipe_api.RecipeApi):
         # the checkout.
         # bot_update actually just sets root to be the folder name of the
         # first solution.
-        if (result.get('did_run')
-            and 'checkout' not in self.m.path
-            and 'root' in result):
+        if (set_checkout_dir and result.get('did_run')
+            and 'checkout' not in self.m.path and 'root' in result):
           co_root = result['root']
           cwd = self.m.context.cwd or self.m.path.start_dir
           self.m.path.checkout_dir = cwd / co_root
+
+    assert result.get('did_run') and result.get('root')
+    if return_custom_result:
+      checkout_dir = self.m.context.cwd or self.m.path.start_dir
+      return Result(
+          checkout_dir=checkout_dir,
+          repo_root=RelativeRoot.create(checkout_dir, result['root']),
+          patch_root=(RelativeRoot.create(checkout_dir, result['patch_root'])
+                      if result['patch_root'] is not None else None),
+          presentation=step_result.presentation,
+          json=Json(output=result),
+      )
 
     return step_result
 

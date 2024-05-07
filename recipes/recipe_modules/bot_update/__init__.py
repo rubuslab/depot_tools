@@ -36,3 +36,6 @@ PROPERTIES = {
         default={},
     ),
 }
+
+# Forward these types so that they can be used without importing api
+from .api import RelativeRoot, Result

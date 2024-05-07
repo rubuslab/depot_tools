@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6dc12d21_3b4036aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2024-05-07T14:42:58Z",
+      "side": 1,
+      "message": "Noticed this when trying to use `//third_party/r8/dump_inputs.py`, which uses:\n```\nsubprocess.CalledProcessError: Command \u0027[\u0027ninja\u0027, \u0027-C\u0027, \u0027.\u0027, \u0027-t\u0027, \u0027commands\u0027, \u0027-s\u0027, \u0027apks/TrichromeWebView32.aab.mapping\u0027]\u0027 returned non-zero exit status 1.\n```",
+      "revId": "783f4628dfe204e4b81c2afa24e6ae8efbf4d46c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

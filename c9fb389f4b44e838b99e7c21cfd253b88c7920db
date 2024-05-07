@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec0a9863_6434215f",
+        "filename": "siso.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-07T22:32:34Z",
+      "side": 0,
+      "message": "why does it need to revert siso.py?",
+      "revId": "c9fb389f4b44e838b99e7c21cfd253b88c7920db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

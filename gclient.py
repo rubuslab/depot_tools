@@ -2327,7 +2327,7 @@ it or fix the checkout.
         """Runs a command on each dependency in a client and its dependencies.
 
         Args:
-            command: The command to use (e.g., 'status' or 'diff')
+            command: The command to use (e.g., 'status')
             args: list of str - extra arguments to add to the command line.
         """
         if not self.dependencies:
@@ -2339,7 +2339,7 @@ it or fix the checkout.
         skip_sync_revisions = {}
         # It's unnecessary to check for revision overrides for 'recurse'.
         # Save a few seconds by not calling _EnforceRevisions() in that case.
-        if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
+        if command not in ('recurse', 'runhooks', 'status', 'revert',
                            'validate'):
             self._CheckConfig()
             revision_overrides = self._EnforceRevisions()
@@ -3891,25 +3891,6 @@ def CMDvalidate(parser, args):
     else:
         print('validate: FAILURE')
     return rv
-
-
-@metrics.collector.collect_metrics('gclient diff')
-def CMDdiff(parser, args):
-    """Displays local diff for every dependencies."""
-    parser.add_option('--deps',
-                      dest='deps_os',
-                      metavar='OS_LIST',
-                      help='override deps for the specified (comma-separated) '
-                      'platform(s); \'all\' will process all deps_os '
-                      'references')
-    (options, args) = parser.parse_args(args)
-    client = GClient.LoadCurrentConfig(options)
-    if not client:
-        raise gclient_utils.Error(
-            'client not configured; see \'gclient config\'')
-    if options.verbose:
-        client.PrintLocationAndContents()
-    return client.RunOnDeps('diff', args)
 
 
 @metrics.collector.collect_metrics('gclient revert')

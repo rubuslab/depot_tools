@@ -250,12 +250,6 @@ class GitWrapper(SCMWrapper):
                     ['-c', 'core.quotePath=false', 'diff', '--name-only', base])
             )).split()
 
-    def diff(self, options, _args, _file_list):
-        _, revision = gclient_utils.SplitUrlRevision(self.url)
-        if not revision:
-            revision = 'refs/remotes/%s/main' % self.remote
-        self._Run(['-c', 'core.quotePath=false', 'diff', revision], options)
-
     def pack(self, _options, _args, _file_list):
         """Generates a patch file which can be applied to the root of the
     repository.
@@ -1871,11 +1865,8 @@ class CipdWrapper(SCMWrapper):
     `CipdRoot.run('revert')`.
     """
 
-    def diff(self, options, args, file_list):
-        """CIPD has no notion of diffing."""
-
     def pack(self, options, args, file_list):
-        """CIPD has no notion of diffing."""
+        """Does nothing."""
 
     def revinfo(self, options, args, file_list):
         """Grab the instance ID."""
@@ -2087,11 +2078,8 @@ class GcsWrapper(SCMWrapper):
     def revert(self, options, args, file_list):
         """Does nothing."""
 
-    def diff(self, options, args, file_list):
-        """GCS has no notion of diffing."""
-
     def pack(self, options, args, file_list):
-        """GCS has no notion of diffing."""
+        """Does nothing."""
 
     def revinfo(self, options, args, file_list):
         """Does nothing"""
@@ -2132,9 +2120,6 @@ class CogWrapper(SCMWrapper):
         return True
 
     def revert(self, options, args, file_list):
-        pass
-
-    def diff(self, options, args, file_list):
         pass
 
     def pack(self, options, args, file_list):

@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8b6618a_ab70c3d5",
+        "filename": "ninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-07T07:21:43Z",
+      "side": 1,
+      "message": "`%s contains Siso state files`, where `%s` is out_dir.",
+      "range": {
+        "startLine": 42,
+        "startChar": 37,
+        "endLine": 42,
+        "endChar": 40
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "571f94a3_f485d7f8",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ninja.py",
+              "range": {
+                "startLine": 42,
+                "startChar": 0,
+                "endLine": 43,
+                "endChar": 0
+              },
+              "replacement": "        print(\"depot_tools/ninja.py: %s contains Siso state files.\\n\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b9d0fcabb8ef2a718338cbe0f57b20a7c7a64d91",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

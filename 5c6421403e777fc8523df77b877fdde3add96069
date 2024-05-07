@@ -16,6 +16,24 @@
       "message": "Hey Yiwei, let me know if you have any problem with the direction of this change. If you\u0027re good with it, I\u0027ll update the CL to configure some warnings to notify downstream users about the opportunity to update things.",
       "revId": "5c6421403e777fc8523df77b877fdde3add96069",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b54e7fe_d81e624d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-05-07T20:28:18Z",
+      "side": 1,
+      "message": "Example using this to remove a number of warnings about api.path.checkout_dir in the build repo: https://crrev.com/c/5523337",
+      "parentUuid": "23cbec98_f6c1b739",
+      "revId": "5c6421403e777fc8523df77b877fdde3add96069",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

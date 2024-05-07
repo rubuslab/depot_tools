@@ -253,7 +253,7 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
         scm.revert(options, self.args, file_list)
         self.assertEqual(file_list, [file_path])
         file_list = []
-        scm.diff(options, self.args, file_list)
+        scm.status(options, self.args, file_list)
         self.assertEqual(file_list, [])
         sys.stdout.close()
 
@@ -285,7 +285,7 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
         scm.revert(options, self.args, file_list)
         self.assertEqual(file_list, [file_path])
         file_list = []
-        scm.diff(options, self.args, file_list)
+        scm.status(options, self.args, file_list)
         self.assertEqual(file_list, [])
         self.assertEqual(scm.revinfo(options, self.args, None),
                          '4091c7d010ca99d0f2dd416d4b70b758ae432187')
@@ -307,7 +307,7 @@ class ManagedGitWrapperTestCase(BaseGitWrapperTestCase):
         scm.revert(options, self.args, file_list)
         self.assertEqual(file_list, [file_path])
         file_list = []
-        scm.diff(options, self.args, file_list)
+        scm.status(options, self.args, file_list)
         self.assertEqual(file_list, [])
         self.assertEqual(scm.revinfo(options, self.args, None),
                          '4091c7d010ca99d0f2dd416d4b70b758ae432187')

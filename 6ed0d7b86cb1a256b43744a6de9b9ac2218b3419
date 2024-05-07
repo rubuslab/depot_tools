@@ -16,6 +16,24 @@
       "message": "only `-t commands` ?\nany other tool do you need to use?",
       "revId": "6ed0d7b86cb1a256b43744a6de9b9ac2218b3419",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2cefc39_39b5aab2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1126674
+      },
+      "writtenOn": "2024-05-07T22:35:35Z",
+      "side": 1,
+      "message": "Looking through the list, yes, that\u0027s the only tool I use ~regularly, although I recently also played with \"-t inputs\". Would it make sense to just not add this check if \"-t\" is passed?",
+      "parentUuid": "a10cf69d_f314a0ff",
+      "revId": "6ed0d7b86cb1a256b43744a6de9b9ac2218b3419",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

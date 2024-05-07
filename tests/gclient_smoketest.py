@@ -32,7 +32,6 @@ class GClientSmoke(gclient_smoketest_base.GClientSmokeBase):
 
     def testNotConfigured(self):
         res = ('', 'Error: client not configured; see \'gclient config\'\n', 1)
-        self.check(res, self.gclient(['diff'], error_ok=True))
         self.check(res, self.gclient(['pack'], error_ok=True))
         self.check(res, self.gclient(['revert'], error_ok=True))
         self.check(res, self.gclient(['revinfo'], error_ok=True))
@@ -154,7 +153,6 @@ class GClientSmoke(gclient_smoketest_base.GClientSmokeBase):
         self.assertTree({})
         results = self.gclient(['revinfo'])
         self.check(('./: None\n', '', 0), results)
-        self.check(('', '', 0), self.gclient(['diff']))
         self.assertTree({})
         self.check(('', '', 0), self.gclient(['pack']))
         self.check(('', '', 0), self.gclient(['revert']))

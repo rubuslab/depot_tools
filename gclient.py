@@ -1655,8 +1655,7 @@ class GitDependency(Dependency):
     def _IsCog():
         """Returns true if the env is cog"""
         if GitDependency._is_env_cog is None:
-            GitDependency._is_env_cog = os.getcwd().startswith(
-                '/google/cog/cloud')
+            GitDependency._is_env_cog = gclient_utils.IsEnvCog()
 
         return GitDependency._is_env_cog
 
@@ -2327,7 +2326,7 @@ it or fix the checkout.
         """Runs a command on each dependency in a client and its dependencies.
 
         Args:
-            command: The command to use (e.g., 'status' or 'diff')
+            command: The command to use (e.g., 'status')
             args: list of str - extra arguments to add to the command line.
         """
         if not self.dependencies:
@@ -2339,7 +2338,7 @@ it or fix the checkout.
         skip_sync_revisions = {}
         # It's unnecessary to check for revision overrides for 'recurse'.
         # Save a few seconds by not calling _EnforceRevisions() in that case.
-        if command not in ('diff', 'recurse', 'runhooks', 'status', 'revert',
+        if command not in ('recurse', 'runhooks', 'status', 'revert',
                            'validate'):
             self._CheckConfig()
             revision_overrides = self._EnforceRevisions()
@@ -3895,21 +3894,18 @@ def CMDvalidate(parser, args):
 
 @metrics.collector.collect_metrics('gclient diff')
 def CMDdiff(parser, args):
-    """Displays local diff for every dependencies."""
-    parser.add_option('--deps',
-                      dest='deps_os',
-                      metavar='OS_LIST',
-                      help='override deps for the specified (comma-separated) '
-                      'platform(s); \'all\' will process all deps_os '
-                      'references')
-    (options, args) = parser.parse_args(args)
-    client = GClient.LoadCurrentConfig(options)
-    if not client:
+    """Deprecated: Displays local diff for every dependencies."""
+    if gclient_utils.IsEnvCog():
         raise gclient_utils.Error(
-            'client not configured; see \'gclient config\'')
-    if options.verbose:
-        client.PrintLocationAndContents()
-    return client.RunOnDeps('diff', args)
+            'The diff command is not supported and will be deprecated by end'
+            'of 2024. Please visit Source Control view in the activity bar of'
+            'your editor to see the diff instead.')
+    raise gclient_utils.Error(
+        'The diff command is deprecated. You can use gclient recurse with'
+        'git diff instead. If you intend to revive this command, please'
+        'file a bug to'
+        'https://issues.chromium.org/issues/new?component=1456102. This'
+        'command will be deleted the end of 2024.')
 
 
 @metrics.collector.collect_metrics('gclient revert')

@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d4271dba_56806a96",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4591,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "Yes. regex matching will be skippped.\n\nregexes are stored in `git config` and those are only useful when `git lint` works against all the affected changes.",
+      "parentUuid": "2405a365_17fa2160",
+      "range": {
+        "startLine": 4591,
+        "startChar": 10,
+        "endLine": 4591,
+        "endChar": 49
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0f7b04e0_4bb69cc4",
         "filename": "git_cl.py",
         "patchSetId": 5
@@ -37,6 +61,30 @@
       "writtenOn": "2024-05-08T19:04:12Z",
       "side": 1,
       "message": "Is this guaranteed to be not None?",
+      "range": {
+        "startLine": 4604,
+        "startChar": 18,
+        "endLine": 4604,
+        "endChar": 73
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2922793_b1f5c7fe",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4604,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "Yes.",
+      "parentUuid": "0f7b04e0_4bb69cc4",
       "range": {
         "startLine": 4604,
         "startChar": 18,
@@ -64,6 +112,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "005178de_4002e503",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4612,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "9c58c0d4_9c666552",
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5125f7e2_b13fb990",
@@ -77,6 +143,30 @@
       "writtenOn": "2024-05-08T19:04:12Z",
       "side": 1,
       "message": "Since this is optional, I wonder if this should be modeled as a flag instead of positional arguments. Something like `git cl lint --files a.cc --files b.cc`. This will be consistent with `git cl presubmit`",
+      "range": {
+        "startLine": 4623,
+        "startChar": 0,
+        "endLine": 4626,
+        "endChar": 73
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3341d013_a0e26f97",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4626,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "that\u0027s not consistent with `git cl format`. I\u0027m not sure if *optional* justifies whether it should be a flag or positional arg, other than just being consistent with `git cl presubmit`?\n\noptional positional params are also common in unix tools.",
+      "parentUuid": "5125f7e2_b13fb990",
       "range": {
         "startLine": 4623,
         "startChar": 0,
@@ -110,6 +200,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "343e8e98_6eae65fa",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4636,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "b6ca5d66_759171e6",
+      "range": {
+        "startLine": 4635,
+        "startChar": 0,
+        "endLine": 4636,
+        "endChar": 16
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e6dfc965_97d1cb85",
@@ -123,6 +237,24 @@
       "writtenOn": "2024-05-08T18:20:28Z",
       "side": 1,
       "message": "This may blow up past cmd size limin on Win. We need to chunk files and call command multiple times.",
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "427bb977_67507e5d",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "It\u0027s actually not the real command. The variable name is confusing, but that\u0027s what cpplint.ParseArugments() takes.\n\nAs you can find in L4662, this function runs `cpplint.ProcessFile()` against each of the file iteratively.",
+      "parentUuid": "e6dfc965_97d1cb85",
       "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -210,6 +342,54 @@
         "startChar": 9,
         "endLine": 4657,
         "endChar": 25
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2cce816_7394befb",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4657,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "Good point. While .vpython3 claims that it\u0027s vpython-3.11, it\u0027s not worth risking it; removed.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:.vpython3;l\u003d1",
+      "parentUuid": "c8a98a09_ffd3ebc2",
+      "range": {
+        "startLine": 4657,
+        "startChar": 9,
+        "endLine": 4657,
+        "endChar": 25
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb833ebb_159e4396",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4657,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T19:38:20Z",
+      "side": 1,
+      "message": "\u003e according to old code, should this be settings.GetRoot()?\n\nit was a bug. Added the missing statement in FindFilesforLint().\n\n\u003e the other optional like GetAffectedFiles is agnostic to cwd?\n\nyes. GetAffectedFiles() calls settings.GetRoot() and uses it as cwd.\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:git_cl.py;l\u003d1641",
+      "parentUuid": "7419d204_88607acf",
+      "range": {
+        "startLine": 4657,
+        "startChar": 26,
+        "endLine": 4657,
+        "endChar": 35
       },
       "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

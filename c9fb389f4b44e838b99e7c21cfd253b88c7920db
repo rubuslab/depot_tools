@@ -70,6 +70,24 @@
       "parentUuid": "e703179f_27c64839",
       "revId": "c9fb389f4b44e838b99e7c21cfd253b88c7920db",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a9daacb_78fd1d28",
+        "filename": "siso.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-08T02:03:31Z",
+      "side": 0,
+      "message": "fyi: you can always use third_party/ninja/ninja if you don\u0027t need these safeguard",
+      "parentUuid": "e703179f_27c64839",
+      "revId": "c9fb389f4b44e838b99e7c21cfd253b88c7920db",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8e77816_1c0d96ec",
+        "filename": "google-java-format",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T21:39:35Z",
+      "side": 1,
+      "message": "same. copied from `clang-format`",
+      "range": {
+        "startLine": 2,
+        "startChar": 12,
+        "endLine": 2,
+        "endChar": 16
+      },
+      "revId": "c3879c29a1a7fff246490a76fa5e0c3a188750bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "86d24a29_936d2723",
+        "filename": "google_java_format.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-08T21:39:35Z",
+      "side": 1,
+      "message": "jfyi, this file is copied from clang_format.py, and, therefore, I didn\u0027t change the license year.\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:clang_format.py",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 22
+      },
+      "revId": "c3879c29a1a7fff246490a76fa5e0c3a188750bc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

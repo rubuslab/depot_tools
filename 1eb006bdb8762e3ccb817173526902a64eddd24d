@@ -16,6 +16,23 @@
       "message": "lgtm",
       "revId": "1eb006bdb8762e3ccb817173526902a64eddd24d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87eb7d01_34e7940a",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4587,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T20:32:29Z",
+      "side": 1,
+      "message": "nit-nit: can we use os.getcwd() instead?",
+      "revId": "1eb006bdb8762e3ccb817173526902a64eddd24d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

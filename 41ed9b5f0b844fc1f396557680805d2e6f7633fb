@@ -48,6 +48,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "98618da4_3c517e1f",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4591,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T20:32:29Z",
+      "side": 1,
+      "message": "well I think it\u0027s not an hard requirement that git cl lint with files must run in non-git environment though nobody may do that. It\u0027s fine to be skipped",
+      "parentUuid": "d4271dba_56806a96",
+      "range": {
+        "startLine": 4591,
+        "startChar": 10,
+        "endLine": 4591,
+        "endChar": 49
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0f7b04e0_4bb69cc4",
@@ -167,6 +191,30 @@
       "side": 1,
       "message": "that\u0027s not consistent with `git cl format`. I\u0027m not sure if *optional* justifies whether it should be a flag or positional arg, other than just being consistent with `git cl presubmit`?\n\noptional positional params are also common in unix tools.",
       "parentUuid": "5125f7e2_b13fb990",
+      "range": {
+        "startLine": 4623,
+        "startChar": 0,
+        "endLine": 4626,
+        "endChar": 73
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f131a2b6_541f0690",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4626,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T20:32:29Z",
+      "side": 1,
+      "message": "fair, I wish we can upgrade argparse module one day to make the positional arg more obvious.",
+      "parentUuid": "3341d013_a0e26f97",
       "range": {
         "startLine": 4623,
         "startChar": 0,

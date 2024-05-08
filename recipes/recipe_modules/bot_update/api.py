@@ -4,9 +4,90 @@
 
 """Recipe module to ensure a checkout is consistent on a bot."""
 
+import dataclasses
+import typing
+
 from recipe_engine import recipe_api
+from recipe_engine.config_types import Path
+from recipe_engine.engine_types import StepPresentation
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class RelativeRoot:
+  """A root that is relative to the checkout root.
+
+  Attributes:
+    name: The name of the root/the path to the root relative to the checkout
+      directory.
+    path: The absolute path to the root.
+  """
+  name: str
+  path: Path
+
+  @classmethod
+  def create(cls, checkout_dir: Path, name: str) -> typing.Self:
+    return cls(name=name, path=checkout_dir / name)
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Json:
+  output: dict[str, typing.Any]
+
+
+class ManifestRepo(typing.TypedDict):
+  repository: str
+  revision: str
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Result:
+  """The noteworthy paths for a source checkout.
+
+  Attributes:
+    checkout_dir: The directory where the checkout was performed.
+    source_root: The root for the repo identified by the first gclient solution.
+    patch_root: The root for the repo that was patched, if a patch was applied.
+      Otherwise, None.
+    presentation: DEPRECATED. The presentation of the bot_update step. This is
+      used by some code to get the properties. This is provided for backwards
+      compatibility, code should access the properties attribute instead.
+    json: DEPRECATED. The result of json outputs for the bot_update step. This
+      is provided for backwards compatibility, attributes on this object are
+      provided for accessing the contents of json.output.
+    properties: The properties set by the bot_update execution.
+    manifest: The manifest mapping the checkout_dir-relative path to the
+      repository and revision that was checked out.
+    fixed_revisions: The explicitly requested revisions; a mapping from the
+      checkout_dir-relative path to the requested revision.
+  """
+  # Directories relevant to the checkout
+  checkout_dir: Path
+  source_root: RelativeRoot
+  patch_root: RelativeRoot | None = None
+
+  # Details about the revisions that were checked out
+  properties: dict[str, str]
+  manifest: dict[str, ManifestRepo]
+  fixed_revisions: dict[str, str]
+
+  # TODO: crbug.com/339472834 - Once all downstream users are switched to use
+  # the above fields, these attributes and the property methods can be removed,
+  # as well as the Json type
+  _api: 'BotUpdateApi'
+  _presentation: StepPresentation
+  _json: Json
+
+  @property
+  def presentation(self):
+    self._api.m.warning.issue('BOT_UPDATE_CUSTOM_RESULT_ATTRIBUTES')
+    return self._presentation
+
+  @property
+  def json(self):
+    self._api.m.warning.issue('BOT_UPDATE_CUSTOM_RESULT_ATTRIBUTES')
+    return self._json
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -495,7 +576,20 @@ class BotUpdateApi(recipe_api.RecipeApi):
           cwd = self.m.context.cwd or self.m.path.start_dir
           self.m.path.checkout_dir = cwd / co_root
 
-    return step_result
+    assert result.get('did_run') and result.get('root')
+    checkout_dir = self.m.context.cwd or self.m.path.start_dir
+    return Result(
+        checkout_dir=checkout_dir,
+        source_root=RelativeRoot.create(checkout_dir, result['root']),
+        patch_root=(RelativeRoot.create(checkout_dir, result['patch_root'])
+                    if result['patch_root'] is not None else None),
+        properties=result.get('properties', {}),
+        manifest=result.get('manifest', {}),
+        fixed_revisions=result.get('fixed_revisions', {}),
+        _api=self,
+        _presentation=step_result.presentation,
+        _json=Json(output=result),
+    )
 
   def _destination_ref(self, cfg, path):
     """Returns the ref branch of a CL for the matching project if available or

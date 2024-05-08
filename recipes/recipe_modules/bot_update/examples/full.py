@@ -3,6 +3,7 @@
 # found in the LICENSE file.
 
 from recipe_engine import post_process
+from recipe_engine import recipe_api
 
 PYTHON_VERSION_COMPATIBILITY = 'PY3'
 
@@ -24,6 +25,10 @@ from recipe_engine import engine_types
 from RECIPE_MODULES.depot_tools import gclient
 from PB.go.chromium.org.luci.buildbucket.proto.build import Build
 
+
+# TODO: crbug.com/339472834 - Once the custom result type is always
+# used, this decorator can be removed
+@recipe_api.ignore_warnings('^depot_tools/BOT_UPDATE_USE_CUSTOM_RESULT$')
 def RunSteps(api):
   api.gclient.use_mirror = True
   commit = api.buildbucket.build.input.gitiles_commit

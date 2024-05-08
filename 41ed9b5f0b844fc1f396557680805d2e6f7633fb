@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2405a365_17fa2160",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4591,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "So if files are explicitly provided, the regex matching will be skipped?",
+      "range": {
+        "startLine": 4591,
+        "startChar": 10,
+        "endLine": 4591,
+        "endChar": 49
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f7b04e0_4bb69cc4",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4604,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "Is this guaranteed to be not None?",
+      "range": {
+        "startLine": 4604,
+        "startChar": 18,
+        "endLine": 4604,
+        "endChar": 73
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9c58c0d4_9c666552",
         "filename": "git_cl.py",
         "patchSetId": 5
@@ -20,6 +66,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5125f7e2_b13fb990",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4626,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "Since this is optional, I wonder if this should be modeled as a flag instead of positional arguments. Something like `git cl lint --files a.cc --files b.cc`. This will be consistent with `git cl presubmit`",
+      "range": {
+        "startLine": 4623,
+        "startChar": 0,
+        "endLine": 4626,
+        "endChar": 73
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6ca5d66_759171e6",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4636,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "This seems to be new behavior. Now files are all excluded due to regex, the command will start to fail.",
+      "range": {
+        "startLine": 4635,
+        "startChar": 0,
+        "endLine": 4636,
+        "endChar": 16
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e6dfc965_97d1cb85",
         "filename": "git_cl.py",
         "patchSetId": 5
@@ -31,6 +123,70 @@
       "writtenOn": "2024-05-08T18:20:28Z",
       "side": 1,
       "message": "This may blow up past cmd size limin on Win. We need to chunk files and call command multiple times.",
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7419d204_88607acf",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4657,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "according to old code, should this be `settings.GetRoot()`?\n\nAnd is the cwd change just for cpplint.ProcessFile()? the other optional like GetAffectedFiles is agnostic to cwd?",
+      "range": {
+        "startLine": 4657,
+        "startChar": 26,
+        "endLine": 4657,
+        "endChar": 35
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "38c8873c_080c7e70",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_cl.py",
+              "range": {
+                "startLine": 4657,
+                "startChar": 0,
+                "endLine": 4658,
+                "endChar": 0
+              },
+              "replacement": "    with contextlib.chdir(settings.GetRoot()):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8a98a09_ffd3ebc2",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4657,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T19:04:12Z",
+      "side": 1,
+      "message": "this is added in 3.11. Not sure if everyone has installed version this new. Maybe we can try?",
+      "range": {
+        "startLine": 4657,
+        "startChar": 9,
+        "endLine": 4657,
+        "endChar": 25
+      },
       "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

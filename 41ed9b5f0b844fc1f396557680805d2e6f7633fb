@@ -189,6 +189,30 @@
       },
       "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d049e43d_77f7bdad",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4657,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-08T19:08:44Z",
+      "side": 1,
+      "message": "We should stick with 3.8 due to cros (see: https://crrev.com/c/5499917).",
+      "parentUuid": "c8a98a09_ffd3ebc2",
+      "range": {
+        "startLine": 4657,
+        "startChar": 9,
+        "endLine": 4657,
+        "endChar": 25
+      },
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

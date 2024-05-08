@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51b2496_fbdae552",
+        "filename": "ninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-08T01:46:28Z",
+      "side": 1,
+      "message": "Are you going to support these commands in Siso in the future? \nIf so, please leave a TODO and a comment about why these commands are allowed?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 0
+      },
+      "revId": "9d25ca46e41925360094aa10c1097dda246e63eb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

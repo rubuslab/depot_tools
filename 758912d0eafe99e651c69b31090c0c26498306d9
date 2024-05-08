@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0eba1a67_aef30018",
+        "filename": "recipes/recipe_modules/bot_update/api.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-08T00:27:02Z",
+      "side": 1,
+      "message": "remove extra line",
+      "revId": "758912d0eafe99e651c69b31090c0c26498306d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

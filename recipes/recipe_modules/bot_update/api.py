@@ -4,9 +4,89 @@
 
 """Recipe module to ensure a checkout is consistent on a bot."""
 
+import dataclasses
+import typing
+
 from recipe_engine import recipe_api
+from recipe_engine.config_types import Path
+from recipe_engine.engine_types import StepPresentation
 
 from PB.go.chromium.org.luci.buildbucket.proto import common as common_pb2
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class RelativeRoot:
+  """A root that is relative to the checkout root.
+
+  Attributes:
+    name: The name of the root/the path to the root relative to the checkout
+      directory.
+    path: The absolute path to the root.
+  """
+  name: str
+  path: Path
+
+  @classmethod
+  def create(cls, checkout_dir: Path, name: str) -> typing.Self:
+    return cls(name=name, path=checkout_dir / name)
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Json:
+  output: dict[str, typing.Any]
+
+
+class ManifestRepo(typing.TypedDict):
+  repository: str
+  revision: str
+
+
+@dataclasses.dataclass(kw_only=True, frozen=True)
+class Result:
+  """The noteworthy paths for a source checkout.
+
+  Attributes:
+    checkout_dir: The directory where the checkout was performed.
+    source_root: The root for the repo identified by the first gclient solution.
+    patch_root: The root for the repo that was patched, if a patch was applied.
+      Otherwise, None.
+    presentation: DEPRECATED. The presentation of the bot_update step. This is
+      used by some code to get the properties. This is provided for backwards
+      compatibility, code should access the properties attribute instead.
+    json: DEPRECATED. The result of json outputs for the bot_update step. This
+      is provided for backwards compatibility, attributes on this object are
+      provided for accessing the contents of json.output.
+    properties: The properties set by the bot_update execution.
+    manifest: The manifest mapping the checkout_dir-relative path to the
+      repository and revision that was checked out.
+    fixed_revisions: The explicitly requested revisions; a mapping from the
+      checkout_dir-relative path to the requested revision.
+  """
+  # Directories relevant to the checkout
+  checkout_dir: Path
+  source_root: RelativeRoot
+  patch_root: RelativeRoot | None = None
+
+  # Details about the revisions that were checked out
+  properties: dict[str, str]
+  manifest: dict[str, ManifestRepo]
+  fixed_revisions: dict[str, str]
+
+  # TODO: crbug.com/339472834 - Once all downstream users are switched to use
+  # the above fields, these attributes and the property methods can be removed
+  _api: 'BotUpdateApi'
+  _presentation: StepPresentation
+  _json: Json
+
+  @property
+  def presentation(self):
+    self._api.m.warning.issue('BOT_UPDATE_CUSTOM_RESULT_ATTRIBUTES')
+    return self._presentation
+
+  @property
+  def json(self):
+    self._api.m.warning.issue('BOT_UPDATE_CUSTOM_RESULT_ATTRIBUTES')
+    return self._json
 
 
 class BotUpdateApi(recipe_api.RecipeApi):
@@ -125,30 +205,35 @@ class BotUpdateApi(recipe_api.RecipeApi):
         presentation.step_text = ('Failed to upload traces. '
                                   'File a bug under Infra>SDK to adjust ACLs.')
 
-  def ensure_checkout(self,
-                      gclient_config=None,
-                      suffix=None,
-                      patch=True,
-                      update_presentation=True,
-                      patch_root=None,
-                      with_branch_heads=False,
-                      with_tags=False,
-                      no_fetch_tags=False,
-                      refs=None,
-                      clobber=False,
-                      root_solution_revision=None,
-                      gerrit_no_reset=False,
-                      gerrit_no_rebase_patch_ref=False,
-                      assert_one_gerrit_change=True,
-                      patch_refs=None,
-                      ignore_input_commit=False,
-                      add_blamelists=False,
-                      set_output_commit=False,
-                      step_test_data=None,
-                      enforce_fetch=False,
-                      download_topics=False,
-                      recipe_revision_overrides=None,
-                      **kwargs):
+  def ensure_checkout(
+      self,
+      gclient_config=None,
+      suffix=None,
+      patch=True,
+      update_presentation=True,
+      patch_root=None,
+      with_branch_heads=False,
+      with_tags=False,
+      no_fetch_tags=False,
+      refs=None,
+      clobber=False,
+      root_solution_revision=None,
+      gerrit_no_reset=False,
+      gerrit_no_rebase_patch_ref=False,
+      assert_one_gerrit_change=True,
+      patch_refs=None,
+      ignore_input_commit=False,
+      add_blamelists=False,
+      set_output_commit=False,
+      step_test_data=None,
+      enforce_fetch=False,
+      download_topics=False,
+      recipe_revision_overrides=None,
+      # TODO: crbug.com/339472834 Once the custom result type is always
+      # returned, downstream uses can remove this argument and then this
+      # parameter can be removed
+      return_custom_result=False,
+      **kwargs):
     """
     Args:
       * gclient_config: The gclient configuration to use when running bot_update.
@@ -183,6 +268,8 @@ class BotUpdateApi(recipe_api.RecipeApi):
         to each particular build/recipe run. e.g. the recipe might parse a gerrit
         change's commit message to get this revision override requested by the
         author.
+      * return_custom_result: If True, instead of returning the step result, an
+        instance of the Result type will be returned.
     """
     assert not (ignore_input_commit and set_output_commit)
     if assert_one_gerrit_change:
@@ -488,13 +575,31 @@ class BotUpdateApi(recipe_api.RecipeApi):
         # the checkout.
         # bot_update actually just sets root to be the folder name of the
         # first solution.
-        if (result.get('did_run')
-            and 'checkout' not in self.m.path
+        if (result.get('did_run') and 'checkout' not in self.m.path
             and 'root' in result):
           co_root = result['root']
           cwd = self.m.context.cwd or self.m.path.start_dir
           self.m.path.checkout_dir = cwd / co_root
 
+    assert result.get('did_run') and result.get('root')
+    # TODO: crbug.com/339472834 - Once all downstream uses set
+    # return_custom_result to True, this codepath should be executed always
+    if return_custom_result:
+      checkout_dir = self.m.context.cwd or self.m.path.start_dir
+      return Result(
+          checkout_dir=checkout_dir,
+          source_root=RelativeRoot.create(checkout_dir, result['root']),
+          patch_root=(RelativeRoot.create(checkout_dir, result['patch_root'])
+                      if result['patch_root'] is not None else None),
+          properties=result.get('properties', {}),
+          manifest=result.get('manifest', {}),
+          fixed_revisions=result.get('fixed_revisions', {}),
+          _api=self,
+          _presentation=step_result.presentation,
+          _json=Json(output=result),
+      )
+
+    self.m.warning.issue('BOT_UPDATE_USE_CUSTOM_RESULT')
     return step_result
 
   def _destination_ref(self, cfg, path):
@@ -612,4 +717,10 @@ class BotUpdateApi(recipe_api.RecipeApi):
     self._resolve_fixed_revisions(bot_update_json)
 
     self.ensure_checkout(
-        patch=False, no_fetch_tags=True, update_presentation=False)
+        patch=False,
+        no_fetch_tags=True,
+        update_presentation=False,
+        # The return value isn't actually being used, but this prevents the
+        # warning from being issued in a way that is forced to be updated when
+        # return_custom_result is removed
+        return_custom_result=True)

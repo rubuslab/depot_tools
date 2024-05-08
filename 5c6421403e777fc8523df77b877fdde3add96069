@@ -70,6 +70,24 @@
       "parentUuid": "d80e0d28_ebc922a7",
       "revId": "5c6421403e777fc8523df77b877fdde3add96069",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8984aa02_d264a2b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289180
+      },
+      "writtenOn": "2024-05-08T21:23:38Z",
+      "side": 1,
+      "message": "Manual roll: https://crrev.com/c/5528033\n\nThis actually takes care of the manual change for build and build_limited.",
+      "parentUuid": "925faf91_c656499f",
+      "revId": "5c6421403e777fc8523df77b877fdde3add96069",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

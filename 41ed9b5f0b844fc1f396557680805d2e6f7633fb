@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c58c0d4_9c666552",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4612,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-08T18:20:28Z",
+      "side": 1,
+      "message": "This is a different behavior than today\u0027s implementation. \n\npreviously - if a change has no files, cannot lint would be printed. It was possible that none of the files match regex and therefore no actual lint calls are made.\n\nwith this patch - if there are no matches, the warning will be printed.",
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e6dfc965_97d1cb85",
+        "filename": "git_cl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4647,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-08T18:20:28Z",
+      "side": 1,
+      "message": "This may blow up past cmd size limin on Win. We need to chunk files and call command multiple times.",
+      "revId": "41ed9b5f0b844fc1f396557680805d2e6f7633fb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

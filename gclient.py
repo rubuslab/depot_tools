@@ -4198,12 +4198,21 @@ def CMDsetdep(parser, args):
     if (not is_cog and 'git_dependencies' in local_scope
             and local_scope['git_dependencies']
             in (gclient_eval.SUBMODULES, gclient_eval.SYNC)):
-        try:
-            submodule_status = subprocess2.check_output(
-                ['git', 'submodule', 'status'], cwd=cwd).decode('utf-8')
-            git_modules = {l.split()[1] for l in submodule_status.splitlines()}
-        except subprocess2.CalledProcessError as e:
-            print('Warning: gitlinks won\'t be updated: ', e)
+        cmd = ['git', 'ls-files', '--format=%(objectmode) %(path)', '--abc']
+        with subprocess2.Popen(
+                cmd,
+                cwd=cwd,
+                stdout=subprocess2.PIPE,
+                stderr=None if options.verbose else subprocess2.DEVNULL,
+                text=True) as p:
+            git_modules = {
+                line.split()[1].strip()
+                for line in p.stdout if line.startswith('160000')
+            }
+        if p.returncode != 0:
+            print('Warning: gitlinks won\'t be updated because computing '
+                  'submodules has failed.')
+            git_modules = None
 
     for var in options.vars:
         name, _, value = var.partition('=')
@@ -4248,9 +4257,6 @@ def CMDsetdep(parser, args):
                 objects.append(object_dict)
             gclient_eval.SetGCS(local_scope, name, objects)
         else:  # git dependencies
-            if is_cog:
-                parser.error(
-                    f'Set git dependency "{name}" is currently not supported.')
             # Update DEPS only when `git_dependencies` == DEPS or SYNC.
             # git_dependencies is defaulted to DEPS when not set.
             if 'git_dependencies' not in local_scope or local_scope[
@@ -4263,6 +4269,10 @@ def CMDsetdep(parser, args):
             if git_modules and 'git_dependencies' in local_scope and local_scope[
                     'git_dependencies'] in (gclient_eval.SUBMODULES,
                                             gclient_eval.SYNC):
+                if is_cog:
+                    parser.error(
+                        f'Set git dependency "{name}" is currently not '
+                        'supported.')
                 git_module_name = name
                 if not 'use_relative_paths' in local_scope or \
                     local_scope['use_relative_paths'] != True:

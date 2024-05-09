@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2daee34f_251fb6c9",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4253,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-09T16:45:09Z",
+      "side": 1,
+      "message": "We can move this to L4256 since submodules won\u0027t be used if git_dependencies \u003d \u0027DEPS. But I\u0027m okay if we keep it as is.",
+      "range": {
+        "startLine": 4251,
+        "startChar": 0,
+        "endLine": 4253,
+        "endChar": 79
+      },
+      "revId": "2e19a821653c55f8574cbaef84772ec21e73a3fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

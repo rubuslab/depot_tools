@@ -16,6 +16,24 @@
       "message": "ping",
       "revId": "9716c426e305fad27a9cb07a6beaa5ff1f06bb81",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6df71bd7_a2b72120",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-10T17:21:38Z",
+      "side": 1,
+      "message": "sorry for the delay. lgtm",
+      "parentUuid": "ad5b60ad_a651092a",
+      "revId": "9716c426e305fad27a9cb07a6beaa5ff1f06bb81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

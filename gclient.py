@@ -2695,7 +2695,8 @@ class GcsDependency(Dependency):
 
     def DownloadGoogleStorage(self):
         """Calls GCS."""
-        gcs_file_name = self.object_name.split('/')[-1]
+        # Replace forward slashes
+        gcs_file_name = self.object_name.replace('/', '_')
         root_dir = self.root.root_dir
 
         # Directory of the extracted tarfile contents
@@ -2703,8 +2704,8 @@ class GcsDependency(Dependency):
         output_file = os.path.join(output_dir, self.output_file
                                    or f'.{gcs_file_name}')
 
-        # Remove any forward slashes and drop any extensions
-        file_prefix = self.object_name.replace('/', '_').replace('.', '_')
+        # Drop any extensions
+        file_prefix = gcs_file_name.replace('.', '_')
         hash_file = os.path.join(output_dir, f'.{file_prefix}_hash')
         migration_toggle_file = os.path.join(
             output_dir,

@@ -3487,6 +3487,11 @@ def CMDgrep(parser, args):
             file=sys.stderr)
         return 1
 
+    if gclient_utils.IsEnvCog():
+        raise gclient_utils.Error(
+            'gclient grep command is not supported. Please use code search '
+            'functionality in the editor instead.')
+
     jobs_arg = ['--jobs=1']
     if re.match(r'(-j|--jobs=)\d+$', args[0]):
         jobs_arg, args = args[:1], args[1:]

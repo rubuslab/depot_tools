@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60083686_8c757890",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-13T04:56:59Z",
+      "side": 1,
+      "message": "ah, why it prefers ninja on PATH, not third_party/ninja/ninja?\n\nhttps://source.chromium.org/chromium/chromium/src/+/main:build/android/list_java_targets.py;l\u003d61;drc\u003d911128ac37a470797e6e24251598e4d0f3d3c21c",
+      "revId": "e1385296c4ab4c7ee0a809676635b52d1df23b87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

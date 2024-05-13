@@ -120,7 +120,7 @@ class SCMWrapper(object):
     def RunCommand(self, command, options, args, file_list=None):
         commands = [
             'update', 'updatesingle', 'revert', 'revinfo', 'status', 'diff',
-            'pack', 'runhooks'
+            'runhooks'
         ]
 
         if not command in commands:
@@ -325,23 +325,6 @@ class GitWrapper(SCMWrapper):
         if not revision:
             revision = 'refs/remotes/%s/main' % self.remote
         self._Run(['-c', 'core.quotePath=false', 'diff', revision], options)
-
-    def pack(self, _options, _args, _file_list):
-        """Generates a patch file which can be applied to the root of the
-    repository.
-
-    The patch file is generated from a diff of the merge base of HEAD and
-    its upstream branch.
-    """
-        try:
-            merge_base = [self._Capture(['merge-base', 'HEAD', self.remote])]
-        except subprocess2.CalledProcessError:
-            merge_base = []
-        gclient_utils.CheckCallAndFilter(['git', 'diff'] + merge_base,
-                                         cwd=self.checkout_path,
-                                         filter_fn=GitDiffFilterer(
-                                             self.relpath,
-                                             print_func=self.Print).Filter)
 
     def _Scrub(self, target, options):
         """Scrubs out all changes in the local repo, back to the state of target."""
@@ -1954,9 +1937,6 @@ class CipdWrapper(SCMWrapper):
     def diff(self, options, args, file_list):
         """CIPD has no notion of diffing."""
 
-    def pack(self, options, args, file_list):
-        """CIPD has no notion of diffing."""
-
     def revinfo(self, options, args, file_list):
         """Grab the instance ID."""
         try:
@@ -2170,9 +2150,6 @@ class GcsWrapper(SCMWrapper):
     def diff(self, options, args, file_list):
         """GCS has no notion of diffing."""
 
-    def pack(self, options, args, file_list):
-        """GCS has no notion of diffing."""
-
     def revinfo(self, options, args, file_list):
         """Does nothing"""
 
@@ -2215,9 +2192,6 @@ class CogWrapper(SCMWrapper):
         pass
 
     def diff(self, options, args, file_list):
-        pass
-
-    def pack(self, options, args, file_list):
         pass
 
     def revinfo(self, options, args, file_list):

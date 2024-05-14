@@ -33,6 +33,7 @@ from git_common import current_branch, upstream, tags, get_branches_info
 from git_common import get_git_version, MIN_UPSTREAM_TRACK_GIT_VERSION, hash_one
 from git_common import get_config, run
 
+import gclient_utils
 import setup_color
 
 from third_party.colorama import Fore, Style
@@ -350,6 +351,10 @@ def main(argv):
 
     if '-h' in argv:
         print_desc()
+    if gclient_utils.IsEnvCog():
+        print('map-branches command is not supported in non-git environment.',
+              file=sys.stderr)
+        return 1
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-v',

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0c0acc7_6dc92f49",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4632,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-14T17:17:49Z",
+      "side": 1,
+      "message": "This help message is displayed as the help message of the command. Hence, I\u0027d use verb \"executed\", instead of \"called\".\n\ne.g.,\n```\nIf this command is executed out of git checkouts, the files to lint must be provided.\n```",
+      "range": {
+        "startLine": 4631,
+        "startChar": 71,
+        "endLine": 4632,
+        "endChar": 50
+      },
+      "revId": "4d2758d2edce3bfbb069e5a436c6b8ac1a290585",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

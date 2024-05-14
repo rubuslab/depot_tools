@@ -22,6 +22,30 @@
       },
       "revId": "4d2758d2edce3bfbb069e5a436c6b8ac1a290585",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a34fcc1_0c4c620f",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4632,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-14T17:41:33Z",
+      "side": 1,
+      "message": "changed to \"is not executed in a git checkout\". I read \"outside of git checkout\" as executing the command towards the git checkout but the cwd is not in git checkout. I think the message we want to express here is the command doesn\u0027t work without files provided for checkout that is not using git.",
+      "parentUuid": "f0c0acc7_6dc92f49",
+      "range": {
+        "startLine": 4631,
+        "startChar": 71,
+        "endLine": 4632,
+        "endChar": 50
+      },
+      "revId": "4d2758d2edce3bfbb069e5a436c6b8ac1a290585",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

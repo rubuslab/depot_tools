@@ -16,6 +16,7 @@ import re
 import sys
 
 import git_common as git
+import gclient_utils
 
 
 def GetNameForCommit(sha1):
@@ -37,6 +38,9 @@ def GetMergesForCommit(sha1):
 
 
 def main(args):
+    if gclient_utils.IsEnvCog():
+        print('footers command is not supported in non-git environment')
+        return 1
     parser = optparse.OptionParser(usage=sys.modules[__name__].__doc__)
     _, args = parser.parse_args(args)
 

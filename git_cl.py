@@ -4633,6 +4633,12 @@ def CMDlint(parser, args):
         metavar='-x,+y',
         help='Comma-separated list of cpplint\'s category-filters')
     options, args = parser.parse_args(args)
+    if len(args) == 0 and gclient_utils.IsEnvCog():
+        print(
+            'lint command is not supported in non-git environment without '
+            'files to lint explicitly provided.',
+            file=sys.stderr)
+        return 1
     root_path, files = FindFilesForLint(options, args)
     if files is None:
         return 1

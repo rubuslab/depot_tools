@@ -16,6 +16,47 @@
       "message": "PTAL",
       "revId": "ce12551b3c8a3f32b86561e5bb0dbff46dbc9c0e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91141c66_8ce35c58",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4639,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-14T16:49:05Z",
+      "side": 1,
+      "message": "I\u0027d simply say \"Missing input files to lint\", and update the help message in L4628?\n\ne.g.,\n```\n    files      Files to lint. If omitted in git checkouts, ...\n```",
+      "range": {
+        "startLine": 4638,
+        "startChar": 12,
+        "endLine": 4639,
+        "endChar": 49
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "9c6436a8_0bcb3420",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_cl.py",
+              "range": {
+                "startLine": 4638,
+                "startChar": 0,
+                "endLine": 4640,
+                "endChar": 0
+              },
+              "replacement": "             \u0027Missing input files to lint.\u0027,\n"
+            }
+          ]
+        }
+      ],
+      "revId": "ce12551b3c8a3f32b86561e5bb0dbff46dbc9c0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

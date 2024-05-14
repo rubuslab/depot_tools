@@ -15,6 +15,7 @@ import optparse
 import re
 import sys
 
+import gclient_utils
 import git_common as git
 
 
@@ -37,6 +38,9 @@ def GetMergesForCommit(sha1):
 
 
 def main(args):
+    if gclient_utils.IsEnvCog():
+        print('find-releases is not supported in non-git environment.')
+        return 1
     parser = optparse.OptionParser(usage=sys.modules[__name__].__doc__)
     _, args = parser.parse_args(args)
 

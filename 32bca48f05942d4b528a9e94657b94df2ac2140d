@@ -16,6 +16,24 @@
       "message": "nit: it\u0027s `Remove`. deprecate would be only if we were to keep some bits of gclient pack (or everything), but discourage usage / have deletion plans.",
       "revId": "32bca48f05942d4b528a9e94657b94df2ac2140d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7391815e_f2bf3ae3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-14T18:14:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f733bea_4352cbc7",
+      "revId": "32bca48f05942d4b528a9e94657b94df2ac2140d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

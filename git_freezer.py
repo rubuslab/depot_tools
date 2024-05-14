@@ -8,6 +8,7 @@ import optparse
 
 import subcommand
 
+import gclient_utils
 from git_common import freeze, thaw
 
 
@@ -24,6 +25,9 @@ def CMDthaw(parser, args):
 
 
 def main(args):
+    if gclient_utils.IsEnvCog():
+        print(f'{args[0]} command is not supported in non-git environment.')
+        return 1
     dispatcher = subcommand.CommandDispatcher(__name__)
     ret = dispatcher.execute(optparse.OptionParser(), args)
     if ret:

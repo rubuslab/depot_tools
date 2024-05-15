@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0219c58_ec25c352",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-15T16:04:59Z",
+      "side": 1,
+      "message": "I believe we will need to wait longer for this - clang format will stop working on all active release branches. Let\u0027s wait until m126 is sunset.",
+      "revId": "fa9d6c7f72da4e253c3fdd7262f73906f866873e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

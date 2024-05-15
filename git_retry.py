@@ -18,6 +18,8 @@ import time
 
 from git_common import GIT_EXE, GIT_TRANSIENT_ERRORS_RE
 
+import gclient_utils
+
 
 class TeeThread(threading.Thread):
     def __init__(self, fd, out_fd, name):
@@ -120,6 +122,10 @@ class GitRetry(object):
 
 
 def main(args):
+    if gclient_utils.IsEnvCog():
+        print('retry command is not supported in non-git environment.',
+              file=sys.stderr)
+        return 1
     # If we're using the Infra Git wrapper, do nothing here.
     # https://chromium.googlesource.com/infra/infra/+/HEAD/go/src/infra/tools/git
     if 'INFRA_GIT_WRAPPER' in os.environ:

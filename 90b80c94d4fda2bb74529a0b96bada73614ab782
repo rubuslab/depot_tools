@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "656f9893_e4026c3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-15T21:22:27Z",
+      "side": 1,
+      "message": "this could work in non-git environment, since not all git operations require .git.",
+      "revId": "90b80c94d4fda2bb74529a0b96bada73614ab782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

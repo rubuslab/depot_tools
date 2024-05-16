@@ -22,6 +22,30 @@
       },
       "revId": "bf7e995a1b0c33de5cd66ff8b4778fa67b90e8fd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f9582e3_69488bda",
+        "filename": "git-nav-upstream",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-16T17:32:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e6f0231_cf6505c7",
+      "range": {
+        "startLine": 6,
+        "startChar": 3,
+        "endLine": 6,
+        "endChar": 33
+      },
+      "revId": "bf7e995a1b0c33de5cd66ff8b4778fa67b90e8fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

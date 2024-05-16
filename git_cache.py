@@ -21,6 +21,7 @@ import gclient_utils
 import lockfile
 import metrics
 import subcommand
+import git_common
 
 # Analogous to gc.autopacklimit git config.
 GC_AUTOPACKLIMIT = 50
@@ -88,7 +89,7 @@ def exponential_backoff_retry(fn,
 
 class Mirror(object):
 
-    git_exe = 'git.bat' if sys.platform.startswith('win') else 'git'
+    git_exe = git_common.GIT_EXE
     gsutil_exe = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                               'gsutil.py')
     cachepath_lock = threading.Lock()

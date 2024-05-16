@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1715c323_c7ef708f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-16T15:57:41Z",
+      "side": 1,
+      "message": "thanks for fixing this!",
+      "revId": "7e9de28314edb1b2ba32146c05406e5da2ebbc4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "114b2a02_07a0201a",

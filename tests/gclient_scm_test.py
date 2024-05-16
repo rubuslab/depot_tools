@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import gclient_scm
 import gclient_utils
 import git_cache
+import git_common
 import subprocess2
 from testing_support import fake_repos
 from testing_support import test_case_utils
@@ -706,15 +707,14 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
     @mock.patch('gclient_scm.GitWrapper._Clone')
     @mock.patch('os.path.isdir')
     @mock.patch('os.path.exists')
-    @mock.patch('subprocess2.check_output')
-    def testUpdateConflict(self, mockCheckOutput, mockExists, mockIsdir,
-                           mockClone):
+    @mock.patch('git_common.run')  # was subprocess2.check_output
+    def testUpdateConflict(self, mockRun, mockExists, mockIsdir, mockClone):
         mockIsdir.side_effect = lambda path: path == self.base_path
         mockExists.side_effect = lambda path: path == self.base_path
-        mockCheckOutput.side_effect = [b'refs/remotes/origin/main', b'', b'']
+        mockRun.side_effect = ['refs/remotes/origin/main', '']
         mockClone.side_effect = [
-            gclient_scm.subprocess2.CalledProcessError(None, None, None, None,
-                                                       None),
+            git_common.subprocess2.CalledProcessError(None, None, None, None,
+                                                      None),
             None,
         ]
 
@@ -723,16 +723,20 @@ class ManagedGitWrapperTestCaseMock(unittest.TestCase):
         scm.update(options, None, [])
 
         env = gclient_scm.scm.GIT.ApplyEnvVars({})
-        self.assertEqual(mockCheckOutput.mock_calls, [
-            mock.call(['git', 'symbolic-ref', 'refs/remotes/origin/HEAD'],
+        self.assertEqual(mockRun.mock_calls, [
+            mock.call('symbolic-ref',
+                      'refs/remotes/origin/HEAD',
+                      cwd=self.base_path,
+                      env=env),
+            mock.call('-c',
+                      'core.quotePath=false',
+                      'ls-files',
                       cwd=self.base_path,
                       env=env,
                       stderr=-1),
-            mock.call(['git', '-c', 'core.quotePath=false', 'ls-files'],
-                      cwd=self.base_path,
-                      env=env,
-                      stderr=-1),
-            mock.call(['git', 'rev-parse', '--verify', 'HEAD'],
+            mock.call('rev-parse',
+                      '--verify',
+                      'HEAD',
                       cwd=self.base_path,
                       env=env,
                       stderr=-1),

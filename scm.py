@@ -10,6 +10,7 @@ import re
 from typing import Mapping, List
 
 import gclient_utils
+import git_common
 import subprocess2
 
 # TODO: Should fix these warnings.
@@ -105,13 +106,9 @@ class GIT(object):
 
     @staticmethod
     def Capture(args, cwd=None, strip_out=True, **kwargs):
-        env = GIT.ApplyEnvVars(kwargs)
-        output = subprocess2.check_output(['git'] + args,
-                                          cwd=cwd,
-                                          stderr=subprocess2.PIPE,
-                                          env=env,
-                                          **kwargs)
-        output = output.decode('utf-8', 'replace')
+        kwargs.setdefault('env', GIT.ApplyEnvVars(kwargs))
+        kwargs.setdefault('cwd', cwd)
+        output = git_common.run(*args, **kwargs)
         return output.strip() if strip_out else output
 
     @staticmethod

@@ -16,6 +16,24 @@
       "message": "this could work in non-git environment, since not all git operations require .git.",
       "revId": "90b80c94d4fda2bb74529a0b96bada73614ab782",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55fe35c0_4e82b985",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-16T16:34:11Z",
+      "side": 1,
+      "message": "fair though I suspect most of the git commands the dev uses for this command would require `.git`. I think this command transparently pass through the stderr from the subprocess which makes the output of the failure scenario acceptable. Running `git retry status` gives me\n\n```\nfatal: not a git repository (or any parent up to mount point /google)\nStopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).\nERROR:git-retry:Process failure was not known to be transient; terminating with return code 128\n```\n\nSo I think it\u0027s okay not doing anything here then. WDYT?",
+      "parentUuid": "656f9893_e4026c3f",
+      "revId": "90b80c94d4fda2bb74529a0b96bada73614ab782",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

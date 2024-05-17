@@ -33,6 +33,24 @@
       "message": "add an empty line below",
       "revId": "7e9de28314edb1b2ba32146c05406e5da2ebbc4e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1ff5c7c_f02029c1",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1133049
+      },
+      "writtenOn": "2024-05-17T03:01:59Z",
+      "side": 1,
+      "message": "Why an empty line is required here?",
+      "parentUuid": "114b2a02_07a0201a",
+      "revId": "7e9de28314edb1b2ba32146c05406e5da2ebbc4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

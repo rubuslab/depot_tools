@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67d5cc4b_8737babb",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-17T23:37:32Z",
+      "side": 1,
+      "message": "git.bat also sets editor to notepad. Do we want to keep that functionality, or do you think it\u0027s no longer needed?",
+      "revId": "fbf27f948f4f839237c7770801414c435b9d2974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

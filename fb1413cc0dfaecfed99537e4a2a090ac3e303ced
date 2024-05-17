@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c0053dd_93bfa126",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1528727
+      },
+      "writtenOn": "2024-05-17T14:05:06Z",
+      "side": 1,
+      "message": "Hi,\n\nI don\u0027t know if this change has been proposed before and rejected, but if not,\nI would like to get it added to rebase-update.\nI have not been able to build the new man pages - the `man/src/make_docs.sh` script\ncrashes with:\n```\nsrc/make_docs.sh: line 88: syntax error near unexpected token `(\u0027\n```",
+      "revId": "fb1413cc0dfaecfed99537e4a2a090ac3e303ced",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31f989bc_70e6f55f",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-17T23:39:37Z",
+      "side": 1,
+      "message": "As we moved from git.bat to git, we no longer need to escape ^ on Windows.",
+      "revId": "bd2d6a5215512a6731b3a8d87b3568ef68e190f7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

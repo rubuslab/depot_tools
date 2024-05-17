@@ -232,6 +232,16 @@ def rebase_branch(branch, parent, start_hash):
     return True
 
 
+def get_downstream_branches(base_branches, branch_tree):
+    """Get all downstream branches from the base_branches in the branch_tree."""
+    downstream_branches = set()
+    for branch, parent in git.topo_iter(branch_tree):
+        if parent in base_branches or parent in downstream_branches:
+            downstream_branches.add(branch)
+
+    return downstream_branches
+
+
 def main(args=None):
     if gclient_utils.IsEnvCog():
         print(
@@ -261,6 +271,9 @@ def main(args=None):
                         '-e',
                         action='store_true',
                         help='Do not automatically delete empty branches.')
+    parser.add_argument('--evolve',
+                        action='store_true',
+                        help='Rebase downstream branches.')
     opts = parser.parse_args(args)
 
     if opts.verbose:  # pragma: no cover
@@ -302,7 +315,17 @@ def main(args=None):
     for branch in skipped:
         print('Skipping %s: No upstream specified' % branch)
 
-    if not opts.no_fetch:
+    if opts.evolve:
+        branches_to_evolve = branches_to_rebase.copy()
+        if not branches_to_evolve:
+            branches_to_evolve.add(git.current_branch())
+        branches_to_rebase = get_downstream_branches(branches_to_evolve,
+                                                     branch_tree)
+        if not branches_to_rebase:
+            print("No downstream brances to evolve")
+            return 1
+
+    if not (opts.no_fetch or opts.evolve):
         fetch_remotes(branch_tree)
 
     merge_base = {}

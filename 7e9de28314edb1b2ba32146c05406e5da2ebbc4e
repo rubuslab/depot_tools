@@ -51,6 +51,24 @@
       "parentUuid": "114b2a02_07a0201a",
       "revId": "7e9de28314edb1b2ba32146c05406e5da2ebbc4e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a36c5bf4_720a929b",
+        "filename": "git_cache.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-17T03:15:15Z",
+      "side": 1,
+      "message": "oh nvm! I misread the diff and thought there are 2 empty lines separating the import and the declaration which happens if it is a class definition.",
+      "parentUuid": "f1ff5c7c_f02029c1",
+      "revId": "7e9de28314edb1b2ba32146c05406e5da2ebbc4e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -69,6 +69,24 @@
       "parentUuid": "6b6aa6c6_cbf3ac38",
       "revId": "ab343611839fd54b64435804cd0aad049af89919",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e06595d_4c598050",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-05-22T21:24:30Z",
+      "side": 1,
+      "message": "+1 to `mv` concern\n\nLater during depot_tools bootstrap, \".cipd_bin\" directory is created (this is where various CIPD stuff is actually installed). I suspect it might already be allowlisted in the sandbox?\n\nPerhaps we can create it a bit earlier and use it to store the temporary file.",
+      "parentUuid": "6b6aa6c6_cbf3ac38",
+      "revId": "ab343611839fd54b64435804cd0aad049af89919",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

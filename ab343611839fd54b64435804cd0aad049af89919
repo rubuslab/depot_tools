@@ -51,6 +51,24 @@
       "message": "Adding Vadim who last touched this. I think we shouldn\u0027t submit this CL - it\u0027s possible that mktemp is on a different disk, so mv will require moving content from one drive to another.\n\nPerhaps we should utilize an ENVVAR to specify temp directory, and fallback to the current implementation if is not set? That way, chromeos can update their recipes. But, as you wrote, cipd still needs to write to .cipd_client so we should really figure that out first before we move forward with this cl.",
       "revId": "ab343611839fd54b64435804cd0aad049af89919",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89f43872_12347b31",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1450817
+      },
+      "writtenOn": "2024-05-22T21:23:33Z",
+      "side": 1,
+      "message": "In that case, I\u0027ll just abandon this CL.",
+      "parentUuid": "6b6aa6c6_cbf3ac38",
+      "revId": "ab343611839fd54b64435804cd0aad049af89919",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

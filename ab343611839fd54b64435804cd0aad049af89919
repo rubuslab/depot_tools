@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cbdccb8_048b0522",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289508
+      },
+      "writtenOn": "2024-05-22T20:26:41Z",
+      "side": 1,
+      "message": "I think it\u0027d probably be best if one of the chops source folks approved it. This seems fine to me, CR+1 in spirit, but it\u0027s ~6 years old, so it seems like the root cause must be something else and I\u0027m hesitant to stamp it without their input.",
+      "revId": "ab343611839fd54b64435804cd0aad049af89919",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

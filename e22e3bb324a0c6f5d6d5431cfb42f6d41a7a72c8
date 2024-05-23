@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b638a5c1_bd5cf572",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-05-23T19:30:08Z",
+      "side": 1,
+      "message": "note: this type annotations to not need to be resolvable during parse time - it\u0027s just a Good Thing (tm) because order of statements in the file no longer restricts the type annotations you can use.",
+      "revId": "e22e3bb324a0c6f5d6d5431cfb42f6d41a7a72c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "git.bat also sets editor to notepad. Do we want to keep that functionality, or do you think it\u0027s no longer needed?",
       "revId": "fbf27f948f4f839237c7770801414c435b9d2974",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a557c3a3_064539e7",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-05-23T14:34:03Z",
+      "side": 1,
+      "message": "I think that setting EDITOR\u003dnotepad for interactive uses of git.bat probably makes sense, but it shouldn\u0027t matter for scripted usage I don\u0027t think, should it?",
+      "parentUuid": "67d5cc4b_8737babb",
+      "revId": "fbf27f948f4f839237c7770801414c435b9d2974",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

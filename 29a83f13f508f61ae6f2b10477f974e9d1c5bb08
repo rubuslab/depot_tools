@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c57e6599_532a66d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-05-23T00:10:08Z",
+      "side": 1,
+      "message": "PTAL at this change to make heavier use of git_common",
+      "revId": "29a83f13f508f61ae6f2b10477f974e9d1c5bb08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

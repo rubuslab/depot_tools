@@ -52,6 +52,24 @@
       "parentUuid": "d721a7cb_b454e84f",
       "revId": "05c8e01574b58404e9c55193689d9680817e7206",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7bc77fc_545bdfd4",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-23T20:28:04Z",
+      "side": 1,
+      "message": "Right, there could be some other git.bat file that\u0027s not coming from depot_tools. Note that we can\u0027t strictly use `depot_tools` as a user can have multiple copies of depot_tools. So removing assert and doing the three conds sgtm",
+      "parentUuid": "d721a7cb_b454e84f",
+      "revId": "05c8e01574b58404e9c55193689d9680817e7206",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

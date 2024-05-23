@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d721a7cb_b454e84f",
+        "filename": "git_common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-05-23T19:55:38Z",
+      "side": 1,
+      "message": "Thinking about this some more...\nWe\u0027re iterating through entries in the path, and then if we find a file named git.bat anywhere in the path we look for depot_tools\\git.bat. That\u0027s a bit weird actually.\n\nI think maybe it should do the magic only if the path matches depot_tools (slightly tricky given case issues) or take the git.bat file that we found and pull out the .exe name if the three conditions all pass (rather than having them as asserts). Thoughts?",
+      "fixSuggestions": [
+        {
+          "fixId": "71ad04f0_4fbb5603",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_common.py",
+              "range": {
+                "startLine": 52,
+                "startChar": 0,
+                "endLine": 53,
+                "endChar": 0
+              },
+              "replacement": "    depot_tools \u003d os.path.dirname(os.path.abspath(__file__))\n"
+            }
+          ]
+        }
+      ],
+      "revId": "05c8e01574b58404e9c55193689d9680817e7206",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

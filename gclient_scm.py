@@ -842,9 +842,9 @@ class GitWrapper(SCMWrapper):
         strp_current_url = current_url[:-4] if current_url.endswith(
             '.git') else current_url
         if (strp_current_url.rstrip('/') != strp_url.rstrip('/')
-                and url != 'git://foo' and scm.GIT.GetConfigBool(
+                and url != 'git://foo' and scm.GIT.GetConfig(
                     self.checkout_path,
-                    f'remote.{self.remote}.gclient-auto-fix-url')):
+                    f'remote.{self.remote}.gclient-auto-fix-url') != 'False'):
             self.Print('_____ switching %s from %s to new upstream %s' %
                        (self.relpath, current_url, url))
             if not (options.force or options.reset):

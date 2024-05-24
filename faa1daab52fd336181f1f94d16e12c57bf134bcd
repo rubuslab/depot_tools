@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d3e8160_140d66e7",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-24T07:27:21Z",
+      "side": 1,
+      "message": "no need to uset use_reclient \u003d True when \"use_reclient \u003d true\" ?",
+      "revId": "faa1daab52fd336181f1f94d16e12c57bf134bcd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47ac88ee_f9526593",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-24T06:06:57Z",
+      "side": 1,
+      "message": "no need to set AUTONINJA_BUILD_ID ?",
+      "revId": "743c3744fc61d8c3290188988031b50617aa49c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65cbad4e_2f2252a6",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-24T06:06:57Z",
+      "side": 1,
+      "message": "better to use \u0027autosiso\u0027 here?\n\n\u0027siso_reclient\u0027 ?",
+      "revId": "743c3744fc61d8c3290188988031b50617aa49c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

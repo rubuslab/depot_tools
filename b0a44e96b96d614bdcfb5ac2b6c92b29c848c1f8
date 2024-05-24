@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a0b7dc9_a4e9e869",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-24T23:01:46Z",
+      "side": 1,
+      "message": "Please fix `gerrit_util_test.py`",
+      "revId": "b0a44e96b96d614bdcfb5ac2b6c92b29c848c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "516ff0bd_1e62b36f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-24T23:01:46Z",
+      "side": 1,
+      "message": "fix docstring indentation",
+      "range": {
+        "startLine": 104,
+        "startChar": 6,
+        "endLine": 107,
+        "endChar": 7
+      },
+      "revId": "b0a44e96b96d614bdcfb5ac2b6c92b29c848c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0d39de2_4eb6e82a",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-24T23:01:46Z",
+      "side": 1,
+      "message": "indentation here too",
+      "range": {
+        "startLine": 114,
+        "startChar": 6,
+        "endLine": 114,
+        "endChar": 17
+      },
+      "revId": "b0a44e96b96d614bdcfb5ac2b6c92b29c848c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8422219_ccc3df80",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-24T23:01:46Z",
+      "side": 1,
+      "message": "nit: add bug to TODOs",
+      "range": {
+        "startLine": 343,
+        "startChar": 10,
+        "endLine": 343,
+        "endChar": 14
+      },
+      "revId": "b0a44e96b96d614bdcfb5ac2b6c92b29c848c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f47a517_c05cc9af",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-24T23:01:46Z",
+      "side": 1,
+      "message": "add bug here too",
+      "range": {
+        "startLine": 362,
+        "startChar": 10,
+        "endLine": 362,
+        "endChar": 14
+      },
+      "revId": "b0a44e96b96d614bdcfb5ac2b6c92b29c848c1f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

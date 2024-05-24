@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbd6a78b_35b50dac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-24T06:11:00Z",
+      "side": 1,
+      "message": "hmm, ERROR: test_autoninja_siso_reclient (__main__.AutoninjaTest.test_autoninja_siso_reclient)\n\n?",
+      "revId": "743c3744fc61d8c3290188988031b50617aa49c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47ac88ee_f9526593",

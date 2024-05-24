@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11d9b78a_009cadb4",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-05-24T07:46:16Z",
+      "side": 1,
+      "message": "doesn\u0027t it call [\u0027siso\u0027, \u0027ninja\u0027, ..] ??",
+      "revId": "a6d83854b5ae2e444fe55231e5bcf4f9c6987650",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

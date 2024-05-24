@@ -16,6 +16,24 @@
       "message": "nit-nit: I\u0027d consider converting the value to lowercase and compare with \u0027false\u0027 to ensure both \u0027False\u0027 and \u0027false\u0027 are accepted.",
       "revId": "e012e270e41b018a3c3dfe938d702245a7cb9f26",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bee4116e_52bed80b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 3456722
+      },
+      "writtenOn": "2024-05-24T17:43:24Z",
+      "side": 1,
+      "message": "Ok. I did it.",
+      "parentUuid": "97e903f5_d17b09ea",
+      "revId": "e012e270e41b018a3c3dfe938d702245a7cb9f26",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

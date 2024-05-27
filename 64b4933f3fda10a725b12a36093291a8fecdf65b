@@ -16,6 +16,52 @@
       "message": "Hi Takuto, \n\nIt seems this CL needs your +1 for tests/autoninja_test.py. \nCan you take a look?",
       "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc83e876_04438449",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-05-27T04:31:35Z",
+      "side": 1,
+      "message": "Why not use\nhttps://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called_once_with\n?",
+      "range": {
+        "startLine": 136,
+        "startChar": 36,
+        "endLine": 136,
+        "endChar": 37
+      },
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bc43e74_d0cf6315",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-05-27T04:31:35Z",
+      "side": 1,
+      "message": "We cannot use\nhttps://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called_once_with\nfor this too?",
+      "range": {
+        "startLine": 139,
+        "startChar": 13,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d2d5b98_b27965e6",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T04:44:57Z",
+      "side": 1,
+      "message": "Looks like we can refactor all the tests in this file. So I will change them in another CL.",
+      "parentUuid": "bc83e876_04438449",
+      "range": {
+        "startLine": 136,
+        "startChar": 36,
+        "endLine": 136,
+        "endChar": 37
+      },
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6bc43e74_d0cf6315",
         "filename": "tests/autoninja_test.py",
         "patchSetId": 4
@@ -54,6 +78,30 @@
       "writtenOn": "2024-05-27T04:31:35Z",
       "side": 1,
       "message": "We cannot use\nhttps://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_called_once_with\nfor this too?",
+      "range": {
+        "startLine": 139,
+        "startChar": 13,
+        "endLine": 139,
+        "endChar": 24
+      },
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d05f085_ec2a225d",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T04:44:57Z",
+      "side": 1,
+      "message": "It seems mocking the context manager `reclient_helper.build_context` doesn\u0027t work as expected.\n\nI tied the following change.But it doesn\u0027t emit `yield`.\n\n```\nwith mock.patch(\u0027reclient_helper.build_context\u0027) as reclient_helper_mock:\n```",
+      "parentUuid": "6bc43e74_d0cf6315",
       "range": {
         "startLine": 139,
         "startChar": 13,

@@ -16,6 +16,24 @@
       "message": "no need to uset use_reclient \u003d True when \"use_reclient \u003d true\" ?",
       "revId": "faa1daab52fd336181f1f94d16e12c57bf134bcd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee655a0d_7d20dfe4",
+        "filename": "autoninja.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T01:48:19Z",
+      "side": 1,
+      "message": "I don\u0027t come up with any use cases for users to specify use_reclient \u003d true explicitly.\n\nWhen use_remoteexec\u003dtrue is specified in args.gn, use_reclient\u003dtrue is automatically set.\nWhen use_remoteexec\u003dfalse/use_reclient\u003dtrue are specified in args.gn, it\u0027s not a valid configuration. GN gen should fail.",
+      "parentUuid": "9d3e8160_140d66e7",
+      "revId": "faa1daab52fd336181f1f94d16e12c57bf134bcd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

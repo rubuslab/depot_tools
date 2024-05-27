@@ -65,6 +65,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b875d8b0_4505775e",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T04:51:37Z",
+      "side": 1,
+      "message": "I think the original assertion was more generic check, while `assert_called_once_with` can check only a fixed set of args.\n\n```\n            args \u003d autosiso_main.call_args.args[0]\n        self.assertIn(\u0027-C\u0027, args)\n        self.assertEqual(args[args.index(\u0027-C\u0027) + 1], out_dir)\n```\n\nI fixed only this test to use assert_called_once_with().",
+      "parentUuid": "5d2d5b98_b27965e6",
+      "range": {
+        "startLine": 136,
+        "startChar": 36,
+        "endLine": 136,
+        "endChar": 37
+      },
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bc43e74_d0cf6315",

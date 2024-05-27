@@ -16,6 +16,23 @@
       "message": "This CL results in a build problems like this:\n```\nERROR at //skia/BUILD.gn:922:15: Unable to load \"/home/ubuntu/workspace/chromium-build-android-master/src/third_party/test_fonts/BUILD.gn\".\n    deps +\u003d [ \"//third_party/test_fonts\" ]\n```\ngclient wipes //third_party/test_fonts including BUILD.gn when it downloads a new test_fonts revision.\n\n\nThe details:\nhttps://chromium.slack.com/archives/CGGPN5GDT/p1716807044146639",
       "revId": "7d95eb2eb054447592585c73a8ff7adad97ecba1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f183a963_503bfc12",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-05-27T14:21:50Z",
+      "side": 1,
+      "message": "https://issues.chromium.org/issues/342945505 this is blocking CQ, I will start a revert",
+      "revId": "7d95eb2eb054447592585c73a8ff7adad97ecba1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

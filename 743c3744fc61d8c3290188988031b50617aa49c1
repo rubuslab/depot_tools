@@ -86,6 +86,24 @@
       "parentUuid": "65cbad4e_2f2252a6",
       "revId": "743c3744fc61d8c3290188988031b50617aa49c1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59d2315f_f008c444",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T01:44:48Z",
+      "side": 1,
+      "message": "I believe using the same value is more convenient to avoid breaking the existing dashboards.",
+      "parentUuid": "1db463cc_7c710bc4",
+      "revId": "743c3744fc61d8c3290188988031b50617aa49c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "053bd5ba_44417441",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T03:40:15Z",
+      "side": 1,
+      "message": "Hi Takuto, \n\nIt seems this CL needs your +1 for tests/autoninja_test.py. \nCan you take a look?",
+      "revId": "64b4933f3fda10a725b12a36093291a8fecdf65b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

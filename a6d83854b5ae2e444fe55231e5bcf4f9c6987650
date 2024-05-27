@@ -68,6 +68,24 @@
       "message": "checks args is [\u0027siso\u0027, \u0027ninja\u0027, .. ]\n(and `--project\u003d\u0027, etc?)",
       "revId": "a6d83854b5ae2e444fe55231e5bcf4f9c6987650",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecfbc4a0_b144c9c5",
+        "filename": "tests/autoninja_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-05-27T03:15:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "240cc57c_9379b03d",
+      "revId": "a6d83854b5ae2e444fe55231e5bcf4f9c6987650",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

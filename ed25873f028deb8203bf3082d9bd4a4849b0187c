@@ -52,6 +52,24 @@
       "parentUuid": "01f7a35b_86eccce5",
       "revId": "ed25873f028deb8203bf3082d9bd4a4849b0187c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e7ff1e0_06530382",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-28T17:19:26Z",
+      "side": 1,
+      "message": "Let\u0027s remove the check.",
+      "parentUuid": "0a68c93f_fe9f4fb0",
+      "revId": "ed25873f028deb8203bf3082d9bd4a4849b0187c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

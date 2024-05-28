@@ -16,6 +16,24 @@
       "message": "I think @fantasime@qq.com already has a [fix](https://crrev.com/c/5570224) out for the bug. Sorry for the duplicative work as I forgot to cc you on the CL.",
       "revId": "772c3cd51003efa54d009f7cdddffaf3ced85f97",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e92783c_4de0ae16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-28T17:59:14Z",
+      "side": 1,
+      "message": "I also didn\u0027t realize there is a discussion happening in the bug. This cl lgtm.",
+      "parentUuid": "31f0cf0d_6ab29d81",
+      "revId": "772c3cd51003efa54d009f7cdddffaf3ced85f97",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

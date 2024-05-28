@@ -16,6 +16,24 @@
       "message": "I believe that only happens when you read the config value as bool. But the behavior before https://crrev.com/c/5280779 reads the config value as text. Therefore, I think it\u0027s possible \"False\" is returned so if somebody set `gclient-auto-fix-url` to False in the config, the code actually works. That said, I do suspect this is an under-used feature. So I think it might be fine completely remove the support and see who\u0027s complaining given it\u0027s hasn\u0027t been working correctly since Feb 2024.",
       "revId": "ed25873f028deb8203bf3082d9bd4a4849b0187c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01f7a35b_86eccce5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-05-28T16:36:18Z",
+      "side": 1,
+      "message": "sure, but it also requires the value not to be set as --bool, either.\nSo, the existing logic would work only if the config value was set as a text value. Not sure who/where/how the config value is set, though. I believe that it\u0027s a likely dead code, as you said.\n\nI\u0027m still leaning on removing the check.\n@sokcevic@chromium.org for second opinions.\n\n```\n$ # set False as a boolean value, and then\n$ # get it as a text value.\n$ git config set --bool repo.superprojectchoice3 False\n$ git config get repo.superprojectchoice3\nfalse\n\n$ # set False as a text value, and then\n$ # get it as a text value.\n$ git config set repo.superprojectchoice3 False\n$ git config get repo.superprojectchoice3\nFalse\n```",
+      "parentUuid": "ab56cdde_20264dfb",
+      "revId": "ed25873f028deb8203bf3082d9bd4a4849b0187c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

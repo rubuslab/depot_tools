@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab56cdde_20264dfb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-05-28T16:16:08Z",
+      "side": 1,
+      "message": "I believe that only happens when you read the config value as bool. But the behavior before https://crrev.com/c/5280779 reads the config value as text. Therefore, I think it\u0027s possible \"False\" is returned so if somebody set `gclient-auto-fix-url` to False in the config, the code actually works. That said, I do suspect this is an under-used feature. So I think it might be fine completely remove the support and see who\u0027s complaining given it\u0027s hasn\u0027t been working correctly since Feb 2024.",
+      "revId": "ed25873f028deb8203bf3082d9bd4a4849b0187c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

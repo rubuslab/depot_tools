@@ -139,6 +139,7 @@ class Authenticator(object):
             # TODO(crbug.com/1059384): Automatically detect when running on
             # cloudtop, and use CookiesAuthenticator instead.
             GceAuthenticator,
+            LuciAuthAuthenticator,
             CookiesAuthenticator,
         ]
         for candidate in authenticators:
@@ -371,6 +372,14 @@ class LuciContextAuthenticator(Authenticator):
     def debug_summary_state(self) -> str:
         # TODO(b/343230702) - report ambient account name.
         return ''
+
+
+class LuciAuthAuthenticator(LuciContextAuthenticator):
+    """Authenticator implementation that uses luci-auth."""
+
+    @staticmethod
+    def is_applicable():
+        return not os.path.exists(CookiesAuthenticator.get_gitcookies_path())
 
 
 def CreateHttpConn(host,

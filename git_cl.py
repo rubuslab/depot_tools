@@ -2283,6 +2283,30 @@ class Changelist(object):
             # See http://crbug.com/603378.
             return
 
+        # Check for luci-auth login
+        luci_auth = gerrit_util.Authenticator.get()
+        if isinstance(luci_auth, gerrit_util.LuciContextAuthenticator):
+            git_host = self._GetGitHost()
+            try:
+                luci_auth.get_auth_info(git_host)
+            except auth.LoginRequiredError:
+                cookie_auth = gerrit_util.CookiesAuthenticator
+                missing = [self.GetGerritHost(), git_host]
+                DieWithError(
+                    ('Credentials for the following hosts are required:\n'
+                     '  %s\n'
+                     'These are read from %s\n'
+                     '%s' %
+                     ('\n  '.join(missing), cookie_auth.get_gitcookies_path(),
+                      cookie_auth.get_new_password_message(git_host))) +
+                    '\n\nALTERNATIVELY, log in by running:\n'
+                    '\n'
+                    '  luci-auth login -scopes "https://www.googleapis.com/auth/gerritcodereview https://www.googleapis.com/auth/userinfo.email"\n'
+                    # TODO(ayatane): Replace with the following once we ship it by default
+                    #'  git credential-luci login\n'
+                )
+            return
+
         # Check presence of cookies only if using cookies-based auth method.
         cookie_auth = gerrit_util.Authenticator.get()
         if not isinstance(cookie_auth, gerrit_util.CookiesAuthenticator):
@@ -2319,7 +2343,7 @@ class Changelist(object):
             if not force:
                 confirm_or_exit(msg, action='continue')
         else:
-          DieWithError(msg)
+            DieWithError(msg)
 
     def EnsureCanUploadPatchset(self, force):
         if not self.GetIssue():

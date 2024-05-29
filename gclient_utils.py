@@ -3,7 +3,6 @@
 # found in the LICENSE file.
 """Generic utils."""
 
-import codecs
 import collections
 import contextlib
 import datetime
@@ -23,6 +22,7 @@ import sys
 import tempfile
 import threading
 import time
+from typing import Union
 import urllib.parse
 
 import subprocess2
@@ -195,19 +195,23 @@ def AskForData(message):
         sys.exit(1)
 
 
-def FileRead(filename, mode='rbU'):
-    # mode is ignored now; we always return unicode strings.
-    with open(filename, mode='rb') as f:
-        s = f.read()
-    try:
-        return s.decode('utf-8', 'replace')
-    except (UnicodeDecodeError, AttributeError):
-        return s
+def FileRead(filename) -> str:
+    """Reads a text file with utf-8 encoding and returns the contents."""
+    with open(filename, encoding='utf-8', errors='replace') as f:
+        return f.read()
 
 
-def FileWrite(filename, content, mode='w', encoding='utf-8'):
-    with codecs.open(filename, mode=mode, encoding=encoding) as f:
-        f.write(content)
+def FileWrite(filename, content: Union[str, bytes]):
+    """Writes a text or binary file with the given encoding.
+
+    If `content` is a string, this encodes the file as utf-8.
+    """
+    if isinstance(content, str):
+        with open(filename, mode='w', encoding='utf-8') as f:
+            f.write(content)
+    else:
+        with open(filename, mode='wb') as f:
+            f.write(content)
 
 
 @contextlib.contextmanager

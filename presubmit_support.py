@@ -840,12 +840,16 @@ class InputApi(object):
         """Reads an arbitrary file.
 
         Deny reading anything outside the repository.
+
+        `mode` is ignored, but kept for backwards compatibility - This function
+        always returns a `str` with the assumption that file_item is utf-8
+        encoded.
         """
         if isinstance(file_item, AffectedFile):
             file_item = file_item.AbsoluteLocalPath()
         if not file_item.startswith(self.change.RepositoryRoot()):
             raise IOError('Access outside the repository root is denied.')
-        return gclient_utils.FileRead(file_item, mode)
+        return gclient_utils.FileRead(file_item)
 
     def CreateTemporaryFile(self, **kwargs):
         """Returns a named temporary file that must be removed with a call to
@@ -1090,7 +1094,7 @@ class AffectedFile(object):
             self._cached_new_contents = []
             try:
                 self._cached_new_contents = gclient_utils.FileRead(
-                    self.AbsoluteLocalPath(), 'rU').splitlines()
+                    self.AbsoluteLocalPath()).splitlines()
             except IOError:
                 pass  # File not found?  That's fine; maybe it was deleted.
             except UnicodeDecodeError as e:

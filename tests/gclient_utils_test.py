@@ -384,10 +384,7 @@ class GClientUtilsTest(trial_dir.TestCase):
 
     def testFileRead_Bytes(self):
         with gclient_utils.temporary_file() as tmp:
-            gclient_utils.FileWrite(tmp,
-                                    b'foo \xe2\x9c bar',
-                                    mode='wb',
-                                    encoding=None)
+            gclient_utils.FileWrite(tmp, b'foo \xe2\x9c bar')
             self.assertEqual('foo \ufffd bar', gclient_utils.FileRead(tmp))
 
     def testFileRead_Unicode(self):

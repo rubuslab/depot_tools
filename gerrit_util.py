@@ -204,7 +204,7 @@ class CookiesAuthenticator(Authenticator):
             return gitcookies
 
         try:
-            f = gclient_utils.FileRead(path, 'rb').splitlines()
+            f = gclient_utils.FileRead(path).splitlines()
         except IOError:
             return gitcookies
 

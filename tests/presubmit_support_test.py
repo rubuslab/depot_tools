@@ -118,7 +118,7 @@ class TestParseDiff(unittest.TestCase):
 
     def _test_diff_to_change_files(self, diff, expected):
         with gclient_utils.temporary_file() as tmp:
-            gclient_utils.FileWrite(tmp, diff, mode='w+')
+            gclient_utils.FileWrite(tmp, diff)
             content, change_files = presubmit_support._process_diff_file(tmp)
             self.assertCountEqual(content, diff)
             self.assertCountEqual(change_files, expected)

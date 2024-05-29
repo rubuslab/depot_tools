@@ -107,7 +107,7 @@ class Authenticator(object):
             return self._access_token
 
         # Nope, still expired. Needs user interaction.
-        logging.error('Failed to create access token')
+        logging.debug('Failed to create access token')
         raise LoginRequiredError(self._scopes)
 
     def get_id_token(self):
@@ -127,7 +127,7 @@ class Authenticator(object):
             return self._id_token
 
         # Nope, still expired. Needs user interaction.
-        logging.error('Failed to create id token')
+        logging.debug('Failed to create id token')
         raise LoginRequiredError()
 
     def authorize(self, http, use_id_token=False):
@@ -194,5 +194,5 @@ class Authenticator(object):
         except subprocess2.CalledProcessError as e:
             # subprocess2.CalledProcessError.__str__ nicely formats
             # stdout/stderr.
-            logging.error('luci-auth token failed: %s', e)
+            logging.debug('luci-auth token failed: %s', e)
             return None

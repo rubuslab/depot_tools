@@ -20,6 +20,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "575f9a4e_c0adf267",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-05-29T21:00:31Z",
+      "side": 1,
+      "message": "Some context: we will be replacing gitcookies with SSO for googlers (iannucci\u0027s work) and luci-auth/OAuth for everyone else (this CL).\n\nThis CL is adding support and not removing anything yet.",
+      "revId": "cf8d46615a9de0bb176a7f7c5ec7789f0f034027",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "92728057_32282d01",
         "filename": "auth.py",
         "patchSetId": 1

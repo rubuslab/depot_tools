@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0047190_76b39f9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-05-29T21:10:52Z",
+      "side": 1,
+      "message": "I think we will actually need to invert this whole structure a bit, so we construct a connection, and then manipulate it via Authenticator.authenticate(connection). I\u0027ll upload a followup CL to do that.",
+      "revId": "e638f32bea90832b25e70baeba96c96a4b2ae700",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4f4af894_57d61386",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2301,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-05-30T17:58:49Z",
+      "side": 1,
+      "message": "nit: this is a little hard to read, maybe join above and use f string here?",
+      "range": {
+        "startLine": 2296,
+        "startChar": 21,
+        "endLine": 2301,
+        "endChar": 69
+      },
+      "revId": "5709d0c8a49539d2d0122cd2844a9b474f75997d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "Hi Josip,\n\nThis broke our downstream orderfile bot: https://crbug.com/343653768#comment2\n\nIs the fix to do a `bucket.split(\u0027/\u0027)` and pass the second one as `--prefix`?\n\nThanks,\nPeter",
       "revId": "f318db0055b10ab5c4f6f9566d826c7adaf005e9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d50d3284_2bc8f3f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-05-30T17:20:32Z",
+      "side": 1,
+      "message": "Sorry for breakage. The CL that broke your bot is https://crrev.com/c/5582089. you should split exisitng --bucket string into --bucket and --prefix (e.g. --bucket foo/bar becomes --bucket foo --prefix bar)",
+      "parentUuid": "5b928bd0_f9d9b388",
+      "revId": "f318db0055b10ab5c4f6f9566d826c7adaf005e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

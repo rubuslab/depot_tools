@@ -22,6 +22,30 @@
       },
       "revId": "5709d0c8a49539d2d0122cd2844a9b474f75997d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f376e24_eb4bda4a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2301,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-05-30T21:01:24Z",
+      "side": 1,
+      "message": "This is a copy of the gitcookie warning below, so I prefer to keep it aligned for now (then later delete it along with gitcookies).\n\n(or if I need to touch this code again before that, I will update both this and the copy below)",
+      "parentUuid": "4f4af894_57d61386",
+      "range": {
+        "startLine": 2296,
+        "startChar": 21,
+        "endLine": 2301,
+        "endChar": 69
+      },
+      "revId": "5709d0c8a49539d2d0122cd2844a9b474f75997d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

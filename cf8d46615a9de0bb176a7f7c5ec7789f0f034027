@@ -52,6 +52,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "59ce9481_f16ca44c",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2288,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-05-31T20:34:38Z",
+      "side": 1,
+      "message": "blarrr I was hoping to get rid of these isinstance checks, not proliferate them",
+      "revId": "cf8d46615a9de0bb176a7f7c5ec7789f0f034027",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "4436c71c_e870554a",

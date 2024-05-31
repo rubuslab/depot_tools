@@ -9,6 +9,7 @@ https://gerrit-review.googlesource.com/Documentation/rest-api.html
 
 from __future__ import annotations
 
+import atexit
 import base64
 import contextlib
 import http.cookiejar
@@ -17,23 +18,69 @@ import logging
 import os
 import random
 import re
+import shutil
 import socket
+import subprocess
 import tempfile
+import threading
 import time
 import urllib.parse
 
+from dataclasses import dataclass
 from io import StringIO
 from multiprocessing.pool import ThreadPool
-from typing import Any, Container, Dict, List, Optional, Tuple, Type, TypedDict
+from typing import Any, Container, Dict, List, Optional, Tuple, Type, TypedDict, cast
 
 import httplib2
+import httplib2.socks
 
 import auth
 import gclient_utils
 import metrics
 import metrics_utils
 import scm
+import subprocess2
 
+
+# HACK: httplib2 has significant bugs with it's proxy support in python3. All
+# httplib2 code should be rewritten to just use python stdlib which does not
+# have these bugs.
+#
+# Prior to that, however, we will directly patch the buggy implementation of
+# httplib2.socks.socksocket.__rewriteproxy which does not properly expect bytes
+# as it's argument instead of str.
+#
+# Note that __rewriteproxy is inherently buggy, as it relies on the python
+# stdlib client to send the entire request header in a single call to
+# socket.sendall, which is not a strict requirement.
+#
+# Changes:
+#   * all string literals changed to bytes literals.
+#   * all __symbols changed to _socksocket__symbols.
+#   * Type annotations added to function signature.
+def __fixed_rewrite_proxy(self: httplib2.socks.socksocket, header: bytes):
+    """ rewrite HTTP request headers to support non-tunneling proxies
+    (i.e. those which do not support the CONNECT method).
+    This only works for HTTP (not HTTPS) since HTTPS requires tunneling.
+    """
+    host, endpt = None, None
+    hdrs = header.split(b"\r\n")
+    for hdr in hdrs:
+        if hdr.lower().startswith(b"host:"):
+            host = hdr
+        elif hdr.lower().startswith(b"get") or hdr.lower().startswith(b"post"):
+            endpt = hdr
+    if host and endpt:
+        hdrs.remove(host)
+        hdrs.remove(endpt)
+        host = host.split(b" ")[1]
+        endpt = endpt.split(b" ")
+        if self._socksocket__proxy[4] != None and self._socksocket__proxy[5] != None:
+            hdrs.insert(0, self._socksocket__getauthheader())
+        hdrs.insert(0, b"Host: %s" % host)
+        hdrs.insert(0, b"%s http://%s%s %s" % (endpt[0], host, endpt[1], endpt[2]))
+    return b"\r\n".join(hdrs)
+httplib2.socks.socksocket._socksocket__rewriteproxy = __fixed_rewrite_proxy
 
 # TODO: Should fix these warnings.
 # pylint: disable=line-too-long
@@ -124,6 +171,8 @@ class Authenticator(object):
         Authenticator instance to use.
         """
         authenticators: List[Type[Authenticator]] = [
+            SSOAuthenticator,
+
             # LUCI Context takes priority since it's normally present only on bots,
             # which then must use it.
             LuciContextAuthenticator,
@@ -139,6 +188,164 @@ class Authenticator(object):
 
         raise ValueError(
             f"Could not find suitable authenticator, tried: {authenticators}")
+
+
+class SSOAuthenticator(Authenticator):
+    """SSOAuthenticator implements a Google-internal authorization scheme which
+    uses a git remote helper `git-remote-sso` available to Googlers.
+
+    This helper is similar to the publically available `git-remote-persistent-https`.
+    Googler machines are configured so that all *.googlesource.com domains are
+    routed instead to *.git.corp.google.com via a secure tunnel which is
+    integrated with single-sign on authentication.
+
+    This class maintains a copy of the git-remote-sso process, parses it's
+    output configuration and authenticates HttpConns for git_cl using this as
+    a proxy.
+
+    TEMPORARY configuration for Googlers:
+
+    Add git config like:
+
+        [url "sso://chromium.git.corp.google.com/"]
+          insteadOf = https://chromium.googlesource.com/
+          insteadOf = http://chromium.googlesource.com/
+        [depot-tools]
+          use-new-auth-stack = 1
+    """
+
+    # Tri-state cache for sso helper:
+    #   * None - no cached lookup yet
+    #   * '' - lookup was performed, but no binary was found.
+    #   * non-empty string - lookup was performed, and this is the path to the
+    #     binary.
+    _sso_binary_path: Optional[str] = None
+
+    # The running persistent sso proxy process.
+    #
+    # Lazily spawned by `authenticate`.
+    _sso_process: Optional[subprocess2.Popen] = None
+
+    @dataclass
+    class SSOInfo:
+        proxy: httplib2.ProxyInfo
+        cookies: http.cookiejar.CookieJar
+        headers: Dict[str, str]
+
+    _sso_info: Optional[SSOInfo] = None
+
+    @classmethod
+    def _resolve_sso_binary_path(cls):
+        pth = cls._sso_binary_path
+        if pth is None:
+            pth = shutil.which('git-remote-sso') or ''
+            cls._sso_binary_path = pth
+        return pth
+
+    @classmethod
+    def is_applicable(cls) -> bool:
+        """If the git-remote-sso binary is in $PATH, we consider this
+        authenticator to be applicable."""
+        if scm.GIT.GetConfig(os.getcwd(), 'depot-tools.use-new-auth-stack') != '1':
+            LOGGER.debug('SSOAuthenticator: skipping due to missing opt-in.')
+            return False
+
+        pth = cls._resolve_sso_binary_path()
+        if pth:
+            LOGGER.debug(f'SSOAuthenticator: enabled {pth!r}.')
+        return bool(pth)
+
+    @classmethod
+    def _get_sso_info(cls) -> SSOInfo:
+        info = cls._sso_info
+        if not info:
+            cmd = [
+              cls._resolve_sso_binary_path(),
+              '-print_config',
+              'sso://*.git.corp.google.com',
+            ]
+            cls._sso_process = subprocess2.Popen(
+                    cmd,
+                    stdout=subprocess2.PIPE,
+                    stderr=subprocess2.PIPE,
+                    encoding='utf-8')
+            atexit.register(cls._sso_process.kill)
+
+            stderr = ""
+            def _consume_stderr():
+              nonlocal stderr
+              stderr = cls._sso_process.stderr.read()
+            stderr_reader = threading.Thread(target=_consume_stderr)
+            stderr_reader.start()
+
+            timedout = False
+            def _fire_timeout():
+                cls._sso_process.kill()
+                nonlocal timedout
+                timedout = True
+
+            timer = threading.Timer(5, _fire_timeout)
+            timer.start()
+            config = cls._sso_process.stdout.read()
+            timer.cancel()
+
+            if timedout:
+                LOGGER.error(f'SSOAuthenticator: Timeout: {cmd!r}: reading config.')
+                raise subprocess.TimeoutExpired(cmd=cmd, timeout=5)
+
+            cls._sso_process.poll()
+            if cls._sso_process.returncode is not None:
+                # process failed
+                stderr_reader.join()
+                raise ValueError(f'SSOAuthenticator: {stderr}')
+
+            parsed: Dict[str, str] = dict(line.strip().split('=', 1) for line in config.splitlines())
+
+            fullAuthHeader = cast(str, scm.GIT.Capture([
+                'config', '-f', parsed['include.path'],
+                'http.extraHeader',
+            ]))
+            headerKey, headerValue = fullAuthHeader.split(':', 1)
+            headers={headerKey.strip(): headerValue.strip()}
+
+            proxy_host, proxy_port = parsed['http.proxy'].split(':', 1)
+
+            info = cls.SSOInfo(
+                    proxy=httplib2.ProxyInfo(
+                            httplib2.socks.PROXY_TYPE_HTTP_NO_TUNNEL,
+                            proxy_host.encode(),
+                            int(proxy_port)),
+                    cookies=http.cookiejar.MozillaCookieJar(parsed['http.cookiefile']),
+                    headers=headers)
+            cls._sso_info = info
+        return info
+
+    def authenticate(self, conn: HttpConn):
+        sso_info = self._get_sso_info()
+        conn.proxy_info = sso_info.proxy
+        conn.req_headers.update(sso_info.headers)
+        conn.req_headers['Host'] = conn.req_host
+
+        # Now we must rewrite:
+        #   https://xxx.googlesource.com ->
+        #   http://xxx.git.corp.google.com
+        parsed = urllib.parse.urlparse(conn.req_uri)
+        parsed = parsed._replace(scheme='http')
+        if (hostname := parsed.hostname) and hostname.endswith('.googlesource.com'):
+          assert not parsed.port, "SSOAuthenticator: netloc: port not supported"
+          assert not parsed.username, "SSOAuthenticator: netloc: username not supported"
+          assert not parsed.password, "SSOAuthenticator: netloc: password not supported"
+
+          hostname_parts = hostname.rsplit('.', 2)  # X, googlesource, com
+          parsed = parsed._replace(
+              netloc=hostname_parts[0]+'.git.corp.google.com')
+        conn.req_uri = parsed.geturl()
+
+        # Finally, add cookies
+        sso_info.cookies.add_cookie_header(conn)
+
+    def debug_summary_state(self) -> str:
+        return ''
 
 
 class CookiesAuthenticator(Authenticator):
@@ -430,6 +637,41 @@ class HttpConn(httplib2.Http):
             'body': self.req_body,
         }
 
+    # NOTE: We want to use HttpConn with CookieJar.add_cookie_header, so have
+    # compatible interface for that here.
+    #
+    # NOTE: Someone should really normalize this 'HttpConn' and httplib2
+    # implementation to just be plain python3 stdlib instead. All of this was
+    # written during the bad old days of python2.6/2.7, pre-vpython.
+    def has_header(self, header: str) -> bool:
+        return header in self.req_headers
+
+    def get_full_url(self) -> str:
+        return self.req_uri
+
+    def get_header(self, header: str, default: Optional[str] = None) -> Optional[str]:
+        return self.req_headers.get(header, default)
+
+    def add_unredirected_header(self, header: str, value: str):
+        # NOTE: httplib2 does not support unredirected headers.
+        self.req_headers[header] = value
+
+    @property
+    def unverifiable(self) -> bool:
+        return False
+
+    @property
+    def origin_req_host(self) -> str:
+        return self.req_host
+
+    @property
+    def type(self) -> str:
+        return urllib.parse.urlparse(self.req_uri).scheme
+
+    @property
+    def host(self) -> str:
+        return self.req_host
+
 
 def CreateHttpConn(host,
                    path,
@@ -472,7 +714,7 @@ def CreateHttpConn(host,
         LOGGER.debug('No authorization found for %s.' % bare_host)
 
     if LOGGER.isEnabledFor(logging.DEBUG):
-        LOGGER.debug(f'{ret.req_method} {GERRIT_PROTOCOL}://{ret.req_host}{ret.req_uri}')
+        LOGGER.debug(f'{ret.req_method} {ret.req_uri}')
         for key, val in ret.req_headers.items():
             if key == 'Authorization':
                 val = 'HIDDEN'
@@ -498,6 +740,7 @@ def ReadHttpResponse(conn: HttpConn,
     sleep_time = SLEEP_TIME
     for idx in range(TRY_LIMIT):
         before_response = time.time()
+        LOGGER.debug(f'{conn.proxy_info=}')
         try:
             response, contents = conn.request(**conn.req_params)
         except socket.timeout:

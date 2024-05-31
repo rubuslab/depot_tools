@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c087fa9a_fd46dfac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-05-31T22:11:22Z",
+      "side": 1,
+      "message": "Ok, I was wrong, cookies are absolutely needed - fixed bugs accordingly.",
+      "revId": "4fd06391724e0df3a89f40a3f61b9bb02c8c697a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

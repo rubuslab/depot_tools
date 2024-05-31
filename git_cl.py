@@ -2334,23 +2334,14 @@ class Changelist(object):
             self.SetIssue()
             return
 
-        # TODO(vadimsh): For some reason the chunk of code below was skipped if
-        # 'is_gce' is True. I'm just refactoring it to be 'skip if not cookies'.
-        # Apparently this check is not very important? Otherwise get_auth_email
-        # could have been added to other implementations of Authenticator.
-        cookies_auth = gerrit_util.Authenticator.get()
-        if not isinstance(cookies_auth, gerrit_util.CookiesAuthenticator):
+        # Check to see if the currently authenticated account is the issue
+        # owner.
+        details = gerrit_util.GetAccountDetails(self.GetGerritHost(), 'self',
+                                                all_emails=True)
+        issue_owner = self.GetIssueOwner()
+        if details['email'] == issue_owner:
             return
-
-        cookies_user = cookies_auth.get_auth_email(self.GetGerritHost())
-        if self.GetIssueOwner() == cookies_user:
-            return
-        logging.debug('change %s owner is %s, cookies user is %s',
-                      self.GetIssue(), self.GetIssueOwner(), cookies_user)
-        # Maybe user has linked accounts or something like that,
-        # so ask what Gerrit thinks of this user.
-        details = gerrit_util.GetAccountDetails(self.GetGerritHost(), 'self')
-        if details['email'] == self.GetIssueOwner():
+        if any(e == issue_owner for e in details['secondary_emails']):
             return
         if not force:
             print(

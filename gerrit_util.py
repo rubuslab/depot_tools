@@ -150,6 +150,10 @@ def _QueryString(params, first_param=None):
 class Authenticator(object):
     """Base authenticator class for authenticator implementations to subclass."""
 
+    # Cached Authenticator subclass instance, resolved via get().
+    _resolved: Optional[Authenticator] = None
+    _resolved_lock = threading.Lock()
+
     def authenticate(self, conn: HttpConn):
         """Adds authentication information to the HttpConn."""
         raise NotImplementedError()
@@ -169,42 +173,51 @@ class Authenticator(object):
         environment."""
         raise NotImplementedError()
 
-    @staticmethod
-    def get():
+    @classmethod
+    def get(cls):
         """Returns: (Authenticator) The identified Authenticator to use.
 
         Probes the local system and its environment and identifies the
         Authenticator instance to use.
+
+        The resolved Authenticator instance is cached as a class variable.
         """
-        use_new_auth = scm.GIT.GetConfig(
-            os.getcwd(), 'depot-tools.use-new-auth-stack') == '1'
+        with cls._resolved_lock:
+            if ret := cls._resolved:
+                return ret
 
-        authenticators: List[Type[Authenticator]]
+            use_new_auth = scm.GIT.GetConfig(
+                os.getcwd(), 'depot-tools.use-new-auth-stack') == '1'
 
-        if use_new_auth:
-            LOGGER.debug('Authenticator.get: using new-auth-stack.')
-            authenticators = [
-                SSOAuthenticator,
-                LuciContextAuthenticator,
-                GceAuthenticator,
-                LuciAuthAuthenticator,
-            ]
-        else:
-            authenticators = [
-                LuciContextAuthenticator,
-                GceAuthenticator,
-                CookiesAuthenticator,
-            ]
+            authenticators: List[Type[Authenticator]]
 
-        for candidate in authenticators:
-            if candidate.is_applicable():
-                LOGGER.debug('Authenticator.get: Selected %s.',
-                             candidate.__name__)
-                return candidate()
+            if use_new_auth:
+                LOGGER.debug('Authenticator.get: using new-auth-stack.')
+                authenticators = [
+                    SSOAuthenticator,
+                    LuciContextAuthenticator,
+                    GceAuthenticator,
+                    LuciAuthAuthenticator,
+                ]
+            else:
+                authenticators = [
+                    LuciContextAuthenticator,
+                    GceAuthenticator,
+                    CookiesAuthenticator,
+                ]
 
-        auth_names = ', '.join(a.__name__ for a in authenticators)
-        raise ValueError(
-            f"Could not find suitable authenticator, tried: [{auth_names}].")
+            for candidate in authenticators:
+                if candidate.is_applicable():
+                    LOGGER.debug('Authenticator.get: Selected %s.',
+                                 candidate.__name__)
+                    ret = candidate()
+                    cls._resolved = ret
+                    return ret
+
+            auth_names = ', '.join(a.__name__ for a in authenticators)
+            raise ValueError(
+                f"Could not find suitable authenticator, tried: [{auth_names}]."
+            )
 
 
 class SSOAuthenticator(Authenticator):

@@ -181,11 +181,14 @@ class Authenticator(object):
         return (True, '')
 
     @staticmethod
+    @functools.lru_cache
     def get():
         """Returns: (Authenticator) The identified Authenticator to use.
 
         Probes the local system and its environment and identifies the
         Authenticator instance to use.
+
+        The resolved Authenticator instance is cached.
         """
         use_new_auth = scm.GIT.GetConfig(os.getcwd(),
                                          'depot-tools.usenewauthstack') == '1'

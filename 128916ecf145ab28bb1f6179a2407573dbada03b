@@ -1,0 +1,162 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "155400af_fb158444",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:48:26Z",
+      "side": 1,
+      "message": "Is dashes an existing convention?  git-config uses camelCase\n\ne.g. `depot_tools.useNewAuthStack` (as `depot_tools` is how it\u0027s named everywhere AFAIK)",
+      "range": {
+        "startLine": 180,
+        "startChar": 26,
+        "endLine": 180,
+        "endChar": 36
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "ca939027_718221ca",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 180,
+                "startChar": 0,
+                "endLine": 181,
+                "endChar": 0
+              },
+              "replacement": "            os.getcwd(), \u0027depot_tools.useNewAuthStack\u0027) \u003d\u003d \u00271\u0027\n"
+            },
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 228,
+                "startChar": 0,
+                "endLine": 230,
+                "endChar": 0
+              },
+              "replacement": "        [depot_tools]\n          useNewAuthStack \u003d 1\n"
+            },
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 266,
+                "startChar": 0,
+                "endLine": 267,
+                "endChar": 0
+              },
+              "replacement": "                                 \u0027depot_tools.newAuthSkipSso\u0027) \u003d\u003d \u00271\u0027\n"
+            },
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 269,
+                "startChar": 0,
+                "endLine": 270,
+                "endChar": 0
+              },
+              "replacement": "                \u0027SSOAuthenticator: Skip due to depot_tools.newAuthSkipSso.\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf852327_07ecbd0c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:48:26Z",
+      "side": 1,
+      "message": "nit: not equal 0 or empty?",
+      "range": {
+        "startLine": 180,
+        "startChar": 59,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "352cc543_19112b5c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 180,
+                "startChar": 0,
+                "endLine": 181,
+                "endChar": 0
+              },
+              "replacement": "            os.getcwd(), \u0027depot-tools.use-new-auth-stack\u0027) in (\u00271\u0027, \u0027true\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65cca621_04de4788",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:48:26Z",
+      "side": 1,
+      "message": "same comment on dashes",
+      "range": {
+        "startLine": 266,
+        "startChar": 34,
+        "endLine": 266,
+        "endChar": 45
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edf959a2_5338ed0d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:48:26Z",
+      "side": 1,
+      "message": "s/Skip/Skipping",
+      "range": {
+        "startLine": 269,
+        "startChar": 35,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

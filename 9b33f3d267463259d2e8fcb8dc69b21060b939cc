@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c074900d_b6fd5d8b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:48:26Z",
+      "side": 0,
+      "message": "You dropped this log fyi",
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1569,18 +1569,23 @@ def GetProjectHead(host, project):
     return ReadHttpJsonResponse(conn, accept_statuses=[200])
 
 
-def GetAccountDetails(host, account_id='self'):
+def GetAccountDetails(host, account_id='self', all_emails=False):
     """Returns details of the account.
 
     If account_id is not given, uses magic value 'self' which corresponds to
     whichever account user is authenticating as.
+
+    If all_emails is True, this sets the option ALL_EMAILS.
 
     Documentation:
     https://gerrit-review.googlesource.com/Documentation/rest-api-accounts.html#get-account
 
     Returns None if account is not found (i.e., Gerrit returned 404).
     """
-    conn = CreateHttpConn(host, '/accounts/%s' % account_id)
+    path = '/accounts/%s' % account_id
+    if all_emails:
+      path += '?o=ALL_EMAILS'
+    conn = CreateHttpConn(host, path)
     return ReadHttpJsonResponse(conn, accept_statuses=[200, 404])
 
 

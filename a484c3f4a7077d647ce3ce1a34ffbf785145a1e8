@@ -1,0 +1,85 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "82bf848c_816277df",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T01:18:37Z",
+      "side": 1,
+      "message": "whinge: this line break is ugly...",
+      "range": {
+        "startLine": 243,
+        "startChar": 32,
+        "endLine": 244,
+        "endChar": 24
+      },
+      "revId": "a484c3f4a7077d647ce3ce1a34ffbf785145a1e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abce4866_6c219e68",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T01:18:37Z",
+      "side": 1,
+      "message": "s/ret/conn\n\n?",
+      "range": {
+        "startLine": 460,
+        "startChar": 4,
+        "endLine": 460,
+        "endChar": 7
+      },
+      "revId": "a484c3f4a7077d647ce3ce1a34ffbf785145a1e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a03265a_ba8beafb",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T01:18:37Z",
+      "side": 1,
+      "message": "I\u0027d like to formally lodge a complaint about reordering things as part of other changes, I, a grug brained programmer, prefer thinking about functional changes in separate CLs where possible so I don\u0027t have to try to think about interactions.\n\nI guess, after reading this a bit more, it\u0027s trivial in this case, but my general complaint stands.\n\n(to be clear, I\u0027m for reordering (refactoring in general) just not lumped with other changes)",
+      "fixSuggestions": [
+        {
+          "fixId": "35d6a305_5115027d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 467,
+                "startChar": 0,
+                "endLine": 474,
+                "endChar": 0
+              },
+              "replacement": "    Authenticator.get().authenticate(ret)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "a484c3f4a7077d647ce3ce1a34ffbf785145a1e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

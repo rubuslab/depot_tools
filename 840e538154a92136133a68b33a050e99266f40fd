@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "efe828e4_b9b6ca10",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T01:18:37Z",
+      "side": 0,
+      "message": "nit: I would\u0027ve split this into a separate CL, to minimize mental checking overhead",
+      "range": {
+        "startLine": 240,
+        "startChar": 34,
+        "endLine": 240,
+        "endChar": 38
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f1f2ad08_12f6f150",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 240,
+                "startChar": 0,
+                "endLine": 247,
+                "endChar": 0
+              },
+              "replacement": "            conn.req_headers[\u0027Authorization\u0027] \u003d f\u0027Bearer {a}\u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "840e538154a92136133a68b33a050e99266f40fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

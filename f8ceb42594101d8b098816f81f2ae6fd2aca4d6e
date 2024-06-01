@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "875aa43e_1bdb7883",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:39:16Z",
+      "side": 1,
+      "message": "I\u0027m paranoid that this will break on some bot or something",
+      "revId": "f8ceb42594101d8b098816f81f2ae6fd2aca4d6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "faaf68ad_03ebee40",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2299,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:39:16Z",
+      "side": 1,
+      "message": "Why move this?  The functional change makes me nervous",
+      "revId": "f8ceb42594101d8b098816f81f2ae6fd2aca4d6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "878b8d06_56774266",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2287,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-01T00:25:06Z",
+      "side": 1,
+      "message": "The idea is that the gitcookies logic would be deleted Soon™",
+      "parentUuid": "ac2d53a4_6983804a",
+      "revId": "5709d0c8a49539d2d0122cd2844a9b474f75997d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4f4af894_57d61386",
         "filename": "git_cl.py",
         "patchSetId": 2

@@ -88,6 +88,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "70edd239_99fb42b6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:09:12Z",
+      "side": 1,
+      "message": "I spent too much time comparing the two and honestly IMO I don\u0027t feel there\u0027s a significant difference between the two so I\u0027ll keep the current version it as-is.",
+      "parentUuid": "b0f55441_cf0ef6d4",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 52
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3bb4cf44_22e1c0c6",
@@ -101,6 +125,30 @@
       "writtenOn": "2024-06-05T01:24:09Z",
       "side": 1,
       "message": "At a glance, it looks the same as the following code. Can you help me understand why this is needed?\n\nhttps://github.com/jcgregorio/httplib2/blob/010b4e399c04a199e7ca25995286f3db0337500d/python2/httplib2/socks.py#L153",
+      "range": {
+        "startLine": 62,
+        "startChar": 4,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f71adab5_b0579116",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:09:12Z",
+      "side": 1,
+      "message": "Looks like the problem is using bytes instead of string",
+      "parentUuid": "3bb4cf44_22e1c0c6",
       "range": {
         "startLine": 62,
         "startChar": 4,
@@ -330,6 +378,30 @@
       "writtenOn": "2024-06-05T01:24:09Z",
       "side": 1,
       "message": "nit; I just feel these might be too much detailed info. I wonder if these are necessary background contexts for this class implementation.",
+      "range": {
+        "startLine": 204,
+        "startChar": 4,
+        "endLine": 206,
+        "endChar": 50
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07a620e2_205cf470",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:09:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dfab7ae_95288d08",
       "range": {
         "startLine": 204,
         "startChar": 4,

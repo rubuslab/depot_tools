@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa1ccc3f_04445da1",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5362afdb_0f2dea1d",
+      "range": {
+        "startLine": 46,
+        "startChar": 43,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b0f55441_cf0ef6d4",
@@ -128,6 +152,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "884a528b_ee755aa2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6de7e84f_10df9f5e",
+      "range": {
+        "startLine": 79,
+        "startChar": 73,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cb70c8d_2b71bf13",
@@ -141,6 +189,30 @@
       "writtenOn": "2024-06-05T00:33:43Z",
       "side": 1,
       "message": "could you also add tests for this?",
+      "range": {
+        "startLine": 199,
+        "startChar": 6,
+        "endLine": 199,
+        "endChar": 22
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9132c8ef_5dd7c19d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "For which part?  IMO the implementation is extremely stateful which makes it unsuitable for useful unit tests.  Integration tests are hard since it depends on the sso helper.  And I\u0027m against heavily mocked tests; they do more harm than good.",
+      "parentUuid": "2cb70c8d_2b71bf13",
       "range": {
         "startLine": 199,
         "startChar": 6,
@@ -174,6 +246,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69617432_7a355699",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65fcdbc1_ce7d6e45",
+      "range": {
+        "startLine": 200,
+        "startChar": 7,
+        "endLine": 201,
+        "endChar": 68
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09fdbad3_a038ed30",
@@ -187,6 +283,30 @@
       "writtenOn": "2024-06-05T01:24:09Z",
       "side": 1,
       "message": "nit; the AI claims that the preferred and most widely accepted spelling is \"publicly.\"",
+      "range": {
+        "startLine": 203,
+        "startChar": 34,
+        "endLine": 203,
+        "endChar": 44
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7ab0985_3145137b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09fdbad3_a038ed30",
       "range": {
         "startLine": 203,
         "startChar": 34,
@@ -215,6 +335,29 @@
         "startChar": 4,
         "endLine": 206,
         "endChar": 50
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e64eb0a_4662d258",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:48:57Z",
+      "side": 1,
+      "message": "eh, do people use this?",
+      "range": {
+        "startLine": 216,
+        "startChar": 22,
+        "endLine": 216,
+        "endChar": 29
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

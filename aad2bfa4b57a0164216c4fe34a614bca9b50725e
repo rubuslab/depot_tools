@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbad21c1_e26e7d0d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-05T23:28:05Z",
+      "side": 1,
+      "message": "Removing myself from the R\u003d tag",
+      "revId": "aad2bfa4b57a0164216c4fe34a614bca9b50725e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

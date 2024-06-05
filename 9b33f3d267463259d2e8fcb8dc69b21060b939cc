@@ -384,6 +384,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7952fda_3456637c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T22:52:12Z",
+      "side": 1,
+      "message": "Looks like it only supports synchronous timeout?",
+      "parentUuid": "11ff5e1d_33580049",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

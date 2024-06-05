@@ -16,6 +16,23 @@
       "message": "Very good service",
       "revId": "a52cc055e492e4ec01460b7aba66f495efc4034a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f20df1d0_565404d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3234993
+      },
+      "writtenOn": "2024-06-05T06:52:54Z",
+      "side": 1,
+      "message": "Very good service",
+      "revId": "a52cc055e492e4ec01460b7aba66f495efc4034a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

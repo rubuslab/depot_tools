@@ -33,6 +33,24 @@
       "message": "Since autoninja is one of the first commands we expect users to run, can we ask users to export PYTHONDONTWRITEBYTECODE\u003d1 or set PYTHONPYCACHEPREFIX when we detect we\u0027re in /google/cog?\n\nIf we fix this for the build but people can still write pyc files for manual commands after and we still have a problem.",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba53e1a7_268b031b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2024-06-05T18:26:45Z",
+      "side": 1,
+      "message": "Unresolving. Also would be good to add a comment in the code similar to the commit message to explain the reasoning.",
+      "parentUuid": "03124139_d5d94a53",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

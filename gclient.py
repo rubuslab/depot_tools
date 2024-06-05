@@ -3252,6 +3252,52 @@ class Flattener(object):
             if d.should_recurse:
                 self._flatten_dep(d)
 
+def CMDdepsforcond(parser, args):
+    parser.add_option(
+        '--deps-file',
+        default='DEPS',
+        # TODO(ehmaldonado): Try to find the DEPS file pointed by
+        # .gclient first.
+        help='The DEPS file to be edited. Defaults to the DEPS '
+        'file in the current directory.')
+    (options, args) = parser.parse_args(args)
+
+    if not os.path.isfile(options.deps_file):
+        raise gclient_utils.Error('DEPS file %s does not exist.' %
+                                  options.deps_file)
+    with open(options.deps_file) as f:
+        contents = f.read()
+
+    client = GClient.LoadCurrentConfig(options)
+    if client is not None:
+        builtin_vars = client.get_builtin_vars()
+    else:
+        logging.warning(
+            'Couldn\'t find a valid gclient config. Will attempt to parse the DEPS '
+            'file without support for built-in variables.')
+        builtin_vars = None
+
+    depsforcond = set()
+
+    local_scope = gclient_eval.Exec(contents, options.deps_file, builtin_vars=builtin_vars)
+    deps = local_scope['deps']
+    #import pdb; pdb.set_trace()
+    for path, dep in deps.items():
+        if isinstance(dep, str):
+            continue
+        if dep.get('dep_type', '') == 'cipd':
+            if 'non_git_source' in dep.get('condition', ''):
+                depsforcond.add(path)
+        elif dep.get('dep_type', '') == 'gcs':
+            if 'non_git_source' in dep.get('condition', ''):
+                depsforcond.add(path)
+                continue
+            for obj in dep.get('objects'):
+                if 'non_git_source' in obj.get('condition', ''):
+                    depsforcond.add(path)
+                    continue
+    return ",".join([d.removeprefix('src/') for d in depsforcond])
+
 
 @metrics.collector.collect_metrics('gclient gitmodules')
 def CMDgitmodules(parser, args):

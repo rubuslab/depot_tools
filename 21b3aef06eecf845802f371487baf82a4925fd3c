@@ -51,6 +51,42 @@
       "parentUuid": "03124139_d5d94a53",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "624b131f_14492e04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1516592
+      },
+      "writtenOn": "2024-06-05T19:31:59Z",
+      "side": 1,
+      "message": "This is also a valid concern imo. If you run something like `bootstrap_env` from a non-Cog copy of depot tools on a dev\u0027s host machine, you may be able to avoid this issue. (Idk about browser, but OS devs install a copy of `depot_tools` outside the source checkout and add that to the host machine\u0027s path; see [this part of the developer guide](https://www.chromium.org/chromium-os/developer-library/guides/development/developer-guide/#install-depot_tools).)",
+      "parentUuid": "39c5fab3_b58dd7a0",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7d322bc_52bc918a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1516592
+      },
+      "writtenOn": "2024-06-05T19:31:59Z",
+      "side": 1,
+      "message": "This is the behavior I\u0027d expect as well. CrOS uses wrappers in depot_tools that call `os.exec` or some variant, which is why we\u0027ve been able to set these env vars in our wrappers. I\u0027d expect this to be ineffective without a similar pattern, and it looks like you\u0027re importing `ninja` modules and calling `ninja.main()` directly, so I suspect this won\u0027t WAI.",
+      "parentUuid": "ba53e1a7_268b031b",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

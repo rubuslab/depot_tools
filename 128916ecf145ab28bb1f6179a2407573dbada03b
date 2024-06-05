@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "919d7c87_68f904ee",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "These \"errors\" are part of an expected control flow so they print a bunch of errors confusing the user.  We already raise errors here so whoever catches then should decide whether to log the errors or not.",
+      "parentUuid": "1969ef26_96009424",
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "155400af_fb158444",
@@ -130,6 +148,54 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c89cab2_c5dfcacb",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "bf852327_07ecbd0c",
+      "range": {
+        "startLine": 180,
+        "startChar": 59,
+        "endLine": 180,
+        "endChar": 65
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cec72278_0c98aeb2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "155400af_fb158444",
+      "range": {
+        "startLine": 180,
+        "startChar": 26,
+        "endLine": 180,
+        "endChar": 36
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee978011_996ac200",
@@ -143,6 +209,30 @@
       "writtenOn": "2024-06-05T21:46:30Z",
       "side": 1,
       "message": "nit: why not evaluate `new-auth-skip-sso` here? i.e. something like\n\n```\nif use_new_auth:\n  LOGGER.debug(\u0027Authenticator.get: using new-auth-stack.\u0027)\n  authenticators \u003d [\n    SSOAuthenticator,\n    LuciContextAuthenticator,\n    GceAuthenticator,\n    LuciAuthAuthenticator,\n  ]\n  if use_new_auth_skip_sso:\n    authenticators \u003d authenticators[1:]\n ```",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 13
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "454173bf_ad530264",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee978011_996ac200",
       "range": {
         "startLine": 183,
         "startChar": 0,
@@ -176,6 +266,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a94aa386_384e9c05",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "65cca621_04de4788",
+      "range": {
+        "startLine": 266,
+        "startChar": 34,
+        "endLine": 266,
+        "endChar": 45
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "edf959a2_5338ed0d",
@@ -189,6 +303,30 @@
       "writtenOn": "2024-06-01T00:48:26Z",
       "side": 1,
       "message": "s/Skip/Skipping",
+      "range": {
+        "startLine": 269,
+        "startChar": 35,
+        "endLine": 269,
+        "endChar": 39
+      },
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84e2b71c_dcb41417",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-05T23:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "edf959a2_5338ed0d",
       "range": {
         "startLine": 269,
         "startChar": 35,

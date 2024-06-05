@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1969ef26_96009424",
+        "filename": "auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-05T21:46:30Z",
+      "side": 1,
+      "message": "why these become debug level logging?",
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "155400af_fb158444",
         "filename": "gerrit_util.py",
         "patchSetId": 7
@@ -109,6 +126,29 @@
           ]
         }
       ],
+      "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee978011_996ac200",
+        "filename": "gerrit_util.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-05T21:46:30Z",
+      "side": 1,
+      "message": "nit: why not evaluate `new-auth-skip-sso` here? i.e. something like\n\n```\nif use_new_auth:\n  LOGGER.debug(\u0027Authenticator.get: using new-auth-stack.\u0027)\n  authenticators \u003d [\n    SSOAuthenticator,\n    LuciContextAuthenticator,\n    GceAuthenticator,\n    LuciAuthAuthenticator,\n  ]\n  if use_new_auth_skip_sso:\n    authenticators \u003d authenticators[1:]\n ```",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 13
+      },
       "revId": "128916ecf145ab28bb1f6179a2407573dbada03b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

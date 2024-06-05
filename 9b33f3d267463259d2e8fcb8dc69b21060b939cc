@@ -3,6 +3,116 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5362afdb_0f2dea1d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "its",
+      "range": {
+        "startLine": 46,
+        "startChar": 43,
+        "endLine": 46,
+        "endChar": 47
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0f55441_cf0ef6d4",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "I would reorder a bit.\n\n```\n# HACK: httplib2 has significant bugs with its proxy support in python3.\n# httplib2.socks.socksocket.__rewriteproxy does not properly expect bytes\n# as it\u0027s argument instead of str. It\u0027s also inherently buggy, as it ...\n#\n# httplib2 code should be rewritten to just use python stdlib  ...\n# Until the rewrite happens, we will directly patch the buggy\n# implementation ...\n```",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 52
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bb4cf44_22e1c0c6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "At a glance, it looks the same as the following code. Can you help me understand why this is needed?\n\nhttps://github.com/jcgregorio/httplib2/blob/010b4e399c04a199e7ca25995286f3db0337500d/python2/httplib2/socks.py#L153",
+      "range": {
+        "startLine": 62,
+        "startChar": 4,
+        "endLine": 62,
+        "endChar": 25
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6de7e84f_10df9f5e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "this indent style looks a bit unusual. please consider the AI generated (or anything else) style",
+      "range": {
+        "startLine": 79,
+        "startChar": 73,
+        "endLine": 80,
+        "endChar": 18
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c300c1b8_d6afbb4b",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 79,
+                "startChar": 0,
+                "endLine": 81,
+                "endChar": 0
+              },
+              "replacement": "        if (self._socksocket__proxy[4] !\u003d None and\n                self._socksocket__proxy[5] !\u003d None):\n"
+            }
+          ]
+        }
+      ],
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2cb70c8d_2b71bf13",
         "filename": "gerrit_util.py",
         "patchSetId": 23
@@ -19,6 +129,98 @@
         "startChar": 6,
         "endLine": 199,
         "endChar": 22
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65fcdbc1_ce7d6e45",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be a one line?",
+      "range": {
+        "startLine": 200,
+        "startChar": 7,
+        "endLine": 201,
+        "endChar": 68
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09fdbad3_a038ed30",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "nit; the AI claims that the preferred and most widely accepted spelling is \"publicly.\"",
+      "range": {
+        "startLine": 203,
+        "startChar": 34,
+        "endLine": 203,
+        "endChar": 44
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4dfab7ae_95288d08",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "nit; I just feel these might be too much detailed info. I wonder if these are necessary background contexts for this class implementation.",
+      "range": {
+        "startLine": 204,
+        "startChar": 4,
+        "endLine": 206,
+        "endChar": 50
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11ff5e1d_33580049",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T01:24:09Z",
+      "side": 1,
+      "message": "subprocess2 supports timeout 😊\nhttps://github.com/kata198/python-subprocess2?tab\u003dreadme-ov-file#popen\n\n```\nwith subprocess.Popen(...) as proc:\n  try:\n    result \u003d subprocess2.waitOrTerminate(proc, timeout_seconds)\n    if result.returncode \u003d\u003d 0:\n      ret \u003d CLs._parse_config(result.stdout.decode(\"utf-8\")\n    else:\n      ...(failed)...\n  except subprocess2.TimeoutExpired:\n    ...\n```",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

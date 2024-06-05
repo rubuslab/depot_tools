@@ -87,6 +87,42 @@
       "parentUuid": "ba53e1a7_268b031b",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c3f81ef_d44c66de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2024-06-05T20:02:38Z",
+      "side": 1,
+      "message": "If this blocks use of autoninja, it\u0027s good for people who are immediately going to use other python scripts, but a hassle for (the majority of, I suspect) people who only use autoninja. However, without Erik\u0027s idea, (correct me if I\u0027m wrong) every python script in the repo would need a wrapper, due to the chicken/egg problem we\u0027re discussing in the other thread, right?",
+      "parentUuid": "624b131f_14492e04",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "548a3e00_c0c56088",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2024-06-05T20:02:38Z",
+      "side": 1,
+      "message": "This CL is still a good stepping stone to land imo. Less pyc files is better than tons of pyc files.",
+      "parentUuid": "d7d322bc_52bc918a",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -16,6 +16,23 @@
       "message": "Will this work, because this is itself a python script. I\u0027m guessing python will read the env and make its decision about whether or not to write bytecode before the env changes in this script take place.",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39c5fab3_b58dd7a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2024-06-05T17:16:34Z",
+      "side": 1,
+      "message": "Since autoninja is one of the first commands we expect users to run, can we ask users to export PYTHONDONTWRITEBYTECODE\u003d1 or set PYTHONPYCACHEPREFIX when we detect we\u0027re in /google/cog?\n\nIf we fix this for the build but people can still write pyc files for manual commands after and we still have a problem.",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

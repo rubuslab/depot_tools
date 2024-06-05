@@ -480,6 +480,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "72e2545d_ec5871f5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-05T23:28:29Z",
+      "side": 1,
+      "message": "Can you elaborate more? In the existing code, the python process would be blocked at `proce.stdout.read()` until the popen process terminates (or closes the stdout pipe)\n\nIn other words, the python wouldn\u0027t do anything else other than monitoring the timeout while the spawned process is running. What do you mean by synchronous timeout?",
+      "parentUuid": "f7952fda_3456637c",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

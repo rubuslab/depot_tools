@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4fd22f1_9e88b41a",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2349,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-05T22:03:44Z",
+      "side": 0,
+      "message": "It looks like a regression that the cookies user is no longer checked?",
+      "range": {
+        "startLine": 2345,
+        "startChar": 3,
+        "endLine": 2349,
+        "endChar": 74
+      },
+      "revId": "f8ceb42594101d8b098816f81f2ae6fd2aca4d6e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

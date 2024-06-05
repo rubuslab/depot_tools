@@ -207,6 +207,10 @@ def _gn_lines(output_dir, path):
 
 
 def main(args):
+    # if user doesn't set PYTHONPYCACHEPREFIX and PYTHONDONTWRITEBYTECODE
+    # set PYTHONDONTWRITEBYTECODE=1
+    if not os.environ.get("PYTHONPYCACHEPREFIX"):
+        os.environ.setdefault("PYTHONDONTWRITEBYTECODE", "1")
     # The -t tools are incompatible with -j
     t_specified = False
     j_specified = False

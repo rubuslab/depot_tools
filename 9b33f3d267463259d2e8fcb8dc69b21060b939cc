@@ -504,6 +504,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f11d931_80cdff66",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-06T01:15:44Z",
+      "side": 1,
+      "message": "The output needs to be read and processed before the process terminates.\n\ntl;dr the process writes a file and prints the path to stdout, then deletes the file when it exits.  We need to read the file path and parse the file while the process has not exited.",
+      "parentUuid": "72e2545d_ec5871f5",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

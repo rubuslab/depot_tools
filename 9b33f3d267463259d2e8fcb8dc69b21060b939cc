@@ -507,6 +507,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ecba995b_4ea5d7f3",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-06T23:27:22Z",
+      "side": 1,
+      "message": "Thanks for looking closely at async issues.\n\n\u003e L328 will falsely treat it as timeout.\n\nI think this is acceptable.  We can just treat it as if proc.stdout.read() timed out.\n\n\u003e  it can possibly suffer from memory fence issue\n\nIIUC, you\u0027re talking about if the timeout fires, we successfully parse the config, and we read `timedout \u003d\u003d False` due to no memory fence?  IMO this is also not an issue.\n\nIn the event of timeout+success race, it is okay to resolve in either direction, as long as the end state is consistent (either we raise an error OR return the config).  It is fine if we raise an error even if we successfully parsed the config, as long as we don\u0027t return the config\n\n(or if I misunderstood the issue lmk)",
+      "parentUuid": "ed5e47c6_df6cfe23",
+      "range": {
+        "startLine": 324,
+        "startChar": 20,
+        "endLine": 324,
+        "endChar": 63
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11ff5e1d_33580049",
         "filename": "gerrit_util.py",
         "patchSetId": 23

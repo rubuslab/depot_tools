@@ -600,6 +600,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39df391a_7618f8d5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T02:02:22Z",
+      "side": 1,
+      "message": "let me correct myself. If it closes stdout, then read() will return immediately and this python process wouldn\u0027t wait for the command to finish. Still, this is not a usual behaviour, and this code should explain about it. A link to the reasoning behind would be helpful. For instance, this will likely leave the process running behind, but it will close the stdout. (I believe it should document the reason of the behaviour, if so)",
+      "parentUuid": "5c7af940_caad1de2",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

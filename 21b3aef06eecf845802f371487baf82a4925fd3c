@@ -195,6 +195,24 @@
       "parentUuid": "156873d5_fdcada86",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88cd7d2c_5f15fd9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-06T15:56:16Z",
+      "side": 1,
+      "message": "If we are concerns about misc scripts, we can require setting this envvar as part of the onboarding process. Alternatives are handling it at some higher level, but not as high as rc files.",
+      "parentUuid": "56a672d3_ade50374",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

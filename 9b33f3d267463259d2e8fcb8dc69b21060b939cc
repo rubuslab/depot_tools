@@ -458,6 +458,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "67eca087_646a128e",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-06T23:12:37Z",
+      "side": 1,
+      "message": "Please see latest patchset (and comment if you\u0027re still unsatisfied).",
+      "parentUuid": "ae5580bc_aa525d4f",
+      "range": {
+        "startLine": 307,
+        "startChar": 12,
+        "endLine": 308,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ed5e47c6_df6cfe23",

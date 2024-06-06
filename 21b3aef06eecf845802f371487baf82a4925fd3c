@@ -213,6 +213,24 @@
       "parentUuid": "56a672d3_ade50374",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25a64492_49ac5aca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1377971
+      },
+      "writtenOn": "2024-06-06T17:38:09Z",
+      "side": 1,
+      "message": "Our extension doesn\u0027t get the user\u0027s .bashrc/.zshrc-augmented $PATH, as it doesn\u0027t execute commands in a shell.",
+      "parentUuid": "88cd7d2c_5f15fd9f",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

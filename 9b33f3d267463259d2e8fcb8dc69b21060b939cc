@@ -718,6 +718,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc21ee5d_50d62a5d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-06T23:11:22Z",
+      "side": 1,
+      "message": "\u003e I\u0027m not sure if we are on the same page. Please help me find where the comments are, explaining the following.\n\u003e - git-sso-remote closes the stdout without terminating.\n\n```\n            # 2. writes config to stdout, and closes stdout\n            # 3. waits for stdin to be closed\n```\n\n\u003e - gclient kills the spawned process only if it takes \u003e 5 secs.\n\nThis is in the code, I don\u0027t think we really need a comment for it?\n\n\u003e - the process would continue running, but it will probably exit by itself when the gclient main process terminates.\n\nIt doesn\u0027t?  Are you looking at an old patchset (or if you spotted a bug please point it out)\n\n\u003e - closing stdout without terminating is the behaviour of git-sso-remote.\n\n```\n            # 2. writes config to stdout, and closes stdout\n            # 3. waits for stdin to be closed\n```",
+      "parentUuid": "322850bd_68cfeb76",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

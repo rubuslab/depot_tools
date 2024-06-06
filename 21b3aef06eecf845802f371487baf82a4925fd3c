@@ -159,6 +159,24 @@
       "parentUuid": "548a3e00_c0c56088",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "156873d5_fdcada86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2024-06-06T03:59:37Z",
+      "side": 1,
+      "message": "ukai:\nThis CL will only export PYTHONDONTWRITEBYTECODE for the autoninja process and child processes and once autoninja exits their shell won\u0027t have it. I\u0027m not sure what your question is, though.\n\nguterman:\nMaybe it can be a warning in red as the last output line of autoninja execution?\n\nzland:\nWe also ask people to install depot_tools in $HOME and add it to their $PATH. I don\u0027t know what bootstrap_env is though; is that something you already run or a hypothetical?",
+      "parentUuid": "7e2cf253_99f94624",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

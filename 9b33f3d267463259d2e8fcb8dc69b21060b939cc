@@ -576,6 +576,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c7af940_caad1de2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T01:57:41Z",
+      "side": 1,
+      "message": "do you have a link? Or, it was said in chat or in-person, can you share the reason?\n\nIt doesn\u0027t sound right to me. It will always keep the process for 5 secs and kill the process by SIGKILL. It will make the execution command run for 5 secs, even if git-remote-sso prints the output in 0.5s.",
+      "parentUuid": "a7dc0f3d_faaf75f2",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

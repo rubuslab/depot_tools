@@ -123,6 +123,42 @@
       "parentUuid": "d7d322bc_52bc918a",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e2cf253_99f94624",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-06T00:13:12Z",
+      "side": 1,
+      "message": "which will do this\u003e when we detect we\u0027re in /google/cog\n?",
+      "parentUuid": "6c3f81ef_d44c66de",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e26ac43f_09cde8ff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-06T00:13:12Z",
+      "side": 1,
+      "message": "note: autoninja.py in depot_tools, and I don\u0027t see any autoninja.pyc in depot_tools?",
+      "parentUuid": "548a3e00_c0c56088",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

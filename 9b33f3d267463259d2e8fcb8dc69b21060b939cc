@@ -437,6 +437,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ae5580bc_aa525d4f",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T22:23:59Z",
+      "side": 1,
+      "message": "This misleads audiences, and possibly incorrect information.\n\n1. Based on the behaviour explained in another comment, git-remote-sso will close its stdout without existing. i.e., it may or may not exit by itself.\n2. L326 cancels the timer.\n3. In other words, the killing happens only if it takes \u003e 5 secs to run the command, get the output, and parse the output.\n\nHowever, the comment sounds like it will parse stdout and consume the cookfile in the case of timeout, as killing the process is only performed in case of timeout.",
+      "range": {
+        "startLine": 307,
+        "startChar": 12,
+        "endLine": 308,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed5e47c6_df6cfe23",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T22:23:59Z",
+      "side": 1,
+      "message": "Technically, this is racy and should use a lock to protect access to `timedout`.\nFor example, let\u0027s say that\n- proc.stdout.read() took 4 secs\n- CLs._parse_config() took 2 secs\n\nAlthough the command succeeded, the timer will send SIGKILL to the process while CLs._parse_config() is called, and L328 will falsely treat it as timeout. Also, it can possibly suffer from memory fence issue. Upon searches, cpython can also have memory fence issues.  in short, this should use mutex to protect access to `timedout`.",
+      "range": {
+        "startLine": 324,
+        "startChar": 20,
+        "endLine": 324,
+        "endChar": 63
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11ff5e1d_33580049",
         "filename": "gerrit_util.py",
         "patchSetId": 23
@@ -640,6 +686,30 @@
       "side": 1,
       "message": "ack, the implementation wasn\u0027t entirely complete so I\u0027ve fixed it.  The wonky behavior still stands however.  The existing comment explains it IMO but I\u0027ve expanded that as well, ptal",
       "parentUuid": "39df391a_7618f8d5",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "322850bd_68cfeb76",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T22:23:59Z",
+      "side": 1,
+      "message": "I\u0027m not sure if we are on the same page. Please help me find where the comments are, explaining the following.\n- git-sso-remote closes the stdout without terminating.\n- gclient kills the spawned process only if it takes \u003e 5 secs.\n- the process would continue running, but it will probably exit by itself when the gclient main process terminates.\n- closing stdout without terminating is the behaviour of git-sso-remote.",
+      "parentUuid": "92a113d0_ab19d8cb",
       "range": {
         "startLine": 309,
         "startChar": 12,

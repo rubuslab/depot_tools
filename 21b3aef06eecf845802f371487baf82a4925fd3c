@@ -231,6 +231,24 @@
       "parentUuid": "88cd7d2c_5f15fd9f",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "656b5de9_fd9dbcc1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1128941
+      },
+      "writtenOn": "2024-06-06T19:53:07Z",
+      "side": 1,
+      "message": "\u003e This CL is just for build process (i.e. autoninja), not solution for all.\n\nI understand, but there is also a thread about solving this for non-build scripts so I wanted to discuss that also since autoninja is a good place to communicate with users. Let me defer that for now and just review this as it relates to the build.",
+      "parentUuid": "25a64492_49ac5aca",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

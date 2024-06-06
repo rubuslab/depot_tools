@@ -177,6 +177,24 @@
       "parentUuid": "7e2cf253_99f94624",
       "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56a672d3_ade50374",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-06T04:01:31Z",
+      "side": 1,
+      "message": "you said \"can we ask users to export PYTHONDONTWRITEBYTECODE\u003d1 or set PYTHONPYCACHEPREFIX when we detect we\u0027re in /google/cog?\"\n\nwhat do you mean \"when we detect\" here?\nThis CL is just for build process (i.e. autoninja), not solution for all.",
+      "parentUuid": "156873d5_fdcada86",
+      "revId": "21b3aef06eecf845802f371487baf82a4925fd3c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

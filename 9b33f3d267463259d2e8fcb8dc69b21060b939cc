@@ -528,6 +528,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25bef8bd_34df5e9d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-06T01:24:00Z",
+      "side": 1,
+      "message": "proc.stdout.read() blocks until EOF. If the intent is to read and process the stream before the command terminates (or closed the stdout pipe), then you need to specify bytes or use different functions.",
+      "parentUuid": "2f11d931_80cdff66",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

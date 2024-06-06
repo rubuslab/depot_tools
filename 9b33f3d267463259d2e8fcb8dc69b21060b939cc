@@ -624,6 +624,30 @@
       },
       "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92a113d0_ab19d8cb",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-06T21:45:22Z",
+      "side": 1,
+      "message": "ack, the implementation wasn\u0027t entirely complete so I\u0027ve fixed it.  The wonky behavior still stands however.  The existing comment explains it IMO but I\u0027ve expanded that as well, ptal",
+      "parentUuid": "39df391a_7618f8d5",
+      "range": {
+        "startLine": 309,
+        "startChar": 12,
+        "endLine": 326,
+        "endChar": 34
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

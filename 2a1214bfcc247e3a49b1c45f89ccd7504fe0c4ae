@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b276f58_808631b5",
+        "filename": ".gitignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-06-07T07:57:04Z",
+      "side": 1,
+      "message": "`for each depot_tools checkout` or drop it.",
+      "range": {
+        "startLine": 87,
+        "startChar": 28,
+        "endLine": 87,
+        "endChar": 55
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d82b7f5_70ab4803",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-06-07T07:57:04Z",
+      "side": 1,
+      "message": "Discussed offline: \nThis config location change isn\u0027t necessary for Mac and Win. So we can limit it to Linux only for now.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

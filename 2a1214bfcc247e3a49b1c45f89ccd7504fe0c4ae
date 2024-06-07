@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d697a9d_6dead148",
+        "filename": ".gitignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-07T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b276f58_808631b5",
+      "range": {
+        "startLine": 87,
+        "startChar": 28,
+        "endLine": 87,
+        "endChar": 55
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9e4544c1_83c82041",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "647b2a34_68e4524e",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-07T09:30:25Z",
+      "side": 1,
+      "message": "CL scope reduced to linux only.",
+      "parentUuid": "9e4544c1_83c82041",
+      "range": {
+        "startLine": 35,
+        "startChar": 22,
+        "endLine": 35,
+        "endChar": 42
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6d82b7f5_70ab4803",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-06-07T07:57:04Z",
       "side": 1,
       "message": "Discussed offline: \nThis config location change isn\u0027t necessary for Mac and Win. So we can limit it to Linux only for now.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 9
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a625fc7_151ac367",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-07T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d82b7f5_70ab4803",
       "range": {
         "startLine": 34,
         "startChar": 0,
@@ -125,6 +197,30 @@
       "side": 1,
       "message": "I initially thought it\u0027s useful to keep the old config for depot_tools rollback use case. But I have never done that before. \nSo the only use case of retaining the old file would be to revert this CL itself.",
       "parentUuid": "d4d289db_8267acc9",
+      "range": {
+        "startLine": 53,
+        "startChar": 19,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d11c7f38_0a7ab57b",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-07T09:30:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34dd9734_ef082168",
       "range": {
         "startLine": 53,
         "startChar": 19,

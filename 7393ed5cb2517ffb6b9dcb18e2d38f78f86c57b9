@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1345bcc4_d20538dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-07T09:30:25Z",
+      "side": 1,
+      "message": "PTAL, CL scope has been reduced to linux only per https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5604606/comment/6d82b7f5_70ab4803/",
+      "revId": "7393ed5cb2517ffb6b9dcb18e2d38f78f86c57b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

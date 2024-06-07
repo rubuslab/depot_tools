@@ -84,13 +84,13 @@ testing_support/google_appengine
 *~
 *.swp
 
-# Ignore the monitoring config. It is unique for each user.
+# Legacy monitoring config. It is unique for each user.
 /metrics.cfg
 
-# Ignore the ninjalog upload config.
+# Legacy ninjalog upload config.
 /ninjalog.cfg
 
-# Ignore reclient metrics upload config.
+# Legacy reclient metrics upload config.
 /reclient_metrics.cfg
 
 # Ignore git traces produced by git push on git-cl upload.

@@ -16,6 +16,24 @@
       "message": "Just to be clear, we never want build steps to write bytecode going forward? Do we have any concerns about incremental build performance?\n\nShould we check and enforce this at the siso level also?",
       "revId": "4833c0c2bcabe9778f52946b1ca495c01aef21a2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00dbbad9_e671cea8",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-07T00:59:12Z",
+      "side": 1,
+      "message": "we never want build step to write bytecode in workspace.\nuser can set PYTHONPYCACHEPREFIX to outside of workspace if they want to write bytecode for performance.",
+      "parentUuid": "e3d7d2e6_369a716f",
+      "revId": "4833c0c2bcabe9778f52946b1ca495c01aef21a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

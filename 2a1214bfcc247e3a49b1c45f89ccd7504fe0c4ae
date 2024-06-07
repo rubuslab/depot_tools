@@ -109,6 +109,30 @@
       ],
       "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34dd9734_ef082168",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-06-07T08:09:52Z",
+      "side": 1,
+      "message": "I initially thought it\u0027s useful to keep the old config for depot_tools rollback use case. But I have never done that before. \nSo the only use case of retaining the old file would be to revert this CL itself.",
+      "parentUuid": "d4d289db_8267acc9",
+      "range": {
+        "startLine": 53,
+        "startChar": 19,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

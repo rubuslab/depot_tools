@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e4544c1_83c82041",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-06-07T07:58:07Z",
+      "side": 1,
+      "message": "Should we catch if this returns None (it \"should\" always be set, but on the other hand... it\u0027s Windows ;)) and throw a more user-friendly exception? It will otherwise crash with this message in the next line:\n\n```\n\u003e\u003e\u003e import os.path\n\u003e\u003e\u003e os.path.join(None, \"depot_tools\")\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  File \"\u003cfrozen posixpath\u003e\", line 76, in join\nTypeError: expected str, bytes or os.PathLike object, not NoneType\n```",
+      "range": {
+        "startLine": 35,
+        "startChar": 22,
+        "endLine": 35,
+        "endChar": 42
+      },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6d82b7f5_70ab4803",
         "filename": "utils.py",
         "patchSetId": 5
@@ -43,6 +66,47 @@
         "endLine": 36,
         "endChar": 9
       },
+      "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4d289db_8267acc9",
+        "filename": "utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-06-07T07:58:07Z",
+      "side": 1,
+      "message": "Copy.. or move? Might be more confusing if we leave an old version behind that\u0027s not actually used anymore (imagine someone trying to find out why metrics collection isn\u0027t working even though the config file in depot_tools looks totally fine)",
+      "range": {
+        "startLine": 53,
+        "startChar": 19,
+        "endLine": 53,
+        "endChar": 24
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c265c22a_8618d933",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "utils.py",
+              "range": {
+                "startLine": 53,
+                "startChar": 0,
+                "endLine": 54,
+                "endChar": 0
+              },
+              "replacement": "            shutil.move(legacy_path, expected_path)\n"
+            }
+          ]
+        }
+      ],
       "revId": "2a1214bfcc247e3a49b1c45f89ccd7504fe0c4ae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

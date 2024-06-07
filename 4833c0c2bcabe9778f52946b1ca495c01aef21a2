@@ -34,6 +34,24 @@
       "parentUuid": "e3d7d2e6_369a716f",
       "revId": "4833c0c2bcabe9778f52946b1ca495c01aef21a2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da55263f_37493d91",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-07T01:02:51Z",
+      "side": 1,
+      "message": "siso\u0027s fix: https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5606824",
+      "parentUuid": "00dbbad9_e671cea8",
+      "revId": "4833c0c2bcabe9778f52946b1ca495c01aef21a2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

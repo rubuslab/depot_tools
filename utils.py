@@ -3,7 +3,11 @@
 # found in the LICENSE file.
 
 import os
+import pathlib
 import subprocess
+import sys
+
+DEPOT_TOOLS = os.path.dirname(os.path.abspath(__file__))
 
 
 def depot_tools_version():
@@ -23,3 +27,29 @@ def depot_tools_version():
         return 'recipes.cfg-%d' % (mtime)
     except Exception:
         return 'unknown'
+
+
+def depot_tools_config_dir():
+    # Use current directory for mac, windows.
+    if not sys.platform.startswith('linux'):
+        return os.path.dirname(__file__)
+
+    # Use $XDG_CONFIG_HOME/depot_tools or $HOME/.config/depot_tools on linux.
+    config_root = os.getenv('XDG_CONFIG_HOME', os.path.expanduser('~/.config'))
+    return os.path.join(config_root, 'depot_tools')
+
+
+def depot_tools_config_path(file):
+    config_dir = depot_tools_config_dir()
+    expected_path = os.path.join(config_dir, file)
+
+    # Silently create config dir if necessary.
+    pathlib.Path(config_dir).mkdir(parents=True, exist_ok=True)
+
+    # Silently migrate cfg from legacy path if it exists.
+    if not os.path.isfile(expected_path):
+        legacy_path = os.path.join(DEPOT_TOOLS, file)
+        if os.path.isfile(legacy_path):
+            os.rename(legacy_path, expected_path)
+
+    return expected_path

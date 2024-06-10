@@ -646,11 +646,10 @@ def _ComputeFormatDiffLineRanges(files, upstream_commit, expand=0):
         return {}
 
     # Take the git diff and find the line ranges where there are changes.
-    diff_cmd = BuildGitDiffCmd(['-U0'],
-                               upstream_commit,
-                               files,
-                               allow_prefix=True)
-    diff_output = RunGit(diff_cmd)
+    diff_output = RunGitDiffCmd(['-U0'],
+                                upstream_commit,
+                                files,
+                                allow_prefix=True)
 
     pattern = r'(?:^diff --git a/(?:.*) b/(.*))|(?:^@@.*\+(.*) @@)'
     # 2 capture groups
@@ -2319,7 +2318,7 @@ class Changelist(object):
             if not force:
                 confirm_or_exit(msg, action='continue')
         else:
-          DieWithError(msg)
+            DieWithError(msg)
 
     def EnsureCanUploadPatchset(self, force):
         if not self.GetIssue():
@@ -6155,8 +6154,28 @@ def CMDowners(parser, args):
         ignore_author=options.ignore_self).run()
 
 
-def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
-    """Generates a diff command."""
+def _SplitArgsByCmdLineLimit(args):
+    """Splits a list of arguments into shorter lists that fit within the command
+    line limit."""
+    command_line_limit = 30000 if sys.platform.startswith('win32') else 2000000
+
+    batch = []
+    batch_length = 0
+    for arg in args:
+        arg_length = len(arg) + 1
+        if batch_length + arg_length > command_line_limit and batch:
+            yield batch
+            batch = []
+            batch_length = 0
+        batch.append(arg)
+        batch_length += arg_length
+
+    if batch:
+        yield batch
+
+
+def RunGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
+    """Generates and runs diff command."""
     # Generate diff for the current branch's changes.
     diff_cmd = ['-c', 'core.quotePath=false', 'diff', '--no-ext-diff']
 
@@ -6170,14 +6189,18 @@ def BuildGitDiffCmd(diff_type, upstream_commit, args, allow_prefix=False):
     diff_cmd += diff_type
     diff_cmd += [upstream_commit, '--']
 
-    if args:
-        for arg in args:
-            if arg == '-' or os.path.isdir(arg) or os.path.isfile(arg):
-                diff_cmd.append(arg)
-            else:
-                DieWithError('Argument "%s" is not a file or a directory' % arg)
+    if not args:
+        return RunGit(diff_cmd)
 
-    return diff_cmd
+    output = ''
+    for args_batch in _SplitArgsByCmdLineLimit(args):
+        for arg in args_batch:
+            if arg != '-' and not os.path.isdir(arg) and not os.path.isfile(
+                    arg):
+                DieWithError('Argument "%s" is not a file or a directory' % arg)
+        output += RunGit(diff_cmd + args_batch)
+
+    return output
 
 
 def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
@@ -6221,8 +6244,7 @@ def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
         if not opts.dry_run and not opts.diff:
             cmd.append('-i')
 
-        diff_cmd = BuildGitDiffCmd(['-U0'], upstream_commit, clang_diff_files)
-        diff_output = RunGit(diff_cmd).encode('utf-8')
+        diff_output = RunGitDiffCmd(['-U0'], upstream_commit, clang_diff_files)
 
         env = os.environ.copy()
         env['PATH'] = (str(os.path.dirname(clang_format_tool)) + os.pathsep +
@@ -6232,7 +6254,7 @@ def _RunClangFormatDiff(opts, clang_diff_files, top_dir, upstream_commit):
         # to die with an error if `error_ok` is not set.
         stdout = RunCommand(cmd,
                             error_ok=True,
-                            stdin=diff_output,
+                            stdin=diff_output.encode(),
                             cwd=top_dir,
                             env=env,
                             shell=sys.platform.startswith('win32'))
@@ -6285,8 +6307,7 @@ def _RunGoogleJavaFormat(opts, paths, top_dir, upstream_commit):
         # If --diff is passed, google-java-format will output formatted content.
         # Diff it with the existing file in the checkout and output the result.
         if opts.diff:
-            diff_cmd = BuildGitDiffCmd(['-U3'], '--no-index', [path, '-'])
-            stdout = RunGit(diff_cmd, stdin=stdout.encode(), **kwds)
+            stdout = RunGitDiffCmd(['-U3'], '--no-index', [path, '-'])
         return stdout
 
     results = []
@@ -6641,9 +6662,8 @@ def CMDformat(parser, args):
                      'Are you in detached state?')
 
     # Filter out copied/renamed/deleted files
-    changed_files_cmd = BuildGitDiffCmd(['--name-only', '--diff-filter=crd'],
-                                        upstream_commit, args)
-    diff_output = RunGit(changed_files_cmd)
+    diff_output = RunGitDiffCmd(['--name-only', '--diff-filter=crd'],
+                                upstream_commit, args)
     diff_files = diff_output.splitlines()
 
     if opts.js:

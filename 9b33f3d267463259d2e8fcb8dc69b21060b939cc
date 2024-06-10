@@ -531,6 +531,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ca44ff9f_3e6d794b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-10T22:53:10Z",
+      "side": 1,
+      "message": "Friendly ping",
+      "parentUuid": "ecba995b_4ea5d7f3",
+      "range": {
+        "startLine": 324,
+        "startChar": 20,
+        "endLine": 324,
+        "endChar": 63
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11ff5e1d_33580049",
         "filename": "gerrit_util.py",
         "patchSetId": 23

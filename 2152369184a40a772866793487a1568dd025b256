@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "779c206c_2d22ef6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-06-10T22:47:47Z",
+      "side": 1,
+      "message": "Try to fit the git subject line in 50 colums. No period needed. It\u0027s not a hard limit, but it\u0027s worth striving for.\n\nPlease wrap other lines at 72 columns. This is mostly a hard limit.",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e45dee19_a04dd857",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-06-10T22:47:47Z",
+      "side": 1,
+      "message": "duff -\u003e diff",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9424aa8d_3ea4bbde",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6183,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-06-10T22:47:47Z",
+      "side": 1,
+      "message": "This change makes it so that args cannot be an arbitrary list of arguments, it should/must be a list of files. To avoid future confusion I think it should be renamed to \"files\" or \"file_list\"",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81566175_9b8b2026",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6645,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2024-06-10T22:47:47Z",
+      "side": 1,
+      "message": "The left-hand-side of this assignment (and its use on line 6672) should, I think, also be renamed to \"files\" or \"file_list\"",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

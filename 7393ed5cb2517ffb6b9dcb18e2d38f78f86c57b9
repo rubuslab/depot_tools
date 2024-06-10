@@ -16,6 +16,29 @@
       "message": "PTAL, CL scope has been reduced to linux only per https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5604606/comment/6d82b7f5_70ab4803/",
       "revId": "7393ed5cb2517ffb6b9dcb18e2d38f78f86c57b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a451bba0_450bfba1",
+        "filename": "utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-06-10T02:09:37Z",
+      "side": 1,
+      "message": "`os.rename` will fail \u0026 throw an exception when the two directories are not on the same filesystem. I would recommend to use `shutil.move` instead, which will use `os.rename` preferably, but fallback to copy+delete when crossing filesystem boundaries.",
+      "range": {
+        "startLine": 53,
+        "startChar": 12,
+        "endLine": 53,
+        "endChar": 49
+      },
+      "revId": "7393ed5cb2517ffb6b9dcb18e2d38f78f86c57b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

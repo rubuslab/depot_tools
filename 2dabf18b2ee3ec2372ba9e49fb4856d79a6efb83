@@ -16,6 +16,92 @@
       "message": "PTAL fixed tests",
       "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2293123d_171a2333",
+        "filename": "utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-10T16:48:14Z",
+      "side": 1,
+      "message": "nit: rename to DEPOT_TOOLS_PATH",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "66b6f5a7_bac0c80f",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "utils.py",
+              "range": {
+                "startLine": 11,
+                "startChar": 0,
+                "endLine": 12,
+                "endChar": 0
+              },
+              "replacement": "DEPOT_TOOLS_PATH \u003d os.path.dirname(os.path.abspath(__file__))\n"
+            },
+            {
+              "path": "utils.py",
+              "range": {
+                "startLine": 52,
+                "startChar": 0,
+                "endLine": 53,
+                "endChar": 0
+              },
+              "replacement": "        legacy_path \u003d os.path.join(DEPOT_TOOLS_PATH, file)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de74a173_bd9a71aa",
+        "filename": "utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-10T16:48:14Z",
+      "side": 1,
+      "message": "return DEPOT_TOOLS_PATH?",
+      "fixSuggestions": [
+        {
+          "fixId": "84e28049_8c70dc1c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "utils.py",
+              "range": {
+                "startLine": 36,
+                "startChar": 0,
+                "endLine": 37,
+                "endChar": 0
+              },
+              "replacement": "        return DEPOT_TOOLS\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

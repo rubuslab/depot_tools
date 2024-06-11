@@ -32,10 +32,10 @@
 /cipd_manifest* recipes
 
 # Symlinks
-/cbuildbot      recipes
-/cros*          recipes
+/cbuildbot recipes
+/cros*     recipes
 
-/lib/* recipes
+/lib/*     recipes
 
 # Metadata validation package, without its tests.
 /metadata/**       recipes
@@ -43,19 +43,20 @@
 
 # TODO: There are some really junky dependencies in here that we should probably
 # move to vpython/cipd.
-/third_party/**                     recipes
+/third_party/**     recipes
 
-/win_toolchain/** recipes
+/win_toolchain/**   recipes
 
 /fetch_configs/*.py recipes
 
 # Some things we never need to include in the bundle
-*.diff         -recipes
-*LICENSE*      -recipes
-*README*       -recipes
-.gitattributes -recipes
-.gitignore     -recipes
-COPYING        -recipes
-MANIFEST.in    -recipes
-OWNERS         -recipes
-PKG-INFO       -recipes
+*.diff               -recipes
+*LICENSE*            -recipes
+*README*             -recipes
+.gitattributes       -recipes
+.gitignore           -recipes
+/git-credential-luci -recipes
+COPYING              -recipes
+MANIFEST.in          -recipes
+OWNERS               -recipes
+PKG-INFO             -recipes

@@ -69,6 +69,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5823ddb_15952d6b",
+        "filename": "utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T05:51:58Z",
+      "side": 1,
+      "message": "Done. (Though after looking at utils_test.py I\u0027ve subsequently changed this to DEPOT_TOOLS_ROOT for consistency)",
+      "parentUuid": "2293123d_171a2333",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 11
+      },
+      "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de74a173_bd9a71aa",
@@ -100,6 +124,24 @@
           ]
         }
       ],
+      "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd220592_1e3bde24",
+        "filename": "utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T05:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de74a173_bd9a71aa",
       "revId": "2dabf18b2ee3ec2372ba9e49fb4856d79a6efb83",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

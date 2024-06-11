@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d67be6fa_56769bdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-06-11T15:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "779c206c_2d22ef6d",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e45dee19_a04dd857",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-10T22:47:47Z",
       "side": 1,
       "message": "duff -\u003e diff",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c9f1b75_71b3c247",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-06-11T15:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e45dee19_a04dd857",
       "revId": "2152369184a40a772866793487a1568dd025b256",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -52,6 +88,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "49a84969_d187e139",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6183,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-06-11T15:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9424aa8d_3ea4bbde",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "81566175_9b8b2026",
@@ -65,6 +119,24 @@
       "writtenOn": "2024-06-10T22:47:47Z",
       "side": 1,
       "message": "The left-hand-side of this assignment (and its use on line 6672) should, I think, also be renamed to \"files\" or \"file_list\"",
+      "revId": "2152369184a40a772866793487a1568dd025b256",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21e481db_edbf6469",
+        "filename": "git_cl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6645,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-06-11T15:41:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81566175_9b8b2026",
       "revId": "2152369184a40a772866793487a1568dd025b256",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

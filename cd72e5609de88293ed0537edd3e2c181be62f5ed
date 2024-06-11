@@ -140,6 +140,30 @@
       },
       "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e61f356_4e5342c3",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-11T21:51:59Z",
+      "side": 1,
+      "message": "I see. I didn\u0027t know this is part of the API; resolving",
+      "parentUuid": "ad209580_e53ba5b7",
+      "range": {
+        "startLine": 370,
+        "startChar": 4,
+        "endLine": 371,
+        "endChar": 17
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "092d53c6_02f4ca34",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T06:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5aad5d4_334daecf",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "1d784873bed1a01a65505a8a4788b8784f201488",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15e165bc_ba786dce",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-11T06:31:14Z",
       "side": 1,
       "message": "Better to use\nhttps://docs.python.org/3/library/unittest.mock.html#patch\nhere and belows?",
+      "range": {
+        "startLine": 52,
+        "startChar": 12,
+        "endLine": 52,
+        "endChar": 20
+      },
+      "revId": "1d784873bed1a01a65505a8a4788b8784f201488",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d04f924a_3b39da7d",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T06:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15e165bc_ba786dce",
       "range": {
         "startLine": 52,
         "startChar": 12,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19877902_5e6c878a",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T06:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74e3048a_192e0fae",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 23
+      },
+      "revId": "1d784873bed1a01a65505a8a4788b8784f201488",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1673860d_fa3516a2",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-06-11T06:31:14Z",
       "side": 1,
       "message": "Better to call this via\nhttps://docs.python.org/3/library/unittest.html#unittest.TestCase.addCleanup\ntoo?",
+      "range": {
+        "startLine": 98,
+        "startChar": 15,
+        "endLine": 98,
+        "endChar": 21
+      },
+      "revId": "1d784873bed1a01a65505a8a4788b8784f201488",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b73366d_69b7c516",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-11T06:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1673860d_fa3516a2",
       "range": {
         "startLine": 98,
         "startChar": 15,

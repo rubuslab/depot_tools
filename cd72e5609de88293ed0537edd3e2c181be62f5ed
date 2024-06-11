@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9d875aa0_bb7c2066",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-11T03:54:20Z",
+      "side": 1,
+      "message": "I would print it as either `warning()` or `debug()`. The outcome of this function doesn\u0027t change even if this case happens; there is nothing a user would need to do for this message alone.\n\nAlso, please consider adding more information into the message. Unlike server-logs, depot_tools logs more for end users. Bugs are first found by users, when users encounter various issues, like\n- git is slow\n- gclient is failing\n- and any other possible symptoms\n\nthey usually diagnose the symptoms by reading log messages before filing a bug. It\u0027s better for depot_tool logs to be informative enough for end users to diagnose symptoms to some degree.\n\nIt\u0027d be good to add more information into the message so that users can understand what happened.\ne.g.,\n```\nSSOAuthenticator: command %s didn\u0027t exit properly; forcefully killing the process to continue the execution. While this doesn\u0027t necessarily indicate a problem, ...\n```",
+      "range": {
+        "startLine": 326,
+        "startChar": 20,
+        "endLine": 328,
+        "endChar": 21
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d357336c_ff4efdc5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-11T03:54:20Z",
+      "side": 1,
+      "message": "Are these print()s for debugging? Then, please use `LOGGER.debug()`. Or, if there are reasons to print them in stdout, a short in-line comment would be helpful.",
+      "range": {
+        "startLine": 364,
+        "startChar": 8,
+        "endLine": 368,
+        "endChar": 35
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1171c155_587e914c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-11T03:54:20Z",
+      "side": 1,
+      "message": "Can this method be removed?",
+      "range": {
+        "startLine": 370,
+        "startChar": 4,
+        "endLine": 371,
+        "endChar": 17
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

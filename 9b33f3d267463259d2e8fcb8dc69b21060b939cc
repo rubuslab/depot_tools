@@ -271,6 +271,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "40a49d3c_383f14b6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-11T21:58:44Z",
+      "side": 1,
+      "message": "Ack, resolving.",
+      "parentUuid": "9132c8ef_5dd7c19d",
+      "range": {
+        "startLine": 199,
+        "startChar": 6,
+        "endLine": 199,
+        "endChar": 22
+      },
+      "revId": "9b33f3d267463259d2e8fcb8dc69b21060b939cc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65fcdbc1_ce7d6e45",

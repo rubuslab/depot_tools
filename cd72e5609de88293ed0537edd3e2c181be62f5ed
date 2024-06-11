@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cee72c48_0ebd75c5",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-11T21:19:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d875aa0_bb7c2066",
+      "range": {
+        "startLine": 326,
+        "startChar": 20,
+        "endLine": 328,
+        "endChar": 21
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d357336c_ff4efdc5",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2adff04_3e4cda21",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-11T21:19:22Z",
+      "side": 1,
+      "message": "Done, thanks",
+      "parentUuid": "d357336c_ff4efdc5",
+      "range": {
+        "startLine": 364,
+        "startChar": 8,
+        "endLine": 368,
+        "endChar": 35
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1171c155_587e914c",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-06-11T03:54:20Z",
       "side": 1,
       "message": "Can this method be removed?",
+      "range": {
+        "startLine": 370,
+        "startChar": 4,
+        "endLine": 371,
+        "endChar": 17
+      },
+      "revId": "cd72e5609de88293ed0537edd3e2c181be62f5ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad209580_e53ba5b7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-11T21:19:22Z",
+      "side": 1,
+      "message": "I don\u0027t think so, it\u0027s part of the Authenticator API.  Unless you mean, can we refactor/change the overall code so it\u0027s not required, then the answer is \"probably, but I\u0027m not going to do it in this CL\".",
+      "parentUuid": "1171c155_587e914c",
       "range": {
         "startLine": 370,
         "startChar": 4,

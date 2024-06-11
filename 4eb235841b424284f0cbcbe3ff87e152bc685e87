@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b900cdc_704c1feb",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-06-11T08:16:49Z",
+      "side": 1,
+      "message": "OK, I looked at this and the test, took a break, looked at it again, and I still don\u0027t really understand what it does. 😅 Especially the redirecting of three methods to mocks and then the `side_effect` part..\n\nIt\u0027s possible that I\u0027m just not used enough to the mock stuff in Python, so if another reviewer is fine with this, feel free to submit. Or if there\u0027s a simpler way that relies on less mocking, I can review and LGTM, too..",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 35
+      },
+      "revId": "4eb235841b424284f0cbcbe3ff87e152bc685e87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

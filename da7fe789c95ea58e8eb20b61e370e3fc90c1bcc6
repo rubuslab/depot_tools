@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5442242_19662b2f",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-06-11T06:42:42Z",
+      "side": 1,
+      "message": "I think it is fine to use `shutil.rmtree` here as we don\u0027t make any files readonly in this test?",
+      "range": {
+        "startLine": 89,
+        "startChar": 38,
+        "endLine": 89,
+        "endChar": 44
+      },
+      "revId": "da7fe789c95ea58e8eb20b61e370e3fc90c1bcc6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

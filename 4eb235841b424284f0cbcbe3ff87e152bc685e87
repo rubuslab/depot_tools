@@ -46,6 +46,30 @@
       },
       "revId": "4eb235841b424284f0cbcbe3ff87e152bc685e87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b0de4c5_c8e7e032",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1429892
+      },
+      "writtenOn": "2024-06-12T03:54:52Z",
+      "side": 1,
+      "message": "I tried to avoid actual work happen because I didn\u0027t want DEPOT_TOOLS_ROOT to be mutated, which does result in these non-ideal mocks. I\u0027ll see if there\u0027s a better way to do this in a followup, since this CL is going through too many cross-ocean cycles.",
+      "parentUuid": "aa506af2_3e69e139",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 35
+      },
+      "revId": "4eb235841b424284f0cbcbe3ff87e152bc685e87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

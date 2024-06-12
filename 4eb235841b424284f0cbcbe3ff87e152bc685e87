@@ -22,6 +22,30 @@
       },
       "revId": "4eb235841b424284f0cbcbe3ff87e152bc685e87",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa506af2_3e69e139",
+        "filename": "tests/utils_test.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-12T01:54:08Z",
+      "side": 1,
+      "message": "This is mockng too much. Why don\u0027t you let shutil.move and isfile do actual work, and just ensure the file is available in temp_dir post execution? It would be more like a integration test than unit test tho.\n\nAlternative would be to not create temp_dir in the first place, but that will require code refactoring, or even more mocking.\n\nI\u0027m okay work being done in a follow up cl or here.",
+      "parentUuid": "6b900cdc_704c1feb",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 35
+      },
+      "revId": "4eb235841b424284f0cbcbe3ff87e152bc685e87",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

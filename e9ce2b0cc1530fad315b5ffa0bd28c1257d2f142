@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15aab290_69572977",
+        "filename": "siso.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-06-12T23:46:21Z",
+      "side": 1,
+      "message": "Should we put this (new) path before the old, deprecated one, so that we save one stat on the happy path going forward?",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 64
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "6804631c_8d97f81f",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "siso.py",
+              "range": {
+                "startLine": 108,
+                "startChar": 0,
+                "endLine": 110,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "siso.py",
+              "range": {
+                "startLine": 112,
+                "startChar": 0,
+                "endLine": 112,
+                "endChar": 0
+              },
+              "replacement": "            os.path.join(base_path, \u0027third_party\u0027, \u0027siso\u0027,\n                         \u0027siso\u0027 + gclient_paths.GetExeSuffix()),\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e9ce2b0cc1530fad315b5ffa0bd28c1257d2f142",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

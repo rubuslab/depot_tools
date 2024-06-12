@@ -1780,10 +1780,10 @@ class Changelist(object):
                                  git_diff_args: Sequence[str],
                                  files: Sequence[str]) -> ChangeDescription:
         """Get description message for upload."""
-        if self.GetIssue():
-            description = self.FetchDescription()
-        elif options.message:
+        if options.message:
             description = options.message
+        elif self.GetIssue():
+            description = self.FetchDescription()
         else:
             description = _create_description_from_log(git_diff_args)
             if options.title and options.squash:
@@ -2319,7 +2319,7 @@ class Changelist(object):
             if not force:
                 confirm_or_exit(msg, action='continue')
         else:
-          DieWithError(msg)
+            DieWithError(msg)
 
     def EnsureCanUploadPatchset(self, force):
         if not self.GetIssue():

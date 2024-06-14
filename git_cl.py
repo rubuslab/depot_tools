@@ -1528,11 +1528,40 @@ class Changelist(object):
         self._cached_remote_url = (True, url)
         return url
 
+    def _GetIssueFromTripletId(self):
+        project = self.GetGerritProject()
+        remote, branch = self.GetRemoteBranch()
+        remote_ref = GetTargetRef(remote, branch,
+                                  None).replace("refs/heads/", "")
+        change_ids = git_footers.get_footer_change_id(
+            _create_description_from_log(["HEAD^"]))
+        if len(change_ids) != 1:
+            return None
+        change_id = change_ids[0]
+        triplet_id = urllib.parse.quote("%s~%s~%s" %
+                                        (project, remote_ref, change_id),
+                                        safe='')
+
+        # GetGerritHost() would attempt to lookup the host from the
+        # issue first, leading to infinite recursion. Instead, use the
+        # fallback of getting the host from the remote URL.
+        gerrit_host = self._GetGerritHostFromRemoteUrl()
+        change = gerrit_util.GetChange(gerrit_host,
+                                       triplet_id,
+                                       accept_missing=True)
+        if '_number' in change:
+            return change['_number']
+        return None
+
     def GetIssue(self):
         """Returns the issue number as a int or None if not set."""
         if self.issue is None and not self.lookedup_issue:
             if self.GetBranch():
                 self.issue = self._GitGetBranchConfigValue(ISSUE_CONFIG_KEY)
+
+            if self.issue is None:
+                self.issue = self._GetIssueFromTripletId()
+
             if self.issue is not None:
                 self.issue = int(self.issue)
             self.lookedup_issue = True
@@ -2218,6 +2247,22 @@ class Changelist(object):
             return None
         return urllib.parse.urlparse(remote_url).netloc
 
+    def _GetGerritHostFromRemoteUrl(self):
+        url = urllib.parse.urlparse(self.GetRemoteUrl())
+        parts = url.netloc.split('.')
+
+        # We assume repo to be hosted on Gerrit, and hence Gerrit server
+        # has "-review" suffix for lowest level subdomain.
+        parts[0] = parts[0] + '-review'
+
+        if url.scheme == 'sso' and len(parts) == 1:
+            # sso:// uses abbreivated hosts, eg. sso://chromium instead
+            # of chromium.googlesource.com. Hence, for code review
+            # server, they need to be expanded.
+            parts[0] += '.googlesource.com'
+
+        return '.'.join(parts)
+
     def GetCodereviewServer(self):
         if not self._gerrit_server:
             # If we're on a branch then get the server potentially associated
@@ -2229,20 +2274,7 @@ class Changelist(object):
                     self._gerrit_host = urllib.parse.urlparse(
                         self._gerrit_server).netloc
             if not self._gerrit_server:
-                url = urllib.parse.urlparse(self.GetRemoteUrl())
-                parts = url.netloc.split('.')
-
-                # We assume repo to be hosted on Gerrit, and hence Gerrit server
-                # has "-review" suffix for lowest level subdomain.
-                parts[0] = parts[0] + '-review'
-
-                if url.scheme == 'sso' and len(parts) == 1:
-                    # sso:// uses abbreivated hosts, eg. sso://chromium instead
-                    # of chromium.googlesource.com. Hence, for code review
-                    # server, they need to be expanded.
-                    parts[0] += '.googlesource.com'
-
-                self._gerrit_host = '.'.join(parts)
+                self._gerrit_host = self._GetGerritHostFromRemoteUrl()
                 self._gerrit_server = 'https://%s' % self._gerrit_host
         return self._gerrit_server
 
@@ -2319,7 +2351,7 @@ class Changelist(object):
             if not force:
                 confirm_or_exit(msg, action='continue')
         else:
-          DieWithError(msg)
+            DieWithError(msg)
 
     def EnsureCanUploadPatchset(self, force):
         if not self.GetIssue():

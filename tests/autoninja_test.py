@@ -143,17 +143,19 @@ class AutoninjaTest(trial_dir.TestCase):
         self.assertEqual(reclient_helper_calls[0][1], 'autosiso')
 
     @parameterized.expand([
-        ("non corp machine", False, None, None, None, False),
-        ("non corp adc account", True, "foo@chromium.org", None, None, True),
-        ("corp adc account", True, "foo@google.com", None, None, False),
-        ("non corp gcloud auth account", True, None, "foo@chromium.org", None,
+        ("non corp machine", False, False, None, None, None, False),
+        ("non corp adc account", True, False, "foo@chromium.org", None, None, True),
+        ("corp adc account", True, False, "foo@google.com", None, None, False),
+        ("corp workstation adc account", True, True, "foo@google.com", None, None, False),
+        ("non corp gcloud auth account", True, False, None, "foo@chromium.org", None,
          True),
-        ("corp gcloud auth account", True, None, "foo@google.com", None, False),
-        ("non corp luci auth account", True, None, None, "foo@chromium.org",
+        ("corp gcloud auth account", True, False,  None, "foo@google.com", None, False),
+        ("non corp luci auth account", True, False, None, None, "foo@chromium.org",
          True),
-        ("corp luci auth account", True, None, None, "foo@google.com", False),
+        ("corp luci auth account", True, False, None, None, "foo@google.com", False),
     ])
     def test_is_corp_machine_using_external_account(self, _, is_corp,
+                                                    is_corp_workstation,
                                                     adc_account,
                                                     gcloud_auth_account,
                                                     luci_auth_account,
@@ -170,7 +172,9 @@ class AutoninjaTest(trial_dir.TestCase):
                                 'autoninja._gcloud_auth_account',
                                 return_value=gcloud_auth_account), mock.patch(
                                     'autoninja._luci_auth_account',
-                                    return_value=luci_auth_account):
+                                    return_value=luci_auth_account), mock.patch(
+                                            'autoninja._is_corp_workstation', return_value=is_corp_workstation
+                                    ):
             self.assertEqual(
                 bool(
                     # pylint: disable=line-too-long

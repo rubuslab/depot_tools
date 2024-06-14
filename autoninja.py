@@ -119,6 +119,12 @@ def _is_google_corp_machine():
     """This assumes that corp machine has gcert binary in known location."""
     return shutil.which("gcert") is not None
 
+def _is_corp_workstation():
+    """This assumes that corp machine has lsb-release file in known location."""
+    if not os.path.isfile("/etc/lsb-release"):
+        return False
+    with open("/etc/lsb-release", "r") as f:
+        return "GOOGLE_ROLE=desktop" in f.read()
 
 def _is_google_corp_machine_using_external_account():
     if os.environ.get("AUTONINJA_SKIP_EXTERNAL_ACCOUNT_CHECK") == "1":
@@ -130,6 +136,9 @@ def _is_google_corp_machine_using_external_account():
         return False
 
     if not _is_google_corp_machine():
+        return False
+
+    if _is_google_corp_machine() and _is_corp_workstation():
         return False
 
     with shelve.open(os.path.join(SCRIPT_DIR, ".autoninja")) as db:

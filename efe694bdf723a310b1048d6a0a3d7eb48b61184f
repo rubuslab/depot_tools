@@ -16,6 +16,23 @@
       "message": "https://chromium-review.googlesource.com/c/chromium/src/+/5618011 PS1.22 is actual change from chromium/src presubmit. I decided to move it to depot_tools since it\u0027s needed for other projects too",
       "revId": "efe694bdf723a310b1048d6a0a3d7eb48b61184f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecf1a63f_69253222",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-14T20:21:20Z",
+      "side": 1,
+      "message": "And this needs to land after https://crrev.com/c/5605693",
+      "revId": "efe694bdf723a310b1048d6a0a3d7eb48b61184f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

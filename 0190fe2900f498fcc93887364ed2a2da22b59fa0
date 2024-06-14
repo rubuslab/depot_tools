@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "569dadc0_d4a1b801",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-06-14T02:58:11Z",
+      "side": 1,
+      "message": "Ptal. Currently java formatter shows incorrect diffs.",
+      "revId": "0190fe2900f498fcc93887364ed2a2da22b59fa0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

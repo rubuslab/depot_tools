@@ -1,0 +1,62 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97ea8aac_0db2cd6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-17T19:09:14Z",
+      "side": 1,
+      "message": "ai generated example, could be correct or not.\n\nIf the content is the same, why would it show up in the diff? Is this related to stacked changes?\n\nI also wonder if we should use \u0027A\u0027 or \u0027M\u0027, but that depends on the you are trying to solve",
+      "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55061cb9_c1955b96",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2202,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-17T19:09:14Z",
+      "side": 1,
+      "message": "Uhm, the comment doesn\u0027t explain how this could happen - could you add an example?",
+      "range": {
+        "startLine": 2202,
+        "startChar": 34,
+        "endLine": 2202,
+        "endChar": 35
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "e544509f_e1a87bd4",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "presubmit_support.py",
+              "range": {
+                "startLine": 2202,
+                "startChar": 0,
+                "endLine": 2202,
+                "endChar": 0
+              },
+              "replacement": "            #\n            # For example, if a file is modified in a way that the contents\n            # are the same as the upstream commit, the file will not have a diff.\n            # This can happen if the file is modified in a way that does not\n            # change the contents, such as by changing the file mode.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

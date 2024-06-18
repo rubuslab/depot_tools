@@ -85,7 +85,7 @@ EOF
     shopt -s extglob
     echo H
     echo 35
-    for x in "$(echo !(git-*|_*).txt)"
+    for x in "$(echo !\(git-*|_*\).txt)"
     do
       echo i
       echo MAN7_TXT += $x

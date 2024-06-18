@@ -819,13 +819,8 @@ class Settings(object):
         if self.updated:
             return
 
-        # The only value that actually changes the behavior is
-        # autoupdate = "false". Everything else means "true".
-        autoupdate = (scm.GIT.GetConfig(self.GetRoot(), 'rietveld.autoupdate',
-                                        '').lower())
-
         cr_settings_file = FindCodereviewSettingsFile()
-        if autoupdate != 'false' and cr_settings_file:
+        if cr_settings_file:
             LoadCodereviewSettingsFromFile(cr_settings_file)
             cr_settings_file.close()
 

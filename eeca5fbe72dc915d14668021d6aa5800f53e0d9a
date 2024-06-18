@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0015744e_6e5f48cb",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2158,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-18T04:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3caf6ee3_427633e4",
+      "range": {
+        "startLine": 2158,
+        "startChar": 23,
+        "endLine": 2158,
+        "endChar": 30
+      },
+      "revId": "eeca5fbe72dc915d14668021d6aa5800f53e0d9a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a225ce82_1c4eecde",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-18T00:48:33Z",
       "side": 1,
       "message": "nit: it\u0027s nested, but IMO more readable if changed to \n```\nif \u0027condition\u0027 in dep and \u0027non_git_source\u0027 in dep[\u0027condition\u0027]:\n    stuff\n```",
+      "range": {
+        "startLine": 2160,
+        "startChar": 8,
+        "endLine": 2160,
+        "endChar": 78
+      },
+      "revId": "eeca5fbe72dc915d14668021d6aa5800f53e0d9a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b113762_39a4078f",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2160,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-18T04:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a225ce82_1c4eecde",
       "range": {
         "startLine": 2160,
         "startChar": 8,
@@ -84,6 +132,30 @@
           ]
         }
       ],
+      "revId": "eeca5fbe72dc915d14668021d6aa5800f53e0d9a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6008310d_d14f91c0",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2179,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-18T04:38:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "473c3af1_8befa167",
+      "range": {
+        "startLine": 2178,
+        "startChar": 12,
+        "endLine": 2179,
+        "endChar": 72
+      },
       "revId": "eeca5fbe72dc915d14668021d6aa5800f53e0d9a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

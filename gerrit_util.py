@@ -283,9 +283,8 @@ class SSOAuthenticator(Authenticator):
 
     @classmethod
     def is_applicable(cls) -> bool:
-        """If the git-remote-sso binary is in $PATH, we consider this
-        authenticator to be applicable."""
-        return bool(cls._resolve_sso_cmd())
+        return bool(cls._resolve_sso_cmd()) and \
+            scm.GIT.GetConfig(os.getcwd(), 'user.email').endswith('@google.com')
 
     @classmethod
     def _parse_config(cls, config: str) -> SSOInfo:

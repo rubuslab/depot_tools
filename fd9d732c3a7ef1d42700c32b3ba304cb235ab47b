@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b164b890_5376e50a",
+        "filename": "newauth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-18T23:42:07Z",
+      "side": 1,
+      "message": "The auto formatter kinda sucks",
+      "revId": "fd9d732c3a7ef1d42700c32b3ba304cb235ab47b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

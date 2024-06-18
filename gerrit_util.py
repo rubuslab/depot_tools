@@ -241,6 +241,10 @@ class SSOAuthenticator(Authenticator):
     # cookies.
     _testing_load_expired_cookies = False
 
+    # How long we should wait for the sso helper to write and close stdout.
+    # Overridden in tests.
+    _timeout_secs = 5
+
     # Tri-state cache for sso helper command:
     #   * None - no lookup yet
     #   * () - lookup was performed, but no binary was found.
@@ -333,50 +337,49 @@ class SSOAuthenticator(Authenticator):
 
         Raises an exception if something goes wrong.
         """
-        tdir = tempfile.mkdtemp(suffix='gerrit_util')
-        tf = os.path.join(tdir, 'git-remote-sso.stderr')
+        cmd = cls._resolve_sso_cmd()
 
         with tempdir() as tdir:
-            cmd = cls._resolve_sso_cmd()
+            tf = os.path.join(tdir, 'git-remote-sso.stderr')
 
-            stderr_file = open(tf, mode='w')
+            with open(tf, mode='w') as stderr_file:
+                # NOTE: we must fully parse stdout and consume the cookiefile before
+                # killing the process.
+                with subprocess2.Popen(cmd,
+                                       stdout=subprocess2.PIPE,
+                                       stderr=stderr_file,
+                                       stdin=subprocess2.PIPE,
+                                       encoding='utf-8') as proc:
+                    stderr_file.close()  # we can close after process starts.
+                    timedout = False
 
-            # NOTE: we must fully parse stdout and consume the cookiefile before
-            # killing the process.
-            with subprocess2.Popen(cmd,
-                                   stdout=subprocess2.PIPE,
-                                   stderr=stderr_file,
-                                   stdin=subprocess2.PIPE,
-                                   encoding='utf-8') as proc:
-                timedout = False
+                    def _fire_timeout():
+                        nonlocal timedout
+                        timedout = True
+                        proc.kill()
 
-                def _fire_timeout():
-                    nonlocal timedout
-                    timedout = True
-                    proc.kill()
+                    timer = threading.Timer(cls._timeout_secs, _fire_timeout)
+                    timer.start()
+                    try:
+                        stdout_data = proc.stdout.read()
+                    finally:
+                        timer.cancel()
 
-                timer = threading.Timer(5, _fire_timeout)
-                timer.start()
-                try:
-                    ret = cls._parse_config(proc.stdout.read())
-                finally:
-                    timer.cancel()
+                    if timedout:
+                        LOGGER.error(
+                            'SSOAuthenticator: Timeout: %r: reading config.',
+                            cmd)
+                        raise subprocess.TimeoutExpired(cmd=cmd, timeout=5)
 
-                if timedout:
-                    LOGGER.error(
-                        'SSOAuthenticator: Timeout: %r: reading config.', cmd)
-                    raise subprocess.TimeoutExpired(cmd=cmd, timeout=5)
+                    proc.poll()
+                    if (retcode := proc.returncode) is not None:
+                        # process failed - we should be able to read the tempfile.
+                        with open(tf, encoding='utf-8') as stderr:
+                            sys.exit(
+                                f'SSOAuthenticator: exit {retcode}: {stderr.read().strip()}'
+                            )
 
-                proc.poll()
-                if (retcode := proc.returncode) is not None:
-                    # process failed - we should be able to read the tempfile.
-                    stderr_file.close()
-                    with open(tf, encoding='utf-8') as stderr:
-                        sys.exit(
-                            f'SSOAuthenticator: exit {retcode}: {stderr.read().strip()}'
-                        )
-
-        return ret
+                    return cls._parse_config(stdout_data)
 
     @classmethod
     def _get_sso_info(cls) -> SSOInfo:

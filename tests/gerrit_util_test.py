@@ -607,8 +607,10 @@ class SSOAuthenticatorTest(unittest.TestCase):
     def _input_dir(self) -> Path:
         return Path(__file__).with_suffix('.inputs') / self._testMethodName
 
+    @mock.patch('scm.GIT.GetConfig')
     @mock.patch('shutil.which', return_value='/fake/git-remote-sso')
-    def testCmdAssemblyFound(self, _):
+    def testCmdAssemblyFound(self, getConfig, _):
+        getConfig.side_effect = ['firefly@google.com']
         self.assertEqual(self.sso._resolve_sso_cmd(),
                          ('/fake/git-remote-sso', '-print_config',
                           'sso://*.git.corp.google.com'))

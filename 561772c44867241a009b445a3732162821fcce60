@@ -16,6 +16,24 @@
       "message": "https://ci.chromium.org/ui/p/infra/builders/try/Build%20Presubmit/b8744750071102147185/infra ?",
       "revId": "561772c44867241a009b445a3732162821fcce60",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bd56b4a5_833e3e86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1170419
+      },
+      "writtenOn": "2024-06-18T23:49:20Z",
+      "side": 1,
+      "message": "Looks like tools/build.git\u0027s DEPS file doesn\u0027t contain any deps, only hooks:\nhttps://source.chromium.org/chromium/chromium/tools/build/+/main:DEPS\n\nShould we add a no-op `deps \u003d {}` line to it? Or make the failing code here do `deps.get(\u0027deps\u0027, {})` instead?",
+      "parentUuid": "e035ab0b_512a8fd3",
+      "revId": "561772c44867241a009b445a3732162821fcce60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

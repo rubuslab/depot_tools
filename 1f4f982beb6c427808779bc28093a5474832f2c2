@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed5501d7_c29ea8c2",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-19T00:05:30Z",
+      "side": 0,
+      "message": "the previous stuff around managing temporaries was leaking files.",
+      "revId": "1f4f982beb6c427808779bc28093a5474832f2c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

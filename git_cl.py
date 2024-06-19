@@ -2197,9 +2197,6 @@ class Changelist(object):
             raise
 
     def GetGerritHost(self):
-        # Lazy load of configs.
-        self.GetCodereviewServer()
-
         if self._gerrit_host and '.' not in self._gerrit_host:
             # Abbreviated domain like "chromium" instead of
             # chromium.googlesource.com.

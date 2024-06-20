@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d549ba33_3a01e5c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3494464
+      },
+      "writtenOn": "2024-06-20T05:51:03Z",
+      "side": 1,
+      "message": "1842638: depot_tools: Run git_cache_test and git_footers_test on windows. | https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/1842638",
+      "revId": "ab51754cc7955f473138919aed3412d7f0faff09",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

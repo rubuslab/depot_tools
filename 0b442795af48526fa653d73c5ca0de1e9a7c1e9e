@@ -16,6 +16,24 @@
       "message": "what\u0027s the plan for chromium.org accounts that are linked in Gerrit to google.com - those will also need to use SSO",
       "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96cf16a5_92cffc18",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-20T20:47:19Z",
+      "side": 1,
+      "message": "They will have to authenticate as their google.com account, the same as on the Web UI (if you try to log in with the linked chromium.org Gerrit will reject it).",
+      "parentUuid": "cae0abfd_fbaac834",
+      "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

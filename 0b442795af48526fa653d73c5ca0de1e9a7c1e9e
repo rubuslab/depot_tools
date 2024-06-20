@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cae0abfd_fbaac834",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1272455
+      },
+      "writtenOn": "2024-06-20T03:30:39Z",
+      "side": 1,
+      "message": "what\u0027s the plan for chromium.org accounts that are linked in Gerrit to google.com - those will also need to use SSO",
+      "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

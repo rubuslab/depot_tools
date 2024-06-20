@@ -102,6 +102,29 @@
       "parentUuid": "d83aade8_7417a0b9",
       "revId": "fb1413cc0dfaecfed99537e4a2a090ac3e303ced",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2999418a_804d587b",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-20T17:43:58Z",
+      "side": 1,
+      "message": "Questions about this option.\n\n1) `--current` is to select the current branch, and the positional arguments specify what branches to rebase. Shouldn\u0027t `--evolve` work with those params? In the current patchset, it silently ignores the positional parameters.\n2) the current implementation of `--evolve` also partly overlaps with `--current`.\n\nHere is my suggestion.\n`--current_tree`\n\nIt selects the current branch and its child branches.\nThen, `git rebase --current_tree --no_fetch` will give you what you are looking for. I prefer `--curent_tree` because\n- the argument name aligns better with the existing, other arguments.\n- by limiting the role of `--current_tree` to modify the branch selections, it decouples the functionality of `--no_fetch`, while `--evolve` doesn\u0027t.\n\nFor convenience, you can define an alias to shorten the command.\n```\n[alias]\n  evolve \u003d rebase-update --current_tree --no_fetch\n```\n\nthen, you could `git evolve`. WDYT?",
+      "range": {
+        "startLine": 318,
+        "startChar": 3,
+        "endLine": 318,
+        "endChar": 19
+      },
+      "revId": "fb1413cc0dfaecfed99537e4a2a090ac3e303ced",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

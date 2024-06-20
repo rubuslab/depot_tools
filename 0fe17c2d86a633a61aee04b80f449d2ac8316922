@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a602c446_9cacf851",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-20T16:22:44Z",
+      "side": 1,
+      "message": "I think this could go before L387? Because the code will check empty stdout anyway no matter the process is ended or not.",
+      "range": {
+        "startLine": 373,
+        "startChar": 0,
+        "endLine": 374,
+        "endChar": 41
+      },
+      "revId": "0fe17c2d86a633a61aee04b80f449d2ac8316922",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

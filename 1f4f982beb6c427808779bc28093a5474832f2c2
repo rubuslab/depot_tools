@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d6b2d4b_dec30b71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3494464
+      },
+      "writtenOn": "2024-06-20T05:19:50Z",
+      "side": 1,
+      "message": "Google C++ Style Guide\nTable of Contents\nC++ Version\nHeader Files\nSelf-contained HeadersThe #define GuardInclude What You UseForward DeclarationsInline FunctionsNames and Order of Includes\nScoping\nNamespacesInternal LinkageNonmember, Static Member, and Global FunctionsLocal VariablesStatic and Global Variablesthread_local Variables\nClasses\nDoing Work in ConstructorsImplicit ConversionsCopyable and Movable TypesStructs vs. ClassesStructs vs. Pairs and TuplesInheritanceOperator OverloadingAccess ControlDeclaration Order\nFunctions\nInputs and OutputsWrite Short FunctionsFunction OverloadingDefault ArgumentsTrailing Return Type Syntax\nGoogle-Specific Magic\nOwnership and Smart Pointerscpplint\nOther C++ Features\nRvalue ReferencesFriendsExceptionsnoexceptRun-Time Type Information (RTTI)CastingStreamsPreincrement and PredecrementUse of constUse of constexpr, constinit, and constevalInteger Types64-bit PortabilityPreprocessor Macros0 and nullptr/NULLsizeofType Deduction (including auto)Class Template Argument DeductionDesignated InitializersLambda ExpressionsTemplate MetaprogrammingConcepts and ConstraintsBoostOther C++ FeaturesNonstandard ExtensionsAliasesSwitch Statements\nInclusive Language\nNaming\nGeneral Naming RulesFile NamesType NamesConcept NamesVariable NamesConstant NamesFunction NamesNamespace NamesEnumerator NamesMacro NamesExceptions to Naming Rules\nComments\nComment StyleFile CommentsStruct and Class CommentsFunction CommentsVariable CommentsImplementation CommentsPunctuation, Spelling, and GrammarTODO Comments\nFormatting\nLine LengthNon-ASCII CharactersSpaces vs. TabsFunction Declarations and DefinitionsLambda ExpressionsFloating-point LiteralsFunction CallsBraced Initializer List FormatLooping and branching statementsPointer and Reference ExpressionsBoolean ExpressionsReturn ValuesVariable and Array InitializationPreprocessor DirectivesClass FormatConstructor Initializer ListsNamespace FormattingHorizontal WhitespaceVertical Whitespace\nExceptions to the Rules\nExisting Non-conformant CodeWindows Code\nBackground",
+      "revId": "1f4f982beb6c427808779bc28093a5474832f2c2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

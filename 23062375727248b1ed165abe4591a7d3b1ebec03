@@ -33,6 +33,24 @@
       "message": "Does this work? [The doc says](https://screenshot.googleplex.com/QiKK67XeiBcpEcC) it requires Modify Account capability. Or is account_id `self` somewhat special?",
       "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bba9536f_ae5158ba",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-20T17:57:15Z",
+      "side": 1,
+      "message": "Account id `self` seems to be special (I assume the caller always has Modify Account for their own account), but I\u0027m not sure how to test this (I ran it on my own, but it\u0027s possible I have specialness?)\n\nI will update the docstring here to note that all_emails requires the extra permission if account_id is not `self`.",
+      "parentUuid": "35f17f6e_a7833ceb",
+      "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

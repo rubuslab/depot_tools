@@ -34,6 +34,24 @@
       "parentUuid": "cae0abfd_fbaac834",
       "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d73cb550_4c8fe86c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1272455
+      },
+      "writtenOn": "2024-06-20T21:01:58Z",
+      "side": 1,
+      "message": "Right, but their email in gitconfig will still be @chromium.org.",
+      "parentUuid": "96cf16a5_92cffc18",
+      "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

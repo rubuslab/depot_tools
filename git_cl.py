@@ -2338,23 +2338,30 @@ class Changelist(object):
             self.SetIssue()
             return
 
-        # TODO(vadimsh): For some reason the chunk of code below was skipped if
-        # 'is_gce' is True. I'm just refactoring it to be 'skip if not cookies'.
-        # Apparently this check is not very important? Otherwise get_auth_email
-        # could have been added to other implementations of Authenticator.
-        cookies_auth = gerrit_util.Authenticator.get()
-        if not isinstance(cookies_auth, gerrit_util.CookiesAuthenticator):
-            return
+        # Check to see if the currently authenticated account is the issue
+        # owner.
 
-        cookies_user = cookies_auth.get_auth_email(self.GetGerritHost())
-        if self.GetIssueOwner() == cookies_user:
+        # first, grab the issue owner email
+        issue_owner = self.GetIssueOwner()
+
+        # do a quick check to see if this matches the local git config's
+        # configured email.
+        git_config_email = scm.GIT.GetConfig(settings.GetRoot(), 'user.email')
+        if git_config_email == issue_owner:
+          # Good enough - Gerrit will reject this if the user is doing funny things
+          # with user.email.
+          return
+
+        # However, the user may have linked accounts in Gerrit, so pull up the
+        # currently authenticated account, including all secondary_email
+        # addresses.
+        details = gerrit_util.GetAccountDetails(self.GetGerritHost(), 'self',
+                                                all_emails=True)
+        # Check primary.
+        if details['email'] == issue_owner:
             return
-        logging.debug('change %s owner is %s, cookies user is %s',
-                      self.GetIssue(), self.GetIssueOwner(), cookies_user)
-        # Maybe user has linked accounts or something like that,
-        # so ask what Gerrit thinks of this user.
-        details = gerrit_util.GetAccountDetails(self.GetGerritHost(), 'self')
-        if details['email'] == self.GetIssueOwner():
+        # Check all secondaries.
+        if any(e == issue_owner for e in details.get('secondary_emails', ())):
             return
         if not force:
             print(

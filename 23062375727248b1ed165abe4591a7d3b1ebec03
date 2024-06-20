@@ -51,6 +51,24 @@
       "parentUuid": "35f17f6e_a7833ceb",
       "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1488ad8_1f8a07e9",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-20T20:55:19Z",
+      "side": 1,
+      "message": "sgtm",
+      "parentUuid": "bba9536f_ae5158ba",
+      "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

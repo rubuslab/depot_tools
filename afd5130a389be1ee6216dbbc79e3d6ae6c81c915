@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc4fd63f_9ffa374d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-20T20:55:19Z",
+      "side": 1,
+      "message": "lgtm % addressing https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5590262/comment/35f17f6e_a7833ceb/",
+      "revId": "afd5130a389be1ee6216dbbc79e3d6ae6c81c915",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,46 @@
       "message": "needs to be deduped with Gerrit Auth logic and fixed for linked accounts",
       "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db96ed8a_f4960848",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3619,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-21T16:28:37Z",
+      "side": 1,
+      "message": "looks like unsetting applies to both cases, could it be moved before the if statement?",
+      "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09bf03d0_5eb62676",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3629,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-21T16:28:37Z",
+      "side": 1,
+      "message": "Is there a reason setting to empty first and then \u0027luci\u0027?",
+      "range": {
+        "startLine": 3628,
+        "startChar": 0,
+        "endLine": 3629,
+        "endChar": 74
+      },
+      "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

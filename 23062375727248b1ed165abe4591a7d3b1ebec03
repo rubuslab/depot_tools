@@ -69,6 +69,24 @@
       "parentUuid": "bba9536f_ae5158ba",
       "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a350e12e_c0c592c0",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-21T23:33:13Z",
+      "side": 1,
+      "message": "Did some experiments - the docs are correct, but there is actually a separate API which has the permissions I described... added a new function for that instead, PTAL.",
+      "parentUuid": "b1488ad8_1f8a07e9",
+      "revId": "23062375727248b1ed165abe4591a7d3b1ebec03",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

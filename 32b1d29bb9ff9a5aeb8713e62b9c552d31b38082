@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14270ec8_4a591fbd",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3616,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-21T01:34:38Z",
+      "side": 1,
+      "message": "needs to be deduped with Gerrit Auth logic and fixed for linked accounts",
+      "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

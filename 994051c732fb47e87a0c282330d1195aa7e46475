@@ -16,6 +16,24 @@
       "message": "this will keep a copy of `self` alive in a global cache for the life of the process. In this case there is \u0027probably\u0027 only one instance of SSOHelper, but this is not guaranteed.\n\nI would recommend changing this to a staticmethod, in which my objection will go away.",
       "revId": "994051c732fb47e87a0c282330d1195aa7e46475",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bfc01a4_1f86471c",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-21T23:03:29Z",
+      "side": 1,
+      "message": "Good to know, changed to cache directly on the instance like originally, fixed types and tests accordingly",
+      "parentUuid": "e28d2aac_2285f323",
+      "revId": "994051c732fb47e87a0c282330d1195aa7e46475",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

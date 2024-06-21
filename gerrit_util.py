@@ -149,6 +149,22 @@ def _QueryString(params, first_param=None):
     return '+'.join(q)
 
 
+class SSOHelper(object):
+    """SSOHelper finds a Google-internal SSO helper."""
+
+    @functools.lru_cache(maxsize=None)
+    def find_cmd(self) -> Optional[str]:
+        """Returns the cached command-line to invoke git-remote-sso.
+
+        If git-remote-sso is not in $PATH, returns None.
+        """
+        return shutil.which('git-remote-sso')
+
+
+# Global instance
+ssoHelper = SSOHelper()
+
+
 class Authenticator(object):
     """Base authenticator class for authenticator implementations to subclass."""
 
@@ -230,16 +246,6 @@ class SSOAuthenticator(Authenticator):
     # cookies.
     _testing_load_expired_cookies = False
 
-    # Tri-state cache for sso helper command:
-    #   * None - no lookup yet
-    #   * () - lookup was performed, but no binary was found.
-    #   * non-empty tuple - lookup was performed, and this is the command to
-    #     run.
-    #
-    # NOTE: Tests directly assign to this to substitute a helper process that
-    # can exercise other aspects of SSOAuthenticator.
-    _sso_cmd: Optional[Tuple[str, ...]] = None
-
     @dataclass
     class SSOInfo:
         proxy: httplib2.ProxyInfo
@@ -256,19 +262,14 @@ class SSOAuthenticator(Authenticator):
 
         If git-remote-sso is not in $PATH, returns ().
         """
-        cmd = cls._sso_cmd
+        cmd = ssoHelper.find_cmd()
         if cmd is None:
-            pth = shutil.which('git-remote-sso')
-            if pth is None:
-                cmd = ()
-            else:
-                cmd = (
-                    pth,
-                    '-print_config',
-                    'sso://*.git.corp.google.com',
-                )
-            cls._sso_cmd = cmd
-        return cmd
+            return ()
+        return (
+            cmd,
+            '-print_config',
+            'sso://*.git.corp.google.com',
+        )
 
     @classmethod
     def is_applicable(cls) -> bool:

@@ -52,6 +52,24 @@
       "parentUuid": "96cf16a5_92cffc18",
       "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "289c5ad1_cefc632d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-21T00:58:24Z",
+      "side": 1,
+      "message": "Ack, we\u0027ve worked out a plan.  I think we can still land this CL because it fixes the existing bug of mismatching sso vs luci-auth methods, and the final logic is an extension of this logic\n\nNote that this path is explicitly opt in until everything is done and dogfooded.",
+      "parentUuid": "d73cb550_4c8fe86c",
+      "revId": "0b442795af48526fa653d73c5ca0de1e9a7c1e9e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

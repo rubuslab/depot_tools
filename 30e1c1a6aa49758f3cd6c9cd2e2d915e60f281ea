@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02061814_03be335a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-21T19:01:07Z",
+      "side": 1,
+      "message": "This could also apply to stacked changes but I intended this to be for cog. For example if you add a newline to foo in PS1, then remove the newline you added. When you run presubmits, foo will show up as modifed relative to PS1 in the extension and get passed to presubmit_support here. And when this script fetches from upstream, it\u0027ll see no diff.",
+      "parentUuid": "97ea8aac_0db2cd6e",
+      "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55061cb9_c1955b96",
@@ -55,6 +73,54 @@
           ]
         }
       ],
+      "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98b5e8b8_83783569",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2202,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-21T19:01:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55061cb9_c1955b96",
+      "range": {
+        "startLine": 2202,
+        "startChar": 34,
+        "endLine": 2202,
+        "endChar": 35
+      },
+      "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc2f935d_8ad6abad",
+        "filename": "presubmit_support.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2202,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-21T19:01:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55061cb9_c1955b96",
+      "range": {
+        "startLine": 2202,
+        "startChar": 34,
+        "endLine": 2202,
+        "endChar": 35
+      },
       "revId": "30e1c1a6aa49758f3cd6c9cd2e2d915e60f281ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -34,6 +34,24 @@
       "parentUuid": "07b0b8d0_eedf7f0f",
       "revId": "f77c3c3bf154fde94f054512fdf9ccd568831f6c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1bd2169_b8c4267b",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-21T23:12:12Z",
+      "side": 1,
+      "message": "discussed elsewhere, but the tl;dr is that functools.lru_cache (and functools.cache) actually form a global registry, and keep references to all arguments passed in to the call (including cls or self on methods). It also doesn\u0027t implement any mutual exclusion (which we do here... possibly unnecessary because of python, but logically sound).\n\nIn this particular case it could have worked alright (keeping `get()` static), but I\u0027m exercising my curmudgeon card to just do it manually :p",
+      "parentUuid": "73fcd5f7_191821f7",
+      "revId": "f77c3c3bf154fde94f054512fdf9ccd568831f6c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

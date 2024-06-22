@@ -16,6 +16,74 @@
       "message": "(tests will fail, but PTAL at main content)",
       "revId": "37880635599d0273043959de58272eeeec5b807a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f8b72bd_59094230",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-22T00:58:52Z",
+      "side": 1,
+      "message": "note - I think this lazy update thing was only because the current code is calling RunGit instead of manipulating config via scm.GIT",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c4fd67a_734347e7",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3614,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-22T00:58:52Z",
+      "side": 1,
+      "message": "note: this removes the global scope from the lookup - I don\u0027t believe it\u0027s necessary because the way that git will do this lookup is without any scope.\n\nThe calls below to SetConfig, however, retain scope because when we set up the cookie file we want to put the config globally.",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8fe1a05d_c3a0b2ba",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3868,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-22T00:58:52Z",
+      "side": 1,
+      "message": "previously this would have raised a subprocess error - now it raises valueerror.\n\nBoth cases are poor UX, but trying to keep this CL short.",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76bde1d5_ca0409b6",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-22T00:58:52Z",
+      "side": 1,
+      "message": "the way that git_cl uses this never wants to see an error from a missing config item. LMK if you disagree and I can flip this.",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "832303fa_638e2ebf",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3619,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-22T00:08:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db96ed8a_f4960848",
+      "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "09bf03d0_5eb62676",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-06-21T16:28:37Z",
       "side": 1,
       "message": "Is there a reason setting to empty first and then \u0027luci\u0027?",
+      "range": {
+        "startLine": 3628,
+        "startChar": 0,
+        "endLine": 3629,
+        "endChar": 74
+      },
+      "revId": "32b1d29bb9ff9a5aeb8713e62b9c552d31b38082",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d322259_dfb3044b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3629,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-22T00:08:54Z",
+      "side": 1,
+      "message": "You can have multiple values (for some options) in Git, we need an explicit \"set to empty\" and then \"set to luci\".\n\n(it\u0027s a bit complicated, but it\u0027s just how Git works)",
+      "parentUuid": "09bf03d0_5eb62676",
       "range": {
         "startLine": 3628,
         "startChar": 0,

@@ -7,6 +7,7 @@
 import logging
 import os
 import sys
+import tempfile
 import unittest
 from unittest import mock
 
@@ -350,6 +351,31 @@ class RealGitTest(fake_repos.FakeReposTestBase):
         scm.GIT.Capture(['checkout', HEAD], cwd=self.cwd)
         self.assertIsNone(scm.GIT.GetBranchRef(self.cwd))
         scm.GIT.Capture(['checkout', 'main'], cwd=self.cwd)
+
+
+class DiffTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.root = tempfile.mkdtemp()
+
+        os.makedirs(os.path.join(self.root, "foo", "dir"))
+        with open(os.path.join(self.root, "foo", "file.txt"), "w") as f:
+            f.write("file\n")
+        with open(os.path.join(self.root, "foo", "dir", "file.txt"), "w") as f:
+            f.write("dir file\n")
+
+        os.makedirs(os.path.join(self.root, "bar_repo", "bar"))
+        with open(os.path.join(self.root, "bar_repo", ".gitignore"), "w") as f:
+            f.write("ignore\n")
+
+        os.makedirs(os.path.join(self.root, "baz_repo"))
+        with open(os.path.join(self.root, "baz_repo", ".gitmodules"), "w") as f:
+            f.write("gitmodule\n")
+
+    def testGetAllFiles(self):
+        files = scm.DIFF.GetAllFiles(self.root)
+        self.assertCountEqual(
+            files, ["foo/file.txt", "foo/dir/file.txt", "bar_repo", "baz_repo"])
 
 
 if __name__ == '__main__':

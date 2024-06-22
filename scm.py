@@ -25,7 +25,7 @@ VERSIONED_SUBMODULE = 2
 def determine_scm(root):
     """Similar to upload.py's version but much simpler.
 
-    Returns 'git' or None.
+    Returns 'git' or 'diff'.
     """
     if os.path.isdir(os.path.join(root, '.git')):
         return 'git'
@@ -37,7 +37,7 @@ def determine_scm(root):
                                cwd=root)
         return 'git'
     except (OSError, subprocess2.CalledProcessError):
-        return None
+        return 'diff'
 
 
 class GIT(object):
@@ -529,3 +529,46 @@ class GIT(object):
         if sha_only:
             return sha == rev.lower()
         return True
+
+
+class DIFF(object):
+
+    @staticmethod
+    def GetAllFiles(cwd):
+        """Return all files under the repo at cwd.
+
+        If .gitmodule or .gitignore is in a subdirectory, that subdirectory will
+        not be considered part of the repo, and only a path to the subdirectory
+        will be returned. Any files in that subdirectory are omitted.
+
+        For example, with root = "/a/" and a directory structure like:
+
+            /a/foo.txt
+            /a/b/bar.txt
+            /a/c/.gitmodules
+            /a/c/baz.txt
+
+        Return the following paths:
+
+            foo.txt
+            b/bar.txt
+            c
+        """
+        paths = []
+
+        for dirpath, dirnames, filenames in os.walk(cwd):
+            if dirpath == cwd:
+                # Get all files in cwd.
+                paths.extend([os.path.join(dirpath, f) for f in filenames])
+                continue
+
+            if '.gitmodules' in filenames or '.gitignore' in filenames:
+                # We're in a submodule. Don't recursively iterate, but add this
+                # directory to paths.
+                dirnames[:] = []
+                paths.append(dirpath)
+                continue
+
+            paths.extend([os.path.join(dirpath, name) for name in filenames])
+
+        return [os.path.relpath(p, cwd) for p in paths]

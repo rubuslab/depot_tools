@@ -16,6 +16,64 @@
       "message": "PTAL",
       "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37a9ff26_dc26e898",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-06-24T09:57:20Z",
+      "side": 1,
+      "message": "lgtm \u0026 thanks",
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce66dd64_c2084ce7",
+        "filename": "fetch_configs/crossbench.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-06-24T09:57:20Z",
+      "side": 1,
+      "message": "2024",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "3c305947_f38bfa30",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "fetch_configs/crossbench.py",
+              "range": {
+                "startLine": 1,
+                "startChar": 0,
+                "endLine": 2,
+                "endChar": 0
+              },
+              "replacement": "# Copyright 2024 The Chromium Authors. All rights reserved.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

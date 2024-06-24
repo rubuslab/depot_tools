@@ -97,6 +97,47 @@
       },
       "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3efe8368_9ffe1a42",
+        "filename": "fetch_configs/crossbench.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1524899
+      },
+      "writtenOn": "2024-06-24T10:01:06Z",
+      "side": 1,
+      "message": "We don\u0027t have branches in crossbench yet. Could be removed.",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b9edda1e_23563659",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "fetch_configs/crossbench.py",
+              "range": {
+                "startLine": 27,
+                "startChar": 0,
+                "endLine": 28,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

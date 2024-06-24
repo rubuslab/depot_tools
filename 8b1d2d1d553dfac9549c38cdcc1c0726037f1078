@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6753fad_cee1086e",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-24T18:17:07Z",
+      "side": 1,
+      "message": "s/Return/Returns/\n\nthird-person verb form is used in most docstrings in depot_tools.",
+      "range": {
+        "startLine": 236,
+        "startChar": 7,
+        "endLine": 236,
+        "endChar": 13
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10457495_f50316b1",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-24T18:17:07Z",
+      "side": 1,
+      "message": "by having `store_true`, the default value is `False`. To enable this option by default, you could pass `default\u003dTrue`, but then users would have no way to turn it off.\n\nIf it\u0027s necessary to turn on the tree option by default, please change it as follows.\n```\nparse.add_argument(\"--no_tree\", action\u003d\"store_true\", help\u003d\"...\")\n```",
+      "range": {
+        "startLine": 267,
+        "startChar": 31,
+        "endLine": 267,
+        "endChar": 43
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "649e6606_1ebcd55d",
+        "filename": "man/src/git-rebase-update.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-24T18:17:07Z",
+      "side": 1,
+      "message": "could you explain the reason to make this as a default option? While I agree that this would be a useful feature, this would change the existing flows.",
+      "range": {
+        "startLine": 89,
+        "startChar": 65,
+        "endLine": 90,
+        "endChar": 66
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cb32279_6879c2ee",
+        "filename": "man/src/git-rebase-update.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-06-24T18:17:07Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 92,
+        "startChar": 22,
+        "endLine": 92,
+        "endChar": 24
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

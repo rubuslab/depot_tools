@@ -30,6 +30,7 @@ import warnings
 import google.auth
 from google.auth.transport.requests import AuthorizedSession
 
+import build_telemetry
 import ninja
 import ninja_reclient
 import reclient_helper
@@ -442,6 +443,7 @@ def main(args):
 
 
 if __name__ == "__main__":
+    build_telemetry.print_notice()
     try:
         sys.exit(main(sys.argv))
     except KeyboardInterrupt:

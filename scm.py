@@ -211,7 +211,7 @@ class GIT(object):
 
         args = ['config', f'--{scope}']
         if value == None:
-            args.extend(['--unset' + ('-all' if modify_all else ''), key])
+            args.extend(['--unset' + ('--all' if modify_all else ''), key])
         else:
             if modify_all:
                 args.append('--replace-all')

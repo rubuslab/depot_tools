@@ -16,6 +16,24 @@
       "message": "This is incorrect. .gitignore can be placed anywhere in any directory, not only top level. e.g. chromium/src repo itself has 197 .gitignore files.\n\nMoreover, a repo doesn\u0027t have to have .gitignore nor .gitmodules, meaning we potentially traverse more than needed.\n\nIf we want to make more accurate implementation, we should read .gitmodules from the project itself, and store all paths in memory. When walking the filesystem, check against in-memory set and skip ones that are found.",
       "revId": "488f6f73ee67fe5cd1349bc39a93eff455ff86ff",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4efba26a_01ba908b",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-24T19:58:17Z",
+      "side": 1,
+      "message": "Should\u0027ve realized that, thanks. Reworked.",
+      "parentUuid": "a72635ef_70cd6063",
+      "revId": "488f6f73ee67fe5cd1349bc39a93eff455ff86ff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

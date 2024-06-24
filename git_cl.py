@@ -3620,7 +3620,8 @@ def ConfigureGitRepoAuth() -> None:
         scm.GIT.SetConfig(cwd,
                           f'credential.{gerrit_host}.helper',
                           None,
-                          modify_all=True)
+                          modify_all=True,
+                          missing_ok=True)
     else:
         scm.GIT.SetConfig(cwd,
                           f'credential.{gerrit_host}.helper',

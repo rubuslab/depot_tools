@@ -70,6 +70,24 @@
       "parentUuid": "288b05cd_ee87cae6",
       "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e39a2db2_8b3c9da7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1291291
+      },
+      "writtenOn": "2024-06-24T05:59:24Z",
+      "side": 1,
+      "message": "\u003e This looks like it was already merged in a separate CL\n\nMay I know which CL that is? Does it happen to address https://crbug.com/1285146 ?",
+      "parentUuid": "65a1be0b_7ad60e36",
+      "revId": "9323fa867a41ced5fb43613d6d25fc5411d047be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

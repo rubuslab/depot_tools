@@ -53,6 +53,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5a44bf9_800a09f1",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-24T20:10:28Z",
+      "side": 1,
+      "message": "Looking at this more closely, I think this is done so that git cl can make calls like `git config rietveld.tree-status-url` to get the url, which is loaded from the `STATUS\u003d....` line of `codereview.settings`. \n\nThis looks pretty weird to me (vs. just reading the setting directly from codereview.settings), but I think this use case will remain after this CL.\n\nAlso \u0027rietveld\u0027 is very much a misnomer at this point 😊.",
+      "parentUuid": "23f0ebbf_5c49e822",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c4fd67a_734347e7",
@@ -140,6 +158,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c62e817_357a255b",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3872,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-24T20:10:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee53b672_48499806",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "76bde1d5_ca0409b6",
@@ -171,6 +207,24 @@
       "side": 1,
       "message": "Looks like ret code 5 is not limited to the case where value is missing in unset operation: https://screenshot.googleplex.com/8LVM3D2wbuaYHz8. However, the previous code skip all types of error but this one is stricter and more explicit than that which I think is a good thing. I\u0027d additionally check if `value \u003d\u003d None` at L228 to make sure this option only applies to unset operation.",
       "parentUuid": "76bde1d5_ca0409b6",
+      "revId": "37880635599d0273043959de58272eeeec5b807a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "388d8190_a21c09e2",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-24T20:10:28Z",
+      "side": 1,
+      "message": "Ah, yes, good catch. Added `value is None` clause on 288 (which I implied in the docstring anyway).",
+      "parentUuid": "a4ee9960_7007c277",
       "revId": "37880635599d0273043959de58272eeeec5b807a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

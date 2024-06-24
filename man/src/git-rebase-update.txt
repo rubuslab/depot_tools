@@ -85,6 +85,12 @@ OPTIONS
 --current::
   Only rebase the current branch.
 
+--tree::
+  Also rebase any branches downstream from the selected branches. This is the
+  default behavior if no branches are indicated on the command line, and the
+  flag is meant to be used with named branches or `--current` to selectively
+  rebase a branch tree. 
+
 
 CONFIGURATION VARIABLES
 -----------------------

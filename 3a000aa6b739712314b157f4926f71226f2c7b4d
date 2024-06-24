@@ -76,6 +76,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "875c88a8_35506b29",
+        "filename": "fetch_configs/crossbench.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1132654
+      },
+      "writtenOn": "2024-06-24T10:43:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce66dd64_c2084ce7",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "22abac73_fc9dc9ef",
@@ -89,6 +113,30 @@
       "writtenOn": "2024-06-24T09:57:45Z",
       "side": 1,
       "message": "Crossbench",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 33
+      },
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee50acfa_32fac0d9",
+        "filename": "fetch_configs/crossbench.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1132654
+      },
+      "writtenOn": "2024-06-24T10:43:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22abac73_fc9dc9ef",
       "range": {
         "startLine": 13,
         "startChar": 32,
@@ -136,6 +184,30 @@
           ]
         }
       ],
+      "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac492832_6430582e",
+        "filename": "fetch_configs/crossbench.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1132654
+      },
+      "writtenOn": "2024-06-24T10:43:49Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "3efe8368_9ffe1a42",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 38
+      },
       "revId": "3a000aa6b739712314b157f4926f71226f2c7b4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

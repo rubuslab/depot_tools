@@ -85,6 +85,13 @@ OPTIONS
 --current::
   Only rebase the current branch.
 
+--evolve::
+  Rebase all downstream branches. This is inspired by Mercurial evolve.
+  Instead of rebasing the current branch, it will instead rebase all
+  downstream branches, in order to facilitate staged commits.
+  If branches are provided on the command line, it will rebase all downstream
+  branches from the provided branches.
+  This option implies `--no-fetch`.
 
 CONFIGURATION VARIABLES
 -----------------------

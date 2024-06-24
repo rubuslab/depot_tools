@@ -232,6 +232,16 @@ def rebase_branch(branch, parent, start_hash):
     return True
 
 
+def get_downstream_branches(base_branches, branch_tree):
+    """Get all downstream branches from the base_branches in the branch_tree."""
+    downstream_branches = set()
+    for branch, parent in git.topo_iter(branch_tree):
+        if parent in base_branches or parent in downstream_branches:
+            downstream_branches.add(branch)
+
+    return downstream_branches
+
+
 def main(args=None):
     if gclient_utils.IsEnvCog():
         print(
@@ -253,6 +263,11 @@ def main(args=None):
     parser.add_argument('--current',
                         action='store_true',
                         help='Only rebase the current branch.')
+    parser.add_argument('--tree',
+                        action='store_true',
+                        help='Rebase branches downstream from the selected '
+                        'branch(es). This is default unless branch names or '
+                        '--current is supplied.')
     parser.add_argument('branches',
                         nargs='*',
                         help='Branches to be rebased. All branches are assumed '
@@ -297,6 +312,10 @@ def main(args=None):
         branches_to_rebase.add(git.current_branch())
 
     skipped, branch_tree = git.get_branch_tree(use_limit=not opts.current)
+    if opts.tree and branches_to_rebase:
+        branches_to_rebase = get_downstream_branches(branches_to_rebase,
+                                                     branch_tree)
+
     if branches_to_rebase:
         skipped = set(skipped).intersection(branches_to_rebase)
     for branch in skipped:

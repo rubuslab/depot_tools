@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bf277c5_de6335d2",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1528727
+      },
+      "writtenOn": "2024-06-25T08:22:07Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "c6753fad_cee1086e",
+      "range": {
+        "startLine": 236,
+        "startChar": 7,
+        "endLine": 236,
+        "endChar": 13
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "10457495_f50316b1",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-06-24T18:17:07Z",
       "side": 1,
       "message": "by having `store_true`, the default value is `False`. To enable this option by default, you could pass `default\u003dTrue`, but then users would have no way to turn it off.\n\nIf it\u0027s necessary to turn on the tree option by default, please change it as follows.\n```\nparse.add_argument(\"--no_tree\", action\u003d\"store_true\", help\u003d\"...\")\n```",
+      "range": {
+        "startLine": 267,
+        "startChar": 31,
+        "endLine": 267,
+        "endChar": 43
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db3e7625_5783d34c",
+        "filename": "git_rebase_update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1528727
+      },
+      "writtenOn": "2024-06-25T08:22:07Z",
+      "side": 1,
+      "message": "This flag is not meant to be on by default, my documentation was simply confusing, and has been rewritten.",
+      "parentUuid": "10457495_f50316b1",
       "range": {
         "startLine": 267,
         "startChar": 31,
@@ -70,6 +118,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "010945a1_69d06f6b",
+        "filename": "man/src/git-rebase-update.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1528727
+      },
+      "writtenOn": "2024-06-25T08:22:07Z",
+      "side": 1,
+      "message": "It\u0027s not really a default option, I just wanted to point out that `rebase-update` does a full tree rebase by default if you don\u0027t tell it anything else. But, that\u0027s probably just confusing, so I removed that explanation.",
+      "parentUuid": "649e6606_1ebcd55d",
+      "range": {
+        "startLine": 89,
+        "startChar": 65,
+        "endLine": 90,
+        "endChar": 66
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cb32279_6879c2ee",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-06-24T18:17:07Z",
       "side": 1,
       "message": "trailing whitespace",
+      "range": {
+        "startLine": 92,
+        "startChar": 22,
+        "endLine": 92,
+        "endChar": 24
+      },
+      "revId": "8b1d2d1d553dfac9549c38cdcc1c0726037f1078",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9747c67d_80b0b32f",
+        "filename": "man/src/git-rebase-update.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1528727
+      },
+      "writtenOn": "2024-06-25T08:22:07Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "2cb32279_6879c2ee",
       "range": {
         "startLine": 92,
         "startChar": 22,

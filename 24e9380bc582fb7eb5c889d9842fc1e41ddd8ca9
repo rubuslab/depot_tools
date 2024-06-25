@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96094956_4485c70a",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1667,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2024-06-25T00:50:56Z",
+      "side": 1,
+      "message": "Looks like this is a typo that\u0027ll break line 1684.",
+      "range": {
+        "startLine": 1667,
+        "startChar": 21,
+        "endLine": 1667,
+        "endChar": 36
+      },
+      "revId": "24e9380bc582fb7eb5c889d9842fc1e41ddd8ca9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

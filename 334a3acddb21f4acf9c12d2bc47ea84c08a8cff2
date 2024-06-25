@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "057c11c4_0e5d8c8d",
+        "filename": "metadata/tests/dependency_metadata_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-06-25T07:53:24Z",
+      "side": 0,
+      "message": "You should still test that:\n\n\"Version is invalid\" and \"Revision is invalid\" will trigger \"Versioning fields are insufficient\" failure.",
+      "revId": "334a3acddb21f4acf9c12d2bc47ea84c08a8cff2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

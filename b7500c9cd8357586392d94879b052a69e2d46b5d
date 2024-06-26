@@ -34,6 +34,24 @@
       "parentUuid": "2c373f68_eb1e33f0",
       "revId": "b7500c9cd8357586392d94879b052a69e2d46b5d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8caae7f_33eb95c6",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3628,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T20:57:58Z",
+      "side": 1,
+      "message": "okay, does blank value has any special meanings that we must keep the entry? Could we just unset it?",
+      "parentUuid": "817e79cc_44a9f87e",
+      "revId": "b7500c9cd8357586392d94879b052a69e2d46b5d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

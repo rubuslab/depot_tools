@@ -2311,6 +2311,11 @@ class Changelist(object):
                 })
             return
 
+        if newauth.Enabled():
+            # XXXXXXXXXXx cache
+            ConfigureGitRepoAuth()
+            return
+
         # Lazy-loader to identify Gerrit and Git hosts.
         self.GetCodereviewServer()
         git_host = self._GetGitHost()

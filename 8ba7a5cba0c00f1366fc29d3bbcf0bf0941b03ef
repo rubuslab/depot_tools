@@ -16,6 +16,23 @@
       "message": "If you want to update the OWNERS file in this CL as well, you and Jiewei can both be added as owners, and we can remove Suma. Due for a team name update as well.\n\n```\n# PEEPs Security\naredulla@google.com\ndlf@google.com\njsca@google.com\nqjw@google.com\nrenewitt@google.com\nrop@google.com\n```",
       "revId": "8ba7a5cba0c00f1366fc29d3bbcf0bf0941b03ef",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3dbf75c1_46b8c927",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-06-26T04:22:26Z",
+      "side": 1,
+      "message": "nit: Suggest moving this to a constant so we don\u0027t repeatedly compile it.",
+      "revId": "8ba7a5cba0c00f1366fc29d3bbcf0bf0941b03ef",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -204,6 +204,11 @@ class Authenticator(object):
         raise NotImplementedError()
 
     @classmethod
+    def is_applicable_for(cls, conn: HttpConn) -> bool:
+        """Must return True if this Authenticator is applicable to the conn."""
+        return cls.is_applicable()
+
+    @classmethod
     def is_applicable(cls) -> bool:
         """Must return True if this Authenticator is available in the current
         environment."""
@@ -239,20 +244,20 @@ class Authenticator(object):
             if use_new_auth:
                 LOGGER.debug('Authenticator.get: using new auth stack.')
                 authenticators = [
-                    SSOAuthenticator,
-                    LuciContextAuthenticator,
-                    GceAuthenticator,
-                    LuciAuthAuthenticator,
+                    SSOAuthenticator(),
+                    LuciContextAuthenticator(),
+                    GceAuthenticator(),
+                    LuciAuthAuthenticator(),
                 ]
                 if skip_sso:
                     LOGGER.debug('Authenticator.get: skipping SSOAuthenticator.')
                     authenticators = authenticators[1:]
-            else:
-                authenticators = [
-                    LuciContextAuthenticator,
-                    GceAuthenticator,
-                    CookiesAuthenticator,
-                ]
+                return ChainedAuthenticator(authenticators)
+            authenticators = [
+                LuciContextAuthenticator,
+                GceAuthenticator,
+                CookiesAuthenticator,
+            ]
 
             for candidate in authenticators:
                 if candidate.is_applicable():
@@ -752,6 +757,34 @@ class LuciAuthAuthenticator(LuciContextAuthenticator):
     @staticmethod
     def is_applicable():
         return True
+
+
+class ChainedAuthenticator(Authenticator):
+    """Authenticator that delegates to others in sequence.
+
+    Authenticators should implement the method `is_applicable_for`.
+    """
+
+    def __init__(self, authenticators: List[Authenticator]):
+        self.authenticators = authenticators
+
+    def is_applicable(self) -> bool:
+        return bool(any(a.is_applicable() for a in self.authenticators))
+
+    def is_applicable_for(self, conn: HttpConn) -> bool:
+        return bool(any(a.is_applicable_for(conn) for a in self.authenticators))
+
+    def authenticate(self, conn: HttpConn):
+        for a in self.authenticators:
+            if a.is_applicable_for(conn):
+                a.authenticate(conn)
+                break
+        else:
+            raise ValueError(
+                f'{self!r} has no applicable authenticator for {conn!r}')
+
+    def debug_summary_state(self) -> str:
+        return ''
 
 
 class ReqParams(TypedDict):

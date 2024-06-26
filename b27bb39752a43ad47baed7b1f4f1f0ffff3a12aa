@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1dc2416_a286df51",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-06-26T03:53:30Z",
+      "side": 1,
+      "message": "nit: additional is a list, so I\u0027d provide {value} is not a valid hash as a saperate list item.",
+      "range": {
+        "startLine": 61,
+        "startChar": 61,
+        "endLine": 61,
+        "endChar": 99
+      },
+      "revId": "b27bb39752a43ad47baed7b1f4f1f0ffff3a12aa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ class RevisionField(field_types.SingleLineTextField):
 
     def __init__(self):
         super().__init__(name="Revision")
+        self._hex_pattern = re.compile(r"^[a-fA-F0-9]{7,40}$")
 
     def narrow_type(self, value: str) -> Optional[str]:
         value = super().narrow_type(value)
@@ -38,4 +39,36 @@ class RevisionField(field_types.SingleLineTextField):
         if util.is_known_invalid_value(value):
             return None
 
+        if not self._hex_pattern.match(value):
+            return None
+
         return value
+
+    def validate(self, value: str) -> Optional[vr.ValidationResult]:
+        """Validates the revision string.
+
+        Checks:
+          - Non-empty value.
+          - Valid hexadecimal format (length 7-40 characters).
+        """
+
+        if util.is_unknown(value):
+            return vr.ValidationWarning(
+                reason=f"{self._name} is invalid.",
+                additional=[
+                    "Revision is required for dependencies which have a git repository "
+                    "as an upstream, OPTIONAL if the upstream is not a git repository "
+                    "and either Version or Date is supplied. '{value}' is not a valid commit hash.",
+                ],
+            )
+
+        if not self._hex_pattern.match(value):
+            return vr.ValidationError(
+                reason=f"{self._name} is not a valid hexadecimal revision.",
+                additional=[
+                    "Revisions must be hexadecimal strings with a length of 7 to 40 characters."
+                ],
+            )
+
+        # Valid revision.
+        return None

@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b41a5cd_7430f75c",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fd069e8_d5c55e8c",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 43,
+        "endChar": 23
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "569bb2e4_0b13a7fe",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-25T07:53:24Z",
       "side": 1,
       "message": "I think revision is optional for non-git, so \u0027N/A\u0027 shouldn\u0027t be a permitted value (i.e. just don\u0027t provide revision).\n\nIf it\u0027s git, revision must be a valid hash.\nIf it\u0027s non-git, the readme file shouldn\u0027t provide a Revision field, and `value` arg would be empty string or None",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 13
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a187e425_3305a77c",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "569bb2e4_0b13a7fe",
       "range": {
         "startLine": 56,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60a2864f_d15b14c4",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa9b435d_6d698051",
+      "range": {
+        "startLine": 67,
+        "startChar": 41,
+        "endLine": 67,
+        "endChar": 50
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38602c84_65131dea",
@@ -100,6 +172,30 @@
       "writtenOn": "2024-06-25T07:53:24Z",
       "side": 1,
       "message": "Tell people to remove this field (non git), or give a valid one (git)",
+      "range": {
+        "startLine": 69,
+        "startChar": 20,
+        "endLine": 70,
+        "endChar": 59
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c465ddd_d3e64e0e",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done. Copied the definition from the template.",
+      "parentUuid": "38602c84_65131dea",
       "range": {
         "startLine": 69,
         "startChar": 20,
@@ -133,6 +229,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a109e16_ce5edbe6",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ff0a5bc_d3818189",
+      "range": {
+        "startLine": 77,
+        "startChar": 31,
+        "endLine": 77,
+        "endChar": 40
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d23c0b1_9a9f3458",
@@ -150,6 +270,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c89fb68_fa7b8fb7",
+        "filename": "metadata/fields/custom/revision.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d23c0b1_9a9f3458",
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7d171c7f_a4b0260f",
@@ -163,6 +301,30 @@
       "writtenOn": "2024-06-25T07:53:24Z",
       "side": 1,
       "message": "End the sentence, put a period  here.",
+      "range": {
+        "startLine": 141,
+        "startChar": 55,
+        "endLine": 141,
+        "endChar": 56
+      },
+      "revId": "bc9838630d92fbcb650dab873ea4d0989358518d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "995d9c25_9c9a8ad4",
+        "filename": "metadata/tests/dependency_metadata_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 3388142
+      },
+      "writtenOn": "2024-06-26T02:39:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d171c7f_a4b0260f",
       "range": {
         "startLine": 141,
         "startChar": 55,

@@ -2712,8 +2712,14 @@ class GcsDependency(Dependency):
             patch_refs, target_branches, skip_sync_revisions):
         """Downloads GCS package."""
         logging.info('GcsDependency(%s).run()' % self.name)
+
+        # GCS dependencies do not need to run during runhooks.
+        if command == 'runhooks':
+            return
+
         if not self.should_process:
             return
+
         self.DownloadGoogleStorage()
         super(GcsDependency,
               self).run(revision_overrides, command, args, work_queue, options,
@@ -2926,6 +2932,9 @@ class CipdDependency(Dependency):
             patch_refs, target_branches, skip_sync_revisions):
         """Runs |command| then parse the DEPS file."""
         logging.info('CipdDependency(%s).run()' % self.name)
+        # CIPD dependencies do not need to run during runhooks.
+        if command == 'runhooks':
+            return
         if not self.should_process:
             return
         self._CreatePackageIfNecessary()

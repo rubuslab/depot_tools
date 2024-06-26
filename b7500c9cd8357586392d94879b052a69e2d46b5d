@@ -16,6 +16,24 @@
       "message": "Can you remind me why this is empty string instead of None?",
       "revId": "b7500c9cd8357586392d94879b052a69e2d46b5d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "817e79cc_44a9f87e",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3628,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T20:47:21Z",
+      "side": 1,
+      "message": "We need to set a blank value to override existing values in the config (e.g. global config)",
+      "parentUuid": "2c373f68_eb1e33f0",
+      "revId": "b7500c9cd8357586392d94879b052a69e2d46b5d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

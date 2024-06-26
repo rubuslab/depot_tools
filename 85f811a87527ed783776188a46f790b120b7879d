@@ -123,6 +123,24 @@
       "parentUuid": "370d44ea_99bd547a",
       "revId": "85f811a87527ed783776188a46f790b120b7879d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5907e66b_ab67f4f1",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T21:17:33Z",
+      "side": 1,
+      "message": "oh got it, I thought there\u0027s a CL somewhere I\u0027ve missed.",
+      "parentUuid": "14cd9df7_a0353268",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

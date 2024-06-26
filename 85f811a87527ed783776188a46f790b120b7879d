@@ -105,6 +105,24 @@
       "parentUuid": "60cce0d5_c70713da",
       "revId": "85f811a87527ed783776188a46f790b120b7879d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14cd9df7_a0353268",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T21:15:11Z",
+      "side": 1,
+      "message": "\u003e Does the ToT Git completely remove\n\nno\n\n\u003e I think we should use the old flag \n\nyes, that\u0027s what I did\n\n\u003e Sorry WDYM by didn\u0027t upload the fixed CL?\n\nI actually fixed it earlier but didn\u0027t upload the new patchset.\n\nSee latest patchset",
+      "parentUuid": "370d44ea_99bd547a",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

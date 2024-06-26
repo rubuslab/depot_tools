@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "01221c0d_1bd6559f",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T20:39:16Z",
+      "side": 1,
+      "message": "unsure.  As the docs state, `--add` is the same as `--replace-all ^$`, so they technically aren\u0027t mutually exclusive?  I\u0027m inclined to leave it unless it turns out to be a problem.\n\nIn particular, I don\u0027t want to unnecessarily complicate the logic of this method, since it\u0027s already a bit messy.",
+      "parentUuid": "77c2f553_a70f67ee",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "938d7c71_52567bc2",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-06-26T16:02:21Z",
       "side": 1,
       "message": "I think the [official documentation](https://git-scm.com/docs/git-config/#Documentation/git-config.txt---add) suggests `add` option. I don\u0027t even see and append option.",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60cce0d5_c70713da",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T20:39:16Z",
+      "side": 1,
+      "message": "Ack, we have the ToT Git which adds the `--append` option, didn\u0027t upload the fixed CL.",
+      "parentUuid": "938d7c71_52567bc2",
       "revId": "85f811a87527ed783776188a46f790b120b7879d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77c2f553_a70f67ee",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T16:02:21Z",
+      "side": 1,
+      "message": "should it be made mutually exclusive with modify_all?",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "938d7c71_52567bc2",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T16:02:21Z",
+      "side": 1,
+      "message": "I think the [official documentation](https://git-scm.com/docs/git-config/#Documentation/git-config.txt---add) suggests `add` option. I don\u0027t even see and append option.",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

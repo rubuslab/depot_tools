@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "12f80c7a_28ee5169",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T21:42:50Z",
+      "side": 1,
+      "message": "Good idea, done",
+      "parentUuid": "23240094_4ac50a95",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 34
+      },
+      "revId": "43c53e02c331cde43265c5078983dee800764907",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3be28270_75955ed7",
         "filename": "gerrit_util.py",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-26T21:31:30Z",
       "side": 1,
       "message": "I feel like this method is useless once ChainedAuthenticator is used.",
+      "range": {
+        "startLine": 786,
+        "startChar": 0,
+        "endLine": 787,
+        "endChar": 17
+      },
+      "revId": "43c53e02c331cde43265c5078983dee800764907",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cf52466_157d3132",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T21:42:50Z",
+      "side": 1,
+      "message": "Looks like this method is only implemented for gitcookies, which we\u0027re going to delete later anyway.  We can probably delete the method at that point.",
+      "parentUuid": "3e774747_e6700e0e",
       "range": {
         "startLine": 786,
         "startChar": 0,

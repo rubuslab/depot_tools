@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46edc254_dfb6c742",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-26T21:21:36Z",
+      "side": 1,
+      "message": "stupid UI shifting",
+      "revId": "4ef2d9bfa7dfcdfcd4fa97c06eb6ee17bbc9650a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

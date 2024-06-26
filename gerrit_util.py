@@ -204,6 +204,11 @@ class Authenticator(object):
         raise NotImplementedError()
 
     @classmethod
+    def is_applicable_for(cls, conn: HttpConn) -> bool:
+        """Must return True if this Authenticator is applicable to the conn."""
+        return cls.is_applicable()
+
+    @classmethod
     def is_applicable(cls) -> bool:
         """Must return True if this Authenticator is available in the current
         environment."""
@@ -237,22 +242,32 @@ class Authenticator(object):
             skip_sso = newauth.SkipSSO()
 
             if use_new_auth:
-                LOGGER.debug('Authenticator.get: using new auth stack.')
-                authenticators = [
-                    SSOAuthenticator,
-                    LuciContextAuthenticator,
-                    GceAuthenticator,
-                    LuciAuthAuthenticator,
-                ]
-                if skip_sso:
-                    LOGGER.debug('Authenticator.get: skipping SSOAuthenticator.')
-                    authenticators = authenticators[1:]
-            else:
-                authenticators = [
-                    LuciContextAuthenticator,
-                    GceAuthenticator,
-                    CookiesAuthenticator,
-                ]
+                LOGGER.debug('Authenticator.get: using new auth stack')
+                if LuciContextAuthenticator.is_applicable():
+                    LOGGER.debug(
+                        'Authenticator.get: using LUCI context authenticator')
+                    ret = LuciContextAuthenticator()
+                else:
+                    LOGGER.debug(
+                        'Authenticator.get: using chained authenticator')
+                    a = [
+                        SSOAuthenticator(),
+                        # GCE detection can't distinguish cloud workstations.
+                        GceAuthenticator(),
+                        LuciAuthAuthenticator(),
+                    ]
+                    if skip_sso:
+                        LOGGER.debug(
+                            'Authenticator.get: skipping SSOAuthenticator.')
+                        authenticators = authenticators[1:]
+                    ret = ChainedAuthenticator(a)
+                cls._resolved = ret
+                return ret
+            authenticators = [
+                LuciContextAuthenticator,
+                GceAuthenticator,
+                CookiesAuthenticator,
+            ]
 
             for candidate in authenticators:
                 if candidate.is_applicable():
@@ -752,6 +767,34 @@ class LuciAuthAuthenticator(LuciContextAuthenticator):
     @staticmethod
     def is_applicable():
         return True
+
+
+class ChainedAuthenticator(Authenticator):
+    """Authenticator that delegates to others in sequence.
+
+    Authenticators should implement the method `is_applicable_for`.
+    """
+
+    def __init__(self, authenticators: List[Authenticator]):
+        self.authenticators = list(authenticators)
+
+    def is_applicable(self) -> bool:
+        return bool(any(a.is_applicable() for a in self.authenticators))
+
+    def is_applicable_for(self, conn: HttpConn) -> bool:
+        return bool(any(a.is_applicable_for(conn) for a in self.authenticators))
+
+    def authenticate(self, conn: HttpConn):
+        for a in self.authenticators:
+            if a.is_applicable_for(conn):
+                a.authenticate(conn)
+                break
+        else:
+            raise ValueError(
+                f'{self!r} has no applicable authenticator for {conn!r}')
+
+    def debug_summary_state(self) -> str:
+        return ''
 
 
 class ReqParams(TypedDict):

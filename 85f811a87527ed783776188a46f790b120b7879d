@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "146b7855_5cde36b9",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T20:55:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "01221c0d_1bd6559f",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "938d7c71_52567bc2",
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "Ack, we have the ToT Git which adds the `--append` option, didn\u0027t upload the fixed CL.",
       "parentUuid": "938d7c71_52567bc2",
+      "revId": "85f811a87527ed783776188a46f790b120b7879d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "370d44ea_99bd547a",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-26T20:55:02Z",
+      "side": 1,
+      "message": "Does the ToT Git completely remove the `--add`? If not, I think we should use the old flag as it could be a dangerous assumption that everyone has latest version of git on their host.\n\n\u003e didn\u0027t upload the fixed CL.\n\nSorry WDYM by didn\u0027t upload the fixed CL?",
+      "parentUuid": "60cce0d5_c70713da",
       "revId": "85f811a87527ed783776188a46f790b120b7879d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

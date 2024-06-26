@@ -24,6 +24,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3be28270_75955ed7",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-06-26T21:33:21Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be removed now?\n\nedit: I see this is still used for the non-new-auth case :/",
+      "revId": "43c53e02c331cde43265c5078983dee800764907",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e774747_e6700e0e",

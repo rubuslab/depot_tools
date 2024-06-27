@@ -37,6 +37,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1365908_e5b424f7",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-27T21:42:39Z",
+      "side": 1,
+      "message": "I don\u0027t think this is a good idea. It defaults to squashing all branches. There\u0027s reason why we have squash workflow in the first place, and that is to keep the incremental history per CL. This goes against that principle, and I think no-squash workflow could be better (or utilize --amend instead of adding commits on top of it).\n\nIf you feel strongly about this functionality, I think at least we should default to the current branch.",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88d10bda_740fc6fa",
+        "filename": "tests/git_squash_branch_tree_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-06-27T21:42:39Z",
+      "side": 1,
+      "message": "chmod +x",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a0c12467_2606c951",
         "filename": "tests/git_squash_branch_tree_test.py",
         "patchSetId": 5

@@ -52,6 +52,24 @@
       "parentUuid": "cdd2b5f8_cf90039b",
       "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54dd83b0_7025b0ba",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-27T20:54:34Z",
+      "side": 1,
+      "message": "Oops, that\u0027s a typo.\n\nre: hyphening.  To be consistent with Git, which uses camelCase for all options (see everything here https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushUnqualifiedRefname).\n\nBasically, either we can make the config file a bit uglier or we can make the implementation a bit uglier, I chose the latter since users see the former.",
+      "parentUuid": "4405574a_be894530",
+      "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

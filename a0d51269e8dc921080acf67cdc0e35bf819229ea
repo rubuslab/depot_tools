@@ -34,6 +34,24 @@
       "parentUuid": "00c9bcbd_6b7d931b",
       "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4405574a_be894530",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-27T16:19:54Z",
+      "side": 1,
+      "message": "I\u0027m confused here. A in Autoconfigured seems to be upper case though you said you need the lowercase to get. I\u0027m wondering why not using hypthen then like `depot-tools.gitauth-auto-configured`?",
+      "parentUuid": "cdd2b5f8_cf90039b",
+      "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

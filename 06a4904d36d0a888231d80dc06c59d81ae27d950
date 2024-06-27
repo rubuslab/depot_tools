@@ -16,6 +16,24 @@
       "message": "@ayatane@chromium.org and @iannucci@chromium.org, as more and more flags starting to get introduced, is there a design doc or rollout planning doc somewhere I can refer to to help me understand your plan better? This would help me and/or the team review your code faster as we\u0027ll have a better picture on your implementation and roll out plan rather than guessing the intent based on the code we\u0027ve reviewed.",
       "revId": "06a4904d36d0a888231d80dc06c59d81ae27d950",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73c296e7_53b5cc01",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-27T21:41:22Z",
+      "side": 1,
+      "message": "No doc yet.  After landing this CL, it will be ready enough to fishfood within our team, and I will draft the launch doc.\n\n(This is part of a larger project that grew bigger and things changed, etc etc)\n\nBasically, we\u0027re adding SSO and luci-auth support to depot_tools, and getting rid of gitcookies.  The new flow is behind an opt in flag, and we will roll out when ready, then wait to flip it to default on.",
+      "parentUuid": "92520a25_0af2d7ce",
+      "revId": "06a4904d36d0a888231d80dc06c59d81ae27d950",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

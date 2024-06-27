@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "470d89d4_c421158f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-27T20:54:40Z",
+      "side": 1,
+      "message": "can you provide some more info about this command and why it\u0027s useful?",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "dc75410d_7a6a5c7a",
@@ -14,6 +31,97 @@
       "writtenOn": "2024-06-27T18:21:37Z",
       "side": 1,
       "message": "Hi Gavin, PTAL",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0c12467_2606c951",
+        "filename": "tests/git_squash_branch_tree_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-06-27T20:54:40Z",
+      "side": 1,
+      "message": "replace all with `self.assertEqual`",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 14
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "5b85bd25_feb905f0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 62,
+                "startChar": 0,
+                "endLine": 65,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 2)\n"
+            },
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 69,
+                "startChar": 0,
+                "endLine": 72,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 1)\n"
+            },
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 74,
+                "startChar": 0,
+                "endLine": 77,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 2)\n"
+            },
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 81,
+                "startChar": 0,
+                "endLine": 84,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 2)\n"
+            },
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 88,
+                "startChar": 0,
+                "endLine": 91,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 2)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 1)\n"
+            },
+            {
+              "path": "tests/git_squash_branch_tree_test.py",
+              "range": {
+                "startLine": 95,
+                "startChar": 0,
+                "endLine": 98,
+                "endChar": 0
+              },
+              "replacement": "        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchA\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchB\u0027), 1)\n        self.assertEqual(self._getCountAheadOfUpstream(\u0027branchC\u0027), 1)\n"
+            }
+          ]
+        }
+      ],
       "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

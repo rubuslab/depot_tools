@@ -70,6 +70,24 @@
       "parentUuid": "4405574a_be894530",
       "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0a0f7a9_73323ee6",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-27T21:25:55Z",
+      "side": 1,
+      "message": "P.S. the \"correct\" solution is to make GetConfig handle case sensitivity correctly.  It\u0027s not trivial because it doesn\u0027t affect subsection names like `ignorecase.ThisRespectsCase.ignorecase`.  (I tried earlier but gave up since it wasn\u0027t trivial; it needs to be done a bit carefully).",
+      "parentUuid": "54dd83b0_7025b0ba",
+      "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1a311cc_6729699f",
+        "filename": "ninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-06-27T03:25:20Z",
+      "side": 1,
+      "message": "autoninja also does gn args scanning. \nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:autoninja.py;l\u003d185;drc\u003de6d8f67fae6c1ec119dcdb7c1af84909a096144f\n\nSo, it would be better to 1) reuse the logic, possibly 2) reuse the result.\n1) would be easy to do.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 32
+      },
+      "revId": "0d63b86a758dfc047cc8da4f158940d21e8495f9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

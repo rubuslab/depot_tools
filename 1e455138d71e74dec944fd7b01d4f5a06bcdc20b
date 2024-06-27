@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b2a96c_712a17f6",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-06-27T03:25:39Z",
+      "side": 1,
+      "message": "`revinfo` used to be None. So this is not a behavior change. Keeping \"None\" around to not impact other things that might be passing in \"None\" as the command for w/e reason.",
+      "range": {
+        "startLine": 1214,
+        "startChar": 34,
+        "endLine": 1214,
+        "endChar": 49
+      },
+      "revId": "1e455138d71e74dec944fd7b01d4f5a06bcdc20b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcd31322_b7a474a7",
+        "filename": "gclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2717,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-06-27T03:25:39Z",
+      "side": 1,
+      "message": "Seems like this check should happen in DependencyRun, but there is no way around this if we\u0027re keeping DownloadGoogleStorage() where it is.\n\nAlso alternatively, when non-git sources are fully supported, we could change this to check if we are in a cog environment, since we know gclient shouldn\u0027t be doing anything related to non-git sources in cog. Other gclient commands might need to be added here later, so we might be playing whack-a-mole. and technically having run() executed does not break anything in non-cider runhooks + revinfo.\n\nBut i think this the current change is preferable for now and long-term. Even regardless of cider, having DownloadGoogleStorage or CreatePackageIfNecessary run during `runhooks` isn\u0027t correct behavior.",
+      "range": {
+        "startLine": 2717,
+        "startChar": 7,
+        "endLine": 2717,
+        "endChar": 46
+      },
+      "revId": "1e455138d71e74dec944fd7b01d4f5a06bcdc20b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

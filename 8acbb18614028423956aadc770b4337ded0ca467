@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fbc84d5_f73de33e",
+        "filename": "gn_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T06:44:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5de72002_3355b9e3",
+      "range": {
+        "startLine": 54,
+        "startChar": 15,
+        "endLine": 54,
+        "endChar": 21
+      },
+      "revId": "8acbb18614028423956aadc770b4337ded0ca467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17bcccb5_41379909",
@@ -41,6 +65,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f5734d60_478ce5b0",
+        "filename": "ninja.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T06:44:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17bcccb5_41379909",
+      "revId": "8acbb18614028423956aadc770b4337ded0ca467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c908eacb_8f9325ba",
@@ -54,6 +96,30 @@
       "writtenOn": "2024-06-27T06:27:31Z",
       "side": 1,
       "message": "This and belows are redundant?\nhttps://docs.python.org/3.12/library/functions.html#super",
+      "range": {
+        "startLine": 30,
+        "startChar": 14,
+        "endLine": 30,
+        "endChar": 32
+      },
+      "revId": "8acbb18614028423956aadc770b4337ded0ca467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6657b70c_5705d73b",
+        "filename": "tests/gn_helper_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T06:44:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c908eacb_8f9325ba",
       "range": {
         "startLine": 30,
         "startChar": 14,

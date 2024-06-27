@@ -8,6 +8,7 @@ binary when run inside a gclient source tree, so users can just type
 "ninja" on the command line."""
 
 import os
+import re
 import subprocess
 import sys
 
@@ -28,6 +29,29 @@ def findNinjaInPath():
         ninja_path = os.path.join(bin_dir, exe)
         if os.path.isfile(ninja_path):
             return ninja_path
+
+
+def _gn_lines(output_dir, path):
+    """
+    Generator function that returns args.gn lines one at a time, following
+    import directives as needed.
+    """
+    import_re = re.compile(r'\s*import\("(.*)"\)')
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            match = import_re.match(line)
+            if match:
+                raw_import_path = match.groups()[0]
+                if raw_import_path[:2] == "//":
+                    import_path = os.path.normpath(
+                        os.path.join(output_dir, "..", "..",
+                                     raw_import_path[2:]))
+                else:
+                    import_path = os.path.normpath(
+                        os.path.join(os.path.dirname(path), raw_import_path))
+                yield from _gn_lines(output_dir, import_path)
+            else:
+                yield line
 
 
 def checkOutdir(ninja_args):
@@ -54,7 +78,16 @@ def checkOutdir(ninja_args):
               (out_dir, out_dir),
               file=sys.stderr)
         sys.exit(1)
-
+    if os.path.exists(os.path.join(out_dir, "args.gn")):
+        for line in _gn_lines(out_dir, os.path.join(out_dir, "args.gn")):
+            line_without_comment = line.split("#")[0]
+            if re.search(r"(^|\s)(use_remoteexec)\s*=\s*true($|\s)",
+                         line_without_comment):
+                print(
+                    "depot_tools/ninja.py: detect use_remoteexec=true\n"
+                    "Use `autoninja` to choose appropriate build tool\n",
+                    file=sys.stderr)
+                sys.exit(1)
 
 def fallback(ninja_args):
     # Try to find ninja in PATH.

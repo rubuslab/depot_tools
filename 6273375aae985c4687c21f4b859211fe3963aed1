@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea5d4554_950a7200",
+        "filename": "ninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T03:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a751827_6a515a1d",
+      "revId": "6273375aae985c4687c21f4b859211fe3963aed1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0eb0c12b_b15ea697",
@@ -48,6 +66,30 @@
       "writtenOn": "2024-06-27T03:01:13Z",
       "side": 1,
       "message": "nit: remove trailing comma?",
+      "range": {
+        "startLine": 87,
+        "startChar": 40,
+        "endLine": 87,
+        "endChar": 41
+      },
+      "revId": "6273375aae985c4687c21f4b859211fe3963aed1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7bcff4d_87df0dee",
+        "filename": "ninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T03:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0eb0c12b_b15ea697",
       "range": {
         "startLine": 87,
         "startChar": 40,

@@ -22,6 +22,30 @@
       },
       "revId": "0b07eb17786043e446b76e50838e1c7aece74f7b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe5fa3ea_261540da",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3630,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-27T20:44:08Z",
+      "side": 1,
+      "message": "I felt like using indexes made more sense since I\u0027m unpacking and repacking the tuple.\n\ne.g., `(parts[0], parts[1], parts[2], parts[3], parts[4])`, with specific ones replaced.\n\nI don\u0027t feel strongly however, if I\u0027m touching this code later I can change them since it\u0027s kind of bikeshedding either way I think.",
+      "parentUuid": "b60012a7_6854007b",
+      "range": {
+        "startLine": 3630,
+        "startChar": 45,
+        "endLine": 3630,
+        "endChar": 63
+      },
+      "revId": "0b07eb17786043e446b76e50838e1c7aece74f7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

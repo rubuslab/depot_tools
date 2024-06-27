@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e28d30a4_13013552",
+        "filename": "gn_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-06-27T07:35:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8dbb2f8_dc776e89",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "8acbb18614028423956aadc770b4337ded0ca467",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5de72002_3355b9e3",

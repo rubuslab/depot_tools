@@ -16,6 +16,24 @@
       "message": "git config options are case insensitive (but still use camelCase by convention).  We need to use the lowercase to get, but we want to set a pretty version in the config in case a human has to read it.",
       "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdd2b5f8_cf90039b",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-06-27T01:14:34Z",
+      "side": 1,
+      "message": "Note that this doesn\u0027t affect subsection names, I think\n\ne.g. `ignorecase.ThisRespectsCase.ignorecase`\n\nBecause reasons.  This is specific to Git, not depot_tools",
+      "parentUuid": "00c9bcbd_6b7d931b",
+      "revId": "a0d51269e8dc921080acf67cdc0e35bf819229ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -3,11 +3,17 @@
 # found in the LICENSE file.
 """SCM-specific utility classes."""
 
-from collections import defaultdict
+import abc
 import os
+import pathlib
 import platform
 import re
-from typing import Mapping, List
+
+from dataclasses import dataclass
+from collections import defaultdict
+import sys
+import threading
+from typing import Iterable, Literal, Dict, List, Optional, Tuple, cast
 
 import gclient_utils
 import git_common
@@ -40,6 +46,197 @@ def determine_scm(root):
         return None
 
 
+GitConfigScope = Literal['local', 'worktree', 'system']
+
+
+@dataclass
+class GitConfigState(metaclass=abc.ABCMeta):
+    """This represents the observable git configuration state for a given
+    repository (whose top-level path is `root`).
+
+    This object is designed to be subclassed, and has two notable subclasses:
+      * GitConfigStateReal - this will load and save configuration to disk using
+        `git config` subprocess invocations via GIT.Capture.
+      * GitConfigStateTest - this will load and save configuration to disk using
+        callbacks and other testing affordances. This is used to mock
+        configuration functionality in GIT during tests.
+    """
+    # The root of the git repository this config state belongs to.
+    root: pathlib.Path
+
+    # Actual cached configuration from the point of view of this root.
+    _config: Optional[Dict[str, List[str]]] = None
+
+    def _maybe_load_config(self) -> Dict[str, List[str]]:
+        if self._config is None:
+            self._config = self._load_config()
+        if self._config is None:
+            raise AssertionError(
+                    f'{self.__class__.__name__} failed to populate'
+                    ' GitConfigState._config')
+        return self._config
+
+    @abc.abstractmethod
+    def _load_config(self) -> Dict[str, List[str]]:
+        """_load_config should be implemented by a GitConfigState subclass.
+
+        When invoked, it should return the full state of the configuration
+        observable from the git repo at `root`.
+        """
+        pass
+
+    @abc.abstractmethod
+    def _set_config(self, key: str, value: str, scope: GitConfigScope):
+        pass
+
+    @abc.abstractmethod
+    def _set_config_multi(self, key: str, value: str, value_pattern:
+                          Optional[str], scope: GitConfigScope):
+        pass
+
+    @abc.abstractmethod
+    def _unset_config(self, key: str, scope: GitConfigScope):
+        pass
+
+    @abc.abstractmethod
+    def _unset_config_multi(self, key: str, value_pattern: Optional[str], scope: GitConfigScope):
+        pass
+
+    def clear_cache(self):
+        self._config = None
+
+    def GetConfig(self, key: str, default: Optional[str]=None) -> Optional[str]:
+        """Lazily loads all configration observable for this GitConfigState,
+        then returns the last value for `key` as a string.
+
+        If `key` is missing, returns default.
+        """
+        values = self._maybe_load_config().get(key, None)
+        if not values:
+            return default
+
+        return values[-1]
+
+    def GetConfigBool(self, key: str) -> bool:
+        """Returns the booleanized value of `key`.
+
+        This follows `git config` semantics (i.e. it normalizes the string value
+        of the config value to "true" - all other string values return False).
+        """
+        return self.GetConfig(key) == 'true'
+
+    def GetConfigList(self, key: str) -> List[str]:
+        """Returns all values of `key` as a list of strings."""
+        return self._maybe_load_config().get(key, [])
+
+    def YieldConfigRegexp(self, pattern: str) -> Iterable[Tuple[str, str]]:
+        """Yields (key, value) pairs for any config keys matching `pattern`."""
+        p = re.compile(pattern)
+        for name, values in sorted(self._maybe_load_config().items()):
+            if p.match(name):
+                for value in values:
+                    yield name, value
+
+    def SetConfig(self,
+                  key,
+                  value=None,
+                  *,
+                  value_pattern: Optional[str] = None,
+                  modify_all: bool = False,
+                  scope: GitConfigScope = 'local',
+                  missing_ok: bool = True):
+        """Sets or unsets one or more config values.
+
+        Args:
+            cwd: path to set `git config` for.
+            key: The specific config key to affect.
+            value: The value to set. If this is None, `key` will be unset.
+            value_pattern: For use with `modify_all=True`, allows
+                further filtering of the set or unset operation based on
+                the currently configured value. Ignored for
+                `modify_all=False`.
+            modify_all: If True, this will change a set operation to
+                `--replace-all`, and will change an unset operation to
+                `--unset-all`.
+            scope: By default this is the local scope, but could be `system`,
+                `global`, or `worktree`, depending on which config scope you
+                want to affect.
+            missing_ok: If `value` is None (i.e. this is an unset operation),
+                ignore retcode=5 from `git config` (meaning that the value is
+                not present). If `value` is not None, then this option has no
+                effect.
+        """
+        if value is None:
+            if key not in self._maybe_load_config():
+                if missing_ok:
+                    return
+                else:
+                    raise ValueError(
+                            f'GitConfigState: Cannot unset missing key {key!r}'
+                            ' with missing_ok=False.'
+                    )
+
+            if modify_all:
+              self._unset_config_multi(key, value_pattern, scope)
+            else:
+              self._unset_config(key, scope)
+        else:
+            if modify_all:
+                self._set_config_multi(key, value, value_pattern, scope)
+            else:
+                self._set_config(key, value, scope)
+
+
+class GitConfigStateReal(GitConfigState):
+    """GitConfigStateReal implements GitConfigState by actually interacting with
+    the git configuration files on disk via GIT.Capture.
+
+    Because we don't cache the scope associated with the in-memory configuration
+    state, we opt to just reset the in-memory configuration state whenever we do
+    a git config operation on the filesystem - The next get operation will
+    repopulate the cache.
+    """
+
+    def _load_config(self) -> Dict[str, List[str]]:
+        try:
+            rawConfig = GIT.Capture(['config', '--list', '-z'],
+                                    cwd=self.root,
+                                    strip_out=False)
+        except subprocess2.CalledProcessError:
+            return {}
+
+        cfg: Dict[str, List[str]] = defaultdict(list)
+
+        # Splitting by '\x00' gets an additional empty string at the end.
+        for line in rawConfig.split('\x00')[:-1]:
+            key, value = map(str.strip, line.split('\n', 1))
+            cfg[key].append(value)
+
+        return cfg
+
+    def _set_config(self, key: str, value: str, scope: GitConfigScope):
+        self.clear_cache()
+        GIT.Capture(['config', f'--{scope}', key, value], cwd=self.root)
+
+    def _set_config_multi(self, key: str, value: str, value_pattern: Optional[str], scope: GitConfigScope):
+        self.clear_cache()
+        args = ['config', f'--{scope}', '--replace-all', key, value]
+        if value_pattern is not None:
+            args.append(value_pattern)
+        GIT.Capture(args, cwd=self.root)
+
+    def _unset_config(self, key: str, scope: GitConfigScope):
+        self.clear_cache()
+        GIT.Capture(['config', f'--{scope}', '--unset', key], cwd=self.root)
+
+    def _unset_config_multi(self, key: str, value_pattern: Optional[str], scope: GitConfigScope):
+        self.clear_cache()
+        args = ['config', f'--{scope}', '--unset-all', key]
+        if value_pattern is not None:
+          args.append(value_pattern)
+        GIT.Capture(args, cwd=self.root)
+
+
 class GIT(object):
     current_version = None
     rev_parse_cache = {}
@@ -48,44 +245,24 @@ class GIT(object):
     # This cache speeds up all `git config ...` operations by only running a
     # single subcommand, which can greatly accelerate things like
     # git-map-branches.
-    _CONFIG_CACHE: Mapping[str, Mapping[str, List[str]]] = {}
+    _CONFIG_CACHE: Dict[pathlib.Path, Optional[GitConfigState]] = {}
+    _CONFIG_CACHE_LOCK = threading.Lock()
 
     @staticmethod
-    def _load_config(cwd: str) -> Mapping[str, List[str]]:
-        """Loads git config for the given cwd.
+    def _new_config_state(root: pathlib.Path) -> GitConfigState:
+        """_new_config_state is mocked in tests/scm_test_helper."""
+        return GitConfigStateReal(root)
 
-        The calls to this method are cached in-memory for performance. The
-        config is only reloaded on cache misses.
-
-        Args:
-            cwd: path to fetch `git config` for.
-
-        Returns:
-            A dict mapping git config keys to a list of its values.
-        """
-        if cwd not in GIT._CONFIG_CACHE:
-            try:
-                rawConfig = GIT.Capture(['config', '--list', '-z'],
-                                        cwd=cwd,
-                                        strip_out=False)
-            except subprocess2.CalledProcessError:
-                return {}
-
-            cfg = defaultdict(list)
-
-            # Splitting by '\x00' gets an additional empty string at the end.
-            for line in rawConfig.split('\x00')[:-1]:
-                key, value = map(str.strip, line.split('\n', 1))
-                cfg[key].append(value)
-
-            GIT._CONFIG_CACHE[cwd] = cfg
-
-        return GIT._CONFIG_CACHE[cwd]
-
-    @staticmethod
-    def _clear_config(cwd: str) -> None:
-        GIT._CONFIG_CACHE.pop(cwd, None)
-
+    @classmethod
+    def _get_config_state(cls, cwd: str) -> GitConfigState:
+        key = pathlib.Path(cwd).absolute()
+        with cls._CONFIG_CACHE_LOCK:
+            cur = GIT._CONFIG_CACHE.get(key, None)
+            if cur is not None:
+                return cur
+            ret = cls._new_config_state(key)
+            cls._CONFIG_CACHE[key] = ret
+            return ret
 
     @staticmethod
     def ApplyEnvVars(kwargs):
@@ -151,29 +328,32 @@ class GIT(object):
         return results
 
     @staticmethod
-    def GetConfig(cwd, key, default=None):
-        values = GIT._load_config(cwd).get(key, None)
-        if not values:
-            return default
+    def GetConfig(cwd: str, key: str, default: Optional[str] = None) -> Optional[str]:
+        """Lazily loads all configration observable for this GitConfigState,
+        then returns the last value for `key` as a string.
 
-        return values[-1]
-
-    @staticmethod
-    def GetConfigBool(cwd, key):
-        return GIT.GetConfig(cwd, key) == 'true'
+        If `key` is missing, returns default.
+        """
+        return GIT._get_config_state(cwd).GetConfig(key, default)
 
     @staticmethod
-    def GetConfigList(cwd, key):
-        return GIT._load_config(cwd).get(key, [])
+    def GetConfigBool(cwd: str, key: str) -> bool:
+        """Returns the booleanized value of `key`.
+
+        This follows `git config` semantics (i.e. it normalizes the string value
+        of the config value to "true" - all other string values return False).
+        """
+        return GIT._get_config_state(cwd).GetConfigBool(key)
 
     @staticmethod
-    def YieldConfigRegexp(cwd, pattern):
+    def GetConfigList(cwd: str, key: str) -> List[str]:
+        """Returns all values of `key` as a list of strings."""
+        return GIT._get_config_state(cwd).GetConfigList(key)
+
+    @staticmethod
+    def YieldConfigRegexp(cwd: str, pattern: str) -> Iterable[Tuple[str, str]]:
         """Yields (key, value) pairs for any config keys matching `pattern`."""
-        p = re.compile(pattern)
-        for name, values in GIT._load_config(cwd).items():
-            if p.match(name):
-                for value in values:
-                    yield name, value
+        yield from GIT._get_config_state(cwd).YieldConfigRegexp(pattern)
 
     @staticmethod
     def GetBranchConfig(cwd, branch, key, default=None):
@@ -182,17 +362,19 @@ class GIT(object):
         return GIT.GetConfig(cwd, key, default)
 
     @staticmethod
-    def SetConfig(cwd,
-                  key,
-                  value=None,
-                  *,
-                  value_pattern=None,
-                  modify_all=False,
-                  scope='local'):
+    def SetConfig(
+            cwd: str,
+            key: str,
+            value: Optional[str] = None,
+            *,
+            missing_ok: bool = True,
+            modify_all: bool = False,
+            scope: GitConfigScope = 'local',
+            value_pattern: Optional[str] = None):
         """Sets or unsets one or more config values.
 
         Args:
-            cwd: path to fetch `git config` for.
+            cwd: path to set `git config` for.
             key: The specific config key to affect.
             value: The value to set. If this is None, `key` will be unset.
             value_pattern: For use with `modify_all=True`, allows
@@ -205,21 +387,14 @@ class GIT(object):
             scope: By default this is the local scope, but could be `system`,
                 `global`, or `worktree`, depending on which config scope you
                 want to affect.
+            missing_ok: If `value` is None (i.e. this is an unset operation),
+                ignore retcode=5 from `git config` (meaning that the value is
+                not present). If `value` is not None, then this option has no
+                effect.
         """
-        GIT._clear_config(cwd)
-
-        args = ['config', f'--{scope}']
-        if value == None:
-            args.extend(['--unset' + ('-all' if modify_all else ''), key])
-        else:
-            if modify_all:
-                args.append('--replace-all')
-
-            args.extend([key, value])
-
-        if modify_all and value_pattern:
-            args.append(value_pattern)
-        GIT.Capture(args, cwd=cwd)
+        GIT._get_config_state(cwd).SetConfig(key, value, missing_ok=missing_ok,
+                                             modify_all=modify_all, scope=scope,
+                                             value_pattern=value_pattern)
 
     @staticmethod
     def SetBranchConfig(cwd, branch, key, value=None):

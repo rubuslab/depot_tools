@@ -200,11 +200,11 @@ def ShouldUseSSO(host: str) -> bool:
     return False
 
 
-class Authenticator(object):
+class _Authenticator(object):
     """Base authenticator class for authenticator implementations to subclass."""
 
-    # Cached Authenticator subclass instance, resolved via get().
-    _resolved: Optional[Authenticator] = None
+    # Cached _Authenticator subclass instance, resolved via get().
+    _resolved: Optional[_Authenticator] = None
     _resolved_lock = threading.Lock()
 
     def authenticate(self, conn: HttpConn):
@@ -212,7 +212,7 @@ class Authenticator(object):
         raise NotImplementedError()
 
     def debug_summary_state(self) -> str:
-        """If this Authenticator has any debugging information about its state,
+        """If this _Authenticator has any debugging information about its state,
         _WriteGitPushTraces will call this to include in the git push traces.
 
         Return value is any relevant debugging information with all PII/secrets
@@ -222,7 +222,7 @@ class Authenticator(object):
 
     @classmethod
     def is_applicable(cls, *, conn: Optional[HttpConn] = None) -> bool:
-        """Must return True if this Authenticator is available in the current
+        """Must return True if this _Authenticator is available in the current
         environment."""
         raise NotImplementedError()
 
@@ -237,12 +237,12 @@ class Authenticator(object):
 
     @classmethod
     def get(cls):
-        """Returns: (Authenticator) The identified Authenticator to use.
+        """Returns: (_Authenticator) The identified _Authenticator to use.
 
         Probes the local system and its environment and identifies the
-        Authenticator instance to use.
+        _Authenticator instance to use.
 
-        The resolved Authenticator instance is cached as a class variable.
+        The resolved _Authenticator instance is cached as a class variable.
         """
         with cls._resolved_lock:
             if ret := cls._resolved:
@@ -254,14 +254,14 @@ class Authenticator(object):
             skip_sso = newauth.SkipSSO()
 
             if use_new_auth:
-                LOGGER.debug('Authenticator.get: using new auth stack')
+                LOGGER.debug('_Authenticator.get: using new auth stack')
                 if LuciContextAuthenticator.is_applicable():
                     LOGGER.debug(
-                        'Authenticator.get: using LUCI context authenticator')
+                        '_Authenticator.get: using LUCI context authenticator')
                     ret = LuciContextAuthenticator()
                 else:
                     LOGGER.debug(
-                        'Authenticator.get: using chained authenticator')
+                        '_Authenticator.get: using chained authenticator')
                     a = [
                         SSOAuthenticator(),
                         # GCE detection can't distinguish cloud workstations.
@@ -270,7 +270,7 @@ class Authenticator(object):
                     ]
                     if skip_sso:
                         LOGGER.debug(
-                            'Authenticator.get: skipping SSOAuthenticator.')
+                            '_Authenticator.get: skipping SSOAuthenticator.')
                         authenticators = authenticators[1:]
                     ret = ChainedAuthenticator(a)
                 cls._resolved = ret
@@ -283,7 +283,7 @@ class Authenticator(object):
 
             for candidate in authenticators:
                 if candidate.is_applicable():
-                    LOGGER.debug('Authenticator.get: Selected %s.',
+                    LOGGER.debug('_Authenticator.get: Selected %s.',
                                  candidate.__name__)
                     ret = candidate()
                     cls._resolved = ret
@@ -295,7 +295,25 @@ class Authenticator(object):
             )
 
 
-class SSOAuthenticator(Authenticator):
+def debug_auth() -> Tuple[str, str]:
+    """Returns the name of the chosen auth scheme and any additional
+  debugging information for that authentication scheme.
+  """
+    authn = _Authenticator.get()
+    return authn.__class__.__name__, authn.debug_summary_state()
+
+
+def ensure_authenticated(gerrit_host: str, git_host: str) -> Tuple[bool, str]:
+    """Returns (bypassable, error message).
+
+  If the error message is empty, there is no error to report.
+  If bypassable is true, the caller will allow the user to continue past the
+  error.
+  """
+    return _Authenticator.get().ensure_authenticated(gerrit_host, git_host)
+
+
+class SSOAuthenticator(_Authenticator):
     """SSOAuthenticator implements a Google-internal authentication scheme.
 
     TEMPORARY configuration for Googlers (one `url` block for each Gerrit host):
@@ -507,8 +525,8 @@ class SSOAuthenticator(Authenticator):
         return ''
 
 
-class CookiesAuthenticator(Authenticator):
-    """Authenticator implementation that uses ".gitcookies" for token.
+class CookiesAuthenticator(_Authenticator):
+    """_Authenticator implementation that uses ".gitcookies" for token.
 
     Expected case for developer workstations.
     """
@@ -517,7 +535,7 @@ class CookiesAuthenticator(Authenticator):
 
     def __init__(self):
         # Credentials will be loaded lazily on first use. This ensures
-        # Authenticator get() can always construct an authenticator, even if
+        # _Authenticator get() can always construct an authenticator, even if
         # something is broken. This allows 'creds-check' to proceed to actually
         # checking creds later, rigorously (instead of blowing up with a cryptic
         # error if they are wrong).
@@ -669,8 +687,8 @@ class CookiesAuthenticator(Authenticator):
         return '%s@%s' % (username, domain)
 
 
-class GceAuthenticator(Authenticator):
-    """Authenticator implementation that uses GCE metadata service for token.
+class GceAuthenticator(_Authenticator):
+    """_Authenticator implementation that uses GCE metadata service for token.
     """
 
     _INFO_URL = 'http://metadata.google.internal'
@@ -749,8 +767,8 @@ class GceAuthenticator(Authenticator):
         return ''
 
 
-class LuciContextAuthenticator(Authenticator):
-    """Authenticator implementation that uses LUCI_CONTEXT ambient local auth.
+class LuciContextAuthenticator(_Authenticator):
+    """_Authenticator implementation that uses LUCI_CONTEXT ambient local auth.
     """
     @staticmethod
     def is_applicable(*, conn: Optional[HttpConn] = None):
@@ -770,7 +788,7 @@ class LuciContextAuthenticator(Authenticator):
 
 
 class LuciAuthAuthenticator(LuciContextAuthenticator):
-    """Authenticator implementation that uses `luci-auth` credentials.
+    """_Authenticator implementation that uses `luci-auth` credentials.
 
     This is the same as LuciContextAuthenticator, except that it is for local
     non-google.com developer credentials.
@@ -781,13 +799,13 @@ class LuciAuthAuthenticator(LuciContextAuthenticator):
         return True
 
 
-class ChainedAuthenticator(Authenticator):
-    """Authenticator that delegates to others in sequence.
+class ChainedAuthenticator(_Authenticator):
+    """_Authenticator that delegates to others in sequence.
 
     Authenticators should implement the method `is_applicable_for`.
     """
 
-    def __init__(self, authenticators: List[Authenticator]):
+    def __init__(self, authenticators: List[_Authenticator]):
         self.authenticators = list(authenticators)
 
     def is_applicable(self, *, conn: Optional[HttpConn] = None) -> bool:
@@ -881,7 +899,7 @@ def CreateHttpConn(host,
                    body: Optional[Dict] = None,
                    timeout=300,
                    *,
-                   authenticator: Optional[Authenticator] = None) -> HttpConn:
+                   authenticator: Optional[_Authenticator] = None) -> HttpConn:
     """Opens an HTTPS connection to a Gerrit service, and sends a request."""
     headers = headers or {}
     bare_host = host.partition(':')[0]
@@ -906,7 +924,7 @@ def CreateHttpConn(host,
                     req_body=rendered_body)
 
     if authenticator is None:
-        authenticator = Authenticator.get()
+        authenticator = _Authenticator.get()
     # TODO(crbug.com/1059384): Automatically detect when running on cloudtop.
     if isinstance(authenticator, GceAuthenticator):
         print('If you\'re on a cloudtop instance, export '
@@ -1717,7 +1735,7 @@ class EmailRecord(TypedDict):
 def GetAccountEmails(host,
                      account_id='self',
                      *,
-                     authenticator: Optional[Authenticator] = None
+                     authenticator: Optional[_Authenticator] = None
                      ) -> Optional[List[EmailRecord]]:
     """Returns all emails for this account, and an indication of which of these
     is preferred.

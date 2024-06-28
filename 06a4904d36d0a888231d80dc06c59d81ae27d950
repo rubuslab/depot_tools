@@ -34,6 +34,24 @@
       "parentUuid": "92520a25_0af2d7ce",
       "revId": "06a4904d36d0a888231d80dc06c59d81ae27d950",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "082c3c29_32e04bba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-28T18:19:26Z",
+      "side": 1,
+      "message": "Sounds good. Would love to see the launch doc outlining the timeline, comm, rollback procedure, success metrics if any and etc before rolling out to the dogfood stage.",
+      "parentUuid": "73c296e7_53b5cc01",
+      "revId": "06a4904d36d0a888231d80dc06c59d81ae27d950",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

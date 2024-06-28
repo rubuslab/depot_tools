@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a03b0407_ad0d8963",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-06-28T02:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "470d89d4_c421158f",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "dc75410d_7a6a5c7a",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -52,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "25155047_4dcd3374",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-06-28T02:27:25Z",
+      "side": 1,
+      "message": "Makes sense.\n\nI wrote this script with my usage pattern in mind, which is that when I `git rebase-update` all my branches, it\u0027s because I\u0027m about to land my stacked CLs very soon and no longer care about my history.\nI guess I\u0027m a bit between the squash workflow and the no-squash workflow as I rarely care about history but like that CLs are branch specific.\n\nChanging to defaulting to the current branch works for me, as I can always have my own alias that squash all my branches.",
+      "parentUuid": "d1365908_e5b424f7",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88d10bda_740fc6fa",
@@ -65,6 +101,24 @@
       "writtenOn": "2024-06-27T21:42:39Z",
       "side": 1,
       "message": "chmod +x",
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eb7f17e_8bf677df",
+        "filename": "tests/git_squash_branch_tree_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-06-28T02:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88d10bda_740fc6fa",
       "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -156,6 +210,30 @@
           ]
         }
       ],
+      "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe31fde7_e29b9dbe",
+        "filename": "tests/git_squash_branch_tree_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-06-28T02:27:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0c12467_2606c951",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 14
+      },
       "revId": "27ddf1795632ad7210b542f542e26e16f030a879",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

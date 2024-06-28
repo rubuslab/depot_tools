@@ -1,0 +1,102 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19fbbd71_f6c02fbf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-28T23:21:06Z",
+      "side": 1,
+      "message": "Very cool refactoring 👍",
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38833598_afff08ac",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-28T23:21:06Z",
+      "side": 1,
+      "message": "pass?",
+      "fixSuggestions": [
+        {
+          "fixId": "42947950_ae165d73",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "scm.py",
+              "range": {
+                "startLine": 85,
+                "startChar": 0,
+                "endLine": 85,
+                "endChar": 0
+              },
+              "replacement": "        pass\n"
+            }
+          ]
+        }
+      ],
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f5ab005_031cbf4d",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-28T23:21:06Z",
+      "side": 1,
+      "message": "I don\u0027t understand why the error is swallowed but okay.",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 21
+      },
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f717bc49_65af85e3",
+        "filename": "tests/scm_test_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-06-28T23:21:06Z",
+      "side": 1,
+      "message": "2024",
+      "range": {
+        "startLine": 1,
+        "startChar": 16,
+        "endLine": 1,
+        "endChar": 20
+      },
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,80 @@
       "message": "Thanks PTAnL",
       "revId": "8233873028609044c403e982de9e15cbe7239ef9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "297e336f_56d4b83b",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-07-01T18:41:16Z",
+      "side": 1,
+      "message": "remove paren",
+      "range": {
+        "startLine": 106,
+        "startChar": 7,
+        "endLine": 106,
+        "endChar": 26
+      },
+      "revId": "8233873028609044c403e982de9e15cbe7239ef9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "955bf873_eebef5b6",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-07-01T18:41:16Z",
+      "side": 1,
+      "message": "consider using `f\u0027  - {diverged_branch}\u0027`",
+      "range": {
+        "startLine": 111,
+        "startChar": 12,
+        "endLine": 111,
+        "endChar": 42
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "19f4b69b_c9f092d9",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_squash_branch_tree.py",
+              "range": {
+                "startLine": 101,
+                "startChar": 0,
+                "endLine": 102,
+                "endChar": 0
+              },
+              "replacement": "            print(f\u0027  - {branch}\u0027)\n"
+            },
+            {
+              "path": "git_squash_branch_tree.py",
+              "range": {
+                "startLine": 111,
+                "startChar": 0,
+                "endLine": 112,
+                "endChar": 0
+              },
+              "replacement": "            print(f\u0027  - {diverged_branch}\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8233873028609044c403e982de9e15cbe7239ef9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

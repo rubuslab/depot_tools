@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef7a36b4_533dfd97",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-07-02T14:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "297e336f_56d4b83b",
+      "range": {
+        "startLine": 106,
+        "startChar": 7,
+        "endLine": 106,
+        "endChar": 26
+      },
+      "revId": "8233873028609044c403e982de9e15cbe7239ef9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "955bf873_eebef5b6",
@@ -88,6 +112,30 @@
           ]
         }
       ],
+      "revId": "8233873028609044c403e982de9e15cbe7239ef9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db1cd08f_de4b8046",
+        "filename": "git_squash_branch_tree.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1137015
+      },
+      "writtenOn": "2024-07-02T14:45:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "955bf873_eebef5b6",
+      "range": {
+        "startLine": 111,
+        "startChar": 12,
+        "endLine": 111,
+        "endChar": 42
+      },
       "revId": "8233873028609044c403e982de9e15cbe7239ef9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

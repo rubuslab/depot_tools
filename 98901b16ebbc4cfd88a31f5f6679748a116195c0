@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2baad7ea_fb9be323",
+        "filename": "tests/reclient_helper_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-03T08:06:35Z",
+      "side": 1,
+      "message": "These args can be removed now.\nhttps://docs.python.org/3.12/library/functions.html#super",
+      "range": {
+        "startLine": 35,
+        "startChar": 14,
+        "endLine": 35,
+        "endChar": 38
+      },
+      "revId": "98901b16ebbc4cfd88a31f5f6679748a116195c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be239428_f4e50ae6",
+        "filename": "tests/reclient_helper_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-03T08:06:35Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 41,
+        "startChar": 14,
+        "endLine": 41,
+        "endChar": 38
+      },
+      "revId": "98901b16ebbc4cfd88a31f5f6679748a116195c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

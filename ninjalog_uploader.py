@@ -29,6 +29,7 @@ import sys
 import time
 import urllib.request
 
+
 # These build configs affect build performance.
 ALLOWLISTED_CONFIGS = (
     "android_static_analysis",
@@ -50,26 +51,7 @@ ALLOWLISTED_CONFIGS = (
     "use_siso",
 )
 
-
-def IsGoogler():
-    """Check whether this user is Googler or not."""
-    p = subprocess.run(
-        "cipd auth-info",
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        shell=True,
-    )
-    if p.returncode != 0:
-        return False
-    lines = p.stdout.splitlines()
-    if len(lines) == 0:
-        return False
-    l = lines[0]
-    # |l| will be like 'Logged in as <user>@google.com.' for googler using
-    # reclient.
-    return l.startswith("Logged in as ") and l.endswith("@google.com.")
-
+DEFAULT_SERVER = "chromium-build-stats.appspot.com"
 
 def ParseGNArgs(gn_args):
     """Parse gn_args as json and return config dictionary."""
@@ -204,7 +186,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--server",
-        default="chromium-build-stats.appspot.com",
+        default=DEFAULT_SERVER,
         help="server to upload ninjalog file.",
     )
     parser.add_argument("--ninjalog", help="ninjalog file to upload.")
@@ -226,10 +208,16 @@ def main():
         # Disable logging.
         logging.disable(logging.CRITICAL)
 
-    if not IsGoogler():
+    return upload(args.cmdline, args.ninjalog)
+
+
+def upload(cmd, server=DEFAULT_SERVER, log_name=None):
+    """Uploads ninja log to server."""
+    cfg = build_telemetry.load_config()
+    if not cfg.is_googler():
         return 0
 
-    ninjalog = args.ninjalog or GetNinjalog(args.cmdline)
+    ninjalog = log_name or GetNinjalog(cmd)
     if not os.path.isfile(ninjalog):
         logging.warning("ninjalog is not found in %s", ninjalog)
         return 1
@@ -247,13 +235,13 @@ def main():
             g.write(f.read().encode())
             g.write(b"# end of ninja log\n")
 
-            metadata = GetMetadata(args.cmdline, ninjalog)
+            metadata = GetMetadata(cmd, ninjalog)
             logging.info("send metadata: %s", json.dumps(metadata))
             g.write(json.dumps(metadata).encode())
 
     resp = urllib.request.urlopen(
         urllib.request.Request(
-            "https://" + args.server + "/upload_ninja_log/",
+            "https://" + server + "/upload_ninja_log/",
             data=output.getvalue(),
             headers={"Content-Encoding": "gzip"},
         ))

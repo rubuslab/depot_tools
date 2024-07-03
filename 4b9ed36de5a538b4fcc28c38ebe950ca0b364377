@@ -109,6 +109,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "02b32490_65c0baa0",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1544499
+      },
+      "writtenOn": "2024-07-03T12:17:17Z",
+      "side": 1,
+      "message": "This label is primarily used to segment cloud monitoring metrics. The specific value is not hard coded anywhere I think, but many graphs aggregate using this value, so if we change it then the only impact will be that old data will not aggregate with new data.",
+      "parentUuid": "5f939c78_f6eff14e",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fa9075d_fafa9085",
         "filename": "reclient_helper.py",
         "patchSetId": 6

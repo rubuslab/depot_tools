@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b61a178_8ef08def",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1289182
+      },
+      "writtenOn": "2024-07-03T00:18:11Z",
+      "side": 1,
+      "message": "Feel free to tell me this is not worth the complexity, but it seems pretty easy and would make things like `git cl comments` work in nosquash mode.",
+      "revId": "4b54a700ec4f1859c7332352756080537f5af4d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,75 @@
       "message": "Feel free to tell me this is not worth the complexity, but it seems pretty easy and would make things like `git cl comments` work in nosquash mode.",
       "revId": "4b54a700ec4f1859c7332352756080537f5af4d4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "279864ce_f18e95fe",
+        "filename": "gerrit_util.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1206,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-07-03T22:47:07Z",
+      "side": 1,
+      "message": "can we pass thru `accept_statuses` directly and set it to `[200, 404]` in `_GetIssueFromTripletId` instead?",
+      "range": {
+        "startLine": 1206,
+        "startChar": 28,
+        "endLine": 1206,
+        "endChar": 48
+      },
+      "revId": "4b54a700ec4f1859c7332352756080537f5af4d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "572b6f4f_5ae55b18",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1535,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-07-03T22:47:07Z",
+      "side": 1,
+      "message": "iiuc no-squash mode means that each commit gets its own CL with a unique change id. So won\u0027t looking at `HEAD^` not get the right change?",
+      "range": {
+        "startLine": 1535,
+        "startChar": 43,
+        "endLine": 1535,
+        "endChar": 48
+      },
+      "revId": "4b54a700ec4f1859c7332352756080537f5af4d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4756267_f0ae62b5",
+        "filename": "git_cl.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-07-03T22:47:07Z",
+      "side": 1,
+      "message": "`return change.get(\u0027_number\u0027)`",
+      "range": {
+        "startLine": 1550,
+        "startChar": 8,
+        "endLine": 1552,
+        "endChar": 19
+      },
+      "revId": "4b54a700ec4f1859c7332352756080537f5af4d4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

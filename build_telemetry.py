@@ -104,7 +104,7 @@ class Config:
         print("build telemetry collection is opted out")
 
 
-def _load_config():
+def load_config():
     """Loads the config from the default location."""
     cfg = Config(_DEFAULT_CONFIG_PATH)
     cfg.load()
@@ -133,12 +133,12 @@ def _is_googler():
 
 def enabled():
     """Checks whether the build can upload build telemetry."""
-    cfg = _load_config()
+    cfg = load_config()
     return cfg.enabled()
 
 
 def main(argv):
-    cfg = _load_config()
+    cfg = load_config()
 
     if not cfg.is_googler():
         cfg.save()

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d9810bf_1124c886",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-03T06:24:44Z",
+      "side": 1,
+      "message": "\"ninja_reclient\" ?",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fa9075d_fafa9085",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-03T06:24:44Z",
+      "side": 1,
+      "message": "wasn\u0027t it \"autosiso\" ?",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

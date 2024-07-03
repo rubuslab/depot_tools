@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c2a3762_29321bed",
+        "filename": "tests/reclient_helper_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-03T07:03:21Z",
+      "side": 1,
+      "message": "update OWNERS file for this rename?",
+      "revId": "957397804b13d8585b670f3466d5ee08bd033353",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "de9153ba_2fb1e103",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-03T06:33:33Z",
+      "side": 1,
+      "message": "Actually, it\u0027s not clear how important to keep the label is. So it would be good timing to simplify them.",
+      "parentUuid": "3d9810bf_1124c886",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3fa9075d_fafa9085",
         "filename": "reclient_helper.py",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "writtenOn": "2024-07-03T06:24:44Z",
       "side": 1,
       "message": "wasn\u0027t it \"autosiso\" ?",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd54b257_e1f8d796",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-03T06:33:33Z",
+      "side": 1,
+      "message": "Same here.",
+      "parentUuid": "3fa9075d_fafa9085",
       "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

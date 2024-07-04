@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a34a1ff_7f1f2162",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T01:18:36Z",
+      "side": 1,
+      "message": "want to log before status check?",
+      "revId": "1405c7bef874dffa8c18e2a5f8f5096e16f7c621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

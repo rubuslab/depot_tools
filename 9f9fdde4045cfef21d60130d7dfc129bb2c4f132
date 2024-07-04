@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dacead66_b72d4817",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Pylint complains about it.\n\n\u003e build_telemetry.py:39:16: W0702: No exception type(s) specified (bare-except)",
+      "parentUuid": "0b54ac1e_ca8331ff",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 44
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ee8a32b_a7d62f9e",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-04T06:58:50Z",
       "side": 1,
       "message": "This can be removed?",
+      "range": {
+        "startLine": 39,
+        "startChar": 23,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27dc9087_4dcae0b5",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ee8a32b_a7d62f9e",
       "range": {
         "startLine": 39,
         "startChar": 23,
@@ -64,6 +112,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "781b9a54_88e69469",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35f6c420_2fb1a916",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "546fe0d4_468b115b",
@@ -77,6 +143,24 @@
       "writtenOn": "2024-07-04T06:39:00Z",
       "side": 1,
       "message": "return False\n?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5842c7f_e1133cac",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "546fe0d4_468b115b",
       "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -98,6 +182,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d71e7d7_cfca669a",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7deda89_e771805f",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24fb1290_2130bde3",
@@ -111,6 +213,30 @@
       "writtenOn": "2024-07-04T06:58:50Z",
       "side": 1,
       "message": "?",
+      "range": {
+        "startLine": 115,
+        "startChar": 189,
+        "endLine": 115,
+        "endChar": 193
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b07ac46_f5da05e4",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24fb1290_2130bde3",
       "range": {
         "startLine": 115,
         "startChar": 189,
@@ -156,6 +282,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "59261565_552a85ca",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c4b74e1_5677f1d2",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20e43fe5_de10ffe2",
@@ -186,6 +330,24 @@
       "writtenOn": "2024-07-04T06:39:00Z",
       "side": 1,
       "message": "no subcommand to check current status?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "641b6623_b89e4d00",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:35:38Z",
+      "side": 1,
+      "message": "The existing ninjalog_uploader_wrapper and reclient_metrics commands also don\u0027t have it. AFSIK, we haven\u0027t had a need for it.",
+      "parentUuid": "85cc52c1_11b36e10",
       "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "79990bf3_594d082b",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T02:14:05Z",
+      "side": 1,
+      "message": "hmm, not e.reason?\n\nhttps://docs.python.org/3/library/urllib.error.html",
+      "fixSuggestions": [
+        {
+          "fixId": "6c02c038_e8969b9d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ninjalog_uploader.py",
+              "range": {
+                "startLine": 268,
+                "startChar": 0,
+                "endLine": 269,
+                "endChar": 0
+              },
+              "replacement": "        err_msg \u003d e.reason\n"
+            }
+          ]
+        }
+      ],
+      "revId": "c117716649045d216a2f664564ce043bb26d6573",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

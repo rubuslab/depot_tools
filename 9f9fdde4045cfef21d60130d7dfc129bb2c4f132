@@ -71,6 +71,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1c4b74e1_5677f1d2",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T06:53:22Z",
+      "side": 1,
+      "message": "This is the status quo.\n- https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:ninjalog_uploader.py;l\u003d54;drc\u003dc117716649045d216a2f664564ce043bb26d6573\n- https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:reclient_metrics.py;l\u003d87;drc\u003d6f180c0a2304d46773904e815715ab57e427760b",
+      "parentUuid": "4ec2be4b_493839ee",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "85cc52c1_11b36e10",
         "filename": "build_telemetry.py",
         "patchSetId": 8

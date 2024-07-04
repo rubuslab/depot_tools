@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35f6c420_2fb1a916",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T06:39:00Z",
+      "side": 1,
+      "message": "return False\n?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "546fe0d4_468b115b",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T06:39:00Z",
+      "side": 1,
+      "message": "return False\n?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7deda89_e771805f",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T06:39:00Z",
+      "side": 1,
+      "message": "return False\n?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ec2be4b_493839ee",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T06:39:00Z",
+      "side": 1,
+      "message": "luci-auth?\ncipd is better?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85cc52c1_11b36e10",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-04T06:39:00Z",
+      "side": 1,
+      "message": "no subcommand to check current status?",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

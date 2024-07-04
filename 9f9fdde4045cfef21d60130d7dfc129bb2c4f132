@@ -317,6 +317,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63a59567_3373f076",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T08:44:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20e43fe5_de10ffe2",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "85cc52c1_11b36e10",

@@ -16,6 +16,24 @@
       "message": "want to log before status check?",
       "revId": "1405c7bef874dffa8c18e2a5f8f5096e16f7c621",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "32722cf9_7171c1a7",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T01:40:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a34a1ff_7f1f2162",
+      "revId": "1405c7bef874dffa8c18e2a5f8f5096e16f7c621",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -14,6 +14,7 @@ does handle import statements, but it can't handle conditional setting of build
 settings.
 """
 
+import logging
 import json
 import multiprocessing
 import os
@@ -30,8 +31,10 @@ import warnings
 import google.auth
 from google.auth.transport.requests import AuthorizedSession
 
+import build_telemetry
 import gn_helper
 import ninja
+import ninjalog_uploader
 import reclient_helper
 import siso
 
@@ -182,7 +185,7 @@ def _print_cmd(cmd):
     print(*[shell_quoter(arg) for arg in cmd], file=sys.stderr)
 
 
-def main(args):
+def main(args, should_collect_logs):
     # if user doesn't set PYTHONPYCACHEPREFIX and PYTHONDONTWRITEBYTECODE
     # set PYTHONDONTWRITEBYTECODE=1 not to create many *.pyc in workspace
     # and keep workspace clean.
@@ -284,13 +287,15 @@ def main(args):
                 return 1
             if use_remoteexec:
                 if use_reclient:
-                    return reclient_helper.run_siso([
-                        'siso',
-                        'ninja',
-                        # Do not authenticate when using Reproxy.
-                        '-project=',
-                        '-reapi_instance=',
-                    ] + input_args[1:])
+                    return reclient_helper.run_siso(
+                        [
+                            'siso',
+                            'ninja',
+                            # Do not authenticate when using Reproxy.
+                            '-project=',
+                            '-reapi_instance=',
+                        ] + input_args[1:],
+                        should_collect_logs)
                 return siso.main(["siso", "ninja"] + input_args[1:])
             return siso.main(["siso", "ninja", "--offline"] + input_args[1:])
 
@@ -393,12 +398,20 @@ def main(args):
         _print_cmd(args)
 
     if use_reclient:
-        return reclient_helper.run_ninja(args)
+        return reclient_helper.run_ninja(args, should_collect_logs)
     return ninja.main(args)
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    # Check the log collection opt-in/opt-out status, and display notice if necessary.
+    should_collect_logs = build_telemetry.enabled()
+    exit_code = None
     try:
-        sys.exit(main(sys.argv))
+        exit_code = main(sys.argv, should_collect_logs)
     except KeyboardInterrupt:
-        sys.exit(1)
+        exit_code = 1
+    finally:
+        if should_collect_logs:
+            ninjalog_uploader.upload(sys.argv)
+        sys.exit(exit_code)

@@ -34,6 +34,24 @@
       ],
       "revId": "c117716649045d216a2f664564ce043bb26d6573",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "becd0f22_01775de3",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T02:24:12Z",
+      "side": 1,
+      "message": "msg, reason had the same info for my local check.\nhttps://docs.python.org/3/library/http.client.html#http.client.HTTPResponse.msg",
+      "parentUuid": "79990bf3_594d082b",
+      "revId": "c117716649045d216a2f664564ce043bb26d6573",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

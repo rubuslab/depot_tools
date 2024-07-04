@@ -143,6 +143,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6988b74_b806f0bf",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T02:36:20Z",
+      "side": 1,
+      "message": "Will keep the same tool labels in this CL to unblock the other CLs.\nWill rename the labels once we find the graphs.",
+      "parentUuid": "e7d59dbc_2a5bcfe0",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fa9075d_fafa9085",
@@ -174,6 +192,24 @@
       "side": 1,
       "message": "Same here.",
       "parentUuid": "3fa9075d_fafa9085",
+      "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "487b39c3_8661be1b",
+        "filename": "reclient_helper.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-04T02:36:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd54b257_e1f8d796",
       "revId": "4b9ed36de5a538b4fcc28c38ebe950ca0b364377",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

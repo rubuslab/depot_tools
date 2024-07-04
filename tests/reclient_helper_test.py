@@ -16,7 +16,6 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT_DIR)
 
 import gclient_paths
-import ninja_reclient
 import reclient_helper
 from testing_support import trial_dir
 
@@ -31,15 +30,15 @@ def write(filename, content):
         f.write(content)
 
 
-class NinjaReclientTest(trial_dir.TestCase):
+class ReclientHelperTest(trial_dir.TestCase):
     def setUp(self):
-        super(NinjaReclientTest, self).setUp()
+        super().setUp()
         self.previous_dir = os.getcwd()
         os.chdir(self.root_dir)
 
     def tearDown(self):
         os.chdir(self.previous_dir)
-        super(NinjaReclientTest, self).tearDown()
+        super().tearDown()
 
     @unittest.mock.patch.dict(os.environ,
                               {'AUTONINJA_BUILD_ID': "SOME_RANDOM_ID"},
@@ -58,9 +57,9 @@ class NinjaReclientTest(trial_dir.TestCase):
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         run_log_dir = os.path.join(self.root_dir, "out", "a", ".reproxy_tmp",
                                    "logs",
@@ -113,9 +112,9 @@ class NinjaReclientTest(trial_dir.TestCase):
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         mock_metrics_status.assert_called_once_with("out/a")
         mock_ninja.assert_called_once_with(argv)
@@ -150,9 +149,9 @@ class NinjaReclientTest(trial_dir.TestCase):
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         self.assertEqual(os.environ.get('RBE_metrics_project'),
@@ -160,8 +159,7 @@ class NinjaReclientTest(trial_dir.TestCase):
         self.assertEqual(os.environ.get('RBE_metrics_table'),
                          "rbe_metrics.builds")
         self.assertEqual(
-            os.environ.get('RBE_metrics_labels'),
-            "source=developer,tool=ninja_reclient,"
+            os.environ.get('RBE_metrics_labels'), "source=developer,tool=ninja_reclient,"
             "creds_cache_status=missing,creds_cache_mechanism=UNSPECIFIED")
         self.assertEqual(os.environ.get('RBE_metrics_prefix'),
                          "go.chromium.org")
@@ -199,9 +197,9 @@ expiry:  {
   seconds:  %d
 }
               """ % (int(time.time()) + 10 * 60))
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         self.assertEqual(os.environ.get('RBE_metrics_project'),
@@ -209,8 +207,7 @@ expiry:  {
         self.assertEqual(os.environ.get('RBE_metrics_table'),
                          "rbe_metrics.builds")
         self.assertEqual(
-            os.environ.get('RBE_metrics_labels'),
-            "source=developer,tool=ninja_reclient,"
+            os.environ.get('RBE_metrics_labels'), "source=developer,tool=ninja_reclient,"
             "creds_cache_status=valid,creds_cache_mechanism=GCLOUD")
         self.assertEqual(os.environ.get('RBE_metrics_prefix'),
                          "go.chromium.org")
@@ -244,9 +241,9 @@ expiry:  {
   seconds:  %d
 }
               """ % (int(time.time())))
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         self.assertIn("/SOME_RANDOM_ID", os.environ["RBE_invocation_id"])
         self.assertEqual(os.environ.get('RBE_metrics_project'),
@@ -254,8 +251,7 @@ expiry:  {
         self.assertEqual(os.environ.get('RBE_metrics_table'),
                          "rbe_metrics.builds")
         self.assertEqual(
-            os.environ.get('RBE_metrics_labels'),
-            "source=developer,tool=ninja_reclient,"
+            os.environ.get('RBE_metrics_labels'), "source=developer,tool=ninja_reclient,"
             "creds_cache_status=expired,creds_cache_mechanism=GCLOUD")
         self.assertEqual(os.environ.get('RBE_metrics_prefix'),
                          "go.chromium.org")
@@ -275,9 +271,9 @@ expiry:  {
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(0, ninja_reclient.main(argv))
+        self.assertEqual(0, reclient_helper.run_ninja(argv))
 
         self.assertEqual(os.environ.get('RBE_metrics_project'), None)
         self.assertEqual(os.environ.get('RBE_metrics_table'), None)
@@ -298,7 +294,7 @@ expiry:  {
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
         for i in range(7):
             run_time = datetime.datetime(2017, 3, 16, 20, 0, 40 + i, 0)
@@ -306,7 +302,7 @@ expiry:  {
             with unittest.mock.patch.dict(
                     os.environ,
                 {"AUTONINJA_BUILD_ID": "SOME_RANDOM_ID_%d" % i}):
-                self.assertEqual(0, ninja_reclient.main(argv))
+                self.assertEqual(0, reclient_helper.run_ninja(argv))
             run_log_dir = os.path.join(
                 self.root_dir, "out", "a", ".reproxy_tmp", "logs",
                 "20170316T2000%d.000000_SOME_RANDOM_ID_%d" % (40 + i, i))
@@ -349,9 +345,9 @@ expiry:  {
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join(reclient_bin_dir, 'version.txt'), '0.0')
         write(reclient_cfg, '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(1, ninja_reclient.main(argv))
+        self.assertEqual(1, reclient_helper.run_ninja(argv))
 
         mock_ninja.assert_called_once_with(argv)
         mock_call.assert_has_calls([
@@ -378,9 +374,9 @@ expiry:  {
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join('src', 'buildtools', 'reclient', 'version.txt'),
               '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(1, ninja_reclient.main(argv))
+        self.assertEqual(1, reclient_helper.run_ninja(argv))
 
         mock_ninja.assert_not_called()
         mock_call.assert_not_called()
@@ -392,9 +388,9 @@ expiry:  {
         write('.gclient_entries', 'entries = {"buildtools": "..."}')
         write(os.path.join('src', 'buildtools', 'reclient_cfgs', 'reproxy.cfg'),
               '0.0')
-        argv = ["ninja_reclient.py", "-C", "out/a", "chrome"]
+        argv = ["ninja", "-C", "out/a", "chrome"]
 
-        self.assertEqual(1, ninja_reclient.main(argv))
+        self.assertEqual(1, reclient_helper.run_ninja(argv))
 
         mock_ninja.assert_not_called()
         mock_call.assert_not_called()

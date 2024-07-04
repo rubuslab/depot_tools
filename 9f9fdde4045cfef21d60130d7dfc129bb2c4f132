@@ -3,6 +3,52 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0b54ac1e_ca8331ff",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-04T06:58:50Z",
+      "side": 1,
+      "message": "This can be removed?",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 44
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ee8a32b_a7d62f9e",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-04T06:58:50Z",
+      "side": 1,
+      "message": "This can be removed?",
+      "range": {
+        "startLine": 39,
+        "startChar": 23,
+        "endLine": 39,
+        "endChar": 32
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "35f6c420_2fb1a916",
         "filename": "build_telemetry.py",
         "patchSetId": 8
@@ -54,6 +100,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "24fb1290_2130bde3",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-04T06:58:50Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 115,
+        "startChar": 189,
+        "endLine": 115,
+        "endChar": 193
+      },
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4ec2be4b_493839ee",
         "filename": "build_telemetry.py",
         "patchSetId": 8
@@ -83,6 +152,23 @@
       "side": 1,
       "message": "This is the status quo.\n- https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:ninjalog_uploader.py;l\u003d54;drc\u003dc117716649045d216a2f664564ce043bb26d6573\n- https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:reclient_metrics.py;l\u003d87;drc\u003d6f180c0a2304d46773904e815715ab57e427760b",
       "parentUuid": "4ec2be4b_493839ee",
+      "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20e43fe5_de10ffe2",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-04T06:58:50Z",
+      "side": 1,
+      "message": "Better to use argparse?",
       "revId": "9f9fdde4045cfef21d60130d7dfc129bb2c4f132",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

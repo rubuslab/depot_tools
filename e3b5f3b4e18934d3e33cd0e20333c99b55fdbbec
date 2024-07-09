@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b210868a_12234e46",
+        "filename": "gclient.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3961,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-07-09T16:58:42Z",
+      "side": 1,
+      "message": "As a temporary hack for the transition period, check if `{src/}buildtools/linux64/gn` exists too.",
+      "revId": "e3b5f3b4e18934d3e33cd0e20333c99b55fdbbec",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

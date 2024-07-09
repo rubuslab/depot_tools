@@ -3958,7 +3958,10 @@ def CMDsync(parser, args):
 
     if options.verbose:
         client.PrintLocationAndContents()
-    ret = client.RunOnDeps('update', args)
+    if gclient_utils.IsEnvCog():
+        ret = client.RunOnDeps('runhooks', args)
+    else:
+        ret = client.RunOnDeps('update', args)
     if options.output_json:
         slns = {}
         for d in client.subtree(True):

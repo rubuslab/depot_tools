@@ -157,9 +157,7 @@ class GclientGitCheckout(GclientCheckout, GitCheckout):
 
 
 CHECKOUT_TYPE_MAP = {
-    'gclient': GclientCheckout,
     'gclient_git': GclientGitCheckout,
-    'git': GitCheckout,
 }
 
 

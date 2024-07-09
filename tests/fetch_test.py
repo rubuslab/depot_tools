@@ -113,8 +113,8 @@ class TestUtilityFunctions(unittest.TestCase):
         with self.assertRaises(KeyError):
             fetch.CheckoutFactory('invalid', {}, {}, "root")
 
-        gclient = fetch.CheckoutFactory('gclient', {}, {}, "root")
-        self.assertTrue(isinstance(gclient, fetch.GclientCheckout))
+        gclient = fetch.CheckoutFactory('gclient_git', {}, {}, "root")
+        self.assertTrue(isinstance(gclient, fetch.GclientGitCheckout))
 
 
 class TestCheckout(unittest.TestCase):

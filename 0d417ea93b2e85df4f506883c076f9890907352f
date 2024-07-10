@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7fb05c6b_4976be99",
+        "filename": "gclient.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3973,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-10T03:33:07Z",
+      "side": 1,
+      "message": "does it generate build/config/gclient_args.gni ?",
+      "revId": "0d417ea93b2e85df4f506883c076f9890907352f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

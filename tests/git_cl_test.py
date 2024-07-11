@@ -5360,6 +5360,149 @@ class CMDLintTestCase(CMDTestCaseBase):
                       git_cl.sys.stderr.getvalue())
 
 
+class TestGitAuthConfigChanger(unittest.TestCase):
+
+    def setUp(self):
+        self.git = scm.FAKE_GIT()
+
+    def test_apply_new_auth(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {
+                'credential.https://chromium.googlesource.com/.helper':
+                ['', 'luci'],
+                'http.gitcookies': [''],
+            },
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_new_auth_sso(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH_SSO,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {
+                'protocol.sso.allow': ['always'],
+                'url.sso://chromium/.insteadOf':
+                ['https://chromium.googlesource.com/'],
+                'http.gitcookies': [''],
+            },
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_old_auth(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.OLD_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {},
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_chain_sso_new(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH_SSO,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {
+                'credential.https://chromium.googlesource.com/.helper':
+                ['', 'luci'],
+                'http.gitcookies': [''],
+            },
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_chain_new_sso(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH_SSO,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {
+                'protocol.sso.allow': ['always'],
+                'url.sso://chromium/.insteadOf':
+                ['https://chromium.googlesource.com/'],
+                'http.gitcookies': [''],
+            },
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_chain_new_old(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.OLD_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {},
+        }
+        self.assertEqual(self.git.config, want)
+
+    def test_apply_chain_sso_old(self):
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.NEW_AUTH_SSO,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        git_cl.GitAuthConfigChanger(
+            host_shortname='chromium',
+            mode=git_cl.GitConfigMode.OLD_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+            set_config_func=self.git.SetConfig,
+        ).apply('/some/fake/dir')
+        want = {
+            '/some/fake/dir': {},
+        }
+        self.assertEqual(self.git.config, want)
+
+
 if __name__ == '__main__':
     logging.basicConfig(
         level=logging.DEBUG if '-v' in sys.argv else logging.ERROR)

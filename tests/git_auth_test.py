@@ -137,6 +137,35 @@ class TestConfigChanger(unittest.TestCase):
         }
         self.assertEqual(scm.GIT._dump_config_state(), want)
 
+    def test_apply_global_new_auth(self):
+        git_auth.ConfigChanger(
+            mode=git_auth.ConfigMode.NEW_AUTH,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+        ).apply_global('/some/fake/dir')
+        want = {
+            '<global>': {
+                'credential.https://chromium.googlesource.com/.helper':
+                ['', 'luci'],
+            },
+        }
+        self.assertEqual(scm.GIT._dump_config_state(), want)
+
+    def test_apply_global_new_auth_sso(self):
+        git_auth.ConfigChanger(
+            mode=git_auth.ConfigMode.NEW_AUTH_SSO,
+            remote_url=
+            'https://chromium.googlesource.com/chromium/tools/depot_tools.git',
+        ).apply_global('/some/fake/dir')
+        want = {
+            '<global>': {
+                'protocol.sso.allow': ['always'],
+                'url.sso://chromium/.insteadOf':
+                ['https://chromium.googlesource.com/'],
+            },
+        }
+        self.assertEqual(scm.GIT._dump_config_state(), want)
+
 
 if __name__ == '__main__':
     logging.basicConfig(

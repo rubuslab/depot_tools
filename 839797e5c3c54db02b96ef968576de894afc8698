@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d69ce37c_598fdec7",
+        "filename": "reclient_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-11T09:04:48Z",
+      "side": 1,
+      "message": "If I understand the code correctly, \nIt looks like the racing feature is enabled on all platforms now. \nI\u0027m more concerned about the downside on Win (and possibly Mac)... \n\nIt might be safer to update the default values only on Linux until we take benchmark on Mac and Win?",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 51
+      },
+      "revId": "839797e5c3c54db02b96ef968576de894afc8698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

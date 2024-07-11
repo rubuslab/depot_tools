@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff0c8068_f4bff7c4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3745,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-11T00:46:02Z",
+      "side": 1,
+      "message": "Unfortunately we can\u0027t use PEP 634 because of Python 3.8",
+      "revId": "ea664c1b5c54fefe4c840b6d657c831ec7e7d08e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2aa11178_e60d181a",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3749,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-11T00:46:02Z",
+      "side": 1,
+      "message": "Note I flipped the order of the blocks to match enum order.",
+      "revId": "ea664c1b5c54fefe4c840b6d657c831ec7e7d08e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -577,3 +577,51 @@ class DIFF(object):
             dirnames[:] = [d for d in dirnames if should_recurse(dirpath, d)]
 
         return [os.path.relpath(p, cwd) for p in paths]
+
+
+class FAKE_GIT(object):
+    """Fake implementation of GIT for testing.
+
+    Note that this uses instance methods and not static methods, to
+    isolate test state.
+    """
+
+    def __init__(self):
+        self.config: Mapping[str, Mapping[str, List[str]]] = {}
+
+    def SetConfig(
+        self,
+        cwd,
+        key,
+        value=None,
+        *,
+        append=False,
+        missing_ok=True,
+        modify_all=False,
+        scope='local',
+        value_pattern=None,
+    ):
+        if scope != 'local':
+            raise NotImplementedError(
+                "FAKE_GIT does not implement non local scope")
+        if value_pattern is not None:
+            raise NotImplementedError(
+                "FAKE_GIT does not implement value_pattern")
+        cfg = self.config.setdefault(cwd, {})
+        values = cfg.setdefault(key, [])
+        if value is None:
+            if (len(values) == 1) or modify_all:
+                del cfg[key]
+                return
+            if len(values) == 0:
+                if missing_ok:
+                    del cfg[key]
+                    return
+                raise Exception(f'{key=} is missing')
+            raise Exception(f'{key=} has multiple values {values=}')
+        if append:
+            values.append(value)
+            return
+        if len(values) > 1 and not modify_all:
+            raise Exception(f'{key=} has multiple values {values=}')
+        values[:] = [value]

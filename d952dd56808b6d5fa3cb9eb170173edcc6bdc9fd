@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b5c6d2e_dda14c60",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3751,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-11T00:56:13Z",
+      "side": 1,
+      "message": "I feel like deduplicating the logic will make future maintenance harder, so I\u0027ll keep them split out by mode like this, even if some modes are the same.",
+      "revId": "d952dd56808b6d5fa3cb9eb170173edcc6bdc9fd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

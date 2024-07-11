@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9605fdb8_993748c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-11T09:06:16Z",
+      "side": 1,
+      "message": "It\u0027s better to have a review from Rclient owners as they have more experiences with the parameter tuning.",
+      "revId": "839797e5c3c54db02b96ef968576de894afc8698",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d69ce37c_598fdec7",

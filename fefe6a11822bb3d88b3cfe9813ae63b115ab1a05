@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0c5a81a_e927c4c9",
+        "filename": "reclient_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-11T09:24:31Z",
+      "side": 1,
+      "message": "Just FYI: you can override by platform like this.",
+      "range": {
+        "startLine": 289,
+        "startChar": 0,
+        "endLine": 289,
+        "endChar": 64
+      },
+      "revId": "fefe6a11822bb3d88b3cfe9813ae63b115ab1a05",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

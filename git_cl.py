@@ -3678,6 +3678,7 @@ class GitConfigMode(enum.Enum):
     """Modes to pass to GitAuthConfigChanger"""
     NEW_AUTH = 1
     NEW_AUTH_SSO = 2
+    OLD_AUTH = 3
 
 
 class GitAuthConfigChanger(object):
@@ -3747,6 +3748,8 @@ class GitAuthConfigChanger(object):
             scm.GIT.SetConfig(self._cwd, cred_key, 'luci', append=True)
         elif self._mode == GitConfigMode.NEW_AUTH_SSO:
             scm.GIT.SetConfig(self._cwd, cred_key, None, modify_all=True)
+        elif self._mode == GitConfigMode.OLD_AUTH:
+            scm.GIT.SetConfig(self._cwd, cred_key, None, modify_all=True)
         else:
             raise TypeError(f'Invalid mode {self._mode!r}')
 
@@ -3759,6 +3762,9 @@ class GitAuthConfigChanger(object):
         elif self._mode == GitConfigMode.NEW_AUTH_SSO:
             scm.GIT.SetConfig(self._cwd, 'protocol.sso.allow', 'always')
             scm.GIT.SetConfig(self._cwd, sso_key, base_url, modify_all=True)
+        elif self._mode == GitConfigMode.OLD_AUTH:
+            scm.GIT.SetConfig(self._cwd, 'protocol.sso.allow', None)
+            scm.GIT.SetConfig(self._cwd, sso_key, None, modify_all=True)
         else:
             raise TypeError(f'Invalid mode {self._mode!r}')
 
@@ -3770,6 +3776,11 @@ class GitAuthConfigChanger(object):
         elif self._mode == GitConfigMode.NEW_AUTH_SSO:
             # Override potential global gitcookie config
             scm.GIT.SetConfig(self._cwd, 'http.gitcookies', '', modify_all=True)
+        elif self._mode == GitConfigMode.OLD_AUTH:
+            scm.GIT.SetConfig(self._cwd,
+                              'http.gitcookies',
+                              None,
+                              modify_all=True)
         else:
             raise TypeError(f'Invalid mode {self._mode!r}')
 

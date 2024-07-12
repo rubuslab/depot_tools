@@ -3737,10 +3737,11 @@ class GitAuthConfigChanger(object):
     @staticmethod
     def _infer_mode() -> GitConfigMode:
         """Infer default mode to use."""
+        if not newauth.Enabled():
+            return GitConfigMode.OLD_AUTH
         if gerrit_util.ShouldUseSSO(gerrit_host):
             return GitConfigMode.NEW_AUTH_SSO
-        else:
-            return GitConfigMode.NEW_AUTH
+        return GitConfigMode.NEW_AUTH
 
     def apply(self) -> None:
         """Apply config changes."""

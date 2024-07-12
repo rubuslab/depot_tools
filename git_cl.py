@@ -3671,7 +3671,8 @@ def DownloadGerritHook(force):
 def ConfigureGitRepoAuth() -> None:
     """Configure the current Git repo authentication."""
     logging.debug('Configuring current Git repo authentication...')
-    GitAuthConfigChanger.infer_and_create().apply(os.getcwd())
+    cwd: str = os.getcwd()
+    GitAuthConfigChanger.create_for(cwd).apply(cwd)
 
 
 class GitConfigMode(enum.Enum):
@@ -3711,8 +3712,12 @@ class GitAuthConfigChanger(object):
         self._set_config_func: Callable[..., str] = set_config_func
 
     @classmethod
-    def infer_and_create(cls) -> 'GitAuthConfigChanger':
-        """Create a GitAuthConfigChanger by inferring from env."""
+    def create_for(cls, cwd: str) -> 'GitAuthConfigChanger':
+        """Create a GitAuthConfigChanger for the given Git repo directory.
+
+        This infers settings from the Git repository.
+        """
+        # TODO(ayatane): Use cwd to infer settings
         cl = Changelist()
         # chromium-review.googlesource.com
         gerrit_host: str = cl.GetGerritHost()

@@ -188,6 +188,23 @@
       "message": "What\u0027s this for?",
       "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb36e9da_c36215f1",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-15T21:44:10Z",
+      "side": 1,
+      "message": "I\u0027d recommend keeping a method for this.",
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

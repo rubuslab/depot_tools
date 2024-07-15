@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "abd468e6_78663606",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-15T20:16:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9d070ab_11f75a42",
+      "range": {
+        "startLine": 300,
+        "startChar": 0,
+        "endLine": 301,
+        "endChar": 5
+      },
+      "revId": "2c5c00fbe342d0f26d6ac1a8c9ff81d4f96372a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "87eb227b_4527259d",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-06-28T18:24:52Z",
       "side": 1,
       "message": "I think the intent is off here? it should have 2 more preceding spaces",
+      "range": {
+        "startLine": 308,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 5
+      },
+      "revId": "2c5c00fbe342d0f26d6ac1a8c9ff81d4f96372a7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5708225_b247f5ab",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-15T20:16:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87eb227b_4527259d",
       "range": {
         "startLine": 308,
         "startChar": 0,

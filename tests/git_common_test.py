@@ -1,4 +1,4 @@
-#!/usr/bin/env vpython3
+#!/usr/bin/env python3
 # coding=utf-8
 # Copyright 2013 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
@@ -1171,6 +1171,84 @@ class WarnSubmoduleTest(unittest.TestCase):
         self.warn_submodule()
         self.assertFalse('WARNING: You have fsmonitor enabled.' in \
                         sys.stdout.getvalue())
+
+
+@mock.patch('time.sleep')
+@mock.patch('git_common._run_with_stderr')
+class RunWithStderr(GitCommonTestBase):
+
+    def setUp(self):
+        super(RunWithStderr, self).setUp()
+        msg = 'error: could not lock config file .git/config: File exists'
+        self.lock_failure = self.calledProcessError(msg)
+        msg = 'error: wrong number of arguments, should be 2'
+        self.wrong_param = self.calledProcessError(msg)
+
+    def calledProcessError(self, stderr):
+        import subprocess2
+        return subprocess2.CalledProcessError(
+            2,
+            cmd=['a', 'b', 'c'],  # doesn't matter
+            cwd='/',
+            stdout='',
+            stderr=stderr.encode('utf-8'),
+        )
+
+    def runGitCheckout(self, ex, retry_lock):
+        with self.assertRaises(type(ex)):
+            self.gc.run_with_stderr('checkout', 'a', retry_lock=retry_lock)
+
+    def runGitConfig(self, ex, retry_lock):
+        with self.assertRaises(type(ex)):
+            self.gc.run_with_stderr('config', 'set', retry_lock=retry_lock)
+
+    def test_config_with_non_lock_failure(self, run_mock, _):
+        """Tests git-config with a non-lock-failure."""
+        ex = self.wrong_param
+        run_mock.side_effect = ex
+        # retry_lock == True
+        self.runGitConfig(ex, retry_lock=True)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+        # retry_lock == False
+        run_mock.reset_mock()
+        self.runGitConfig(ex, retry_lock=False)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+
+    def test_config_with_lock_failure(self, run_mock, _):
+        """Tests git-config with a lock-failure."""
+        ex = self.lock_failure
+        run_mock.side_effect = ex
+        # retry_lock == True
+        self.runGitConfig(ex, retry_lock=True)
+        self.assertEqual(run_mock.call_count, 6)  # 1 + 5 (retry)
+        # retry_lock == False
+        run_mock.reset_mock()
+        self.runGitConfig(ex, retry_lock=False)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+
+    def test_checkout_with_non_lock_failure(self, run_mock, _):
+        """Tests git-checkout with a non-lock-failure."""
+        ex = self.wrong_param
+        run_mock.side_effect = ex
+        # retry_lock == True
+        self.runGitCheckout(ex, retry_lock=True)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+        # retry_lock == False
+        run_mock.reset_mock()
+        self.runGitCheckout(ex, retry_lock=False)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+
+    def test_checkout_with_lock_failure(self, run_mock, _):
+        """Tests git-checkout with a lock-failure."""
+        ex = self.lock_failure
+        run_mock.side_effect = ex
+        # retry_lock == True
+        self.runGitCheckout(ex, retry_lock=True)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
+        # retry_lock == False
+        run_mock.reset_mock()
+        self.runGitCheckout(ex, retry_lock=False)
+        self.assertEqual(run_mock.call_count, 1)  # 1 + 0 (retry)
 
 
 if __name__ == '__main__':

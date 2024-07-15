@@ -97,6 +97,23 @@
       },
       "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c05969c_50208973",
+        "filename": "tests/scm_test_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-15T21:20:11Z",
+      "side": 1,
+      "message": "What\u0027s this for?",
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cda4b672_465f2d98",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-15T21:21:22Z",
+      "side": 1,
+      "message": "Why dataclass?  This is not a dataclass, it has functional methods.",
+      "range": {
+        "startLine": 52,
+        "startChar": 1,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "38833598_afff08ac",
         "filename": "scm.py",
         "patchSetId": 3

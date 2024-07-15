@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84e36a28_f8a9471e",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-15T16:59:53Z",
+      "side": 1,
+      "message": "I hard-coded the retry count and interval. I think that executing git rebase-update multiple times in parallel would probably a very rare case, and 5 retries with 0.2s interval would probably be good enough for 2 or 3 rebase-update executions in parallel.\n- The config set should be as quick as 0.1s.\n- git rebase-update wouldn\u0027t call git config set crazy\n\nIf the lock failure happens frequently even with the retries, we may\nconsider adding an option for the retry count, but I\u0027d be curious about more details.\n\ni.e., let\u0027s try with this count and interval, and then see if we need further patches.",
+      "range": {
+        "startLine": 873,
+        "startChar": 4,
+        "endLine": 875,
+        "endChar": 21
+      },
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

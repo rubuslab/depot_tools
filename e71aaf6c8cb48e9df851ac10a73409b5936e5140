@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6145950_98d4467d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T07:14:50Z",
+      "side": 1,
+      "message": "Need LGTM from Source team for .gitignore file. PTAL",
+      "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

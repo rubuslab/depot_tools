@@ -195,6 +195,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "96c925fd_3594386a",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T01:53:49Z",
+      "side": 1,
+      "message": "I believe this should be much better now - caching is totally separated, base classes and impls have short (i.e. depth 1) inheritance tree, impls no longer tie their implementation to the caching (public) API.\n\nTest impl was trivially extended to support multiple scopes.\n\nNeeds more tests though.",
+      "parentUuid": "e465f55c_ee1bfe28",
+      "range": {
+        "startLine": 92,
+        "startChar": 9,
+        "endLine": 92,
+        "endChar": 24
+      },
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3f5ab005_031cbf4d",
         "filename": "scm.py",
         "patchSetId": 3

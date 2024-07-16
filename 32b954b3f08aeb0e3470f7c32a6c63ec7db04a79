@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22bffdce_8e6dcdf9",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-16T06:45:34Z",
+      "side": 1,
+      "message": "False?",
+      "range": {
+        "startLine": 189,
+        "startChar": 35,
+        "endLine": 189,
+        "endChar": 39
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d17c41fd_4f291b14",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-16T06:45:34Z",
+      "side": 1,
+      "message": "Can we use https://docs.python.org/3/library/subprocess.html#subprocess.DEVNULL\ninstead?",
+      "range": {
+        "startLine": 408,
+        "startChar": 4,
+        "endLine": 408,
+        "endChar": 11
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f7e39979_f771226e",
+        "filename": "reclient_helper.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-16T06:45:34Z",
+      "side": 1,
+      "message": "False?",
+      "range": {
+        "startLine": 386,
+        "startChar": 45,
+        "endLine": 386,
+        "endChar": 49
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fa37c031_367150b6",
+        "filename": "reclient_helper.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-16T06:45:34Z",
+      "side": 1,
+      "message": "ditto.",
+      "range": {
+        "startLine": 400,
+        "startChar": 43,
+        "endLine": 400,
+        "endChar": 47
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

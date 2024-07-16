@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4f2e97a_acfa0fc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T18:18:54Z",
+      "side": 1,
+      "message": "turns out the `pass` statements are an error in presubmit 🙃",
+      "revId": "9a6a66bd9c0ec9c2dfd1d867666bfc00a88e775e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

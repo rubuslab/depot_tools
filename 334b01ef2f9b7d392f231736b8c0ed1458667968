@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b326486_a982a4aa",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T01:52:22Z",
+      "side": 1,
+      "message": "It was for root/_config - dropped and changed to __init__ based class instead.",
+      "parentUuid": "cda4b672_465f2d98",
+      "range": {
+        "startLine": 52,
+        "startChar": 1,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38833598_afff08ac",
@@ -72,6 +96,24 @@
           ]
         }
       ],
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65b1e497_62302538",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T01:52:22Z",
+      "side": 1,
+      "message": "this is only required if there are no statements (docstring counts) - but I\u0027ll add it anyhow.",
+      "parentUuid": "38833598_afff08ac",
       "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -123,6 +165,30 @@
           ]
         }
       ],
+      "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e465f55c_ee1bfe28",
+        "filename": "scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T01:52:22Z",
+      "side": 1,
+      "message": "Factored this out so ABC is standalone at the root of the object tree and the caching implementation builds on top of this, then finally either test/production implement the base functions.\n\nI considered passing",
+      "parentUuid": "45d6dbb6_39a14cc5",
+      "range": {
+        "startLine": 92,
+        "startChar": 9,
+        "endLine": 92,
+        "endChar": 24
+      },
       "revId": "334b01ef2f9b7d392f231736b8c0ed1458667968",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

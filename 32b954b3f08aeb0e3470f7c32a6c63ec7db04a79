@@ -72,6 +72,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5815c76_4960078b",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T07:02:59Z",
+      "side": 1,
+      "message": "I see. I should have used type hints for that propose. \nI updated this CL to False for now.",
+      "parentUuid": "3d87ca25_cfd1724d",
+      "range": {
+        "startLine": 189,
+        "startChar": 35,
+        "endLine": 189,
+        "endChar": 39
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d17c41fd_4f291b14",
@@ -142,6 +166,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "99f16672_2b0c2c4d",
+        "filename": "reclient_helper.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T07:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f7e39979_f771226e",
+      "range": {
+        "startLine": 386,
+        "startChar": 45,
+        "endLine": 386,
+        "endChar": 49
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fa37c031_367150b6",
@@ -155,6 +203,30 @@
       "writtenOn": "2024-07-16T06:45:34Z",
       "side": 1,
       "message": "ditto.",
+      "range": {
+        "startLine": 400,
+        "startChar": 43,
+        "endLine": 400,
+        "endChar": 47
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02e067a2_65eacd11",
+        "filename": "reclient_helper.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T07:02:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa37c031_367150b6",
       "range": {
         "startLine": 400,
         "startChar": 43,

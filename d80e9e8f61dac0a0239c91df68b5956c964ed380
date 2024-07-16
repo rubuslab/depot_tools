@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c823f0e_664b5cc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-16T19:48:23Z",
+      "side": 1,
+      "message": "Fixed a few tests, including adding the new mock to the SSO tests in gerrit_util_test",
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

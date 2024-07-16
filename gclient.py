@@ -241,6 +241,7 @@ class Hook(object):
 
     def run(self):
         """Executes the hook's command (provided the condition is met)."""
+        import pdb; pdb.set_trace()
         if (self._condition and not gclient_eval.EvaluateCondition(
                 self._condition, self._variables)):
             return
@@ -1206,6 +1207,7 @@ class Dependency(gclient_utils.WorkItem, DependencySettings):
         # type: () -> None
         """Runs |command| then parse the DEPS file."""
         logging.info('Dependency(%s).run()' % self.name)
+        import pdb; pdb.set_trace()
         assert self._file_list == []
         # When running runhooks, there's no need to consult the SCM.
         # All known hooks are expected to run unconditionally regardless of
@@ -2384,6 +2386,7 @@ it or fix the checkout.
             command: The command to use (e.g., 'status' or 'diff')
             args: list of str - extra arguments to add to the command line.
         """
+        import pdb; pdb.set_trace()
         if not self.dependencies:
             raise gclient_utils.Error('No solution specified')
 
@@ -2715,6 +2718,7 @@ class GcsDependency(Dependency):
         # GCS dependencies do not need to run during runhooks or revinfo.
         if command in ['runhooks', 'revinfo']:
             return
+        import pdb; pdb.set_trace()
         if not self.should_process:
             return
         self.DownloadGoogleStorage()
@@ -2936,6 +2940,7 @@ class CipdDependency(Dependency):
         # b/349699772 may be relevant.
         if command == 'runhooks':
             return
+        import pdb; pdb.set_trace()
         if not self.should_process:
             return
         self._CreatePackageIfNecessary()

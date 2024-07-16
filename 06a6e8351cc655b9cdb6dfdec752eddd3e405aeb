@@ -24,6 +24,23 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "86fbb396_8784e26d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-07-16T03:53:39Z",
+      "side": 1,
+      "message": "lgtm with all comments resolved.",
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84e36a28_f8a9471e",
@@ -60,6 +77,24 @@
       "writtenOn": "2024-07-16T02:34:10Z",
       "side": 1,
       "message": "It is better to do exponential backoff?",
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84c19ad6_a3d19ad9",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-07-16T03:53:39Z",
+      "side": 1,
+      "message": "I think exp backoff would be too long to sleep. Maybe add some jitter, but we shouldn\u0027t sleep for more than a second tops.\n\nI also think we can also start with a lower sleep time, e.g. 10ms or so.",
+      "parentUuid": "c6bc5c55_1c674bfb",
       "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

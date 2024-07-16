@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3d87ca25_cfd1724d",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-16T06:59:49Z",
+      "side": 1,
+      "message": "I think that represents type of the arg more explicitly.\nNone seems implying that there could be a value having type other than bool.",
+      "parentUuid": "ec329c6f_e73bf6a4",
+      "range": {
+        "startLine": 189,
+        "startChar": 35,
+        "endLine": 189,
+        "endChar": 39
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d17c41fd_4f291b14",
         "filename": "autoninja.py",
         "patchSetId": 15

@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ec329c6f_e73bf6a4",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T06:57:31Z",
+      "side": 1,
+      "message": "Just curious why False is better than None?",
+      "parentUuid": "22bffdce_8e6dcdf9",
+      "range": {
+        "startLine": 189,
+        "startChar": 35,
+        "endLine": 189,
+        "endChar": 39
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d17c41fd_4f291b14",
         "filename": "autoninja.py",
         "patchSetId": 15
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-16T06:45:34Z",
       "side": 1,
       "message": "Can we use https://docs.python.org/3/library/subprocess.html#subprocess.DEVNULL\ninstead?",
+      "range": {
+        "startLine": 408,
+        "startChar": 4,
+        "endLine": 408,
+        "endChar": 11
+      },
+      "revId": "32b954b3f08aeb0e3470f7c32a6c63ec7db04a79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19b37163_fdb32d8a",
+        "filename": "autoninja.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T06:57:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d17c41fd_4f291b14",
       "range": {
         "startLine": 408,
         "startChar": 4,

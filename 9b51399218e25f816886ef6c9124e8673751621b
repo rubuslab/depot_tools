@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b3b563c_77552796",
+        "filename": "ninjalog_uploader_wrapper.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T06:57:31Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "f49f1c69_b9b4f14b",
+      "revId": "9b51399218e25f816886ef6c9124e8673751621b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ddc544ee_b2d241c4",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-16T06:45:34Z",
       "side": 0,
       "message": "Can we remove this from gitignore too?",
+      "revId": "9b51399218e25f816886ef6c9124e8673751621b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8af85d2c_a67160c8",
+        "filename": "reclient_metrics.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-16T06:57:31Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "ddc544ee_b2d241c4",
       "revId": "9b51399218e25f816886ef6c9124e8673751621b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

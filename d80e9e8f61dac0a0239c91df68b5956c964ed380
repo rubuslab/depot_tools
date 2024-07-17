@@ -616,6 +616,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd179ca1_04c1e905",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-17T20:18:08Z",
+      "side": 1,
+      "message": "Looked into using an enum here... it has a bunch of cascading effects (e.g. in git_common).\n\nNot convinced that trying to preserve the underlying objects are worth it, especially since inside this class they are mutable (on purpose).\n\nKeep in mind that this is just the fake impl, not used in production 😊\n\nLMK if you feel strongly about this, however, and we can work out a fix.",
+      "parentUuid": "4175b6ad_361d5eaf",
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "34ec4939_235a256f",

@@ -17,7 +17,11 @@ import tempfile
 import unittest
 from unittest import mock
 
+import scm_test_helper
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import scm
 
 import gclient_scm
 import gclient_utils
@@ -51,29 +55,25 @@ def strip_timestamps(value):
 
 
 class BasicTests(unittest.TestCase):
-    @mock.patch('gclient_scm.scm.GIT.Capture')
-    def testGetFirstRemoteUrl(self, mockCapture):
-        REMOTE_STRINGS = [
-            ('remote.origin.url\nE:\\foo\\bar\x00', 'E:\\foo\\bar'),
-            ('remote.origin.url\n/b/foo/bar\x00', '/b/foo/bar'),
-            ('remote.origin.url\nhttps://foo/bar\x00', 'https://foo/bar'),
-            ('remote.origin.url\nE:\\Fo Bar\\bax\x00', 'E:\\Fo Bar\\bax'),
-            ('remote.origin.url\ngit://what/"do\x00', 'git://what/"do')
-        ]
+
+    def setUp(self) -> None:
+        scm_test_helper.mock_GIT(self)
+        return super().setUp()
+
+    def testGetFirstRemoteUrl(self):
         FAKE_PATH = '/fake/path'
-        mockCapture.side_effect = [question for question, _ in REMOTE_STRINGS]
+        scm.GIT.SetConfig(FAKE_PATH,
+                          'remote.origin.url',
+                          'first-value',
+                          append=True)
+        scm.GIT.SetConfig(FAKE_PATH,
+                          'remote.origin.url',
+                          'second-value',
+                          append=True)
 
-        for _, answer in REMOTE_STRINGS:
-            self.assertEqual(
-                gclient_scm.SCMWrapper._get_first_remote_url(FAKE_PATH), answer)
-            gclient_scm.scm.GIT._clear_config(FAKE_PATH)
-
-        expected_calls = [
-            mock.call(['config', '--list', '-z'],
-                      cwd=FAKE_PATH,
-                      strip_out=False) for _ in REMOTE_STRINGS
-        ]
-        self.assertEqual(mockCapture.mock_calls, expected_calls)
+        self.assertEqual(
+            gclient_scm.SCMWrapper._get_first_remote_url(FAKE_PATH),
+            'first-value')
 
 
 class BaseGitWrapperTestCase(unittest.TestCase, test_case_utils.TestCaseUtils):

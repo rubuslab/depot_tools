@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19ce39ab_8900d908",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-07-17T18:24:24Z",
+      "side": 1,
+      "message": "This property wasn\u0027t actually doing anything, it looks like we didn\u0027t follow on to https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/3766100 and remove the property from buliders",
+      "revId": "b923e0c63270571ce4a95945c115f8b22c7b500d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {

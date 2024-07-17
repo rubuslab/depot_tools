@@ -600,6 +600,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4175b6ad_361d5eaf",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-17T19:54:46Z",
+      "side": 1,
+      "message": "Missed this - I think I can also use the python3 enum construct for this, which would be better.",
+      "parentUuid": "a2ca2686_c33acf12",
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "34ec4939_235a256f",
         "filename": "scm.py",
         "patchSetId": 9
@@ -634,6 +652,24 @@
       "writtenOn": "2024-07-16T21:48:47Z",
       "side": 1,
       "message": "I\u0027d prefer properly tracking and cleaning up all the patches, rather than doing stopall",
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cff94a1d_dfcfb29f",
+        "filename": "tests/gerrit_util_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-17T19:54:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "45cbd2fc_5345c159",
       "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -159,6 +159,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d64c31b2_9ab86907",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-17T20:55:28Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "8329292e_cc4052a9",
+      "range": {
+        "startLine": 84,
+        "startChar": 33,
+        "endLine": 84,
+        "endChar": 53
+      },
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "65d20300_aa700a99",
@@ -348,6 +372,30 @@
       "side": 1,
       "message": "It was match before - I think match is clearer though? Do we have a use case for this where the caller doesn\u0027t supply the full key pattern?",
       "parentUuid": "b4771f03_17bd22b9",
+      "range": {
+        "startLine": 168,
+        "startChar": 17,
+        "endLine": 168,
+        "endChar": 22
+      },
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "521a2ae0_ab1b9df1",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-17T20:55:28Z",
+      "side": 1,
+      "message": "My bad, I was thinking of this as the same as the value pattern in SetConfig (since I\u0027ve been looking at it so much).  AFAIK the value pattern in setConfig matches anywhere, but this is matching the key.  There\u0027s probably an argument to be made for API consistency, but not for this CL, and I\u0027m not inclined to pursue this further.",
+      "parentUuid": "e96c7475_41689250",
       "range": {
         "startLine": 168,
         "startChar": 17,
@@ -647,6 +695,30 @@
       "writtenOn": "2024-07-16T21:48:47Z",
       "side": 1,
       "message": "same comment on match vs search",
+      "range": {
+        "startLine": 368,
+        "startChar": 46,
+        "endLine": 368,
+        "endChar": 51
+      },
+      "revId": "d80e9e8f61dac0a0239c91df68b5956c964ed380",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b992c32e_e7b72287",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-17T20:55:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34ec4939_235a256f",
       "range": {
         "startLine": 368,
         "startChar": 46,

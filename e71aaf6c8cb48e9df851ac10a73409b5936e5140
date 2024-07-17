@@ -33,6 +33,23 @@
       "message": "Hi Yiwei, \n\nPlease check the .gitignore change.\n\nHi Ben or Michael, \n\nPlease review the reclient_metrics part.",
       "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57510cf3_45090037",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-17T05:52:10Z",
+      "side": 1,
+      "message": "lgtm the git ignore change",
+      "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -50,6 +50,64 @@
       "message": "lgtm the git ignore change",
       "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4cb7e21_f9c8e5a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-07-17T14:14:24Z",
+      "side": 1,
+      "message": "Minor nit but LGTM",
+      "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d77ec9ec_bdd645b6",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-07-17T14:14:24Z",
+      "side": 1,
+      "message": "Not sure if this warning text is sufficient?  What\u0027s the problem with not being a googler here?",
+      "range": {
+        "startLine": 213,
+        "startChar": 23,
+        "endLine": 213,
+        "endChar": 38
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "15df2edd_8ce9f303",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "ninjalog_uploader.py",
+              "range": {
+                "startLine": 213,
+                "startChar": 0,
+                "endLine": 214,
+                "endChar": 0
+              },
+              "replacement": "        logging.warning(\"not googler, skip uploading ninjalog\")\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e71aaf6c8cb48e9df851ac10a73409b5936e5140",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

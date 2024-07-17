@@ -35,7 +35,13 @@ PROPERTIES = {
     Property(
         help='Properties specific to bot_update module.',
         param_name='properties',
-        kind=ConfigGroup(stale_process_duration_override=Single(int)),
+        kind=ConfigGroup(
+            # Override STALE_PROCESS_DURATION for bot_update.py.
+            stale_process_duration_override=Single(int),
+            # This property no longer does anything, but is here for now
+            # because several builders still set it.
+            apply_patch_on_gclient=Single(bool),
+        ),
         default={},
     ),
 }

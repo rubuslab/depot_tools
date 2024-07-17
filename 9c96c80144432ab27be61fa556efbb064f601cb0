@@ -16,6 +16,40 @@
       "message": "PTAL now - trybots should be happy",
       "revId": "9c96c80144432ab27be61fa556efbb064f601cb0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "951a0695_4d6030fa",
+        "filename": "tests/scm_test_helper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-17T21:04:29Z",
+      "side": 1,
+      "message": "nit: rename this to scm_mock.py? the _test_helper is a bit verbose for my taste",
+      "revId": "9c96c80144432ab27be61fa556efbb064f601cb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36533d49_6b7baa54",
+        "filename": "tests/scm_test_helper.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-17T21:04:29Z",
+      "side": 1,
+      "message": "the underscore+uppercase is mildly irritating, like we\u0027re trying to violate every possible style policy simultaneously.  I don\u0027t really have a particularly good suggestion however.",
+      "revId": "9c96c80144432ab27be61fa556efbb064f601cb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

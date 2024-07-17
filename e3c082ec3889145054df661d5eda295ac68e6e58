@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd2452e7_a35521ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-17T20:39:24Z",
+      "side": 1,
+      "message": "http://shortn/_xgnrhlHql4\n\nI can find the param from the equivalent recipe modules in the internal repo. Are you going to remove them in a separate CL?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 0
+      },
+      "revId": "e3c082ec3889145054df661d5eda295ac68e6e58",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

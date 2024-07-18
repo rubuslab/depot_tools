@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7caa09c_2b8ddb38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-07-18T15:19:19Z",
+      "side": 1,
+      "message": "This should be safe to reland now as no builders are using the old property anymore.",
+      "revId": "6eebc8f34298a948b3f28715ec8b845dbe85500f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

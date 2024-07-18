@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "15b5a3d1_2faa73e9",
+        "filename": "scm.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-18T20:41:48Z",
+      "side": 1,
+      "message": "comment: I feel like this long first line will break some presubmit linter.  Pretty sure it violates PEP 257.\n\nIf it doesn\u0027t break presubmit then eh.",
+      "revId": "2dbda8a95fc9fc7360931234df7897cd5e9823ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

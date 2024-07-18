@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44804e90_3d326b5d",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-18T23:56:01Z",
+      "side": 1,
+      "message": "Tested personally, rolling out for fishfood.",
+      "revId": "8c538c344ebb6fb6fcc1e903400115ee60e7a6b8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

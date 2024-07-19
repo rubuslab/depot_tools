@@ -16,6 +16,24 @@
       "message": "alternately, can we infer everything needed from `cwd` directly in this function?",
       "revId": "20653e57594c0807fa46ec8fcaca0734e0db7271",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98e64332_70439893",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3748,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-19T23:13:50Z",
+      "side": 1,
+      "message": "no, at least not exactly.  We have one case where we need to infer the branch from the current repo, but the user email from the global config, to determine whether the global configuration for the host (SSO vs luci-auth) is sufficient or we need a local override.\n\nWe *could* add a scope to scm.GIT.GetConfig, which could possibly remove this need.  I don\u0027t have a strong opinion either way ATM.  I tend to poke at things with atomic refactors and see if I can tease it into the right shape, kind of like those entangled metal ring puzzles.  So I don\u0027t know exactly if I can get all of the data routed the way I\u0027d like, until I try to do it.",
+      "parentUuid": "ed56111e_a75d4bd6",
+      "revId": "20653e57594c0807fa46ec8fcaca0734e0db7271",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

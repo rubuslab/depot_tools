@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54d00ba3_e679df33",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T22:37:32Z",
+      "side": 1,
+      "message": "Args: \n  cwd: This is the current working directory, used to pull \"user.email\" from the current git repo\u0027s git config.\n  host: The Gerrit host to check.",
+      "fixSuggestions": [
+        {
+          "fixId": "6d4302a7_f5829114",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "gerrit_util.py",
+              "range": {
+                "startLine": 175,
+                "startChar": 0,
+                "endLine": 176,
+                "endChar": 0
+              },
+              "replacement": "    \"\"\"Return True if we should use SSO for the current user.\n\n    Args:\n      cwd: This is the current working directory, used to pull \"user.email\"\n        from the current git repo\u0027s git config.\n      host: The Gerrit host to check.\n    \"\"\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "fa9afadd2b5989e35e213d221c7d526646aef62d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

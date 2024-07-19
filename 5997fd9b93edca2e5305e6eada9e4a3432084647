@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5ddab879_7280afc5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-19T05:15:15Z",
+      "side": 1,
+      "message": "Can you wait? this is going to be replaced by build_telemetry.py soon.",
+      "revId": "5997fd9b93edca2e5305e6eada9e4a3432084647",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "08bae55b_3192ecb1",
         "filename": "ninjalog_uploader_wrapper.py",
         "patchSetId": 3

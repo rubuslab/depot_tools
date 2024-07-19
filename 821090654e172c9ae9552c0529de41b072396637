@@ -16,6 +16,24 @@
       "message": "Actually, would that prematurely opt user into using sso for auth when it is not launched yet?",
       "revId": "821090654e172c9ae9552c0529de41b072396637",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a02b0255_181d3675",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-19T20:37:23Z",
+      "side": 1,
+      "message": "ah, nvm. you will still need to enable sso in config before coming to this.",
+      "parentUuid": "0c5a3929_2fbde031",
+      "revId": "821090654e172c9ae9552c0529de41b072396637",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

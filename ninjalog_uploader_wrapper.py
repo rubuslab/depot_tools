@@ -3,6 +3,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import argparse
 import json
 import os
 import platform
@@ -89,16 +90,24 @@ https://chromium.googlesource.com/chromium/tools/depot_tools/+/main/ninjalog.REA
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("status", nargs=1, choices=["opt-in", "opt-out"])
+    parser.add_argument("--dry-run",
+                        action="store_true",
+                        help="doesn't upload log.")
+
+    args = parser.parse_args()
+
     config = LoadConfig()
 
-    if len(sys.argv) == 2 and sys.argv[1] == "opt-in":
+    if args.status == "opt-in":
         config["opt-in"] = True
         config["countdown"] = 0
         SaveConfig(config)
         print("ninjalog upload is opted in.")
         return 0
 
-    if len(sys.argv) == 2 and sys.argv[1] == "opt-out":
+    if args.status == "opt-out":
         config["opt-in"] = False
         SaveConfig(config)
         print("ninjalog upload is opted out.")
@@ -119,20 +128,19 @@ def main():
         SaveConfig(config)
         return 0
 
-    if len(sys.argv) == 1:
+    if args.dry_run:
         # dry-run for debugging.
         print("upload ninjalog dry-run")
         return 0
 
     # Run upload script without wait.
-    devnull = open(os.devnull, "w")
     creationflags = 0
     if platform.system() == "Windows":
         creationflags = subprocess.CREATE_NEW_PROCESS_GROUP
     subprocess2.Popen(
         [sys.executable, UPLOADER] + sys.argv[1:],
-        stdout=devnull,
-        stderr=devnull,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
         creationflags=creationflags,
     )
 

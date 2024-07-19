@@ -34,6 +34,24 @@
       ],
       "revId": "fa9afadd2b5989e35e213d221c7d526646aef62d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e618f1e_6fc99945",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-19T23:03:59Z",
+      "side": 1,
+      "message": "ack, somewhat obsoleted by https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5723091\n\nIf you\u0027d still like an explicit args block on that version, let me know",
+      "parentUuid": "54d00ba3_e679df33",
+      "revId": "fa9afadd2b5989e35e213d221c7d526646aef62d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

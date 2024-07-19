@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "e424809b_b216f5d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-19T10:11:04Z",
+      "side": 1,
+      "message": "storing hash might be better?",
+      "range": {
+        "startLine": 7,
+        "startChar": 41,
+        "endLine": 7,
+        "endChar": 46
+      },
+      "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e54bec20_d6e3bb55",
@@ -37,6 +60,24 @@
       "writtenOn": "2024-07-19T09:00:03Z",
       "side": 1,
       "message": "Is it fine to run this always and remove os.utime?",
+      "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7ac599f_15ded94c",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-19T10:11:04Z",
+      "side": 1,
+      "message": "I wanted to have the same mtime with ninjalog_mtime. But the time at this line might be sufficient as it\u0027s newer than ninjalog_mtime.",
+      "parentUuid": "0f766e3c_e9ddb592",
       "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

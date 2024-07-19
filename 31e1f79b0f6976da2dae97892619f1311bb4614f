@@ -22,6 +22,30 @@
       },
       "revId": "31e1f79b0f6976da2dae97892619f1311bb4614f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01d89659_9c1a60e6",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3727,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-19T22:59:29Z",
+      "side": 1,
+      "message": "Ack, I\u0027ll trim the verbose ones later if I touch it again.\n\nIMO, having some hints is a useful reminder given that we don\u0027t have type checking yet so enforcement is all manual; I like the visual reminder.",
+      "parentUuid": "2f8fb857_530aa800",
+      "range": {
+        "startLine": 3726,
+        "startChar": 8,
+        "endLine": 3727,
+        "endChar": 29
+      },
+      "revId": "31e1f79b0f6976da2dae97892619f1311bb4614f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

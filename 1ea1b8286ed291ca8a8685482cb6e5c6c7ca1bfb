@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8dd432b9_2dee66f2",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3743,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T22:38:46Z",
+      "side": 1,
+      "message": "why not put cwd into the returned object and remove cwd as an argument from the other methods?",
+      "revId": "1ea1b8286ed291ca8a8685482cb6e5c6c7ca1bfb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

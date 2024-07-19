@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e54bec20_d6e3bb55",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-19T08:49:53Z",
+      "side": 1,
+      "message": "@philwo@google.com I took your idea 😊",
+      "range": {
+        "startLine": 282,
+        "startChar": 52,
+        "endLine": 282,
+        "endChar": 62
+      },
+      "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

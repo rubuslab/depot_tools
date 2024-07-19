@@ -16,6 +16,41 @@
       "message": "Is this complete? I assume if we are using global overwrite, it should be `insteadOf https://{self._shortname}.googlesource.com/`",
       "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db0728e7_42d4cd07",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3840,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T22:12:30Z",
+      "side": 1,
+      "message": "The key ends with insteadOf, the value is the source URL",
+      "parentUuid": "3d578868_dc8cbfe9",
+      "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c957428_9a7ab307",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3847,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T22:12:30Z",
+      "side": 1,
+      "message": "note - git config will only ever modify a single file - if the goal is to unset this value everywhere, you may also need to unset it locally, too.",
+      "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

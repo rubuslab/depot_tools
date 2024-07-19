@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ed56111e_a75d4bd6",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3748,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T22:40:29Z",
+      "side": 1,
+      "message": "alternately, can we infer everything needed from `cwd` directly in this function?",
+      "revId": "20653e57594c0807fa46ec8fcaca0734e0db7271",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

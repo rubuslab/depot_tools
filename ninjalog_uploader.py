@@ -23,6 +23,7 @@ import json
 import logging
 import multiprocessing
 import os
+import pathlib
 import platform
 import subprocess
 import sys
@@ -200,6 +201,43 @@ def GetNinjalog(cmdline):
     return os.path.join(ninjalog_dir, ".ninja_log")
 
 
+def UploadNinjaLog(ninjalog, server, cmdline):
+    output = io.BytesIO()
+
+    with open(ninjalog) as f:
+        with gzip.GzipFile(fileobj=output, mode="wb") as g:
+            g.write(f.read().encode())
+            g.write(b"# end of ninja log\n")
+
+            metadata = GetMetadata(cmdline, ninjalog)
+            logging.info("send metadata: %s", json.dumps(metadata))
+            g.write(json.dumps(metadata).encode())
+
+    status = None
+    err_msg = ""
+    try:
+        resp = urllib.request.urlopen(
+            urllib.request.Request(
+                "https://" + server + "/upload_ninja_log/",
+                data=output.getvalue(),
+                headers={"Content-Encoding": "gzip"},
+            ))
+        status = resp.status
+        logging.info("response header: %s", resp.headers)
+        logging.info("response content: %s", resp.read())
+    except urllib.error.HTTPError as e:
+        status = e.status
+        err_msg = e.msg
+
+    if status != 200:
+        logging.warning(
+            "unexpected status code for response: status: %s, msg: %s", status,
+            err_msg)
+        return 1
+
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -234,46 +272,24 @@ def main():
         logging.warning("ninjalog is not found in %s", ninjalog)
         return 1
 
-    # We assume that each ninja invocation interval takes at least 2 seconds.
-    # This is not to have duplicate entry in server when current build is no-op.
-    if os.stat(ninjalog).st_mtime < time.time() - 2:
-        logging.info("ninjalog is not updated recently %s", ninjalog)
-        return 0
+    # To avoid uploading duplicated ninjalog entries,
+    # Record the mtime of ninjalog that is uploaded.
+    # If the recorded timestamp is older than the mtime of ninjalog,
+    # It needs to be uploaded.
+    ninjalog_mtime = os.stat(ninjalog).st_mtime
+    last_upload_file = pathlib.Path(ninjalog + '.last_upload')
+    if last_upload_file.exists():
+        if ninjalog_mtime <= last_upload_file.stat().st_mtime:
+            logging.info("ninjalog is already uploaded.")
+            return 0
+    else:
+        last_upload_file.touch()
 
-    output = io.BytesIO()
+    exit_code = UploadNinjaLog(ninjalog, args.server, args.cmdline)
+    if exit_code == 0:
+        os.utime(last_upload_file, (time.time(), ninjalog_mtime))
+    return exit_code
 
-    with open(ninjalog) as f:
-        with gzip.GzipFile(fileobj=output, mode="wb") as g:
-            g.write(f.read().encode())
-            g.write(b"# end of ninja log\n")
-
-            metadata = GetMetadata(args.cmdline, ninjalog)
-            logging.info("send metadata: %s", json.dumps(metadata))
-            g.write(json.dumps(metadata).encode())
-
-    status = None
-    err_msg = ""
-    try:
-        resp = urllib.request.urlopen(
-            urllib.request.Request(
-                "https://" + args.server + "/upload_ninja_log/",
-                data=output.getvalue(),
-                headers={"Content-Encoding": "gzip"},
-            ))
-        status = resp.status
-        logging.info("response header: %s", resp.headers)
-        logging.info("response content: %s", resp.read())
-    except urllib.error.HTTPError as e:
-        status = e.status
-        err_msg = e.msg
-
-    if status != 200:
-        logging.warning(
-            "unexpected status code for response: status: %s, msg: %s", status,
-            err_msg)
-        return 1
-
-    return 0
 
 
 if __name__ == "__main__":

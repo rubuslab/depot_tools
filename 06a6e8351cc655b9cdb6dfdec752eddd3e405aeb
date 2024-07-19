@@ -50,6 +50,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "5b1666ae_db13f25d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-19T00:54:03Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "6caa7981_357ed438",
+      "range": {
+        "startLine": 17,
+        "startChar": 21,
+        "endLine": 17,
+        "endChar": 35
+      },
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "86fbb396_8784e26d",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 3
@@ -82,6 +106,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37263439_81f9aea0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-19T00:54:03Z",
+      "side": 1,
+      "message": "sorry for delays. done. PTAL",
+      "parentUuid": "fb40802d_e62fa159",
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "84e36a28_f8a9471e",
@@ -95,6 +137,30 @@
       "writtenOn": "2024-07-15T16:59:53Z",
       "side": 1,
       "message": "I hard-coded the retry count and interval. I think that executing git rebase-update multiple times in parallel would probably a very rare case, and 5 retries with 0.2s interval would probably be good enough for 2 or 3 rebase-update executions in parallel.\n- The config set should be as quick as 0.1s.\n- git rebase-update wouldn\u0027t call git config set crazy\n\nIf the lock failure happens frequently even with the retries, we may\nconsider adding an option for the retry count, but I\u0027d be curious about more details.\n\ni.e., let\u0027s try with this count and interval, and then see if we need further patches.",
+      "range": {
+        "startLine": 873,
+        "startChar": 4,
+        "endLine": 875,
+        "endChar": 21
+      },
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af0613bb_b592176a",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-19T00:54:03Z",
+      "side": 1,
+      "message": "marking as resolved.",
+      "parentUuid": "84e36a28_f8a9471e",
       "range": {
         "startLine": 873,
         "startChar": 4,
@@ -140,6 +206,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "379ab69a_fca1e8a7",
+        "filename": "git_common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-19T00:54:03Z",
+      "side": 1,
+      "message": "done. These are kinda arbitrary chosen numbers. Let\u0027s give it a try. If it turns out that we need further tuning, we can change or parameterize them.\n\n@tikuta@chromium.org let me know if you find better numbers.",
+      "parentUuid": "84c19ad6_a3d19ad9",
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a049bf95_01bf24a7",
@@ -177,6 +261,30 @@
       "side": 1,
       "message": "I don\u0027t know. 😂 this seems to be a convention in depot_tools unit tests. For example, the below is L60 in this file.\n\n```\ndef testStreamWithRetcodeException(self):\n    import subprocess2   #####  \u003c-----\n    with self.assertRaises(subprocess2.CalledProcessError):\n        ...\n```\n\nThere are also other imports, inside a class, in this and other unit test files. That said, there are only several, and it seems quite random.\nhttps://source.chromium.org/search?q\u003d%5E%5Cs%2Bimport\u0026sq\u003d\u0026ss\u003dchromium%2Fchromium%2Ftools%2Fdepot_tools:tests%2F\n\nI will move it to the top, but let me know if Josip or you can think of the possible reasons. (I won\u0027t change the other in-class imports in this CL)",
       "parentUuid": "a049bf95_01bf24a7",
+      "range": {
+        "startLine": 1188,
+        "startChar": 15,
+        "endLine": 1188,
+        "endChar": 26
+      },
+      "revId": "06a6e8351cc655b9cdb6dfdec752eddd3e405aeb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd98ef20_04ccac18",
+        "filename": "tests/git_common_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1188,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-07-19T00:54:03Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "2657c082_2e653ba4",
       "range": {
         "startLine": 1188,
         "startChar": 15,

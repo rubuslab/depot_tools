@@ -278,6 +278,7 @@ class GclientApi(recipe_api.RecipeApi):
 
     return sync_step
 
+  @recipe_api.escape_warnings("recipe_engine/CHECKOUT_DIR_DEPRECATED")
   def runhooks(self, args=None, name='runhooks', **kwargs):
     args = args or []
     assert isinstance(args, (list, tuple))

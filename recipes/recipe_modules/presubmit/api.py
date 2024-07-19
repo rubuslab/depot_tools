@@ -46,6 +46,7 @@ class PresubmitApi(recipe_api.RecipeApi):
     else:
       return self.m.gclient.c.solutions[0].name.rstrip('/')
 
+  @recipe_api.escape_warnings("recipe_engine/CHECKOUT_DIR_DEPRECATED")
   def prepare(self, root_solution_revision=None):
     """Sets up a presubmit run.
 

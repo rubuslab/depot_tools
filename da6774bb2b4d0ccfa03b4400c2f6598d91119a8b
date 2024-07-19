@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0d3ad75_957998df",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3840,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-19T23:01:57Z",
+      "side": 1,
+      "message": "ack, it is complete as robbie said",
+      "parentUuid": "db0728e7_42d4cd07",
+      "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8c957428_9a7ab307",
@@ -49,6 +67,24 @@
       "writtenOn": "2024-07-19T22:12:30Z",
       "side": 1,
       "message": "note - git config will only ever modify a single file - if the goal is to unset this value everywhere, you may also need to unset it locally, too.",
+      "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9debb43d_3a494a51",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3847,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-19T23:01:57Z",
+      "side": 1,
+      "message": "ack, I\u0027m separating the global file modifications and the locals ones.  The local one should be done by the existing apply()",
+      "parentUuid": "8c957428_9a7ab307",
       "revId": "da6774bb2b4d0ccfa03b4400c2f6598d91119a8b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

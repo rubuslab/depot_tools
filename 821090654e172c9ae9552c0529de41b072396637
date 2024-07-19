@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c5a3929_2fbde031",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-19T20:36:19Z",
+      "side": 1,
+      "message": "Actually, would that prematurely opt user into using sso for auth when it is not launched yet?",
+      "revId": "821090654e172c9ae9552c0529de41b072396637",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

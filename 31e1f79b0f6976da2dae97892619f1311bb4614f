@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f8fb857_530aa800",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3727,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-19T21:33:09Z",
+      "side": 1,
+      "message": "nit: I don\u0027t think the type hints inside the function body here are that valuable because they\u0027re automatically implied by the assignment. Hints on assignment to `self.XXX` in __init__, however, are special because they hint the type of the instance member.",
+      "range": {
+        "startLine": 3726,
+        "startChar": 8,
+        "endLine": 3727,
+        "endChar": 29
+      },
+      "revId": "31e1f79b0f6976da2dae97892619f1311bb4614f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

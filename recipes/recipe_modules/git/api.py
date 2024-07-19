@@ -11,6 +11,7 @@ from recipe_engine import util as recipe_util
 class GitApi(recipe_api.RecipeApi):
   _GIT_HASH_RE = re.compile('[0-9a-f]{40}', re.IGNORECASE)
 
+  @recipe_api.escape_warnings("recipe_engine/CHECKOUT_DIR_DEPRECATED")
   def __call__(self, *args, **kwargs):
     """Returns a git command step."""
     name = kwargs.pop('name', 'git ' + args[0])

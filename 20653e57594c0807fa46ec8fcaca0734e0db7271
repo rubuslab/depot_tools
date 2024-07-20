@@ -34,6 +34,24 @@
       "parentUuid": "ed56111e_a75d4bd6",
       "revId": "20653e57594c0807fa46ec8fcaca0734e0db7271",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52d299a5_2b35df17",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3748,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-20T00:17:10Z",
+      "side": 1,
+      "message": "(I\u0027ll resolve this since it\u0027s tangential to this CL)",
+      "parentUuid": "98e64332_70439893",
+      "revId": "20653e57594c0807fa46ec8fcaca0734e0db7271",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

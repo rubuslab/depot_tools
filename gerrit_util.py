@@ -29,7 +29,7 @@ import urllib.parse
 from dataclasses import dataclass
 from io import StringIO
 from multiprocessing.pool import ThreadPool
-from typing import Any, Container, Dict, List, Optional
+from typing import Any, Container, Dict, List, Literal, Optional, Union
 from typing import Tuple, TypedDict, cast
 
 import httplib2
@@ -838,18 +838,22 @@ class ReqParams(TypedDict):
     body: Optional[str]
 
 
-class HttpConn(httplib2.Http):
-    """HttpConn is an httplib2.Http with additional request-specific fields."""
+@dataclass
+class HttpConn(object):
+    """HttpConn is a very simple http connection object.
 
-    def __init__(self, *args, req_host: str, req_uri: str, req_method: str,
-                 req_headers: Dict[str, str], req_body: Optional[str],
-                 **kwargs) -> None:
-        self.req_host = req_host
-        self.req_uri = req_uri
-        self.req_method = req_method
-        self.req_headers = req_headers
-        self.req_body = req_body
-        super().__init__(*args, **kwargs)
+    By default its request method is implemented with httplib2.Http.
+    """
+    req_host: str
+    req_uri: str
+    req_method: Literal['GET', 'POST', 'PUT', 'DELETE']
+    req_headers: Dict[str, str]
+    req_body: Optional[str]
+    timeout: Union[int, float]
+    proxy_info: Optional[httplib2.ProxyInfo] = None
+
+    def request(self):
+       return httplib2.Http(timeout=self.timeout).request(**self.req_params)
 
     @property
     def req_params(self) -> ReqParams:
@@ -900,7 +904,7 @@ class HttpConn(httplib2.Http):
 
 def CreateHttpConn(host,
                    path,
-                   reqtype='GET',
+                   reqtype: Literal['GET', 'POST', 'PUT', 'DELETE'] = 'GET',
                    headers: Optional[Dict[str, str]] = None,
                    body: Optional[Dict] = None,
                    timeout=300,
@@ -970,7 +974,7 @@ def ReadHttpResponse(conn: HttpConn,
     for idx in range(TRY_LIMIT):
         before_response = time.time()
         try:
-            response, contents = conn.request(**conn.req_params)
+            response, contents = conn.request()
         except socket.timeout:
             if idx < TRY_LIMIT - 1:
                 sleep_time = log_retry_and_sleep(sleep_time, idx)

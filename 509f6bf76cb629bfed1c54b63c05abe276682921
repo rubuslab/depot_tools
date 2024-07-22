@@ -33,6 +33,24 @@
       "message": "nit: could be separate CL",
       "revId": "509f6bf76cb629bfed1c54b63c05abe276682921",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78b5b6af_d96f3f2a",
+        "filename": "scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-22T23:20:12Z",
+      "side": 1,
+      "message": "I believe this got folded into the git config cache refactor CL which landed already.",
+      "parentUuid": "e083c382_c17f1f1d",
+      "revId": "509f6bf76cb629bfed1c54b63c05abe276682921",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

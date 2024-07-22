@@ -16,6 +16,24 @@
       "message": "`@call %scriptdir%python-bin\\python3.bat %scriptdir%ninjalog_uploader_wrapper.py --cmdline %*`\n\nis still present in `autoninja.bat`, and it breaks builds if `NINJA_SUMMARIZE_BUILD\u003d1` is set.",
       "revId": "b12257963c5f022d43cad2f29bad4d7fa5b9cd08",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7db6fc7_54ed3b6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 21
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T07:08:44Z",
+      "side": 1,
+      "message": "Oops... Thank you for reporting it.\nI made https://crrev.com/c/5724918",
+      "parentUuid": "91ecd6de_3729fe90",
+      "revId": "b12257963c5f022d43cad2f29bad4d7fa5b9cd08",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

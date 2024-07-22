@@ -113,7 +113,7 @@ class Config:
         print(
             textwrap.dedent(f"""\
             *** NOTICE ***
-            Google-internal telemetry (including build logs, username, and hostname) is collected on corp machines to diagnose performance and fix build issues. This reminder will be shown {remaining} more times. See http://go/chrome-build-telemetry for details. Hide this notice or opt out by running: build_telemetry [opt-in] [opt-out]
+            Google-internal telemetry (including build logs, username, and hostname) is collected on corp machines to diagnose performance and fix build issues. This reminder will be shown {remaining} more times. See http://go/chrome-build-telemetry for details. Hide this notice or opt out by running: build_telemetry [--opt-in] [--opt-out]
             *** END NOTICE ***
             """))
 

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "105c6923_47138d3d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-22T20:24:04Z",
+      "side": 1,
+      "message": "I\u0027m not fond of this dataclass abuse.\n\nDataclasses should hold only data.  Notably, it should not have any methods (beyond setters/getters).\n\nBut I suppose you\u0027re just using it to add a boilerplate __init__ method...\n\nI\u0027d be okay with this if it was called @add_init or something because then the semantics would be correct.",
+      "revId": "4eabaa36305d05a466f628f696a3311dafd0e42b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

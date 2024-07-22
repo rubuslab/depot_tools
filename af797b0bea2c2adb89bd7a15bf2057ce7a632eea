@@ -122,6 +122,24 @@
       "parentUuid": "d7ac599f_15ded94c",
       "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbc8f849_6133f7d4",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T03:46:43Z",
+      "side": 1,
+      "message": "Discussed offline: mtime would be sufficient.",
+      "parentUuid": "6f7e976f_2dbc305f",
+      "revId": "af797b0bea2c2adb89bd7a15bf2057ce7a632eea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

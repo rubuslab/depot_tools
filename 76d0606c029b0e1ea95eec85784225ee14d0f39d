@@ -41,6 +41,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b8ba8f7_f6b39529",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T03:46:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "782bad93_64ce7620",
+      "range": {
+        "startLine": 232,
+        "startChar": 17,
+        "endLine": 232,
+        "endChar": 20
+      },
+      "revId": "76d0606c029b0e1ea95eec85784225ee14d0f39d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5a7991f_a8a33106",
@@ -54,6 +78,30 @@
       "writtenOn": "2024-07-22T02:23:09Z",
       "side": 1,
       "message": "record?",
+      "range": {
+        "startLine": 276,
+        "startChar": 6,
+        "endLine": 276,
+        "endChar": 12
+      },
+      "revId": "76d0606c029b0e1ea95eec85784225ee14d0f39d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "725e1d0d_e5c717b0",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T03:46:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5a7991f_a8a33106",
       "range": {
         "startLine": 276,
         "startChar": 6,
@@ -87,6 +135,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf3a9b30_47de82fe",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T03:46:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec6412e_23853e77",
+      "range": {
+        "startLine": 278,
+        "startChar": 6,
+        "endLine": 278,
+        "endChar": 8
+      },
+      "revId": "76d0606c029b0e1ea95eec85784225ee14d0f39d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e57fdee_7a0f96d3",
@@ -100,6 +172,30 @@
       "writtenOn": "2024-07-22T02:23:09Z",
       "side": 1,
       "message": "Merge this conditional?",
+      "range": {
+        "startLine": 281,
+        "startChar": 0,
+        "endLine": 282,
+        "endChar": 62
+      },
+      "revId": "76d0606c029b0e1ea95eec85784225ee14d0f39d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b246762_e549a8af",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-22T03:46:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e57fdee_7a0f96d3",
       "range": {
         "startLine": 281,
         "startChar": 0,

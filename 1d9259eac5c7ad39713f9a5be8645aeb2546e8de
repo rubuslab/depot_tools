@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "824cacd6_13d8346b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-07-23T19:43:04Z",
+      "side": 1,
+      "message": "Cool! That sounds like a nice optimization and good tradeoff (the machines that we have rarely seem to be able to use all that RAM :)).\n\nDo you have some benchmark numbers that show the difference in CPU time and memory consumption? Due to lack of experience with Go GC tuning I have absolutely no intuition about how much we\u0027re talking about here.",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -52,6 +52,23 @@
       "parentUuid": "4fe10a2e_de54cbca",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c24313fc_8e9f872d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-07-23T22:13:23Z",
+      "side": 1,
+      "message": "@ukai@google.com Do you have some advice or any concerns for this change?",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

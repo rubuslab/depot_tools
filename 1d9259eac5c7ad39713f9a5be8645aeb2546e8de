@@ -16,6 +16,24 @@
       "message": "Cool! That sounds like a nice optimization and good tradeoff (the machines that we have rarely seem to be able to use all that RAM :)).\n\nDo you have some benchmark numbers that show the difference in CPU time and memory consumption? Due to lack of experience with Go GC tuning I have absolutely no intuition about how much we\u0027re talking about here.",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4fe10a2e_de54cbca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-07-23T19:53:15Z",
+      "side": 1,
+      "message": "https://tip.golang.org/doc/gc-guide\n\nWhat this knob does is determine when a gc is triggered based on \u0027new heap\u0027 size vs \u0027live heap\u0027 from the previous gc cycle.  New heap is stuff freshly allocated since the previous cycle, and live heap is what was still around at the end of the last cycle.  It\u0027s a percentage of new heap to live heap.\n\nThe default is 100, so that will trigger a gc whenever the amount of newly allocated heap is 100% of what was live before.  This sets it to 500, so it gcs less frequently.  The CPU cost is fairly constant (explained in the link), so gcing less is actually less cpu intensive overall.",
+      "parentUuid": "824cacd6_13d8346b",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

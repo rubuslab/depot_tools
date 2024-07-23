@@ -87,6 +87,24 @@
       "parentUuid": "c24313fc_8e9f872d",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1359135f_3d7d460c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-23T23:59:05Z",
+      "side": 1,
+      "message": "ah, nvm. it is not used on bot.\nbtw, this GC problem only happens for developers, not on bot?\nthere are leak in reproxy?\n\nbetter to set GOGC just for start_reproxy ?",
+      "parentUuid": "49e71a3b_665e364b",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -345,6 +345,10 @@ def build_context(argv, tool, should_collect_logs):
         print('WARNING: Using RBE_instance=%s\n' %
               os.environ.get('RBE_instance', ''))
 
+    # Set the go garbage collection 'new heap' percentage to 500% (don't trigger
+    # gc until new heap is 500% of live heap vs default of 100%)
+    os.environ.setdefault("GOGC", "500")
+
     remote_disabled = os.environ.get('RBE_remote_disabled')
     if remote_disabled not in ('1', 't', 'T', 'true', 'TRUE', 'True'):
         # If we are building inside a Cog workspace, racing is likely not a

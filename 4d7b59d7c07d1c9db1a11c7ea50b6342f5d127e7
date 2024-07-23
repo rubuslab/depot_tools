@@ -16,6 +16,24 @@
       "message": "might be better to add choices to show current status?",
       "revId": "4d7b59d7c07d1c9db1a11c7ea50b6342f5d127e7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6901b465_8135f163",
+        "filename": "build_telemetry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-23T02:54:15Z",
+      "side": 1,
+      "message": "I will try to print the current status with the help if none of the 2 options are provided. \nLet me submit this CL to fix the bug for now.",
+      "parentUuid": "9dd108be_7dc99072",
+      "revId": "4d7b59d7c07d1c9db1a11c7ea50b6342f5d127e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

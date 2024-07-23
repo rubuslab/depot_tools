@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "543bba43_cc107ff6",
+        "filename": "git_cl.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3721,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-23T23:19:37Z",
+      "side": 1,
+      "message": "simplifies rebase conflicts if cleanup is done separately/later",
+      "range": {
+        "startLine": 3721,
+        "startChar": 35,
+        "endLine": 3721,
+        "endChar": 47
+      },
+      "revId": "c16ba117da090cefb3e237e7bda5d8eec532e249",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

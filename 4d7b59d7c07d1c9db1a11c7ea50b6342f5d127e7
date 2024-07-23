@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dd108be_7dc99072",
+        "filename": "build_telemetry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-07-23T02:48:34Z",
+      "side": 1,
+      "message": "might be better to add choices to show current status?",
+      "revId": "4d7b59d7c07d1c9db1a11c7ea50b6342f5d127e7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

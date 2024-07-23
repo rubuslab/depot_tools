@@ -34,6 +34,24 @@
       "parentUuid": "824cacd6_13d8346b",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54f2bab9_d2181bb0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1444553
+      },
+      "writtenOn": "2024-07-23T20:14:28Z",
+      "side": 1,
+      "message": "In terms of actual numbers I found on linux that going from 100 to 500 reduces GC CPU % from around 3-5% to under 1%.  So not a huge impact there, but an impact nontheless.\n\nI have a feeling (possibly an incorrect one) that frequent GC cycling could be the cause of the occasional complaints about builds slowing down after they have been running for a while.",
+      "parentUuid": "4fe10a2e_de54cbca",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

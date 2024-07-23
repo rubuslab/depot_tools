@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c57167bd_3c320aa4",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3684,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-23T23:20:05Z",
+      "side": 1,
+      "message": "Yes, tested on my win vm.\n\nThe expand tilde also works btw",
+      "parentUuid": "9836c25b_257f3915",
+      "range": {
+        "startLine": 3684,
+        "startChar": 42,
+        "endLine": 3684,
+        "endChar": 45
+      },
+      "revId": "2edd1275293443233ceb70a242b6eece4e3670a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3dbfaebf_dc57a441",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-19T20:44:43Z",
       "side": 1,
       "message": "so setting mode to OLD_AUTH will clear local repo auth config? this looks quite confusing.",
+      "range": {
+        "startLine": 3693,
+        "startChar": 0,
+        "endLine": 3694,
+        "endChar": 21
+      },
+      "revId": "2edd1275293443233ceb70a242b6eece4e3670a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "797a9735_63eed0b6",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3694,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-23T23:20:05Z",
+      "side": 1,
+      "message": "Made https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5727083 (and will follow up)",
+      "parentUuid": "3dbfaebf_dc57a441",
       "range": {
         "startLine": 3693,
         "startChar": 0,

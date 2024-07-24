@@ -3,14 +3,15 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+import contextlib
 import glob
+import io
 import multiprocessing
 import os
 import os.path
-import io
 import sys
 import unittest
-import contextlib
+import uuid
 from unittest import mock
 
 from parameterized import parameterized
@@ -110,6 +111,7 @@ class AutoninjaTest(trial_dir.TestCase):
         self.assertIn('-C', args)
         self.assertEqual(args[args.index('-C') + 1], out_dir)
 
+    @mock.patch.dict(os.environ, {'AUTONINJA_BUILD_ID': ''}, clear=True)
     def test_autoninja_siso_reclient(self):
         """
         Test that when specifying use_siso=true and use_remoteexec=true,
@@ -122,26 +124,74 @@ class AutoninjaTest(trial_dir.TestCase):
             reclient_helper_calls.append([argv, tool])
             yield 0
 
-        with mock.patch('reclient_helper.build_context', reclient_helper_mock):
+        build_id = str(uuid.uuid4())
+        with mock.patch('uuid.uuid4', return_value=build_id):
+            with mock.patch('reclient_helper.build_context',
+                            reclient_helper_mock):
+                with mock.patch('siso.main', return_value=0) as siso_main:
+                    out_dir = os.path.join('out', 'dir')
+                    write(os.path.join(out_dir, 'args.gn'),
+                          'use_siso=true\nuse_remoteexec=true')
+                    write(
+                        os.path.join('buildtools', 'reclient_cfgs',
+                                     'reproxy.cfg'), 'RBE_v=2')
+                    write(os.path.join('buildtools', 'reclient', 'version.txt'),
+                          '0.0')
+                    autoninja.main(['autoninja.py', '-C', out_dir])
+                    siso_main.assert_called_once_with([
+                        'siso', 'ninja', '-build_id', build_id, '-project=',
+                        '-reapi_instance=', '-C', out_dir
+                    ])
+        self.assertEqual(len(reclient_helper_calls), 1)
+        self.assertEqual(reclient_helper_calls[0][0], [
+            'siso', 'ninja', '-build_id', build_id, '-project=',
+            '-reapi_instance=', '-C', out_dir
+        ])
+        self.assertEqual(reclient_helper_calls[0][1], 'autosiso')
+
+    @mock.patch.dict(os.environ, {'AUTONINJA_BUILD_ID': ''}, clear=True)
+    def test_autoninja_siso_without_reclient(self):
+        """
+        Test that when specifying use_siso=true and use_remoteexec=true and
+        use_reclient=false.
+        autoninja calls 'siso ninja' without starting reproxy.
+        """
+        build_id = str(uuid.uuid4())
+        with mock.patch('uuid.uuid4', return_value=build_id):
+            with mock.patch(
+                    'reclient_helper.build_context') as reclient_helper_mock:
+                with mock.patch('siso.main', return_value=0) as siso_main:
+                    out_dir = os.path.join('out', 'dir')
+                    gn_args = [
+                        'use_siso=true', 'use_remoteexec=true',
+                        'use_reclient=false'
+                    ]
+                    write(os.path.join(out_dir, 'args.gn'), '\n'.join(gn_args))
+                    autoninja.main(['autoninja.py', '-C', out_dir])
+                    siso_main.assert_called_once_with(
+                        ['siso', 'ninja', '-build_id', build_id, '-C', out_dir])
+                reclient_helper_mock.assert_not_called()
+
+    @mock.patch.dict(os.environ, {'AUTONINJA_BUILD_ID': ''}, clear=True)
+    def test_autoninja_siso_offline(self):
+        """
+        Test that when specifying use_siso=true without use_remoteexec=true,
+        autoninja calls 'siso ninja' in offline mode.
+        """
+        build_id = str(uuid.uuid4())
+        with mock.patch('uuid.uuid4', return_value=build_id):
             with mock.patch('siso.main', return_value=0) as siso_main:
                 out_dir = os.path.join('out', 'dir')
-                write(os.path.join(out_dir, 'args.gn'),
-                      'use_siso=true\nuse_remoteexec=true')
-                write(
-                    os.path.join('buildtools', 'reclient_cfgs', 'reproxy.cfg'),
-                    'RBE_v=2')
-                write(os.path.join('buildtools', 'reclient', 'version.txt'),
-                      '0.0')
+                gn_args = [
+                    'use_siso=true',
+                    'use_remoteexec=false',
+                ]
+                write(os.path.join(out_dir, 'args.gn'), '\n'.join(gn_args))
                 autoninja.main(['autoninja.py', '-C', out_dir])
                 siso_main.assert_called_once_with([
-                    'siso', 'ninja', '-project=', '-reapi_instance=', '-C',
+                    'siso', 'ninja', '-build_id', build_id, '--offline', '-C',
                     out_dir
                 ])
-        self.assertEqual(len(reclient_helper_calls), 1)
-        self.assertEqual(
-            reclient_helper_calls[0][0],
-            ['siso', 'ninja', '-project=', '-reapi_instance=', '-C', out_dir])
-        self.assertEqual(reclient_helper_calls[0][1], 'autosiso')
 
     @parameterized.expand([
         ("non corp machine", False, None, None, None, False),

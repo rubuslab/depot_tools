@@ -209,7 +209,7 @@ class ConfigChanger(object):
         self._set_config_func(*args, **kwargs)
 
 
-def ConfigureGitAuth() -> None:
+def Configure() -> None:
     """Configure Git authentication.
 
     This may modify the global Git config and the local repo config as
@@ -239,7 +239,7 @@ def ConfigureGitAuth() -> None:
     c2.apply(cwd)
 
 
-def ConfigureGitRepoAuth() -> None:
+def ConfigureRepo() -> None:
     """Configure the current Git repo authentication."""
     logging.debug('Configuring current Git repo authentication...')
     cwd = os.getcwd()
@@ -247,7 +247,7 @@ def ConfigureGitRepoAuth() -> None:
     c.apply(cwd)
 
 
-def ClearGitRepoAuth() -> None:
+def ClearRepoConfig() -> None:
     """Clear the current Git repo authentication."""
     logging.debug('Clearing current Git repo authentication...')
     c = ConfigChanger.new_from_env(cwd)

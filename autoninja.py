@@ -187,7 +187,7 @@ def _print_cmd(cmd):
     print(*[shell_quoter(arg) for arg in cmd], file=sys.stderr)
 
 
-def _main_inner(input_args, should_collect_logs=False):
+def _main_inner(input_args, build_id, should_collect_logs=False):
     # if user doesn't set PYTHONPYCACHEPREFIX and PYTHONDONTWRITEBYTECODE
     # set PYTHONDONTWRITEBYTECODE=1 not to create many *.pyc in workspace
     # and keep workspace clean.
@@ -287,6 +287,7 @@ def _main_inner(input_args, should_collect_logs=False):
                             '-project=',
                             '-reapi_instance=',
                         ] + input_args[1:],
+                        build_id,
                         should_collect_logs)
                 return siso.main(["siso", "ninja"] + input_args[1:])
             return siso.main(["siso", "ninja", "--offline"] + input_args[1:])
@@ -390,7 +391,8 @@ def _main_inner(input_args, should_collect_logs=False):
         _print_cmd(ninja_args)
 
     if use_reclient:
-        return reclient_helper.run_ninja(ninja_args, should_collect_logs)
+        return reclient_helper.run_ninja(ninja_args, build_id,
+                                         should_collect_logs)
     return ninja.main(ninja_args)
 
 
@@ -428,7 +430,7 @@ def main(args):
     if sys.platform.startswith("win") and len(args) == 2:
         input_args = args[:1] + args[1].split()
     try:
-        exit_code = _main_inner(input_args, should_collect_logs)
+        exit_code = _main_inner(input_args, build_id, should_collect_logs)
     except KeyboardInterrupt:
         exit_code = 1
     finally:

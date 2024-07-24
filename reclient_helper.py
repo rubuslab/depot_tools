@@ -137,21 +137,17 @@ def set_reproxy_metrics_flags(tool):
 
     The following env vars are set if not already set:
         RBE_metrics_project=chromium-reclient-metrics
-        RBE_invocation_id=$AUTONINJA_BUILD_ID
         RBE_metrics_table=rbe_metrics.builds
-        RBE_metrics_labels=source=developer,tool={tool}
+        RBE_metrics_labels=source=developer,tool={tool},creds_cache_status={auth_status},creds_cache_mechanism={auth_mechanism},host={host}
         RBE_metrics_prefix=go.chromium.org
     """
-    autoninja_id = os.environ.get("AUTONINJA_BUILD_ID")
-    if autoninja_id is not None:
-        os.environ.setdefault("RBE_invocation_id",
-                              "%s/%s" % (get_hostname(), autoninja_id))
     os.environ.setdefault("RBE_metrics_project", "chromium-reclient-metrics")
     os.environ.setdefault("RBE_metrics_table", "rbe_metrics.builds")
     labels = "source=developer,tool=" + tool
     auth_status, auth_mechanism = auth_cache_status()
     labels += ",creds_cache_status=" + auth_status
     labels += ",creds_cache_mechanism=" + auth_mechanism
+    labels += ",host=" + get_hostname()
     os.environ.setdefault("RBE_metrics_labels", labels)
     os.environ.setdefault("RBE_metrics_prefix", "go.chromium.org")
 
@@ -312,7 +308,7 @@ def reclient_setup_docs_url():
 
 
 @contextlib.contextmanager
-def build_context(argv, tool, should_collect_logs):
+def build_context(argv, tool, invocation_id, should_collect_logs):
     # If use_remoteexec is set, but the reclient binaries or configs don't
     # exist, display an error message and stop.  Otherwise, the build will
     # attempt to run with rewrapper wrapping actions, but will fail with
@@ -338,6 +334,8 @@ def build_context(argv, tool, should_collect_logs):
         yield 1
         return
 
+    if invocation_id:
+        os.environ.setdefault("RBE_invocation_id", invocation_id)
     if should_collect_logs:
         set_reproxy_metrics_flags(tool)
 
@@ -383,10 +381,10 @@ Ensure you have completed the reproxy setup instructions:
             print('%1.3fs to stop reproxy' % elapsed)
 
 
-def run_ninja(ninja_cmd, should_collect_logs=False):
+def run_ninja(ninja_cmd, invocation_id, should_collect_logs=False):
     """Runs Ninja in build_context()."""
     # TODO: crbug.com/345113094 - rename the `tool` label to `ninja`.
-    with build_context(ninja_cmd, "ninja_reclient",
+    with build_context(ninja_cmd, "ninja_reclient", invocation_id,
                        should_collect_logs) as ret_code:
         if ret_code:
             return ret_code
@@ -397,10 +395,11 @@ def run_ninja(ninja_cmd, should_collect_logs=False):
             return 1
 
 
-def run_siso(siso_cmd, should_collect_logs=False):
+def run_siso(siso_cmd, invocation_id, should_collect_logs=False):
     """Runs Siso in build_context()."""
     # TODO: crbug.com/345113094 - rename the `autosiso` label to `siso`.
-    with build_context(siso_cmd, "autosiso", should_collect_logs) as ret_code:
+    with build_context(siso_cmd, "autosiso", invocation_id,
+                       should_collect_logs) as ret_code:
         if ret_code:
             return ret_code
         try:

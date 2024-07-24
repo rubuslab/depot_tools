@@ -2359,7 +2359,7 @@ class Changelist(object):
                 logging.debug(
                     'Automatically configuring Git repo authentication (current version: %r, latest: %r)',
                     v, latestVer)
-                git_auth.ConfigureGitRepoAuth()
+                git_auth.ConfigureRepo()
                 scm.GIT.SetConfig(settings.GetRoot(),
                                   'depot-tools.gitAuthAutoConfigured',
                                   str(latestVer))
@@ -3891,10 +3891,10 @@ def CMDcreds_check(parser, args):
     _, _ = parser.parse_args(args)
 
     if newauth.Enabled():
-        git_auth.ConfigureGitAuth()
+        git_auth.Configure()
         return 0
     if newauth.ExplicitlyDisabled():
-        git_auth.ClearGitRepoAuth()
+        git_auth.ClearRepo()
 
     # Code below checks .gitcookies. Abort if using something else.
     auth_name, _ = gerrit_util.debug_auth()

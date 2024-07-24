@@ -7,15 +7,15 @@ from __future__ import annotations
 
 import enum
 import functools
+import logging
+import os
 from typing import TYPE_CHECKING, Callable
 import urllib.parse
 
 import gerrit_util
+import git_cl
 import newauth
 import scm
-
-if TYPE_CHECKING:
-  import git_cl
 
 
 class ConfigMode(enum.Enum):
@@ -211,3 +211,51 @@ class ConfigChanger(object):
 
     def _set_config(self, *args, **kwargs) -> None:
         self._set_config_func(*args, **kwargs)
+
+
+def ConfigureGitAuth() -> None:
+    """Configure Git authentication.
+
+    This may modify the global Git config and the local repo config as
+    needed.
+    """
+    logging.debug('Configuring Git authentication...')
+    cl = git_cl.Changelist()
+
+    logging.debug('Configuring global Git authentication...')
+    # We want the user's global config.
+    # We can probably assume the root directory doesn't have any local
+    # Git configuration.
+    c = ConfigChanger.new_from_env('/', cl)
+    c.apply_global(os.path.expanduser('~'))
+
+    cwd = os.getcwd()
+    c2 = ConfigChanger.new_from_env(cwd, cl)
+    if c2.mode == c.mode:
+        logging.debug(
+            'Local user wants same mode %s as global;'
+            ' clearing local repo auth config', c2.mode)
+        c2.mode = ConfigMode.NO_AUTH
+        c2.apply(cwd)
+        return
+    logging.debug('Local user wants mode %s while global user wants mode %s',
+                  c2.mode, c.mode)
+    logging.debug('Configuring current Git repo authentication...')
+    c2.apply(cwd)
+
+
+def ConfigureGitRepoAuth() -> None:
+    """Configure the current Git repo authentication."""
+    logging.debug('Configuring current Git repo authentication...')
+    cwd = os.getcwd()
+    c = ConfigChanger.new_from_env(cwd, git_cl.Changelist())
+    c.apply(cwd)
+
+
+def ClearGitRepoAuth() -> None:
+    """Clear the current Git repo authentication."""
+    logging.debug('Clearing current Git repo authentication...')
+    cwd = os.getcwd()
+    c = ConfigChanger.new_from_env(cwd, git_cl.Changelist())
+    c.mode = ConfigMode.NO_AUTH
+    c.apply(cwd)

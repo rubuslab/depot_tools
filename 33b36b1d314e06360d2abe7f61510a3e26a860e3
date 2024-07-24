@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5587cf7e_19a61da8",
+        "filename": "reclient_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1584517
+      },
+      "writtenOn": "2024-07-24T17:33:15Z",
+      "side": 1,
+      "message": "Both re-client build (using rewrapper) and siso build will get the same `RBE_invocation_id` from here, correct?\n\nI think I will need to revert this change: https://chromium-review.googlesource.com/c/chromium/tools/build/+/5557943/comment/1b4bf397_6b895637/\nonce you merge in this CL?",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 65
+      },
+      "revId": "33b36b1d314e06360d2abe7f61510a3e26a860e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

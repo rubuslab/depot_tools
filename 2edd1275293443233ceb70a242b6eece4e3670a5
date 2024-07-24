@@ -93,6 +93,30 @@
       },
       "revId": "2edd1275293443233ceb70a242b6eece4e3670a5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85522a0a_1b97277b",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3694,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-24T20:53:17Z",
+      "side": 1,
+      "message": "stamped and I assume it will be changed in the subsequent patchset",
+      "parentUuid": "797a9735_63eed0b6",
+      "range": {
+        "startLine": 3693,
+        "startChar": 0,
+        "endLine": 3694,
+        "endChar": 21
+      },
+      "revId": "2edd1275293443233ceb70a242b6eece4e3670a5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

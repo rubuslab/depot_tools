@@ -22,6 +22,30 @@
       },
       "revId": "61ff993fd7ccc7fe277f0eeae048d1a9d1fabb79",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92968541_7eb7f0aa",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3708,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-25T16:57:21Z",
+      "side": 1,
+      "message": "nvm found it in https://crrev.com/c/5739677",
+      "parentUuid": "21e68b02_4925de3e",
+      "range": {
+        "startLine": 3664,
+        "startChar": 0,
+        "endLine": 3708,
+        "endChar": 16
+      },
+      "revId": "61ff993fd7ccc7fe277f0eeae048d1a9d1fabb79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

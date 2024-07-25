@@ -16,6 +16,23 @@
       "message": "@iannucci@chromium.org @vadimsh@chromium.org Does the approach in this CL looks reasonable to you or is there a better solution? \n\nThe context is in http://b/355430412 where cipd putting all packages inside depot tools directory is hammering cog. http://b/355430412#comment2 suggests that we can write all cipd packages outside of cog workspace. Note that this is a depot_tools repo vendored inside chromium/src, not likely to be the one on $PATH. The cog initialization will use vendored depot_tools not the one on $PATH.",
       "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "261fc04f_5c4725d0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-07-25T22:24:52Z",
+      "side": 1,
+      "message": "This will be problematic if there are multiple copies of depot_tools present, which, I believe, is not uncommon when using chromium/src: one depot_tools comes manually preinstalled (because people need it to checkout chromium), another depot_tools is part of chromium/src checkout.\n\nWe will likely need some mechanism other than env var to enable this override.\n\nAnother problem missed here is that there\u0027s two stages of depot_tools bootstrap. This is the second one. The first one installs python and git, and I don\u0027t remember details of how it works: https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/bootstrap/ Maybe it is windows only...",
+      "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

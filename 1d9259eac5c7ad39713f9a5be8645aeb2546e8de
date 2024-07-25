@@ -105,6 +105,23 @@
       "parentUuid": "49e71a3b_665e364b",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44000b09_91acaf8c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-07-25T07:52:45Z",
+      "side": 1,
+      "message": "I thought about this some more, and I think we should first rule out that a memory leak is responsible for this GC issue. I fear that if we add this, we\u0027ll never remove it again, because it will be very hard to prove that it is safe to do so, and we\u0027ll incur the higher memory consumption from then on. :/\n\nIf that increased consumption causes a developer machine to start swapping out memory to disk or not be able to cache as many files in RAM anymore, they\u0027ll be in an even worse situation for performance. A lot of developers build Chromium on notebooks, because thanks to remote execution that\u0027s actually feasible now, and we don\u0027t want to break that use case.\n\nOf course if we can\u0027t find any other way, and reproxy turns out to be a legitimate case where the GC needs some tuning to perform well, we can think about it. Just want to be careful.\n\nWDYT?",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

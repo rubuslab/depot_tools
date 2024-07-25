@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "45f57d41_26400115",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-25T22:40:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "861b39de_80764833",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "b710e90bc01ec624ddd5832c10c3059579adfd5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49fc1a6d_d169b612",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-07-25T18:44:07Z",
       "side": 1,
       "message": "not used",
+      "range": {
+        "startLine": 12,
+        "startChar": 14,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "b710e90bc01ec624ddd5832c10c3059579adfd5f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f40439_11f831c5",
+        "filename": "tests/git_auth_test.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-25T22:40:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49fc1a6d_d169b612",
       "range": {
         "startLine": 12,
         "startChar": 14,

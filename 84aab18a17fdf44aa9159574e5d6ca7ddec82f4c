@@ -51,6 +51,24 @@
       "parentUuid": "261fc04f_5c4725d0",
       "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d7167d3_ee88a18c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-07-25T22:39:04Z",
+      "side": 1,
+      "message": "\u003e are you worrying about 2 copies pointing to the same override directory due to the env var where the versions in the 2 copies are not exactly in sync?\n\nYeah.",
+      "parentUuid": "198c59ae_bdabfdad",
+      "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

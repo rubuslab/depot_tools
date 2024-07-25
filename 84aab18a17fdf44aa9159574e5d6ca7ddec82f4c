@@ -33,6 +33,24 @@
       "message": "This will be problematic if there are multiple copies of depot_tools present, which, I believe, is not uncommon when using chromium/src: one depot_tools comes manually preinstalled (because people need it to checkout chromium), another depot_tools is part of chromium/src checkout.\n\nWe will likely need some mechanism other than env var to enable this override.\n\nAnother problem missed here is that there\u0027s two stages of depot_tools bootstrap. This is the second one. The first one installs python and git, and I don\u0027t remember details of how it works: https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/bootstrap/ Maybe it is windows only...",
       "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "198c59ae_bdabfdad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-25T22:35:42Z",
+      "side": 1,
+      "message": "\u003e This will be problematic if there are multiple copies of depot_tools present, which, I believe, is not uncommon when using chromium/src: one depot_tools comes manually preinstalled (because people need it to checkout chromium), another depot_tools is part of chromium/src checkout.\n\nare you worrying about 2 copies pointing to the same override directory due to the env var where the versions in the 2 copies are not exactly in sync?\n\n\u003e Another problem missed here is that there\u0027s two stages of depot_tools bootstrap. This is the second one. The first one installs python and git, and I don\u0027t remember details of how it works: https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/bootstrap/ Maybe it is windows only...\n\nThe doc says windows so may be it is windows only. I\u0027ll look into it more.",
+      "parentUuid": "261fc04f_5c4725d0",
+      "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

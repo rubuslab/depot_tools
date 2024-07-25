@@ -22,6 +22,30 @@
       },
       "revId": "33b36b1d314e06360d2abe7f61510a3e26a860e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aae96317_77086fed",
+        "filename": "reclient_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-25T01:05:47Z",
+      "side": 1,
+      "message": "Yes, Siso will also take the same ID. https://crrev.com/c/5733135 (not merged, yet)\n\n\u003e I think I will need to revert this change: https://chromium-review.googlesource.com/c/chromium/tools/build/+/5557943/comment/1b4bf397_6b895637/\nonce you merge in this CL?\n\nNo, this is a recipe for builders, while this CL is for developers. \n\n- Developers run build via autoninja\n- Builders run build via chromium.compile() recipe API.",
+      "parentUuid": "5587cf7e_19a61da8",
+      "range": {
+        "startLine": 342,
+        "startChar": 0,
+        "endLine": 343,
+        "endChar": 65
+      },
+      "revId": "33b36b1d314e06360d2abe7f61510a3e26a860e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

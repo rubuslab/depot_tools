@@ -157,6 +157,12 @@ def GetMetadata(cmdline, ninjalog):
         "targets": GetBuildTargetFromCommandLine(cmdline),
     }
 
+    invocation_id = os.environ.get("AUTONINJA_BUILD_ID")
+    if invocation_id:
+        metadata['invocation_id'] = invocation_id
+
+    logging.info("metadata=%s" % metadata)
+
     jflag = GetJflag(cmdline)
     if jflag is not None:
         metadata["jobs"] = jflag

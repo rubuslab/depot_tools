@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5a3ca73_31ff69a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-25T22:14:21Z",
+      "side": 1,
+      "message": "@iannucci@chromium.org @vadimsh@chromium.org Does the approach in this CL looks reasonable to you or is there a better solution? \n\nThe context is in http://b/355430412 where cipd putting all packages inside depot tools directory is hammering cog. http://b/355430412#comment2 suggests that we can write all cipd packages outside of cog workspace. Note that this is a depot_tools repo vendored inside chromium/src, not likely to be the one on $PATH. The cog initialization will use vendored depot_tools not the one on $PATH.",
+      "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

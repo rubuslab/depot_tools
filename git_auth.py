@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import enum
 import functools
+import os
 from typing import Callable
 import urllib.parse
 
@@ -207,6 +208,34 @@ class ConfigChanger(object):
 
     def _set_config(self, *args, **kwargs) -> None:
         self._set_config_func(*args, **kwargs)
+
+
+def AutoConfigure() -> None:
+    """Configure Git authentication automatically.
+
+    This tracks when the config that has already been applied and skips
+    doing anything if so.
+
+    This may modify the global Git config and the local repo config as
+    needed.
+    """
+    cwd = os.getcwd()
+    latestVer: int = ConfigChanger.VERSION
+    v: int = 0
+    try:
+        v = int(
+            scm.GIT.GetConfig(cwd,
+                              'depot-tools.gitauthautoconfigured',
+                              default='0'))
+    except ValueError:
+        v = 0
+    if v < latestVer:
+        logging.debug(
+            'Automatically configuring Git repo authentication'
+            ' (current version: %r, latest: %r)', v, latestVer)
+        ConfigureRepo()
+        scm.GIT.SetConfig(cwd, 'depot-tools.gitAuthAutoConfigured',
+                          str(latestVer))
 
 
 def Configure() -> None:

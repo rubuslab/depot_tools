@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2597c75_e6f757ee",
+        "filename": "git_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2024-07-26T06:47:16Z",
+      "side": 1,
+      "message": "oops this is also going to be missing",
+      "range": {
+        "startLine": 100,
+        "startChar": 15,
+        "endLine": 100,
+        "endChar": 22
+      },
+      "revId": "6580a91422ef63caa5a44fbabdb4cc2875804232",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,23 @@
       "message": "+yiwei too",
       "revId": "35e29055291c46ccbd07557a31597a6dd7aa0866",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9259de99_0a6df725",
+        "filename": "git_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-26T17:29:53Z",
+      "side": 1,
+      "message": "Seems like a good way to introduce another import problem in the future, I\u0027d prefer changing to an unconditional import",
+      "revId": "35e29055291c46ccbd07557a31597a6dd7aa0866",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

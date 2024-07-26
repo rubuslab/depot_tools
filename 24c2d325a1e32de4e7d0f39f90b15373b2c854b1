@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9759f742_e431aad3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-26T16:25:38Z",
+      "side": 1,
+      "message": "I think this is also fixed in https://crrev.com/c/5740607",
+      "revId": "24c2d325a1e32de4e7d0f39f90b15373b2c854b1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

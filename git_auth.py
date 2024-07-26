@@ -271,6 +271,7 @@ def Configure() -> None:
 def ClearRepoConfig() -> None:
     """Clear the current Git repo authentication."""
     logging.debug('Clearing current Git repo authentication...')
+    cwd = os.getcwd()
     c = ConfigChanger.new_from_env(cwd)
     c.mode = ConfigMode.NO_AUTH
     c.apply(cwd)

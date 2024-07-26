@@ -22,6 +22,30 @@
       },
       "revId": "6580a91422ef63caa5a44fbabdb4cc2875804232",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37b01421_2c8a9efe",
+        "filename": "git_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-07-26T06:49:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2597c75_e6f757ee",
+      "range": {
+        "startLine": 100,
+        "startChar": 15,
+        "endLine": 100,
+        "endChar": 22
+      },
+      "revId": "6580a91422ef63caa5a44fbabdb4cc2875804232",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ac23ec19_e45b133d",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-07-26T04:58:55Z",
+      "side": 1,
+      "message": "It is fine to use \u0027,\u0027 for logging?",
+      "range": {
+        "startLine": 164,
+        "startChar": 31,
+        "endLine": 164,
+        "endChar": 32
+      },
+      "revId": "be89a2420d2562c39794ab2696e976a398b62841",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

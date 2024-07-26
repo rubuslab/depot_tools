@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c1b7c336_f6db7ca1",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-26T21:44:53Z",
+      "side": 1,
+      "message": "this case?",
+      "revId": "d44bc443c787b9c41cc34439c54c98eb76aae0e1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1076,29 +1076,38 @@ class AffectedFile(object):
         return self._diff_cache.GetOldContents(self.LocalPath(),
                                                self._local_root).splitlines()
 
-    def NewContents(self):
+    def NewContents(self, cache=True):
         """Returns an iterator over the lines in the new version of file.
 
         The new version is the file in the user's workspace, i.e. the 'right hand
         side'.
 
+        If cache is True, read from and store contents in cache. Otherwise,
+        always read the contents from disk.
+
         Contents will be empty if the file is a directory or does not exist.
         Note: The carriage returns (LF or CR) are stripped off.
         """
-        if self._cached_new_contents is None:
-            self._cached_new_contents = []
-            try:
-                self._cached_new_contents = gclient_utils.FileRead(
-                    self.AbsoluteLocalPath(), 'rU').splitlines()
-            except IOError:
-                pass  # File not found?  That's fine; maybe it was deleted.
-            except UnicodeDecodeError as e:
-                # log the filename since we're probably trying to read a binary
-                # file, and shouldn't be.
-                print('Error reading %s: %s' % (self.AbsoluteLocalPath(), e))
-                raise
+        if self._cached_new_contents is not None and cache:
+            return self._cached_new_contents[:]
 
-        return self._cached_new_contents[:]
+        # Either we haven't cached yet or we shouldn't cache. Read the file.
+        new_contents = []
+        try:
+            new_contents = gclient_utils.FileRead(self.AbsoluteLocalPath(),
+                                                  'rU').splitlines()
+        except IOError:
+            pass  # File not found?  That's fine; maybe it was deleted.
+        except UnicodeDecodeError as e:
+            # log the filename since we're probably trying to read a binary
+            # file, and shouldn't be.
+            print('Error reading %s: %s' % (self.AbsoluteLocalPath(), e))
+            raise
+
+        if cache:
+            self._cached_new_contents = new_contents[:]
+        return new_contents
+
 
     def ChangedContents(self, keeplinebreaks=False):
         """Returns a list of tuples (line number, line text) of all new lines.

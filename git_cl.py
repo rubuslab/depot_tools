@@ -6825,8 +6825,8 @@ def CMDcheckout(parser, args):
 
     target_issue = str(issue_arg.issue)
 
-    output = scm.GIT.YieldConfigRegexp(
-        settings.GetRoot(), r'branch\..*\.' + ISSUE_CONFIG_KEY)
+    output = scm.GIT.YieldConfigRegexp(settings.GetRoot(),
+                                       r'branch\..*\.' + ISSUE_CONFIG_KEY)
 
     branches = []
     for key, issue in output:

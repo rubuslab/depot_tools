@@ -69,6 +69,24 @@
       "parentUuid": "198c59ae_bdabfdad",
       "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da904217_adca1e54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-26T03:07:26Z",
+      "side": 1,
+      "message": "I assume if they are not invoked at the same time, cipd would ensure the right revision is used?\n\nAnyway, switch to read the override from a local file instead. I saw a similar pattern used in the cipd script.",
+      "parentUuid": "6d7167d3_ee88a18c",
+      "revId": "84aab18a17fdf44aa9159574e5d6ca7ddec82f4c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19f17ff9_fa2b4805",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-26T21:54:12Z",
+      "side": 1,
+      "message": "Fixes reliance on implicit import, pyright complains",
+      "revId": "a6e253a589d2e7ec57055d20c5588d3974a894be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

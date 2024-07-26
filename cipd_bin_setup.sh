@@ -6,6 +6,12 @@ function cipd_bin_setup {
     local MYPATH="${DEPOT_TOOLS_DIR:-$(dirname "${BASH_SOURCE[0]}")}"
     local ENSURE="$MYPATH/cipd_manifest.txt"
     local ROOT="$MYPATH/.cipd_bin"
+    # value in .cipd_client_root overrides the default root.
+    CIPD_ROOT_OVERRIDE_FILE="${MYPATH}/.cipd_client_root"
+    if [ -f "${CIPD_ROOT_OVERRIDE_FILE}" ]; then
+        ROOT=$(<"${CIPD_ROOT_OVERRIDE_FILE}")
+    fi
+
 
     UNAME="${DEPOT_TOOLS_UNAME_S:-$(uname -s | tr '[:upper:]' '[:lower:]')}"
     case $UNAME in
@@ -21,4 +27,6 @@ function cipd_bin_setup {
         -ensure-file "$ENSURE" \
         -root "$ROOT"
     )
+
+    echo $ROOT
 }

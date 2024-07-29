@@ -52,6 +52,24 @@
       "parentUuid": "0c8282d3_7dd29e75",
       "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15c8563d_53b66268",
+        "filename": "cipd_bin_setup.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-07-29T23:01:11Z",
+      "side": 1,
+      "message": "/tmp is probably acceptable solution. adding guterman@ to comment if that sounds okay.",
+      "parentUuid": "3eae9dd4_c0b493f4",
+      "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

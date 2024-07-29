@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a9bbd57_2f259a76",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-29T21:37:02Z",
+      "side": 1,
+      "message": "Ack.  hm, I\u0027m pretty sure I saw some files in depot_tools that don\u0027t separate the froms.  The import organization is all over the place in depot_tools.  FWIW PEP8 does not separate the froms.\n\nSince this is a nit, I\u0027ll leave it for now.  If I\u0027m feeling bored, I\u0027ll probably go clean up all of the files here all at once.",
+      "parentUuid": "7a31e6ae_346a3f2c",
+      "revId": "665db65cfd4a1fb4ca40dae994892eb966143f33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc6f7d12_30177787",
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "I assume `from __future__ import annotations` is to provide forward compatibility?",
       "parentUuid": "dc6f7d12_30177787",
+      "range": {
+        "startLine": 814,
+        "startChar": 28,
+        "endLine": 814,
+        "endChar": 37
+      },
+      "revId": "665db65cfd4a1fb4ca40dae994892eb966143f33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f968933_2d5c195e",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-29T21:37:02Z",
+      "side": 1,
+      "message": "Yes, it works with the future import (we discussed offline).  (I also have a python uprev later in the stack).",
+      "parentUuid": "4554a0c9_44ed0672",
       "range": {
         "startLine": 814,
         "startChar": 28,

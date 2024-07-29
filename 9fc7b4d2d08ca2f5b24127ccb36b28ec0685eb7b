@@ -16,6 +16,24 @@
       "message": "@sokcevic@chromium.org I didn\u0027t add the support to auto-detect Cog env and set the cipd root here. I\u0027m thinking it\u0027s probably better to setup a per-workspace cipd root in the init script to avoid multiple workspace share the same cipd root directory. The cipd root could be something like `~/.cache/cipd-$COG_WORKSPACE_NAME`.",
       "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c8282d3_7dd29e75",
+        "filename": "cipd_bin_setup.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-07-29T22:01:33Z",
+      "side": 1,
+      "message": "I think we\u0027ll have two problems with this: (minor) requires writing a file prior to executing cipd ensure; (major) no cache cap / eviction.\n\nMy depot_tools has ~600MB in .cipd_bin so it can start to add up quickly if we do it per-workspace.",
+      "parentUuid": "d87cbcb5_d7dd85ee",
+      "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

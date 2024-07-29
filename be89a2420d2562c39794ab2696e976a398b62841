@@ -22,6 +22,30 @@
       },
       "revId": "be89a2420d2562c39794ab2696e976a398b62841",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2885b037_43189893",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-07-29T04:17:08Z",
+      "side": 1,
+      "message": "There is a similar logging. So I removed it.",
+      "parentUuid": "ac23ec19_e45b133d",
+      "range": {
+        "startLine": 164,
+        "startChar": 31,
+        "endLine": 164,
+        "endChar": 32
+      },
+      "revId": "be89a2420d2562c39794ab2696e976a398b62841",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

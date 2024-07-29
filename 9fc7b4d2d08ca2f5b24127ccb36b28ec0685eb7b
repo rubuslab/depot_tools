@@ -34,6 +34,24 @@
       "parentUuid": "d87cbcb5_d7dd85ee",
       "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3eae9dd4_c0b493f4",
+        "filename": "cipd_bin_setup.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-29T22:56:48Z",
+      "side": 1,
+      "message": "\u003e requires writing a file prior to executing cipd ensure\n\nI think if we can do it once at the very beginning of the init_workspace script, I assume it would be okay?\n\n\u003e no cache cap / eviction\n\nThis is a good callout. I can\u0027t think of any good solution. Maybe we can use single directory for all workspaces and then implementing a locking mechanism to prevent concurrent invocation. Or we could put the cipd pkgs in /tmp and those would be wiped out automatically. Any other suggestions?",
+      "parentUuid": "0c8282d3_7dd29e75",
+      "revId": "9fc7b4d2d08ca2f5b24127ccb36b28ec0685eb7b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

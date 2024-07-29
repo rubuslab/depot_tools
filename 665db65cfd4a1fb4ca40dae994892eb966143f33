@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc880cc3_cb08bcf7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-29T17:44:42Z",
+      "side": 1,
+      "message": "lgtm % Robbie\u0027s comments",
+      "revId": "665db65cfd4a1fb4ca40dae994892eb966143f33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a31e6ae_346a3f2c",
@@ -31,6 +48,30 @@
       "writtenOn": "2024-07-27T00:56:04Z",
       "side": 1,
       "message": "I think this is not supported in 3.8?",
+      "range": {
+        "startLine": 814,
+        "startChar": 28,
+        "endLine": 814,
+        "endChar": 37
+      },
+      "revId": "665db65cfd4a1fb4ca40dae994892eb966143f33",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4554a0c9_44ed0672",
+        "filename": "git_common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-29T17:44:42Z",
+      "side": 1,
+      "message": "I assume `from __future__ import annotations` is to provide forward compatibility?",
+      "parentUuid": "dc6f7d12_30177787",
       "range": {
         "startLine": 814,
         "startChar": 28,

@@ -1,0 +1,125 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e3c9ad9_3728fcd5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-07-30T01:22:07Z",
+      "side": 1,
+      "message": "Couple of comments but otherwise LGTM.",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "549ff4b1_d7245033",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-07-30T01:22:07Z",
+      "side": 1,
+      "message": "The value type is `List[int]` but the default is an empty set - should the type hint be `Set[int]`?",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb693c9a_a5de5b53",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-07-30T01:22:07Z",
+      "side": 1,
+      "message": "nit: 0 is a valid index. Maybe this could be `-1` as a distinct `unset` value.",
+      "fixSuggestions": [
+        {
+          "fixId": "e43e9ae8_eb193011",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "metadata/dependency_metadata.py",
+              "range": {
+                "startLine": 75,
+                "startChar": 0,
+                "endLine": 76,
+                "endChar": 0
+              },
+              "replacement": "        self._last_line \u003d -1\n"
+            }
+          ]
+        }
+      ],
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ecfcbda_57593786",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-07-30T01:22:07Z",
+      "side": 1,
+      "message": "I believe [`sorted`](https://docs.python.org/3/library/functions.html#sorted) already returns a list.",
+      "fixSuggestions": [
+        {
+          "fixId": "76781897_517d11bc",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "metadata/dependency_metadata.py",
+              "range": {
+                "startLine": 110,
+                "startChar": 0,
+                "endLine": 111,
+                "endChar": 0
+              },
+              "replacement": "        return sorted(self._metadata_line_numbers[field])\n"
+            }
+          ]
+        }
+      ],
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91ffad6d_a47b92a3",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1544922
+      },
+      "writtenOn": "2024-07-30T01:22:07Z",
+      "side": 1,
+      "message": "Same as above that `sorted` returns a list.",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

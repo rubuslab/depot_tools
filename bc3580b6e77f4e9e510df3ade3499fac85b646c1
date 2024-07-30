@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d34ca7ed_01dbe1f2",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-07-30T01:51:11Z",
+      "side": 1,
+      "message": "My typechecker had failed me :(",
+      "parentUuid": "549ff4b1_d7245033",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "eb693c9a_a5de5b53",
         "filename": "metadata/dependency_metadata.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
           ]
         }
       ],
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84bb0566_220e1c43",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-07-30T01:51:11Z",
+      "side": 1,
+      "message": "-1 sgtm. the line number starts from 1 btw.",
+      "parentUuid": "eb693c9a_a5de5b53",
       "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -105,6 +141,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "115aa4c1_7b02251e",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-07-30T01:51:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecfcbda_57593786",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91ffad6d_a47b92a3",
@@ -118,6 +172,24 @@
       "writtenOn": "2024-07-30T01:22:07Z",
       "side": 1,
       "message": "Same as above that `sorted` returns a list.",
+      "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48ab9310_a10aa875",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-07-30T01:51:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91ffad6d_a47b92a3",
       "revId": "bc3580b6e77f4e9e510df3ade3499fac85b646c1",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -16,6 +16,23 @@
       "message": "This is breaking/blocking me and robbie is out, so I fixed it and want to land it.\n\nI added some tests (it caught some bugs in the code so yay)",
       "revId": "0dd7620570d247a4b3d798a598686bc4b762c18b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f616d10_1da1873a",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-30T22:08:59Z",
+      "side": 1,
+      "message": "This is needed because we make commits in the tests, and committing requires user name and email set up.  Most users will probably have global email configured, but I don\u0027t since I\u0027m testing multiple different emails across repos.\n\nSo this makes the tests more independent of the user\u0027s config.",
+      "revId": "0dd7620570d247a4b3d798a598686bc4b762c18b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

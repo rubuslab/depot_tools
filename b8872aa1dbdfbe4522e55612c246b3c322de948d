@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bff054ec_c9ee41d0",
+        "filename": "testing_support/fake_repos.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-31T16:07:54Z",
+      "side": 1,
+      "message": "😊",
+      "fixSuggestions": [
+        {
+          "fixId": "65ec92b9_3bdbc2e6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "testing_support/fake_repos.py",
+              "range": {
+                "startLine": 179,
+                "startChar": 0,
+                "endLine": 180,
+                "endChar": 0
+              },
+              "replacement": "                \u0027Hina Hoshino\u0027,  # Hina Hoshino is a character in Sailor Moon.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b8872aa1dbdfbe4522e55612c246b3c322de948d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

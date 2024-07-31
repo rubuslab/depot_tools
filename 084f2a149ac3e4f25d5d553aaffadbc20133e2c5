@@ -70,6 +70,30 @@
       },
       "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bd73081_e3d9c01d",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-31T21:14:35Z",
+      "side": 1,
+      "message": "hm, good to know.  In any case, this should be fine in 3.8 because the future import stop evaluation of annotations, so all of these get saved as strings like `\u0027list[GitConfigScope]\u0027`  Actually, we don\u0027t even have to import any of the type from typing either at runtime.",
+      "parentUuid": "b2f7d7fd_2734f412",
+      "range": {
+        "startLine": 52,
+        "startChar": 15,
+        "endLine": 52,
+        "endChar": 19
+      },
+      "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

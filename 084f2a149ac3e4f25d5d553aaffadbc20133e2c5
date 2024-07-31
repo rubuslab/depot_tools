@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "40673996_b1719f83",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-31T16:10:04Z",
+      "side": 1,
+      "message": "does this work in 3.8 (the version depot tools runs on) with `from __future__ import annotations`?",
+      "range": {
+        "startLine": 52,
+        "startChar": 15,
+        "endLine": 52,
+        "endChar": 19
+      },
+      "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

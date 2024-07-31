@@ -46,6 +46,30 @@
       },
       "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2f7d7fd_2734f412",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-07-31T21:01:54Z",
+      "side": 1,
+      "message": "oh hmm.. I recall that chromeos only supports 3.8 so even though depot tools claims in the vpython spec it\u0027s running in 3.11. In reality 3.8 is used in chromeos. That\u0027s why our test are [running in 3.8](https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/tests/.vpython3#4) to ensure compatibility. I\u0027m approving this. If the tests all succeed, it should be good to go.",
+      "parentUuid": "e8153a05_259908a6",
+      "range": {
+        "startLine": 52,
+        "startChar": 15,
+        "endLine": 52,
+        "endChar": 19
+      },
+      "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

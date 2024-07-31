@@ -22,6 +22,30 @@
       },
       "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8153a05_259908a6",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-07-31T20:56:12Z",
+      "side": 1,
+      "message": "yes.  also I think the only 3.8 user is fixed in https://chromium-review.googlesource.com/c/chromium/tools/depot_tools/+/5741852/14",
+      "parentUuid": "40673996_b1719f83",
+      "range": {
+        "startLine": 52,
+        "startChar": 15,
+        "endLine": 52,
+        "endChar": 19
+      },
+      "revId": "084f2a149ac3e4f25d5d553aaffadbc20133e2c5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

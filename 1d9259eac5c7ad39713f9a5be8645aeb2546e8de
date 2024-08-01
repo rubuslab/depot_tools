@@ -140,6 +140,47 @@
       "parentUuid": "44000b09_91acaf8c",
       "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6dfb88b_a60d43bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-08-01T01:55:44Z",
+      "side": 1,
+      "message": "OK, thank you for the explanation!\n\nI found this guidance in a discussion on our Go mailing list that sounds encouraging: \"On a final note, GOGC and GOMEMLIMIT are much more about the throughput/memory tradeoff, because that is much more zero-sum. Using more memory for the heap very directly means entering the GC\u0027s concurrent mark phase less often, which means both better throughput and often a lower latency impact.\"\n\nHowever, people also noted on that thread that \"there have been few or no patterns that emerged where we could generalize some findings\", with the one you\u0027ve linked to (Flume) being cited as the notable exception where setting GOGC\u003d500 seems to always result in an improvement.\n\nAs I really have no good intuition about the potential benefits in CPU and/or wall time saved vs. increase of memory consumption, let\u0027s get some hyperfine results for default GOGC and GOGC\u003d500 that show the impact on times, and also measure the maximum memory usage of reproxy.\n\nMaybe something like this works:\n\n```\n$ hyperfine --show-output --runs\u003d1 \\\n    --prepare \"gn clean out/default; gn gen out/default --args\u003d\u0027is_debug\u003dtrue use_remoteexec\u003dtrue\u0027\" \\\n    \"autoninja -C out/default all\" \\\n    \"GOGC\u003d500 autoninja -C out/default all\"\n```\n\nThen let\u0027s quickly grab the PID of reproxy and monitor it in Process Explorer on Windows, or `grep -E \u0027(VmPeak|VmHWM)\u0027 /proc/${REPROXY_PID}/status` on Linux.",
+      "parentUuid": "0a6182e8_44b3e860",
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8aa2cc13_ab7da369",
+        "filename": "reclient_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-08-01T01:55:44Z",
+      "side": 1,
+      "message": "I think this will also affect Siso and any other Go binary that runs as part of the build. We should probably set this environment variable only when starting reproxy itself, and not globally for the environment.",
+      "range": {
+        "startLine": 348,
+        "startChar": 0,
+        "endLine": 350,
+        "endChar": 40
+      },
+      "revId": "1d9259eac5c7ad39713f9a5be8645aeb2546e8de",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

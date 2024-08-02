@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f761db24_d56d5be6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-08-02T20:20:50Z",
+      "side": 1,
+      "message": "I think something is not catching stdout correctly.\n\nWhen I ran `gclient sync` I see\n\n```\n$ gclient sync\n/Users/vadimsh/depot_tools/.cipd_bin\nSyncing projects: 100% (86/86), done.\nRunning hooks: 100% (6/6), done.\n```\n\nwhich is kind of mildly annoying",
+      "revId": "1790a4b68707400df1480670fe2fb340b09c33ee",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

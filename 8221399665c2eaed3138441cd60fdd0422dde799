@@ -22,6 +22,30 @@
       },
       "revId": "8221399665c2eaed3138441cd60fdd0422dde799",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac1a2383_c3106f64",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6905,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-02T22:35:12Z",
+      "side": 1,
+      "message": "tl;dr yes.  pyright needs it.  When checking how the function is called the overloaded types are used, but when checking the variables inside the function, these are used.  Arguably pyright should be able to infer the types from the overload, but it\u0027s not a violation of the type annotation spec AFIACT",
+      "parentUuid": "7621448d_6e53651a",
+      "range": {
+        "startLine": 6905,
+        "startChar": 29,
+        "endLine": 6905,
+        "endChar": 54
+      },
+      "revId": "8221399665c2eaed3138441cd60fdd0422dde799",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -4,6 +4,7 @@
 
 import os
 import sys
+import threading
 
 from typing import Dict, List, Optional
 from unittest import mock
@@ -31,9 +32,8 @@ def GIT(test: unittest.TestCase,
     """
     _branchref = [branchref or 'refs/heads/main']
 
-    initial_state = {}
-    if config is not None:
-        initial_state['local'] = config
+    system_lock = threading.Lock()
+    system_state = {}
 
     def _newBranch(branchref):
         _branchref[0] = branchref
@@ -41,9 +41,10 @@ def GIT(test: unittest.TestCase,
     patches: List[mock._patch] = [
         mock.patch(
             'scm.GIT._new_config_state',
-            side_effect=lambda root: scm.GitConfigStateTest(initial_state)),
+            side_effect=lambda _: scm.GitConfigStateTest(
+                system_lock, system_state, local_state=config)),
         mock.patch('scm.GIT.GetBranchRef',
-                   side_effect=lambda _root: _branchref[0]),
+                   side_effect=lambda _: _branchref[0]),
         mock.patch('git_new_branch.create_new_branch', side_effect=_newBranch)
     ]
 

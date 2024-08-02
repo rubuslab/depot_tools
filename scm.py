@@ -6,15 +6,15 @@
 from __future__ import annotations
 
 import abc
+import contextlib
 import os
 import pathlib
 import platform
 import re
 import threading
-import typing
 
 from collections import defaultdict
-from typing import Collection, Iterable, Literal, Dict
+from typing import Collection, Iterable, Iterator, Literal, Dict
 from typing import Optional, Sequence, Mapping
 
 import gclient_utils
@@ -335,98 +335,127 @@ class GitConfigStateReal(GitConfigStateBase):
 
 
 class GitConfigStateTest(GitConfigStateBase):
-    """A fake implementation of GitConfigStateBase for testing."""
+    """A fake implementation of GitConfigStateBase for testing.
+
+    To properly initialize this, see tests/scm_mock.py.
+    """
 
     def __init__(self,
-                 initial_state: Optional[Dict[GitConfigScope,
-                                              GitFlatConfigData]] = None):
-        self.state: Dict[GitConfigScope, Dict[str, list[str]]] = {}
-        if initial_state is not None:
-            # We want to copy initial_state to make it mutable inside our class.
-            for scope, data in initial_state.items():
-                self.state[scope] = {k: list(v) for k, v in data.items()}
+                 system_state_lock: threading.Lock,
+                 system_state: dict[str, list[str]],
+                 *,
+                 local_state: Optional[GitFlatConfigData] = None,
+                 worktree_state: Optional[GitFlatConfigData] = None):
+        """Initializes a new (local, worktree) config state, with a reference to
+        a single global `system` state.
+
+        The caller must supply a single shared Lock, plus a mutable reference to
+        the global system-state dictionary.
+
+        Optionally, the caller may supply an initial local/worktree
+        configuration state.
+
+        This implementation will hold system_state_lock during all read/write
+        operations on the 'system' scope.
+        """
+        self.system_state_lock = system_state_lock
+        self.system_state = system_state
+
+        self.worktree_state: dict[str, list[str]] = {}
+        if worktree_state is not None:
+            self.worktree_state = {k: list(v) for k, v in worktree_state.items()}
+
+        self.local_state: dict[str, list[str]] = {}
+        if local_state is not None:
+            self.local_state = {k: list(v) for k, v in local_state.items()}
+
         super().__init__()
 
-    def _get_scope(self, scope: GitConfigScope) -> Dict[str, list[str]]:
-        ret = self.state.get(scope, None)
-        if ret is None:
-            ret = {}
-            self.state[scope] = ret
-        return ret
+    @contextlib.contextmanager
+    def _editable_scope(self, scope: GitConfigScope) -> Iterator[dict[str, list[str]]]:
+        if scope == 'system':
+            with self.system_state_lock:
+                yield self.system_state
+        if scope == 'local':
+            yield self.local_state
+        if scope == 'worktree':
+            yield self.worktree_state
+        raise ValueError(f'Unknown scope value: {scope!r}')
 
     def load_config(self) -> GitFlatConfigData:
         ret = {}
         for scope in GitScopeOrder:
-            for key, value in self._get_scope(scope).items():
-                curvals = ret.get(key, None)
-                if curvals is None:
-                    curvals = []
-                    ret[key] = curvals
-                curvals.extend(value)
+            with self._editable_scope(scope) as cfg:
+                for key, value in cfg.items():
+                    curvals = ret.get(key, None)
+                    if curvals is None:
+                        curvals = []
+                        ret[key] = curvals
+                    curvals.extend(value)
         return ret
 
     def set_config(self, key: str, value: str, *, append: bool,
                    scope: GitConfigScope):
-        cfg = self._get_scope(scope)
-        cur = cfg.get(key)
-        if cur is None or len(cur) == 1:
-            if append:
-                cfg[key] = (cur or []) + [value]
-            else:
-                cfg[key] = [value]
-            return
-        raise ValueError(f'GitConfigStateTest: Cannot set key {key} '
-                         f'- current value {cur!r} is multiple.')
+        with self._editable_scope(scope) as cfg:
+            cur = cfg.get(key)
+            if cur is None or len(cur) == 1:
+                if append:
+                    cfg[key] = (cur or []) + [value]
+                else:
+                    cfg[key] = [value]
+                return
+            raise ValueError(f'GitConfigStateTest: Cannot set key {key} '
+                             f'- current value {cur!r} is multiple.')
 
     def set_config_multi(self, key: str, value: str, *, append: bool,
                          value_pattern: Optional[str], scope: GitConfigScope):
-        cfg = self._get_scope(scope)
-        cur = cfg.get(key)
-        if value_pattern is None or cur is None:
-            if append:
-                cfg[key] = (cur or []) + [value]
-            else:
-                cfg[key] = [value]
-            return
+        with self._editable_scope(scope) as cfg:
+            cur = cfg.get(key)
+            if value_pattern is None or cur is None:
+                if append:
+                    cfg[key] = (cur or []) + [value]
+                else:
+                    cfg[key] = [value]
+                return
 
-        pat = re.compile(value_pattern)
-        newval = [v for v in cur if pat.match(v)]
-        newval.append(value)
-        cfg[key] = newval
+            pat = re.compile(value_pattern)
+            newval = [v for v in cur if pat.match(v)]
+            newval.append(value)
+            cfg[key] = newval
 
     def unset_config(self, key: str, *, scope: GitConfigScope,
                      missing_ok: bool):
-        cfg = self._get_scope(scope)
-        cur = cfg.get(key)
-        if cur is None:
-            if missing_ok:
+        with self._editable_scope(scope) as cfg:
+            cur = cfg.get(key)
+            if cur is None:
+                if missing_ok:
+                    return
+                raise GitConfigUnsetMissingValue(key, scope)
+            if len(cur) == 1:
+                del cfg[key]
                 return
-            raise GitConfigUnsetMissingValue(key, scope)
-        if len(cur) == 1:
-            del cfg[key]
-            return
-        raise ValueError(f'GitConfigStateTest: Cannot unset key {key} '
-                         f'- current value {cur!r} is multiple.')
+            raise ValueError(f'GitConfigStateTest: Cannot unset key {key} '
+                             f'- current value {cur!r} is multiple.')
 
     def unset_config_multi(self, key: str, *, value_pattern: Optional[str],
                            scope: GitConfigScope, missing_ok: bool):
-        cfg = self._get_scope(scope)
-        cur = cfg.get(key)
-        if cur is None:
-            if not missing_ok:
-                raise GitConfigUnsetMissingValue(key, scope)
-            return
+        with self._editable_scope(scope) as cfg:
+            cur = cfg.get(key)
+            if cur is None:
+                if not missing_ok:
+                    raise GitConfigUnsetMissingValue(key, scope)
+                return
 
-        if value_pattern is None:
-            del cfg[key]
-            return
+            if value_pattern is None:
+                del cfg[key]
+                return
 
-        if cur is None:
-            del cfg[key]
-            return
+            if cur is None:
+                del cfg[key]
+                return
 
-        pat = re.compile(value_pattern)
-        cfg[key] = [v for v in cur if not pat.match(v)]
+            pat = re.compile(value_pattern)
+            cfg[key] = [v for v in cur if not pat.match(v)]
 
 
 class GIT(object):

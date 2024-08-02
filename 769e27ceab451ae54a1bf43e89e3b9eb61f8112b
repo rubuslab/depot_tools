@@ -16,6 +16,24 @@
       "message": "This (+previous CLs) fixes ~5 and brings the total error count in git_cl down to 97",
       "revId": "769e27ceab451ae54a1bf43e89e3b9eb61f8112b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "75d23225_9b0fbe82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-08-02T03:49:19Z",
+      "side": 1,
+      "message": "👍 curious what do you use to check the error? pylint?",
+      "parentUuid": "84407a42_618caac1",
+      "revId": "769e27ceab451ae54a1bf43e89e3b9eb61f8112b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

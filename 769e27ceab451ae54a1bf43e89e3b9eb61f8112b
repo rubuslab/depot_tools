@@ -34,6 +34,24 @@
       "parentUuid": "84407a42_618caac1",
       "revId": "769e27ceab451ae54a1bf43e89e3b9eb61f8112b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02617747_1cf6dded",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-02T23:47:19Z",
+      "side": 1,
+      "message": "pyright",
+      "parentUuid": "75d23225_9b0fbe82",
+      "revId": "769e27ceab451ae54a1bf43e89e3b9eb61f8112b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

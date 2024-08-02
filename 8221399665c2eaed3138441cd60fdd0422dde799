@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7621448d_6e53651a",
+        "filename": "git_cl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6905,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-08-02T03:47:45Z",
+      "side": 1,
+      "message": "nit: Is this still needed for the non-overloaded function?",
+      "range": {
+        "startLine": 6905,
+        "startChar": 29,
+        "endLine": 6905,
+        "endChar": 54
+      },
+      "revId": "8221399665c2eaed3138441cd60fdd0422dde799",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

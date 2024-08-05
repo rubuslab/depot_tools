@@ -34,6 +34,24 @@
       "parentUuid": "970e58a6_1cbdb5b7",
       "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba18e0ef_db4a0de5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-05T20:41:12Z",
+      "side": 1,
+      "message": "It stops at the first conflict and there isn\u0027t a good way to resume afterwards. The command could add a `--parent-change-num` option that sets the parent change for the first cherry-pick CL. So if it runs into a conflict, the tool could print:\n\n```\nFailed to rebase \u003clink-to-change\u003e. Please resolve any merge conflicts.\n\nOnce resolved, you can continue the CL chain with `--parent-change-num`\nand specify which change the chain should start with.\n```",
+      "parentUuid": "acc7f203_af8e26f4",
+      "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

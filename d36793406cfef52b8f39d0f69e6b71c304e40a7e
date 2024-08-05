@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f43a7e3_6702124b",
+        "filename": "scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T23:57:13Z",
+      "side": 1,
+      "message": "we have to have CachedGitConfigState canonicalize here because the returnd value of _maybe_load_config will always be canonical.",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ba88872_87cb1073",
+        "filename": "scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T23:57:13Z",
+      "side": 1,
+      "message": "same",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f30053e7_dc32f798",
+        "filename": "scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T23:57:13Z",
+      "side": 1,
+      "message": "note to self - remove in downstream CL",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f419c64b_32dc1b26",
+        "filename": "tests/git_auth_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T23:57:13Z",
+      "side": 1,
+      "message": "these changes are still correct - the dump state helper is reflecting the output of load_config, which is canonicalized for both test and prod",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84f4a7c8_1a135157",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T23:57:13Z",
+      "side": 1,
+      "message": "this had to change because GitConfigStateTest now internally canonicalizes, and sectionless keys are not allowed in git config.",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

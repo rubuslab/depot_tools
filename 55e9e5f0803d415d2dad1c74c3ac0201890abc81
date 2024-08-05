@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "792924df_f017403b",
+        "filename": "git_common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-08-05T20:49:48Z",
+      "side": 1,
+      "message": "remove?",
+      "range": {
+        "startLine": 389,
+        "startChar": 33,
+        "endLine": 389,
+        "endChar": 46
+      },
+      "revId": "55e9e5f0803d415d2dad1c74c3ac0201890abc81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

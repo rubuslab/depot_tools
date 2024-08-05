@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10d21d26_b8bbbb83",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "these were just raw ValueError before",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ba89b83_b59bf098",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "set_config_multi with modify_all and value_pattern\u003dNone still makes sense.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8be61acf_d99d8654",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "unfortunately, `git config` uses the same error code (5) for both \u0027you tried to set a multi-value key without --unset-all\u0027 and \u0027you tried to unset a key which doesn\u0027t exist\u0027, so we have to look at the stderr of `git config` to distinguish these.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1171aee2_e162c4ec",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "note: the merge ordering goes:\n  system \u003c global \u003c local \u003c worktree\n  \nHowever:\n  global is shared between all instances of GitConfigStateTest (and thus is a required parameter)\n  system is not editable (this comes from the \u0027git installation\u0027 and is usually in like /etc or such).\n  \nWhich ends up with the weird argument order here (of global coming before system).",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37d8b395_4393aea8",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "this is where system takes lowest precedence in the merged output.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bf3dbeb_8e39b4bf",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "this logic change was because I did some tests with `git config` - the previous implementation was bugged in two ways:\n  * was using `pat.match` instead of not `pat.match`\n  * was always appending the new value instead of inserting it before the first match.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ee44fea_fd892203",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "added so that vim will always pick compatible values for this .py file.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfddea1a_2929d8ba",
+        "filename": "tests/scm_mock.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "this will be much cleaner/clearer than adding more arguments to the mock function interface, but didn\u0027t want to do this in this CL.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "090f25a4_f224783e",
+        "filename": "tests/scm_mock.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 1,
+      "message": "note - these should be `global` not system - fixed in next patchset.",
+      "revId": "fd2848fc5d4ece692dd427521a254feb41191e8c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7465d950_a0db7207",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T19:04:07Z",
+      "side": 0,
+      "message": "when adding tests, I found that \u0027set_config_multi\u0027 and \u0027append\u0027 and \u0027value_pattern\u0027 didn\u0027t make any sense. See new assertions made in CacehedGitConfigState.",
+      "range": {
+        "startLine": 88,
+        "startChar": 59,
+        "endLine": 88,
+        "endChar": 60
+      },
+      "revId": "7815620b1fc90605b76dacbd2d128460d3743184",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

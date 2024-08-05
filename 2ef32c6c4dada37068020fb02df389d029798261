@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20f2af7d_e9a64d8f",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T22:57:10Z",
+      "side": 1,
+      "message": "GetConfig does the canonicalization",
+      "revId": "2ef32c6c4dada37068020fb02df389d029798261",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "332b0494_d15dc169",
+        "filename": "scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T22:57:10Z",
+      "side": 1,
+      "message": "previous logic was incorrect when using `set_config(key, value, append\u003dTrue)` with a missing key - tests were added to cover this change.",
+      "revId": "2ef32c6c4dada37068020fb02df389d029798261",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "db6a8c4a_5adebb76",
+        "filename": "tests/scm_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-05T22:57:10Z",
+      "side": 1,
+      "message": "this is the added test",
+      "revId": "2ef32c6c4dada37068020fb02df389d029798261",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

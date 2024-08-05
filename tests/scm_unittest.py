@@ -513,11 +513,21 @@ class GitConfigStateTestTest(unittest.TestCase):
         with self.assertRaises(scm.GitConfigUneditableScope):
             m.set_config('key', 'new_global', append=False, scope='system')
 
-    def test_set_config_unkown(self):
+    def test_set_config_unknown(self):
         m, _ = self._make()
 
         with self.assertRaises(scm.GitConfigUnknownScope):
             m.set_config('key', 'new_global', append=False, scope='meepmorp')
+
+    def test_set_config_global_append_empty(self):
+        m, gs = self._make()
+        self.assertDictEqual(gs, {})
+        self.assertDictEqual(m.load_config(), {})
+
+        m.set_config('key', 'new_global', append=True, scope='global')
+        self.assertDictEqual(m.load_config(), {
+            'key': ['new_global'],
+        })
 
     def test_set_config_global(self):
         m, gs = self._make()
@@ -666,6 +676,193 @@ class GitConfigStateTestTest(unittest.TestCase):
         self.assertDictEqual(m.load_config(), {
             'key': ['1', '3', '1'],
         })
+
+
+class CanonicalizeGitConfigKeyTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.ck = scm.canonicalize_git_config_key
+        return super().setUp()
+
+    def test_many(self):
+        self.assertEqual(self.ck("URL.https://SoMeThInG.example.com.INSTEADOF"), "url.https://SoMeThInG.example.com.insteadof")
+
+    def test_three(self):
+        self.assertEqual(self.ck("A.B.C"), "a.B.c")
+        self.assertEqual(self.ck("a.B.C"), "a.B.c")
+        self.assertEqual(self.ck("a.b.C"), "a.b.c")
+
+    def test_two(self):
+        self.assertEqual(self.ck("A.B"), "a.b")
+        self.assertEqual(self.ck("a.B"), "a.b")
+        self.assertEqual(self.ck("a.b"), "a.b")
+
+    def test_one(self):
+        with self.assertRaises(scm.GitConfigInvalidKey):
+            self.ck("KEY")
+
+    def test_zero(self):
+        with self.assertRaises(scm.GitConfigInvalidKey):
+            self.ck("")
+
+class CachedGitConfigStateTest(unittest.TestCase):
+    @staticmethod
+    def _make():
+        return scm.CachedGitConfigState(
+                scm.GitConfigStateTest(threading.Lock(), {}))
+
+    def test_empty(self):
+        gcs = self._make()
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [])
+
+    def test_set_single(self):
+        gcs = self._make()
+
+        gcs.SetConfig('SECTION.VARIABLE', 'value')
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+        ])
+
+    def test_set_append(self):
+        gcs = self._make()
+
+        gcs.SetConfig('SECTION.VARIABLE', 'value')
+        gcs.SetConfig('SeCtIoN.vArIaBLe', 'value2', append=True)
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+            ('section.variable', 'value2'),
+        ])
+
+    def test_set_global(self):
+        gcs = self._make()
+
+        gcs.SetConfig('SECTION.VARIABLE', 'value')
+        gcs.SetConfig('SeCtIoN.vArIaBLe', 'value2', append=True)
+
+        gcs.SetConfig('SeCtIoN.vArIaBLe', 'gvalue', scope='global')
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'gvalue'),
+            ('section.variable', 'value'),
+            ('section.variable', 'value2'),
+        ])
+
+    def test_unset_multi_global(self):
+        gcs = self._make()
+
+        gcs.SetConfig('SECTION.VARIABLE', 'value')
+        gcs.SetConfig('SeCtIoN.vArIaBLe', 'value2', append=True)
+        gcs.SetConfig('SeCtIoN.vArIaBLe', 'gvalue', scope='global')
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'gvalue'),
+            ('section.variable', 'value'),
+            ('section.variable', 'value2'),
+        ])
+
+        gcs.SetConfig('section.variable', None, modify_all=True)
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'gvalue'),
+        ])
+
+    def test_errors(self):
+        gcs = self._make()
+
+        with self.assertRaises(scm.GitConfigInvalidKey):
+            gcs.SetConfig('key', 'value')
+
+        with self.assertRaises(scm.GitConfigUnknownScope):
+            gcs.SetConfig('section.variable', 'value', scope='dude')
+
+        with self.assertRaises(scm.GitConfigUneditableScope):
+            gcs.SetConfig('section.variable', 'value', scope='system')
+
+        with self.assertRaisesRegex(
+                ValueError, 'value_pattern.*modify_all.*invalid'):
+            gcs.SetConfig('section.variable', 'value', value_pattern='hi',
+                          modify_all=False)
+
+        with self.assertRaisesRegex(
+                ValueError, 'value_pattern.*append.*invalid'):
+            gcs.SetConfig('section.variable', 'value', value_pattern='hi',
+                          modify_all=True, append=True)
+
+    def test_set_pattern(self):
+        gcs = self._make()
+
+        gcs.SetConfig('section.variable', 'value', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value', append=True)
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value'),
+        ])
+
+        gcs.SetConfig('section.variable', 'poof', value_pattern='.*_bleem',
+                      modify_all=True)
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+            ('section.variable', 'poof'),
+            ('section.variable', 'value'),
+        ])
+
+    def test_set_all(self):
+        gcs = self._make()
+
+        gcs.SetConfig('section.variable', 'value', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+        gcs.SetConfig('section.variable', 'value', append=True)
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'value'),
+        ])
+
+        gcs.SetConfig('section.variable', 'poof', modify_all=True)
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'poof'),
+        ])
+
+
+    def test_get_config(self):
+        gcs = self._make()
+
+        gcs.SetConfig('section.variable', 'value', append=True)
+        gcs.SetConfig('section.variable', 'value_bleem', append=True)
+
+        self.assertEqual(gcs.GetConfig('section.varIABLE'), 'value_bleem')
+        self.assertEqual(gcs.GetConfigBool('section.varIABLE'), False)
+
+        self.assertEqual(gcs.GetConfig('section.noexist'), None)
+        self.assertEqual(gcs.GetConfig('section.noexist', 'dflt'), 'dflt')
+
+        gcs.SetConfig('section.variable', 'true', append=True)
+        self.assertEqual(gcs.GetConfigBool('section.varIABLE'), True)
+
+        self.assertListEqual(list(gcs.YieldConfigRegexp()), [
+            ('section.variable', 'value'),
+            ('section.variable', 'value_bleem'),
+            ('section.variable', 'true'),
+        ])
+
+        self.assertListEqual(gcs.GetConfigList('seCTIon.vARIable'), [
+            'value', 'value_bleem', 'true',
+        ])
 
 
 if __name__ == '__main__':

@@ -16,6 +16,24 @@
       "message": "Nit: I think we should not be allocating `git gerrit` \"namespace\", and that we should use `git cl cherry-pick` or something within git_cl.py realm. A good alternative is gerrit_client.py\n\nIt would also be good to check with dcheng@ if this would work for their workflows. It\u0027s easier to change interface now, vs once it lands and we get users.",
       "revId": "6bdb132f2c4a4e9ab3a601c6d77352e188676310",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1df50af0_f882f7bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-05T18:00:35Z",
+      "side": 1,
+      "message": "That\u0027s definitely better than `git gerrit`. I\u0027ll update this to be `git cl cherry-pick` instead. Usage will be the same tho. I\u0027ll also add them to this CL",
+      "parentUuid": "bf41a6f8_78701430",
+      "revId": "6bdb132f2c4a4e9ab3a601c6d77352e188676310",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

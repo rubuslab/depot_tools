@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "970e58a6_1cbdb5b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-05T18:00:35Z",
+      "side": 1,
+      "message": "@dcheng@chromium.org WDYT? Feel free to checkout this CL and test it out yourself, usage is: \"git cl cherry-pick --host chromium-review.googlesource.com --branch refs/branch-heads/1234 rev1 rev2 rev3...\"",
+      "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "@dcheng@chromium.org WDYT? Feel free to checkout this CL and test it out yourself, usage is: \"git cl cherry-pick --host chromium-review.googlesource.com --branch refs/branch-heads/1234 rev1 rev2 rev3...\"",
       "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acc7f203_af8e26f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2024-08-05T19:55:09Z",
+      "side": 1,
+      "message": "@jdonnelly@chromium.org as FYI\n\nI don\u0027t have any CLs in mind at the moment... two things I am curious about though:\n1. How would conflicts in the middle of the chain be handled? Would it allow the creation of a cherry-pick with conflict markers? Would it stop at the first conflict?\n2. Assuming it stops at the first conflict... would you be able to resume building the chain of cherry-picks after fixing the conflict?",
+      "parentUuid": "970e58a6_1cbdb5b7",
+      "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

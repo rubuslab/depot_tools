@@ -22,6 +22,30 @@
       },
       "revId": "65343c5e4aaaca9e652505b9ed9a9ebeb7bdcd94",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fe1b8043_50dd8dde",
+        "filename": "tests/git_gerrit_cp_test.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-05T16:29:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd56e224_5847e2a0",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 14
+      },
+      "revId": "65343c5e4aaaca9e652505b9ed9a9ebeb7bdcd94",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

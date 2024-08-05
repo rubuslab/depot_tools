@@ -17,11 +17,9 @@ import scm
 
 
 def GIT(test: unittest.TestCase,
-        config: Optional[Dict[str, List[str]]] = None,
         branchref: Optional[str] = None):
     """Installs fakes/mocks for scm.GIT so that:
 
-      * Initial git config (local scope) is set to `config`.
       * GetBranch will just return a fake branchname starting with the value of
         branchref.
       * git_new_branch.create_new_branch will be mocked to update the value
@@ -30,16 +28,8 @@ def GIT(test: unittest.TestCase,
     NOTE: The dependency on git_new_branch.create_new_branch seems pretty
     circular - this functionality should probably move to scm.GIT?
     """
-    # TODO - remove `config` - have callers just directly call SetConfig with
-    # whatever config state they need.
     # TODO - add `system_config` - this will be configuration which exists at
     # the 'system installation' level and is immutable.
-
-    if config:
-        config = {
-            scm.canonicalize_git_config_key(k): v
-            for k, v in config.items()
-        }
 
     _branchref = [branchref or 'refs/heads/main']
 
@@ -52,7 +42,7 @@ def GIT(test: unittest.TestCase,
     patches: List[mock._patch] = [
         mock.patch('scm.GIT._new_config_state',
                    side_effect=lambda _: scm.GitConfigStateTest(
-                       global_lock, global_state, local_state=config)),
+                       global_lock, global_state)),
         mock.patch('scm.GIT.GetBranchRef', side_effect=lambda _: _branchref[0]),
         mock.patch('git_new_branch.create_new_branch', side_effect=_newBranch)
     ]

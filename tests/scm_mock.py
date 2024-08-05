@@ -2,11 +2,12 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
+from __future__ import annotations
+
 import os
 import sys
 import threading
 
-from typing import Dict, List, Optional
 from unittest import mock
 import unittest
 
@@ -17,7 +18,8 @@ import scm
 
 
 def GIT(test: unittest.TestCase,
-        branchref: Optional[str] = None):
+        branchref: str | None = None,
+        system_config: dict[str, list[str]] | None = None):
     """Installs fakes/mocks for scm.GIT so that:
 
       * GetBranch will just return a fake branchname starting with the value of
@@ -25,12 +27,13 @@ def GIT(test: unittest.TestCase,
       * git_new_branch.create_new_branch will be mocked to update the value
         returned by GetBranch.
 
+    If provided, `system_config` allows you to set the 'system' scoped
+    git-config which will be visible as the immutable base configuration layer
+    for all git config scopes.
+
     NOTE: The dependency on git_new_branch.create_new_branch seems pretty
     circular - this functionality should probably move to scm.GIT?
     """
-    # TODO - add `system_config` - this will be configuration which exists at
-    # the 'system installation' level and is immutable.
-
     _branchref = [branchref or 'refs/heads/main']
 
     global_lock = threading.Lock()
@@ -39,10 +42,10 @@ def GIT(test: unittest.TestCase,
     def _newBranch(branchref):
         _branchref[0] = branchref
 
-    patches: List[mock._patch] = [
+    patches: list[mock._patch] = [
         mock.patch('scm.GIT._new_config_state',
                    side_effect=lambda _: scm.GitConfigStateTest(
-                       global_lock, global_state)),
+                       global_lock, global_state, system_state=system_config)),
         mock.patch('scm.GIT.GetBranchRef', side_effect=lambda _: _branchref[0]),
         mock.patch('git_new_branch.create_new_branch', side_effect=_newBranch)
     ]

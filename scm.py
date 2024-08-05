@@ -451,9 +451,7 @@ class GitConfigStateTest(GitConfigStateBase):
                  global_state_lock: threading.Lock,
                  global_state: dict[str, list[str]],
                  *,
-                 system_state: Optional[GitFlatConfigData] = None,
-                 local_state: Optional[GitFlatConfigData] = None,
-                 worktree_state: Optional[GitFlatConfigData] = None):
+                 system_state: Optional[GitFlatConfigData] = None):
         """Initializes a new (local, worktree) config state, with a reference to
         a single global `global` state and an optional immutable `system` state.
 
@@ -475,15 +473,7 @@ class GitConfigStateTest(GitConfigStateBase):
         self.global_state = global_state
 
         self.worktree_state: dict[str, list[str]] = {}
-        if worktree_state is not None:
-            self.worktree_state = {
-                k: list(v)
-                for k, v in worktree_state.items()
-            }
-
         self.local_state: dict[str, list[str]] = {}
-        if local_state is not None:
-            self.local_state = {k: list(v) for k, v in local_state.items()}
 
         super().__init__()
 

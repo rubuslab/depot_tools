@@ -52,6 +52,24 @@
       "parentUuid": "acc7f203_af8e26f4",
       "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88a326f1_5dbcb64d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2024-08-06T18:17:50Z",
+      "side": 1,
+      "message": "I think that would be really nice to have.\n\nJust so I understand how this works... is this creating a local commit and a CL on Gerrit simultaneously? Or is it purely operating using the Gerrit REST APIs, and someone fixing the conflict would git cl patch -f the CL in?",
+      "parentUuid": "ba18e0ef_db4a0de5",
+      "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

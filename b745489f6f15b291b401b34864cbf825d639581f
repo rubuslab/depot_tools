@@ -16,6 +16,24 @@
       "message": "I think we can just delete this function now in favor of the functools version?",
       "revId": "b745489f6f15b291b401b34864cbf825d639581f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cecdb50_353c7bd3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-06T20:40:56Z",
+      "side": 1,
+      "message": "maybe?  I\u0027m at negative time left for yak shaving so I\u0027d rather defer that.  Just want to get this pyright clean so it\u0027s easier to vet my changes.",
+      "parentUuid": "17700e7e_a5980f4a",
+      "revId": "b745489f6f15b291b401b34864cbf825d639581f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

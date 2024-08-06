@@ -54,6 +54,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "bc0f32e1_16dd9c30",
+        "filename": "scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-06T00:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f30053e7_dc32f798",
+      "revId": "d36793406cfef52b8f39d0f69e6b71c304e40a7e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "f419c64b_32dc1b26",
         "filename": "tests/git_auth_test.py",
         "patchSetId": 5

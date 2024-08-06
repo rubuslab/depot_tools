@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60f3dfb0_c7219113",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-06T22:13:15Z",
+      "side": 1,
+      "message": "I can break this into smaller CLs if that would be helpful, but it could be easier to have the full context.",
+      "revId": "6c9bbb1cc680de106ba061701670189b31d54aad",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

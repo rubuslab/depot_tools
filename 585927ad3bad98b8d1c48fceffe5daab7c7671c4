@@ -70,6 +70,24 @@
       "parentUuid": "ba18e0ef_db4a0de5",
       "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d533c094_d8d9090d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-06T18:37:56Z",
+      "side": 1,
+      "message": "Great, I\u0027ll add it in the next patchset.\n\nThis is based only on the Gerrit API, no local commits are created. The workflow would be to: fix the change (w/ `git cl patch -f` or the gerrit UI, it shouldn\u0027t matter), retry rebasing, and finally continue the chain with `--parent-change-num \u003cnewly-rebased-change\u003e`.",
+      "parentUuid": "88a326f1_5dbcb64d",
+      "revId": "585927ad3bad98b8d1c48fceffe5daab7c7671c4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

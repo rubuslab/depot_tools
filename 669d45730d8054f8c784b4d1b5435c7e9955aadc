@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bc9476a_cca162f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-07T06:00:09Z",
+      "side": 1,
+      "message": "I changed this CL to use `SISO_BUILD_ID` instead of `-build_id`.  PTAL",
+      "revId": "669d45730d8054f8c784b4d1b5435c7e9955aadc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

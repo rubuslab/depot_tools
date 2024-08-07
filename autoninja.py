@@ -187,7 +187,7 @@ def _print_cmd(cmd):
     print(*[shell_quoter(arg) for arg in cmd], file=sys.stderr)
 
 
-def _main_inner(input_args, should_collect_logs=False):
+def _main_inner(input_args, build_id, should_collect_logs=False):
     # if user doesn't set PYTHONPYCACHEPREFIX and PYTHONDONTWRITEBYTECODE
     # set PYTHONDONTWRITEBYTECODE=1 not to create many *.pyc in workspace
     # and keep workspace clean.
@@ -277,19 +277,20 @@ def _main_inner(input_args, should_collect_logs=False):
                     file=sys.stderr,
                 )
                 return 1
+            os.environ.setdefault("SISO_BUILD_ID", build_id)
+            siso_ninja_cmd = ["siso", "ninja"]
             if use_remoteexec:
                 if use_reclient:
+                    siso_ninja_cmd.extend([
+                        # Do not authenticate when using Reproxy.
+                        '-project=',
+                        '-reapi_instance=',
+                    ])
                     return reclient_helper.run_siso(
-                        [
-                            'siso',
-                            'ninja',
-                            # Do not authenticate when using Reproxy.
-                            '-project=',
-                            '-reapi_instance=',
-                        ] + input_args[1:],
-                        should_collect_logs)
-                return siso.main(["siso", "ninja"] + input_args[1:])
-            return siso.main(["siso", "ninja", "--offline"] + input_args[1:])
+                        siso_ninja_cmd + input_args[1:], should_collect_logs)
+                return siso.main(siso_ninja_cmd + input_args[1:])
+            siso_ninja_cmd.append("--offline")
+            return siso.main(siso_ninja_cmd + input_args[1:])
 
         if os.path.exists(siso_marker):
             print(
@@ -428,7 +429,7 @@ def main(args):
     if sys.platform.startswith("win") and len(args) == 2:
         input_args = args[:1] + args[1].split()
     try:
-        exit_code = _main_inner(input_args, should_collect_logs)
+        exit_code = _main_inner(input_args, build_id, should_collect_logs)
     except KeyboardInterrupt:
         exit_code = 1
     finally:

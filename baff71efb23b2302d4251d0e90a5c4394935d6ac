@@ -1,0 +1,62 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4374ecc0_e09ea3c9",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4531,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-07T21:37:15Z",
+      "side": 1,
+      "message": "We should be able to get host from the git repo",
+      "revId": "baff71efb23b2302d4251d0e90a5c4394935d6ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bcd0e09_536a19b7",
+        "filename": "git_cl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4591,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-07T21:37:15Z",
+      "side": 1,
+      "message": "we have new_change_num, so let\u0027s provide that to user.",
+      "range": {
+        "startLine": 4589,
+        "startChar": 16,
+        "endLine": 4591,
+        "endChar": 49
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "7fc99dc0_d1c7e40e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_cl.py",
+              "range": {
+                "startLine": 4589,
+                "startChar": 0,
+                "endLine": 4589,
+                "endChar": 0
+              },
+              "replacement": "                print(f\u0027Once resolved, you can continue the CL chain with \u0027\n                      f\u0027`--parent-change-num\u003d{new_change_num}` and specify \u0027\n                      \u0027which change the chain should start with.\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "baff71efb23b2302d4251d0e90a5c4394935d6ac",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

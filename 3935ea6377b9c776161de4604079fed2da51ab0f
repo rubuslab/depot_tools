@@ -16,6 +16,24 @@
       "message": "Could you add inline comment why this is needed.",
       "revId": "3935ea6377b9c776161de4604079fed2da51ab0f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "925deb12_5ae1b681",
+        "filename": "gclient_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-07T21:57:50Z",
+      "side": 1,
+      "message": "good idea, Done",
+      "parentUuid": "c4005dd4_6689112b",
+      "revId": "3935ea6377b9c776161de4604079fed2da51ab0f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

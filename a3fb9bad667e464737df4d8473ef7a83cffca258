@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbbca36c_0352be4d",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-07T21:52:34Z",
+      "side": 1,
+      "message": "nit: errors should end in `Error`.  Maybe drop the GitConfig?",
+      "revId": "a3fb9bad667e464737df4d8473ef7a83cffca258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b28e8f5_30ef65dc",
+        "filename": "scm.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-07T21:52:34Z",
+      "side": 1,
+      "message": "nit: editor specific formatting config is bad IMO",
+      "revId": "a3fb9bad667e464737df4d8473ef7a83cffca258",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -19,11 +19,14 @@ import scm
 
 def GIT(test: unittest.TestCase,
         *,
-        config: dict[str, list[str]] | None = None,
+        global_state: dict[str, list[str]] | None = None,
+        local_state: dict[str, list[str]] | None = None,
         branchref: str | None = None):
     """Installs fakes/mocks for scm.GIT so that:
 
-      * Initial git config (local scope) is set to `config`.
+      * Initial git config (local scope) is set to `local_state`.
+      * If supplied, `global_state` is used as the global scope and
+        mutated in place.
       * GetBranch will just return a fake branchname starting with the value of
         branchref.
       * git_new_branch.create_new_branch will be mocked to update the value
@@ -40,7 +43,8 @@ def GIT(test: unittest.TestCase,
     _branchref = [branchref or 'refs/heads/main']
 
     global_lock = threading.Lock()
-    global_state = {}
+    if global_state is None:
+        global_state = {}
 
     def _newBranch(branchref):
         _branchref[0] = branchref
@@ -48,7 +52,7 @@ def GIT(test: unittest.TestCase,
     patches: list[mock._patch] = [
         mock.patch('scm.GIT._new_config_state',
                    side_effect=lambda _: scm.GitConfigStateTest(
-                       global_lock, global_state, local_state=config)),
+                       global_lock, global_state, local_state=local_state)),
         mock.patch('scm.GIT.GetBranchRef', side_effect=lambda _: _branchref[0]),
         mock.patch('git_new_branch.create_new_branch', side_effect=_newBranch)
     ]

@@ -34,6 +34,24 @@
       "parentUuid": "575b3ca1_75df2f39",
       "revId": "81bd038644f69691e6a8de5d3e1ea926e4d2d8e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c42967b_3fd88449",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-08-08T04:06:01Z",
+      "side": 1,
+      "message": "Ack, thanks for the clarification. LGTM",
+      "parentUuid": "305fd417_01dbe24f",
+      "revId": "81bd038644f69691e6a8de5d3e1ea926e4d2d8e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

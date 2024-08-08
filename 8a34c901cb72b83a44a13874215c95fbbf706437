@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6bffa3cf_f56fe49a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:11:49Z",
+      "side": 1,
+      "message": "Since this is pretty meaty change, I think attaching a bug would be good.",
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cf3be64d_d76fbeff",
         "filename": "roll_downstream_gcs_deps.py",
         "patchSetId": 6

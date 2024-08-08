@@ -16,6 +16,24 @@
       "message": "Are these `self` attributed always guaranteed to be set when this is called? \n\nI find it somewhat odd that every validation method in this file uses `self._metadata.get` but we don\u0027t need to do that here anymore.",
       "revId": "81bd038644f69691e6a8de5d3e1ea926e4d2d8e3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "305fd417_01dbe24f",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1378025
+      },
+      "writtenOn": "2024-08-08T04:04:36Z",
+      "side": 1,
+      "message": "\u003e Are these self attributed always guaranteed to be set when this is called?\n\nYes. They return None if unset or invalid\n\nThese attributes are validated per-field value (after my type coercion change): https://source.chromium.org/chromium/chromium/tools/depot_tools/+/b7ed76a09d1953d75968cbc14a53f724c11fb5f9\n\ncalls to `version_util.version_is_unknown` is no longer necessary here (because the attribute accessor performs the same validation.\n\nThis branch checks checks if \"combination of version/date/revision\" is adequate, so i think it makes sense to use the post-per-field validated attributes instead of parsing the raw values again.",
+      "parentUuid": "575b3ca1_75df2f39",
+      "revId": "81bd038644f69691e6a8de5d3e1ea926e4d2d8e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

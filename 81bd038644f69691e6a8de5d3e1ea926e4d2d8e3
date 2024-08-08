@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "575b3ca1_75df2f39",
+        "filename": "metadata/dependency_metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-08-08T02:51:50Z",
+      "side": 1,
+      "message": "Are these `self` attributed always guaranteed to be set when this is called? \n\nI find it somewhat odd that every validation method in this file uses `self._metadata.get` but we don\u0027t need to do that here anymore.",
+      "revId": "81bd038644f69691e6a8de5d3e1ea926e4d2d8e3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

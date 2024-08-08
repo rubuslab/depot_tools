@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "71112381_bc7a27ba",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4550,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-08T16:25:16Z",
+      "side": 1,
+      "message": "Dicts have been ordered since py3.7. From https://docs.python.org/3/library/stdtypes.html#typesmapping: \"Changed in version 3.7: Dictionary order is guaranteed to be insertion order. This behavior was an implementation detail of CPython from 3.6.\"\n\nI believe depot_tools uses at least 3.8 so order should be guaranteed, but LMK if we should be explicit with OrderedDict or something",
+      "parentUuid": "018183d5_75cc5e7e",
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf62608a_7888fbcb",
@@ -49,6 +67,24 @@
           ]
         }
       ],
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9014ce43_05d3a518",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4587,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-08T16:25:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf62608a_7888fbcb",
       "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

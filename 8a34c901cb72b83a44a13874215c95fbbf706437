@@ -1,0 +1,323 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf3be64d_d76fbeff",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "nit: missing return type hint, missing in _get_deps as well",
+      "range": {
+        "startLine": 86,
+        "startChar": 40,
+        "endLine": 86,
+        "endChar": 41
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "ba54bae6_0a859b6e",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 24,
+                "startChar": 0,
+                "endLine": 25,
+                "endChar": 0
+              },
+              "replacement": "def _get_deps(deps_ast: ast.Module) -\u003e dict[str, ast.Dict]:\n"
+            },
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 86,
+                "startChar": 0,
+                "endLine": 87,
+                "endChar": 0
+              },
+              "replacement": "                 source_ast: ast.Module) -\u003e str:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86730fc1_a2ac2e99",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "in copy_packages, _replace_ast is called where this arg is whatever gets returned by: _get_gcs_object_list_ast()\n\nSo it\u0027s more like this is the \"package\u0027s ast.list in the destination deps file\" i think, not the full DEPS ast as this suggests? same for source_ast below.",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 49
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "cd51e19d_3281642d",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 92,
+                "startChar": 0,
+                "endLine": 93,
+                "endChar": 0
+              },
+              "replacement": "      dest_ast: AST of the package in the destination DEPS file.\n"
+            },
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 94,
+                "startChar": 0,
+                "endLine": 95,
+                "endChar": 0
+              },
+              "replacement": "      source_ast: AST of the package in the source DEPS file.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95dfba74_844714de",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "is this referring to the `[:source_ast.col_offset]` part? If so I think the comment could talk about why we can\u0027t just copy the full line?",
+      "range": {
+        "startLine": 115,
+        "startChar": 10,
+        "endLine": 115,
+        "endChar": 37
+      },
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22f3308f_a7318a06",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "type hints like the others? (even if they\u0027re all just strings)",
+      "range": {
+        "startLine": 138,
+        "startChar": 18,
+        "endLine": 138,
+        "endChar": 47
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "58e9f96e_ee15aa6c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 138,
+                "startChar": 0,
+                "endLine": 139,
+                "endChar": 0
+              },
+              "replacement": "def copy_packages(source: str, destination: str, packages: list[str]) -\u003e str:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8234718_6dc31257",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "could this be renamed to `source_deps` ?",
+      "range": {
+        "startLine": 150,
+        "startChar": 4,
+        "endLine": 150,
+        "endChar": 9
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "4b52febe_c2a53cad",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 150,
+                "startChar": 0,
+                "endLine": 151,
+                "endChar": 0
+              },
+              "replacement": "    source_deps \u003d _get_deps(source_ast)\n"
+            },
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 152,
+                "startChar": 0,
+                "endLine": 153,
+                "endChar": 0
+              },
+              "replacement": "        if package not in source_deps:\n"
+            },
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 161,
+                "startChar": 0,
+                "endLine": 162,
+                "endChar": 0
+              },
+              "replacement": "                                   _get_gcs_object_list_ast(\n                                       source_deps[package]))\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7766d894_a41eed01",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "could this be renamed to `dest_deps`",
+      "range": {
+        "startLine": 155,
+        "startChar": 8,
+        "endLine": 155,
+        "endChar": 17
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "96490147_21c422c3",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 155,
+                "startChar": 0,
+                "endLine": 157,
+                "endChar": 0
+              },
+              "replacement": "        dest_deps \u003d _get_deps(destination_ast)\n        if package not in dest_deps:\n"
+            },
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 159,
+                "startChar": 0,
+                "endLine": 160,
+                "endChar": 0
+              },
+              "replacement": "                                   _get_gcs_object_list_ast(dest_deps[package]),\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59f1776a_85ce2ff0",
+        "filename": "roll_downstream_gcs_deps.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-08-08T21:09:45Z",
+      "side": 1,
+      "message": "is this bit needed? `not args.pacakge` should capture len(args.package) \u003d\u003d 0?",
+      "range": {
+        "startLine": 182,
+        "startChar": 24,
+        "endLine": 182,
+        "endChar": 48
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "359d850d_b64d1e97",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "roll_downstream_gcs_deps.py",
+              "range": {
+                "startLine": 182,
+                "startChar": 0,
+                "endLine": 183,
+                "endChar": 0
+              },
+              "replacement": "    if not args.package:\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8a34c901cb72b83a44a13874215c95fbbf706437",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -18,6 +18,7 @@ import scm
 
 
 def GIT(test: unittest.TestCase,
+        *,
         config: dict[str, list[str]] | None = None,
         branchref: str | None = None):
     """Installs fakes/mocks for scm.GIT so that:

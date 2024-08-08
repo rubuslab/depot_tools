@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a822c980_9db380da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-08T23:15:24Z",
+      "side": 1,
+      "message": "I changed the approach slightly per discussion with iannucci, to expose a read-only view instead",
+      "revId": "bc47696465acbf0f3e47f4e1cd6c5ca434e60290",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

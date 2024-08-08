@@ -36,6 +36,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "204ee17d_e52fef18",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4550,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-08T16:57:23Z",
+      "side": 1,
+      "message": "While I don\u0027t believe there will be changes anytime soon, I don\u0027t want future-self (or anyone else) to have to deal with this if py decides to change its dict behavior. Since that is an implementation detail, and not a language guarantee (meaning it can be subject to a change), I\u0027m leaning towards using a list or OrderedDict to be on the safe side. I\u0027ll let you make the final call.",
+      "parentUuid": "71112381_bc7a27ba",
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf62608a_7888fbcb",

@@ -34,14 +34,17 @@ class PresubmitDiffTest(unittest.TestCase):
 
         # State of the remote repository.
         fetch_data = {
-            "unchanged.txt": "unchanged\n",
-            "deleted.txt": "deleted\n",
-            "modified.txt": "modified... bar\n",
-            "nested/modified.txt": "hello\n",
+            "unchanged.txt": "unchanged\n".encode("utf-8"),
+            "deleted.txt": "deleted\n".encode("utf-8"),
+            "modified.txt": "modified... bar\n".encode("utf-8"),
+            "nested/modified.txt": "hello\n".encode("utf-8"),
+
+            # Intenionally invalid start byte for utf-8.
+            "deleted_binary": b"\xff\x00",
         }
 
         def fetch_side_effect(host, repo, ref, file):
-            return fetch_data.get(file, "")
+            return fetch_data.get(file, b"")
 
         fetch_content_mock = mock.patch("presubmit_diff.fetch_content",
                                         side_effect=fetch_side_effect)
@@ -109,6 +112,17 @@ index 71779d2c..00000000
         self._test_create_diffs(
             ["deleted.txt"],
             {"deleted.txt": expected_diff},
+        )
+
+    def test_create_diffs_with_binary_file(self):
+        expected_diff = """diff --git a/deleted_binary b/deleted_binary
+deleted file mode 100644
+index ce542efaa..00000000
+Binary files a/deleted_binary and /dev/null differ
+"""
+        self._test_create_diffs(
+            ["deleted_binary"],
+            {"deleted_binary": expected_diff},
         )
 
     # pylint: disable=line-too-long

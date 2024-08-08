@@ -54,6 +54,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d9274d_1dffc7a1",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4550,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-08T17:19:37Z",
+      "side": 1,
+      "message": "I\u0027ll keep it since it is part of the spec: https://mail.python.org/pipermail/python-dev/2017-December/151283.html. If they ever reverse their stance on this, I volunteer future-me to fix anything that comes up",
+      "parentUuid": "204ee17d_e52fef18",
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf62608a_7888fbcb",

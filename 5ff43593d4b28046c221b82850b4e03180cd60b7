@@ -1,0 +1,56 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "018183d5_75cc5e7e",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4550,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-08T04:03:59Z",
+      "side": 1,
+      "message": "Don\u0027t we need to preserve the order of revisions? If so, we shouldn\u0027t be using a dict (which is ordered in cpython, but not guaranteed). Instead, let\u0027s use a list of tuples",
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf62608a_7888fbcb",
+        "filename": "git_cl.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4587,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-08T04:03:59Z",
+      "side": 1,
+      "message": "Sorry, I didn\u0027t catch this earlier but a user would also need to remove commit hashes that have been cherry-picked already? If so, we should help them figure out what those are, or at least let them know.",
+      "fixSuggestions": [
+        {
+          "fixId": "8b95439b_df69039f",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "git_cl.py",
+              "range": {
+                "startLine": 4588,
+                "startChar": 0,
+                "endLine": 4589,
+                "endChar": 0
+              },
+              "replacement": "                      \u0027which change the chain should start with. You will also \u0027\n                      \u0027need to remove the commit hashes that have already been \u0027\n                      \u0027cherry picked from the commit message.\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "5ff43593d4b28046c221b82850b4e03180cd60b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

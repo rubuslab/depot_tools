@@ -7,6 +7,7 @@ from __future__ import annotations
 import os
 import sys
 import threading
+from typing import Iterable
 
 from unittest import mock
 import unittest
@@ -20,7 +21,7 @@ import scm
 def GIT(test: unittest.TestCase,
         *,
         config: dict[str, list[str]] | None = None,
-        branchref: str | None = None):
+        branchref: str | None = None) -> Iterable[tuple[str, list[str]]]:
     """Installs fakes/mocks for scm.GIT so that:
 
       * Initial git config (local scope) is set to `config`.
@@ -58,3 +59,5 @@ def GIT(test: unittest.TestCase,
         test.addCleanup(p.stop)
 
     test.addCleanup(scm.GIT.drop_config_cache)
+
+    return global_state.items()

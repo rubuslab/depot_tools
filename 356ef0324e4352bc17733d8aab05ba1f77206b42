@@ -64,6 +64,24 @@
       ],
       "revId": "356ef0324e4352bc17733d8aab05ba1f77206b42",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08c66f23_c346f722",
+        "filename": "ninja.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1581717
+      },
+      "writtenOn": "2024-08-09T07:45:30Z",
+      "side": 1,
+      "message": "Hi, any update on this?",
+      "parentUuid": "7f72dfbc_ff9f739d",
+      "revId": "356ef0324e4352bc17733d8aab05ba1f77206b42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

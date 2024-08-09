@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8a1e71a_ffdaf78d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-09T01:23:20Z",
+      "side": 1,
+      "message": "https://ci.chromium.org/ui/p/infra-internal/builders/prod/infra-internal-docker-images-continuous/15365/overview\n\n\u003e stat /b/s/w/ir/kitchen-checkout/depot_tools/git_number.py: no such file or directory",
+      "revId": "c92e85abb7cec53e5827f5484d2dab9f90a4339a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

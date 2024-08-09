@@ -16,6 +16,24 @@
       "message": "But why? \n\nIt also needs to be updated in infradata/config similar to https://chrome-internal.googlesource.com/infradata/config/+/3d661e21564fa4299da526192fd2aa6a499e6839",
       "revId": "7fb1b375f4dcc6e840852f8cb697c1f4ea1ed284",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3bdaf1_0d9b316b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-09T00:47:46Z",
+      "side": 1,
+      "message": "New CIPD versions have `-json-output` option to print auth info in JSON format. https://crrev.com/c/5467900\n\n\u003e It also needs to be updated in infradata/config similar to https://chrome-internal.googlesource.com/infradata/config/+/3d661e21564fa4299da526192fd2aa6a499e6839\n\nOk, will create a CL.",
+      "parentUuid": "583e7e28_bef762d7",
+      "revId": "7fb1b375f4dcc6e840852f8cb697c1f4ea1ed284",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

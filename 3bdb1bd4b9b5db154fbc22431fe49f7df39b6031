@@ -111,6 +111,30 @@
       },
       "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd6de577_2bd11964",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1844,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-08-12T21:29:55Z",
+      "side": 1,
+      "message": "I highly believe that Event() is just a pthread conditional variable. So, calling event.set() wouldn\u0027t guarantee that the thread is awaken at the time of event.set() return. It just signals the thread(s) to wake up, and it\u0027s up to OS to schedule execution of the background thread.\n\nBy having event_thread.join(), it effectively ensures that it waits until\n- the thread gets awaken\n- _progress_loop() returns, and\n- the thread exists.\n\nThat said, you are right that OS will probably schedule execution of the background thread within a reasonable time frame, so that it\u0027s not a big deal not to wait for the thread termination within the main thread. Please make your call. 😊",
+      "parentUuid": "17d9ba2f_17ce4d5b",
+      "range": {
+        "startLine": 1844,
+        "startChar": 12,
+        "endLine": 1844,
+        "endChar": 23
+      },
+      "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

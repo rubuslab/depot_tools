@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5f99293_be29fdb8",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1829,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-12T21:15:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e6508d8_2d510430",
+      "range": {
+        "startLine": 1821,
+        "startChar": 8,
+        "endLine": 1829,
+        "endChar": 62
+      },
+      "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4001128_d65e2122",
@@ -61,6 +85,30 @@
           ]
         }
       ],
+      "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17d9ba2f_17ce4d5b",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1844,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-12T21:15:41Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be necessary right? Since this thread doesn\u0027t affect the main thread and `_progress_loop` will always terminate after `.set()`",
+      "parentUuid": "e4001128_d65e2122",
+      "range": {
+        "startLine": 1844,
+        "startChar": 12,
+        "endLine": 1844,
+        "endChar": 23
+      },
       "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

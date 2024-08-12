@@ -1817,6 +1817,19 @@ class PresubmitExecuter(object):
             the result of the presubmit function call.
         """
         start_time = time_time()
+
+        def _progress_loop():
+            while True:
+                if event.wait(timeout=30):
+                    return
+                sys.stdout.write(f'Still running {function_name} after '
+                                 f'{int(time_time() - start_time)}s...\n')
+
+        event = threading.Event()
+        event_thread = threading.Thread(target=_progress_loop)
+        event_thread.daemon = True
+        event_thread.start()
+
         try:
             result = eval(function_name + '(*__args)', context)
             self._check_result_type(result)
@@ -1827,6 +1840,8 @@ class PresubmitExecuter(object):
                     'Evaluation of %s failed: %s, %s' %
                     (function_name, e_value, traceback.format_exc()))
             ]
+        finally:
+            event.set()
 
         elapsed_time = time_time() - start_time
         if elapsed_time > 10.0:

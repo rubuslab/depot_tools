@@ -1,0 +1,68 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e6508d8_2d510430",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1829,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-08-12T20:52:58Z",
+      "side": 1,
+      "message": "nit; it may feel more comfortable if the event object is passed as an argument.\n\n```\ndef _progress_loop(event):\n  ...\n\nevent \u003d threading.Event()\nevent_thread \u003d threading.Thread(target\u003d_progress_loop, args\u003d(event,))\n```",
+      "range": {
+        "startLine": 1821,
+        "startChar": 8,
+        "endLine": 1829,
+        "endChar": 62
+      },
+      "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4001128_d65e2122",
+        "filename": "presubmit_support.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1844,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-08-12T20:52:58Z",
+      "side": 1,
+      "message": "Let\u0027s wait for the thread to terminate just for clean finish.\n\n```\nevent.set()\nevent_thread.join()\n```",
+      "range": {
+        "startLine": 1844,
+        "startChar": 12,
+        "endLine": 1844,
+        "endChar": 23
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c102fde4_241c90ec",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "presubmit_support.py",
+              "range": {
+                "startLine": 1845,
+                "startChar": 0,
+                "endLine": 1845,
+                "endChar": 0
+              },
+              "replacement": "            event_thread.join()\n"
+            }
+          ]
+        }
+      ],
+      "revId": "3bdb1bd4b9b5db154fbc22431fe49f7df39b6031",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ import urllib.parse
 # Current version of metrics recording.
 # When we add new metrics, the version number will be increased, we display the
 # user what has changed, and ask the user to agree again.
-CURRENT_VERSION = 2
+CURRENT_VERSION = 3
 
 APP_URL = 'https://cit-cli-metrics.appspot.com'
 
@@ -71,6 +71,13 @@ def get_change_notice(version):
             'and authenticate to the metrics collection server.',
             'This information will only be recorded for requests',
             'authenticated as bot service accounts.',
+        ]
+
+    if version == 3:
+        return [
+            'We will start collecting metrics for experiment flags.',
+            'These are boolean or enum values that show whether',
+            'you have opted in to or out of experimental features',
         ]
 
 

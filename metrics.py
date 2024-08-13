@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # Copyright (c) 2018 The Chromium Authors. All rights reserved.
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
@@ -16,6 +15,7 @@ import urllib.request
 import detect_host_arch
 import gclient_utils
 import metrics_utils
+import newauth
 import subprocess2
 import utils
 
@@ -250,6 +250,9 @@ class MetricsCollector(object):
         bot_metrics = metrics_utils.get_bot_metrics()
         if bot_metrics:
             self.add('bot_metrics', bot_metrics)
+
+        new_auth_enabled = newauth.Enabled()
+        self.add('new_auth_enabled', new_auth_enabled)
 
         self._upload_metrics_data()
         if exception:

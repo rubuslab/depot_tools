@@ -88,6 +88,24 @@
       "parentUuid": "18e2226c_f03a1edf",
       "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c3f109c_96056251",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1111085
+      },
+      "writtenOn": "2024-08-13T21:58:40Z",
+      "side": 1,
+      "message": "Created a new bug for the wheel builder. I expect we\u0027re a long way off from RISC-V machines in swarming that would need it.",
+      "parentUuid": "f8b9b4e8_acb10832",
+      "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

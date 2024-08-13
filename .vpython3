@@ -50,6 +50,7 @@ wheel: <
 wheel: <
   name: "infra/python/wheels/brotli/${vpython_platform}"
   version: "version:1.0.9"
+  not_match_tag: {python: "cp311", abi: "cp311", platform: "linux_riscv64"},
 >
 
 # Used by:

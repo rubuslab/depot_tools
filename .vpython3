@@ -50,6 +50,8 @@ wheel: <
 wheel: <
   name: "infra/python/wheels/brotli/${vpython_platform}"
   version: "version:1.0.9"
+  # No binary wheel builder for RISC-V.
+  not_match_tag: {python: "cp311", abi: "cp311", platform: "linux_riscv64"},
 >
 
 # Used by:

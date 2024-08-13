@@ -34,6 +34,24 @@
       "parentUuid": "2203f248_2ee662ac",
       "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50481ac2_4d7ec64a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-08-13T21:18:14Z",
+      "side": 1,
+      "message": "I think this would come into play when trying to use the `requests` library, which is used by `rdb_wrapper.py`, specifically when it is run to report test results. I think this would only happen on Swarming bots, which set LUCI_CONTEXT: https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:rdb_wrapper.py;l\u003d73;drc\u003dedba22d4eb12b5db5bdee7dc921da7857be1b687",
+      "parentUuid": "09b79410_d065beac",
+      "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

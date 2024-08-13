@@ -70,6 +70,24 @@
       "parentUuid": "50481ac2_4d7ec64a",
       "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f8b9b4e8_acb10832",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-08-13T21:33:15Z",
+      "side": 1,
+      "message": "Currently there is no infrastructure set up to build any vpython wheels for riscv64. I\u0027d guess that would be at least a medium amount of work to set up a builder and figure out which wheels in wheels.py build successfully for riscv64.\n\n@iannucci@chromium.org  @fancl@chromium.org fyi",
+      "parentUuid": "18e2226c_f03a1edf",
+      "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

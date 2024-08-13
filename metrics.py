@@ -16,6 +16,7 @@ import urllib.request
 import detect_host_arch
 import gclient_utils
 import metrics_utils
+import newauth
 import subprocess2
 import utils
 
@@ -250,6 +251,9 @@ class MetricsCollector(object):
         bot_metrics = metrics_utils.get_bot_metrics()
         if bot_metrics:
             self.add('bot_metrics', bot_metrics)
+
+        newauth_enabled = newauth.Enabled()
+        self.add('newauth_enabled', newauth_enabled)
 
         self._upload_metrics_data()
         if exception:

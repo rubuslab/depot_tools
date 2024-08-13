@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2203f248_2ee662ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1115868
+      },
+      "writtenOn": "2024-08-13T20:23:12Z",
+      "side": 1,
+      "message": "sokcevic@ any thoughts?  I think this would mean presubmits don\u0027t work (since this is a dependency of \u0027requests\u0027), but maybe that\u0027s secondary to getting \u0027gclient sync\u0027 working.",
+      "revId": "90e04f3653b560fee3e67e769c26693f3a64f510",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

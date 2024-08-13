@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a32b713_f0a81e5c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-13T23:10:48Z",
+      "side": 1,
+      "message": "We used to track new stacked changes dogfood using cit-cli metrics without schema changes; and it was removed in https://crrev.com/c/5274266. \n\nCan we do something similar here instead of changing schema?",
+      "revId": "0010fc973116d1c132674913c0c8ccfe9a90262d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

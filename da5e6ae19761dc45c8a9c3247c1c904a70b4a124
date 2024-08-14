@@ -33,6 +33,24 @@
       "message": "Do you think this is needed?",
       "revId": "da5e6ae19761dc45c8a9c3247c1c904a70b4a124",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c471a10b_2113a20b",
+        "filename": "metrics_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-14T22:57:12Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s strictly needed, but good to inform users that some envvars are used - that was never clearly called out.",
+      "parentUuid": "774d438e_ace405d6",
+      "revId": "da5e6ae19761dc45c8a9c3247c1c904a70b4a124",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

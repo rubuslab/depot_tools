@@ -21,7 +21,7 @@ import metadata.fields.util as util
 import metadata.validation_result as vr
 
 HEX_PATTERN = re.compile(r"^[a-fA-F0-9]{7,40}$")
-
+_REVISION_IN_DEPS_PATTERN = re.compile(r"deps", re.IGNORECASE)
 
 class RevisionField(field_types.SingleLineTextField):
     """Custom field for the revision."""
@@ -29,9 +29,19 @@ class RevisionField(field_types.SingleLineTextField):
     def __init__(self):
         super().__init__(name="Revision")
 
+    def is_in_deps(self, value: str) -> bool:
+        """
+        Returns whether `value` indicates the revision is managed by DEPS
+        file.
+        """
+        return bool(_REVISION_IN_DEPS_PATTERN.match(value))
+
     def narrow_type(self, value: str) -> Optional[str]:
         value = super().narrow_type(value)
         if not value:
+            return None
+
+        if self.is_in_deps(value):
             return None
 
         if version_field.version_is_unknown(value):
@@ -53,13 +63,17 @@ class RevisionField(field_types.SingleLineTextField):
           - Valid hexadecimal format (length 7-40 characters).
         """
 
+        if self.is_in_deps(value):
+            return None
+
         if util.is_unknown(value):
             return vr.ValidationWarning(
                 reason=f"{self._name} is invalid.",
                 additional=[
                     "Revision is required for dependencies which have a git repository "
                     "as an upstream, OPTIONAL if the upstream is not a git repository "
-                    "and either Version or Date is supplied.",
+                    "and either Version or Date is supplied. If the git dependency is "
+                    "managed by DEPS file, put \"DEPS\" here.",
                     "'{value}' is not a valid commit hash.",
                 ],
             )
@@ -68,7 +82,8 @@ class RevisionField(field_types.SingleLineTextField):
             return vr.ValidationError(
                 reason=f"{self._name} is not a valid hexadecimal revision.",
                 additional=[
-                    "Revisions must be hexadecimal strings with a length of 7 to 40 characters."
+                    "Revisions must be hexadecimal strings with a length of 7 to 40 characters. "
+                    "If the git dependency is managed by DEPS file, put \"DEPS\" here."
                 ],
             )
 

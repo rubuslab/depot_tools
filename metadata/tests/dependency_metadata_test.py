@@ -189,6 +189,28 @@ class DependencyValidationTest(unittest.TestCase):
             "Revision is not a valid hexadecimal revision.",
         )
 
+    def test_revision_in_deps(self):
+        """
+        Checks revision field recognizes the special value that indicates
+        revision is managed by DEPS file.
+        """
+        dependency = dm.DependencyMetadata()
+        dependency.add_entry(known_fields.NAME.get_name(), "Test Dependency")
+        dependency.add_entry(known_fields.URL.get_name(),
+                             "https://www.example.com")
+        dependency.add_entry(known_fields.VERSION.get_name(), "N/A")
+        dependency.add_entry(known_fields.REVISION.get_name(), "DEPS")
+        dependency.add_entry(known_fields.LICENSE.get_name(), "Public domain")
+        dependency.add_entry(known_fields.LICENSE_FILE.get_name(), "LICENSE")
+        dependency.add_entry(known_fields.SECURITY_CRITICAL.get_name(), "no")
+        dependency.add_entry(known_fields.SHIPPED.get_name(), "no")
+
+        results = dependency.validate(
+            source_file_dir=os.path.join(_THIS_DIR, "data"),
+            repo_root_dir=_THIS_DIR,
+        )
+        self.assertEqual(len(results), 0)
+
     def test_valid_revision(self):
         """Check valid revision formats return no validation issues."""
 

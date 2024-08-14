@@ -16,6 +16,24 @@
       "message": "We used to track new stacked changes dogfood using cit-cli metrics without schema changes; and it was removed in https://crrev.com/c/5274266. \n\nCan we do something similar here instead of changing schema?",
       "revId": "0010fc973116d1c132674913c0c8ccfe9a90262d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59a9ef7a_a10b547c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-14T00:36:20Z",
+      "side": 1,
+      "message": "That seems to rely on the fact that the opt in flag is an envvar.  Not sure if we should report this flag as an envvar or change it into an envvar.",
+      "parentUuid": "6a32b713_f0a81e5c",
+      "revId": "0010fc973116d1c132674913c0c8ccfe9a90262d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

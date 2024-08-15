@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81008d7d_960cd624",
+        "filename": "presubmit_support.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2027,
+      "author": {
+        "id": 1381059
+      },
+      "writtenOn": "2024-08-15T16:06:51Z",
+      "side": 1,
+      "message": "nit: I think it is just called \"blame\" in Code search. See: https://screenshot.googleplex.com/6JQiz9vVDL3gzuH",
+      "range": {
+        "startLine": 2027,
+        "startChar": 21,
+        "endLine": 2027,
+        "endChar": 30
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "c039d0de_bc4effeb",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "presubmit_support.py",
+              "range": {
+                "startLine": 2027,
+                "startChar": 0,
+                "endLine": 2028,
+                "endChar": 0
+              },
+              "replacement": "                    \u0027blame on Code Search to figure out who to ask for \u0027\n"
+            }
+          ]
+        }
+      ],
+      "revId": "17e1f03b117796ed02d14d45840a3d7c66580abc",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

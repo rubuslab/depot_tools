@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31fe828b_70854072",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1978,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-16T21:06:06Z",
+      "side": 1,
+      "message": "There\u0027s a difference between returning here and letting it execute: if we continue, we check for gitlinks and error out if they exist.\n\nBut, given that\u0027s current behavior, I don\u0027t think we should change - it could make removing Git dependencies in DEPS a bit more complicated.",
+      "parentUuid": "d32b0870_eab456d1",
+      "range": {
+        "startLine": 1978,
+        "startChar": 8,
+        "endLine": 1978,
+        "endChar": 17
+      },
+      "revId": "4406fe68601956a5fb0d50b236f68a266923c52e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bdac3599_86940f4c",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-08-16T20:42:01Z",
       "side": 1,
       "message": "delete",
+      "range": {
+        "startLine": 2024,
+        "startChar": 8,
+        "endLine": 2025,
+        "endChar": 23
+      },
+      "revId": "4406fe68601956a5fb0d50b236f68a266923c52e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89826b85_6e793ed5",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-16T21:06:06Z",
+      "side": 1,
+      "message": "gotta start self-review...",
+      "parentUuid": "bdac3599_86940f4c",
       "range": {
         "startLine": 2024,
         "startChar": 8,

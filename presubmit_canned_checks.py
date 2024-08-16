@@ -1970,14 +1970,13 @@ def CheckForCommitObjects(input_api, output_api):
         ]
 
     # Get DEPS file.
-    deps_file = input_api.os_path.join(input_api.PresubmitLocalPath(), 'DEPS')
-    if not input_api.os_path.isfile(deps_file):
-        # No DEPS file, carry on!
-        return []
+    try:
+        deps_content = input_api.subprocess.check_output(
+            ['git', 'show', 'HEAD:DEPS'], cwd=input_api.PresubmitLocalPath())
+        deps = _ParseDeps(deps_content)
+    except Exception:
+        deps = {}
 
-    with open(deps_file) as f:
-        deps_content = f.read()
-    deps = _ParseDeps(deps_content)
     # set default
     if 'deps' not in deps:
         deps['deps'] = {}
@@ -2022,6 +2021,8 @@ def CheckForCommitObjects(input_api, output_api):
         return []
 
     if deps['git_dependencies'] == 'DEPS':
+        import pdb
+        pdb.set_trace()
         commit_tree_entries = [x[3] for x in commit_tree_entries]
         return [
             output_api.PresubmitError(

@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d32b0870_eab456d1",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1978,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-16T20:42:01Z",
+      "side": 1,
+      "message": "maybe `return []` instead to skip everything below?",
+      "range": {
+        "startLine": 1978,
+        "startChar": 8,
+        "endLine": 1978,
+        "endChar": 17
+      },
+      "revId": "4406fe68601956a5fb0d50b236f68a266923c52e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdac3599_86940f4c",
+        "filename": "presubmit_canned_checks.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2025,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-08-16T20:42:01Z",
+      "side": 1,
+      "message": "delete",
+      "range": {
+        "startLine": 2024,
+        "startChar": 8,
+        "endLine": 2025,
+        "endChar": 23
+      },
+      "revId": "4406fe68601956a5fb0d50b236f68a266923c52e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

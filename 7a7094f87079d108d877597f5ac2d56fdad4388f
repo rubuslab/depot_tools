@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6abf6842_d25f3d1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-17T00:34:56Z",
+      "side": 1,
+      "message": "Had to fix the test mocking",
+      "revId": "7a7094f87079d108d877597f5ac2d56fdad4388f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd7df8ff_9e174f10",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-17T00:34:56Z",
+      "side": 1,
+      "message": "This file technically has a shebang and looks like it can be run directly, which is why I/my editor changed the file to executable.\n\nAny opinions on this?",
+      "revId": "7a7094f87079d108d877597f5ac2d56fdad4388f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -16,6 +16,24 @@
       "message": "We did this because we got told that we need to clean up how we specify licenses during a previous review [1].\n\neg. If it\u0027s an `or`, we chose the one we\u0027re using and list only that one, not both. If it\u0027s an `and`, it should be comma separated to denote that both licenses apply. Was there a specific reason you wanted to get rid of this?\n\nhttps://buganizer.corp.google.com/issues/300466236#comment5",
       "revId": "caa77da9568fb7c48c9db679cf9dc0ae20080585",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "77e073b1_2b67f103",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1553262
+      },
+      "writtenOn": "2024-08-19T01:21:23Z",
+      "side": 1,
+      "message": "Didn\u0027t mean to resolve.",
+      "parentUuid": "006c1486_d532ce35",
+      "revId": "caa77da9568fb7c48c9db679cf9dc0ae20080585",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

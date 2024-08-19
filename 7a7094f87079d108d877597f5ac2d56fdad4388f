@@ -33,6 +33,24 @@
       "message": "This file technically has a shebang and looks like it can be run directly, which is why I/my editor changed the file to executable.\n\nAny opinions on this?",
       "revId": "7a7094f87079d108d877597f5ac2d56fdad4388f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09b7764e_f4880039",
+        "filename": "tests/metrics_test.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-19T18:09:46Z",
+      "side": 1,
+      "message": "it should be executable, let\u0027s keep it 0755",
+      "parentUuid": "cd7df8ff_9e174f10",
+      "revId": "7a7094f87079d108d877597f5ac2d56fdad4388f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

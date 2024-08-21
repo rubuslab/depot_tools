@@ -123,7 +123,7 @@ def GetJflag(cmdline):
             return int(cmdline[i][len("-j"):])
 
 
-def GetMetadata(cmdline, ninjalog):
+def GetMetadata(cmdline, ninjalog, exit_code, build_duration):
     """Get metadata for uploaded ninjalog.
 
     Returned metadata has schema defined in
@@ -160,10 +160,13 @@ def GetMetadata(cmdline, ninjalog):
     invocation_id = os.environ.get("AUTONINJA_BUILD_ID")
     if invocation_id:
         metadata['invocation_id'] = invocation_id
-
     jflag = GetJflag(cmdline)
     if jflag is not None:
         metadata["jobs"] = jflag
+    if exit_code is not None:
+        metadata['exit_code'] = exit_code
+    if build_duration is not None:
+        metadata['build_duration_sec'] = build_duration
 
     return metadata
 
@@ -188,15 +191,13 @@ def GetNinjalog(cmdline):
     return os.path.join(ninjalog_dir, ".ninja_log")
 
 
-def UploadNinjaLog(ninjalog, server, cmdline):
+def UploadNinjaLog(server, ninjalog, metadata):
     output = io.BytesIO()
 
     with open(ninjalog) as f:
         with gzip.GzipFile(fileobj=output, mode="wb") as g:
             g.write(f.read().encode())
             g.write(b"# end of ninja log\n")
-
-            metadata = GetMetadata(cmdline, ninjalog)
             logging.info("send metadata: %s", json.dumps(metadata))
             g.write(json.dumps(metadata).encode())
 
@@ -236,6 +237,12 @@ def main():
     parser.add_argument("--verbose",
                         action="store_true",
                         help="Enable verbose logging.")
+    parser.add_argument("--exit_code",
+                        type=int,
+                        help="exit code of the ninja command.")
+    parser.add_argument("--build_duration",
+                        type=int,
+                        help="total duration spent on autoninja (secounds)")
     parser.add_argument(
         "--cmdline",
         required=True,
@@ -272,7 +279,9 @@ def main():
         logging.info("ninjalog is already uploaded.")
         return 0
 
-    exit_code = UploadNinjaLog(ninjalog, args.server, args.cmdline)
+    metadata = GetMetadata(args.cmdline, ninjalog, args.exit_code,
+                           args.build_duration)
+    exit_code = UploadNinjaLog(args.server, ninjalog, metadata)
     if exit_code == 0:
         last_upload_file.touch()
     return exit_code

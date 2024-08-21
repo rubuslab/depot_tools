@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b459bf67_ff10bd22",
+        "filename": "libs/telemetry/OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-08-21T18:46:05Z",
+      "side": 1,
+      "message": "Also happy to add anyone that might use this library later. Don\u0027t want to assume though @sokcevic@chromium.org @jwata@google.com",
+      "revId": "80e9beb18acc880abd45464fecf97114c9096987",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

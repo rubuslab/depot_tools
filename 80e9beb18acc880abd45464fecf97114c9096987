@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "93f124a4_7db70d1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-21T19:47:10Z",
+      "side": 1,
+      "message": "we may hit similar issue with libs; but I haven\u0027t checked if there\u0027s conflict. Should we pick less generic name to avoid any potential problem?",
+      "revId": "80e9beb18acc880abd45464fecf97114c9096987",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b459bf67_ff10bd22",
         "filename": "libs/telemetry/OWNERS",
         "patchSetId": 1
@@ -14,6 +31,47 @@
       "writtenOn": "2024-08-21T18:46:05Z",
       "side": 1,
       "message": "Also happy to add anyone that might use this library later. Don\u0027t want to assume though @sokcevic@chromium.org @jwata@google.com",
+      "revId": "80e9beb18acc880abd45464fecf97114c9096987",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50da43bf_fd2cfa8d",
+        "filename": "libs/telemetry/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-21T19:47:10Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 3,
+        "startChar": 60,
+        "endLine": 3,
+        "endChar": 68
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "aeae0940_cf6c5107",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "libs/telemetry/README.md",
+              "range": {
+                "startLine": 3,
+                "startChar": 0,
+                "endLine": 4,
+                "endChar": 0
+              },
+              "replacement": "TODO: This a placeholder to establish a folder to build the telemetry lib, this\n"
+            }
+          ]
+        }
+      ],
       "revId": "80e9beb18acc880abd45464fecf97114c9096987",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

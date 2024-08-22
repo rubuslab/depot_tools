@@ -22,6 +22,30 @@
       },
       "revId": "0ae8c80c49220397cb9e8ce59b87369d7f7367f2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1af5eb3a_27573e0d",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 3355336
+      },
+      "writtenOn": "2024-08-22T23:29:25Z",
+      "side": 1,
+      "message": "fixed quotes.  kept split because it keeps it a tiny bit closer to the original code.",
+      "parentUuid": "3bfde39d_ad91fbc6",
+      "range": {
+        "startLine": 74,
+        "startChar": 31,
+        "endLine": 74,
+        "endChar": 36
+      },
+      "revId": "0ae8c80c49220397cb9e8ce59b87369d7f7367f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

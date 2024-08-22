@@ -22,6 +22,30 @@
       },
       "revId": "2003eb4371e6beb5fc6aaf4be62c473b6d019095",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42000649_17f53e45",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-22T02:37:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1fa14175_5a8ef22b",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 0
+      },
+      "revId": "2003eb4371e6beb5fc6aaf4be62c473b6d019095",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

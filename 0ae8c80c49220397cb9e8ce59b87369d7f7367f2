@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bfde39d_ad91fbc6",
+        "filename": "gerrit_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-08-22T23:02:21Z",
+      "side": 1,
+      "message": "inconsistent use of bytes, either replace b\"...\" with b\u0027...\u0027, or use b\" \" here. No strong preference.\n\nvery nit, split before lower: hdr.split(b\" \")[0].lower()",
+      "range": {
+        "startLine": 74,
+        "startChar": 31,
+        "endLine": 74,
+        "endChar": 36
+      },
+      "revId": "0ae8c80c49220397cb9e8ce59b87369d7f7367f2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

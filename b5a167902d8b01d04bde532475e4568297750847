@@ -96,6 +96,88 @@
       },
       "revId": "b5a167902d8b01d04bde532475e4568297750847",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "206b5c59_fbe4031b",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-27T04:31:11Z",
+      "side": 1,
+      "message": "to get better performance.",
+      "range": {
+        "startLine": 280,
+        "startChar": 36,
+        "endLine": 280,
+        "endChar": 60
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "e69cfe40_30e079a0",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 280,
+                "startChar": 0,
+                "endLine": 281,
+                "endChar": 0
+              },
+              "replacement": "                    \"You should set the following in args.gn to get better \"\n                    \"performance:\\n\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ce56cda_d8eae8eb",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-27T04:31:11Z",
+      "side": 1,
+      "message": "Are they",
+      "range": {
+        "startLine": 280,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 0
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f3c4e892_0e4fb023",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 280,
+                "startChar": 0,
+                "endLine": 281,
+                "endChar": 0
+              },
+              "replacement": "                    \"You should set the following in args.gn if you want to \"\n                    \"use siso:\\n\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

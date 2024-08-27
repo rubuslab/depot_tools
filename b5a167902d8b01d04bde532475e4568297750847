@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9bc9276_ef28be0f",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-08-27T04:23:47Z",
+      "side": 1,
+      "message": "ditto.",
+      "range": {
+        "startLine": 276,
+        "startChar": 55,
+        "endLine": 276,
+        "endChar": 56
+      },
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de96c508_5ed7bc04",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-08-27T04:23:47Z",
+      "side": 1,
+      "message": "This paren is redundant?",
+      "range": {
+        "startLine": 276,
+        "startChar": 34,
+        "endLine": 276,
+        "endChar": 35
+      },
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

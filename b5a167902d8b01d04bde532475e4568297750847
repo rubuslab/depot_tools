@@ -52,6 +52,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2aaf3314_a4162456",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T04:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "54b3dd79_6e40045f",
+      "range": {
+        "startLine": 275,
+        "startChar": 11,
+        "endLine": 275,
+        "endChar": 50
+      },
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e9bc9276_ef28be0f",
@@ -88,6 +112,54 @@
       "writtenOn": "2024-08-27T04:23:47Z",
       "side": 1,
       "message": "This paren is redundant?",
+      "range": {
+        "startLine": 276,
+        "startChar": 34,
+        "endLine": 276,
+        "endChar": 35
+      },
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23b136a4_d18933df",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T04:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9bc9276_ef28be0f",
+      "range": {
+        "startLine": 276,
+        "startChar": 55,
+        "endLine": 276,
+        "endChar": 56
+      },
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "636a9644_4f389b64",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T04:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de96c508_5ed7bc04",
       "range": {
         "startLine": 276,
         "startChar": 34,
@@ -135,6 +207,30 @@
           ]
         }
       ],
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97c70513_7768d558",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T04:49:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "206b5c59_fbe4031b",
+      "range": {
+        "startLine": 280,
+        "startChar": 36,
+        "endLine": 280,
+        "endChar": 60
+      },
       "revId": "b5a167902d8b01d04bde532475e4568297750847",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

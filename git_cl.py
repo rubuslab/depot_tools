@@ -4570,7 +4570,7 @@ def CMDcherry_pick(parser, args):
                                                  change_id,
                                                  options.branch,
                                                  message=message)
-        new_change_id = new_change_info['change_id']
+        new_change_id = new_change_info['id']
         new_change_num = new_change_info['_number']
         new_change_url = gerrit_util.GetChangePageUrl(host, new_change_num)
 

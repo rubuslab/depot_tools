@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "261a3f33_55da0e5d",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T22:16:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ac74a4a_450c18a2",
+      "range": {
+        "startLine": 279,
+        "startChar": 30,
+        "endLine": 279,
+        "endChar": 36
+      },
+      "revId": "ccf16b891bacd48cf524554abcde6374ff04dba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7af84c14_2eb7eebd",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "69ca15e1_7ef5a716",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T22:16:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7af84c14_2eb7eebd",
+      "range": {
+        "startLine": 280,
+        "startChar": 32,
+        "endLine": 280,
+        "endChar": 48
+      },
+      "revId": "ccf16b891bacd48cf524554abcde6374ff04dba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f274e6a0_b903cd26",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-08-27T17:22:00Z",
       "side": 1,
       "message": "```suggestion\n                    \"  use_reclient\u003dfalse\\n\"\n```",
+      "range": {
+        "startLine": 284,
+        "startChar": 23,
+        "endLine": 284,
+        "endChar": 35
+      },
+      "revId": "ccf16b891bacd48cf524554abcde6374ff04dba0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb7f9116_56e3591b",
+        "filename": "autoninja.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-08-27T22:16:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f274e6a0_b903cd26",
       "range": {
         "startLine": 284,
         "startChar": 23,

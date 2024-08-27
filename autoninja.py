@@ -272,6 +272,18 @@ def _main_inner(input_args, build_id, should_collect_logs=False):
                 )
                 return 1
 
+        if os.getcwd().startswith('/google/cog/'):
+            if (not use_remoteexec) or use_reclient or (not use_siso):
+                print(
+                    "WARNING: you're not using siso builtin remote "
+                    "execution. Build will slow.\n"
+                    "You should set the following in args.gn:\n"
+                    "  use_remoteexec=true\n"
+                    "  use_recilent=false\n"
+                    "  use_siso=true\n",
+                    file=sys.stderr,
+                )
+
         siso_marker = os.path.join(output_dir, ".siso_deps")
         if use_siso:
             # siso generates a .ninja_log file so the mere existence of a

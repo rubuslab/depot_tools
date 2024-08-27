@@ -3,6 +3,57 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "54b3dd79_6e40045f",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-08-27T04:28:01Z",
+      "side": 1,
+      "message": "You can use `gclient_util.IsEnvCog()`?\n\nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:gclient_utils.py;l\u003d1206;drc\u003d525b18d46bcb3117032014bd17773235b0c8a352",
+      "range": {
+        "startLine": 275,
+        "startChar": 11,
+        "endLine": 275,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "4d5bc3f1_0126f621",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 35,
+                "startChar": 0,
+                "endLine": 35,
+                "endChar": 0
+              },
+              "replacement": "import gclient_utils\n"
+            },
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 275,
+                "startChar": 0,
+                "endLine": 276,
+                "endChar": 0
+              },
+              "replacement": "        if gclient_utils.IsEnvCog():\n"
+            }
+          ]
+        }
+      ],
+      "revId": "b5a167902d8b01d04bde532475e4568297750847",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e9bc9276_ef28be0f",
         "filename": "autoninja.py",
         "patchSetId": 1

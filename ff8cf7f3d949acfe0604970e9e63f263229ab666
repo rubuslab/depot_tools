@@ -22,6 +22,30 @@
       },
       "revId": "ff8cf7f3d949acfe0604970e9e63f263229ab666",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f028ce5e_cf27570d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1369089
+      },
+      "writtenOn": "2024-08-29T00:40:41Z",
+      "side": 1,
+      "message": "Thanks. Updated the commit message.",
+      "parentUuid": "4303a26e_1f79dec3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 13
+      },
+      "revId": "ff8cf7f3d949acfe0604970e9e63f263229ab666",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

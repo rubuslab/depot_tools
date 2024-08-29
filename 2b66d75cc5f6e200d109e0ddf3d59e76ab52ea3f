@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b564f7cc_45266bb8",
+        "filename": "tests/git_cl_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 1001907
+      },
+      "writtenOn": "2024-08-29T23:58:25Z",
+      "side": 1,
+      "message": "it took me some time to find this particular block of mock statements. I\u0027m still not 100% sure that some other test won\u0027t later call cmdupload and inadvertently call the real gerrit_util function though.",
+      "revId": "2b66d75cc5f6e200d109e0ddf3d59e76ab52ea3f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

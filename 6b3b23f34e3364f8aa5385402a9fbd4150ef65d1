@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c14c54c2_1dcda3f0",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-08-29T08:21:25Z",
+      "side": 1,
+      "message": "I think we can could just remove these two lines and the one setting the \"user\" key, because they are essentially duplicated with the ones below (`if not config.get(\"user\"):`).",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 40
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "8d421297_c420789c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "build_telemetry.py",
+              "range": {
+                "startLine": 47,
+                "startChar": 0,
+                "endLine": 49,
+                "endChar": 0
+              },
+              "replacement": ""
+            },
+            {
+              "path": "build_telemetry.py",
+              "range": {
+                "startLine": 50,
+                "startChar": 0,
+                "endLine": 51,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "6b3b23f34e3364f8aa5385402a9fbd4150ef65d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72210e50_a1e1deeb",
+        "filename": "build_telemetry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1577257
+      },
+      "writtenOn": "2024-08-29T08:21:25Z",
+      "side": 1,
+      "message": "That\u0027s a nice improvement :)",
+      "range": {
+        "startLine": 156,
+        "startChar": 24,
+        "endLine": 156,
+        "endChar": 39
+      },
+      "revId": "6b3b23f34e3364f8aa5385402a9fbd4150ef65d1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

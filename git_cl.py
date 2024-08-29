@@ -4578,12 +4578,17 @@ def CMDcherry_pick(parser, args):
 
         # Create a cherry pick first, then rebase. If we create a chained CL
         # then cherry pick, the change will lose its relation to the parent.
-        # TODO(b/341792235): Don't retry more than once on merge conflicts and
-        # handle them gracefully.
-        new_change_info = gerrit_util.CherryPick(host,
-                                                 change_id,
-                                                 options.branch,
-                                                 message=message)
+        try:
+            new_change_info = gerrit_util.CherryPick(host,
+                                                     change_id,
+                                                     options.branch,
+                                                     message=message)
+        except gerrit_util.GerritError as e:
+            print(f'Failed to create cherry pick {new_change_url} on '
+                  f'{parent_change_url}: {e}. Please resolve any merge '
+                  'conflicts.')
+            return 1
+
         new_change_id = new_change_info['id']
         new_change_num = new_change_info['_number']
         new_change_url = gerrit_util.GetChangePageUrl(host, new_change_num)
@@ -4604,7 +4609,7 @@ def CMDcherry_pick(parser, args):
                       f'`--parent-change-num={new_change_num}` to specify '
                       'which change the chain should start with.\n')
 
-                if change_ids_to_message:
+                if change_ids_to_commit:
                     print('Remaining commit(s) to cherry pick:')
                     for commit in change_ids_to_commit.values():
                         print(f'  {commit}')

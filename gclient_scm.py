@@ -673,8 +673,15 @@ class GitWrapper(SCMWrapper):
 
                 if scm.GIT.GetConfig(args[0].checkout_path,
                                      'diff.ignoresubmodules') != 'dirty':
-                    # If diff.ignoreSubmodules is not already set, set it to `all`.
-                    config_updates.append(('diff.ignoreSubmodules', 'dirty'))
+                    warning_message = (
+                        "Warning: diff.ignoreSubmodules is not set to 'dirty' for this repository. \n"
+                        "This may cause unexpected behavior with submodules. \n"
+                        "Either set the config: \n"
+                        "\t git config diff.ignoresubmodule dirty\n"
+                        "or disable this Warning with setting GCLIENT_SUPPRESS_SUBMODULE_WARNING environment variable"
+                    )
+                    if not os.environ.get('GCLIENT_SUPPRESS_SUBMODULE_WARNING'):
+                        gclient_utils.AddWarning(warning_message)
 
                 if scm.GIT.GetConfig(args[0].checkout_path,
                                      'fetch.recursesubmodules') != 'off':

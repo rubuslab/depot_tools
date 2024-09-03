@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21c0bf6b_95b6ff67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-09-03T22:16:23Z",
+      "side": 1,
+      "message": "Somehow, the convention is to limit the line-length in commit messages, and the convention applies to Chromium commits as well, I think.\n- \"git commit messages with 50/72\"\n\nPlease keep the line length below 72 chars.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 240
+      },
+      "revId": "5415e580a248d01f54c302278ae0f67162da57e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "697fec7d_e4a1722d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-09-03T22:16:23Z",
+      "side": 1,
+      "message": "remove?",
+      "range": {
+        "startLine": 9,
+        "startChar": 82,
+        "endLine": 9,
+        "endChar": 84
+      },
+      "revId": "5415e580a248d01f54c302278ae0f67162da57e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7f50f5a_7eb58e4c",
+        "filename": "git_cl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4599,
+      "author": {
+        "id": 1147264
+      },
+      "writtenOn": "2024-09-03T22:16:23Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be put at L4619 in order for L4617 to print out the current commit in the loop?",
+      "range": {
+        "startLine": 4599,
+        "startChar": 8,
+        "endLine": 4599,
+        "endChar": 43
+      },
+      "revId": "5415e580a248d01f54c302278ae0f67162da57e2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

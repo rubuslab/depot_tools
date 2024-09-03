@@ -51,6 +51,24 @@
       "parentUuid": "dcc97700_6afedd81",
       "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2a8df092_53357ca1",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-03T21:37:33Z",
+      "side": 1,
+      "message": "Please note that the local config takes priority over the global config. So:\n\n\u003e global defined local: dirty -\u003e no warning, eventhough global would apply in this case\n\nis not correct, dirty would be used, and no warning should be shown.\n\nThe case that we care about is:\n\nlocal: not set -\u003e set local to `dirty`\nlocal: not dirty (but defined) -\u003e show warning.\n\nWe should ensure those checks are fast (i.e. avoid invoking another `git config` just for this) so `gclient sync` is not slower due to those checks.",
+      "parentUuid": "b80ba97b_af0ff6de",
+      "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

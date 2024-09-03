@@ -1435,7 +1435,7 @@ class TestGitCl(unittest.TestCase):
         options.enable_auto_submit = False
         options.set_bot_commit = False
         options.cq_dry_run = False
-        options.use_commit_queue = False
+        options.use_commit_queue = options.cq_quick_run = False
         options.hashtags = ['cow']
         options.target_branch = None
         options.push_options = ['uploadvalidator~skip']
@@ -1518,7 +1518,7 @@ class TestGitCl(unittest.TestCase):
         options.enable_auto_submit = False
         options.set_bot_commit = False
         options.cq_dry_run = False
-        options.use_commit_queue = False
+        options.use_commit_queue = options.cq_quick_run = False
         options.hashtags = ['cow']
         options.target_branch = None
         options.push_options = ['uploadvalidator~skip']
@@ -1584,7 +1584,7 @@ class TestGitCl(unittest.TestCase):
         options.enable_auto_submit = False
         options.set_bot_commit = False
         options.cq_dry_run = False
-        options.use_commit_queue = False
+        options.use_commit_queue = options.cq_quick_run = False
         options.hashtags = ['cow']
         options.target_branch = None
         options.push_options = ['uploadvalidator~skip']
@@ -2682,6 +2682,20 @@ class TestGitCl(unittest.TestCase):
 
     @unittest.skipIf(gclient_utils.IsEnvCog(),
                     'not supported in non-git environment')
+    def _cmd_set_quick_run_gerrit(self):
+        self.mockGit.config['branch.main.gerritissue'] = '123'
+        self.mockGit.config['branch.main.gerritserver'] = (
+            'https://chromium-review.googlesource.com')
+        self.mockGit.config['remote.origin.url'] = (
+            'https://chromium.googlesource.com/infra/infra')
+        self.calls = [
+            (('SetReview', 'chromium-review.googlesource.com',
+              'infra%2Finfra~123', None, {
+                  'Commit-Queue': 1,
+                  'Quick-Run': 1
+              }, None, None), ''),
+        ]
+
     def test_cmd_set_commit_gerrit_clear(self):
         self._cmd_set_commit_gerrit_common(0)
         self.assertEqual(0, git_cl.main(['set-commit', '-c']))
@@ -2699,7 +2713,13 @@ class TestGitCl(unittest.TestCase):
         self.assertEqual(0, git_cl.main(['set-commit']))
 
     @unittest.skipIf(gclient_utils.IsEnvCog(),
-                    'not supported in non-git environment')
+                     'not supported in non-git environment')
+    def test_cmd_set_quick_run_gerrit(self):
+        self._cmd_set_quick_run_gerrit()
+        self.assertEqual(0, git_cl.main(['set-commit', '-q']))
+
+    @unittest.skipIf(gclient_utils.IsEnvCog(),
+                     'not supported in non-git environment')
     def test_description_display(self):
         mock.patch('git_cl.Changelist', ChangelistMock).start()
         ChangelistMock.desc = 'foo\n'
@@ -4655,7 +4675,19 @@ class CMDTryTestCase(CMDTestCaseBase):
             'https://chromium-review.googlesource.com/123456\n')
 
     @unittest.skipIf(gclient_utils.IsEnvCog(),
-                    'not supported in non-git environment')
+                     'not supported in non-git environment')
+    @mock.patch('git_cl.Changelist.SetCQState')
+    def testSetCQQuickRunByDefault(self, mockSetCQState):
+        mockSetCQState.return_value = 0
+        self.assertEqual(0, git_cl.main(['try', '-q']))
+        git_cl.Changelist.SetCQState.assert_called_with(
+            git_cl._CQState.QUICK_RUN)
+        self.assertEqual(
+            sys.stdout.getvalue(), 'Scheduling CQ quick run on: '
+            'https://chromium-review.googlesource.com/123456\n')
+
+    @unittest.skipIf(gclient_utils.IsEnvCog(),
+                     'not supported in non-git environment')
     @mock.patch('git_cl._call_buildbucket')
     def testScheduleOnBuildbucket(self, mockCallBuildbucket):
         mockCallBuildbucket.return_value = {}

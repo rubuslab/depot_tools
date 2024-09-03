@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e41e7d47_2750b0ca",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-03T19:12:01Z",
+      "side": 1,
+      "message": "There is wording bikeshedding and such to do, but saving that for after addressing the substantial bits.",
+      "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcc97700_6afedd81",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-03T19:12:01Z",
+      "side": 1,
+      "message": "This feels a bit unsophisticated.\n\n* I don\u0027t know what will happen when the user has never configured anything (global or per-repo), but in that case we should definitely just set this variable silently.\n* I suspect this will yell if the user set a different global default and not a per-repo setting, but we should probably also silently set things and move on in that case.",
+      "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

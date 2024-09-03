@@ -33,6 +33,24 @@
       "message": "This feels a bit unsophisticated.\n\n* I don\u0027t know what will happen when the user has never configured anything (global or per-repo), but in that case we should definitely just set this variable silently.\n* I suspect this will yell if the user set a different global default and not a per-repo setting, but we should probably also silently set things and move on in that case.",
       "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b80ba97b_af0ff6de",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-03T21:04:48Z",
+      "side": 1,
+      "message": "true.\njust to be clear:\n  - global: `undefined` local: `undefined` -\u003e    set local `dirty`\n  - global: `defined`   local: `undefined` -\u003e    set local `dirty`\n  - global: `defined`   local: `not dirty` -\u003e    show warning\n  - global `defined`    local: `dirty`     -\u003e no warning, eventhough global would apply in this case\n  \n  not sure how to implement this atm, but are those all cases?\n  with this - we should be setting safe defaults, but would accept global settings.",
+      "parentUuid": "dcc97700_6afedd81",
+      "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0539359f_a0cfe8cb",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-04T02:02:08Z",
+      "side": 1,
+      "message": "_is_corp_linux_workstation()",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 24
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "73c7b39c_052ced05",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 122,
+                "startChar": 0,
+                "endLine": 123,
+                "endChar": 0
+              },
+              "replacement": "def _is_corp_linux_workstation():\n"
+            },
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 141,
+                "startChar": 0,
+                "endLine": 142,
+                "endChar": 0
+              },
+              "replacement": "    if _is_google_corp_machine() and _is_corp_linux_workstation():\n"
+            }
+          ]
+        }
+      ],
+      "revId": "f16f768e34bd57e3447097a36ca479bf971d20a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39502297_67cdc848",
+        "filename": "autoninja.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-04T02:02:08Z",
+      "side": 1,
+      "message": "You don\u0027t need to call this twice because it already returned if it\u0027s non-corp.",
+      "range": {
+        "startLine": 141,
+        "startChar": 7,
+        "endLine": 141,
+        "endChar": 32
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "55e5d41a_a672d0f1",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "autoninja.py",
+              "range": {
+                "startLine": 141,
+                "startChar": 0,
+                "endLine": 142,
+                "endChar": 0
+              },
+              "replacement": "    if _is_corp_workstation():\n"
+            }
+          ]
+        }
+      ],
+      "revId": "f16f768e34bd57e3447097a36ca479bf971d20a0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

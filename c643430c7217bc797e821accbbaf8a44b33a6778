@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c7e75760_6a57aee7",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-04T21:31:15Z",
+      "side": 1,
+      "message": "I think it\u0027s better if config list gets information is cope is local or global - that way, we can have only one call.\n\nHow about this: we add `GetConfigWithScope` that returns `Optional[Tuple(str, str)]`. We teach GitFlatConfigData [1] to hold information about scope (maybe `Mapping[str, Tuple(str, Sequence[str])]`). \n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:scm.py;l\u003d58;drc\u003d39ca85acf5430c7d5f18622453cf3018584cee76",
+      "parentUuid": "66846534_af20060d",
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4bca93d4_ac16a156",
         "filename": "gclient_scm.py",
         "patchSetId": 5

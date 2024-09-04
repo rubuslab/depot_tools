@@ -670,11 +670,23 @@ class GitWrapper(SCMWrapper):
                 # This ensures we don't interleave reads and writes causing
                 # the cache to set and unset consecutively.
                 config_updates = []
-
-                if scm.GIT.GetConfig(args[0].checkout_path,
-                                     'diff.ignoresubmodules') != 'dirty':
-                    # If diff.ignoreSubmodules is not already set, set it to `all`.
+                ignore_submodules = scm.GIT.GetConfig(args[0].checkout_path,
+                                                      'diff.ignoreSubmodules',
+                                                      'local')
+                if ignore_submodules is None:
+                    # Config not set locally, set it to "dirty"
                     config_updates.append(('diff.ignoreSubmodules', 'dirty'))
+                elif ignore_submodules != 'dirty':
+                    # Config set locally but not to "dirty", show warning
+                    warning_message = (
+                        "diff.ignoreSubmodules is not set to 'dirty' for this repository. \n"
+                        "This may cause unexpected behavior with submodules. \n"
+                        "Consider setting the config: \n"
+                        "\t git config diff.ignoreSubmodule dirty\n"
+                        "or disable this warning with GCLIENT_SUPPRESS_SUBMODULE_WARNING environment variable"
+                    )
+                    if not os.environ.get('GCLIENT_SUPPRESS_SUBMODULE_WARNING'):
+                        gclient_utils.AddWarning(warning_message)
 
                 if scm.GIT.GetConfig(args[0].checkout_path,
                                      'fetch.recursesubmodules') != 'off':

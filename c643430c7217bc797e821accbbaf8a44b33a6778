@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "66846534_af20060d",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T21:21:47Z",
+      "side": 1,
+      "message": "ok got you.\ni see `SetConfig`  has a \"scope\" argument, `GetConfig`  does not have this.\nso the right approach would be to accept scope in getconfig and then go the route down to the `config list` command ?",
+      "parentUuid": "c4afb081_326c06d7",
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4bca93d4_ac16a156",
         "filename": "gclient_scm.py",
         "patchSetId": 5
@@ -72,6 +90,54 @@
       "writtenOn": "2024-09-04T21:11:25Z",
       "side": 1,
       "message": "I would not override with `-f` either, as that isn\u0027t currently used or documented as a general-purpose \"do everything even if there are issues\", but a much narrower \"force update submodules\".",
+      "parentUuid": "4bca93d4_ac16a156",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 51
+      },
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f45a1bae_37c46e2d",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T21:21:47Z",
+      "side": 1,
+      "message": "thanks",
+      "parentUuid": "4bca93d4_ac16a156",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 51
+      },
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b510880_e8778b1f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T21:21:47Z",
+      "side": 1,
+      "message": "Fix applied.",
       "parentUuid": "4bca93d4_ac16a156",
       "range": {
         "startLine": 676,

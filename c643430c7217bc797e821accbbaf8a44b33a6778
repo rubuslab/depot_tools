@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd2bf2e8_19ad3692",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T22:18:37Z",
+      "side": 1,
+      "message": "@sokcevic@chromium.org thank you for your guidance and patience\naddressed the feedback. \n\ni\u0027ll address tests, once we have a clear picture of the code.",
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c4afb081_326c06d7",
@@ -50,6 +67,24 @@
       "side": 1,
       "message": "I think it\u0027s better if config list gets information is cope is local or global - that way, we can have only one call.\n\nHow about this: we add `GetConfigWithScope` that returns `Optional[Tuple(str, str)]`. We teach GitFlatConfigData [1] to hold information about scope (maybe `Mapping[str, Tuple(str, Sequence[str])]`). \n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:scm.py;l\u003d58;drc\u003d39ca85acf5430c7d5f18622453cf3018584cee76",
       "parentUuid": "66846534_af20060d",
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebc65234_82b72d7d",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T22:18:37Z",
+      "side": 1,
+      "message": "```\n    def load_config(self) -\u003e GitFlatConfigData:\n        # NOTE: `git config --list` already canonicalizes keys.\n        try:\n            rawConfig \u003d GIT.Capture([\u0027config\u0027, \u0027--list\u0027, \u0027-z\u0027, \u0027--show-scope\u0027],\n                                    cwd\u003dself.root,\n                                    strip_out\u003dFalse)\n        except subprocess2.CalledProcessError:\n            return {}\n\n        assert isinstance(rawConfig, str)\n        cfg: Dict[str, Dict[str,\n                            List[str]]] \u003d defaultdict(lambda: defaultdict(list))\n        # Splitting by \u0027\\x00\u0027 gets an additional empty string at the end.\n        for line in rawConfig.split(\u0027\\x00\u0027)[:-1]:\n            parts \u003d line.split(\u0027\\n\u0027, 2)\n            if len(parts) \u003d\u003d 3:\n                scope, key, value \u003d map(str.strip, parts)\n            elif len(parts) \u003d\u003d 2:\n                # This handles entries without a scope\n                key, value \u003d map(str.strip, parts)\n                scope \u003d \u0027local\u0027\n            else:\n                continue  # Skip invalid lines\n\n            cfg[scope][key].append(value)\n            # keep track of old variant so we can default to it if not explicitly requested with scope\n            cfg[\u0027default\u0027][key].append(value)\n        return cfg\n\n```\nthis was what i started already 😊\nand then changing `GetConfig`:\nfrom:\n```\ndef GetConfig(cwd: str,\n                  key: str,\n                  default: Optional[str] \u003d None) -\u003e Optional[str]:\n```\n\nto:\n```\ndef GetConfig(cwd: str,\n                  key: str,\n                  default: Optional[str] \u003d None,\n                  scope: GitConfigScope \u003d \u0027default\u0027) -\u003e Optional[str]:\n```\n\n\n\nusing the scope `default`  to track the dict as it was before to not break too much.\n\nso keeping one pseudo-scope is the only overhead added with this CL.",
+      "parentUuid": "c7e75760_6a57aee7",
       "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

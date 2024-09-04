@@ -57,6 +57,30 @@
       ],
       "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9fc3d975_da80f87b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-04T21:11:25Z",
+      "side": 1,
+      "message": "I would not override with `-f` either, as that isn\u0027t currently used or documented as a general-purpose \"do everything even if there are issues\", but a much narrower \"force update submodules\".",
+      "parentUuid": "4bca93d4_ac16a156",
+      "range": {
+        "startLine": 676,
+        "startChar": 27,
+        "endLine": 676,
+        "endChar": 51
+      },
+      "revId": "c643430c7217bc797e821accbbaf8a44b33a6778",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

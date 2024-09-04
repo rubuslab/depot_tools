@@ -69,6 +69,24 @@
       "parentUuid": "b80ba97b_af0ff6de",
       "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5278a03_b0800ca8",
+        "filename": "gclient_scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-04T20:35:23Z",
+      "side": 1,
+      "message": "ok so since local wins anyway (thanks for that hint).\n\nhow about:\n  - if unset/undefined -\u003e set to `dirty`\n  - if something else then `dirty` -\u003e show warning; except if ENV is set\n  - if sync is run with `-D`/`-f` -\u003e reset to `dirty` (not sure if `-D` or `-f` is the right one, but i somehow learned if something is broken use `-D`)\n  \n  \ni think performance wise it should be not really increasing any runtime.\nthe amount of GetConfig/updates are the same.\nsee current PS - would that be a feasible approach?",
+      "parentUuid": "2a8df092_53357ca1",
+      "revId": "62bb8488e56ade5e0bb21b632e2fd5b2e7c8d407",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

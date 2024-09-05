@@ -16,6 +16,24 @@
       "message": "I don\u0027t think this is the change we want. AFAIU this CL assumes there would be something called \"Quick Run\" in the gerrit UI, which the developer would click on to trigger the Smart Test Selection algorithm\n\nThis was the approach followed with RTS, and this didn\u0027t scale because devs rarely chose it\n\nwhat we want is that during normal execution (DRY_RUN/COMMIT), Smart Test Selection algorithm should kick in, and some tests should be skipped.",
       "revId": "29923f6f3e91d20e5be3f47617a20e027c5b29c0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60477fd1_862205a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1136497
+      },
+      "writtenOn": "2024-09-05T22:54:48Z",
+      "side": 1,
+      "message": "I agree. I am going to rework this. I was using the same nomenclature, but after our talk it doesnt apply. I think we would still want a flag though correct?",
+      "parentUuid": "7420369e_1d3ba970",
+      "revId": "29923f6f3e91d20e5be3f47617a20e027c5b29c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

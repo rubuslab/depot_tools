@@ -158,6 +158,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ba644529_f91f6864",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T19:51:33Z",
+      "side": 1,
+      "message": "Yeah if this is how we do it elsewhere let\u0027s just be consistent.",
+      "parentUuid": "4a9eb05d_2496fa45",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e031560_b02887a1",
@@ -213,6 +231,30 @@
       "side": 1,
       "message": "not sure about this, on my local installed git \"config list\" does not work",
       "parentUuid": "6e031560_b02887a1",
+      "range": {
+        "startLine": 385,
+        "startChar": 30,
+        "endLine": 385,
+        "endChar": 36
+      },
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb212a67_aa812a40",
+        "filename": "scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T19:51:33Z",
+      "side": 1,
+      "message": "Seems to work on my git 2.46.0.windows.1.",
+      "parentUuid": "b0381921_02cb3fab",
       "range": {
         "startLine": 385,
         "startChar": 30,

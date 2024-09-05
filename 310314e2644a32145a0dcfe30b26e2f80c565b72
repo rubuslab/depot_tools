@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7bdb771_9c66e31b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T19:51:33Z",
+      "side": 1,
+      "message": "Trivial nit: Trailing period",
+      "revId": "310314e2644a32145a0dcfe30b26e2f80c565b72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

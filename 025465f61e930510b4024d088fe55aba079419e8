@@ -16,6 +16,74 @@
       "message": "changed the plan a bit, broke on too much ends.\ncurrent PS passes all tests, and is not such a big change",
       "revId": "025465f61e930510b4024d088fe55aba079419e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfeac95f_514b393e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T14:52:34Z",
+      "side": 1,
+      "message": "Trivial nit: Long lines, and trailing whitespace before `\\n`s.",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edc6e6d6_f01d2dc2",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T14:52:34Z",
+      "side": 1,
+      "message": "Trivial nit: Unnecessary whitespace after `\\t`.",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab5ae1c3_bb9f7d02",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T14:52:34Z",
+      "side": 1,
+      "message": "Nit: \"by setting the GCLIENT_SUPPRESS_SUBMODULE_WARNING environment variable to 1.\"? (Seems like maybe this var\u0027s value should be tested for truthiness.)",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8448b637_52036dd1",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T14:52:34Z",
+      "side": 1,
+      "message": "Trivial nit: Long line",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

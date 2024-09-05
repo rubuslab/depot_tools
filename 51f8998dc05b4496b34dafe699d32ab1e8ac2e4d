@@ -39,6 +39,30 @@
       },
       "revId": "51f8998dc05b4496b34dafe699d32ab1e8ac2e4d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecc96cad_3dddf755",
+        "filename": "scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T12:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4299a71_f5297987",
+      "range": {
+        "startLine": 729,
+        "startChar": 25,
+        "endLine": 729,
+        "endChar": 51
+      },
+      "revId": "51f8998dc05b4496b34dafe699d32ab1e8ac2e4d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

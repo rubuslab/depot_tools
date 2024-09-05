@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "44a03afa_b2a57384",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-05T20:04:00Z",
+      "side": 1,
+      "message": "They are not cached between cli invocations. For `gclient sync`, that will result in 100+ git config calls since git config is called for each submodule, and that can add up to seconds on Windows.\n\nThanks for working on it!",
+      "parentUuid": "85b0b68d_b0ae399b",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7cafa498_4bf7e4e3",
         "filename": "gclient_scm.py",
         "patchSetId": 13
@@ -255,6 +273,30 @@
       "side": 1,
       "message": "Seems to work on my git 2.46.0.windows.1.",
       "parentUuid": "b0381921_02cb3fab",
+      "range": {
+        "startLine": 385,
+        "startChar": 30,
+        "endLine": 385,
+        "endChar": 36
+      },
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b445b033_94376489",
+        "filename": "scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-05T20:04:00Z",
+      "side": 1,
+      "message": "Ah, looks like it got added to 2.46.0 (https://git-scm.com/docs/git-config#_deprecated_modes. 2.45.0 doesn\u0027t have it: https://git-scm.com/docs/git-config/2.45.0\n\nLet\u0027s keep --list for now, we can revisit next year.",
+      "parentUuid": "fb212a67_aa812a40",
       "range": {
         "startLine": 385,
         "startChar": 30,

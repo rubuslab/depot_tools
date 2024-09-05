@@ -926,6 +926,13 @@ class GIT(object):
         if m:
             return ('refs/remotes/%s/' % remote, ref.replace(m.group(0), ''))
 
+        # Changes are remote refs but they are not fetched automaticly. Return
+        # change ref as it is since comparing to head or branch refs, change
+        # should be exactly 1:1 mapping to a commit and never require syncing
+        # between remote and local.
+        m = re.match('^(refs/)?changes/', ref or '')
+        if m:
+            return ('refs/changes/', ref.replace(m.group(0), ''))
         return None
 
     @staticmethod

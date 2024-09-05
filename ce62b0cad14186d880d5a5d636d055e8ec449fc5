@@ -70,6 +70,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6b39a244_e250731f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:45:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cafa498_4bf7e4e3",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "55a7a918_470cde2e",
@@ -87,6 +105,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "979a37ca_ab3120f9",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:45:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "55a7a918_470cde2e",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75445eb4_3a638f3f",
@@ -100,6 +136,24 @@
       "writtenOn": "2024-09-05T16:44:29Z",
       "side": 1,
       "message": "I don\u0027t know python. Is there a way to interpret the value \"truthily\", so e.g. \"1\" or \"1000\" or \"true\" will all be true, while \"0\" or \"false\" will not?\n\n(Is there previous precedent for how we handle these sorts of environment variables? Maybe I\u0027m overthinking.)",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a9eb05d_2496fa45",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:45:31Z",
+      "side": 1,
+      "message": "other places use this pattern too:\n```\nsummarize_build \u003d os.environ.get(\"NINJA_SUMMARIZE_BUILD\") \u003d\u003d \"1\"\n```\n\ndon\u0027t think there is a native way. this would work:\n```\ndef is_truthy(value):\n    if isinstance(value, str):\n        return value.lower() not in (\u0027\u0027, \u00270\u0027, \u0027false\u0027, \u0027no\u0027, \u0027off\u0027)\n    return bool(value)\n```\nbut since there are many other places with the `\u003d\u003d \u00271\u0027`  - guess this is something for a follow up",
+      "parentUuid": "75445eb4_3a638f3f",
       "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

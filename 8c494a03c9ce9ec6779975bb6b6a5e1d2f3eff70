@@ -33,6 +33,24 @@
       "message": "Have you tried updating RefToRemoteRef [1] so it knows about refs/changes? Based on a quick look, I think it may require additional work since local repos don\u0027t sync all refs/changes (and we certainly don\u0027t want to do that); but would still be worth confirming it doesn\u0027t work easily, and leave a comment somehwere.\n\nAs for using rev_type \u003d \"hash\", it does seem hacky; but if the above thing doesn\u0027t work, I think that\u0027s the best we can do without a significant refactoring. \n\n[1] https://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:scm.py;l\u003d839;drc\u003da603aded9a9fa93b67222668549d9bc5069a49e8",
       "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "84db2d86_13c276ae",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-09-05T07:49:07Z",
+      "side": 1,
+      "message": "I have checked that though I just realized that we can implement this in a different way: simply let refs/changes/ referencing itself as remote ref. So if it\u0027s not available locally, fetch will get it from remote. Otherwise it is self-referencing so it\u0027s always synced \u0026 has a remote ref \u0026 is a local ref.\n\nThis is still very hacky but whatever... :/\nUpdated CL",
+      "parentUuid": "cda7c312_28223070",
+      "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

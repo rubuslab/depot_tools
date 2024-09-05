@@ -73,7 +73,7 @@ class GitConfigStateBase(metaclass=abc.ABCMeta):
     """
 
     @abc.abstractmethod
-    def load_config(self) -> GitFlatConfigData:
+    def load_config(self, scope: Optional[str] = None) -> GitFlatConfigData:
         """When invoked, this should return the full state of the configuration
         observable.
 
@@ -221,28 +221,37 @@ class CachedGitConfigState(object):
         self._impl: GitConfigStateBase = impl
 
         # Actual cached configuration from the point of view of this root.
-        self._config: Optional[GitFlatConfigData] = None
+        self._config: Dict[str, Optional[GitFlatConfigData]] = {}
 
-    def _maybe_load_config(self) -> GitFlatConfigData:
-        if self._config is None:
+    def _maybe_load_config(self, scope=None) -> GitFlatConfigData:
+        cache_scope = "default" if scope is None else scope
+
+        if not isinstance(self._config, dict):
+            self._config = {}
+
+        if cache_scope not in self._config or self._config[cache_scope] is None:
             # NOTE: Implementations of self._impl must already ensure that all
             # keys are canonicalized.
-            self._config = self._impl.load_config()
-        return self._config
+            self._config[cache_scope] = self._impl.load_config(scope)
+
+        return self._config[cache_scope]
 
     def clear_cache(self):
         self._config = None
 
     def GetConfig(self,
                   key: str,
-                  default: Optional[str] = None) -> Optional[str]:
+                  default: Optional[str] = None,
+                  scope: Optional[str] = None) -> Optional[str]:
         """Lazily loads all configration observable for this CachedGitConfigState,
         then returns the last value for `key` as a string.
 
         If `key` is missing, returns default.
         """
         key = canonicalize_git_config_key(key)
-        values = self._maybe_load_config().get(key, None)
+        scoped_config = self._maybe_load_config(scope)
+        values = scoped_config.get(key, None)
+
         if not values:
             return default
 
@@ -370,23 +379,22 @@ class GitConfigStateReal(GitConfigStateBase):
         super().__init__()
         self.root = root
 
-    def load_config(self) -> GitFlatConfigData:
+    def load_config(self, scope: Optional[str] = None) -> GitFlatConfigData:
         # NOTE: `git config --list` already canonicalizes keys.
         try:
-            rawConfig = GIT.Capture(['config', '--list', '-z'],
-                                    cwd=self.root,
-                                    strip_out=False)
+            cmd = ['config', '--list', '-z']
+            if scope != None:
+                cmd.append(f'--{scope}')
+            rawConfig = GIT.Capture(cmd, cwd=self.root, strip_out=False)
         except subprocess2.CalledProcessError:
             return {}
 
         assert isinstance(rawConfig, str)
         cfg: Dict[str, list[str]] = defaultdict(list)
-
         # Splitting by '\x00' gets an additional empty string at the end.
         for line in rawConfig.split('\x00')[:-1]:
             key, value = map(str.strip, line.split('\n', 1))
             cfg[key].append(value)
-
         return cfg
 
     def set_config(self, key: str, value: str, *, append: bool,
@@ -503,12 +511,12 @@ class GitConfigStateTest(GitConfigStateBase):
             # check here.
             raise GitConfigUnknownScope(scope)
 
-    def load_config(self) -> GitFlatConfigData:
+    def load_config(self, scope: Optional[str] = None) -> GitFlatConfigData:
         ret = {k: list(v) for k, v in self.system_state.items()}
-        for scope in GitScopeOrder:
-            if scope == 'system':
+        for ordered_scope in GitScopeOrder:
+            if ordered_scope == 'system':
                 continue
-            with self._editable_scope(scope) as cfg:
+            with self._editable_scope(ordered_scope) as cfg:
                 for key, value in cfg.items():
                     curvals = ret.get(key, None)
                     if curvals is None:
@@ -714,13 +722,14 @@ class GIT(object):
     @staticmethod
     def GetConfig(cwd: str,
                   key: str,
-                  default: Optional[str] = None) -> Optional[str]:
+                  default: Optional[str] = None,
+                  scope: Optional[str] = None) -> Optional[str]:
         """Lazily loads all configration observable for this CachedGitConfigState,
         then returns the last value for `key` as a string.
 
         If `key` is missing, returns default.
         """
-        return GIT._get_config_state(cwd).GetConfig(key, default)
+        return GIT._get_config_state(cwd).GetConfig(key, default, scope)
 
     @staticmethod
     def GetConfigBool(cwd: str, key: str) -> bool:

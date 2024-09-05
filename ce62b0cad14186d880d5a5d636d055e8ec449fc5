@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bd2b7b5e_0d9ff506",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-05T17:01:46Z",
+      "side": 1,
+      "message": "This will now result in additional git invocation for each submodule, and will slow down gclient sync (used by bots and humans).\n\nI think the old approach could work and keep the performance roughly the same, but could require some interface refactoring to make it work.",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7cafa498_4bf7e4e3",
         "filename": "gclient_scm.py",
         "patchSetId": 13
@@ -48,6 +65,47 @@
       "writtenOn": "2024-09-05T16:44:29Z",
       "side": 1,
       "message": "I don\u0027t know python. Is there a way to interpret the value \"truthily\", so e.g. \"1\" or \"1000\" or \"true\" will all be true, while \"0\" or \"false\" will not?\n\n(Is there previous precedent for how we handle these sorts of environment variables? Maybe I\u0027m overthinking.)",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e031560_b02887a1",
+        "filename": "scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-05T17:01:46Z",
+      "side": 1,
+      "message": "nit: looks like --list is deprecated, let\u0027s use list instead.",
+      "range": {
+        "startLine": 385,
+        "startChar": 30,
+        "endLine": 385,
+        "endChar": 36
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "069f444e_db280fe2",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "scm.py",
+              "range": {
+                "startLine": 385,
+                "startChar": 0,
+                "endLine": 386,
+                "endChar": 0
+              },
+              "replacement": "            cmd \u003d [\u0027config\u0027, \u0027list\u0027, \u0027-z\u0027]\n"
+            }
+          ]
+        }
+      ],
       "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

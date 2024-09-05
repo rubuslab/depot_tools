@@ -6884,7 +6884,7 @@ def CMDformat(parser, args):
                      'Are you in detached state?')
 
     # Filter out copied/renamed/deleted files
-    diff_output = RunGitDiffCmd(['--name-only', '--diff-filter=crd'],
+    diff_output = RunGitDiffCmd(['--name-only', '--diff-filter=d'],
                                 upstream_commit, files)
     diff_files = diff_output.splitlines()
 

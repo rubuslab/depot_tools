@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92c97d09_156c9de2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-09-05T11:49:13Z",
+      "side": 1,
+      "message": "@aeubanks@google.com\n\nAfter this change, the content in moved files is neither formatted nor checked for formatting errors at all.\n\nThis is surprising, as we already have many instances where poorly formatted files were merged without any warnings.\n\nThis issue can arise when you move a file and make changes to it. Even if the file was perfectly formatted before the move, any changes made without proper formatting will bypass the format check entirely.",
+      "revId": "92d8c4e0cf9cf8255f5162eab6f5c41d3f2a99f1",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

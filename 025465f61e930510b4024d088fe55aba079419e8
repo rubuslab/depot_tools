@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbe9b2ef_5b827acc",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T16:32:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfeac95f_514b393e",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "edc6e6d6_f01d2dc2",
@@ -48,6 +66,24 @@
       "writtenOn": "2024-09-05T14:52:34Z",
       "side": 1,
       "message": "Trivial nit: Unnecessary whitespace after `\\t`.",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd8c96eb_818ac41b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T16:32:19Z",
+      "side": 1,
+      "message": "done, long lines is a tough one with forced indentation",
+      "parentUuid": "edc6e6d6_f01d2dc2",
       "revId": "025465f61e930510b4024d088fe55aba079419e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -69,6 +105,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6620daf8_96f48143",
+        "filename": "gclient_scm.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T16:32:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ab5ae1c3_bb9f7d02",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8448b637_52036dd1",
@@ -82,6 +136,24 @@
       "writtenOn": "2024-09-05T14:52:34Z",
       "side": 1,
       "message": "Trivial nit: Long line",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50284186_0ce15299",
+        "filename": "tests/gclient_scm_test.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T16:32:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8448b637_52036dd1",
       "revId": "025465f61e930510b4024d088fe55aba079419e8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

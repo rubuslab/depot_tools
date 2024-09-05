@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "157b1863_db43d00f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:40:09Z",
+      "side": 1,
+      "message": "merge conflicts solved.",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bd2b7b5e_0d9ff506",
@@ -14,6 +31,24 @@
       "writtenOn": "2024-09-05T17:01:46Z",
       "side": 1,
       "message": "This will now result in additional git invocation for each submodule, and will slow down gclient sync (used by bots and humans).\n\nI think the old approach could work and keep the performance roughly the same, but could require some interface refactoring to make it work.",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "85b0b68d_b0ae399b",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:40:09Z",
+      "side": 1,
+      "message": "but aren\u0027t they properly cached? (true: it adds atleast, when cached good, one more call) but you are right,  i\u0027ll be back in a few hours 😂",
+      "parentUuid": "bd2b7b5e_0d9ff506",
       "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -106,6 +141,30 @@
           ]
         }
       ],
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0381921_02cb3fab",
+        "filename": "scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T19:40:09Z",
+      "side": 1,
+      "message": "not sure about this, on my local installed git \"config list\" does not work",
+      "parentUuid": "6e031560_b02887a1",
+      "range": {
+        "startLine": 385,
+        "startChar": 30,
+        "endLine": 385,
+        "endChar": 36
+      },
       "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

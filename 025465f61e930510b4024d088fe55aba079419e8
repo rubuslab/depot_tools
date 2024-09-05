@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e16333cb_f758c946",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-05T10:39:13Z",
+      "side": 1,
+      "message": "changed the plan a bit, broke on too much ends.\ncurrent PS passes all tests, and is not such a big change",
+      "revId": "025465f61e930510b4024d088fe55aba079419e8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

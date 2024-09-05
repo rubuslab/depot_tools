@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cafa498_4bf7e4e3",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T16:44:29Z",
+      "side": 1,
+      "message": "Trivial nit: Trailing whitespace before `\\n`",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55a7a918_470cde2e",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T16:44:29Z",
+      "side": 1,
+      "message": "Trivial nit: Trailing period",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75445eb4_3a638f3f",
+        "filename": "gclient_scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-05T16:44:29Z",
+      "side": 1,
+      "message": "I don\u0027t know python. Is there a way to interpret the value \"truthily\", so e.g. \"1\" or \"1000\" or \"true\" will all be true, while \"0\" or \"false\" will not?\n\n(Is there previous precedent for how we handle these sorts of environment variables? Maybe I\u0027m overthinking.)",
+      "revId": "ce62b0cad14186d880d5a5d636d055e8ec449fc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

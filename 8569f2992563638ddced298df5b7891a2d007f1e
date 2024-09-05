@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69f2d3ae_d5b8e369",
+        "filename": "scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-05T15:56:55Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 929,
+        "startChar": 59,
+        "endLine": 929,
+        "endChar": 70
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b8745a97_9e9797b1",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "scm.py",
+              "range": {
+                "startLine": 929,
+                "startChar": 0,
+                "endLine": 930,
+                "endChar": 0
+              },
+              "replacement": "        # Changes are remote refs but they are not fetched automatically. Return\n"
+            }
+          ]
+        }
+      ],
+      "revId": "8569f2992563638ddced298df5b7891a2d007f1e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

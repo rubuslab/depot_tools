@@ -16,6 +16,24 @@
       "message": "Why this CL is stale? The issue we\u0027re fixing here is pretty bad IMO, this better to be prioritized.",
       "revId": "58479dc881aff0f8b7632c14f4ab99e2eeaef0ea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3bee97de_e53ccb6b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002543
+      },
+      "writtenOn": "2024-09-05T14:47:53Z",
+      "side": 1,
+      "message": "I think that I got distracted. Do you want to take it over?",
+      "parentUuid": "f7acdc78_a64ac6a1",
+      "revId": "58479dc881aff0f8b7632c14f4ab99e2eeaef0ea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -69,6 +69,24 @@
       "parentUuid": "84db2d86_13c276ae",
       "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe7478ce_8256f4ff",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-09-06T05:30:03Z",
+      "side": 1,
+      "message": "I tried it locally and it does work ok. But it has some confusing behavior e.g. creating gclient_xx branches for ref/changes because gclient think it\u0027s a branch and current branch !\u003d remote branch.\n\nSo if we restrict the check strictly to `refs/heads/` as the comment suggested (local branch), then we don\u0027t need to do anything special since all other refs should be treated as hash anyway (they are not branch). Maybe this is better than setting type to hash explicitly?\n\nAnyway, really sorry for the flip-flop.",
+      "parentUuid": "819607c7_f37575ce",
+      "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

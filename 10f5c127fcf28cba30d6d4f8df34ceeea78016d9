@@ -71,6 +71,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7a5b6d6_bae00351",
+        "filename": "scm.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-06T20:03:59Z",
+      "side": 1,
+      "message": "{} is correct, my suggestion was wrong. [] is an array, and {} is a dict.",
+      "parentUuid": "de52082e_8ea32d56",
+      "revId": "10f5c127fcf28cba30d6d4f8df34ceeea78016d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0fc9a890_64f1b3c9",

@@ -70,6 +70,35 @@ class NinjalogUploaderTest(unittest.TestCase):
                     'use_remoteexec': 'false'
                 })
 
+        # Do not include sensitive information.
+        with unittest.mock.patch('getpass.getuser', return_value='bob'):
+            args = ninjalog_uploader.ParseGNArgs(
+                json.dumps([
+                    {
+                        'current': {
+                            'value': '"xyz"'
+                        },
+                        'default': {
+                            'value': ''
+                        },
+                        'name': 'google_api_key'
+                    },
+                    {
+                        'current': {
+                            'value': '"/home/bob/foo"'
+                        },
+                        'default': {
+                            'value': ''
+                        },
+                        'name': 'path_with_homedir'
+                    },
+                ]))
+            self.assertEqual(
+                args, {
+                    'google_api_key': '<omitted>',
+                    'path_with_homedir': '"/home/$USER/foo"'
+                })
+
     def test_get_ninjalog(self):
         # No args => default to cwd.
         self.assertEqual(ninjalog_uploader.GetNinjalog(['ninja']),

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "425d0b9c_38342f92",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Nit: Can this description be improved? E.g.:\n```\nAvoid silently overwriting diff.ignoreSubmodules config.\n\nSetting this to `dirty` is generally desirable. If the user has\nexplicitly set it to something else on their chromium checkout,\nwarn rather than silently overwriting.\n```",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "0bc0f8dc_18ab5d86",
@@ -20,6 +37,91 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "253a8f4b_d8123ba8",
+        "filename": "gclient_scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Optional nit: Personally I think this and the next comment just restate the code and could be omitted.",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48feb335_a6549faa",
+        "filename": "gclient_scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "@sokcevic: Is there an .md or a short link we could supply here that has more detail of what users might encounter and why \"dirty\" is good?",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a8ba9f4_c9a85cd7",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Trivial nit: Unnecessary newline here since the next check is semantically part of \"load the value\". (Also on the `values` block lower down)",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "245b52c9_848a0c09",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Curiosity: As a non-Python person, what\u0027s the difference between `\u003d\u003d None` here and `not` in the next condition below? Do they do the same thing? If so, shouldn\u0027t they be written the same way?",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f12d2f0_9da4cb1d",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Nit: Shouldn\u0027t this be `scoped_config \u003d scoped_config.get(scope, None)` to save work?",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "14721dd7_d9063be5",
         "filename": "scm.py",
         "patchSetId": 19
@@ -31,6 +133,40 @@
       "writtenOn": "2024-09-06T08:00:35Z",
       "side": 1,
       "message": "asking for help here, this works, but i out my self as a non-python native person.\nnot sure which is my native one, but python is one of the weaker languages. maybe someone with more python know how can improve this.",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "511fd0c1_0889fcce",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Does python not have a `++` equivalent? (2 places)",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "526b4ff7_231c7853",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T15:59:14Z",
+      "side": 1,
+      "message": "Nit: This entire block is repeated just below, can we avoid this with a lambda or a reworked control flow?",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f84f405b_ea5ff996",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "425d0b9c_38342f92",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0bc0f8dc_18ab5d86",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 19
@@ -48,6 +66,24 @@
       "writtenOn": "2024-09-06T15:59:14Z",
       "side": 1,
       "message": "Optional nit: Personally I think this and the next comment just restate the code and could be omitted.",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9692834b_052dba57",
+        "filename": "gclient_scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "253a8f4b_d8123ba8",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -86,6 +122,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "934d3402_5f407a2c",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8ba9f4_c9a85cd7",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "245b52c9_848a0c09",
@@ -99,6 +153,24 @@
       "writtenOn": "2024-09-06T15:59:14Z",
       "side": 1,
       "message": "Curiosity: As a non-Python person, what\u0027s the difference between `\u003d\u003d None` here and `not` in the next condition below? Do they do the same thing? If so, shouldn\u0027t they be written the same way?",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "668af71e_b03ce36f",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "did a bit of research - `\u003d\u003d None`  checks only for `None`  - `not xyz`  checks for falsyness - changed everything to `not`  as this makes more sense.",
+      "parentUuid": "245b52c9_848a0c09",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -120,6 +192,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68eec4c3_aca9b382",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f12d2f0_9da4cb1d",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "14721dd7_d9063be5",
@@ -133,6 +223,24 @@
       "writtenOn": "2024-09-06T08:00:35Z",
       "side": 1,
       "message": "asking for help here, this works, but i out my self as a non-python native person.\nnot sure which is my native one, but python is one of the weaker languages. maybe someone with more python know how can improve this.",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bf5ef32_44a0ac26",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14721dd7_d9063be5",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -154,6 +262,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c075724_307876ac",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "tried it, python does not seem to have ++",
+      "parentUuid": "511fd0c1_0889fcce",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "526b4ff7_231c7853",
@@ -167,6 +293,24 @@
       "writtenOn": "2024-09-06T15:59:14Z",
       "side": 1,
       "message": "Nit: This entire block is repeated just below, can we avoid this with a lambda or a reworked control flow?",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e7e3e5b_76d6265d",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T17:11:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "526b4ff7_231c7853",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

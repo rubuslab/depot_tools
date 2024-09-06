@@ -16,6 +16,57 @@
       "message": "@sokcevic@chromium.org you already gave CR+1 - but somehow alot of code has changed/touched since the last CR+1 - how about a quick re-review before we land it?",
       "revId": "4a2f8d2a547fc20d68712e911d03f3ce48f11ca2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3e191297_48cf8512",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:59:33Z",
+      "side": 1,
+      "message": "LGTM",
+      "revId": "4a2f8d2a547fc20d68712e911d03f3ce48f11ca2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05a9e77f_b803afcb",
+        "filename": "gclient_scm.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:59:33Z",
+      "side": 1,
+      "message": "Nit: Maybe put the link here instead (`This may cause unexpected behavior with submodules; see //docs/git_submodules.md.\\n`)",
+      "revId": "4a2f8d2a547fc20d68712e911d03f3ce48f11ca2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2408327_0e668756",
+        "filename": "gclient_scm.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 696,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:59:33Z",
+      "side": 1,
+      "message": "Trivial nit: I would either use just `//docs/git_submodules.md\" (common way we reference source files), or use \"https://crgo.dev/c/docs/git_submodules.md\" (nicolaso@\u0027s shortener).",
+      "revId": "4a2f8d2a547fc20d68712e911d03f3ce48f11ca2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

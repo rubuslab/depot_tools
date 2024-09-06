@@ -16,6 +16,24 @@
       "message": "Trivial nit: Trailing period",
       "revId": "310314e2644a32145a0dcfe30b26e2f80c565b72",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f18aae5c_4a2732b5",
+        "filename": "gclient_scm.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 697,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T08:00:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7bdb771_9c66e31b",
+      "revId": "310314e2644a32145a0dcfe30b26e2f80c565b72",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

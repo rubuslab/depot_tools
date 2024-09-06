@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0bc0f8dc_18ab5d86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T08:00:35Z",
+      "side": 1,
+      "message": "took me a few more hours, but guess now i have a working PS and bots are green 🤘\nhappy to address whatever is needed",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14721dd7_d9063be5",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-06T08:00:35Z",
+      "side": 1,
+      "message": "asking for help here, this works, but i out my self as a non-python native person.\nnot sure which is my native one, but python is one of the weaker languages. maybe someone with more python know how can improve this.",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

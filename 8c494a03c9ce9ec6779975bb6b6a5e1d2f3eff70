@@ -87,6 +87,24 @@
       "parentUuid": "819607c7_f37575ce",
       "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "835b1684_78e4b469",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1378662
+      },
+      "writtenOn": "2024-09-06T05:32:32Z",
+      "side": 1,
+      "message": "Also I\u0027m not sure this is what you want to confirm. From .git/config only `fetch \u003d +refs/heads/*:refs/remotes/origin/*` so IIUC no other refs will be fetch from remote automatically.",
+      "parentUuid": "fe7478ce_8256f4ff",
+      "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

@@ -105,6 +105,24 @@
       "parentUuid": "fe7478ce_8256f4ff",
       "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72d9867b_589ca280",
+        "filename": "gclient_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-06T15:18:39Z",
+      "side": 1,
+      "message": "It\u0027s all good, better to iterate on the CL than post-submit 😊\n\nI think this is very reasonable - we know that refs/heads are only fetched (and refs/branch-heads in some cases), so all other refs won\u0027t be available locally.",
+      "parentUuid": "835b1684_78e4b469",
+      "revId": "8c494a03c9ce9ec6779975bb6b6a5e1d2f3eff70",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

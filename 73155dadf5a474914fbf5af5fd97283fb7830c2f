@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d3601ffd_54c76276",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-06T07:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a8c787d3_908830cb",
+      "range": {
+        "startLine": 61,
+        "startChar": 40,
+        "endLine": 61,
+        "endChar": 41
+      },
+      "revId": "73155dadf5a474914fbf5af5fd97283fb7830c2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "42a6555a_782a1f5a",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-09-06T07:27:04Z",
       "side": 1,
       "message": "not sure it\u0027s good way to hide username.\n\nthink of short username, e.g. \"r\" for Rob Pike.",
+      "revId": "73155dadf5a474914fbf5af5fd97283fb7830c2f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4b33207_44fea146",
+        "filename": "ninjalog_uploader.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-06T07:58:15Z",
+      "side": 1,
+      "message": "Done\n\nI also updated the test. PTAL",
+      "parentUuid": "42a6555a_782a1f5a",
       "revId": "73155dadf5a474914fbf5af5fd97283fb7830c2f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

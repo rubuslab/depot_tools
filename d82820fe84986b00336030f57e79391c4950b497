@@ -107,6 +107,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7d09abc4_ce383d75",
+        "filename": "gclient_scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-06T17:22:31Z",
+      "side": 1,
+      "message": "It\u0027s documented in go/prevent-accidental-gitlinks but that\u0027s not suitable for public.\n\nWe could add this sentence here:\n\n\u003e With ignoreSubmodules\u003dall, git diff \u003ccommit\u003e, git show, and git status do not show  if gitlinks are part of their commits. Developers need to use git plumbing commands (e.g. git diff-tree, git ls-tree) to actually see gitlink updates.\n\nThis is a less severe problem if user has gclient hook to detect unintentional submodule changes (https://chromium.googlesource.com/chromium/src/+/main/docs/git_submodules.md#Install-a-hook-to-help-detect-unintentional-submodule-commits).\n\nGiven that the message is getting too big, I think updating https://chromium.googlesource.com/chromium/src/+/main/docs/git_submodules.md and linking it from here is a good next step.",
+      "parentUuid": "48feb335_a6549faa",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7a8ba9f4_c9a85cd7",
         "filename": "scm.py",
         "patchSetId": 19
@@ -170,6 +188,24 @@
       "writtenOn": "2024-09-06T17:11:15Z",
       "side": 1,
       "message": "did a bit of research - `\u003d\u003d None`  checks only for `None`  - `not xyz`  checks for falsyness - changed everything to `not`  as this makes more sense.",
+      "parentUuid": "245b52c9_848a0c09",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1841d76a_928642fc",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-06T17:22:31Z",
+      "side": 1,
+      "message": "`\u003d\u003d None` is an explicit check if var is None. `not var` will be true if var is empty/zero/false, e.g. None, False, 0, \"\", b\u0027\u0027, [], {}, etc.",
       "parentUuid": "245b52c9_848a0c09",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"

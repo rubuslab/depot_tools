@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3cb9e15_13608f7a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:11:42Z",
+      "side": 1,
+      "message": "(BTW since I am not, and cannot be, a reviewer on this change, you should not wait for some kind of LGTM from me to land)",
+      "revId": "10f5c127fcf28cba30d6d4f8df34ceeea78016d9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1ccb05be_27e40ea4",

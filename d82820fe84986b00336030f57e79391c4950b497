@@ -125,6 +125,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "23b8a616_f3eb71a1",
+        "filename": "gclient_scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:11:42Z",
+      "side": 1,
+      "message": "SGTM, I\u0027m fine with that as either part of this or a followon.",
+      "parentUuid": "7d09abc4_ce383d75",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7a8ba9f4_c9a85cd7",
         "filename": "scm.py",
         "patchSetId": 19
@@ -312,6 +330,24 @@
       "side": 1,
       "message": "tried it, python does not seem to have ++",
       "parentUuid": "511fd0c1_0889fcce",
+      "revId": "d82820fe84986b00336030f57e79391c4950b497",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d4cff3c_4b0195e5",
+        "filename": "scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-06T19:11:42Z",
+      "side": 1,
+      "message": "Huh! TIL",
+      "parentUuid": "5c075724_307876ac",
       "revId": "d82820fe84986b00336030f57e79391c4950b497",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },

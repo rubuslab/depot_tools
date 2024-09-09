@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "784dcca1_bab1130b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-09T05:51:34Z",
+      "side": 1,
+      "message": "sorry for breaking this, will try to do better next time 😞 \ncan anyone confirm the fix? for some reason \"create reland\" did not work, so here is a new CL. - the only change beside the revert^2 is to default to \"default\" pseudo scope - hope this fixes the issues.",
+      "revId": "d95435f58020024062c3a1d1d5eee2ae36eb959d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

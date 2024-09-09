@@ -34,6 +34,24 @@
       "parentUuid": "188dad19_53422314",
       "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92c1c7a6_31bd33dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2024-09-09T02:06:44Z",
+      "side": 1,
+      "message": "Not sure I understand why setting the config globally is not allowed ? I\u0027ve only got one config var that I need which is set globally and with this change its now ignored. Forgive me if I\u0027m getting confused.",
+      "parentUuid": "dd9a7001_2dfff9a8",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

@@ -37,6 +37,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3c246e9a_78961b09",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-09T16:48:06Z",
+      "side": 1,
+      "message": "sorry :( - tried hitting \"reland\" on gerrit that failed, so i was kind of falling back to manually cherry-picking/reverting it.",
+      "parentUuid": "a59722a1_b262a58b",
+      "revId": "f587b97e54ae57496e936b29864dd9a78ce4c67d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ca3b6818_49a5f41b",
         "filename": "tests/scm_unittest.py",
         "patchSetId": 4

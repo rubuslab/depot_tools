@@ -73,6 +73,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "0d47d593_4cc9c523",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-09-09T16:55:48Z",
+      "side": 1,
+      "message": "didnt keep the original error message, as i was in the \"ohhh i broke it\" panic.\nguess it was not able to create the reland because it was not able to do it without conflicts?\n\ncreated a new branch, and `git revert`  the rev commit.\nbut good point - with two uploads it would have been easier, sometimes the CL/gerrit flow still confuses me as it squashes all commits on upload. (it is good, but unusual; comming from gitlab/github MR/PR\u0027s)\n\ni could redo it once more, if you want? the only changes where scm.py:248 -\u003e default\n\nand the new test (should have added this in the original CL) -\u003e scm_unittest.py:197",
+      "parentUuid": "e9761054_fa465901",
+      "revId": "f587b97e54ae57496e936b29864dd9a78ce4c67d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ca3b6818_49a5f41b",
         "filename": "tests/scm_unittest.py",
         "patchSetId": 4

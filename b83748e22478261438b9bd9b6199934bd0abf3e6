@@ -52,6 +52,24 @@
       "parentUuid": "dd9a7001_2dfff9a8",
       "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16db74db_e7401d6e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-09T02:25:59Z",
+      "side": 1,
+      "message": "It was also ignored before this change (which I didn\u0027t know before last week). Regardless of your global config, you *must* configure this locally if you want it respected. \n\nThe only thing the reverted cl did was make it so if you DID configure it locally, it WOULD be respected, instead of silently overridden on every sync. \n\nSo if, like me, you want the setting to be anything other than `dirty`, you wanted this change. You just also need to set the config locally in addition to your global setting, and set the environment variable to silence the warning.",
+      "parentUuid": "92c1c7a6_31bd33dd",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

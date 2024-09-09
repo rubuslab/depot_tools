@@ -70,6 +70,24 @@
       "parentUuid": "92c1c7a6_31bd33dd",
       "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df97087d_81dfc330",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1272455
+      },
+      "writtenOn": "2024-09-09T02:40:08Z",
+      "side": 1,
+      "message": "FYI I think you two are talking past each other; Dan\u0027s not talking about the `diff.ignoreSubmodules` config. See my comment on the original CL - it looks like this change broke `GetConfig` generally, meaning that by default it now *only* reads local repo config and doesn\u0027t read global config at all. This broke a separate feature we are dogfooding (`depot-tools.useNewAuthStack`).",
+      "parentUuid": "16db74db_e7401d6e",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

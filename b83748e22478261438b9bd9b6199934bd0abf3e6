@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "188dad19_53422314",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2024-09-09T01:48:34Z",
+      "side": 1,
+      "message": "to be clear, this is just setting scope to local if not provided. My scope \"global\" was ignored and therefore get config returns None for everything as the values weren\u0027t fetched.",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {

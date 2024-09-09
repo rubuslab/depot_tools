@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c124a640_3e9ee3ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3395304
+      },
+      "writtenOn": "2024-09-09T11:55:30Z",
+      "side": 1,
+      "message": "Hello, Junji.\n\nI used autoninja to compile Chromium on my Ubuntu system and the following warning message appeared. After checking the git blame of depot_tools, I found this CL that may be related. How should I suppress the following warning?\n\n```\nNot logged in.WARNING: depot_tools.build_telemetry: failed to get auth info: Command \u0027cipd auth-info --json-output -\u0027 returned non-zero exit status 1.\nNot logged in.\nWARNING: depot_tools.build_telemetry: failed to get auth info: Command \u0027cipd auth-info --json-output -\u0027 returned non-zero exit status 1.\n```\n\nBTW, I\u0027m not a Googler.",
+      "revId": "28edf94b2becfe0adbac7d38a89d5d1c404b8075",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

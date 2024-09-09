@@ -20,6 +20,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a59722a1_b262a58b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1560543
+      },
+      "writtenOn": "2024-09-09T16:47:00Z",
+      "side": 1,
+      "message": "I manually tested this for newauthstack and it works. Thanks for patching it!\n\nnit: it would have been easier to review this if the first patch set was a pure reland. If it were available, I could\u0027ve done diff PS1..PSN and only look at modified lines.",
+      "revId": "f587b97e54ae57496e936b29864dd9a78ce4c67d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "ca3b6818_49a5f41b",
         "filename": "tests/scm_unittest.py",
         "patchSetId": 4

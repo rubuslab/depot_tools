@@ -88,6 +88,24 @@
       "parentUuid": "16db74db_e7401d6e",
       "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ece1470_7c6e5981",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1559487
+      },
+      "writtenOn": "2024-09-09T02:58:59Z",
+      "side": 1,
+      "message": "I should have filed a bug when reverting. Here it is: b/365446059",
+      "parentUuid": "df97087d_81dfc330",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

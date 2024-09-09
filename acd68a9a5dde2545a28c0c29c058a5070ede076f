@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6570f3a3_c911de5d",
+        "filename": "scm.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1272455
+      },
+      "writtenOn": "2024-09-09T01:45:29Z",
+      "side": 1,
+      "message": "should this be \"default\"? This change seems to have broken GetConfig so that it now only reads local-scoped config values.",
+      "fixSuggestions": [
+        {
+          "fixId": "5467a098_ce0840a6",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "scm.py",
+              "range": {
+                "startLine": 248,
+                "startChar": 0,
+                "endLine": 249,
+                "endChar": 0
+              },
+              "replacement": "            scope \u003d \"default\"\n"
+            }
+          ]
+        }
+      ],
+      "revId": "acd68a9a5dde2545a28c0c29c058a5070ede076f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

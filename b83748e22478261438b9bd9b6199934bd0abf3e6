@@ -16,6 +16,24 @@
       "message": "to be clear, this is just setting scope to local if not provided. My scope \"global\" was ignored and therefore get config returns None for everything as the values weren\u0027t fetched.",
       "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd9a7001_2dfff9a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2024-09-09T02:01:47Z",
+      "side": 1,
+      "message": "I\u0027m confused at what you\u0027re saying. It sounds like you set the config globally and are unhappy it is being reset locally. That was happening before this patch landed, too, is intentional, and was intentionally not changed. We want developers who truly want this for chrome to explicitly set it as a local config on their chrome checkout regardless of their global config. \n\nIf that\u0027s a correct summary, this revert should itself be reverted.",
+      "parentUuid": "188dad19_53422314",
+      "revId": "b83748e22478261438b9bd9b6199934bd0abf3e6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ],
   "submitRequirementResults": [

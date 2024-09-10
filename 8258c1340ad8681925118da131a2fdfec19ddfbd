@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e1e9c82f_7a82e2ed",
+        "filename": "autoninja.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1161379
+      },
+      "writtenOn": "2024-09-10T02:55:59Z",
+      "side": 0,
+      "message": "We can remove entries for this from gitignore?",
+      "range": {
+        "startLine": 141,
+        "startChar": 47,
+        "endLine": 141,
+        "endChar": 60
+      },
+      "revId": "8258c1340ad8681925118da131a2fdfec19ddfbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

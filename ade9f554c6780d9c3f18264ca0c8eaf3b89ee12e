@@ -16,6 +16,24 @@
       "message": "\"Not logged in.\" is printed out to stderr, so better to suppress it too?",
       "revId": "ade9f554c6780d9c3f18264ca0c8eaf3b89ee12e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a079626a_223a4210",
+        "filename": "build_telemetry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-10T05:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce1c3056_7320de9f",
+      "revId": "ade9f554c6780d9c3f18264ca0c8eaf3b89ee12e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

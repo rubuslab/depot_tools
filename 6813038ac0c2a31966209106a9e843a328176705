@@ -16,6 +16,69 @@
       "message": "This is chromite\u0027s version of the detector for reference: https://source.chromium.org/chromiumos/chromiumos/codesearch/+/main:chromite/utils/telemetry/detector.py",
       "revId": "6813038ac0c2a31966209106a9e843a328176705",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9747b77d_f3befc2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-10T20:49:53Z",
+      "side": 1,
+      "message": "LGTM.  Left a couple of comments on things I was less sure of.",
+      "revId": "6813038ac0c2a31966209106a9e843a328176705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6984612b_52e9c60a",
+        "filename": "infra_lib/telemetry/detector.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-10T20:49:53Z",
+      "side": 1,
+      "message": "Is this legal in our codebase? I thought it would have to be `Optional[Sequence[str]]`.  PEP 484 discourages implicit optional types: https://peps.python.org/pep-0484/.",
+      "range": {
+        "startLine": 33,
+        "startChar": 36,
+        "endLine": 33,
+        "endChar": 49
+      },
+      "revId": "6813038ac0c2a31966209106a9e843a328176705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c55fbe20_8b7e3002",
+        "filename": "infra_lib/telemetry/detector.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-10T20:49:53Z",
+      "side": 1,
+      "message": "`kB` is the abbreviation for kilobytes, not kibibytes, I think. (So it should be 1000 bytes.)  Though I know sometimes folks use `kB` to mean kibibytes, despite it being non-standard. Is that the case here?\n\nThe document you linked also gives `kb` (kilobits) as an abbreviation for some files. Is that unit possible here? (E.g. `/proc/PID/status`)",
+      "range": {
+        "startLine": 124,
+        "startChar": 56,
+        "endLine": 124,
+        "endChar": 65
+      },
+      "revId": "6813038ac0c2a31966209106a9e843a328176705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

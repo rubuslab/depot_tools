@@ -58,6 +58,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "78ed249e_194305fe",
+        "filename": "infra_lib/telemetry/detector.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-10T21:42:05Z",
+      "side": 1,
+      "message": "In our recipes we typically do `| None` for optional args. I\u0027m not sure why though, explicitly `Optional` seems preferable to me. Fixed",
+      "parentUuid": "6984612b_52e9c60a",
+      "range": {
+        "startLine": 33,
+        "startChar": 36,
+        "endLine": 33,
+        "endChar": 49
+      },
+      "revId": "6813038ac0c2a31966209106a9e843a328176705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c55fbe20_8b7e3002",
@@ -71,6 +95,30 @@
       "writtenOn": "2024-09-10T20:49:53Z",
       "side": 1,
       "message": "`kB` is the abbreviation for kilobytes, not kibibytes, I think. (So it should be 1000 bytes.)  Though I know sometimes folks use `kB` to mean kibibytes, despite it being non-standard. Is that the case here?\n\nThe document you linked also gives `kb` (kilobits) as an abbreviation for some files. Is that unit possible here? (E.g. `/proc/PID/status`)",
+      "range": {
+        "startLine": 124,
+        "startChar": 56,
+        "endLine": 124,
+        "endChar": 65
+      },
+      "revId": "6813038ac0c2a31966209106a9e843a328176705",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4025e5bc_6d02abff",
+        "filename": "infra_lib/telemetry/detector.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-10T21:42:05Z",
+      "side": 1,
+      "message": "It looks like it is indeed kibibytes after a quick search I found this: https://superuser.com/questions/1737654/what-is-the-true-meaning-of-the-unit-kb-in-proc-meminfo and TIL kB meaning 1024 predates KiB\u0027s use. It looks like /proc/meminfo explicitly uses kB to refer to kibibytes so I think it\u0027s preferable to leave as is",
+      "parentUuid": "c55fbe20_8b7e3002",
       "range": {
         "startLine": 124,
         "startChar": 56,

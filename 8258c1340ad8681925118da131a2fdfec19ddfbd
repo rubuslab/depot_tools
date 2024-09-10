@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cbe9f062_b49b38a3",
+        "filename": ".vpython3",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-10T04:13:35Z",
+      "side": 0,
+      "message": "Probably, you can remove these entries too?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 1
+      },
+      "revId": "8258c1340ad8681925118da131a2fdfec19ddfbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e1e9c82f_7a82e2ed",
         "filename": "autoninja.py",
         "patchSetId": 2

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "49c48301_9f0f4b96",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-09-10T06:04:55Z",
+      "side": 1,
+      "message": "@jwata@google.com\n\nPlease move this block\n```\n    if not cfg.is_googler:\n        cfg.save()\n        return\n```\n\nafter `opt-in/opt-out/status` handlers. Right opt-out never works for non-googlers, meaning cipd and config rewrite happens each time this thing runs.",
+      "revId": "46f5de67e137de4101c1337dd9b95252d14523e9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

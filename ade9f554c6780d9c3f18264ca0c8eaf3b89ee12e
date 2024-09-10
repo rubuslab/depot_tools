@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce1c3056_7320de9f",
+        "filename": "build_telemetry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1001939
+      },
+      "writtenOn": "2024-09-10T04:51:00Z",
+      "side": 1,
+      "message": "\"Not logged in.\" is printed out to stderr, so better to suppress it too?",
+      "revId": "ade9f554c6780d9c3f18264ca0c8eaf3b89ee12e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

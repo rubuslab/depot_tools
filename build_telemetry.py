@@ -157,8 +157,6 @@ def check_auth():
             timeout=3,
         )
     except Exception as e:
-        print("WARNING: depot_tools.build_telemetry: "
-              f"failed to get auth info: {e}")
         return {}
     try:
         return json.loads(out)

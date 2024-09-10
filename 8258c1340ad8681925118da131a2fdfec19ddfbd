@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "497e2b53_3db6965f",
+        "filename": ".vpython3",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1366072
+      },
+      "writtenOn": "2024-09-10T04:12:10Z",
+      "side": 0,
+      "message": "Is it fine to stop using vpython at all? \nhttps://source.chromium.org/chromium/chromium/tools/depot_tools/+/main:autoninja;l\u003d19\n\nhttps://crrev.com/c/5065052 switched autoninja to use vpython for google.auth.",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 0
+      },
+      "revId": "8258c1340ad8681925118da131a2fdfec19ddfbd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e1e9c82f_7a82e2ed",
         "filename": "autoninja.py",
         "patchSetId": 2

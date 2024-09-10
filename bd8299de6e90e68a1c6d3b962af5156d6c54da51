@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "100d8167_a6f4bc65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1513262
+      },
+      "writtenOn": "2024-09-10T22:21:39Z",
+      "side": 1,
+      "message": "The chromite version of anonymization for reference: https://source.chromium.org/chromiumos/chromiumos/codesearch/+/main:chromite/utils/telemetry/utils.py this another mostly copy",
+      "revId": "bd8299de6e90e68a1c6d3b962af5156d6c54da51",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

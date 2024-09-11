@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "89b218a5_1c189bd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-11T21:56:36Z",
+      "side": 1,
+      "message": "Overall, looks good to me.  Left some notes, all minor.",
+      "revId": "e0b6e5f9ed259f1d27ccdd894a55f17899d764f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16fede81_64546cd5",
+        "filename": "infra_lib/telemetry/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-11T21:56:36Z",
+      "side": 1,
+      "message": "ConfigParser has a `__setitem__` method defined that (I think) is generally preferred.  E.g. `self._config[TRACE_SECTION_KEY][ENABLED_KEY] \u003d str(enabled)`.\n\nhttps://docs.python.org/3/library/configparser.html#legacy-api-examples",
+      "range": {
+        "startLine": 44,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "e0b6e5f9ed259f1d27ccdd894a55f17899d764f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8c3562a3_662a9346",
+        "filename": "infra_lib/telemetry/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-11T21:56:36Z",
+      "side": 1,
+      "message": "Since we\u0027re using a `property` to access it, we should probably use a setter to set the value. (So that the API is symmetrical.)  For example,\n\n```\nclass TraceConfig:\n\n   # ...\n   @batch.setter\n   def batch(self, enabled: bool) -\u003e None:\n       # ...\n```\n\nOr, I guess, switch to using getters and setters.  [The style guide](go/pystyle#getters-and-setters) seems to say that since the implementation is simple, they could be properties.",
+      "range": {
+        "startLine": 67,
+        "startChar": 8,
+        "endLine": 67,
+        "endChar": 17
+      },
+      "revId": "e0b6e5f9ed259f1d27ccdd894a55f17899d764f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "abb1071d_eca424d6",
+        "filename": "infra_lib/telemetry/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-11T21:56:36Z",
+      "side": 1,
+      "message": "nit: remove extra whitespace here and below.",
+      "range": {
+        "startLine": 168,
+        "startChar": 40,
+        "endLine": 170,
+        "endChar": 32
+      },
+      "revId": "e0b6e5f9ed259f1d27ccdd894a55f17899d764f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "27efd07d_75629473",
+        "filename": "infra_lib/telemetry/config_unittest.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1442357
+      },
+      "writtenOn": "2024-09-11T21:56:36Z",
+      "side": 1,
+      "message": "Not sure if it\u0027s a problem, but I think mkdtemp won\u0027t delete the directory automatically.  Alternatively, we could use `tempfile.TemporaryDirectory`, since it\u0027s a context manager.",
+      "range": {
+        "startLine": 18,
+        "startChar": 37,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "e0b6e5f9ed259f1d27ccdd894a55f17899d764f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

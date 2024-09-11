@@ -2302,6 +2302,9 @@ def main(argv=None):
     parser.add_argument('--upstream',
                         help='The base ref or upstream branch against '
                         'which the diff should be computed.')
+    parser.add_argument('--end_commit', default='HEAD',
+                        help='The commit to diff against upstream. '
+                        'By default this is whatever is checked out.')
     parser.add_argument('--default_presubmit')
     parser.add_argument('--may_prompt', action='store_true', default=False)
     parser.add_argument(

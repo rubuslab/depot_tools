@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ebd77d2_7792b788",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1493367
+      },
+      "writtenOn": "2024-09-11T05:49:49Z",
+      "side": 1,
+      "message": "We can\u0027t use RBE via `autoninja` after the recent change to depot_tools.",
+      "revId": "e047c4a4e7fb97699cad7fedeffe48a2fcba6eff",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

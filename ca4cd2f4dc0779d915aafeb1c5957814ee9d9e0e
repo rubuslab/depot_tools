@@ -40,6 +40,30 @@
       ],
       "revId": "ca4cd2f4dc0779d915aafeb1c5957814ee9d9e0e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e78ef735_731ccbe5",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2314,
+      "author": {
+        "id": 1237795
+      },
+      "writtenOn": "2024-09-12T20:53:37Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "64e5df66_c901b210",
+      "range": {
+        "startLine": 2314,
+        "startChar": 44,
+        "endLine": 2314,
+        "endChar": 67
+      },
+      "revId": "ca4cd2f4dc0779d915aafeb1c5957814ee9d9e0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

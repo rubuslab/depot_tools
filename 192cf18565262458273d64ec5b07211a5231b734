@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c211545b_ca12418c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002539
+      },
+      "writtenOn": "2024-09-12T00:22:30Z",
+      "side": 1,
+      "message": "Also need to update the CIPD client itself in https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/cipd_client_version\n\nThis is done by running https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/cipd_client_version.digests#3 (with correct \"-version\").",
+      "revId": "192cf18565262458273d64ec5b07211a5231b734",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

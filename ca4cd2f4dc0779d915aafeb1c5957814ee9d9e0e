@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "64e5df66_c901b210",
+        "filename": "presubmit_support.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2314,
+      "author": {
+        "id": 1367998
+      },
+      "writtenOn": "2024-09-12T17:47:33Z",
+      "side": 1,
+      "message": "nit: `HEAD` is clearer for git-related stuff imo",
+      "range": {
+        "startLine": 2314,
+        "startChar": 44,
+        "endLine": 2314,
+        "endChar": 67
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "1bdf66b6_34396f89",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "presubmit_support.py",
+              "range": {
+                "startLine": 2314,
+                "startChar": 0,
+                "endLine": 2315,
+                "endChar": 0
+              },
+              "replacement": "                         \u0027By default this is HEAD.\u0027)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "ca4cd2f4dc0779d915aafeb1c5957814ee9d9e0e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf695145_c83981af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003232
+      },
+      "writtenOn": "2024-09-13T21:09:01Z",
+      "side": 1,
+      "message": "I am confused. This CL seems to be changing line 65, which doesn\u0027t have any invalid escape sequences, not lines 73 or 92 as mentioned in the CL description (which appear to have already been fixed). It looks like the issues were fixed in https://crrev.com/c/5854399 on Wednesday so maybe this was just a merge race and the description became inaccurate?",
+      "revId": "22df6f8e622dc3e8df8dc8b5d3e3503b169af78e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}

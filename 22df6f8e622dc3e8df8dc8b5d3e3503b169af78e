@@ -34,6 +34,24 @@
       "parentUuid": "bf695145_c83981af",
       "revId": "22df6f8e622dc3e8df8dc8b5d3e3503b169af78e",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7fe8ec3d_50e9c037",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-09-13T21:14:34Z",
+      "side": 1,
+      "message": "\u003e Ah, yeah, that appears to be what happened between PS1 and PS2 when LUCI rebased it, I think.\n\nThat’s it.",
+      "parentUuid": "b6fa336f_fec9a105",
+      "revId": "22df6f8e622dc3e8df8dc8b5d3e3503b169af78e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }

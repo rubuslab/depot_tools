@@ -62,7 +62,7 @@ def _reclient_rbe_project():
     """Returns RBE project used by reclient."""
     instance = os.environ.get('RBE_instance')
     if instance:
-        m = re.match(instance, 'projects/([^/]*)/instances/.*')
+        m = re.match(instance, r'projects/([^/]*)/instances/.*')
         if m:
             return m[1]
     reproxy_cfg_path = reclient_helper.find_reclient_cfg()
@@ -70,7 +70,7 @@ def _reclient_rbe_project():
         return ""
     with open(reproxy_cfg_path) as f:
         for line in f:
-            m = re.match('instance\s*=\s*projects/([^/]*)/instances/.*', line)
+            m = re.match(r'instance\s*=\s*projects/([^/]*)/instances/.*', line)
             if m:
                 return m[1]
     return ""
@@ -89,7 +89,7 @@ def _siso_rbe_project():
         return ""
     with open(sisoenv_path) as f:
         for line in f:
-            m = re.match('SISO_PROJECT=\s*(\S*)\s*', line)
+            m = re.match(r'SISO_PROJECT=\s*(\S*)\s*', line)
             if m:
                 return m[1]
     return ""

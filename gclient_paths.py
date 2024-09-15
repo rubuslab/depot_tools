@@ -21,6 +21,7 @@ import subprocess2
 
 
 # @functools.lru_cache
+# https://blog.csdn.net/qq_61670993/article/details/135276209
 # @functools.lru_cache ===> @functools.lru_cache(maxsize=128, typed=False)
 @functools.lru_cache(maxsize=128, typed=False)
 def FindGclientRoot(from_dir, filename='.gclient'):
@@ -73,7 +74,9 @@ def FindGclientRoot(from_dir, filename='.gclient'):
     return None
 
 
-@functools.lru_cache
+# @functools.lru_cache
+# @functools.lru_cache ===> @functools.lru_cache(maxsize=128, typed=False)
+@functools.lru_cache(maxsize=128, typed=False)
 def _GetPrimarySolutionPathInternal(cwd):
     gclient_root = FindGclientRoot(cwd)
     if gclient_root:

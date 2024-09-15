@@ -20,7 +20,9 @@ import subprocess2
 # pylint: disable=line-too-long
 
 
-@functools.lru_cache
+# @functools.lru_cache
+# @functools.lru_cache ===> @functools.lru_cache(maxsize=128, typed=False)
+@functools.lru_cache(maxsize=128, typed=False)
 def FindGclientRoot(from_dir, filename='.gclient'):
     """Tries to find the gclient root."""
     real_from_dir = os.path.abspath(from_dir)

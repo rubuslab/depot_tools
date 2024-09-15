@@ -162,7 +162,9 @@ def GetExeSuffix():
     return ''
 
 
-@functools.lru_cache
+# @functools.lru_cache
+# @functools.lru_cache ===> @functools.lru_cache(maxsize=128, typed=False)
+@functools.lru_cache(maxsize=128, typed=False)
 def GetGClientPrimarySolutionName(gclient_root_dir_path):
     """Returns the name of the primary solution in the .gclient file specified."""
     gclient_config_file = os.path.join(gclient_root_dir_path, '.gclient')

@@ -105,7 +105,9 @@ def GetPrimarySolutionPath():
     return _GetPrimarySolutionPathInternal(os.getcwd())
 
 
-@functools.lru_cache
+# @functools.lru_cache
+# @functools.lru_cache ===> @functools.lru_cache(maxsize=128, typed=False)
+@functools.lru_cache(maxsize=128, typed=False)
 def _GetBuildtoolsPathInternal(cwd, override):
     if override is not None:
         return override
